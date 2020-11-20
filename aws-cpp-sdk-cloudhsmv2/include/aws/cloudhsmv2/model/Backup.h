@@ -29,10 +29,12 @@ namespace Model
 
   /**
    * <p>Contains information about a backup of an AWS CloudHSM cluster. All backup
-   * objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp
-   * parameters. Backups that were copied into a destination region additionally
-   * contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion
-   * paramters. A backup that is pending deletion will include the DeleteTimestamp
+   * objects contain the <code>BackupId</code>, <code>BackupState</code>,
+   * <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups
+   * that were copied into a destination region additionally contain the
+   * <code>CopyTimestamp</code>, <code>SourceBackup</code>,
+   * <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup
+   * that is pending deletion will include the <code>DeleteTimestamp</code>
    * parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Backup">AWS
    * API Reference</a></p>
@@ -219,6 +221,39 @@ namespace Model
      * <p>The date and time when the backup was copied from a source backup.</p>
      */
     inline Backup& WithCopyTimestamp(Aws::Utils::DateTime&& value) { SetCopyTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether the service should exempt a backup from the retention
+     * policy for the cluster. <code>True</code> exempts a backup from the retention
+     * policy. <code>False</code> means the service applies the backup retention policy
+     * defined at the cluster.</p>
+     */
+    inline bool GetNeverExpires() const{ return m_neverExpires; }
+
+    /**
+     * <p>Specifies whether the service should exempt a backup from the retention
+     * policy for the cluster. <code>True</code> exempts a backup from the retention
+     * policy. <code>False</code> means the service applies the backup retention policy
+     * defined at the cluster.</p>
+     */
+    inline bool NeverExpiresHasBeenSet() const { return m_neverExpiresHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the service should exempt a backup from the retention
+     * policy for the cluster. <code>True</code> exempts a backup from the retention
+     * policy. <code>False</code> means the service applies the backup retention policy
+     * defined at the cluster.</p>
+     */
+    inline void SetNeverExpires(bool value) { m_neverExpiresHasBeenSet = true; m_neverExpires = value; }
+
+    /**
+     * <p>Specifies whether the service should exempt a backup from the retention
+     * policy for the cluster. <code>True</code> exempts a backup from the retention
+     * policy. <code>False</code> means the service applies the backup retention policy
+     * defined at the cluster.</p>
+     */
+    inline Backup& WithNeverExpires(bool value) { SetNeverExpires(value); return *this;}
 
 
     /**
@@ -455,6 +490,9 @@ namespace Model
 
     Aws::Utils::DateTime m_copyTimestamp;
     bool m_copyTimestampHasBeenSet;
+
+    bool m_neverExpires;
+    bool m_neverExpiresHasBeenSet;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet;

@@ -27,6 +27,7 @@ BucketMetadata::BucketMetadata() :
     m_classifiableObjectCountHasBeenSet(false),
     m_classifiableSizeInBytes(0),
     m_classifiableSizeInBytesHasBeenSet(false),
+    m_jobDetailsHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
@@ -57,6 +58,7 @@ BucketMetadata::BucketMetadata(JsonView jsonValue) :
     m_classifiableObjectCountHasBeenSet(false),
     m_classifiableSizeInBytes(0),
     m_classifiableSizeInBytesHasBeenSet(false),
+    m_jobDetailsHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
@@ -121,6 +123,13 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_classifiableSizeInBytes = jsonValue.GetInt64("classifiableSizeInBytes");
 
     m_classifiableSizeInBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobDetails"))
+  {
+    m_jobDetails = jsonValue.GetObject("jobDetails");
+
+    m_jobDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastUpdated"))
@@ -256,6 +265,12 @@ JsonValue BucketMetadata::Jsonize() const
   if(m_classifiableSizeInBytesHasBeenSet)
   {
    payload.WithInt64("classifiableSizeInBytes", m_classifiableSizeInBytes);
+
+  }
+
+  if(m_jobDetailsHasBeenSet)
+  {
+   payload.WithObject("jobDetails", m_jobDetails.Jsonize());
 
   }
 

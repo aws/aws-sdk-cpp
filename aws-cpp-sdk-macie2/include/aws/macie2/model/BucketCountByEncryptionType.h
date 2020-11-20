@@ -39,58 +39,54 @@ namespace Model
 
     /**
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to encrypt objects. These buckets use AWS KMS
-     * AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS)
-     * encryption.</p>
+     * customer master key (CMK) to encrypt objects. These buckets use AWS managed AWS
+     * KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.</p>
      */
     inline long long GetKmsManaged() const{ return m_kmsManaged; }
 
     /**
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to encrypt objects. These buckets use AWS KMS
-     * AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS)
-     * encryption.</p>
+     * customer master key (CMK) to encrypt objects. These buckets use AWS managed AWS
+     * KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.</p>
      */
     inline bool KmsManagedHasBeenSet() const { return m_kmsManagedHasBeenSet; }
 
     /**
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to encrypt objects. These buckets use AWS KMS
-     * AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS)
-     * encryption.</p>
+     * customer master key (CMK) to encrypt objects. These buckets use AWS managed AWS
+     * KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.</p>
      */
     inline void SetKmsManaged(long long value) { m_kmsManagedHasBeenSet = true; m_kmsManaged = value; }
 
     /**
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to encrypt objects. These buckets use AWS KMS
-     * AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS)
-     * encryption.</p>
+     * customer master key (CMK) to encrypt objects. These buckets use AWS managed AWS
+     * KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.</p>
      */
     inline BucketCountByEncryptionType& WithKmsManaged(long long value) { SetKmsManaged(value); return *this;}
 
 
     /**
-     * <p>The total number of buckets that use an Amazon S3-managed key to encrypt
-     * objects. These buckets use Amazon S3-managed (SSE-S3) encryption.</p>
+     * <p>The total number of buckets that use an Amazon S3 managed key to encrypt
+     * objects. These buckets use Amazon S3 managed (SSE-S3) encryption.</p>
      */
     inline long long GetS3Managed() const{ return m_s3Managed; }
 
     /**
-     * <p>The total number of buckets that use an Amazon S3-managed key to encrypt
-     * objects. These buckets use Amazon S3-managed (SSE-S3) encryption.</p>
+     * <p>The total number of buckets that use an Amazon S3 managed key to encrypt
+     * objects. These buckets use Amazon S3 managed (SSE-S3) encryption.</p>
      */
     inline bool S3ManagedHasBeenSet() const { return m_s3ManagedHasBeenSet; }
 
     /**
-     * <p>The total number of buckets that use an Amazon S3-managed key to encrypt
-     * objects. These buckets use Amazon S3-managed (SSE-S3) encryption.</p>
+     * <p>The total number of buckets that use an Amazon S3 managed key to encrypt
+     * objects. These buckets use Amazon S3 managed (SSE-S3) encryption.</p>
      */
     inline void SetS3Managed(long long value) { m_s3ManagedHasBeenSet = true; m_s3Managed = value; }
 
     /**
-     * <p>The total number of buckets that use an Amazon S3-managed key to encrypt
-     * objects. These buckets use Amazon S3-managed (SSE-S3) encryption.</p>
+     * <p>The total number of buckets that use an Amazon S3 managed key to encrypt
+     * objects. These buckets use Amazon S3 managed (SSE-S3) encryption.</p>
      */
     inline BucketCountByEncryptionType& WithS3Managed(long long value) { SetS3Managed(value); return *this;}
 

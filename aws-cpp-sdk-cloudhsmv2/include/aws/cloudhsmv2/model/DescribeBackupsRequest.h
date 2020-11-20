@@ -123,7 +123,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetFilters() const{ return m_filters; }
 
@@ -136,7 +140,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -149,7 +157,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline void SetFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -162,7 +174,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline void SetFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -175,7 +191,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline DescribeBackupsRequest& WithFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetFilters(value); return *this;}
 
@@ -188,7 +208,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline DescribeBackupsRequest& WithFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -201,7 +225,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline DescribeBackupsRequest& AddFilters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 
@@ -214,7 +242,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline DescribeBackupsRequest& AddFilters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), value); return *this; }
 
@@ -227,7 +259,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline DescribeBackupsRequest& AddFilters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
 
@@ -240,7 +276,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline DescribeBackupsRequest& AddFilters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -253,7 +293,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline DescribeBackupsRequest& AddFilters(const char* key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
 
@@ -266,7 +310,11 @@ namespace Model
      * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
      * filter to return only the backups for the specified clusters. Specify clusters
      * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
-     * return only backups that match the specified state.</p>
+     * return only backups that match the specified state.</p> <p>Use the
+     * <code>neverExpires</code> filter to return backups filtered by the value in the
+     * <code>neverExpires</code> parameter. <code>True</code> returns all backups
+     * exempt from the backup retention policy. <code>False</code> returns all backups
+     * with a backup retention policy defined at the cluster.</p>
      */
     inline DescribeBackupsRequest& AddFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 

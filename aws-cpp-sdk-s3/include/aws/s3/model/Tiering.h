@@ -40,30 +40,38 @@ namespace Model
 
 
     /**
-     * <p>The number of days that you want your archived data to be accessible. The
-     * minimum number of days specified in the restore request must be at least 90
-     * days. If a smaller value is specifed it will be ignored. </p>
+     * <p>The number of consecutive days of no access after which an object will be
+     * eligible to be transitioned to the corresponding tier. The minimum number of
+     * days specified for Archive Access tier must be at least 90 days and Deep Archive
+     * Access tier must be at least 180 days. The maximum can be up to 2 years (730
+     * days).</p>
      */
     inline int GetDays() const{ return m_days; }
 
     /**
-     * <p>The number of days that you want your archived data to be accessible. The
-     * minimum number of days specified in the restore request must be at least 90
-     * days. If a smaller value is specifed it will be ignored. </p>
+     * <p>The number of consecutive days of no access after which an object will be
+     * eligible to be transitioned to the corresponding tier. The minimum number of
+     * days specified for Archive Access tier must be at least 90 days and Deep Archive
+     * Access tier must be at least 180 days. The maximum can be up to 2 years (730
+     * days).</p>
      */
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
 
     /**
-     * <p>The number of days that you want your archived data to be accessible. The
-     * minimum number of days specified in the restore request must be at least 90
-     * days. If a smaller value is specifed it will be ignored. </p>
+     * <p>The number of consecutive days of no access after which an object will be
+     * eligible to be transitioned to the corresponding tier. The minimum number of
+     * days specified for Archive Access tier must be at least 90 days and Deep Archive
+     * Access tier must be at least 180 days. The maximum can be up to 2 years (730
+     * days).</p>
      */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
-     * <p>The number of days that you want your archived data to be accessible. The
-     * minimum number of days specified in the restore request must be at least 90
-     * days. If a smaller value is specifed it will be ignored. </p>
+     * <p>The number of consecutive days of no access after which an object will be
+     * eligible to be transitioned to the corresponding tier. The minimum number of
+     * days specified for Archive Access tier must be at least 90 days and Deep Archive
+     * Access tier must be at least 180 days. The maximum can be up to 2 years (730
+     * days).</p>
      */
     inline Tiering& WithDays(int value) { SetDays(value); return *this;}
 

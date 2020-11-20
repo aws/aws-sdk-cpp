@@ -25,6 +25,8 @@ Backup::Backup() :
     m_clusterIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
     m_copyTimestampHasBeenSet(false),
+    m_neverExpires(false),
+    m_neverExpiresHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
     m_sourceBackupHasBeenSet(false),
     m_sourceClusterHasBeenSet(false),
@@ -40,6 +42,8 @@ Backup::Backup(JsonView jsonValue) :
     m_clusterIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
     m_copyTimestampHasBeenSet(false),
+    m_neverExpires(false),
+    m_neverExpiresHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
     m_sourceBackupHasBeenSet(false),
     m_sourceClusterHasBeenSet(false),
@@ -84,6 +88,13 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_copyTimestamp = jsonValue.GetDouble("CopyTimestamp");
 
     m_copyTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NeverExpires"))
+  {
+    m_neverExpires = jsonValue.GetBool("NeverExpires");
+
+    m_neverExpiresHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SourceRegion"))
@@ -156,6 +167,12 @@ JsonValue Backup::Jsonize() const
   if(m_copyTimestampHasBeenSet)
   {
    payload.WithDouble("CopyTimestamp", m_copyTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_neverExpiresHasBeenSet)
+  {
+   payload.WithBool("NeverExpires", m_neverExpires);
+
   }
 
   if(m_sourceRegionHasBeenSet)

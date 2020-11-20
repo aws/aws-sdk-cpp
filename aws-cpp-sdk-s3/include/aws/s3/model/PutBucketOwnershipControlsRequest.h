@@ -41,6 +41,8 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    inline bool ShouldComputeContentMd5() const override { return true; }
+
 
     /**
      * <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you
@@ -92,42 +94,58 @@ namespace Model
 
 
     /**
-     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
+     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
+     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
-     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
+     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
+     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
+     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
+     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
      */
     inline PutBucketOwnershipControlsRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
+     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
      */
     inline PutBucketOwnershipControlsRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
+     * <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
      */
     inline PutBucketOwnershipControlsRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 

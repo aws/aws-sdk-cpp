@@ -94,6 +94,63 @@ namespace Model
 
 
     /**
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
+     * <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs,
+     * this field is calculated automatically.</p>
+     */
+    inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
+    /**
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
+     * <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs,
+     * this field is calculated automatically.</p>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
+
+    /**
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
+     * <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs,
+     * this field is calculated automatically.</p>
+     */
+    inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
+
+    /**
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
+     * <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs,
+     * this field is calculated automatically.</p>
+     */
+    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
+
+    /**
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
+     * <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs,
+     * this field is calculated automatically.</p>
+     */
+    inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
+
+    /**
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
+     * <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs,
+     * this field is calculated automatically.</p>
+     */
+    inline PutPublicAccessBlockRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+
+    /**
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
+     * <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs,
+     * this field is calculated automatically.</p>
+     */
+    inline PutPublicAccessBlockRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
+
+    /**
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
+     * <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs,
+     * this field is calculated automatically.</p>
+     */
+    inline PutPublicAccessBlockRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
+
+
+    /**
      * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
      * this Amazon S3 bucket. You can enable the configuration options in any
      * combination. For more information about when Amazon S3 considers a bucket or
@@ -260,6 +317,9 @@ namespace Model
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
+    Aws::String m_contentMD5;
+    bool m_contentMD5HasBeenSet;
 
     PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
     bool m_publicAccessBlockConfigurationHasBeenSet;

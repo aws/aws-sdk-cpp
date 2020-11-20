@@ -22,6 +22,7 @@ PutObjectLockConfigurationRequest::PutObjectLockConfigurationRequest() :
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_tokenHasBeenSet(false),
+    m_contentMD5HasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
@@ -78,6 +79,13 @@ Aws::Http::HeaderValueCollection PutObjectLockConfigurationRequest::GetRequestSp
   {
     ss << m_token;
     headers.emplace("x-amz-bucket-object-lock-token",  ss.str());
+    ss.str("");
+  }
+
+  if(m_contentMD5HasBeenSet)
+  {
+    ss << m_contentMD5;
+    headers.emplace("content-md5",  ss.str());
     ss.str("");
   }
 

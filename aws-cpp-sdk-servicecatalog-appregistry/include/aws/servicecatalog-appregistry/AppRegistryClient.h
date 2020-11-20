@@ -172,20 +172,22 @@ namespace Model
 
         /**
          * <p>Associates an attribute group with an application to augment the
-         * application's metadata with the group's attributes. This way applications can be
-         * described with user-defined details which are machine-readable (e.g. for
-         * third-party integrations).</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateAttributeGroup">AWS
+         * application's metadata with the group's attributes. This feature enables
+         * applications to be described with user-defined details that are
+         * machine-readable, such as third-party integrations.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateAttributeGroupOutcome AssociateAttributeGroup(const Model::AssociateAttributeGroupRequest& request) const;
 
         /**
          * <p>Associates an attribute group with an application to augment the
-         * application's metadata with the group's attributes. This way applications can be
-         * described with user-defined details which are machine-readable (e.g. for
-         * third-party integrations).</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateAttributeGroup">AWS
+         * application's metadata with the group's attributes. This feature enables
+         * applications to be described with user-defined details that are
+         * machine-readable, such as third-party integrations.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -194,10 +196,11 @@ namespace Model
 
         /**
          * <p>Associates an attribute group with an application to augment the
-         * application's metadata with the group's attributes. This way applications can be
-         * described with user-defined details which are machine-readable (e.g. for
-         * third-party integrations).</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateAttributeGroup">AWS
+         * application's metadata with the group's attributes. This feature enables
+         * applications to be described with user-defined details that are
+         * machine-readable, such as third-party integrations.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -207,7 +210,7 @@ namespace Model
         /**
          * <p>Associates a resource with an application. Both the resource and the
          * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateResourceOutcome AssociateResource(const Model::AssociateResourceRequest& request) const;
@@ -215,7 +218,7 @@ namespace Model
         /**
          * <p>Associates a resource with an application. Both the resource and the
          * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -225,7 +228,7 @@ namespace Model
         /**
          * <p>Associates a resource with an application. Both the resource and the
          * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -235,7 +238,7 @@ namespace Model
         /**
          * <p>Creates a new application that is the top-level node in a hierarchy of
          * related cloud resource abstractions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateApplication">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
@@ -243,7 +246,7 @@ namespace Model
         /**
          * <p>Creates a new application that is the top-level node in a hierarchy of
          * related cloud resource abstractions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateApplication">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -253,7 +256,7 @@ namespace Model
         /**
          * <p>Creates a new application that is the top-level node in a hierarchy of
          * related cloud resource abstractions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateApplication">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -262,20 +265,20 @@ namespace Model
 
         /**
          * <p>Creates a new attribute group as a container for user-defined attributes.
-         * This approach enables users to have full control over their cloud application's
+         * This feature enables users to have full control over their cloud application's
          * metadata in a rich machine-readable format to facilitate integration with
          * automated workflows and third-party tools.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAttributeGroupOutcome CreateAttributeGroup(const Model::CreateAttributeGroupRequest& request) const;
 
         /**
          * <p>Creates a new attribute group as a container for user-defined attributes.
-         * This approach enables users to have full control over their cloud application's
+         * This feature enables users to have full control over their cloud application's
          * metadata in a rich machine-readable format to facilitate integration with
          * automated workflows and third-party tools.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -284,10 +287,10 @@ namespace Model
 
         /**
          * <p>Creates a new attribute group as a container for user-defined attributes.
-         * This approach enables users to have full control over their cloud application's
+         * This feature enables users to have full control over their cloud application's
          * metadata in a rich machine-readable format to facilitate integration with
          * automated workflows and third-party tools.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -295,17 +298,19 @@ namespace Model
         virtual void CreateAttributeGroupAsync(const Model::CreateAttributeGroupRequest& request, const CreateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete an application, specified either by its application ID or
-         * name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteApplication">AWS
+         * <p>Deletes an application that is specified either by its application ID or
+         * name. All associated attribute groups and resources must be disassociated from
+         * it before deleting an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Delete an application, specified either by its application ID or
-         * name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteApplication">AWS
+         * <p>Deletes an application that is specified either by its application ID or
+         * name. All associated attribute groups and resources must be disassociated from
+         * it before deleting an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -313,9 +318,10 @@ namespace Model
         virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Delete an application, specified either by its application ID or
-         * name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteApplication">AWS
+         * <p>Deletes an application that is specified either by its application ID or
+         * name. All associated attribute groups and resources must be disassociated from
+         * it before deleting an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -325,7 +331,7 @@ namespace Model
         /**
          * <p>Deletes an attribute group, specified either by its attribute group ID or
          * name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAttributeGroupOutcome DeleteAttributeGroup(const Model::DeleteAttributeGroupRequest& request) const;
@@ -333,7 +339,7 @@ namespace Model
         /**
          * <p>Deletes an attribute group, specified either by its attribute group ID or
          * name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -343,7 +349,7 @@ namespace Model
         /**
          * <p>Deletes an attribute group, specified either by its attribute group ID or
          * name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -353,8 +359,9 @@ namespace Model
         /**
          * <p>Disassociates an attribute group from an application to remove the extra
          * attributes contained in the attribute group from the application's metadata.
-         * This operation reverts AssociateAttributeGroup.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateAttributeGroup">AWS
+         * This operation reverts <code>AssociateAttributeGroup</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateAttributeGroupOutcome DisassociateAttributeGroup(const Model::DisassociateAttributeGroupRequest& request) const;
@@ -362,8 +369,9 @@ namespace Model
         /**
          * <p>Disassociates an attribute group from an application to remove the extra
          * attributes contained in the attribute group from the application's metadata.
-         * This operation reverts AssociateAttributeGroup.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateAttributeGroup">AWS
+         * This operation reverts <code>AssociateAttributeGroup</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -373,8 +381,9 @@ namespace Model
         /**
          * <p>Disassociates an attribute group from an application to remove the extra
          * attributes contained in the attribute group from the application's metadata.
-         * This operation reverts AssociateAttributeGroup.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateAttributeGroup">AWS
+         * This operation reverts <code>AssociateAttributeGroup</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -384,7 +393,7 @@ namespace Model
         /**
          * <p>Disassociates a resource from application. Both the resource and the
          * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateResourceOutcome DisassociateResource(const Model::DisassociateResourceRequest& request) const;
@@ -392,7 +401,7 @@ namespace Model
         /**
          * <p>Disassociates a resource from application. Both the resource and the
          * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -402,7 +411,7 @@ namespace Model
         /**
          * <p>Disassociates a resource from application. Both the resource and the
          * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -414,9 +423,9 @@ namespace Model
          * application can be specified either by its unique ID or by its name (which is
          * unique within one account in one region at a given point in time). Specify by ID
          * in automated workflows if you want to make sure that the exact same application
-         * is returned or a ResourceNotFoundException is thrown, avoiding the ABA
-         * addressing problem.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetApplication">AWS
+         * is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the
+         * ABA addressing problem.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
@@ -426,9 +435,9 @@ namespace Model
          * application can be specified either by its unique ID or by its name (which is
          * unique within one account in one region at a given point in time). Specify by ID
          * in automated workflows if you want to make sure that the exact same application
-         * is returned or a ResourceNotFoundException is thrown, avoiding the ABA
-         * addressing problem.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetApplication">AWS
+         * is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the
+         * ABA addressing problem.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -440,9 +449,9 @@ namespace Model
          * application can be specified either by its unique ID or by its name (which is
          * unique within one account in one region at a given point in time). Specify by ID
          * in automated workflows if you want to make sure that the exact same application
-         * is returned or a ResourceNotFoundException is thrown, avoiding the ABA
-         * addressing problem.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetApplication">AWS
+         * is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the
+         * ABA addressing problem.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -450,17 +459,19 @@ namespace Model
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves an attribute group, either by its name or its ID.</p><p><h3>See
+         * <p>Retrieves an attribute group, either by its name or its ID. The attribute
+         * group can be specified either by its unique ID or by its name.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAttributeGroupOutcome GetAttributeGroup(const Model::GetAttributeGroupRequest& request) const;
 
         /**
-         * <p>Retrieves an attribute group, either by its name or its ID.</p><p><h3>See
+         * <p>Retrieves an attribute group, either by its name or its ID. The attribute
+         * group can be specified either by its unique ID or by its name.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -468,9 +479,10 @@ namespace Model
         virtual Model::GetAttributeGroupOutcomeCallable GetAttributeGroupCallable(const Model::GetAttributeGroupRequest& request) const;
 
         /**
-         * <p>Retrieves an attribute group, either by its name or its ID.</p><p><h3>See
+         * <p>Retrieves an attribute group, either by its name or its ID. The attribute
+         * group can be specified either by its unique ID or by its name.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -480,7 +492,7 @@ namespace Model
         /**
          * <p>Retrieves a list of all of your applications. Results are
          * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListApplications">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">AWS
          * API Reference</a></p>
          */
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
@@ -488,7 +500,7 @@ namespace Model
         /**
          * <p>Retrieves a list of all of your applications. Results are
          * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListApplications">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -498,7 +510,7 @@ namespace Model
         /**
          * <p>Retrieves a list of all of your applications. Results are
          * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListApplications">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -508,7 +520,7 @@ namespace Model
         /**
          * <p>Lists all attribute groups that are associated with specified application.
          * Results are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedAttributeGroups">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssociatedAttributeGroupsOutcome ListAssociatedAttributeGroups(const Model::ListAssociatedAttributeGroupsRequest& request) const;
@@ -516,7 +528,7 @@ namespace Model
         /**
          * <p>Lists all attribute groups that are associated with specified application.
          * Results are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedAttributeGroups">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -526,7 +538,7 @@ namespace Model
         /**
          * <p>Lists all attribute groups that are associated with specified application.
          * Results are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedAttributeGroups">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -536,7 +548,7 @@ namespace Model
         /**
          * <p>Lists all resources that are associated with specified application. Results
          * are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedResources">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssociatedResourcesOutcome ListAssociatedResources(const Model::ListAssociatedResourcesRequest& request) const;
@@ -544,7 +556,7 @@ namespace Model
         /**
          * <p>Lists all resources that are associated with specified application. Results
          * are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedResources">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -554,7 +566,7 @@ namespace Model
         /**
          * <p>Lists all resources that are associated with specified application. Results
          * are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedResources">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -564,7 +576,7 @@ namespace Model
         /**
          * <p>Lists all attribute groups which you have access to. Results are
          * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAttributeGroups">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAttributeGroupsOutcome ListAttributeGroups(const Model::ListAttributeGroupsRequest& request) const;
@@ -572,7 +584,7 @@ namespace Model
         /**
          * <p>Lists all attribute groups which you have access to. Results are
          * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAttributeGroups">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -582,7 +594,7 @@ namespace Model
         /**
          * <p>Lists all attribute groups which you have access to. Results are
          * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAttributeGroups">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -592,7 +604,7 @@ namespace Model
         /**
          * <p>Updates an existing application with new attributes.</p><p><h3>See Also:</h3>
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateApplication">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
@@ -600,7 +612,7 @@ namespace Model
         /**
          * <p>Updates an existing application with new attributes.</p><p><h3>See Also:</h3>
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateApplication">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -610,7 +622,7 @@ namespace Model
         /**
          * <p>Updates an existing application with new attributes.</p><p><h3>See Also:</h3>
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateApplication">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -620,7 +632,7 @@ namespace Model
         /**
          * <p>Updates an existing attribute group with new details. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAttributeGroupOutcome UpdateAttributeGroup(const Model::UpdateAttributeGroupRequest& request) const;
@@ -628,7 +640,7 @@ namespace Model
         /**
          * <p>Updates an existing attribute group with new details. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -638,7 +650,7 @@ namespace Model
         /**
          * <p>Updates an existing attribute group with new details. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateAttributeGroup">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.

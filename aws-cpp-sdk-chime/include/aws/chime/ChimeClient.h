@@ -23,8 +23,15 @@
 #include <aws/chime/model/BatchUpdatePhoneNumberResult.h>
 #include <aws/chime/model/BatchUpdateUserResult.h>
 #include <aws/chime/model/CreateAccountResult.h>
+#include <aws/chime/model/CreateAppInstanceResult.h>
+#include <aws/chime/model/CreateAppInstanceAdminResult.h>
+#include <aws/chime/model/CreateAppInstanceUserResult.h>
 #include <aws/chime/model/CreateAttendeeResult.h>
 #include <aws/chime/model/CreateBotResult.h>
+#include <aws/chime/model/CreateChannelResult.h>
+#include <aws/chime/model/CreateChannelBanResult.h>
+#include <aws/chime/model/CreateChannelMembershipResult.h>
+#include <aws/chime/model/CreateChannelModeratorResult.h>
 #include <aws/chime/model/CreateMeetingResult.h>
 #include <aws/chime/model/CreateMeetingDialOutResult.h>
 #include <aws/chime/model/CreateMeetingWithAttendeesResult.h>
@@ -39,17 +46,30 @@
 #include <aws/chime/model/CreateVoiceConnectorResult.h>
 #include <aws/chime/model/CreateVoiceConnectorGroupResult.h>
 #include <aws/chime/model/DeleteAccountResult.h>
+#include <aws/chime/model/DescribeAppInstanceResult.h>
+#include <aws/chime/model/DescribeAppInstanceAdminResult.h>
+#include <aws/chime/model/DescribeAppInstanceUserResult.h>
+#include <aws/chime/model/DescribeChannelResult.h>
+#include <aws/chime/model/DescribeChannelBanResult.h>
+#include <aws/chime/model/DescribeChannelMembershipResult.h>
+#include <aws/chime/model/DescribeChannelMembershipForAppInstanceUserResult.h>
+#include <aws/chime/model/DescribeChannelModeratedByAppInstanceUserResult.h>
+#include <aws/chime/model/DescribeChannelModeratorResult.h>
 #include <aws/chime/model/DisassociatePhoneNumberFromUserResult.h>
 #include <aws/chime/model/DisassociatePhoneNumbersFromVoiceConnectorResult.h>
 #include <aws/chime/model/DisassociatePhoneNumbersFromVoiceConnectorGroupResult.h>
 #include <aws/chime/model/DisassociateSigninDelegateGroupsFromAccountResult.h>
 #include <aws/chime/model/GetAccountResult.h>
 #include <aws/chime/model/GetAccountSettingsResult.h>
+#include <aws/chime/model/GetAppInstanceRetentionSettingsResult.h>
+#include <aws/chime/model/GetAppInstanceStreamingConfigurationsResult.h>
 #include <aws/chime/model/GetAttendeeResult.h>
 #include <aws/chime/model/GetBotResult.h>
+#include <aws/chime/model/GetChannelMessageResult.h>
 #include <aws/chime/model/GetEventsConfigurationResult.h>
 #include <aws/chime/model/GetGlobalSettingsResult.h>
 #include <aws/chime/model/GetMeetingResult.h>
+#include <aws/chime/model/GetMessagingSessionEndpointResult.h>
 #include <aws/chime/model/GetPhoneNumberResult.h>
 #include <aws/chime/model/GetPhoneNumberOrderResult.h>
 #include <aws/chime/model/GetPhoneNumberSettingsResult.h>
@@ -72,9 +92,19 @@
 #include <aws/chime/model/GetVoiceConnectorTerminationHealthResult.h>
 #include <aws/chime/model/InviteUsersResult.h>
 #include <aws/chime/model/ListAccountsResult.h>
+#include <aws/chime/model/ListAppInstanceAdminsResult.h>
+#include <aws/chime/model/ListAppInstanceUsersResult.h>
+#include <aws/chime/model/ListAppInstancesResult.h>
 #include <aws/chime/model/ListAttendeeTagsResult.h>
 #include <aws/chime/model/ListAttendeesResult.h>
 #include <aws/chime/model/ListBotsResult.h>
+#include <aws/chime/model/ListChannelBansResult.h>
+#include <aws/chime/model/ListChannelMembershipsResult.h>
+#include <aws/chime/model/ListChannelMembershipsForAppInstanceUserResult.h>
+#include <aws/chime/model/ListChannelMessagesResult.h>
+#include <aws/chime/model/ListChannelModeratorsResult.h>
+#include <aws/chime/model/ListChannelsResult.h>
+#include <aws/chime/model/ListChannelsModeratedByAppInstanceUserResult.h>
 #include <aws/chime/model/ListMeetingTagsResult.h>
 #include <aws/chime/model/ListMeetingsResult.h>
 #include <aws/chime/model/ListPhoneNumberOrdersResult.h>
@@ -90,6 +120,8 @@
 #include <aws/chime/model/ListVoiceConnectorTerminationCredentialsResult.h>
 #include <aws/chime/model/ListVoiceConnectorsResult.h>
 #include <aws/chime/model/LogoutUserResult.h>
+#include <aws/chime/model/PutAppInstanceRetentionSettingsResult.h>
+#include <aws/chime/model/PutAppInstanceStreamingConfigurationsResult.h>
 #include <aws/chime/model/PutEventsConfigurationResult.h>
 #include <aws/chime/model/PutRetentionSettingsResult.h>
 #include <aws/chime/model/PutSipMediaApplicationLoggingConfigurationResult.h>
@@ -99,15 +131,22 @@
 #include <aws/chime/model/PutVoiceConnectorProxyResult.h>
 #include <aws/chime/model/PutVoiceConnectorStreamingConfigurationResult.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationResult.h>
+#include <aws/chime/model/RedactChannelMessageResult.h>
 #include <aws/chime/model/RedactConversationMessageResult.h>
 #include <aws/chime/model/RedactRoomMessageResult.h>
 #include <aws/chime/model/RegenerateSecurityTokenResult.h>
 #include <aws/chime/model/ResetPersonalPINResult.h>
 #include <aws/chime/model/RestorePhoneNumberResult.h>
 #include <aws/chime/model/SearchAvailablePhoneNumbersResult.h>
+#include <aws/chime/model/SendChannelMessageResult.h>
 #include <aws/chime/model/UpdateAccountResult.h>
 #include <aws/chime/model/UpdateAccountSettingsResult.h>
+#include <aws/chime/model/UpdateAppInstanceResult.h>
+#include <aws/chime/model/UpdateAppInstanceUserResult.h>
 #include <aws/chime/model/UpdateBotResult.h>
+#include <aws/chime/model/UpdateChannelResult.h>
+#include <aws/chime/model/UpdateChannelMessageResult.h>
+#include <aws/chime/model/UpdateChannelReadMarkerResult.h>
 #include <aws/chime/model/UpdatePhoneNumberResult.h>
 #include <aws/chime/model/UpdateProxySessionResult.h>
 #include <aws/chime/model/UpdateRoomResult.h>
@@ -169,8 +208,15 @@ namespace Model
         class BatchUpdatePhoneNumberRequest;
         class BatchUpdateUserRequest;
         class CreateAccountRequest;
+        class CreateAppInstanceRequest;
+        class CreateAppInstanceAdminRequest;
+        class CreateAppInstanceUserRequest;
         class CreateAttendeeRequest;
         class CreateBotRequest;
+        class CreateChannelRequest;
+        class CreateChannelBanRequest;
+        class CreateChannelMembershipRequest;
+        class CreateChannelModeratorRequest;
         class CreateMeetingRequest;
         class CreateMeetingDialOutRequest;
         class CreateMeetingWithAttendeesRequest;
@@ -185,7 +231,16 @@ namespace Model
         class CreateVoiceConnectorRequest;
         class CreateVoiceConnectorGroupRequest;
         class DeleteAccountRequest;
+        class DeleteAppInstanceRequest;
+        class DeleteAppInstanceAdminRequest;
+        class DeleteAppInstanceStreamingConfigurationsRequest;
+        class DeleteAppInstanceUserRequest;
         class DeleteAttendeeRequest;
+        class DeleteChannelRequest;
+        class DeleteChannelBanRequest;
+        class DeleteChannelMembershipRequest;
+        class DeleteChannelMessageRequest;
+        class DeleteChannelModeratorRequest;
         class DeleteEventsConfigurationRequest;
         class DeleteMeetingRequest;
         class DeletePhoneNumberRequest;
@@ -202,16 +257,29 @@ namespace Model
         class DeleteVoiceConnectorStreamingConfigurationRequest;
         class DeleteVoiceConnectorTerminationRequest;
         class DeleteVoiceConnectorTerminationCredentialsRequest;
+        class DescribeAppInstanceRequest;
+        class DescribeAppInstanceAdminRequest;
+        class DescribeAppInstanceUserRequest;
+        class DescribeChannelRequest;
+        class DescribeChannelBanRequest;
+        class DescribeChannelMembershipRequest;
+        class DescribeChannelMembershipForAppInstanceUserRequest;
+        class DescribeChannelModeratedByAppInstanceUserRequest;
+        class DescribeChannelModeratorRequest;
         class DisassociatePhoneNumberFromUserRequest;
         class DisassociatePhoneNumbersFromVoiceConnectorRequest;
         class DisassociatePhoneNumbersFromVoiceConnectorGroupRequest;
         class DisassociateSigninDelegateGroupsFromAccountRequest;
         class GetAccountRequest;
         class GetAccountSettingsRequest;
+        class GetAppInstanceRetentionSettingsRequest;
+        class GetAppInstanceStreamingConfigurationsRequest;
         class GetAttendeeRequest;
         class GetBotRequest;
+        class GetChannelMessageRequest;
         class GetEventsConfigurationRequest;
         class GetMeetingRequest;
+        class GetMessagingSessionEndpointRequest;
         class GetPhoneNumberRequest;
         class GetPhoneNumberOrderRequest;
         class GetProxySessionRequest;
@@ -233,9 +301,19 @@ namespace Model
         class GetVoiceConnectorTerminationHealthRequest;
         class InviteUsersRequest;
         class ListAccountsRequest;
+        class ListAppInstanceAdminsRequest;
+        class ListAppInstanceUsersRequest;
+        class ListAppInstancesRequest;
         class ListAttendeeTagsRequest;
         class ListAttendeesRequest;
         class ListBotsRequest;
+        class ListChannelBansRequest;
+        class ListChannelMembershipsRequest;
+        class ListChannelMembershipsForAppInstanceUserRequest;
+        class ListChannelMessagesRequest;
+        class ListChannelModeratorsRequest;
+        class ListChannelsRequest;
+        class ListChannelsModeratedByAppInstanceUserRequest;
         class ListMeetingTagsRequest;
         class ListMeetingsRequest;
         class ListPhoneNumberOrdersRequest;
@@ -251,6 +329,8 @@ namespace Model
         class ListVoiceConnectorTerminationCredentialsRequest;
         class ListVoiceConnectorsRequest;
         class LogoutUserRequest;
+        class PutAppInstanceRetentionSettingsRequest;
+        class PutAppInstanceStreamingConfigurationsRequest;
         class PutEventsConfigurationRequest;
         class PutRetentionSettingsRequest;
         class PutSipMediaApplicationLoggingConfigurationRequest;
@@ -261,12 +341,14 @@ namespace Model
         class PutVoiceConnectorStreamingConfigurationRequest;
         class PutVoiceConnectorTerminationRequest;
         class PutVoiceConnectorTerminationCredentialsRequest;
+        class RedactChannelMessageRequest;
         class RedactConversationMessageRequest;
         class RedactRoomMessageRequest;
         class RegenerateSecurityTokenRequest;
         class ResetPersonalPINRequest;
         class RestorePhoneNumberRequest;
         class SearchAvailablePhoneNumbersRequest;
+        class SendChannelMessageRequest;
         class TagAttendeeRequest;
         class TagMeetingRequest;
         class TagResourceRequest;
@@ -275,7 +357,12 @@ namespace Model
         class UntagResourceRequest;
         class UpdateAccountRequest;
         class UpdateAccountSettingsRequest;
+        class UpdateAppInstanceRequest;
+        class UpdateAppInstanceUserRequest;
         class UpdateBotRequest;
+        class UpdateChannelRequest;
+        class UpdateChannelMessageRequest;
+        class UpdateChannelReadMarkerRequest;
         class UpdateGlobalSettingsRequest;
         class UpdatePhoneNumberRequest;
         class UpdatePhoneNumberSettingsRequest;
@@ -301,8 +388,15 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchUpdatePhoneNumberResult, ChimeError> BatchUpdatePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<BatchUpdateUserResult, ChimeError> BatchUpdateUserOutcome;
         typedef Aws::Utils::Outcome<CreateAccountResult, ChimeError> CreateAccountOutcome;
+        typedef Aws::Utils::Outcome<CreateAppInstanceResult, ChimeError> CreateAppInstanceOutcome;
+        typedef Aws::Utils::Outcome<CreateAppInstanceAdminResult, ChimeError> CreateAppInstanceAdminOutcome;
+        typedef Aws::Utils::Outcome<CreateAppInstanceUserResult, ChimeError> CreateAppInstanceUserOutcome;
         typedef Aws::Utils::Outcome<CreateAttendeeResult, ChimeError> CreateAttendeeOutcome;
         typedef Aws::Utils::Outcome<CreateBotResult, ChimeError> CreateBotOutcome;
+        typedef Aws::Utils::Outcome<CreateChannelResult, ChimeError> CreateChannelOutcome;
+        typedef Aws::Utils::Outcome<CreateChannelBanResult, ChimeError> CreateChannelBanOutcome;
+        typedef Aws::Utils::Outcome<CreateChannelMembershipResult, ChimeError> CreateChannelMembershipOutcome;
+        typedef Aws::Utils::Outcome<CreateChannelModeratorResult, ChimeError> CreateChannelModeratorOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingResult, ChimeError> CreateMeetingOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingDialOutResult, ChimeError> CreateMeetingDialOutOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingWithAttendeesResult, ChimeError> CreateMeetingWithAttendeesOutcome;
@@ -317,7 +411,16 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateVoiceConnectorResult, ChimeError> CreateVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<CreateVoiceConnectorGroupResult, ChimeError> CreateVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteAccountResult, ChimeError> DeleteAccountOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteAppInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteAppInstanceAdminOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteAppInstanceStreamingConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteAppInstanceUserOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteAttendeeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteChannelOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteChannelBanOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteChannelMembershipOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteChannelMessageOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteChannelModeratorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteMeetingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeletePhoneNumberOutcome;
@@ -334,17 +437,30 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteVoiceConnectorStreamingConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteVoiceConnectorTerminationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteVoiceConnectorTerminationCredentialsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAppInstanceResult, ChimeError> DescribeAppInstanceOutcome;
+        typedef Aws::Utils::Outcome<DescribeAppInstanceAdminResult, ChimeError> DescribeAppInstanceAdminOutcome;
+        typedef Aws::Utils::Outcome<DescribeAppInstanceUserResult, ChimeError> DescribeAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<DescribeChannelResult, ChimeError> DescribeChannelOutcome;
+        typedef Aws::Utils::Outcome<DescribeChannelBanResult, ChimeError> DescribeChannelBanOutcome;
+        typedef Aws::Utils::Outcome<DescribeChannelMembershipResult, ChimeError> DescribeChannelMembershipOutcome;
+        typedef Aws::Utils::Outcome<DescribeChannelMembershipForAppInstanceUserResult, ChimeError> DescribeChannelMembershipForAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<DescribeChannelModeratedByAppInstanceUserResult, ChimeError> DescribeChannelModeratedByAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<DescribeChannelModeratorResult, ChimeError> DescribeChannelModeratorOutcome;
         typedef Aws::Utils::Outcome<DisassociatePhoneNumberFromUserResult, ChimeError> DisassociatePhoneNumberFromUserOutcome;
         typedef Aws::Utils::Outcome<DisassociatePhoneNumbersFromVoiceConnectorResult, ChimeError> DisassociatePhoneNumbersFromVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<DisassociatePhoneNumbersFromVoiceConnectorGroupResult, ChimeError> DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<DisassociateSigninDelegateGroupsFromAccountResult, ChimeError> DisassociateSigninDelegateGroupsFromAccountOutcome;
         typedef Aws::Utils::Outcome<GetAccountResult, ChimeError> GetAccountOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, ChimeError> GetAccountSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetAppInstanceRetentionSettingsResult, ChimeError> GetAppInstanceRetentionSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetAppInstanceStreamingConfigurationsResult, ChimeError> GetAppInstanceStreamingConfigurationsOutcome;
         typedef Aws::Utils::Outcome<GetAttendeeResult, ChimeError> GetAttendeeOutcome;
         typedef Aws::Utils::Outcome<GetBotResult, ChimeError> GetBotOutcome;
+        typedef Aws::Utils::Outcome<GetChannelMessageResult, ChimeError> GetChannelMessageOutcome;
         typedef Aws::Utils::Outcome<GetEventsConfigurationResult, ChimeError> GetEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetGlobalSettingsResult, ChimeError> GetGlobalSettingsOutcome;
         typedef Aws::Utils::Outcome<GetMeetingResult, ChimeError> GetMeetingOutcome;
+        typedef Aws::Utils::Outcome<GetMessagingSessionEndpointResult, ChimeError> GetMessagingSessionEndpointOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberResult, ChimeError> GetPhoneNumberOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberOrderResult, ChimeError> GetPhoneNumberOrderOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberSettingsResult, ChimeError> GetPhoneNumberSettingsOutcome;
@@ -367,9 +483,19 @@ namespace Model
         typedef Aws::Utils::Outcome<GetVoiceConnectorTerminationHealthResult, ChimeError> GetVoiceConnectorTerminationHealthOutcome;
         typedef Aws::Utils::Outcome<InviteUsersResult, ChimeError> InviteUsersOutcome;
         typedef Aws::Utils::Outcome<ListAccountsResult, ChimeError> ListAccountsOutcome;
+        typedef Aws::Utils::Outcome<ListAppInstanceAdminsResult, ChimeError> ListAppInstanceAdminsOutcome;
+        typedef Aws::Utils::Outcome<ListAppInstanceUsersResult, ChimeError> ListAppInstanceUsersOutcome;
+        typedef Aws::Utils::Outcome<ListAppInstancesResult, ChimeError> ListAppInstancesOutcome;
         typedef Aws::Utils::Outcome<ListAttendeeTagsResult, ChimeError> ListAttendeeTagsOutcome;
         typedef Aws::Utils::Outcome<ListAttendeesResult, ChimeError> ListAttendeesOutcome;
         typedef Aws::Utils::Outcome<ListBotsResult, ChimeError> ListBotsOutcome;
+        typedef Aws::Utils::Outcome<ListChannelBansResult, ChimeError> ListChannelBansOutcome;
+        typedef Aws::Utils::Outcome<ListChannelMembershipsResult, ChimeError> ListChannelMembershipsOutcome;
+        typedef Aws::Utils::Outcome<ListChannelMembershipsForAppInstanceUserResult, ChimeError> ListChannelMembershipsForAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<ListChannelMessagesResult, ChimeError> ListChannelMessagesOutcome;
+        typedef Aws::Utils::Outcome<ListChannelModeratorsResult, ChimeError> ListChannelModeratorsOutcome;
+        typedef Aws::Utils::Outcome<ListChannelsResult, ChimeError> ListChannelsOutcome;
+        typedef Aws::Utils::Outcome<ListChannelsModeratedByAppInstanceUserResult, ChimeError> ListChannelsModeratedByAppInstanceUserOutcome;
         typedef Aws::Utils::Outcome<ListMeetingTagsResult, ChimeError> ListMeetingTagsOutcome;
         typedef Aws::Utils::Outcome<ListMeetingsResult, ChimeError> ListMeetingsOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumberOrdersResult, ChimeError> ListPhoneNumberOrdersOutcome;
@@ -385,6 +511,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListVoiceConnectorTerminationCredentialsResult, ChimeError> ListVoiceConnectorTerminationCredentialsOutcome;
         typedef Aws::Utils::Outcome<ListVoiceConnectorsResult, ChimeError> ListVoiceConnectorsOutcome;
         typedef Aws::Utils::Outcome<LogoutUserResult, ChimeError> LogoutUserOutcome;
+        typedef Aws::Utils::Outcome<PutAppInstanceRetentionSettingsResult, ChimeError> PutAppInstanceRetentionSettingsOutcome;
+        typedef Aws::Utils::Outcome<PutAppInstanceStreamingConfigurationsResult, ChimeError> PutAppInstanceStreamingConfigurationsOutcome;
         typedef Aws::Utils::Outcome<PutEventsConfigurationResult, ChimeError> PutEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutRetentionSettingsResult, ChimeError> PutRetentionSettingsOutcome;
         typedef Aws::Utils::Outcome<PutSipMediaApplicationLoggingConfigurationResult, ChimeError> PutSipMediaApplicationLoggingConfigurationOutcome;
@@ -395,12 +523,14 @@ namespace Model
         typedef Aws::Utils::Outcome<PutVoiceConnectorStreamingConfigurationResult, ChimeError> PutVoiceConnectorStreamingConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorTerminationResult, ChimeError> PutVoiceConnectorTerminationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> PutVoiceConnectorTerminationCredentialsOutcome;
+        typedef Aws::Utils::Outcome<RedactChannelMessageResult, ChimeError> RedactChannelMessageOutcome;
         typedef Aws::Utils::Outcome<RedactConversationMessageResult, ChimeError> RedactConversationMessageOutcome;
         typedef Aws::Utils::Outcome<RedactRoomMessageResult, ChimeError> RedactRoomMessageOutcome;
         typedef Aws::Utils::Outcome<RegenerateSecurityTokenResult, ChimeError> RegenerateSecurityTokenOutcome;
         typedef Aws::Utils::Outcome<ResetPersonalPINResult, ChimeError> ResetPersonalPINOutcome;
         typedef Aws::Utils::Outcome<RestorePhoneNumberResult, ChimeError> RestorePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ChimeError> SearchAvailablePhoneNumbersOutcome;
+        typedef Aws::Utils::Outcome<SendChannelMessageResult, ChimeError> SendChannelMessageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> TagAttendeeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> TagMeetingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> TagResourceOutcome;
@@ -409,7 +539,12 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountResult, ChimeError> UpdateAccountOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, ChimeError> UpdateAccountSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateAppInstanceResult, ChimeError> UpdateAppInstanceOutcome;
+        typedef Aws::Utils::Outcome<UpdateAppInstanceUserResult, ChimeError> UpdateAppInstanceUserOutcome;
         typedef Aws::Utils::Outcome<UpdateBotResult, ChimeError> UpdateBotOutcome;
+        typedef Aws::Utils::Outcome<UpdateChannelResult, ChimeError> UpdateChannelOutcome;
+        typedef Aws::Utils::Outcome<UpdateChannelMessageResult, ChimeError> UpdateChannelMessageOutcome;
+        typedef Aws::Utils::Outcome<UpdateChannelReadMarkerResult, ChimeError> UpdateChannelReadMarkerOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> UpdateGlobalSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, ChimeError> UpdatePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> UpdatePhoneNumberSettingsOutcome;
@@ -435,8 +570,15 @@ namespace Model
         typedef std::future<BatchUpdatePhoneNumberOutcome> BatchUpdatePhoneNumberOutcomeCallable;
         typedef std::future<BatchUpdateUserOutcome> BatchUpdateUserOutcomeCallable;
         typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
+        typedef std::future<CreateAppInstanceOutcome> CreateAppInstanceOutcomeCallable;
+        typedef std::future<CreateAppInstanceAdminOutcome> CreateAppInstanceAdminOutcomeCallable;
+        typedef std::future<CreateAppInstanceUserOutcome> CreateAppInstanceUserOutcomeCallable;
         typedef std::future<CreateAttendeeOutcome> CreateAttendeeOutcomeCallable;
         typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
+        typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
+        typedef std::future<CreateChannelBanOutcome> CreateChannelBanOutcomeCallable;
+        typedef std::future<CreateChannelMembershipOutcome> CreateChannelMembershipOutcomeCallable;
+        typedef std::future<CreateChannelModeratorOutcome> CreateChannelModeratorOutcomeCallable;
         typedef std::future<CreateMeetingOutcome> CreateMeetingOutcomeCallable;
         typedef std::future<CreateMeetingDialOutOutcome> CreateMeetingDialOutOutcomeCallable;
         typedef std::future<CreateMeetingWithAttendeesOutcome> CreateMeetingWithAttendeesOutcomeCallable;
@@ -451,7 +593,16 @@ namespace Model
         typedef std::future<CreateVoiceConnectorOutcome> CreateVoiceConnectorOutcomeCallable;
         typedef std::future<CreateVoiceConnectorGroupOutcome> CreateVoiceConnectorGroupOutcomeCallable;
         typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
+        typedef std::future<DeleteAppInstanceOutcome> DeleteAppInstanceOutcomeCallable;
+        typedef std::future<DeleteAppInstanceAdminOutcome> DeleteAppInstanceAdminOutcomeCallable;
+        typedef std::future<DeleteAppInstanceStreamingConfigurationsOutcome> DeleteAppInstanceStreamingConfigurationsOutcomeCallable;
+        typedef std::future<DeleteAppInstanceUserOutcome> DeleteAppInstanceUserOutcomeCallable;
         typedef std::future<DeleteAttendeeOutcome> DeleteAttendeeOutcomeCallable;
+        typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
+        typedef std::future<DeleteChannelBanOutcome> DeleteChannelBanOutcomeCallable;
+        typedef std::future<DeleteChannelMembershipOutcome> DeleteChannelMembershipOutcomeCallable;
+        typedef std::future<DeleteChannelMessageOutcome> DeleteChannelMessageOutcomeCallable;
+        typedef std::future<DeleteChannelModeratorOutcome> DeleteChannelModeratorOutcomeCallable;
         typedef std::future<DeleteEventsConfigurationOutcome> DeleteEventsConfigurationOutcomeCallable;
         typedef std::future<DeleteMeetingOutcome> DeleteMeetingOutcomeCallable;
         typedef std::future<DeletePhoneNumberOutcome> DeletePhoneNumberOutcomeCallable;
@@ -468,17 +619,30 @@ namespace Model
         typedef std::future<DeleteVoiceConnectorStreamingConfigurationOutcome> DeleteVoiceConnectorStreamingConfigurationOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorTerminationOutcome> DeleteVoiceConnectorTerminationOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorTerminationCredentialsOutcome> DeleteVoiceConnectorTerminationCredentialsOutcomeCallable;
+        typedef std::future<DescribeAppInstanceOutcome> DescribeAppInstanceOutcomeCallable;
+        typedef std::future<DescribeAppInstanceAdminOutcome> DescribeAppInstanceAdminOutcomeCallable;
+        typedef std::future<DescribeAppInstanceUserOutcome> DescribeAppInstanceUserOutcomeCallable;
+        typedef std::future<DescribeChannelOutcome> DescribeChannelOutcomeCallable;
+        typedef std::future<DescribeChannelBanOutcome> DescribeChannelBanOutcomeCallable;
+        typedef std::future<DescribeChannelMembershipOutcome> DescribeChannelMembershipOutcomeCallable;
+        typedef std::future<DescribeChannelMembershipForAppInstanceUserOutcome> DescribeChannelMembershipForAppInstanceUserOutcomeCallable;
+        typedef std::future<DescribeChannelModeratedByAppInstanceUserOutcome> DescribeChannelModeratedByAppInstanceUserOutcomeCallable;
+        typedef std::future<DescribeChannelModeratorOutcome> DescribeChannelModeratorOutcomeCallable;
         typedef std::future<DisassociatePhoneNumberFromUserOutcome> DisassociatePhoneNumberFromUserOutcomeCallable;
         typedef std::future<DisassociatePhoneNumbersFromVoiceConnectorOutcome> DisassociatePhoneNumbersFromVoiceConnectorOutcomeCallable;
         typedef std::future<DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome> DisassociatePhoneNumbersFromVoiceConnectorGroupOutcomeCallable;
         typedef std::future<DisassociateSigninDelegateGroupsFromAccountOutcome> DisassociateSigninDelegateGroupsFromAccountOutcomeCallable;
         typedef std::future<GetAccountOutcome> GetAccountOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
+        typedef std::future<GetAppInstanceRetentionSettingsOutcome> GetAppInstanceRetentionSettingsOutcomeCallable;
+        typedef std::future<GetAppInstanceStreamingConfigurationsOutcome> GetAppInstanceStreamingConfigurationsOutcomeCallable;
         typedef std::future<GetAttendeeOutcome> GetAttendeeOutcomeCallable;
         typedef std::future<GetBotOutcome> GetBotOutcomeCallable;
+        typedef std::future<GetChannelMessageOutcome> GetChannelMessageOutcomeCallable;
         typedef std::future<GetEventsConfigurationOutcome> GetEventsConfigurationOutcomeCallable;
         typedef std::future<GetGlobalSettingsOutcome> GetGlobalSettingsOutcomeCallable;
         typedef std::future<GetMeetingOutcome> GetMeetingOutcomeCallable;
+        typedef std::future<GetMessagingSessionEndpointOutcome> GetMessagingSessionEndpointOutcomeCallable;
         typedef std::future<GetPhoneNumberOutcome> GetPhoneNumberOutcomeCallable;
         typedef std::future<GetPhoneNumberOrderOutcome> GetPhoneNumberOrderOutcomeCallable;
         typedef std::future<GetPhoneNumberSettingsOutcome> GetPhoneNumberSettingsOutcomeCallable;
@@ -501,9 +665,19 @@ namespace Model
         typedef std::future<GetVoiceConnectorTerminationHealthOutcome> GetVoiceConnectorTerminationHealthOutcomeCallable;
         typedef std::future<InviteUsersOutcome> InviteUsersOutcomeCallable;
         typedef std::future<ListAccountsOutcome> ListAccountsOutcomeCallable;
+        typedef std::future<ListAppInstanceAdminsOutcome> ListAppInstanceAdminsOutcomeCallable;
+        typedef std::future<ListAppInstanceUsersOutcome> ListAppInstanceUsersOutcomeCallable;
+        typedef std::future<ListAppInstancesOutcome> ListAppInstancesOutcomeCallable;
         typedef std::future<ListAttendeeTagsOutcome> ListAttendeeTagsOutcomeCallable;
         typedef std::future<ListAttendeesOutcome> ListAttendeesOutcomeCallable;
         typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
+        typedef std::future<ListChannelBansOutcome> ListChannelBansOutcomeCallable;
+        typedef std::future<ListChannelMembershipsOutcome> ListChannelMembershipsOutcomeCallable;
+        typedef std::future<ListChannelMembershipsForAppInstanceUserOutcome> ListChannelMembershipsForAppInstanceUserOutcomeCallable;
+        typedef std::future<ListChannelMessagesOutcome> ListChannelMessagesOutcomeCallable;
+        typedef std::future<ListChannelModeratorsOutcome> ListChannelModeratorsOutcomeCallable;
+        typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
+        typedef std::future<ListChannelsModeratedByAppInstanceUserOutcome> ListChannelsModeratedByAppInstanceUserOutcomeCallable;
         typedef std::future<ListMeetingTagsOutcome> ListMeetingTagsOutcomeCallable;
         typedef std::future<ListMeetingsOutcome> ListMeetingsOutcomeCallable;
         typedef std::future<ListPhoneNumberOrdersOutcome> ListPhoneNumberOrdersOutcomeCallable;
@@ -519,6 +693,8 @@ namespace Model
         typedef std::future<ListVoiceConnectorTerminationCredentialsOutcome> ListVoiceConnectorTerminationCredentialsOutcomeCallable;
         typedef std::future<ListVoiceConnectorsOutcome> ListVoiceConnectorsOutcomeCallable;
         typedef std::future<LogoutUserOutcome> LogoutUserOutcomeCallable;
+        typedef std::future<PutAppInstanceRetentionSettingsOutcome> PutAppInstanceRetentionSettingsOutcomeCallable;
+        typedef std::future<PutAppInstanceStreamingConfigurationsOutcome> PutAppInstanceStreamingConfigurationsOutcomeCallable;
         typedef std::future<PutEventsConfigurationOutcome> PutEventsConfigurationOutcomeCallable;
         typedef std::future<PutRetentionSettingsOutcome> PutRetentionSettingsOutcomeCallable;
         typedef std::future<PutSipMediaApplicationLoggingConfigurationOutcome> PutSipMediaApplicationLoggingConfigurationOutcomeCallable;
@@ -529,12 +705,14 @@ namespace Model
         typedef std::future<PutVoiceConnectorStreamingConfigurationOutcome> PutVoiceConnectorStreamingConfigurationOutcomeCallable;
         typedef std::future<PutVoiceConnectorTerminationOutcome> PutVoiceConnectorTerminationOutcomeCallable;
         typedef std::future<PutVoiceConnectorTerminationCredentialsOutcome> PutVoiceConnectorTerminationCredentialsOutcomeCallable;
+        typedef std::future<RedactChannelMessageOutcome> RedactChannelMessageOutcomeCallable;
         typedef std::future<RedactConversationMessageOutcome> RedactConversationMessageOutcomeCallable;
         typedef std::future<RedactRoomMessageOutcome> RedactRoomMessageOutcomeCallable;
         typedef std::future<RegenerateSecurityTokenOutcome> RegenerateSecurityTokenOutcomeCallable;
         typedef std::future<ResetPersonalPINOutcome> ResetPersonalPINOutcomeCallable;
         typedef std::future<RestorePhoneNumberOutcome> RestorePhoneNumberOutcomeCallable;
         typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
+        typedef std::future<SendChannelMessageOutcome> SendChannelMessageOutcomeCallable;
         typedef std::future<TagAttendeeOutcome> TagAttendeeOutcomeCallable;
         typedef std::future<TagMeetingOutcome> TagMeetingOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -543,7 +721,12 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAccountOutcome> UpdateAccountOutcomeCallable;
         typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
+        typedef std::future<UpdateAppInstanceOutcome> UpdateAppInstanceOutcomeCallable;
+        typedef std::future<UpdateAppInstanceUserOutcome> UpdateAppInstanceUserOutcomeCallable;
         typedef std::future<UpdateBotOutcome> UpdateBotOutcomeCallable;
+        typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
+        typedef std::future<UpdateChannelMessageOutcome> UpdateChannelMessageOutcomeCallable;
+        typedef std::future<UpdateChannelReadMarkerOutcome> UpdateChannelReadMarkerOutcomeCallable;
         typedef std::future<UpdateGlobalSettingsOutcome> UpdateGlobalSettingsOutcomeCallable;
         typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
         typedef std::future<UpdatePhoneNumberSettingsOutcome> UpdatePhoneNumberSettingsOutcomeCallable;
@@ -572,8 +755,15 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::BatchUpdatePhoneNumberRequest&, const Model::BatchUpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdatePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchUpdateUserRequest&, const Model::BatchUpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateAccountRequest&, const Model::CreateAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateAppInstanceRequest&, const Model::CreateAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppInstanceResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateAppInstanceAdminRequest&, const Model::CreateAppInstanceAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppInstanceAdminResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateAppInstanceUserRequest&, const Model::CreateAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppInstanceUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateAttendeeRequest&, const Model::CreateAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateBotRequest&, const Model::CreateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateChannelBanRequest&, const Model::CreateChannelBanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelBanResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateChannelMembershipRequest&, const Model::CreateChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelMembershipResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateChannelModeratorRequest&, const Model::CreateChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelModeratorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateMeetingRequest&, const Model::CreateMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateMeetingDialOutRequest&, const Model::CreateMeetingDialOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingDialOutResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateMeetingWithAttendeesRequest&, const Model::CreateMeetingWithAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingWithAttendeesResponseReceivedHandler;
@@ -588,7 +778,16 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::CreateVoiceConnectorRequest&, const Model::CreateVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateVoiceConnectorGroupRequest&, const Model::CreateVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteAccountRequest&, const Model::DeleteAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteAppInstanceRequest&, const Model::DeleteAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteAppInstanceAdminRequest&, const Model::DeleteAppInstanceAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceAdminResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteAppInstanceStreamingConfigurationsRequest&, const Model::DeleteAppInstanceStreamingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceStreamingConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteAppInstanceUserRequest&, const Model::DeleteAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteAttendeeRequest&, const Model::DeleteAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttendeeResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteChannelBanRequest&, const Model::DeleteChannelBanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelBanResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteChannelMembershipRequest&, const Model::DeleteChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelMembershipResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteChannelMessageRequest&, const Model::DeleteChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelMessageResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteChannelModeratorRequest&, const Model::DeleteChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelModeratorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteEventsConfigurationRequest&, const Model::DeleteEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteMeetingRequest&, const Model::DeleteMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeletePhoneNumberRequest&, const Model::DeletePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePhoneNumberResponseReceivedHandler;
@@ -605,17 +804,30 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorStreamingConfigurationRequest&, const Model::DeleteVoiceConnectorStreamingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorStreamingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorTerminationRequest&, const Model::DeleteVoiceConnectorTerminationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorTerminationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorTerminationCredentialsRequest&, const Model::DeleteVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorTerminationCredentialsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DescribeAppInstanceRequest&, const Model::DescribeAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DescribeAppInstanceAdminRequest&, const Model::DescribeAppInstanceAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceAdminResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DescribeAppInstanceUserRequest&, const Model::DescribeAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DescribeChannelRequest&, const Model::DescribeChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DescribeChannelBanRequest&, const Model::DescribeChannelBanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelBanResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DescribeChannelMembershipRequest&, const Model::DescribeChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelMembershipResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DescribeChannelMembershipForAppInstanceUserRequest&, const Model::DescribeChannelMembershipForAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DescribeChannelModeratedByAppInstanceUserRequest&, const Model::DescribeChannelModeratedByAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DescribeChannelModeratorRequest&, const Model::DescribeChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelModeratorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DisassociatePhoneNumberFromUserRequest&, const Model::DisassociatePhoneNumberFromUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePhoneNumberFromUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DisassociatePhoneNumbersFromVoiceConnectorRequest&, const Model::DisassociatePhoneNumbersFromVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePhoneNumbersFromVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DisassociatePhoneNumbersFromVoiceConnectorGroupRequest&, const Model::DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePhoneNumbersFromVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DisassociateSigninDelegateGroupsFromAccountRequest&, const Model::DisassociateSigninDelegateGroupsFromAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSigninDelegateGroupsFromAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetAccountRequest&, const Model::GetAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetAppInstanceRetentionSettingsRequest&, const Model::GetAppInstanceRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppInstanceRetentionSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetAppInstanceStreamingConfigurationsRequest&, const Model::GetAppInstanceStreamingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppInstanceStreamingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetAttendeeRequest&, const Model::GetAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetBotRequest&, const Model::GetBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBotResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetChannelMessageRequest&, const Model::GetChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetEventsConfigurationRequest&, const Model::GetEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGlobalSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetMeetingRequest&, const Model::GetMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMeetingResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetMessagingSessionEndpointRequest&, const Model::GetMessagingSessionEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMessagingSessionEndpointResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberRequest&, const Model::GetPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberOrderRequest&, const Model::GetPhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberOrderResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberSettingsResponseReceivedHandler;
@@ -638,9 +850,19 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorTerminationHealthRequest&, const Model::GetVoiceConnectorTerminationHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorTerminationHealthResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::InviteUsersRequest&, const Model::InviteUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteUsersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListAccountsRequest&, const Model::ListAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListAppInstanceAdminsRequest&, const Model::ListAppInstanceAdminsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstanceAdminsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListAppInstanceUsersRequest&, const Model::ListAppInstanceUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstanceUsersResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListAppInstancesRequest&, const Model::ListAppInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstancesResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListAttendeeTagsRequest&, const Model::ListAttendeeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttendeeTagsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListAttendeesRequest&, const Model::ListAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttendeesResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListChannelBansRequest&, const Model::ListChannelBansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelBansResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListChannelMembershipsRequest&, const Model::ListChannelMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelMembershipsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListChannelMembershipsForAppInstanceUserRequest&, const Model::ListChannelMembershipsForAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelMembershipsForAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListChannelMessagesRequest&, const Model::ListChannelMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelMessagesResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListChannelModeratorsRequest&, const Model::ListChannelModeratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelModeratorsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListChannelsModeratedByAppInstanceUserRequest&, const Model::ListChannelsModeratedByAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsModeratedByAppInstanceUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListMeetingTagsRequest&, const Model::ListMeetingTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeetingTagsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListMeetingsRequest&, const Model::ListMeetingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeetingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumberOrdersRequest&, const Model::ListPhoneNumberOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumberOrdersResponseReceivedHandler;
@@ -656,6 +878,8 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorTerminationCredentialsRequest&, const Model::ListVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorTerminationCredentialsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorsRequest&, const Model::ListVoiceConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::LogoutUserRequest&, const Model::LogoutUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LogoutUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::PutAppInstanceRetentionSettingsRequest&, const Model::PutAppInstanceRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAppInstanceRetentionSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::PutAppInstanceStreamingConfigurationsRequest&, const Model::PutAppInstanceStreamingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAppInstanceStreamingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutEventsConfigurationRequest&, const Model::PutEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutRetentionSettingsRequest&, const Model::PutRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutSipMediaApplicationLoggingConfigurationRequest&, const Model::PutSipMediaApplicationLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSipMediaApplicationLoggingConfigurationResponseReceivedHandler;
@@ -666,12 +890,14 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorStreamingConfigurationRequest&, const Model::PutVoiceConnectorStreamingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorStreamingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorTerminationRequest&, const Model::PutVoiceConnectorTerminationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorTerminationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorTerminationCredentialsRequest&, const Model::PutVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorTerminationCredentialsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::RedactChannelMessageRequest&, const Model::RedactChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::RedactConversationMessageRequest&, const Model::RedactConversationMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactConversationMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::RedactRoomMessageRequest&, const Model::RedactRoomMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactRoomMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::RegenerateSecurityTokenRequest&, const Model::RegenerateSecurityTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegenerateSecurityTokenResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ResetPersonalPINRequest&, const Model::ResetPersonalPINOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetPersonalPINResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::RestorePhoneNumberRequest&, const Model::RestorePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestorePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::SendChannelMessageRequest&, const Model::SendChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::TagAttendeeRequest&, const Model::TagAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::TagMeetingRequest&, const Model::TagMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -680,7 +906,12 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateAccountRequest&, const Model::UpdateAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateAccountSettingsRequest&, const Model::UpdateAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateAppInstanceRequest&, const Model::UpdateAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppInstanceResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateAppInstanceUserRequest&, const Model::UpdateAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppInstanceUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateBotRequest&, const Model::UpdateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateChannelMessageRequest&, const Model::UpdateChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelMessageResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateChannelReadMarkerRequest&, const Model::UpdateChannelReadMarkerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelReadMarkerResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateGlobalSettingsRequest&, const Model::UpdateGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdatePhoneNumberRequest&, const Model::UpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdatePhoneNumberSettingsRequest&, const Model::UpdatePhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberSettingsResponseReceivedHandler;
@@ -718,9 +949,9 @@ namespace Model
    * Guide</i>. For a list of available Amazon Chime commands, see the <a
    * href="https://docs.aws.amazon.com/cli/latest/reference/chime/index.html">Amazon
    * Chime commands</a> in the <i>AWS CLI Command Reference</i>.</p> </dd> <dt>Using
-   * REST API</dt> <dd> <p>If you use REST to make API calls, you must authenticate
-   * your request by providing a signature. Amazon Chime supports Signature Version
-   * 4. For more information, see <a
+   * REST</dt> <dd> <p>If you use REST to make API calls, you must authenticate your
+   * request by providing a signature. Amazon Chime supports Signature Version 4. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4 Signing Process</a> in the <i>Amazon Web Services General
    * Reference</i>.</p> <p>When making REST API calls, use the service name
@@ -1213,6 +1444,111 @@ namespace Model
         virtual void CreateAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS
+         * Account. Only Messaging SDK customers use this API.
+         * <code>CreateAppInstance</code> supports <code>idempotency</code> behavior as
+         * described in the AWS API Standard.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppInstanceOutcome CreateAppInstance(const Model::CreateAppInstanceRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS
+         * Account. Only Messaging SDK customers use this API.
+         * <code>CreateAppInstance</code> supports <code>idempotency</code> behavior as
+         * described in the AWS API Standard.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAppInstanceOutcomeCallable CreateAppInstanceCallable(const Model::CreateAppInstanceRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS
+         * Account. Only Messaging SDK customers use this API.
+         * <code>CreateAppInstance</code> supports <code>idempotency</code> behavior as
+         * described in the AWS API Standard.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAppInstanceAsync(const Model::CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
+         * The promoted user can perform the following actions. </p> <ul> <li> <p>
+         * <code>ChannelModerator</code> actions across all channels in the app
+         * instance.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p>
+         * </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an
+         * <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppInstanceAdminOutcome CreateAppInstanceAdmin(const Model::CreateAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
+         * The promoted user can perform the following actions. </p> <ul> <li> <p>
+         * <code>ChannelModerator</code> actions across all channels in the app
+         * instance.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p>
+         * </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an
+         * <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAppInstanceAdminOutcomeCallable CreateAppInstanceAdminCallable(const Model::CreateAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
+         * The promoted user can perform the following actions. </p> <ul> <li> <p>
+         * <code>ChannelModerator</code> actions across all channels in the app
+         * instance.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p>
+         * </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an
+         * <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAppInstanceAdminAsync(const Model::CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request
+         * consists of a unique <code>appInstanceUserId</code> and <code>Name</code> for
+         * that user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppInstanceUserOutcome CreateAppInstanceUser(const Model::CreateAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request
+         * consists of a unique <code>appInstanceUserId</code> and <code>Name</code> for
+         * that user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAppInstanceUserOutcomeCallable CreateAppInstanceUserCallable(const Model::CreateAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request
+         * consists of a unique <code>appInstanceUserId</code> and <code>Name</code> for
+         * that user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAppInstanceUserAsync(const Model::CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new attendee for an active Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
@@ -1276,6 +1612,163 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateBotAsync(const Model::CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a channel to which you can add users and send messages.</p> <p>
+         * <b>Restriction</b>: You can't change a channel's privacy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
+
+        /**
+         * <p>Creates a channel to which you can add users and send messages.</p> <p>
+         * <b>Restriction</b>: You can't change a channel's privacy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateChannelOutcomeCallable CreateChannelCallable(const Model::CreateChannelRequest& request) const;
+
+        /**
+         * <p>Creates a channel to which you can add users and send messages.</p> <p>
+         * <b>Restriction</b>: You can't change a channel's privacy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Permanently bans a member from a channel. Moderators can't add banned members
+         * to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>,
+         * and then <code>CreateChannelMembership</code>. Bans are cleaned up when you
+         * delete users or channels. </p> <p>If you ban a user who is already part of a
+         * channel, that user is automatically kicked from the channel.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateChannelBanOutcome CreateChannelBan(const Model::CreateChannelBanRequest& request) const;
+
+        /**
+         * <p>Permanently bans a member from a channel. Moderators can't add banned members
+         * to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>,
+         * and then <code>CreateChannelMembership</code>. Bans are cleaned up when you
+         * delete users or channels. </p> <p>If you ban a user who is already part of a
+         * channel, that user is automatically kicked from the channel.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateChannelBanOutcomeCallable CreateChannelBanCallable(const Model::CreateChannelBanRequest& request) const;
+
+        /**
+         * <p>Permanently bans a member from a channel. Moderators can't add banned members
+         * to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>,
+         * and then <code>CreateChannelMembership</code>. Bans are cleaned up when you
+         * delete users or channels. </p> <p>If you ban a user who is already part of a
+         * channel, that user is automatically kicked from the channel.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateChannelBanAsync(const Model::CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a user to a channel. The <code>InvitedBy</code> response field is
+         * derived from the request header. A channel member can:</p> <ul> <li> <p>List
+         * messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p>
+         * </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p>
+         * </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li>
+         * <p>Public Channels: You do not need to be a member to list messages, but you
+         * must be a member to send messages.</p> </li> <li> <p>Private Channels: You must
+         * be a member to list or send messages.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateChannelMembershipOutcome CreateChannelMembership(const Model::CreateChannelMembershipRequest& request) const;
+
+        /**
+         * <p>Adds a user to a channel. The <code>InvitedBy</code> response field is
+         * derived from the request header. A channel member can:</p> <ul> <li> <p>List
+         * messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p>
+         * </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p>
+         * </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li>
+         * <p>Public Channels: You do not need to be a member to list messages, but you
+         * must be a member to send messages.</p> </li> <li> <p>Private Channels: You must
+         * be a member to list or send messages.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateChannelMembershipOutcomeCallable CreateChannelMembershipCallable(const Model::CreateChannelMembershipRequest& request) const;
+
+        /**
+         * <p>Adds a user to a channel. The <code>InvitedBy</code> response field is
+         * derived from the request header. A channel member can:</p> <ul> <li> <p>List
+         * messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p>
+         * </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p>
+         * </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li>
+         * <p>Public Channels: You do not need to be a member to list messages, but you
+         * must be a member to send messages.</p> </li> <li> <p>Private Channels: You must
+         * be a member to list or send messages.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateChannelMembershipAsync(const Model::CreateChannelMembershipRequest& request, const CreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p>
+         * <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add
+         * and remove other moderators of the channel.</p> </li> <li> <p>Add and remove
+         * user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p>
+         * </li> <li> <p>List messages in the channel.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateChannelModeratorOutcome CreateChannelModerator(const Model::CreateChannelModeratorRequest& request) const;
+
+        /**
+         * <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p>
+         * <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add
+         * and remove other moderators of the channel.</p> </li> <li> <p>Add and remove
+         * user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p>
+         * </li> <li> <p>List messages in the channel.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateChannelModeratorOutcomeCallable CreateChannelModeratorCallable(const Model::CreateChannelModeratorRequest& request) const;
+
+        /**
+         * <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p>
+         * <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add
+         * and remove other moderators of the channel.</p> </li> <li> <p>Add and remove
+         * user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p>
+         * </li> <li> <p>List messages in the channel.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateChannelModeratorAsync(const Model::CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
@@ -1781,6 +2274,115 @@ namespace Model
         virtual void DeleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an <code>AppInstance</code> and all associated data
+         * asynchronously.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppInstanceOutcome DeleteAppInstance(const Model::DeleteAppInstanceRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>AppInstance</code> and all associated data
+         * asynchronously.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAppInstanceOutcomeCallable DeleteAppInstanceCallable(const Model::DeleteAppInstanceRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>AppInstance</code> and all associated data
+         * asynchronously.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAppInstanceAsync(const Model::DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>.
+         * This action does not delete the user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppInstanceAdminOutcome DeleteAppInstanceAdmin(const Model::DeleteAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>.
+         * This action does not delete the user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAppInstanceAdminOutcomeCallable DeleteAppInstanceAdminCallable(const Model::DeleteAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>.
+         * This action does not delete the user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAppInstanceAdminAsync(const Model::DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the streaming configurations of an app instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppInstanceStreamingConfigurationsOutcome DeleteAppInstanceStreamingConfigurations(const Model::DeleteAppInstanceStreamingConfigurationsRequest& request) const;
+
+        /**
+         * <p>Deletes the streaming configurations of an app instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAppInstanceStreamingConfigurationsOutcomeCallable DeleteAppInstanceStreamingConfigurationsCallable(const Model::DeleteAppInstanceStreamingConfigurationsRequest& request) const;
+
+        /**
+         * <p>Deletes the streaming configurations of an app instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAppInstanceStreamingConfigurationsAsync(const Model::DeleteAppInstanceStreamingConfigurationsRequest& request, const DeleteAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppInstanceUserOutcome DeleteAppInstanceUser(const Model::DeleteAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAppInstanceUserOutcomeCallable DeleteAppInstanceUserCallable(const Model::DeleteAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAppInstanceUserAsync(const Model::DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
          * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
          * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
@@ -1822,6 +2424,143 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAttendeeAsync(const Model::DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Immediately makes a channel and its memberships inaccessible and marks them
+         * for deletion. This is an irreversible process.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest& request) const;
+
+        /**
+         * <p>Immediately makes a channel and its memberships inaccessible and marks them
+         * for deletion. This is an irreversible process.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteChannelOutcomeCallable DeleteChannelCallable(const Model::DeleteChannelRequest& request) const;
+
+        /**
+         * <p>Immediately makes a channel and its memberships inaccessible and marks them
+         * for deletion. This is an irreversible process.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a user from a channel's ban list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteChannelBanOutcome DeleteChannelBan(const Model::DeleteChannelBanRequest& request) const;
+
+        /**
+         * <p>Removes a user from a channel's ban list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteChannelBanOutcomeCallable DeleteChannelBanCallable(const Model::DeleteChannelBanRequest& request) const;
+
+        /**
+         * <p>Removes a user from a channel's ban list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteChannelBanAsync(const Model::DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a member from a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteChannelMembershipOutcome DeleteChannelMembership(const Model::DeleteChannelMembershipRequest& request) const;
+
+        /**
+         * <p>Removes a member from a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteChannelMembershipOutcomeCallable DeleteChannelMembershipCallable(const Model::DeleteChannelMembershipRequest& request) const;
+
+        /**
+         * <p>Removes a member from a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteChannelMembershipAsync(const Model::DeleteChannelMembershipRequest& request, const DeleteChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a channel message. Only admins can perform this action. Deletion
+         * makes messages inaccessible immediately. A background process deletes any
+         * revisions created by <code>UpdateChannelMessage</code>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteChannelMessageOutcome DeleteChannelMessage(const Model::DeleteChannelMessageRequest& request) const;
+
+        /**
+         * <p>Deletes a channel message. Only admins can perform this action. Deletion
+         * makes messages inaccessible immediately. A background process deletes any
+         * revisions created by <code>UpdateChannelMessage</code>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteChannelMessageOutcomeCallable DeleteChannelMessageCallable(const Model::DeleteChannelMessageRequest& request) const;
+
+        /**
+         * <p>Deletes a channel message. Only admins can perform this action. Deletion
+         * makes messages inaccessible immediately. A background process deletes any
+         * revisions created by <code>UpdateChannelMessage</code>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteChannelMessageAsync(const Model::DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a channel moderator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteChannelModeratorOutcome DeleteChannelModerator(const Model::DeleteChannelModeratorRequest& request) const;
+
+        /**
+         * <p>Deletes a channel moderator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteChannelModeratorOutcomeCallable DeleteChannelModeratorCallable(const Model::DeleteChannelModeratorRequest& request) const;
+
+        /**
+         * <p>Deletes a channel moderator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteChannelModeratorAsync(const Model::DeleteChannelModeratorRequest& request, const DeleteChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the events configuration that allows a bot to receive outgoing
@@ -2308,6 +3047,255 @@ namespace Model
         virtual void DeleteVoiceConnectorTerminationCredentialsAsync(const Model::DeleteVoiceConnectorTerminationCredentialsRequest& request, const DeleteVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the full details of an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppInstanceOutcome DescribeAppInstance(const Model::DescribeAppInstanceRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAppInstanceOutcomeCallable DescribeAppInstanceCallable(const Model::DescribeAppInstanceRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAppInstanceAsync(const Model::DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppInstanceAdminOutcome DescribeAppInstanceAdmin(const Model::DescribeAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAppInstanceAdminOutcomeCallable DescribeAppInstanceAdminCallable(const Model::DescribeAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAppInstanceAdminAsync(const Model::DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppInstanceUserOutcome DescribeAppInstanceUser(const Model::DescribeAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAppInstanceUserOutcomeCallable DescribeAppInstanceUserCallable(const Model::DescribeAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAppInstanceUserAsync(const Model::DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of a channel in an Amazon Chime app
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeChannelOutcome DescribeChannel(const Model::DescribeChannelRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a channel in an Amazon Chime app
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeChannelOutcomeCallable DescribeChannelCallable(const Model::DescribeChannelRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a channel in an Amazon Chime app
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeChannelAsync(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of a channel ban.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeChannelBanOutcome DescribeChannelBan(const Model::DescribeChannelBanRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a channel ban.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeChannelBanOutcomeCallable DescribeChannelBanCallable(const Model::DescribeChannelBanRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a channel ban.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeChannelBanAsync(const Model::DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of a user's channel membership.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeChannelMembershipOutcome DescribeChannelMembership(const Model::DescribeChannelMembershipRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a user's channel membership.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeChannelMembershipOutcomeCallable DescribeChannelMembershipCallable(const Model::DescribeChannelMembershipRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a user's channel membership.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeChannelMembershipAsync(const Model::DescribeChannelMembershipRequest& request, const DescribeChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the details of a channel based on the membership of the
+         * <code>AppInstanceUser</code> specified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeChannelMembershipForAppInstanceUserOutcome DescribeChannelMembershipForAppInstanceUser(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Returns the details of a channel based on the membership of the
+         * <code>AppInstanceUser</code> specified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeChannelMembershipForAppInstanceUserOutcomeCallable DescribeChannelMembershipForAppInstanceUserCallable(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Returns the details of a channel based on the membership of the
+         * <code>AppInstanceUser</code> specified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeChannelMembershipForAppInstanceUserAsync(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request, const DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of a channel moderated by the specified
+         * <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeChannelModeratedByAppInstanceUserOutcome DescribeChannelModeratedByAppInstanceUser(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a channel moderated by the specified
+         * <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeChannelModeratedByAppInstanceUserOutcomeCallable DescribeChannelModeratedByAppInstanceUserCallable(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a channel moderated by the specified
+         * <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeChannelModeratedByAppInstanceUserAsync(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of a single ChannelModerator.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeChannelModeratorOutcome DescribeChannelModerator(const Model::DescribeChannelModeratorRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a single ChannelModerator.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeChannelModeratorOutcomeCallable DescribeChannelModeratorCallable(const Model::DescribeChannelModeratorRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a single ChannelModerator.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeChannelModeratorAsync(const Model::DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates the primary provisioned phone number from the specified Amazon
          * Chime user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociatePhoneNumberFromUser">AWS
@@ -2485,6 +3473,62 @@ namespace Model
         virtual void GetAccountSettingsAsync(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the retention settings for an app instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAppInstanceRetentionSettingsOutcome GetAppInstanceRetentionSettings(const Model::GetAppInstanceRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Gets the retention settings for an app instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAppInstanceRetentionSettingsOutcomeCallable GetAppInstanceRetentionSettingsCallable(const Model::GetAppInstanceRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Gets the retention settings for an app instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAppInstanceRetentionSettingsAsync(const Model::GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the streaming settings for an app instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAppInstanceStreamingConfigurationsOutcome GetAppInstanceStreamingConfigurations(const Model::GetAppInstanceStreamingConfigurationsRequest& request) const;
+
+        /**
+         * <p>Gets the streaming settings for an app instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAppInstanceStreamingConfigurationsOutcomeCallable GetAppInstanceStreamingConfigurationsCallable(const Model::GetAppInstanceStreamingConfigurationsRequest& request) const;
+
+        /**
+         * <p>Gets the streaming settings for an app instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAppInstanceStreamingConfigurationsAsync(const Model::GetAppInstanceStreamingConfigurationsRequest& request, const GetAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the Amazon Chime SDK attendee details for a specified meeting ID and
          * attendee ID. For more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
@@ -2548,6 +3592,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBotAsync(const Model::GetBotRequest& request, const GetBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the full details of a channel message.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetChannelMessageOutcome GetChannelMessage(const Model::GetChannelMessageRequest& request) const;
+
+        /**
+         * <p>Gets the full details of a channel message.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetChannelMessageOutcomeCallable GetChannelMessageCallable(const Model::GetChannelMessageRequest& request) const;
+
+        /**
+         * <p>Gets the full details of a channel message.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetChannelMessageAsync(const Model::GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details for an events configuration that allows a bot to receive
@@ -2646,6 +3715,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMeetingAsync(const Model::GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>The endpoint for the messaging session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMessagingSessionEndpointOutcome GetMessagingSessionEndpoint(const Model::GetMessagingSessionEndpointRequest& request) const;
+
+        /**
+         * <p>The endpoint for the messaging session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMessagingSessionEndpointOutcomeCallable GetMessagingSessionEndpointCallable(const Model::GetMessagingSessionEndpointRequest& request) const;
+
+        /**
+         * <p>The endpoint for the messaging session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMessagingSessionEndpointAsync(const Model::GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details for the specified phone number ID, such as associations,
@@ -3065,7 +4159,7 @@ namespace Model
         /**
          * <p>Retrieves the logging configuration details for the specified Amazon Chime
          * Voice Connector. Shows whether SIP message logs are enabled for sending to
-         * Amazon CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
+         * Amazon CloudWatch.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -3074,7 +4168,7 @@ namespace Model
         /**
          * <p>Retrieves the logging configuration details for the specified Amazon Chime
          * Voice Connector. Shows whether SIP message logs are enabled for sending to
-         * Amazon CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
+         * Amazon CloudWatch.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorLoggingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3085,7 +4179,7 @@ namespace Model
         /**
          * <p>Retrieves the logging configuration details for the specified Amazon Chime
          * Voice Connector. Shows whether SIP message logs are enabled for sending to
-         * Amazon CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
+         * Amazon CloudWatch.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorLoggingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3308,6 +4402,90 @@ namespace Model
         virtual void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the administrators in the app instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppInstanceAdminsOutcome ListAppInstanceAdmins(const Model::ListAppInstanceAdminsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the administrators in the app instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAppInstanceAdminsOutcomeCallable ListAppInstanceAdminsCallable(const Model::ListAppInstanceAdminsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the administrators in the app instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAppInstanceAdminsAsync(const Model::ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List all <code>AppInstanceUsers</code> created under a single app
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppInstanceUsersOutcome ListAppInstanceUsers(const Model::ListAppInstanceUsersRequest& request) const;
+
+        /**
+         * <p>List all <code>AppInstanceUsers</code> created under a single app
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAppInstanceUsersOutcomeCallable ListAppInstanceUsersCallable(const Model::ListAppInstanceUsersRequest& request) const;
+
+        /**
+         * <p>List all <code>AppInstanceUsers</code> created under a single app
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAppInstanceUsersAsync(const Model::ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all Amazon Chime app instances created under a single AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppInstancesOutcome ListAppInstances(const Model::ListAppInstancesRequest& request) const;
+
+        /**
+         * <p>Lists all Amazon Chime app instances created under a single AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAppInstancesOutcomeCallable ListAppInstancesCallable(const Model::ListAppInstancesRequest& request) const;
+
+        /**
+         * <p>Lists all Amazon Chime app instances created under a single AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAppInstancesAsync(const Model::ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the tags applied to an Amazon Chime SDK attendee
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendeeTags">AWS
@@ -3399,6 +4577,223 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBotsAsync(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the users banned from a particular channel.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelBansOutcome ListChannelBans(const Model::ListChannelBansRequest& request) const;
+
+        /**
+         * <p>Lists all the users banned from a particular channel.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelBansOutcomeCallable ListChannelBansCallable(const Model::ListChannelBansRequest& request) const;
+
+        /**
+         * <p>Lists all the users banned from a particular channel.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelBansAsync(const Model::ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all channel memberships in a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelMembershipsOutcome ListChannelMemberships(const Model::ListChannelMembershipsRequest& request) const;
+
+        /**
+         * <p>Lists all channel memberships in a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelMembershipsOutcomeCallable ListChannelMembershipsCallable(const Model::ListChannelMembershipsRequest& request) const;
+
+        /**
+         * <p>Lists all channel memberships in a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelMembershipsAsync(const Model::ListChannelMembershipsRequest& request, const ListChannelMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all channels that a particular <code>AppInstanceUser</code> is a part
+         * of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that
+         * is not their own.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelMembershipsForAppInstanceUserOutcome ListChannelMembershipsForAppInstanceUser(const Model::ListChannelMembershipsForAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Lists all channels that a particular <code>AppInstanceUser</code> is a part
+         * of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that
+         * is not their own.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelMembershipsForAppInstanceUserOutcomeCallable ListChannelMembershipsForAppInstanceUserCallable(const Model::ListChannelMembershipsForAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Lists all channels that a particular <code>AppInstanceUser</code> is a part
+         * of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that
+         * is not their own.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelMembershipsForAppInstanceUserAsync(const Model::ListChannelMembershipsForAppInstanceUserRequest& request, const ListChannelMembershipsForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List all the messages in a channel. Returns a paginated list of
+         * <code>ChannelMessages</code>. Sorted in descending order by default, based on
+         * the creation timestamp.</p>  <p>Redacted messages appear in the results as
+         * empty, since they are only redacted, not deleted. Deleted messages do not appear
+         * in the results. This action always returns the latest version of an edited
+         * message.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelMessagesOutcome ListChannelMessages(const Model::ListChannelMessagesRequest& request) const;
+
+        /**
+         * <p>List all the messages in a channel. Returns a paginated list of
+         * <code>ChannelMessages</code>. Sorted in descending order by default, based on
+         * the creation timestamp.</p>  <p>Redacted messages appear in the results as
+         * empty, since they are only redacted, not deleted. Deleted messages do not appear
+         * in the results. This action always returns the latest version of an edited
+         * message.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelMessagesOutcomeCallable ListChannelMessagesCallable(const Model::ListChannelMessagesRequest& request) const;
+
+        /**
+         * <p>List all the messages in a channel. Returns a paginated list of
+         * <code>ChannelMessages</code>. Sorted in descending order by default, based on
+         * the creation timestamp.</p>  <p>Redacted messages appear in the results as
+         * empty, since they are only redacted, not deleted. Deleted messages do not appear
+         * in the results. This action always returns the latest version of an edited
+         * message.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelMessagesAsync(const Model::ListChannelMessagesRequest& request, const ListChannelMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the moderators for a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelModeratorsOutcome ListChannelModerators(const Model::ListChannelModeratorsRequest& request) const;
+
+        /**
+         * <p>Lists all the moderators for a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelModeratorsOutcomeCallable ListChannelModeratorsCallable(const Model::ListChannelModeratorsRequest& request) const;
+
+        /**
+         * <p>Lists all the moderators for a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelModeratorsAsync(const Model::ListChannelModeratorsRequest& request, const ListChannelModeratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all Channels created under a single Chime App as a paginated list. You
+         * can specify filters to narrow results.</p> <p class="title"> <b>Functionality
+         * &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to
+         * retrieve all public channels in the account</p> </li> <li> <p>Only an
+         * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
+         * private channels in an account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
+
+        /**
+         * <p>Lists all Channels created under a single Chime App as a paginated list. You
+         * can specify filters to narrow results.</p> <p class="title"> <b>Functionality
+         * &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to
+         * retrieve all public channels in the account</p> </li> <li> <p>Only an
+         * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
+         * private channels in an account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelsOutcomeCallable ListChannelsCallable(const Model::ListChannelsRequest& request) const;
+
+        /**
+         * <p>Lists all Channels created under a single Chime App as a paginated list. You
+         * can specify filters to narrow results.</p> <p class="title"> <b>Functionality
+         * &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to
+         * retrieve all public channels in the account</p> </li> <li> <p>Only an
+         * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
+         * private channels in an account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A list of the channels moderated by an app instance user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelsModeratedByAppInstanceUserOutcome ListChannelsModeratedByAppInstanceUser(const Model::ListChannelsModeratedByAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>A list of the channels moderated by an app instance user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelsModeratedByAppInstanceUserOutcomeCallable ListChannelsModeratedByAppInstanceUserCallable(const Model::ListChannelsModeratedByAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>A list of the channels moderated by an app instance user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelsModeratedByAppInstanceUserAsync(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p><p><h3>See
@@ -3842,6 +5237,62 @@ namespace Model
         virtual void LogoutUserAsync(const Model::LogoutUserRequest& request, const LogoutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the amount of time in days that a given app instance retains
+         * data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAppInstanceRetentionSettingsOutcome PutAppInstanceRetentionSettings(const Model::PutAppInstanceRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Sets the amount of time in days that a given app instance retains
+         * data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAppInstanceRetentionSettingsOutcomeCallable PutAppInstanceRetentionSettingsCallable(const Model::PutAppInstanceRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Sets the amount of time in days that a given app instance retains
+         * data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAppInstanceRetentionSettingsAsync(const Model::PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>The data streaming configurations of an app instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAppInstanceStreamingConfigurationsOutcome PutAppInstanceStreamingConfigurations(const Model::PutAppInstanceStreamingConfigurationsRequest& request) const;
+
+        /**
+         * <p>The data streaming configurations of an app instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAppInstanceStreamingConfigurationsOutcomeCallable PutAppInstanceStreamingConfigurationsCallable(const Model::PutAppInstanceStreamingConfigurationsRequest& request) const;
+
+        /**
+         * <p>The data streaming configurations of an app instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAppInstanceStreamingConfigurationsAsync(const Model::PutAppInstanceStreamingConfigurationsRequest& request, const PutAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an events configuration that allows a bot to receive outgoing events
          * sent by Amazon Chime. Choose either an HTTPS endpoint or a Lambda function ARN.
          * For more information, see <a>Bot</a>.</p><p><h3>See Also:</h3>   <a
@@ -4185,6 +5636,37 @@ namespace Model
         virtual void PutVoiceConnectorTerminationCredentialsAsync(const Model::PutVoiceConnectorTerminationCredentialsRequest& request, const PutVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Redacts message content, but not metadata. The message exists in the back
+         * end, but the action returns null content, and the state shows as
+         * redacted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RedactChannelMessageOutcome RedactChannelMessage(const Model::RedactChannelMessageRequest& request) const;
+
+        /**
+         * <p>Redacts message content, but not metadata. The message exists in the back
+         * end, but the action returns null content, and the state shows as
+         * redacted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RedactChannelMessageOutcomeCallable RedactChannelMessageCallable(const Model::RedactChannelMessageRequest& request) const;
+
+        /**
+         * <p>Redacts message content, but not metadata. The message exists in the back
+         * end, but the action returns null content, and the state shows as
+         * redacted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RedactChannelMessageAsync(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Redacts the specified message from the specified Amazon Chime
          * conversation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactConversationMessage">AWS
@@ -4213,16 +5695,16 @@ namespace Model
         virtual void RedactConversationMessageAsync(const Model::RedactConversationMessageRequest& request, const RedactConversationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Redacts the specified message from the specified Amazon Chime chat
-         * room.</p><p><h3>See Also:</h3>   <a
+         * <p>Redacts the specified message from the specified Amazon Chime
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage">AWS
          * API Reference</a></p>
          */
         virtual Model::RedactRoomMessageOutcome RedactRoomMessage(const Model::RedactRoomMessageRequest& request) const;
 
         /**
-         * <p>Redacts the specified message from the specified Amazon Chime chat
-         * room.</p><p><h3>See Also:</h3>   <a
+         * <p>Redacts the specified message from the specified Amazon Chime
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage">AWS
          * API Reference</a></p>
          *
@@ -4231,8 +5713,8 @@ namespace Model
         virtual Model::RedactRoomMessageOutcomeCallable RedactRoomMessageCallable(const Model::RedactRoomMessageRequest& request) const;
 
         /**
-         * <p>Redacts the specified message from the specified Amazon Chime chat
-         * room.</p><p><h3>See Also:</h3>   <a
+         * <p>Redacts the specified message from the specified Amazon Chime
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage">AWS
          * API Reference</a></p>
          *
@@ -4348,6 +5830,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchAvailablePhoneNumbersAsync(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sends a message to a particular channel that the member is a part of.</p>
+         *  <p> <code>STANDARD</code> messages can contain 4KB of data and the 1KB of
+         * metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no
+         * metadata.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendChannelMessageOutcome SendChannelMessage(const Model::SendChannelMessageRequest& request) const;
+
+        /**
+         * <p>Sends a message to a particular channel that the member is a part of.</p>
+         *  <p> <code>STANDARD</code> messages can contain 4KB of data and the 1KB of
+         * metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no
+         * metadata.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendChannelMessageOutcomeCallable SendChannelMessageCallable(const Model::SendChannelMessageRequest& request) const;
+
+        /**
+         * <p>Sends a message to a particular channel that the member is a part of.</p>
+         *  <p> <code>STANDARD</code> messages can contain 4KB of data and the 1KB of
+         * metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no
+         * metadata.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendChannelMessageAsync(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies the specified tags to the specified Amazon Chime SDK
@@ -4589,6 +6105,59 @@ namespace Model
         virtual void UpdateAccountSettingsAsync(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates <code>AppInstance</code> metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppInstanceOutcome UpdateAppInstance(const Model::UpdateAppInstanceRequest& request) const;
+
+        /**
+         * <p>Updates <code>AppInstance</code> metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAppInstanceOutcomeCallable UpdateAppInstanceCallable(const Model::UpdateAppInstanceRequest& request) const;
+
+        /**
+         * <p>Updates <code>AppInstance</code> metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAppInstanceAsync(const Model::UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the details for an <code>AppInstanceUser</code>. You can update names
+         * and metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppInstanceUserOutcome UpdateAppInstanceUser(const Model::UpdateAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Updates the details for an <code>AppInstanceUser</code>. You can update names
+         * and metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAppInstanceUserOutcomeCallable UpdateAppInstanceUserCallable(const Model::UpdateAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Updates the details for an <code>AppInstanceUser</code>. You can update names
+         * and metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAppInstanceUserAsync(const Model::UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the status of the specified bot, such as starting or stopping the bot
          * from running in your Amazon Chime Enterprise account.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot">AWS
@@ -4615,6 +6184,87 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateBotAsync(const Model::UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a
+         * channel's privacy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
+
+        /**
+         * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a
+         * channel's privacy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const Model::UpdateChannelRequest& request) const;
+
+        /**
+         * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a
+         * channel's privacy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the content of a message.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateChannelMessageOutcome UpdateChannelMessage(const Model::UpdateChannelMessageRequest& request) const;
+
+        /**
+         * <p>Updates the content of a message.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateChannelMessageOutcomeCallable UpdateChannelMessageCallable(const Model::UpdateChannelMessageRequest& request) const;
+
+        /**
+         * <p>Updates the content of a message.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateChannelMessageAsync(const Model::UpdateChannelMessageRequest& request, const UpdateChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sets the timestamp to the point when a user last read messages in a
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateChannelReadMarkerOutcome UpdateChannelReadMarker(const Model::UpdateChannelReadMarkerRequest& request) const;
+
+        /**
+         * <p>Sets the timestamp to the point when a user last read messages in a
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateChannelReadMarkerOutcomeCallable UpdateChannelReadMarkerCallable(const Model::UpdateChannelReadMarkerRequest& request) const;
+
+        /**
+         * <p>Sets the timestamp to the point when a user last read messages in a
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateChannelReadMarkerAsync(const Model::UpdateChannelReadMarkerRequest& request, const UpdateChannelReadMarkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates global settings for the administrator's AWS account, such as Amazon
@@ -5001,8 +6651,15 @@ namespace Model
         void BatchUpdatePhoneNumberAsyncHelper(const Model::BatchUpdatePhoneNumberRequest& request, const BatchUpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchUpdateUserAsyncHelper(const Model::BatchUpdateUserRequest& request, const BatchUpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAccountAsyncHelper(const Model::CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAppInstanceAsyncHelper(const Model::CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAppInstanceAdminAsyncHelper(const Model::CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAppInstanceUserAsyncHelper(const Model::CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAttendeeAsyncHelper(const Model::CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBotAsyncHelper(const Model::CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateChannelBanAsyncHelper(const Model::CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateChannelMembershipAsyncHelper(const Model::CreateChannelMembershipRequest& request, const CreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateChannelModeratorAsyncHelper(const Model::CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingAsyncHelper(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingDialOutAsyncHelper(const Model::CreateMeetingDialOutRequest& request, const CreateMeetingDialOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingWithAttendeesAsyncHelper(const Model::CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5017,7 +6674,16 @@ namespace Model
         void CreateVoiceConnectorAsyncHelper(const Model::CreateVoiceConnectorRequest& request, const CreateVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVoiceConnectorGroupAsyncHelper(const Model::CreateVoiceConnectorGroupRequest& request, const CreateVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccountAsyncHelper(const Model::DeleteAccountRequest& request, const DeleteAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAppInstanceAsyncHelper(const Model::DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAppInstanceAdminAsyncHelper(const Model::DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAppInstanceStreamingConfigurationsAsyncHelper(const Model::DeleteAppInstanceStreamingConfigurationsRequest& request, const DeleteAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAppInstanceUserAsyncHelper(const Model::DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAttendeeAsyncHelper(const Model::DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteChannelAsyncHelper(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteChannelBanAsyncHelper(const Model::DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteChannelMembershipAsyncHelper(const Model::DeleteChannelMembershipRequest& request, const DeleteChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteChannelMessageAsyncHelper(const Model::DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteChannelModeratorAsyncHelper(const Model::DeleteChannelModeratorRequest& request, const DeleteChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventsConfigurationAsyncHelper(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMeetingAsyncHelper(const Model::DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePhoneNumberAsyncHelper(const Model::DeletePhoneNumberRequest& request, const DeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5034,17 +6700,30 @@ namespace Model
         void DeleteVoiceConnectorStreamingConfigurationAsyncHelper(const Model::DeleteVoiceConnectorStreamingConfigurationRequest& request, const DeleteVoiceConnectorStreamingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorTerminationAsyncHelper(const Model::DeleteVoiceConnectorTerminationRequest& request, const DeleteVoiceConnectorTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorTerminationCredentialsAsyncHelper(const Model::DeleteVoiceConnectorTerminationCredentialsRequest& request, const DeleteVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAppInstanceAsyncHelper(const Model::DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAppInstanceAdminAsyncHelper(const Model::DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAppInstanceUserAsyncHelper(const Model::DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeChannelAsyncHelper(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeChannelBanAsyncHelper(const Model::DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeChannelMembershipAsyncHelper(const Model::DescribeChannelMembershipRequest& request, const DescribeChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeChannelMembershipForAppInstanceUserAsyncHelper(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request, const DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeChannelModeratedByAppInstanceUserAsyncHelper(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeChannelModeratorAsyncHelper(const Model::DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociatePhoneNumberFromUserAsyncHelper(const Model::DisassociatePhoneNumberFromUserRequest& request, const DisassociatePhoneNumberFromUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociatePhoneNumbersFromVoiceConnectorAsyncHelper(const Model::DisassociatePhoneNumbersFromVoiceConnectorRequest& request, const DisassociatePhoneNumbersFromVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociatePhoneNumbersFromVoiceConnectorGroupAsyncHelper(const Model::DisassociatePhoneNumbersFromVoiceConnectorGroupRequest& request, const DisassociatePhoneNumbersFromVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSigninDelegateGroupsFromAccountAsyncHelper(const Model::DisassociateSigninDelegateGroupsFromAccountRequest& request, const DisassociateSigninDelegateGroupsFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountAsyncHelper(const Model::GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAppInstanceRetentionSettingsAsyncHelper(const Model::GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAppInstanceStreamingConfigurationsAsyncHelper(const Model::GetAppInstanceStreamingConfigurationsRequest& request, const GetAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAttendeeAsyncHelper(const Model::GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBotAsyncHelper(const Model::GetBotRequest& request, const GetBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetChannelMessageAsyncHelper(const Model::GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventsConfigurationAsyncHelper(const Model::GetEventsConfigurationRequest& request, const GetEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGlobalSettingsAsyncHelper(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMeetingAsyncHelper(const Model::GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMessagingSessionEndpointAsyncHelper(const Model::GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberAsyncHelper(const Model::GetPhoneNumberRequest& request, const GetPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberOrderAsyncHelper(const Model::GetPhoneNumberOrderRequest& request, const GetPhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberSettingsAsyncHelper(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5067,9 +6746,19 @@ namespace Model
         void GetVoiceConnectorTerminationHealthAsyncHelper(const Model::GetVoiceConnectorTerminationHealthRequest& request, const GetVoiceConnectorTerminationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InviteUsersAsyncHelper(const Model::InviteUsersRequest& request, const InviteUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountsAsyncHelper(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAppInstanceAdminsAsyncHelper(const Model::ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAppInstanceUsersAsyncHelper(const Model::ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAppInstancesAsyncHelper(const Model::ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttendeeTagsAsyncHelper(const Model::ListAttendeeTagsRequest& request, const ListAttendeeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttendeesAsyncHelper(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListChannelBansAsyncHelper(const Model::ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListChannelMembershipsAsyncHelper(const Model::ListChannelMembershipsRequest& request, const ListChannelMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListChannelMembershipsForAppInstanceUserAsyncHelper(const Model::ListChannelMembershipsForAppInstanceUserRequest& request, const ListChannelMembershipsForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListChannelMessagesAsyncHelper(const Model::ListChannelMessagesRequest& request, const ListChannelMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListChannelModeratorsAsyncHelper(const Model::ListChannelModeratorsRequest& request, const ListChannelModeratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListChannelsModeratedByAppInstanceUserAsyncHelper(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMeetingTagsAsyncHelper(const Model::ListMeetingTagsRequest& request, const ListMeetingTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMeetingsAsyncHelper(const Model::ListMeetingsRequest& request, const ListMeetingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumberOrdersAsyncHelper(const Model::ListPhoneNumberOrdersRequest& request, const ListPhoneNumberOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5085,6 +6774,8 @@ namespace Model
         void ListVoiceConnectorTerminationCredentialsAsyncHelper(const Model::ListVoiceConnectorTerminationCredentialsRequest& request, const ListVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVoiceConnectorsAsyncHelper(const Model::ListVoiceConnectorsRequest& request, const ListVoiceConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void LogoutUserAsyncHelper(const Model::LogoutUserRequest& request, const LogoutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAppInstanceRetentionSettingsAsyncHelper(const Model::PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAppInstanceStreamingConfigurationsAsyncHelper(const Model::PutAppInstanceStreamingConfigurationsRequest& request, const PutAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventsConfigurationAsyncHelper(const Model::PutEventsConfigurationRequest& request, const PutEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionSettingsAsyncHelper(const Model::PutRetentionSettingsRequest& request, const PutRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSipMediaApplicationLoggingConfigurationAsyncHelper(const Model::PutSipMediaApplicationLoggingConfigurationRequest& request, const PutSipMediaApplicationLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5095,12 +6786,14 @@ namespace Model
         void PutVoiceConnectorStreamingConfigurationAsyncHelper(const Model::PutVoiceConnectorStreamingConfigurationRequest& request, const PutVoiceConnectorStreamingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorTerminationAsyncHelper(const Model::PutVoiceConnectorTerminationRequest& request, const PutVoiceConnectorTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorTerminationCredentialsAsyncHelper(const Model::PutVoiceConnectorTerminationCredentialsRequest& request, const PutVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RedactChannelMessageAsyncHelper(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RedactConversationMessageAsyncHelper(const Model::RedactConversationMessageRequest& request, const RedactConversationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RedactRoomMessageAsyncHelper(const Model::RedactRoomMessageRequest& request, const RedactRoomMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegenerateSecurityTokenAsyncHelper(const Model::RegenerateSecurityTokenRequest& request, const RegenerateSecurityTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetPersonalPINAsyncHelper(const Model::ResetPersonalPINRequest& request, const ResetPersonalPINResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestorePhoneNumberAsyncHelper(const Model::RestorePhoneNumberRequest& request, const RestorePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAvailablePhoneNumbersAsyncHelper(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendChannelMessageAsyncHelper(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagAttendeeAsyncHelper(const Model::TagAttendeeRequest& request, const TagAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagMeetingAsyncHelper(const Model::TagMeetingRequest& request, const TagMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5109,7 +6802,12 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountAsyncHelper(const Model::UpdateAccountRequest& request, const UpdateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountSettingsAsyncHelper(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAppInstanceAsyncHelper(const Model::UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAppInstanceUserAsyncHelper(const Model::UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBotAsyncHelper(const Model::UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateChannelMessageAsyncHelper(const Model::UpdateChannelMessageRequest& request, const UpdateChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateChannelReadMarkerAsyncHelper(const Model::UpdateChannelReadMarkerRequest& request, const UpdateChannelReadMarkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGlobalSettingsAsyncHelper(const Model::UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePhoneNumberAsyncHelper(const Model::UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePhoneNumberSettingsAsyncHelper(const Model::UpdatePhoneNumberSettingsRequest& request, const UpdatePhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5123,7 +6821,9 @@ namespace Model
         void UpdateVoiceConnectorAsyncHelper(const Model::UpdateVoiceConnectorRequest& request, const UpdateVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceConnectorGroupAsyncHelper(const Model::UpdateVoiceConnectorGroupRequest& request, const UpdateVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
-      Aws::String m_uri;
+      Aws::String m_baseUri;
+      Aws::String m_scheme;
+      bool m_enableHostPrefixInjection;
       Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };

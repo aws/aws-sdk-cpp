@@ -19,7 +19,8 @@ namespace Model
     Associated,
     Associating,
     Failed,
-    Disassociating
+    Disassociating,
+    Disassociated
   };
 
 namespace RepositoryAssociationStateMapper

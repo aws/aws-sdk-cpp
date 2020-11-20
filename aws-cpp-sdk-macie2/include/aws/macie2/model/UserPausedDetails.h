@@ -27,7 +27,9 @@ namespace Model
   /**
    * <p>Provides information about when a classification job was paused and when it
    * will expire and be cancelled if it isn't resumed. This object is present only if
-   * a job's current status (jobStatus) is USER_PAUSED.</p><p><h3>See Also:</h3>   <a
+   * a job's current status (jobStatus) is USER_PAUSED. The information in this
+   * object applies only to a job that was paused while it had a status of
+   * RUNNING.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UserPausedDetails">AWS
    * API Reference</a></p>
    */

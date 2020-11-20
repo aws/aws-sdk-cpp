@@ -7,6 +7,7 @@
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/macie2/model/JobDetails.h>
 #include <aws/macie2/model/ObjectCountByEncryptionType.h>
 #include <aws/macie2/model/BucketPublicAccess.h>
 #include <aws/macie2/model/ReplicationDetails.h>
@@ -262,6 +263,49 @@ namespace Model
      * file name extension for a supported file or storage format.</p>
      */
     inline BucketMetadata& WithClassifiableSizeInBytes(long long value) { SetClassifiableSizeInBytes(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether any one-time or recurring classification jobs are
+     * configured to analyze data in the bucket, and, if so, the details of the job
+     * that ran most recently.</p>
+     */
+    inline const JobDetails& GetJobDetails() const{ return m_jobDetails; }
+
+    /**
+     * <p>Specifies whether any one-time or recurring classification jobs are
+     * configured to analyze data in the bucket, and, if so, the details of the job
+     * that ran most recently.</p>
+     */
+    inline bool JobDetailsHasBeenSet() const { return m_jobDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether any one-time or recurring classification jobs are
+     * configured to analyze data in the bucket, and, if so, the details of the job
+     * that ran most recently.</p>
+     */
+    inline void SetJobDetails(const JobDetails& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = value; }
+
+    /**
+     * <p>Specifies whether any one-time or recurring classification jobs are
+     * configured to analyze data in the bucket, and, if so, the details of the job
+     * that ran most recently.</p>
+     */
+    inline void SetJobDetails(JobDetails&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::move(value); }
+
+    /**
+     * <p>Specifies whether any one-time or recurring classification jobs are
+     * configured to analyze data in the bucket, and, if so, the details of the job
+     * that ran most recently.</p>
+     */
+    inline BucketMetadata& WithJobDetails(const JobDetails& value) { SetJobDetails(value); return *this;}
+
+    /**
+     * <p>Specifies whether any one-time or recurring classification jobs are
+     * configured to analyze data in the bucket, and, if so, the details of the job
+     * that ran most recently.</p>
+     */
+    inline BucketMetadata& WithJobDetails(JobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
 
 
     /**
@@ -769,6 +813,9 @@ namespace Model
 
     long long m_classifiableSizeInBytes;
     bool m_classifiableSizeInBytesHasBeenSet;
+
+    JobDetails m_jobDetails;
+    bool m_jobDetailsHasBeenSet;
 
     Aws::Utils::DateTime m_lastUpdated;
     bool m_lastUpdatedHasBeenSet;

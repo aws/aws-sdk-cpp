@@ -47,7 +47,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline const Aws::String& GetAssociationArn() const{ return m_associationArn; }
 
@@ -55,7 +57,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline bool AssociationArnHasBeenSet() const { return m_associationArnHasBeenSet; }
 
@@ -63,7 +67,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline void SetAssociationArn(const Aws::String& value) { m_associationArnHasBeenSet = true; m_associationArn = value; }
 
@@ -71,7 +77,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline void SetAssociationArn(Aws::String&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::move(value); }
 
@@ -79,7 +87,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline void SetAssociationArn(const char* value) { m_associationArnHasBeenSet = true; m_associationArn.assign(value); }
 
@@ -87,7 +97,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline RepositoryAssociationSummary& WithAssociationArn(const Aws::String& value) { SetAssociationArn(value); return *this;}
 
@@ -95,7 +107,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline RepositoryAssociationSummary& WithAssociationArn(Aws::String&& value) { SetAssociationArn(std::move(value)); return *this;}
 
@@ -103,7 +117,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline RepositoryAssociationSummary& WithAssociationArn(const char* value) { SetAssociationArn(value); return *this;}
 
@@ -427,7 +443,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline const RepositoryAssociationState& GetState() const{ return m_state; }
 
@@ -446,7 +469,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
@@ -465,7 +495,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline void SetState(const RepositoryAssociationState& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -484,7 +521,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline void SetState(RepositoryAssociationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -503,7 +547,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline RepositoryAssociationSummary& WithState(const RepositoryAssociationState& value) { SetState(value); return *this;}
 
@@ -522,7 +573,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline RepositoryAssociationSummary& WithState(RepositoryAssociationState&& value) { SetState(std::move(value)); return *this;}
 

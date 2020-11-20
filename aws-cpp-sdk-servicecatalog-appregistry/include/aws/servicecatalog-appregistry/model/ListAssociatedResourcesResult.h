@@ -35,44 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>Information about the resources.</p>
      */
     inline const Aws::Vector<ResourceInfo>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>Information about the resources.</p>
      */
     inline void SetResources(const Aws::Vector<ResourceInfo>& value) { m_resources = value; }
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>Information about the resources.</p>
      */
     inline void SetResources(Aws::Vector<ResourceInfo>&& value) { m_resources = std::move(value); }
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListAssociatedResourcesResult& WithResources(const Aws::Vector<ResourceInfo>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListAssociatedResourcesResult& WithResources(Aws::Vector<ResourceInfo>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListAssociatedResourcesResult& AddResources(const ResourceInfo& value) { m_resources.push_back(value); return *this; }
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListAssociatedResourcesResult& AddResources(ResourceInfo&& value) { m_resources.push_back(std::move(value)); return *this; }
 

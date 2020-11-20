@@ -18,6 +18,7 @@ using namespace Aws::Http;
 
 PutBucketEncryptionRequest::PutBucketEncryptionRequest() : 
     m_bucketHasBeenSet(false),
+    m_contentMD5HasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
@@ -66,6 +67,13 @@ Aws::Http::HeaderValueCollection PutBucketEncryptionRequest::GetRequestSpecificH
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
+  if(m_contentMD5HasBeenSet)
+  {
+    ss << m_contentMD5;
+    headers.emplace("content-md5",  ss.str());
+    ss.str("");
+  }
+
   if(m_expectedBucketOwnerHasBeenSet)
   {
     ss << m_expectedBucketOwner;

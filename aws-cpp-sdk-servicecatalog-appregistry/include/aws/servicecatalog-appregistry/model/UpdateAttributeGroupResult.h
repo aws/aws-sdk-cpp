@@ -33,32 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The name or ID of the attribute group that holds the attributes to describe
-     * the application.</p>
+     * <p>The updated information of the attribute group.</p>
      */
     inline const AttributeGroup& GetAttributeGroup() const{ return m_attributeGroup; }
 
     /**
-     * <p>The name or ID of the attribute group that holds the attributes to describe
-     * the application.</p>
+     * <p>The updated information of the attribute group.</p>
      */
     inline void SetAttributeGroup(const AttributeGroup& value) { m_attributeGroup = value; }
 
     /**
-     * <p>The name or ID of the attribute group that holds the attributes to describe
-     * the application.</p>
+     * <p>The updated information of the attribute group.</p>
      */
     inline void SetAttributeGroup(AttributeGroup&& value) { m_attributeGroup = std::move(value); }
 
     /**
-     * <p>The name or ID of the attribute group that holds the attributes to describe
-     * the application.</p>
+     * <p>The updated information of the attribute group.</p>
      */
     inline UpdateAttributeGroupResult& WithAttributeGroup(const AttributeGroup& value) { SetAttributeGroup(value); return *this;}
 
     /**
-     * <p>The name or ID of the attribute group that holds the attributes to describe
-     * the application.</p>
+     * <p>The updated information of the attribute group.</p>
      */
     inline UpdateAttributeGroupResult& WithAttributeGroup(AttributeGroup&& value) { SetAttributeGroup(std::move(value)); return *this;}
 

@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The client is permanently forbidden from making the request. For example,
-   * when a user tries to create an account from an unsupported Region.</p><p><h3>See
+   * <p>The client is permanently forbidden from making the request.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ForbiddenException">AWS
    * API Reference</a></p>

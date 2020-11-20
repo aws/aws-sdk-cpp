@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of attribute group IDs.</p>
+     * <p>This list of attribute groups.</p>
      */
     inline const Aws::Vector<AttributeGroupSummary>& GetAttributeGroups() const{ return m_attributeGroups; }
 
     /**
-     * <p>A list of attribute group IDs.</p>
+     * <p>This list of attribute groups.</p>
      */
     inline void SetAttributeGroups(const Aws::Vector<AttributeGroupSummary>& value) { m_attributeGroups = value; }
 
     /**
-     * <p>A list of attribute group IDs.</p>
+     * <p>This list of attribute groups.</p>
      */
     inline void SetAttributeGroups(Aws::Vector<AttributeGroupSummary>&& value) { m_attributeGroups = std::move(value); }
 
     /**
-     * <p>A list of attribute group IDs.</p>
+     * <p>This list of attribute groups.</p>
      */
     inline ListAttributeGroupsResult& WithAttributeGroups(const Aws::Vector<AttributeGroupSummary>& value) { SetAttributeGroups(value); return *this;}
 
     /**
-     * <p>A list of attribute group IDs.</p>
+     * <p>This list of attribute groups.</p>
      */
     inline ListAttributeGroupsResult& WithAttributeGroups(Aws::Vector<AttributeGroupSummary>&& value) { SetAttributeGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A list of attribute group IDs.</p>
+     * <p>This list of attribute groups.</p>
      */
     inline ListAttributeGroupsResult& AddAttributeGroups(const AttributeGroupSummary& value) { m_attributeGroups.push_back(value); return *this; }
 
     /**
-     * <p>A list of attribute group IDs.</p>
+     * <p>This list of attribute groups.</p>
      */
     inline ListAttributeGroupsResult& AddAttributeGroups(AttributeGroupSummary&& value) { m_attributeGroups.push_back(std::move(value)); return *this; }
 

@@ -33,87 +33,73 @@ namespace Model
 
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline DisassociateAttributeGroupResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline DisassociateAttributeGroupResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline DisassociateAttributeGroupResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
      */
     inline const Aws::String& GetAttributeGroupArn() const{ return m_attributeGroupArn; }
 
     /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
      */
     inline void SetAttributeGroupArn(const Aws::String& value) { m_attributeGroupArn = value; }
 
     /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
      */
     inline void SetAttributeGroupArn(Aws::String&& value) { m_attributeGroupArn = std::move(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
      */
     inline void SetAttributeGroupArn(const char* value) { m_attributeGroupArn.assign(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
      */
     inline DisassociateAttributeGroupResult& WithAttributeGroupArn(const Aws::String& value) { SetAttributeGroupArn(value); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
      */
     inline DisassociateAttributeGroupResult& WithAttributeGroupArn(Aws::String&& value) { SetAttributeGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
      */
     inline DisassociateAttributeGroupResult& WithAttributeGroupArn(const char* value) { SetAttributeGroupArn(value); return *this;}
 

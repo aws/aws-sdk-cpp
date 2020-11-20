@@ -30,7 +30,8 @@ namespace Model
 {
 
   /**
-   * <p> Information about a code review. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about a code review. A code review belongs to the associated
+   * repository that contains the reviewed code. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CodeReview">AWS
    * API Reference</a></p>
    */
@@ -558,6 +559,87 @@ namespace Model
 
 
     /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline const Aws::String& GetAssociationArn() const{ return m_associationArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline bool AssociationArnHasBeenSet() const { return m_associationArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline void SetAssociationArn(const Aws::String& value) { m_associationArnHasBeenSet = true; m_associationArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline void SetAssociationArn(Aws::String&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline void SetAssociationArn(const char* value) { m_associationArnHasBeenSet = true; m_associationArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline CodeReview& WithAssociationArn(const Aws::String& value) { SetAssociationArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline CodeReview& WithAssociationArn(Aws::String&& value) { SetAssociationArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline CodeReview& WithAssociationArn(const char* value) { SetAssociationArn(value); return *this;}
+
+
+    /**
      * <p> The statistics from the code review. </p>
      */
     inline const Metrics& GetMetrics() const{ return m_metrics; }
@@ -624,6 +706,9 @@ namespace Model
 
     SourceCodeType m_sourceCodeType;
     bool m_sourceCodeTypeHasBeenSet;
+
+    Aws::String m_associationArn;
+    bool m_associationArnHasBeenSet;
 
     Metrics m_metrics;
     bool m_metricsHasBeenSet;

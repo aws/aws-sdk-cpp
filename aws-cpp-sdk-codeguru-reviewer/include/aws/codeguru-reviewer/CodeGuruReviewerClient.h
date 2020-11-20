@@ -21,7 +21,10 @@
 #include <aws/codeguru-reviewer/model/ListRecommendationFeedbackResult.h>
 #include <aws/codeguru-reviewer/model/ListRecommendationsResult.h>
 #include <aws/codeguru-reviewer/model/ListRepositoryAssociationsResult.h>
+#include <aws/codeguru-reviewer/model/ListTagsForResourceResult.h>
 #include <aws/codeguru-reviewer/model/PutRecommendationFeedbackResult.h>
+#include <aws/codeguru-reviewer/model/TagResourceResult.h>
+#include <aws/codeguru-reviewer/model/UntagResourceResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -71,7 +74,10 @@ namespace Model
         class ListRecommendationFeedbackRequest;
         class ListRecommendationsRequest;
         class ListRepositoryAssociationsRequest;
+        class ListTagsForResourceRequest;
         class PutRecommendationFeedbackRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<AssociateRepositoryResult, CodeGuruReviewerError> AssociateRepositoryOutcome;
         typedef Aws::Utils::Outcome<CreateCodeReviewResult, CodeGuruReviewerError> CreateCodeReviewOutcome;
@@ -83,7 +89,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRecommendationFeedbackResult, CodeGuruReviewerError> ListRecommendationFeedbackOutcome;
         typedef Aws::Utils::Outcome<ListRecommendationsResult, CodeGuruReviewerError> ListRecommendationsOutcome;
         typedef Aws::Utils::Outcome<ListRepositoryAssociationsResult, CodeGuruReviewerError> ListRepositoryAssociationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeGuruReviewerError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutRecommendationFeedbackResult, CodeGuruReviewerError> PutRecommendationFeedbackOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CodeGuruReviewerError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CodeGuruReviewerError> UntagResourceOutcome;
 
         typedef std::future<AssociateRepositoryOutcome> AssociateRepositoryOutcomeCallable;
         typedef std::future<CreateCodeReviewOutcome> CreateCodeReviewOutcomeCallable;
@@ -95,7 +104,10 @@ namespace Model
         typedef std::future<ListRecommendationFeedbackOutcome> ListRecommendationFeedbackOutcomeCallable;
         typedef std::future<ListRecommendationsOutcome> ListRecommendationsOutcomeCallable;
         typedef std::future<ListRepositoryAssociationsOutcome> ListRepositoryAssociationsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutRecommendationFeedbackOutcome> PutRecommendationFeedbackOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class CodeGuruReviewerClient;
@@ -110,7 +122,10 @@ namespace Model
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::ListRecommendationFeedbackRequest&, const Model::ListRecommendationFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendationFeedbackResponseReceivedHandler;
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::ListRecommendationsRequest&, const Model::ListRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendationsResponseReceivedHandler;
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::ListRepositoryAssociationsRequest&, const Model::ListRepositoryAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoryAssociationsResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::PutRecommendationFeedbackRequest&, const Model::PutRecommendationFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecommendationFeedbackResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p>This section provides documentation for the Amazon CodeGuru Reviewer API
@@ -122,7 +137,13 @@ namespace Model
    * your code base during the code review stage. For more information about CodeGuru
    * Reviewer, see the <i> <a
    * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon
-   * CodeGuru Reviewer User Guide</a>.</i> </p>
+   * CodeGuru Reviewer User Guide</a>.</i> </p> <p> To improve the security of your
+   * CodeGuru Reviewer API calls, you can establish a private connection between your
+   * VPC and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru
+   * Reviewer and interface VPC endpoints (AWS PrivateLink)</a> in the <i>Amazon
+   * CodeGuru Reviewer User Guide</i>. </p>
    */
   class AWS_CODEGURUREVIEWER_API CodeGuruReviewerClient : public Aws::Client::AWSJsonClient
   {
@@ -237,16 +258,26 @@ namespace Model
         virtual void AssociateRepositoryAsync(const Model::AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Use to create a code review for a repository analysis. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Use to create a code review with a <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+         * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type
+         * of code review analyzes all code under a specified branch in an associated
+         * repository. <code>PullRequest</code> code reviews are automatically triggered by
+         * a pull request so cannot be created using this method. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateCodeReviewOutcome CreateCodeReview(const Model::CreateCodeReviewRequest& request) const;
 
         /**
-         * <p> Use to create a code review for a repository analysis. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Use to create a code review with a <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+         * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type
+         * of code review analyzes all code under a specified branch in an associated
+         * repository. <code>PullRequest</code> code reviews are automatically triggered by
+         * a pull request so cannot be created using this method. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">AWS
          * API Reference</a></p>
          *
@@ -255,8 +286,13 @@ namespace Model
         virtual Model::CreateCodeReviewOutcomeCallable CreateCodeReviewCallable(const Model::CreateCodeReviewRequest& request) const;
 
         /**
-         * <p> Use to create a code review for a repository analysis. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Use to create a code review with a <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+         * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type
+         * of code review analyzes all code under a specified branch in an associated
+         * repository. <code>PullRequest</code> code reviews are automatically triggered by
+         * a pull request so cannot be created using this method. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">AWS
          * API Reference</a></p>
          *
@@ -537,6 +573,34 @@ namespace Model
         virtual void ListRepositoryAssociationsAsync(const Model::ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the list of tags associated with an associated repository
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns the list of tags associated with an associated repository
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns the list of tags associated with an associated repository
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Stores customer feedback for a CodeGuru Reviewer recommendation. When this
          * API is called again with different reactions the previous feedback is
          * overwritten. </p><p><h3>See Also:</h3>   <a
@@ -567,6 +631,59 @@ namespace Model
          */
         virtual void PutRecommendationFeedbackAsync(const Model::PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Adds one or more tags to an associated repository.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to an associated repository.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to an associated repository.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a tag from an associated repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes a tag from an associated repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes a tag from an associated repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -581,7 +698,10 @@ namespace Model
         void ListRecommendationFeedbackAsyncHelper(const Model::ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRecommendationsAsyncHelper(const Model::ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRepositoryAssociationsAsyncHelper(const Model::ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRecommendationFeedbackAsyncHelper(const Model::PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

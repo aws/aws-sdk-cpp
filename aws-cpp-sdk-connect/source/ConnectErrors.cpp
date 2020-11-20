@@ -33,8 +33,6 @@ template<> AWS_CONNECT_API ResourceInUseException ConnectError::GetModeledError(
 namespace ConnectErrorMapper
 {
 
-static const int CONTACT_NOT_FOUND_HASH = HashingUtils::HashString("ContactNotFoundException");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int INVALID_CONTACT_FLOW_HASH = HashingUtils::HashString("InvalidContactFlowException");
 static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("UserNotFoundException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -42,8 +40,12 @@ static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateRe
 static const int DESTINATION_NOT_ALLOWED_HASH = HashingUtils::HashString("DestinationNotAllowedException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 static const int CONTACT_FLOW_NOT_PUBLISHED_HASH = HashingUtils::HashString("ContactFlowNotPublishedException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int OUTBOUND_CONTACT_NOT_PERMITTED_HASH = HashingUtils::HashString("OutboundContactNotPermittedException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
+static const int CONTACT_NOT_FOUND_HASH = HashingUtils::HashString("ContactNotFoundException");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
@@ -51,15 +53,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONTACT_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONTACT_NOT_FOUND), false);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_PARAMETER), false);
-  }
-  else if (hashCode == INVALID_CONTACT_FLOW_HASH)
+  if (hashCode == INVALID_CONTACT_FLOW_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_CONTACT_FLOW), false);
   }
@@ -87,13 +81,29 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONTACT_FLOW_NOT_PUBLISHED), false);
   }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_IN_USE), false);
-  }
   else if (hashCode == OUTBOUND_CONTACT_NOT_PERMITTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::OUTBOUND_CONTACT_NOT_PERMITTED), false);
+  }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::SERVICE_QUOTA_EXCEEDED), false);
+  }
+  else if (hashCode == CONTACT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONTACT_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_PARAMETER), false);
+  }
+  else if (hashCode == RESOURCE_CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_CONFLICT), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_IN_USE), false);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

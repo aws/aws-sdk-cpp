@@ -75,81 +75,73 @@ namespace Model
 
 
     /**
-     * <p>The type of the resource that's being disassociated.</p>
+     * <p>The type of the resource that is being disassociated.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of the resource that's being disassociated.</p>
+     * <p>The type of the resource that is being disassociated.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of the resource that's being disassociated.</p>
+     * <p>The type of the resource that is being disassociated.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the resource that's being disassociated.</p>
+     * <p>The type of the resource that is being disassociated.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of the resource that's being disassociated.</p>
+     * <p>The type of the resource that is being disassociated.</p>
      */
     inline DisassociateResourceRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of the resource that's being disassociated.</p>
+     * <p>The type of the resource that is being disassociated.</p>
      */
     inline DisassociateResourceRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>The name or ID of the resource.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>The name or ID of the resource.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>The name or ID of the resource.</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>The name or ID of the resource.</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>The name or ID of the resource.</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>The name or ID of the resource.</p>
      */
     inline DisassociateResourceRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>The name or ID of the resource.</p>
      */
     inline DisassociateResourceRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The name or ID of the resource of which the application will be
-     * associated.</p>
+     * <p>The name or ID of the resource.</p>
      */
     inline DisassociateResourceRequest& WithResource(const char* value) { SetResource(value); return *this;}
 

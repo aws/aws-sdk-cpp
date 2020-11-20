@@ -97,7 +97,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline const Aws::Vector<RepositoryAssociationState>& GetStates() const{ return m_states; }
 
@@ -116,7 +123,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
 
@@ -135,7 +149,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline void SetStates(const Aws::Vector<RepositoryAssociationState>& value) { m_statesHasBeenSet = true; m_states = value; }
 
@@ -154,7 +175,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline void SetStates(Aws::Vector<RepositoryAssociationState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
@@ -173,7 +201,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& WithStates(const Aws::Vector<RepositoryAssociationState>& value) { SetStates(value); return *this;}
 
@@ -192,7 +227,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& WithStates(Aws::Vector<RepositoryAssociationState>&& value) { SetStates(std::move(value)); return *this;}
 
@@ -211,7 +253,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& AddStates(const RepositoryAssociationState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
@@ -230,7 +279,14 @@ namespace Model
      * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
      * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
      * removing the repository's pull request notifications and source code access.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& AddStates(RepositoryAssociationState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 

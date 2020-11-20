@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Information about the resource.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ResourceInfo">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ResourceInfo">AWS
    * API Reference</a></p>
    */
   class AWS_APPREGISTRY_API ResourceInfo
@@ -79,49 +79,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the resource across
      * services.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the resource across
      * services.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the resource across
      * services.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the resource across
      * services.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the resource across
      * services.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the resource across
      * services.</p>
      */
     inline ResourceInfo& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the resource across
      * services.</p>
      */
     inline ResourceInfo& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the resource across
      * services.</p>
      */
     inline ResourceInfo& WithArn(const char* value) { SetArn(value); return *this;}

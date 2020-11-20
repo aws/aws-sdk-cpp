@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/cloudhsmv2/model/BackupPolicy.h>
+#include <aws/cloudhsmv2/model/BackupRetentionPolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -75,6 +76,37 @@ namespace Model
      * <p>The cluster's backup policy.</p>
      */
     inline Cluster& WithBackupPolicy(BackupPolicy&& value) { SetBackupPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A policy that defines how the service retains backups.</p>
+     */
+    inline const BackupRetentionPolicy& GetBackupRetentionPolicy() const{ return m_backupRetentionPolicy; }
+
+    /**
+     * <p>A policy that defines how the service retains backups.</p>
+     */
+    inline bool BackupRetentionPolicyHasBeenSet() const { return m_backupRetentionPolicyHasBeenSet; }
+
+    /**
+     * <p>A policy that defines how the service retains backups.</p>
+     */
+    inline void SetBackupRetentionPolicy(const BackupRetentionPolicy& value) { m_backupRetentionPolicyHasBeenSet = true; m_backupRetentionPolicy = value; }
+
+    /**
+     * <p>A policy that defines how the service retains backups.</p>
+     */
+    inline void SetBackupRetentionPolicy(BackupRetentionPolicy&& value) { m_backupRetentionPolicyHasBeenSet = true; m_backupRetentionPolicy = std::move(value); }
+
+    /**
+     * <p>A policy that defines how the service retains backups.</p>
+     */
+    inline Cluster& WithBackupRetentionPolicy(const BackupRetentionPolicy& value) { SetBackupRetentionPolicy(value); return *this;}
+
+    /**
+     * <p>A policy that defines how the service retains backups.</p>
+     */
+    inline Cluster& WithBackupRetentionPolicy(BackupRetentionPolicy&& value) { SetBackupRetentionPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -637,6 +669,9 @@ namespace Model
 
     BackupPolicy m_backupPolicy;
     bool m_backupPolicyHasBeenSet;
+
+    BackupRetentionPolicy m_backupRetentionPolicy;
+    bool m_backupRetentionPolicyHasBeenSet;
 
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;

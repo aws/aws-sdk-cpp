@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>This list of applications.</p>
      */
     inline const Aws::Vector<ApplicationSummary>& GetApplications() const{ return m_applications; }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>This list of applications.</p>
      */
     inline void SetApplications(const Aws::Vector<ApplicationSummary>& value) { m_applications = value; }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>This list of applications.</p>
      */
     inline void SetApplications(Aws::Vector<ApplicationSummary>&& value) { m_applications = std::move(value); }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>This list of applications.</p>
      */
     inline ListApplicationsResult& WithApplications(const Aws::Vector<ApplicationSummary>& value) { SetApplications(value); return *this;}
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>This list of applications.</p>
      */
     inline ListApplicationsResult& WithApplications(Aws::Vector<ApplicationSummary>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>This list of applications.</p>
      */
     inline ListApplicationsResult& AddApplications(const ApplicationSummary& value) { m_applications.push_back(value); return *this; }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>This list of applications.</p>
      */
     inline ListApplicationsResult& AddApplications(ApplicationSummary&& value) { m_applications.push_back(std::move(value)); return *this; }
 

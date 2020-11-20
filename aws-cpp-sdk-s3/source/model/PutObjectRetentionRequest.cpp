@@ -25,6 +25,7 @@ PutObjectRetentionRequest::PutObjectRetentionRequest() :
     m_versionIdHasBeenSet(false),
     m_bypassGovernanceRetention(false),
     m_bypassGovernanceRetentionHasBeenSet(false),
+    m_contentMD5HasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
@@ -88,6 +89,13 @@ Aws::Http::HeaderValueCollection PutObjectRetentionRequest::GetRequestSpecificHe
   {
     ss << m_bypassGovernanceRetention;
     headers.emplace("x-amz-bypass-governance-retention",  ss.str());
+    ss.str("");
+  }
+
+  if(m_contentMD5HasBeenSet)
+  {
+    ss << m_contentMD5;
+    headers.emplace("content-md5",  ss.str());
     ss.str("");
   }
 

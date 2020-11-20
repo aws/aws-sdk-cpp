@@ -32,8 +32,15 @@
 #include <aws/chime/model/BatchUpdatePhoneNumberRequest.h>
 #include <aws/chime/model/BatchUpdateUserRequest.h>
 #include <aws/chime/model/CreateAccountRequest.h>
+#include <aws/chime/model/CreateAppInstanceRequest.h>
+#include <aws/chime/model/CreateAppInstanceAdminRequest.h>
+#include <aws/chime/model/CreateAppInstanceUserRequest.h>
 #include <aws/chime/model/CreateAttendeeRequest.h>
 #include <aws/chime/model/CreateBotRequest.h>
+#include <aws/chime/model/CreateChannelRequest.h>
+#include <aws/chime/model/CreateChannelBanRequest.h>
+#include <aws/chime/model/CreateChannelMembershipRequest.h>
+#include <aws/chime/model/CreateChannelModeratorRequest.h>
 #include <aws/chime/model/CreateMeetingRequest.h>
 #include <aws/chime/model/CreateMeetingDialOutRequest.h>
 #include <aws/chime/model/CreateMeetingWithAttendeesRequest.h>
@@ -48,7 +55,16 @@
 #include <aws/chime/model/CreateVoiceConnectorRequest.h>
 #include <aws/chime/model/CreateVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/DeleteAccountRequest.h>
+#include <aws/chime/model/DeleteAppInstanceRequest.h>
+#include <aws/chime/model/DeleteAppInstanceAdminRequest.h>
+#include <aws/chime/model/DeleteAppInstanceStreamingConfigurationsRequest.h>
+#include <aws/chime/model/DeleteAppInstanceUserRequest.h>
 #include <aws/chime/model/DeleteAttendeeRequest.h>
+#include <aws/chime/model/DeleteChannelRequest.h>
+#include <aws/chime/model/DeleteChannelBanRequest.h>
+#include <aws/chime/model/DeleteChannelMembershipRequest.h>
+#include <aws/chime/model/DeleteChannelMessageRequest.h>
+#include <aws/chime/model/DeleteChannelModeratorRequest.h>
 #include <aws/chime/model/DeleteEventsConfigurationRequest.h>
 #include <aws/chime/model/DeleteMeetingRequest.h>
 #include <aws/chime/model/DeletePhoneNumberRequest.h>
@@ -65,16 +81,29 @@
 #include <aws/chime/model/DeleteVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorTerminationRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorTerminationCredentialsRequest.h>
+#include <aws/chime/model/DescribeAppInstanceRequest.h>
+#include <aws/chime/model/DescribeAppInstanceAdminRequest.h>
+#include <aws/chime/model/DescribeAppInstanceUserRequest.h>
+#include <aws/chime/model/DescribeChannelRequest.h>
+#include <aws/chime/model/DescribeChannelBanRequest.h>
+#include <aws/chime/model/DescribeChannelMembershipRequest.h>
+#include <aws/chime/model/DescribeChannelMembershipForAppInstanceUserRequest.h>
+#include <aws/chime/model/DescribeChannelModeratedByAppInstanceUserRequest.h>
+#include <aws/chime/model/DescribeChannelModeratorRequest.h>
 #include <aws/chime/model/DisassociatePhoneNumberFromUserRequest.h>
 #include <aws/chime/model/DisassociatePhoneNumbersFromVoiceConnectorRequest.h>
 #include <aws/chime/model/DisassociatePhoneNumbersFromVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/DisassociateSigninDelegateGroupsFromAccountRequest.h>
 #include <aws/chime/model/GetAccountRequest.h>
 #include <aws/chime/model/GetAccountSettingsRequest.h>
+#include <aws/chime/model/GetAppInstanceRetentionSettingsRequest.h>
+#include <aws/chime/model/GetAppInstanceStreamingConfigurationsRequest.h>
 #include <aws/chime/model/GetAttendeeRequest.h>
 #include <aws/chime/model/GetBotRequest.h>
+#include <aws/chime/model/GetChannelMessageRequest.h>
 #include <aws/chime/model/GetEventsConfigurationRequest.h>
 #include <aws/chime/model/GetMeetingRequest.h>
+#include <aws/chime/model/GetMessagingSessionEndpointRequest.h>
 #include <aws/chime/model/GetPhoneNumberRequest.h>
 #include <aws/chime/model/GetPhoneNumberOrderRequest.h>
 #include <aws/chime/model/GetProxySessionRequest.h>
@@ -96,9 +125,19 @@
 #include <aws/chime/model/GetVoiceConnectorTerminationHealthRequest.h>
 #include <aws/chime/model/InviteUsersRequest.h>
 #include <aws/chime/model/ListAccountsRequest.h>
+#include <aws/chime/model/ListAppInstanceAdminsRequest.h>
+#include <aws/chime/model/ListAppInstanceUsersRequest.h>
+#include <aws/chime/model/ListAppInstancesRequest.h>
 #include <aws/chime/model/ListAttendeeTagsRequest.h>
 #include <aws/chime/model/ListAttendeesRequest.h>
 #include <aws/chime/model/ListBotsRequest.h>
+#include <aws/chime/model/ListChannelBansRequest.h>
+#include <aws/chime/model/ListChannelMembershipsRequest.h>
+#include <aws/chime/model/ListChannelMembershipsForAppInstanceUserRequest.h>
+#include <aws/chime/model/ListChannelMessagesRequest.h>
+#include <aws/chime/model/ListChannelModeratorsRequest.h>
+#include <aws/chime/model/ListChannelsRequest.h>
+#include <aws/chime/model/ListChannelsModeratedByAppInstanceUserRequest.h>
 #include <aws/chime/model/ListMeetingTagsRequest.h>
 #include <aws/chime/model/ListMeetingsRequest.h>
 #include <aws/chime/model/ListPhoneNumberOrdersRequest.h>
@@ -114,6 +153,8 @@
 #include <aws/chime/model/ListVoiceConnectorTerminationCredentialsRequest.h>
 #include <aws/chime/model/ListVoiceConnectorsRequest.h>
 #include <aws/chime/model/LogoutUserRequest.h>
+#include <aws/chime/model/PutAppInstanceRetentionSettingsRequest.h>
+#include <aws/chime/model/PutAppInstanceStreamingConfigurationsRequest.h>
 #include <aws/chime/model/PutEventsConfigurationRequest.h>
 #include <aws/chime/model/PutRetentionSettingsRequest.h>
 #include <aws/chime/model/PutSipMediaApplicationLoggingConfigurationRequest.h>
@@ -124,12 +165,14 @@
 #include <aws/chime/model/PutVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationCredentialsRequest.h>
+#include <aws/chime/model/RedactChannelMessageRequest.h>
 #include <aws/chime/model/RedactConversationMessageRequest.h>
 #include <aws/chime/model/RedactRoomMessageRequest.h>
 #include <aws/chime/model/RegenerateSecurityTokenRequest.h>
 #include <aws/chime/model/ResetPersonalPINRequest.h>
 #include <aws/chime/model/RestorePhoneNumberRequest.h>
 #include <aws/chime/model/SearchAvailablePhoneNumbersRequest.h>
+#include <aws/chime/model/SendChannelMessageRequest.h>
 #include <aws/chime/model/TagAttendeeRequest.h>
 #include <aws/chime/model/TagMeetingRequest.h>
 #include <aws/chime/model/TagResourceRequest.h>
@@ -138,7 +181,12 @@
 #include <aws/chime/model/UntagResourceRequest.h>
 #include <aws/chime/model/UpdateAccountRequest.h>
 #include <aws/chime/model/UpdateAccountSettingsRequest.h>
+#include <aws/chime/model/UpdateAppInstanceRequest.h>
+#include <aws/chime/model/UpdateAppInstanceUserRequest.h>
 #include <aws/chime/model/UpdateBotRequest.h>
+#include <aws/chime/model/UpdateChannelRequest.h>
+#include <aws/chime/model/UpdateChannelMessageRequest.h>
+#include <aws/chime/model/UpdateChannelReadMarkerRequest.h>
 #include <aws/chime/model/UpdateGlobalSettingsRequest.h>
 #include <aws/chime/model/UpdatePhoneNumberRequest.h>
 #include <aws/chime/model/UpdatePhoneNumberSettingsRequest.h>
@@ -203,25 +251,34 @@ void ChimeClient::init(const ClientConfiguration& config)
 {
   SetServiceClientName("Chime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
+  m_scheme = m_configScheme;
   if (config.endpointOverride.empty())
   {
-      m_uri = m_configScheme + "://" + ChimeEndpoint::ForRegion(config.region, config.useDualStack);
+      m_baseUri = ChimeEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
       OverrideEndpoint(config.endpointOverride);
   }
+  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
 }
 
 void ChimeClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  if (endpoint.compare(0, 7, "http://") == 0)
   {
-      m_uri = endpoint;
+      m_scheme = "http";
+      m_baseUri = endpoint.substr(7);
+  }
+  else if (endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_scheme = "https";
+      m_baseUri = endpoint.substr(8);
   }
   else
   {
-      m_uri = m_configScheme + "://" + endpoint;
+      m_scheme = m_configScheme;
+      m_baseUri = endpoint;
   }
 }
 
@@ -237,7 +294,7 @@ AssociatePhoneNumberWithUserOutcome ChimeClient::AssociatePhoneNumberWithUser(co
     AWS_LOGSTREAM_ERROR("AssociatePhoneNumberWithUser", "Required field: UserId, is not set");
     return AssociatePhoneNumberWithUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -274,7 +331,7 @@ AssociatePhoneNumbersWithVoiceConnectorOutcome ChimeClient::AssociatePhoneNumber
     AWS_LOGSTREAM_ERROR("AssociatePhoneNumbersWithVoiceConnector", "Required field: VoiceConnectorId, is not set");
     return AssociatePhoneNumbersWithVoiceConnectorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -309,7 +366,7 @@ AssociatePhoneNumbersWithVoiceConnectorGroupOutcome ChimeClient::AssociatePhoneN
     AWS_LOGSTREAM_ERROR("AssociatePhoneNumbersWithVoiceConnectorGroup", "Required field: VoiceConnectorGroupId, is not set");
     return AssociatePhoneNumbersWithVoiceConnectorGroupOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorGroupId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connector-groups/";
   ss << request.GetVoiceConnectorGroupId();
@@ -344,7 +401,7 @@ AssociateSigninDelegateGroupsWithAccountOutcome ChimeClient::AssociateSigninDele
     AWS_LOGSTREAM_ERROR("AssociateSigninDelegateGroupsWithAccount", "Required field: AccountId, is not set");
     return AssociateSigninDelegateGroupsWithAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -379,7 +436,7 @@ BatchCreateAttendeeOutcome ChimeClient::BatchCreateAttendee(const BatchCreateAtt
     AWS_LOGSTREAM_ERROR("BatchCreateAttendee", "Required field: MeetingId, is not set");
     return BatchCreateAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -420,7 +477,7 @@ BatchCreateRoomMembershipOutcome ChimeClient::BatchCreateRoomMembership(const Ba
     AWS_LOGSTREAM_ERROR("BatchCreateRoomMembership", "Required field: RoomId, is not set");
     return BatchCreateRoomMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -453,7 +510,7 @@ void ChimeClient::BatchCreateRoomMembershipAsyncHelper(const BatchCreateRoomMemb
 
 BatchDeletePhoneNumberOutcome ChimeClient::BatchDeletePhoneNumber(const BatchDeletePhoneNumberRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-numbers";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -487,7 +544,7 @@ BatchSuspendUserOutcome ChimeClient::BatchSuspendUser(const BatchSuspendUserRequ
     AWS_LOGSTREAM_ERROR("BatchSuspendUser", "Required field: AccountId, is not set");
     return BatchSuspendUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -523,7 +580,7 @@ BatchUnsuspendUserOutcome ChimeClient::BatchUnsuspendUser(const BatchUnsuspendUs
     AWS_LOGSTREAM_ERROR("BatchUnsuspendUser", "Required field: AccountId, is not set");
     return BatchUnsuspendUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -554,7 +611,7 @@ void ChimeClient::BatchUnsuspendUserAsyncHelper(const BatchUnsuspendUserRequest&
 
 BatchUpdatePhoneNumberOutcome ChimeClient::BatchUpdatePhoneNumber(const BatchUpdatePhoneNumberRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-numbers";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -588,7 +645,7 @@ BatchUpdateUserOutcome ChimeClient::BatchUpdateUser(const BatchUpdateUserRequest
     AWS_LOGSTREAM_ERROR("BatchUpdateUser", "Required field: AccountId, is not set");
     return BatchUpdateUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -617,7 +674,7 @@ void ChimeClient::BatchUpdateUserAsyncHelper(const BatchUpdateUserRequest& reque
 
 CreateAccountOutcome ChimeClient::CreateAccount(const CreateAccountRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -642,6 +699,121 @@ void ChimeClient::CreateAccountAsyncHelper(const CreateAccountRequest& request, 
   handler(this, request, CreateAccount(request), context);
 }
 
+CreateAppInstanceOutcome ChimeClient::CreateAppInstance(const CreateAppInstanceRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateAppInstance", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAppInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAppInstanceOutcomeCallable ChimeClient::CreateAppInstanceCallable(const CreateAppInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAppInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateAppInstanceAsync(const CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAppInstanceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateAppInstanceAsyncHelper(const CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAppInstance(request), context);
+}
+
+CreateAppInstanceAdminOutcome ChimeClient::CreateAppInstanceAdmin(const CreateAppInstanceAdminRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAppInstanceAdmin", "Required field: AppInstanceArn, is not set");
+    return CreateAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateAppInstanceAdmin", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  ss << "/admins";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAppInstanceAdminOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAppInstanceAdminOutcomeCallable ChimeClient::CreateAppInstanceAdminCallable(const CreateAppInstanceAdminRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAppInstanceAdminOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppInstanceAdmin(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateAppInstanceAdminAsync(const CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAppInstanceAdminAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateAppInstanceAdminAsyncHelper(const CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAppInstanceAdmin(request), context);
+}
+
+CreateAppInstanceUserOutcome ChimeClient::CreateAppInstanceUser(const CreateAppInstanceUserRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateAppInstanceUser", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instance-users";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAppInstanceUserOutcomeCallable ChimeClient::CreateAppInstanceUserCallable(const CreateAppInstanceUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppInstanceUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateAppInstanceUserAsync(const CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAppInstanceUserAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateAppInstanceUserAsyncHelper(const CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAppInstanceUser(request), context);
+}
+
 CreateAttendeeOutcome ChimeClient::CreateAttendee(const CreateAttendeeRequest& request) const
 {
   if (!request.MeetingIdHasBeenSet())
@@ -649,7 +821,7 @@ CreateAttendeeOutcome ChimeClient::CreateAttendee(const CreateAttendeeRequest& r
     AWS_LOGSTREAM_ERROR("CreateAttendee", "Required field: MeetingId, is not set");
     return CreateAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -683,7 +855,7 @@ CreateBotOutcome ChimeClient::CreateBot(const CreateBotRequest& request) const
     AWS_LOGSTREAM_ERROR("CreateBot", "Required field: AccountId, is not set");
     return CreateBotOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -710,9 +882,174 @@ void ChimeClient::CreateBotAsyncHelper(const CreateBotRequest& request, const Cr
   handler(this, request, CreateBot(request), context);
 }
 
+CreateChannelOutcome ChimeClient::CreateChannel(const CreateChannelRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateChannel", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateChannelOutcomeCallable ChimeClient::CreateChannelCallable(const CreateChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateChannel(request), context);
+}
+
+CreateChannelBanOutcome ChimeClient::CreateChannelBan(const CreateChannelBanRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateChannelBan", "Required field: ChannelArn, is not set");
+    return CreateChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateChannelBan", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/bans";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateChannelBanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateChannelBanOutcomeCallable ChimeClient::CreateChannelBanCallable(const CreateChannelBanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateChannelBanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChannelBan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateChannelBanAsync(const CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelBanAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateChannelBanAsyncHelper(const CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateChannelBan(request), context);
+}
+
+CreateChannelMembershipOutcome ChimeClient::CreateChannelMembership(const CreateChannelMembershipRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateChannelMembership", "Required field: ChannelArn, is not set");
+    return CreateChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateChannelMembership", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/memberships";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateChannelMembershipOutcomeCallable ChimeClient::CreateChannelMembershipCallable(const CreateChannelMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateChannelMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChannelMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateChannelMembershipAsync(const CreateChannelMembershipRequest& request, const CreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateChannelMembershipAsyncHelper(const CreateChannelMembershipRequest& request, const CreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateChannelMembership(request), context);
+}
+
+CreateChannelModeratorOutcome ChimeClient::CreateChannelModerator(const CreateChannelModeratorRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateChannelModerator", "Required field: ChannelArn, is not set");
+    return CreateChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateChannelModerator", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/moderators";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateChannelModeratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateChannelModeratorOutcomeCallable ChimeClient::CreateChannelModeratorCallable(const CreateChannelModeratorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateChannelModeratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChannelModerator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateChannelModeratorAsync(const CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelModeratorAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateChannelModeratorAsyncHelper(const CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateChannelModerator(request), context);
+}
+
 CreateMeetingOutcome ChimeClient::CreateMeeting(const CreateMeetingRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -744,7 +1081,7 @@ CreateMeetingDialOutOutcome ChimeClient::CreateMeetingDialOut(const CreateMeetin
     AWS_LOGSTREAM_ERROR("CreateMeetingDialOut", "Required field: MeetingId, is not set");
     return CreateMeetingDialOutOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -773,7 +1110,7 @@ void ChimeClient::CreateMeetingDialOutAsyncHelper(const CreateMeetingDialOutRequ
 
 CreateMeetingWithAttendeesOutcome ChimeClient::CreateMeetingWithAttendees(const CreateMeetingWithAttendeesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -802,7 +1139,7 @@ void ChimeClient::CreateMeetingWithAttendeesAsyncHelper(const CreateMeetingWithA
 
 CreatePhoneNumberOrderOutcome ChimeClient::CreatePhoneNumberOrder(const CreatePhoneNumberOrderRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-number-orders";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -834,7 +1171,7 @@ CreateProxySessionOutcome ChimeClient::CreateProxySession(const CreateProxySessi
     AWS_LOGSTREAM_ERROR("CreateProxySession", "Required field: VoiceConnectorId, is not set");
     return CreateProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -868,7 +1205,7 @@ CreateRoomOutcome ChimeClient::CreateRoom(const CreateRoomRequest& request) cons
     AWS_LOGSTREAM_ERROR("CreateRoom", "Required field: AccountId, is not set");
     return CreateRoomOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -907,7 +1244,7 @@ CreateRoomMembershipOutcome ChimeClient::CreateRoomMembership(const CreateRoomMe
     AWS_LOGSTREAM_ERROR("CreateRoomMembership", "Required field: RoomId, is not set");
     return CreateRoomMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -938,7 +1275,7 @@ void ChimeClient::CreateRoomMembershipAsyncHelper(const CreateRoomMembershipRequ
 
 CreateSipMediaApplicationOutcome ChimeClient::CreateSipMediaApplication(const CreateSipMediaApplicationRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-media-applications";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -970,7 +1307,7 @@ CreateSipMediaApplicationCallOutcome ChimeClient::CreateSipMediaApplicationCall(
     AWS_LOGSTREAM_ERROR("CreateSipMediaApplicationCall", "Required field: SipMediaApplicationId, is not set");
     return CreateSipMediaApplicationCallOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-media-applications/";
   ss << request.GetSipMediaApplicationId();
@@ -999,7 +1336,7 @@ void ChimeClient::CreateSipMediaApplicationCallAsyncHelper(const CreateSipMediaA
 
 CreateSipRuleOutcome ChimeClient::CreateSipRule(const CreateSipRuleRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-rules";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1031,7 +1368,7 @@ CreateUserOutcome ChimeClient::CreateUser(const CreateUserRequest& request) cons
     AWS_LOGSTREAM_ERROR("CreateUser", "Required field: AccountId, is not set");
     return CreateUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -1062,7 +1399,7 @@ void ChimeClient::CreateUserAsyncHelper(const CreateUserRequest& request, const 
 
 CreateVoiceConnectorOutcome ChimeClient::CreateVoiceConnector(const CreateVoiceConnectorRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1089,7 +1426,7 @@ void ChimeClient::CreateVoiceConnectorAsyncHelper(const CreateVoiceConnectorRequ
 
 CreateVoiceConnectorGroupOutcome ChimeClient::CreateVoiceConnectorGroup(const CreateVoiceConnectorGroupRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connector-groups";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1121,7 +1458,7 @@ DeleteAccountOutcome ChimeClient::DeleteAccount(const DeleteAccountRequest& requ
     AWS_LOGSTREAM_ERROR("DeleteAccount", "Required field: AccountId, is not set");
     return DeleteAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -1147,6 +1484,173 @@ void ChimeClient::DeleteAccountAsyncHelper(const DeleteAccountRequest& request, 
   handler(this, request, DeleteAccount(request), context);
 }
 
+DeleteAppInstanceOutcome ChimeClient::DeleteAppInstance(const DeleteAppInstanceRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAppInstance", "Required field: AppInstanceArn, is not set");
+    return DeleteAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteAppInstance", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAppInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAppInstanceOutcomeCallable ChimeClient::DeleteAppInstanceCallable(const DeleteAppInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteAppInstanceAsync(const DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppInstanceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteAppInstanceAsyncHelper(const DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAppInstance(request), context);
+}
+
+DeleteAppInstanceAdminOutcome ChimeClient::DeleteAppInstanceAdmin(const DeleteAppInstanceAdminRequest& request) const
+{
+  if (!request.AppInstanceAdminArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAppInstanceAdmin", "Required field: AppInstanceAdminArn, is not set");
+    return DeleteAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceAdminArn]", false));
+  }
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAppInstanceAdmin", "Required field: AppInstanceArn, is not set");
+    return DeleteAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteAppInstanceAdmin", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  ss << "/admins/";
+  ss << request.GetAppInstanceAdminArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAppInstanceAdminOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAppInstanceAdminOutcomeCallable ChimeClient::DeleteAppInstanceAdminCallable(const DeleteAppInstanceAdminRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppInstanceAdminOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppInstanceAdmin(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteAppInstanceAdminAsync(const DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppInstanceAdminAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteAppInstanceAdminAsyncHelper(const DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAppInstanceAdmin(request), context);
+}
+
+DeleteAppInstanceStreamingConfigurationsOutcome ChimeClient::DeleteAppInstanceStreamingConfigurations(const DeleteAppInstanceStreamingConfigurationsRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAppInstanceStreamingConfigurations", "Required field: AppInstanceArn, is not set");
+    return DeleteAppInstanceStreamingConfigurationsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  ss << "/streaming-configurations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAppInstanceStreamingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAppInstanceStreamingConfigurationsOutcomeCallable ChimeClient::DeleteAppInstanceStreamingConfigurationsCallable(const DeleteAppInstanceStreamingConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppInstanceStreamingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppInstanceStreamingConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteAppInstanceStreamingConfigurationsAsync(const DeleteAppInstanceStreamingConfigurationsRequest& request, const DeleteAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppInstanceStreamingConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteAppInstanceStreamingConfigurationsAsyncHelper(const DeleteAppInstanceStreamingConfigurationsRequest& request, const DeleteAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAppInstanceStreamingConfigurations(request), context);
+}
+
+DeleteAppInstanceUserOutcome ChimeClient::DeleteAppInstanceUser(const DeleteAppInstanceUserRequest& request) const
+{
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAppInstanceUser", "Required field: AppInstanceUserArn, is not set");
+    return DeleteAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteAppInstanceUser", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instance-users/";
+  ss << request.GetAppInstanceUserArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAppInstanceUserOutcomeCallable ChimeClient::DeleteAppInstanceUserCallable(const DeleteAppInstanceUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppInstanceUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteAppInstanceUserAsync(const DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppInstanceUserAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteAppInstanceUserAsyncHelper(const DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAppInstanceUser(request), context);
+}
+
 DeleteAttendeeOutcome ChimeClient::DeleteAttendee(const DeleteAttendeeRequest& request) const
 {
   if (!request.MeetingIdHasBeenSet())
@@ -1159,7 +1663,7 @@ DeleteAttendeeOutcome ChimeClient::DeleteAttendee(const DeleteAttendeeRequest& r
     AWS_LOGSTREAM_ERROR("DeleteAttendee", "Required field: AttendeeId, is not set");
     return DeleteAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -1187,6 +1691,244 @@ void ChimeClient::DeleteAttendeeAsyncHelper(const DeleteAttendeeRequest& request
   handler(this, request, DeleteAttendee(request), context);
 }
 
+DeleteChannelOutcome ChimeClient::DeleteChannel(const DeleteChannelRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannel", "Required field: ChannelArn, is not set");
+    return DeleteChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteChannel", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteChannelOutcomeCallable ChimeClient::DeleteChannelCallable(const DeleteChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteChannel(request), context);
+}
+
+DeleteChannelBanOutcome ChimeClient::DeleteChannelBan(const DeleteChannelBanRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannelBan", "Required field: ChannelArn, is not set");
+    return DeleteChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MemberArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannelBan", "Required field: MemberArn, is not set");
+    return DeleteChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteChannelBan", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/bans/";
+  ss << request.GetMemberArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteChannelBanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteChannelBanOutcomeCallable ChimeClient::DeleteChannelBanCallable(const DeleteChannelBanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteChannelBanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteChannelBan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteChannelBanAsync(const DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelBanAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteChannelBanAsyncHelper(const DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteChannelBan(request), context);
+}
+
+DeleteChannelMembershipOutcome ChimeClient::DeleteChannelMembership(const DeleteChannelMembershipRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannelMembership", "Required field: ChannelArn, is not set");
+    return DeleteChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MemberArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannelMembership", "Required field: MemberArn, is not set");
+    return DeleteChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteChannelMembership", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/memberships/";
+  ss << request.GetMemberArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteChannelMembershipOutcomeCallable ChimeClient::DeleteChannelMembershipCallable(const DeleteChannelMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteChannelMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteChannelMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteChannelMembershipAsync(const DeleteChannelMembershipRequest& request, const DeleteChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteChannelMembershipAsyncHelper(const DeleteChannelMembershipRequest& request, const DeleteChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteChannelMembership(request), context);
+}
+
+DeleteChannelMessageOutcome ChimeClient::DeleteChannelMessage(const DeleteChannelMessageRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannelMessage", "Required field: ChannelArn, is not set");
+    return DeleteChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MessageIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannelMessage", "Required field: MessageId, is not set");
+    return DeleteChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteChannelMessage", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/messages/";
+  ss << request.GetMessageId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteChannelMessageOutcomeCallable ChimeClient::DeleteChannelMessageCallable(const DeleteChannelMessageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteChannelMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteChannelMessage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteChannelMessageAsync(const DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelMessageAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteChannelMessageAsyncHelper(const DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteChannelMessage(request), context);
+}
+
+DeleteChannelModeratorOutcome ChimeClient::DeleteChannelModerator(const DeleteChannelModeratorRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannelModerator", "Required field: ChannelArn, is not set");
+    return DeleteChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.ChannelModeratorArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannelModerator", "Required field: ChannelModeratorArn, is not set");
+    return DeleteChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelModeratorArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteChannelModerator", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/moderators/";
+  ss << request.GetChannelModeratorArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteChannelModeratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteChannelModeratorOutcomeCallable ChimeClient::DeleteChannelModeratorCallable(const DeleteChannelModeratorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteChannelModeratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteChannelModerator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteChannelModeratorAsync(const DeleteChannelModeratorRequest& request, const DeleteChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelModeratorAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteChannelModeratorAsyncHelper(const DeleteChannelModeratorRequest& request, const DeleteChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteChannelModerator(request), context);
+}
+
 DeleteEventsConfigurationOutcome ChimeClient::DeleteEventsConfiguration(const DeleteEventsConfigurationRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -1199,7 +1941,7 @@ DeleteEventsConfigurationOutcome ChimeClient::DeleteEventsConfiguration(const De
     AWS_LOGSTREAM_ERROR("DeleteEventsConfiguration", "Required field: BotId, is not set");
     return DeleteEventsConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -1235,7 +1977,7 @@ DeleteMeetingOutcome ChimeClient::DeleteMeeting(const DeleteMeetingRequest& requ
     AWS_LOGSTREAM_ERROR("DeleteMeeting", "Required field: MeetingId, is not set");
     return DeleteMeetingOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -1268,7 +2010,7 @@ DeletePhoneNumberOutcome ChimeClient::DeletePhoneNumber(const DeletePhoneNumberR
     AWS_LOGSTREAM_ERROR("DeletePhoneNumber", "Required field: PhoneNumberId, is not set");
     return DeletePhoneNumberOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-numbers/";
   ss << request.GetPhoneNumberId();
@@ -1306,7 +2048,7 @@ DeleteProxySessionOutcome ChimeClient::DeleteProxySession(const DeleteProxySessi
     AWS_LOGSTREAM_ERROR("DeleteProxySession", "Required field: ProxySessionId, is not set");
     return DeleteProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProxySessionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -1346,7 +2088,7 @@ DeleteRoomOutcome ChimeClient::DeleteRoom(const DeleteRoomRequest& request) cons
     AWS_LOGSTREAM_ERROR("DeleteRoom", "Required field: RoomId, is not set");
     return DeleteRoomOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -1391,7 +2133,7 @@ DeleteRoomMembershipOutcome ChimeClient::DeleteRoomMembership(const DeleteRoomMe
     AWS_LOGSTREAM_ERROR("DeleteRoomMembership", "Required field: MemberId, is not set");
     return DeleteRoomMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -1428,7 +2170,7 @@ DeleteSipMediaApplicationOutcome ChimeClient::DeleteSipMediaApplication(const De
     AWS_LOGSTREAM_ERROR("DeleteSipMediaApplication", "Required field: SipMediaApplicationId, is not set");
     return DeleteSipMediaApplicationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-media-applications/";
   ss << request.GetSipMediaApplicationId();
@@ -1461,7 +2203,7 @@ DeleteSipRuleOutcome ChimeClient::DeleteSipRule(const DeleteSipRuleRequest& requ
     AWS_LOGSTREAM_ERROR("DeleteSipRule", "Required field: SipRuleId, is not set");
     return DeleteSipRuleOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipRuleId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-rules/";
   ss << request.GetSipRuleId();
@@ -1494,7 +2236,7 @@ DeleteVoiceConnectorOutcome ChimeClient::DeleteVoiceConnector(const DeleteVoiceC
     AWS_LOGSTREAM_ERROR("DeleteVoiceConnector", "Required field: VoiceConnectorId, is not set");
     return DeleteVoiceConnectorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -1527,7 +2269,7 @@ DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::DeleteVoic
     AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorEmergencyCallingConfiguration", "Required field: VoiceConnectorId, is not set");
     return DeleteVoiceConnectorEmergencyCallingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -1561,7 +2303,7 @@ DeleteVoiceConnectorGroupOutcome ChimeClient::DeleteVoiceConnectorGroup(const De
     AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorGroup", "Required field: VoiceConnectorGroupId, is not set");
     return DeleteVoiceConnectorGroupOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorGroupId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connector-groups/";
   ss << request.GetVoiceConnectorGroupId();
@@ -1594,7 +2336,7 @@ DeleteVoiceConnectorOriginationOutcome ChimeClient::DeleteVoiceConnectorOriginat
     AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorOrigination", "Required field: VoiceConnectorId, is not set");
     return DeleteVoiceConnectorOriginationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -1628,7 +2370,7 @@ DeleteVoiceConnectorProxyOutcome ChimeClient::DeleteVoiceConnectorProxy(const De
     AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorProxy", "Required field: VoiceConnectorId, is not set");
     return DeleteVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -1662,7 +2404,7 @@ DeleteVoiceConnectorStreamingConfigurationOutcome ChimeClient::DeleteVoiceConnec
     AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorStreamingConfiguration", "Required field: VoiceConnectorId, is not set");
     return DeleteVoiceConnectorStreamingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -1696,7 +2438,7 @@ DeleteVoiceConnectorTerminationOutcome ChimeClient::DeleteVoiceConnectorTerminat
     AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorTermination", "Required field: VoiceConnectorId, is not set");
     return DeleteVoiceConnectorTerminationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -1730,7 +2472,7 @@ DeleteVoiceConnectorTerminationCredentialsOutcome ChimeClient::DeleteVoiceConnec
     AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorTerminationCredentials", "Required field: VoiceConnectorId, is not set");
     return DeleteVoiceConnectorTerminationCredentialsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -1759,6 +2501,426 @@ void ChimeClient::DeleteVoiceConnectorTerminationCredentialsAsyncHelper(const De
   handler(this, request, DeleteVoiceConnectorTerminationCredentials(request), context);
 }
 
+DescribeAppInstanceOutcome ChimeClient::DescribeAppInstance(const DescribeAppInstanceRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAppInstance", "Required field: AppInstanceArn, is not set");
+    return DescribeAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeAppInstance", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAppInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAppInstanceOutcomeCallable ChimeClient::DescribeAppInstanceCallable(const DescribeAppInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAppInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DescribeAppInstanceAsync(const DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppInstanceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DescribeAppInstanceAsyncHelper(const DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAppInstance(request), context);
+}
+
+DescribeAppInstanceAdminOutcome ChimeClient::DescribeAppInstanceAdmin(const DescribeAppInstanceAdminRequest& request) const
+{
+  if (!request.AppInstanceAdminArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAppInstanceAdmin", "Required field: AppInstanceAdminArn, is not set");
+    return DescribeAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceAdminArn]", false));
+  }
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAppInstanceAdmin", "Required field: AppInstanceArn, is not set");
+    return DescribeAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeAppInstanceAdmin", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  ss << "/admins/";
+  ss << request.GetAppInstanceAdminArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAppInstanceAdminOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAppInstanceAdminOutcomeCallable ChimeClient::DescribeAppInstanceAdminCallable(const DescribeAppInstanceAdminRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAppInstanceAdminOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppInstanceAdmin(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DescribeAppInstanceAdminAsync(const DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppInstanceAdminAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DescribeAppInstanceAdminAsyncHelper(const DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAppInstanceAdmin(request), context);
+}
+
+DescribeAppInstanceUserOutcome ChimeClient::DescribeAppInstanceUser(const DescribeAppInstanceUserRequest& request) const
+{
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAppInstanceUser", "Required field: AppInstanceUserArn, is not set");
+    return DescribeAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeAppInstanceUser", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instance-users/";
+  ss << request.GetAppInstanceUserArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAppInstanceUserOutcomeCallable ChimeClient::DescribeAppInstanceUserCallable(const DescribeAppInstanceUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppInstanceUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DescribeAppInstanceUserAsync(const DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppInstanceUserAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DescribeAppInstanceUserAsyncHelper(const DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAppInstanceUser(request), context);
+}
+
+DescribeChannelOutcome ChimeClient::DescribeChannel(const DescribeChannelRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannel", "Required field: ChannelArn, is not set");
+    return DescribeChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeChannel", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeChannelOutcomeCallable ChimeClient::DescribeChannelCallable(const DescribeChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DescribeChannelAsyncHelper(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeChannel(request), context);
+}
+
+DescribeChannelBanOutcome ChimeClient::DescribeChannelBan(const DescribeChannelBanRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelBan", "Required field: ChannelArn, is not set");
+    return DescribeChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MemberArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelBan", "Required field: MemberArn, is not set");
+    return DescribeChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeChannelBan", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/bans/";
+  ss << request.GetMemberArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeChannelBanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeChannelBanOutcomeCallable ChimeClient::DescribeChannelBanCallable(const DescribeChannelBanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeChannelBanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChannelBan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DescribeChannelBanAsync(const DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelBanAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DescribeChannelBanAsyncHelper(const DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeChannelBan(request), context);
+}
+
+DescribeChannelMembershipOutcome ChimeClient::DescribeChannelMembership(const DescribeChannelMembershipRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelMembership", "Required field: ChannelArn, is not set");
+    return DescribeChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MemberArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelMembership", "Required field: MemberArn, is not set");
+    return DescribeChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeChannelMembership", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/memberships/";
+  ss << request.GetMemberArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeChannelMembershipOutcomeCallable ChimeClient::DescribeChannelMembershipCallable(const DescribeChannelMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeChannelMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChannelMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DescribeChannelMembershipAsync(const DescribeChannelMembershipRequest& request, const DescribeChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DescribeChannelMembershipAsyncHelper(const DescribeChannelMembershipRequest& request, const DescribeChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeChannelMembership(request), context);
+}
+
+DescribeChannelMembershipForAppInstanceUserOutcome ChimeClient::DescribeChannelMembershipForAppInstanceUser(const DescribeChannelMembershipForAppInstanceUserRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelMembershipForAppInstanceUser", "Required field: ChannelArn, is not set");
+    return DescribeChannelMembershipForAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelMembershipForAppInstanceUser", "Required field: AppInstanceUserArn, is not set");
+    return DescribeChannelMembershipForAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeChannelMembershipForAppInstanceUser", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeChannelMembershipForAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?scope=app-instance-user-membership");
+  uri.SetQueryString(ss.str());
+  return DescribeChannelMembershipForAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeChannelMembershipForAppInstanceUserOutcomeCallable ChimeClient::DescribeChannelMembershipForAppInstanceUserCallable(const DescribeChannelMembershipForAppInstanceUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeChannelMembershipForAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChannelMembershipForAppInstanceUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DescribeChannelMembershipForAppInstanceUserAsync(const DescribeChannelMembershipForAppInstanceUserRequest& request, const DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelMembershipForAppInstanceUserAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DescribeChannelMembershipForAppInstanceUserAsyncHelper(const DescribeChannelMembershipForAppInstanceUserRequest& request, const DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeChannelMembershipForAppInstanceUser(request), context);
+}
+
+DescribeChannelModeratedByAppInstanceUserOutcome ChimeClient::DescribeChannelModeratedByAppInstanceUser(const DescribeChannelModeratedByAppInstanceUserRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelModeratedByAppInstanceUser", "Required field: ChannelArn, is not set");
+    return DescribeChannelModeratedByAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelModeratedByAppInstanceUser", "Required field: AppInstanceUserArn, is not set");
+    return DescribeChannelModeratedByAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeChannelModeratedByAppInstanceUser", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeChannelModeratedByAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?scope=app-instance-user-moderated-channel");
+  uri.SetQueryString(ss.str());
+  return DescribeChannelModeratedByAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeChannelModeratedByAppInstanceUserOutcomeCallable ChimeClient::DescribeChannelModeratedByAppInstanceUserCallable(const DescribeChannelModeratedByAppInstanceUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeChannelModeratedByAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChannelModeratedByAppInstanceUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DescribeChannelModeratedByAppInstanceUserAsync(const DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelModeratedByAppInstanceUserAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DescribeChannelModeratedByAppInstanceUserAsyncHelper(const DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeChannelModeratedByAppInstanceUser(request), context);
+}
+
+DescribeChannelModeratorOutcome ChimeClient::DescribeChannelModerator(const DescribeChannelModeratorRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelModerator", "Required field: ChannelArn, is not set");
+    return DescribeChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.ChannelModeratorArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelModerator", "Required field: ChannelModeratorArn, is not set");
+    return DescribeChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelModeratorArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeChannelModerator", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/moderators/";
+  ss << request.GetChannelModeratorArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeChannelModeratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeChannelModeratorOutcomeCallable ChimeClient::DescribeChannelModeratorCallable(const DescribeChannelModeratorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeChannelModeratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChannelModerator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DescribeChannelModeratorAsync(const DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelModeratorAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DescribeChannelModeratorAsyncHelper(const DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeChannelModerator(request), context);
+}
+
 DisassociatePhoneNumberFromUserOutcome ChimeClient::DisassociatePhoneNumberFromUser(const DisassociatePhoneNumberFromUserRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -1771,7 +2933,7 @@ DisassociatePhoneNumberFromUserOutcome ChimeClient::DisassociatePhoneNumberFromU
     AWS_LOGSTREAM_ERROR("DisassociatePhoneNumberFromUser", "Required field: UserId, is not set");
     return DisassociatePhoneNumberFromUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -1808,7 +2970,7 @@ DisassociatePhoneNumbersFromVoiceConnectorOutcome ChimeClient::DisassociatePhone
     AWS_LOGSTREAM_ERROR("DisassociatePhoneNumbersFromVoiceConnector", "Required field: VoiceConnectorId, is not set");
     return DisassociatePhoneNumbersFromVoiceConnectorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -1843,7 +3005,7 @@ DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome ChimeClient::Disassociate
     AWS_LOGSTREAM_ERROR("DisassociatePhoneNumbersFromVoiceConnectorGroup", "Required field: VoiceConnectorGroupId, is not set");
     return DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorGroupId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connector-groups/";
   ss << request.GetVoiceConnectorGroupId();
@@ -1878,7 +3040,7 @@ DisassociateSigninDelegateGroupsFromAccountOutcome ChimeClient::DisassociateSign
     AWS_LOGSTREAM_ERROR("DisassociateSigninDelegateGroupsFromAccount", "Required field: AccountId, is not set");
     return DisassociateSigninDelegateGroupsFromAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -1913,7 +3075,7 @@ GetAccountOutcome ChimeClient::GetAccount(const GetAccountRequest& request) cons
     AWS_LOGSTREAM_ERROR("GetAccount", "Required field: AccountId, is not set");
     return GetAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -1946,7 +3108,7 @@ GetAccountSettingsOutcome ChimeClient::GetAccountSettings(const GetAccountSettin
     AWS_LOGSTREAM_ERROR("GetAccountSettings", "Required field: AccountId, is not set");
     return GetAccountSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -1973,6 +3135,83 @@ void ChimeClient::GetAccountSettingsAsyncHelper(const GetAccountSettingsRequest&
   handler(this, request, GetAccountSettings(request), context);
 }
 
+GetAppInstanceRetentionSettingsOutcome ChimeClient::GetAppInstanceRetentionSettings(const GetAppInstanceRetentionSettingsRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAppInstanceRetentionSettings", "Required field: AppInstanceArn, is not set");
+    return GetAppInstanceRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetAppInstanceRetentionSettings", "Invalid DNS host: " << uri.GetAuthority());
+      return GetAppInstanceRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  ss << "/retention-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAppInstanceRetentionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAppInstanceRetentionSettingsOutcomeCallable ChimeClient::GetAppInstanceRetentionSettingsCallable(const GetAppInstanceRetentionSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAppInstanceRetentionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppInstanceRetentionSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetAppInstanceRetentionSettingsAsync(const GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAppInstanceRetentionSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetAppInstanceRetentionSettingsAsyncHelper(const GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAppInstanceRetentionSettings(request), context);
+}
+
+GetAppInstanceStreamingConfigurationsOutcome ChimeClient::GetAppInstanceStreamingConfigurations(const GetAppInstanceStreamingConfigurationsRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAppInstanceStreamingConfigurations", "Required field: AppInstanceArn, is not set");
+    return GetAppInstanceStreamingConfigurationsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  ss << "/streaming-configurations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAppInstanceStreamingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAppInstanceStreamingConfigurationsOutcomeCallable ChimeClient::GetAppInstanceStreamingConfigurationsCallable(const GetAppInstanceStreamingConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAppInstanceStreamingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppInstanceStreamingConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetAppInstanceStreamingConfigurationsAsync(const GetAppInstanceStreamingConfigurationsRequest& request, const GetAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAppInstanceStreamingConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetAppInstanceStreamingConfigurationsAsyncHelper(const GetAppInstanceStreamingConfigurationsRequest& request, const GetAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAppInstanceStreamingConfigurations(request), context);
+}
+
 GetAttendeeOutcome ChimeClient::GetAttendee(const GetAttendeeRequest& request) const
 {
   if (!request.MeetingIdHasBeenSet())
@@ -1985,7 +3224,7 @@ GetAttendeeOutcome ChimeClient::GetAttendee(const GetAttendeeRequest& request) c
     AWS_LOGSTREAM_ERROR("GetAttendee", "Required field: AttendeeId, is not set");
     return GetAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -2025,7 +3264,7 @@ GetBotOutcome ChimeClient::GetBot(const GetBotRequest& request) const
     AWS_LOGSTREAM_ERROR("GetBot", "Required field: BotId, is not set");
     return GetBotOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -2053,6 +3292,55 @@ void ChimeClient::GetBotAsyncHelper(const GetBotRequest& request, const GetBotRe
   handler(this, request, GetBot(request), context);
 }
 
+GetChannelMessageOutcome ChimeClient::GetChannelMessage(const GetChannelMessageRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannelMessage", "Required field: ChannelArn, is not set");
+    return GetChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MessageIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannelMessage", "Required field: MessageId, is not set");
+    return GetChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetChannelMessage", "Invalid DNS host: " << uri.GetAuthority());
+      return GetChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/messages/";
+  ss << request.GetMessageId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetChannelMessageOutcomeCallable ChimeClient::GetChannelMessageCallable(const GetChannelMessageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetChannelMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetChannelMessage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetChannelMessageAsync(const GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetChannelMessageAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetChannelMessageAsyncHelper(const GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetChannelMessage(request), context);
+}
+
 GetEventsConfigurationOutcome ChimeClient::GetEventsConfiguration(const GetEventsConfigurationRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -2065,7 +3353,7 @@ GetEventsConfigurationOutcome ChimeClient::GetEventsConfiguration(const GetEvent
     AWS_LOGSTREAM_ERROR("GetEventsConfiguration", "Required field: BotId, is not set");
     return GetEventsConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -2097,7 +3385,7 @@ void ChimeClient::GetEventsConfigurationAsyncHelper(const GetEventsConfiguration
 GetGlobalSettingsOutcome ChimeClient::GetGlobalSettings() const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/settings";
+  ss << m_baseUri << "/settings";
   return GetGlobalSettingsOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "GetGlobalSettings"));
 }
 
@@ -2126,7 +3414,7 @@ GetMeetingOutcome ChimeClient::GetMeeting(const GetMeetingRequest& request) cons
     AWS_LOGSTREAM_ERROR("GetMeeting", "Required field: MeetingId, is not set");
     return GetMeetingOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -2152,6 +3440,42 @@ void ChimeClient::GetMeetingAsyncHelper(const GetMeetingRequest& request, const 
   handler(this, request, GetMeeting(request), context);
 }
 
+GetMessagingSessionEndpointOutcome ChimeClient::GetMessagingSessionEndpoint(const GetMessagingSessionEndpointRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetMessagingSessionEndpoint", "Invalid DNS host: " << uri.GetAuthority());
+      return GetMessagingSessionEndpointOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/endpoints/messaging-session";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetMessagingSessionEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMessagingSessionEndpointOutcomeCallable ChimeClient::GetMessagingSessionEndpointCallable(const GetMessagingSessionEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMessagingSessionEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMessagingSessionEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetMessagingSessionEndpointAsync(const GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMessagingSessionEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetMessagingSessionEndpointAsyncHelper(const GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMessagingSessionEndpoint(request), context);
+}
+
 GetPhoneNumberOutcome ChimeClient::GetPhoneNumber(const GetPhoneNumberRequest& request) const
 {
   if (!request.PhoneNumberIdHasBeenSet())
@@ -2159,7 +3483,7 @@ GetPhoneNumberOutcome ChimeClient::GetPhoneNumber(const GetPhoneNumberRequest& r
     AWS_LOGSTREAM_ERROR("GetPhoneNumber", "Required field: PhoneNumberId, is not set");
     return GetPhoneNumberOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-numbers/";
   ss << request.GetPhoneNumberId();
@@ -2192,7 +3516,7 @@ GetPhoneNumberOrderOutcome ChimeClient::GetPhoneNumberOrder(const GetPhoneNumber
     AWS_LOGSTREAM_ERROR("GetPhoneNumberOrder", "Required field: PhoneNumberOrderId, is not set");
     return GetPhoneNumberOrderOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberOrderId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-number-orders/";
   ss << request.GetPhoneNumberOrderId();
@@ -2221,7 +3545,7 @@ void ChimeClient::GetPhoneNumberOrderAsyncHelper(const GetPhoneNumberOrderReques
 GetPhoneNumberSettingsOutcome ChimeClient::GetPhoneNumberSettings() const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/settings/phone-number";
+  ss << m_baseUri << "/settings/phone-number";
   return GetPhoneNumberSettingsOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "GetPhoneNumberSettings"));
 }
 
@@ -2255,7 +3579,7 @@ GetProxySessionOutcome ChimeClient::GetProxySession(const GetProxySessionRequest
     AWS_LOGSTREAM_ERROR("GetProxySession", "Required field: ProxySessionId, is not set");
     return GetProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProxySessionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -2290,7 +3614,7 @@ GetRetentionSettingsOutcome ChimeClient::GetRetentionSettings(const GetRetention
     AWS_LOGSTREAM_ERROR("GetRetentionSettings", "Required field: AccountId, is not set");
     return GetRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -2329,7 +3653,7 @@ GetRoomOutcome ChimeClient::GetRoom(const GetRoomRequest& request) const
     AWS_LOGSTREAM_ERROR("GetRoom", "Required field: RoomId, is not set");
     return GetRoomOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -2364,7 +3688,7 @@ GetSipMediaApplicationOutcome ChimeClient::GetSipMediaApplication(const GetSipMe
     AWS_LOGSTREAM_ERROR("GetSipMediaApplication", "Required field: SipMediaApplicationId, is not set");
     return GetSipMediaApplicationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-media-applications/";
   ss << request.GetSipMediaApplicationId();
@@ -2397,7 +3721,7 @@ GetSipMediaApplicationLoggingConfigurationOutcome ChimeClient::GetSipMediaApplic
     AWS_LOGSTREAM_ERROR("GetSipMediaApplicationLoggingConfiguration", "Required field: SipMediaApplicationId, is not set");
     return GetSipMediaApplicationLoggingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-media-applications/";
   ss << request.GetSipMediaApplicationId();
@@ -2431,7 +3755,7 @@ GetSipRuleOutcome ChimeClient::GetSipRule(const GetSipRuleRequest& request) cons
     AWS_LOGSTREAM_ERROR("GetSipRule", "Required field: SipRuleId, is not set");
     return GetSipRuleOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipRuleId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-rules/";
   ss << request.GetSipRuleId();
@@ -2469,7 +3793,7 @@ GetUserOutcome ChimeClient::GetUser(const GetUserRequest& request) const
     AWS_LOGSTREAM_ERROR("GetUser", "Required field: UserId, is not set");
     return GetUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -2509,7 +3833,7 @@ GetUserSettingsOutcome ChimeClient::GetUserSettings(const GetUserSettingsRequest
     AWS_LOGSTREAM_ERROR("GetUserSettings", "Required field: UserId, is not set");
     return GetUserSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -2545,7 +3869,7 @@ GetVoiceConnectorOutcome ChimeClient::GetVoiceConnector(const GetVoiceConnectorR
     AWS_LOGSTREAM_ERROR("GetVoiceConnector", "Required field: VoiceConnectorId, is not set");
     return GetVoiceConnectorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -2578,7 +3902,7 @@ GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::GetVoiceConne
     AWS_LOGSTREAM_ERROR("GetVoiceConnectorEmergencyCallingConfiguration", "Required field: VoiceConnectorId, is not set");
     return GetVoiceConnectorEmergencyCallingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -2612,7 +3936,7 @@ GetVoiceConnectorGroupOutcome ChimeClient::GetVoiceConnectorGroup(const GetVoice
     AWS_LOGSTREAM_ERROR("GetVoiceConnectorGroup", "Required field: VoiceConnectorGroupId, is not set");
     return GetVoiceConnectorGroupOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorGroupId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connector-groups/";
   ss << request.GetVoiceConnectorGroupId();
@@ -2645,7 +3969,7 @@ GetVoiceConnectorLoggingConfigurationOutcome ChimeClient::GetVoiceConnectorLoggi
     AWS_LOGSTREAM_ERROR("GetVoiceConnectorLoggingConfiguration", "Required field: VoiceConnectorId, is not set");
     return GetVoiceConnectorLoggingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -2679,7 +4003,7 @@ GetVoiceConnectorOriginationOutcome ChimeClient::GetVoiceConnectorOrigination(co
     AWS_LOGSTREAM_ERROR("GetVoiceConnectorOrigination", "Required field: VoiceConnectorId, is not set");
     return GetVoiceConnectorOriginationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -2713,7 +4037,7 @@ GetVoiceConnectorProxyOutcome ChimeClient::GetVoiceConnectorProxy(const GetVoice
     AWS_LOGSTREAM_ERROR("GetVoiceConnectorProxy", "Required field: VoiceConnectorId, is not set");
     return GetVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -2747,7 +4071,7 @@ GetVoiceConnectorStreamingConfigurationOutcome ChimeClient::GetVoiceConnectorStr
     AWS_LOGSTREAM_ERROR("GetVoiceConnectorStreamingConfiguration", "Required field: VoiceConnectorId, is not set");
     return GetVoiceConnectorStreamingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -2781,7 +4105,7 @@ GetVoiceConnectorTerminationOutcome ChimeClient::GetVoiceConnectorTermination(co
     AWS_LOGSTREAM_ERROR("GetVoiceConnectorTermination", "Required field: VoiceConnectorId, is not set");
     return GetVoiceConnectorTerminationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -2815,7 +4139,7 @@ GetVoiceConnectorTerminationHealthOutcome ChimeClient::GetVoiceConnectorTerminat
     AWS_LOGSTREAM_ERROR("GetVoiceConnectorTerminationHealth", "Required field: VoiceConnectorId, is not set");
     return GetVoiceConnectorTerminationHealthOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -2849,7 +4173,7 @@ InviteUsersOutcome ChimeClient::InviteUsers(const InviteUsersRequest& request) c
     AWS_LOGSTREAM_ERROR("InviteUsers", "Required field: AccountId, is not set");
     return InviteUsersOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -2880,7 +4204,7 @@ void ChimeClient::InviteUsersAsyncHelper(const InviteUsersRequest& request, cons
 
 ListAccountsOutcome ChimeClient::ListAccounts(const ListAccountsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2905,6 +4229,126 @@ void ChimeClient::ListAccountsAsyncHelper(const ListAccountsRequest& request, co
   handler(this, request, ListAccounts(request), context);
 }
 
+ListAppInstanceAdminsOutcome ChimeClient::ListAppInstanceAdmins(const ListAppInstanceAdminsRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAppInstanceAdmins", "Required field: AppInstanceArn, is not set");
+    return ListAppInstanceAdminsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListAppInstanceAdmins", "Invalid DNS host: " << uri.GetAuthority());
+      return ListAppInstanceAdminsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  ss << "/admins";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAppInstanceAdminsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAppInstanceAdminsOutcomeCallable ChimeClient::ListAppInstanceAdminsCallable(const ListAppInstanceAdminsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAppInstanceAdminsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppInstanceAdmins(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListAppInstanceAdminsAsync(const ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAppInstanceAdminsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListAppInstanceAdminsAsyncHelper(const ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAppInstanceAdmins(request), context);
+}
+
+ListAppInstanceUsersOutcome ChimeClient::ListAppInstanceUsers(const ListAppInstanceUsersRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAppInstanceUsers", "Required field: AppInstanceArn, is not set");
+    return ListAppInstanceUsersOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListAppInstanceUsers", "Invalid DNS host: " << uri.GetAuthority());
+      return ListAppInstanceUsersOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instance-users";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAppInstanceUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAppInstanceUsersOutcomeCallable ChimeClient::ListAppInstanceUsersCallable(const ListAppInstanceUsersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAppInstanceUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppInstanceUsers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListAppInstanceUsersAsync(const ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAppInstanceUsersAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListAppInstanceUsersAsyncHelper(const ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAppInstanceUsers(request), context);
+}
+
+ListAppInstancesOutcome ChimeClient::ListAppInstances(const ListAppInstancesRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListAppInstances", "Invalid DNS host: " << uri.GetAuthority());
+      return ListAppInstancesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAppInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAppInstancesOutcomeCallable ChimeClient::ListAppInstancesCallable(const ListAppInstancesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAppInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppInstances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListAppInstancesAsync(const ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAppInstancesAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListAppInstancesAsyncHelper(const ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAppInstances(request), context);
+}
+
 ListAttendeeTagsOutcome ChimeClient::ListAttendeeTags(const ListAttendeeTagsRequest& request) const
 {
   if (!request.MeetingIdHasBeenSet())
@@ -2917,7 +4361,7 @@ ListAttendeeTagsOutcome ChimeClient::ListAttendeeTags(const ListAttendeeTagsRequ
     AWS_LOGSTREAM_ERROR("ListAttendeeTags", "Required field: AttendeeId, is not set");
     return ListAttendeeTagsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -2953,7 +4397,7 @@ ListAttendeesOutcome ChimeClient::ListAttendees(const ListAttendeesRequest& requ
     AWS_LOGSTREAM_ERROR("ListAttendees", "Required field: MeetingId, is not set");
     return ListAttendeesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -2987,7 +4431,7 @@ ListBotsOutcome ChimeClient::ListBots(const ListBotsRequest& request) const
     AWS_LOGSTREAM_ERROR("ListBots", "Required field: AccountId, is not set");
     return ListBotsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3014,6 +4458,295 @@ void ChimeClient::ListBotsAsyncHelper(const ListBotsRequest& request, const List
   handler(this, request, ListBots(request), context);
 }
 
+ListChannelBansOutcome ChimeClient::ListChannelBans(const ListChannelBansRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListChannelBans", "Required field: ChannelArn, is not set");
+    return ListChannelBansOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListChannelBans", "Invalid DNS host: " << uri.GetAuthority());
+      return ListChannelBansOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/bans";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListChannelBansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelBansOutcomeCallable ChimeClient::ListChannelBansCallable(const ListChannelBansRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelBansOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannelBans(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListChannelBansAsync(const ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListChannelBansAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListChannelBansAsyncHelper(const ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListChannelBans(request), context);
+}
+
+ListChannelMembershipsOutcome ChimeClient::ListChannelMemberships(const ListChannelMembershipsRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListChannelMemberships", "Required field: ChannelArn, is not set");
+    return ListChannelMembershipsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListChannelMemberships", "Invalid DNS host: " << uri.GetAuthority());
+      return ListChannelMembershipsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/memberships";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListChannelMembershipsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelMembershipsOutcomeCallable ChimeClient::ListChannelMembershipsCallable(const ListChannelMembershipsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelMembershipsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannelMemberships(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListChannelMembershipsAsync(const ListChannelMembershipsRequest& request, const ListChannelMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListChannelMembershipsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListChannelMembershipsAsyncHelper(const ListChannelMembershipsRequest& request, const ListChannelMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListChannelMemberships(request), context);
+}
+
+ListChannelMembershipsForAppInstanceUserOutcome ChimeClient::ListChannelMembershipsForAppInstanceUser(const ListChannelMembershipsForAppInstanceUserRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListChannelMembershipsForAppInstanceUser", "Invalid DNS host: " << uri.GetAuthority());
+      return ListChannelMembershipsForAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?scope=app-instance-user-memberships");
+  uri.SetQueryString(ss.str());
+  return ListChannelMembershipsForAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelMembershipsForAppInstanceUserOutcomeCallable ChimeClient::ListChannelMembershipsForAppInstanceUserCallable(const ListChannelMembershipsForAppInstanceUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelMembershipsForAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannelMembershipsForAppInstanceUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListChannelMembershipsForAppInstanceUserAsync(const ListChannelMembershipsForAppInstanceUserRequest& request, const ListChannelMembershipsForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListChannelMembershipsForAppInstanceUserAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListChannelMembershipsForAppInstanceUserAsyncHelper(const ListChannelMembershipsForAppInstanceUserRequest& request, const ListChannelMembershipsForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListChannelMembershipsForAppInstanceUser(request), context);
+}
+
+ListChannelMessagesOutcome ChimeClient::ListChannelMessages(const ListChannelMessagesRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListChannelMessages", "Required field: ChannelArn, is not set");
+    return ListChannelMessagesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListChannelMessages", "Invalid DNS host: " << uri.GetAuthority());
+      return ListChannelMessagesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/messages";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListChannelMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelMessagesOutcomeCallable ChimeClient::ListChannelMessagesCallable(const ListChannelMessagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelMessagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannelMessages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListChannelMessagesAsync(const ListChannelMessagesRequest& request, const ListChannelMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListChannelMessagesAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListChannelMessagesAsyncHelper(const ListChannelMessagesRequest& request, const ListChannelMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListChannelMessages(request), context);
+}
+
+ListChannelModeratorsOutcome ChimeClient::ListChannelModerators(const ListChannelModeratorsRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListChannelModerators", "Required field: ChannelArn, is not set");
+    return ListChannelModeratorsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListChannelModerators", "Invalid DNS host: " << uri.GetAuthority());
+      return ListChannelModeratorsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/moderators";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListChannelModeratorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelModeratorsOutcomeCallable ChimeClient::ListChannelModeratorsCallable(const ListChannelModeratorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelModeratorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannelModerators(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListChannelModeratorsAsync(const ListChannelModeratorsRequest& request, const ListChannelModeratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListChannelModeratorsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListChannelModeratorsAsyncHelper(const ListChannelModeratorsRequest& request, const ListChannelModeratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListChannelModerators(request), context);
+}
+
+ListChannelsOutcome ChimeClient::ListChannels(const ListChannelsRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListChannels", "Required field: AppInstanceArn, is not set");
+    return ListChannelsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListChannels", "Invalid DNS host: " << uri.GetAuthority());
+      return ListChannelsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelsOutcomeCallable ChimeClient::ListChannelsCallable(const ListChannelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListChannels(request), context);
+}
+
+ListChannelsModeratedByAppInstanceUserOutcome ChimeClient::ListChannelsModeratedByAppInstanceUser(const ListChannelsModeratedByAppInstanceUserRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListChannelsModeratedByAppInstanceUser", "Invalid DNS host: " << uri.GetAuthority());
+      return ListChannelsModeratedByAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?scope=app-instance-user-moderated-channels");
+  uri.SetQueryString(ss.str());
+  return ListChannelsModeratedByAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelsModeratedByAppInstanceUserOutcomeCallable ChimeClient::ListChannelsModeratedByAppInstanceUserCallable(const ListChannelsModeratedByAppInstanceUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelsModeratedByAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannelsModeratedByAppInstanceUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListChannelsModeratedByAppInstanceUserAsync(const ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsModeratedByAppInstanceUserAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListChannelsModeratedByAppInstanceUserAsyncHelper(const ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListChannelsModeratedByAppInstanceUser(request), context);
+}
+
 ListMeetingTagsOutcome ChimeClient::ListMeetingTags(const ListMeetingTagsRequest& request) const
 {
   if (!request.MeetingIdHasBeenSet())
@@ -3021,7 +4754,7 @@ ListMeetingTagsOutcome ChimeClient::ListMeetingTags(const ListMeetingTagsRequest
     AWS_LOGSTREAM_ERROR("ListMeetingTags", "Required field: MeetingId, is not set");
     return ListMeetingTagsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -3050,7 +4783,7 @@ void ChimeClient::ListMeetingTagsAsyncHelper(const ListMeetingTagsRequest& reque
 
 ListMeetingsOutcome ChimeClient::ListMeetings(const ListMeetingsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3077,7 +4810,7 @@ void ChimeClient::ListMeetingsAsyncHelper(const ListMeetingsRequest& request, co
 
 ListPhoneNumberOrdersOutcome ChimeClient::ListPhoneNumberOrders(const ListPhoneNumberOrdersRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-number-orders";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3104,7 +4837,7 @@ void ChimeClient::ListPhoneNumberOrdersAsyncHelper(const ListPhoneNumberOrdersRe
 
 ListPhoneNumbersOutcome ChimeClient::ListPhoneNumbers(const ListPhoneNumbersRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-numbers";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3136,7 +4869,7 @@ ListProxySessionsOutcome ChimeClient::ListProxySessions(const ListProxySessionsR
     AWS_LOGSTREAM_ERROR("ListProxySessions", "Required field: VoiceConnectorId, is not set");
     return ListProxySessionsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -3175,7 +4908,7 @@ ListRoomMembershipsOutcome ChimeClient::ListRoomMemberships(const ListRoomMember
     AWS_LOGSTREAM_ERROR("ListRoomMemberships", "Required field: RoomId, is not set");
     return ListRoomMembershipsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3211,7 +4944,7 @@ ListRoomsOutcome ChimeClient::ListRooms(const ListRoomsRequest& request) const
     AWS_LOGSTREAM_ERROR("ListRooms", "Required field: AccountId, is not set");
     return ListRoomsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3240,7 +4973,7 @@ void ChimeClient::ListRoomsAsyncHelper(const ListRoomsRequest& request, const Li
 
 ListSipMediaApplicationsOutcome ChimeClient::ListSipMediaApplications(const ListSipMediaApplicationsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-media-applications";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3267,7 +5000,7 @@ void ChimeClient::ListSipMediaApplicationsAsyncHelper(const ListSipMediaApplicat
 
 ListSipRulesOutcome ChimeClient::ListSipRules(const ListSipRulesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-rules";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3299,7 +5032,7 @@ ListTagsForResourceOutcome ChimeClient::ListTagsForResource(const ListTagsForRes
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceARN, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceARN]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3331,7 +5064,7 @@ ListUsersOutcome ChimeClient::ListUsers(const ListUsersRequest& request) const
     AWS_LOGSTREAM_ERROR("ListUsers", "Required field: AccountId, is not set");
     return ListUsersOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3360,7 +5093,7 @@ void ChimeClient::ListUsersAsyncHelper(const ListUsersRequest& request, const Li
 
 ListVoiceConnectorGroupsOutcome ChimeClient::ListVoiceConnectorGroups(const ListVoiceConnectorGroupsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connector-groups";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3392,7 +5125,7 @@ ListVoiceConnectorTerminationCredentialsOutcome ChimeClient::ListVoiceConnectorT
     AWS_LOGSTREAM_ERROR("ListVoiceConnectorTerminationCredentials", "Required field: VoiceConnectorId, is not set");
     return ListVoiceConnectorTerminationCredentialsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -3421,7 +5154,7 @@ void ChimeClient::ListVoiceConnectorTerminationCredentialsAsyncHelper(const List
 
 ListVoiceConnectorsOutcome ChimeClient::ListVoiceConnectors(const ListVoiceConnectorsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3458,7 +5191,7 @@ LogoutUserOutcome ChimeClient::LogoutUser(const LogoutUserRequest& request) cons
     AWS_LOGSTREAM_ERROR("LogoutUser", "Required field: UserId, is not set");
     return LogoutUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3488,6 +5221,83 @@ void ChimeClient::LogoutUserAsyncHelper(const LogoutUserRequest& request, const 
   handler(this, request, LogoutUser(request), context);
 }
 
+PutAppInstanceRetentionSettingsOutcome ChimeClient::PutAppInstanceRetentionSettings(const PutAppInstanceRetentionSettingsRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutAppInstanceRetentionSettings", "Required field: AppInstanceArn, is not set");
+    return PutAppInstanceRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutAppInstanceRetentionSettings", "Invalid DNS host: " << uri.GetAuthority());
+      return PutAppInstanceRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  ss << "/retention-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutAppInstanceRetentionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutAppInstanceRetentionSettingsOutcomeCallable ChimeClient::PutAppInstanceRetentionSettingsCallable(const PutAppInstanceRetentionSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAppInstanceRetentionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAppInstanceRetentionSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::PutAppInstanceRetentionSettingsAsync(const PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAppInstanceRetentionSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::PutAppInstanceRetentionSettingsAsyncHelper(const PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAppInstanceRetentionSettings(request), context);
+}
+
+PutAppInstanceStreamingConfigurationsOutcome ChimeClient::PutAppInstanceStreamingConfigurations(const PutAppInstanceStreamingConfigurationsRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutAppInstanceStreamingConfigurations", "Required field: AppInstanceArn, is not set");
+    return PutAppInstanceStreamingConfigurationsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  ss << "/streaming-configurations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutAppInstanceStreamingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutAppInstanceStreamingConfigurationsOutcomeCallable ChimeClient::PutAppInstanceStreamingConfigurationsCallable(const PutAppInstanceStreamingConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAppInstanceStreamingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAppInstanceStreamingConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::PutAppInstanceStreamingConfigurationsAsync(const PutAppInstanceStreamingConfigurationsRequest& request, const PutAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAppInstanceStreamingConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::PutAppInstanceStreamingConfigurationsAsyncHelper(const PutAppInstanceStreamingConfigurationsRequest& request, const PutAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAppInstanceStreamingConfigurations(request), context);
+}
+
 PutEventsConfigurationOutcome ChimeClient::PutEventsConfiguration(const PutEventsConfigurationRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -3500,7 +5310,7 @@ PutEventsConfigurationOutcome ChimeClient::PutEventsConfiguration(const PutEvent
     AWS_LOGSTREAM_ERROR("PutEventsConfiguration", "Required field: BotId, is not set");
     return PutEventsConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3536,7 +5346,7 @@ PutRetentionSettingsOutcome ChimeClient::PutRetentionSettings(const PutRetention
     AWS_LOGSTREAM_ERROR("PutRetentionSettings", "Required field: AccountId, is not set");
     return PutRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3570,7 +5380,7 @@ PutSipMediaApplicationLoggingConfigurationOutcome ChimeClient::PutSipMediaApplic
     AWS_LOGSTREAM_ERROR("PutSipMediaApplicationLoggingConfiguration", "Required field: SipMediaApplicationId, is not set");
     return PutSipMediaApplicationLoggingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-media-applications/";
   ss << request.GetSipMediaApplicationId();
@@ -3604,7 +5414,7 @@ PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::PutVoiceConne
     AWS_LOGSTREAM_ERROR("PutVoiceConnectorEmergencyCallingConfiguration", "Required field: VoiceConnectorId, is not set");
     return PutVoiceConnectorEmergencyCallingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -3638,7 +5448,7 @@ PutVoiceConnectorLoggingConfigurationOutcome ChimeClient::PutVoiceConnectorLoggi
     AWS_LOGSTREAM_ERROR("PutVoiceConnectorLoggingConfiguration", "Required field: VoiceConnectorId, is not set");
     return PutVoiceConnectorLoggingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -3672,7 +5482,7 @@ PutVoiceConnectorOriginationOutcome ChimeClient::PutVoiceConnectorOrigination(co
     AWS_LOGSTREAM_ERROR("PutVoiceConnectorOrigination", "Required field: VoiceConnectorId, is not set");
     return PutVoiceConnectorOriginationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -3706,7 +5516,7 @@ PutVoiceConnectorProxyOutcome ChimeClient::PutVoiceConnectorProxy(const PutVoice
     AWS_LOGSTREAM_ERROR("PutVoiceConnectorProxy", "Required field: VoiceConnectorId, is not set");
     return PutVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -3740,7 +5550,7 @@ PutVoiceConnectorStreamingConfigurationOutcome ChimeClient::PutVoiceConnectorStr
     AWS_LOGSTREAM_ERROR("PutVoiceConnectorStreamingConfiguration", "Required field: VoiceConnectorId, is not set");
     return PutVoiceConnectorStreamingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -3774,7 +5584,7 @@ PutVoiceConnectorTerminationOutcome ChimeClient::PutVoiceConnectorTermination(co
     AWS_LOGSTREAM_ERROR("PutVoiceConnectorTermination", "Required field: VoiceConnectorId, is not set");
     return PutVoiceConnectorTerminationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -3808,7 +5618,7 @@ PutVoiceConnectorTerminationCredentialsOutcome ChimeClient::PutVoiceConnectorTer
     AWS_LOGSTREAM_ERROR("PutVoiceConnectorTerminationCredentials", "Required field: VoiceConnectorId, is not set");
     return PutVoiceConnectorTerminationCredentialsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -3837,6 +5647,57 @@ void ChimeClient::PutVoiceConnectorTerminationCredentialsAsyncHelper(const PutVo
   handler(this, request, PutVoiceConnectorTerminationCredentials(request), context);
 }
 
+RedactChannelMessageOutcome ChimeClient::RedactChannelMessage(const RedactChannelMessageRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RedactChannelMessage", "Required field: ChannelArn, is not set");
+    return RedactChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MessageIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RedactChannelMessage", "Required field: MessageId, is not set");
+    return RedactChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("RedactChannelMessage", "Invalid DNS host: " << uri.GetAuthority());
+      return RedactChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/messages/";
+  ss << request.GetMessageId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?operation=redact");
+  uri.SetQueryString(ss.str());
+  return RedactChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RedactChannelMessageOutcomeCallable ChimeClient::RedactChannelMessageCallable(const RedactChannelMessageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RedactChannelMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RedactChannelMessage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::RedactChannelMessageAsync(const RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RedactChannelMessageAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::RedactChannelMessageAsyncHelper(const RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RedactChannelMessage(request), context);
+}
+
 RedactConversationMessageOutcome ChimeClient::RedactConversationMessage(const RedactConversationMessageRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -3854,7 +5715,7 @@ RedactConversationMessageOutcome ChimeClient::RedactConversationMessage(const Re
     AWS_LOGSTREAM_ERROR("RedactConversationMessage", "Required field: MessageId, is not set");
     return RedactConversationMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3903,7 +5764,7 @@ RedactRoomMessageOutcome ChimeClient::RedactRoomMessage(const RedactRoomMessageR
     AWS_LOGSTREAM_ERROR("RedactRoomMessage", "Required field: MessageId, is not set");
     return RedactRoomMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3947,7 +5808,7 @@ RegenerateSecurityTokenOutcome ChimeClient::RegenerateSecurityToken(const Regene
     AWS_LOGSTREAM_ERROR("RegenerateSecurityToken", "Required field: BotId, is not set");
     return RegenerateSecurityTokenOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -3989,7 +5850,7 @@ ResetPersonalPINOutcome ChimeClient::ResetPersonalPIN(const ResetPersonalPINRequ
     AWS_LOGSTREAM_ERROR("ResetPersonalPIN", "Required field: UserId, is not set");
     return ResetPersonalPINOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -4026,7 +5887,7 @@ RestorePhoneNumberOutcome ChimeClient::RestorePhoneNumber(const RestorePhoneNumb
     AWS_LOGSTREAM_ERROR("RestorePhoneNumber", "Required field: PhoneNumberId, is not set");
     return RestorePhoneNumberOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-numbers/";
   ss << request.GetPhoneNumberId();
@@ -4056,7 +5917,7 @@ void ChimeClient::RestorePhoneNumberAsyncHelper(const RestorePhoneNumberRequest&
 
 SearchAvailablePhoneNumbersOutcome ChimeClient::SearchAvailablePhoneNumbers(const SearchAvailablePhoneNumbersRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/search";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4083,6 +5944,49 @@ void ChimeClient::SearchAvailablePhoneNumbersAsyncHelper(const SearchAvailablePh
   handler(this, request, SearchAvailablePhoneNumbers(request), context);
 }
 
+SendChannelMessageOutcome ChimeClient::SendChannelMessage(const SendChannelMessageRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SendChannelMessage", "Required field: ChannelArn, is not set");
+    return SendChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("SendChannelMessage", "Invalid DNS host: " << uri.GetAuthority());
+      return SendChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/messages";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return SendChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SendChannelMessageOutcomeCallable ChimeClient::SendChannelMessageCallable(const SendChannelMessageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendChannelMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendChannelMessage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::SendChannelMessageAsync(const SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendChannelMessageAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::SendChannelMessageAsyncHelper(const SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendChannelMessage(request), context);
+}
+
 TagAttendeeOutcome ChimeClient::TagAttendee(const TagAttendeeRequest& request) const
 {
   if (!request.MeetingIdHasBeenSet())
@@ -4095,7 +5999,7 @@ TagAttendeeOutcome ChimeClient::TagAttendee(const TagAttendeeRequest& request) c
     AWS_LOGSTREAM_ERROR("TagAttendee", "Required field: AttendeeId, is not set");
     return TagAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -4133,7 +6037,7 @@ TagMeetingOutcome ChimeClient::TagMeeting(const TagMeetingRequest& request) cons
     AWS_LOGSTREAM_ERROR("TagMeeting", "Required field: MeetingId, is not set");
     return TagMeetingOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -4164,7 +6068,7 @@ void ChimeClient::TagMeetingAsyncHelper(const TagMeetingRequest& request, const 
 
 TagResourceOutcome ChimeClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4203,7 +6107,7 @@ UntagAttendeeOutcome ChimeClient::UntagAttendee(const UntagAttendeeRequest& requ
     AWS_LOGSTREAM_ERROR("UntagAttendee", "Required field: AttendeeId, is not set");
     return UntagAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -4241,7 +6145,7 @@ UntagMeetingOutcome ChimeClient::UntagMeeting(const UntagMeetingRequest& request
     AWS_LOGSTREAM_ERROR("UntagMeeting", "Required field: MeetingId, is not set");
     return UntagMeetingOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/meetings/";
   ss << request.GetMeetingId();
@@ -4272,7 +6176,7 @@ void ChimeClient::UntagMeetingAsyncHelper(const UntagMeetingRequest& request, co
 
 UntagResourceOutcome ChimeClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4306,7 +6210,7 @@ UpdateAccountOutcome ChimeClient::UpdateAccount(const UpdateAccountRequest& requ
     AWS_LOGSTREAM_ERROR("UpdateAccount", "Required field: AccountId, is not set");
     return UpdateAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -4339,7 +6243,7 @@ UpdateAccountSettingsOutcome ChimeClient::UpdateAccountSettings(const UpdateAcco
     AWS_LOGSTREAM_ERROR("UpdateAccountSettings", "Required field: AccountId, is not set");
     return UpdateAccountSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -4366,6 +6270,90 @@ void ChimeClient::UpdateAccountSettingsAsyncHelper(const UpdateAccountSettingsRe
   handler(this, request, UpdateAccountSettings(request), context);
 }
 
+UpdateAppInstanceOutcome ChimeClient::UpdateAppInstance(const UpdateAppInstanceRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAppInstance", "Required field: AppInstanceArn, is not set");
+    return UpdateAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdateAppInstance", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdateAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instances/";
+  ss << request.GetAppInstanceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAppInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAppInstanceOutcomeCallable ChimeClient::UpdateAppInstanceCallable(const UpdateAppInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAppInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAppInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::UpdateAppInstanceAsync(const UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppInstanceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::UpdateAppInstanceAsyncHelper(const UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAppInstance(request), context);
+}
+
+UpdateAppInstanceUserOutcome ChimeClient::UpdateAppInstanceUser(const UpdateAppInstanceUserRequest& request) const
+{
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAppInstanceUser", "Required field: AppInstanceUserArn, is not set");
+    return UpdateAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("identity-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdateAppInstanceUser", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdateAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/app-instance-users/";
+  ss << request.GetAppInstanceUserArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAppInstanceUserOutcomeCallable ChimeClient::UpdateAppInstanceUserCallable(const UpdateAppInstanceUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAppInstanceUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::UpdateAppInstanceUserAsync(const UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppInstanceUserAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::UpdateAppInstanceUserAsyncHelper(const UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAppInstanceUser(request), context);
+}
+
 UpdateBotOutcome ChimeClient::UpdateBot(const UpdateBotRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -4378,7 +6366,7 @@ UpdateBotOutcome ChimeClient::UpdateBot(const UpdateBotRequest& request) const
     AWS_LOGSTREAM_ERROR("UpdateBot", "Required field: BotId, is not set");
     return UpdateBotOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -4406,9 +6394,143 @@ void ChimeClient::UpdateBotAsyncHelper(const UpdateBotRequest& request, const Up
   handler(this, request, UpdateBot(request), context);
 }
 
+UpdateChannelOutcome ChimeClient::UpdateChannel(const UpdateChannelRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateChannel", "Required field: ChannelArn, is not set");
+    return UpdateChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdateChannel", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdateChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateChannelOutcomeCallable ChimeClient::UpdateChannelCallable(const UpdateChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateChannel(request), context);
+}
+
+UpdateChannelMessageOutcome ChimeClient::UpdateChannelMessage(const UpdateChannelMessageRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateChannelMessage", "Required field: ChannelArn, is not set");
+    return UpdateChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MessageIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateChannelMessage", "Required field: MessageId, is not set");
+    return UpdateChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdateChannelMessage", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdateChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/messages/";
+  ss << request.GetMessageId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateChannelMessageOutcomeCallable ChimeClient::UpdateChannelMessageCallable(const UpdateChannelMessageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateChannelMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChannelMessage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::UpdateChannelMessageAsync(const UpdateChannelMessageRequest& request, const UpdateChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelMessageAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::UpdateChannelMessageAsyncHelper(const UpdateChannelMessageRequest& request, const UpdateChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateChannelMessage(request), context);
+}
+
+UpdateChannelReadMarkerOutcome ChimeClient::UpdateChannelReadMarker(const UpdateChannelReadMarkerRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateChannelReadMarker", "Required field: ChannelArn, is not set");
+    return UpdateChannelReadMarkerOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdateChannelReadMarker", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdateChannelReadMarkerOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/readMarker";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateChannelReadMarkerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateChannelReadMarkerOutcomeCallable ChimeClient::UpdateChannelReadMarkerCallable(const UpdateChannelReadMarkerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateChannelReadMarkerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChannelReadMarker(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::UpdateChannelReadMarkerAsync(const UpdateChannelReadMarkerRequest& request, const UpdateChannelReadMarkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelReadMarkerAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::UpdateChannelReadMarkerAsyncHelper(const UpdateChannelReadMarkerRequest& request, const UpdateChannelReadMarkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateChannelReadMarker(request), context);
+}
+
 UpdateGlobalSettingsOutcome ChimeClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4440,7 +6562,7 @@ UpdatePhoneNumberOutcome ChimeClient::UpdatePhoneNumber(const UpdatePhoneNumberR
     AWS_LOGSTREAM_ERROR("UpdatePhoneNumber", "Required field: PhoneNumberId, is not set");
     return UpdatePhoneNumberOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/phone-numbers/";
   ss << request.GetPhoneNumberId();
@@ -4468,7 +6590,7 @@ void ChimeClient::UpdatePhoneNumberAsyncHelper(const UpdatePhoneNumberRequest& r
 
 UpdatePhoneNumberSettingsOutcome ChimeClient::UpdatePhoneNumberSettings(const UpdatePhoneNumberSettingsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/settings/phone-number";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4505,7 +6627,7 @@ UpdateProxySessionOutcome ChimeClient::UpdateProxySession(const UpdateProxySessi
     AWS_LOGSTREAM_ERROR("UpdateProxySession", "Required field: ProxySessionId, is not set");
     return UpdateProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProxySessionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -4545,7 +6667,7 @@ UpdateRoomOutcome ChimeClient::UpdateRoom(const UpdateRoomRequest& request) cons
     AWS_LOGSTREAM_ERROR("UpdateRoom", "Required field: RoomId, is not set");
     return UpdateRoomOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -4590,7 +6712,7 @@ UpdateRoomMembershipOutcome ChimeClient::UpdateRoomMembership(const UpdateRoomMe
     AWS_LOGSTREAM_ERROR("UpdateRoomMembership", "Required field: MemberId, is not set");
     return UpdateRoomMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -4627,7 +6749,7 @@ UpdateSipMediaApplicationOutcome ChimeClient::UpdateSipMediaApplication(const Up
     AWS_LOGSTREAM_ERROR("UpdateSipMediaApplication", "Required field: SipMediaApplicationId, is not set");
     return UpdateSipMediaApplicationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-media-applications/";
   ss << request.GetSipMediaApplicationId();
@@ -4660,7 +6782,7 @@ UpdateSipRuleOutcome ChimeClient::UpdateSipRule(const UpdateSipRuleRequest& requ
     AWS_LOGSTREAM_ERROR("UpdateSipRule", "Required field: SipRuleId, is not set");
     return UpdateSipRuleOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipRuleId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/sip-rules/";
   ss << request.GetSipRuleId();
@@ -4698,7 +6820,7 @@ UpdateUserOutcome ChimeClient::UpdateUser(const UpdateUserRequest& request) cons
     AWS_LOGSTREAM_ERROR("UpdateUser", "Required field: UserId, is not set");
     return UpdateUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -4738,7 +6860,7 @@ UpdateUserSettingsOutcome ChimeClient::UpdateUserSettings(const UpdateUserSettin
     AWS_LOGSTREAM_ERROR("UpdateUserSettings", "Required field: UserId, is not set");
     return UpdateUserSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAccountId();
@@ -4774,7 +6896,7 @@ UpdateVoiceConnectorOutcome ChimeClient::UpdateVoiceConnector(const UpdateVoiceC
     AWS_LOGSTREAM_ERROR("UpdateVoiceConnector", "Required field: VoiceConnectorId, is not set");
     return UpdateVoiceConnectorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
@@ -4807,7 +6929,7 @@ UpdateVoiceConnectorGroupOutcome ChimeClient::UpdateVoiceConnectorGroup(const Up
     AWS_LOGSTREAM_ERROR("UpdateVoiceConnectorGroup", "Required field: VoiceConnectorGroupId, is not set");
     return UpdateVoiceConnectorGroupOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorGroupId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/voice-connector-groups/";
   ss << request.GetVoiceConnectorGroupId();

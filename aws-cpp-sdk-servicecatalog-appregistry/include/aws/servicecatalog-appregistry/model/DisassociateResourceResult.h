@@ -33,44 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline DisassociateResourceResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline DisassociateResourceResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
+     * <p>The Amazon resource name (ARN) that specifies the application.</p>
      */
     inline DisassociateResourceResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
 

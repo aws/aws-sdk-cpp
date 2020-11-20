@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>Information about the deleted application.</p>
      */
     inline const ApplicationSummary& GetApplication() const{ return m_application; }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>Information about the deleted application.</p>
      */
     inline void SetApplication(const ApplicationSummary& value) { m_application = value; }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>Information about the deleted application.</p>
      */
     inline void SetApplication(ApplicationSummary&& value) { m_application = std::move(value); }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>Information about the deleted application.</p>
      */
     inline DeleteApplicationResult& WithApplication(const ApplicationSummary& value) { SetApplication(value); return *this;}
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>Information about the deleted application.</p>
      */
     inline DeleteApplicationResult& WithApplication(ApplicationSummary&& value) { SetApplication(std::move(value)); return *this;}
 

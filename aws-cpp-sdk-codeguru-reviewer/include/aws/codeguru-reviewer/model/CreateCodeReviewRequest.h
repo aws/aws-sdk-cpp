@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p> The name of the code review. Each code review of the same code review type
-     * must have a unique name in your AWS account. </p>
+     * <p> The name of the code review. The name of each code review in your AWS
+     * account must be unique. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the code review. Each code review of the same code review type
-     * must have a unique name in your AWS account. </p>
+     * <p> The name of the code review. The name of each code review in your AWS
+     * account must be unique. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the code review. Each code review of the same code review type
-     * must have a unique name in your AWS account. </p>
+     * <p> The name of the code review. The name of each code review in your AWS
+     * account must be unique. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the code review. Each code review of the same code review type
-     * must have a unique name in your AWS account. </p>
+     * <p> The name of the code review. The name of each code review in your AWS
+     * account must be unique. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the code review. Each code review of the same code review type
-     * must have a unique name in your AWS account. </p>
+     * <p> The name of the code review. The name of each code review in your AWS
+     * account must be unique. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the code review. Each code review of the same code review type
-     * must have a unique name in your AWS account. </p>
+     * <p> The name of the code review. The name of each code review in your AWS
+     * account must be unique. </p>
      */
     inline CreateCodeReviewRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the code review. Each code review of the same code review type
-     * must have a unique name in your AWS account. </p>
+     * <p> The name of the code review. The name of each code review in your AWS
+     * account must be unique. </p>
      */
     inline CreateCodeReviewRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the code review. Each code review of the same code review type
-     * must have a unique name in your AWS account. </p>
+     * <p> The name of the code review. The name of each code review in your AWS
+     * account must be unique. </p>
      */
     inline CreateCodeReviewRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -87,7 +87,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p> <p> A code review can only be
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p> <p> A code review can only be
      * created on an associated repository. This is the ARN of the associated
      * repository. </p>
      */
@@ -97,7 +99,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p> <p> A code review can only be
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p> <p> A code review can only be
      * created on an associated repository. This is the ARN of the associated
      * repository. </p>
      */
@@ -107,7 +111,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p> <p> A code review can only be
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p> <p> A code review can only be
      * created on an associated repository. This is the ARN of the associated
      * repository. </p>
      */
@@ -117,7 +123,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p> <p> A code review can only be
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p> <p> A code review can only be
      * created on an associated repository. This is the ARN of the associated
      * repository. </p>
      */
@@ -127,7 +135,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p> <p> A code review can only be
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p> <p> A code review can only be
      * created on an associated repository. This is the ARN of the associated
      * repository. </p>
      */
@@ -137,7 +147,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p> <p> A code review can only be
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p> <p> A code review can only be
      * created on an associated repository. This is the ARN of the associated
      * repository. </p>
      */
@@ -147,7 +159,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p> <p> A code review can only be
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p> <p> A code review can only be
      * created on an associated repository. This is the ARN of the associated
      * repository. </p>
      */
@@ -157,7 +171,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p> <p> A code review can only be
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p> <p> A code review can only be
      * created on an associated repository. This is the ARN of the associated
      * repository. </p>
      */
@@ -167,42 +183,48 @@ namespace Model
     /**
      * <p> The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object. </p>
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of
+     * type <code>RepositoryAnalysis</code>. </p>
      */
     inline const CodeReviewType& GetType() const{ return m_type; }
 
     /**
      * <p> The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object. </p>
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of
+     * type <code>RepositoryAnalysis</code>. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p> The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object. </p>
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of
+     * type <code>RepositoryAnalysis</code>. </p>
      */
     inline void SetType(const CodeReviewType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p> The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object. </p>
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of
+     * type <code>RepositoryAnalysis</code>. </p>
      */
     inline void SetType(CodeReviewType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p> The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object. </p>
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of
+     * type <code>RepositoryAnalysis</code>. </p>
      */
     inline CreateCodeReviewRequest& WithType(const CodeReviewType& value) { SetType(value); return *this;}
 
     /**
      * <p> The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object. </p>
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of
+     * type <code>RepositoryAnalysis</code>. </p>
      */
     inline CreateCodeReviewRequest& WithType(CodeReviewType&& value) { SetType(std::move(value)); return *this;}
 

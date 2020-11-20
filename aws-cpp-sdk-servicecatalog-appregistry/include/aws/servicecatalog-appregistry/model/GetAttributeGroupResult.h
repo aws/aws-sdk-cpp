@@ -35,79 +35,79 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the application.</p>
+     * <p>The identifier of the attribute group.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the application.</p>
+     * <p>The identifier of the attribute group.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The identifier of the application.</p>
+     * <p>The identifier of the attribute group.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the application.</p>
+     * <p>The identifier of the attribute group.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The identifier of the application.</p>
+     * <p>The identifier of the attribute group.</p>
      */
     inline GetAttributeGroupResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the application.</p>
+     * <p>The identifier of the attribute group.</p>
      */
     inline GetAttributeGroupResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the application.</p>
+     * <p>The identifier of the attribute group.</p>
      */
     inline GetAttributeGroupResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the attribute group across
      * services.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the attribute group across
      * services.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the attribute group across
      * services.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the attribute group across
      * services.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the attribute group across
      * services.</p>
      */
     inline GetAttributeGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the attribute group across
      * services.</p>
      */
     inline GetAttributeGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) that specifies the application across
+     * <p>The Amazon resource name (ARN) that specifies the attribute group across
      * services.</p>
      */
     inline GetAttributeGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
@@ -296,62 +296,62 @@ namespace Model
 
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline GetAttributeGroupResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline GetAttributeGroupResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline GetAttributeGroupResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline GetAttributeGroupResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline GetAttributeGroupResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline GetAttributeGroupResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline GetAttributeGroupResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline GetAttributeGroupResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pairs you can use to associate with the attribute group.</p>
+     * <p>Key-value pairs associated with the attribute group.</p>
      */
     inline GetAttributeGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

@@ -23,6 +23,7 @@ namespace Aws
         static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
         static const int PER_BROKER_HASH = HashingUtils::HashString("PER_BROKER");
         static const int PER_TOPIC_PER_BROKER_HASH = HashingUtils::HashString("PER_TOPIC_PER_BROKER");
+        static const int PER_TOPIC_PER_PARTITION_HASH = HashingUtils::HashString("PER_TOPIC_PER_PARTITION");
 
 
         EnhancedMonitoring GetEnhancedMonitoringForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == PER_TOPIC_PER_BROKER_HASH)
           {
             return EnhancedMonitoring::PER_TOPIC_PER_BROKER;
+          }
+          else if (hashCode == PER_TOPIC_PER_PARTITION_HASH)
+          {
+            return EnhancedMonitoring::PER_TOPIC_PER_PARTITION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "PER_BROKER";
           case EnhancedMonitoring::PER_TOPIC_PER_BROKER:
             return "PER_TOPIC_PER_BROKER";
+          case EnhancedMonitoring::PER_TOPIC_PER_PARTITION:
+            return "PER_TOPIC_PER_PARTITION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

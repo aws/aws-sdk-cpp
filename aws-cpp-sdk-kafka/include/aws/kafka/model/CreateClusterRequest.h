@@ -284,7 +284,8 @@ namespace Model
     /**
      * 
             <p>Specifies the level of monitoring for the MSK cluster. The
-     * possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
+     * possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and
+     * PER_TOPIC_PER_PARTITION.</p>
          
      */
     inline const EnhancedMonitoring& GetEnhancedMonitoring() const{ return m_enhancedMonitoring; }
@@ -292,7 +293,8 @@ namespace Model
     /**
      * 
             <p>Specifies the level of monitoring for the MSK cluster. The
-     * possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
+     * possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and
+     * PER_TOPIC_PER_PARTITION.</p>
          
      */
     inline bool EnhancedMonitoringHasBeenSet() const { return m_enhancedMonitoringHasBeenSet; }
@@ -300,7 +302,8 @@ namespace Model
     /**
      * 
             <p>Specifies the level of monitoring for the MSK cluster. The
-     * possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
+     * possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and
+     * PER_TOPIC_PER_PARTITION.</p>
          
      */
     inline void SetEnhancedMonitoring(const EnhancedMonitoring& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = value; }
@@ -308,7 +311,8 @@ namespace Model
     /**
      * 
             <p>Specifies the level of monitoring for the MSK cluster. The
-     * possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
+     * possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and
+     * PER_TOPIC_PER_PARTITION.</p>
          
      */
     inline void SetEnhancedMonitoring(EnhancedMonitoring&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = std::move(value); }
@@ -316,7 +320,8 @@ namespace Model
     /**
      * 
             <p>Specifies the level of monitoring for the MSK cluster. The
-     * possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
+     * possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and
+     * PER_TOPIC_PER_PARTITION.</p>
          
      */
     inline CreateClusterRequest& WithEnhancedMonitoring(const EnhancedMonitoring& value) { SetEnhancedMonitoring(value); return *this;}
@@ -324,7 +329,8 @@ namespace Model
     /**
      * 
             <p>Specifies the level of monitoring for the MSK cluster. The
-     * possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
+     * possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and
+     * PER_TOPIC_PER_PARTITION.</p>
          
      */
     inline CreateClusterRequest& WithEnhancedMonitoring(EnhancedMonitoring&& value) { SetEnhancedMonitoring(std::move(value)); return *this;}

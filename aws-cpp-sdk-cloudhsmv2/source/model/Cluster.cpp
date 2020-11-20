@@ -21,6 +21,7 @@ namespace Model
 Cluster::Cluster() : 
     m_backupPolicy(BackupPolicy::NOT_SET),
     m_backupPolicyHasBeenSet(false),
+    m_backupRetentionPolicyHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
     m_hsmsHasBeenSet(false),
@@ -41,6 +42,7 @@ Cluster::Cluster() :
 Cluster::Cluster(JsonView jsonValue) : 
     m_backupPolicy(BackupPolicy::NOT_SET),
     m_backupPolicyHasBeenSet(false),
+    m_backupRetentionPolicyHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
     m_hsmsHasBeenSet(false),
@@ -66,6 +68,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_backupPolicy = BackupPolicyMapper::GetBackupPolicyForName(jsonValue.GetString("BackupPolicy"));
 
     m_backupPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BackupRetentionPolicy"))
+  {
+    m_backupRetentionPolicy = jsonValue.GetObject("BackupRetentionPolicy");
+
+    m_backupRetentionPolicyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ClusterId"))
@@ -178,6 +187,12 @@ JsonValue Cluster::Jsonize() const
   if(m_backupPolicyHasBeenSet)
   {
    payload.WithString("BackupPolicy", BackupPolicyMapper::GetNameForBackupPolicy(m_backupPolicy));
+  }
+
+  if(m_backupRetentionPolicyHasBeenSet)
+  {
+   payload.WithObject("BackupRetentionPolicy", m_backupRetentionPolicy.Jsonize());
+
   }
 
   if(m_clusterIdHasBeenSet)

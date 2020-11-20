@@ -30,6 +30,8 @@
 #include <aws/cloudhsmv2/model/DescribeClustersRequest.h>
 #include <aws/cloudhsmv2/model/InitializeClusterRequest.h>
 #include <aws/cloudhsmv2/model/ListTagsRequest.h>
+#include <aws/cloudhsmv2/model/ModifyBackupAttributesRequest.h>
+#include <aws/cloudhsmv2/model/ModifyClusterRequest.h>
 #include <aws/cloudhsmv2/model/RestoreBackupRequest.h>
 #include <aws/cloudhsmv2/model/TagResourceRequest.h>
 #include <aws/cloudhsmv2/model/UntagResourceRequest.h>
@@ -375,6 +377,60 @@ void CloudHSMV2Client::ListTagsAsync(const ListTagsRequest& request, const ListT
 void CloudHSMV2Client::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTags(request), context);
+}
+
+ModifyBackupAttributesOutcome CloudHSMV2Client::ModifyBackupAttributes(const ModifyBackupAttributesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ModifyBackupAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ModifyBackupAttributesOutcomeCallable CloudHSMV2Client::ModifyBackupAttributesCallable(const ModifyBackupAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyBackupAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyBackupAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudHSMV2Client::ModifyBackupAttributesAsync(const ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyBackupAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudHSMV2Client::ModifyBackupAttributesAsyncHelper(const ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyBackupAttributes(request), context);
+}
+
+ModifyClusterOutcome CloudHSMV2Client::ModifyCluster(const ModifyClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ModifyClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ModifyClusterOutcomeCallable CloudHSMV2Client::ModifyClusterCallable(const ModifyClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudHSMV2Client::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyClusterAsyncHelper( request, handler, context ); } );
+}
+
+void CloudHSMV2Client::ModifyClusterAsyncHelper(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyCluster(request), context);
 }
 
 RestoreBackupOutcome CloudHSMV2Client::RestoreBackup(const RestoreBackupRequest& request) const

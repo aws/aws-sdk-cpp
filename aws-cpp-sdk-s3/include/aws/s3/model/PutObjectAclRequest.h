@@ -240,6 +240,87 @@ namespace Model
 
 
     /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
+     */
+    inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
+     */
+    inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
+     */
+    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
+     */
+    inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
+     */
+    inline PutObjectAclRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
+     */
+    inline PutObjectAclRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p> <p>For
+     * requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field
+     * is calculated automatically.</p>
+     */
+    inline PutObjectAclRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
+
+
+    /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
      * bucket.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
@@ -827,6 +908,9 @@ namespace Model
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
+    Aws::String m_contentMD5;
+    bool m_contentMD5HasBeenSet;
 
     Aws::String m_grantFullControl;
     bool m_grantFullControlHasBeenSet;

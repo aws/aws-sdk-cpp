@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     DEFAULT,
     PER_BROKER,
-    PER_TOPIC_PER_BROKER
+    PER_TOPIC_PER_BROKER,
+    PER_TOPIC_PER_PARTITION
   };
 
 namespace EnhancedMonitoringMapper

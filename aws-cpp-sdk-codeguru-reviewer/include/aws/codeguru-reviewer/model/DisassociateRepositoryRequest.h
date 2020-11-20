@@ -36,7 +36,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline const Aws::String& GetAssociationArn() const{ return m_associationArn; }
 
@@ -44,7 +46,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline bool AssociationArnHasBeenSet() const { return m_associationArnHasBeenSet; }
 
@@ -52,7 +56,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline void SetAssociationArn(const Aws::String& value) { m_associationArnHasBeenSet = true; m_associationArn = value; }
 
@@ -60,7 +66,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline void SetAssociationArn(Aws::String&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::move(value); }
 
@@ -68,7 +76,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline void SetAssociationArn(const char* value) { m_associationArnHasBeenSet = true; m_associationArn.assign(value); }
 
@@ -76,7 +86,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline DisassociateRepositoryRequest& WithAssociationArn(const Aws::String& value) { SetAssociationArn(value); return *this;}
 
@@ -84,7 +96,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline DisassociateRepositoryRequest& WithAssociationArn(Aws::String&& value) { SetAssociationArn(std::move(value)); return *this;}
 
@@ -92,7 +106,9 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
      * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by
-     * calling <code>ListRepositories</code>. </p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
      */
     inline DisassociateRepositoryRequest& WithAssociationArn(const char* value) { SetAssociationArn(value); return *this;}
 

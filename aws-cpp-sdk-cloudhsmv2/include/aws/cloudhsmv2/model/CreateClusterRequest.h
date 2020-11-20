@@ -6,8 +6,9 @@
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/cloudhsmv2/CloudHSMV2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudhsmv2/model/BackupRetentionPolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudhsmv2/model/Tag.h>
 #include <utility>
 
@@ -37,85 +38,34 @@ namespace Model
 
 
     /**
-     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
-     * must specify at least one subnet. If you specify multiple subnets, they must
-     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
-     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
-     * per Availability Zone.</p> </li> </ul>
+     * <p>A policy that defines how the service retains backups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const BackupRetentionPolicy& GetBackupRetentionPolicy() const{ return m_backupRetentionPolicy; }
 
     /**
-     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
-     * must specify at least one subnet. If you specify multiple subnets, they must
-     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
-     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
-     * per Availability Zone.</p> </li> </ul>
+     * <p>A policy that defines how the service retains backups.</p>
      */
-    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+    inline bool BackupRetentionPolicyHasBeenSet() const { return m_backupRetentionPolicyHasBeenSet; }
 
     /**
-     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
-     * must specify at least one subnet. If you specify multiple subnets, they must
-     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
-     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
-     * per Availability Zone.</p> </li> </ul>
+     * <p>A policy that defines how the service retains backups.</p>
      */
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+    inline void SetBackupRetentionPolicy(const BackupRetentionPolicy& value) { m_backupRetentionPolicyHasBeenSet = true; m_backupRetentionPolicy = value; }
 
     /**
-     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
-     * must specify at least one subnet. If you specify multiple subnets, they must
-     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
-     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
-     * per Availability Zone.</p> </li> </ul>
+     * <p>A policy that defines how the service retains backups.</p>
      */
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
+    inline void SetBackupRetentionPolicy(BackupRetentionPolicy&& value) { m_backupRetentionPolicyHasBeenSet = true; m_backupRetentionPolicy = std::move(value); }
 
     /**
-     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
-     * must specify at least one subnet. If you specify multiple subnets, they must
-     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
-     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
-     * per Availability Zone.</p> </li> </ul>
+     * <p>A policy that defines how the service retains backups.</p>
      */
-    inline CreateClusterRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
+    inline CreateClusterRequest& WithBackupRetentionPolicy(const BackupRetentionPolicy& value) { SetBackupRetentionPolicy(value); return *this;}
 
     /**
-     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
-     * must specify at least one subnet. If you specify multiple subnets, they must
-     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
-     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
-     * per Availability Zone.</p> </li> </ul>
+     * <p>A policy that defines how the service retains backups.</p>
      */
-    inline CreateClusterRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
-     * must specify at least one subnet. If you specify multiple subnets, they must
-     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
-     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
-     * per Availability Zone.</p> </li> </ul>
-     */
-    inline CreateClusterRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
-    /**
-     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
-     * must specify at least one subnet. If you specify multiple subnets, they must
-     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
-     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
-     * per Availability Zone.</p> </li> </ul>
-     */
-    inline CreateClusterRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
-     * must specify at least one subnet. If you specify multiple subnets, they must
-     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
-     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
-     * per Availability Zone.</p> </li> </ul>
-     */
-    inline CreateClusterRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    inline CreateClusterRequest& WithBackupRetentionPolicy(BackupRetentionPolicy&& value) { SetBackupRetentionPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -225,6 +175,88 @@ namespace Model
 
 
     /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
+    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+
+    /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
+    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
+
+    /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
+    inline CreateClusterRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
+
+    /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
+    inline CreateClusterRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
+    inline CreateClusterRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
+    /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
+    inline CreateClusterRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
+    inline CreateClusterRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
+
+    /**
      * <p>Tags to apply to the CloudHSM cluster during creation.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
@@ -266,14 +298,17 @@ namespace Model
 
   private:
 
-    Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    BackupRetentionPolicy m_backupRetentionPolicy;
+    bool m_backupRetentionPolicyHasBeenSet;
 
     Aws::String m_hsmType;
     bool m_hsmTypeHasBeenSet;
 
     Aws::String m_sourceBackupId;
     bool m_sourceBackupIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_subnetIds;
+    bool m_subnetIdsHasBeenSet;
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet;

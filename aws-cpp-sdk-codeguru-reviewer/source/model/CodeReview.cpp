@@ -34,6 +34,7 @@ CodeReview::CodeReview() :
     m_typeHasBeenSet(false),
     m_pullRequestIdHasBeenSet(false),
     m_sourceCodeTypeHasBeenSet(false),
+    m_associationArnHasBeenSet(false),
     m_metricsHasBeenSet(false)
 {
 }
@@ -54,6 +55,7 @@ CodeReview::CodeReview(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_pullRequestIdHasBeenSet(false),
     m_sourceCodeTypeHasBeenSet(false),
+    m_associationArnHasBeenSet(false),
     m_metricsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -145,6 +147,13 @@ CodeReview& CodeReview::operator =(JsonView jsonValue)
     m_sourceCodeTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AssociationArn"))
+  {
+    m_associationArn = jsonValue.GetString("AssociationArn");
+
+    m_associationArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Metrics"))
   {
     m_metrics = jsonValue.GetObject("Metrics");
@@ -223,6 +232,12 @@ JsonValue CodeReview::Jsonize() const
   if(m_sourceCodeTypeHasBeenSet)
   {
    payload.WithObject("SourceCodeType", m_sourceCodeType.Jsonize());
+
+  }
+
+  if(m_associationArnHasBeenSet)
+  {
+   payload.WithString("AssociationArn", m_associationArn);
 
   }
 

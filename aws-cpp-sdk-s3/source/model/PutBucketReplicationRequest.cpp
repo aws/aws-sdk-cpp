@@ -18,6 +18,7 @@ using namespace Aws::Http;
 
 PutBucketReplicationRequest::PutBucketReplicationRequest() : 
     m_bucketHasBeenSet(false),
+    m_contentMD5HasBeenSet(false),
     m_replicationConfigurationHasBeenSet(false),
     m_tokenHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
@@ -67,6 +68,13 @@ Aws::Http::HeaderValueCollection PutBucketReplicationRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
+  if(m_contentMD5HasBeenSet)
+  {
+    ss << m_contentMD5;
+    headers.emplace("content-md5",  ss.str());
+    ss.str("");
+  }
+
   if(m_tokenHasBeenSet)
   {
     ss << m_token;

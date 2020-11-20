@@ -13,9 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateClusterRequest::CreateClusterRequest() : 
-    m_subnetIdsHasBeenSet(false),
+    m_backupRetentionPolicyHasBeenSet(false),
     m_hsmTypeHasBeenSet(false),
     m_sourceBackupIdHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false),
     m_tagListHasBeenSet(false)
 {
 }
@@ -24,14 +25,9 @@ Aws::String CreateClusterRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_subnetIdsHasBeenSet)
+  if(m_backupRetentionPolicyHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
-   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-   {
-     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
-   }
-   payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
+   payload.WithObject("BackupRetentionPolicy", m_backupRetentionPolicy.Jsonize());
 
   }
 
@@ -44,6 +40,17 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_sourceBackupIdHasBeenSet)
   {
    payload.WithString("SourceBackupId", m_sourceBackupId);
+
+  }
+
+  if(m_subnetIdsHasBeenSet)
+  {
+   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
+   {
+     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
+   }
+   payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
 
   }
 

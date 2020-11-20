@@ -141,6 +141,87 @@ namespace Model
 
 
     /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
+     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
+     * calculated automatically.</p>
+     */
+    inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
+     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
+     * calculated automatically.</p>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
+     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
+     * calculated automatically.</p>
+     */
+    inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
+     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
+     * calculated automatically.</p>
+     */
+    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
+     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
+     * calculated automatically.</p>
+     */
+    inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
+     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
+     * calculated automatically.</p>
+     */
+    inline PutBucketCorsRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
+     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
+     * calculated automatically.</p>
+     */
+    inline PutBucketCorsRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
+     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
+     * calculated automatically.</p>
+     */
+    inline PutBucketCorsRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
+
+
+    /**
      * <p>The account id of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
@@ -243,6 +324,9 @@ namespace Model
 
     CORSConfiguration m_cORSConfiguration;
     bool m_cORSConfigurationHasBeenSet;
+
+    Aws::String m_contentMD5;
+    bool m_contentMD5HasBeenSet;
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet;

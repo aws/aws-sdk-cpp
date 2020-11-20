@@ -18,6 +18,7 @@ using namespace Aws::Http;
 
 PutBucketVersioningRequest::PutBucketVersioningRequest() : 
     m_bucketHasBeenSet(false),
+    m_contentMD5HasBeenSet(false),
     m_mFAHasBeenSet(false),
     m_versioningConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
@@ -67,6 +68,13 @@ Aws::Http::HeaderValueCollection PutBucketVersioningRequest::GetRequestSpecificH
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
+  if(m_contentMD5HasBeenSet)
+  {
+    ss << m_contentMD5;
+    headers.emplace("content-md5",  ss.str());
+    ss.str("");
+  }
+
   if(m_mFAHasBeenSet)
   {
     ss << m_mFA;

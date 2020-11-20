@@ -24,6 +24,7 @@ namespace Aws
         static const int Associating_HASH = HashingUtils::HashString("Associating");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Disassociating_HASH = HashingUtils::HashString("Disassociating");
+        static const int Disassociated_HASH = HashingUtils::HashString("Disassociated");
 
 
         RepositoryAssociationState GetRepositoryAssociationStateForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == Disassociating_HASH)
           {
             return RepositoryAssociationState::Disassociating;
+          }
+          else if (hashCode == Disassociated_HASH)
+          {
+            return RepositoryAssociationState::Disassociated;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "Failed";
           case RepositoryAssociationState::Disassociating:
             return "Disassociating";
+          case RepositoryAssociationState::Disassociated:
+            return "Disassociated";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

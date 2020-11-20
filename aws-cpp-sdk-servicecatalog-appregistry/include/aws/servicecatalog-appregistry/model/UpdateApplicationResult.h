@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>The updated information of the application.</p>
      */
     inline const Application& GetApplication() const{ return m_application; }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>The updated information of the application.</p>
      */
     inline void SetApplication(const Application& value) { m_application = value; }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>The updated information of the application.</p>
      */
     inline void SetApplication(Application&& value) { m_application = std::move(value); }
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>The updated information of the application.</p>
      */
     inline UpdateApplicationResult& WithApplication(const Application& value) { SetApplication(value); return *this;}
 
     /**
-     * <p>The name or ID of the application.</p>
+     * <p>The updated information of the application.</p>
      */
     inline UpdateApplicationResult& WithApplication(Application&& value) { SetApplication(std::move(value)); return *this;}
 

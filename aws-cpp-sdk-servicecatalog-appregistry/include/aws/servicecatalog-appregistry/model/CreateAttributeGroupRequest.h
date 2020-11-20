@@ -232,58 +232,74 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier that you provide to ensure idempotency. If multiple
-     * requests differ only by the clientToken, the same response is returned for each
-     * repeated request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If you retry a
+     * request that completed successfully using the same client token and the same
+     * parameters, the retry succeeds without performing any further actions. If you
+     * retry a successful request using the same client token, but one or more of the
+     * parameters are different, the retry fails.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique identifier that you provide to ensure idempotency. If multiple
-     * requests differ only by the clientToken, the same response is returned for each
-     * repeated request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If you retry a
+     * request that completed successfully using the same client token and the same
+     * parameters, the retry succeeds without performing any further actions. If you
+     * retry a successful request using the same client token, but one or more of the
+     * parameters are different, the retry fails.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A unique identifier that you provide to ensure idempotency. If multiple
-     * requests differ only by the clientToken, the same response is returned for each
-     * repeated request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If you retry a
+     * request that completed successfully using the same client token and the same
+     * parameters, the retry succeeds without performing any further actions. If you
+     * retry a successful request using the same client token, but one or more of the
+     * parameters are different, the retry fails.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A unique identifier that you provide to ensure idempotency. If multiple
-     * requests differ only by the clientToken, the same response is returned for each
-     * repeated request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If you retry a
+     * request that completed successfully using the same client token and the same
+     * parameters, the retry succeeds without performing any further actions. If you
+     * retry a successful request using the same client token, but one or more of the
+     * parameters are different, the retry fails.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique identifier that you provide to ensure idempotency. If multiple
-     * requests differ only by the clientToken, the same response is returned for each
-     * repeated request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If you retry a
+     * request that completed successfully using the same client token and the same
+     * parameters, the retry succeeds without performing any further actions. If you
+     * retry a successful request using the same client token, but one or more of the
+     * parameters are different, the retry fails.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A unique identifier that you provide to ensure idempotency. If multiple
-     * requests differ only by the clientToken, the same response is returned for each
-     * repeated request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If you retry a
+     * request that completed successfully using the same client token and the same
+     * parameters, the retry succeeds without performing any further actions. If you
+     * retry a successful request using the same client token, but one or more of the
+     * parameters are different, the retry fails.</p>
      */
     inline CreateAttributeGroupRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique identifier that you provide to ensure idempotency. If multiple
-     * requests differ only by the clientToken, the same response is returned for each
-     * repeated request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If you retry a
+     * request that completed successfully using the same client token and the same
+     * parameters, the retry succeeds without performing any further actions. If you
+     * retry a successful request using the same client token, but one or more of the
+     * parameters are different, the retry fails.</p>
      */
     inline CreateAttributeGroupRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier that you provide to ensure idempotency. If multiple
-     * requests differ only by the clientToken, the same response is returned for each
-     * repeated request.</p>
+     * <p>A unique identifier that you provide to ensure idempotency. If you retry a
+     * request that completed successfully using the same client token and the same
+     * parameters, the retry succeeds without performing any further actions. If you
+     * retry a successful request using the same client token, but one or more of the
+     * parameters are different, the retry fails.</p>
      */
     inline CreateAttributeGroupRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

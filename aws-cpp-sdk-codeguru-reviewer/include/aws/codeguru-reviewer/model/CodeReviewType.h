@@ -52,7 +52,7 @@ namespace Model
      * associated respository. The assocated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a> </p>
+     * <code>CreateCodeReview</code> </a>. </p>
      */
     inline const RepositoryAnalysis& GetRepositoryAnalysis() const{ return m_repositoryAnalysis; }
 
@@ -61,7 +61,7 @@ namespace Model
      * associated respository. The assocated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a> </p>
+     * <code>CreateCodeReview</code> </a>. </p>
      */
     inline bool RepositoryAnalysisHasBeenSet() const { return m_repositoryAnalysisHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * associated respository. The assocated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a> </p>
+     * <code>CreateCodeReview</code> </a>. </p>
      */
     inline void SetRepositoryAnalysis(const RepositoryAnalysis& value) { m_repositoryAnalysisHasBeenSet = true; m_repositoryAnalysis = value; }
 
@@ -79,7 +79,7 @@ namespace Model
      * associated respository. The assocated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a> </p>
+     * <code>CreateCodeReview</code> </a>. </p>
      */
     inline void SetRepositoryAnalysis(RepositoryAnalysis&& value) { m_repositoryAnalysisHasBeenSet = true; m_repositoryAnalysis = std::move(value); }
 
@@ -88,7 +88,7 @@ namespace Model
      * associated respository. The assocated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a> </p>
+     * <code>CreateCodeReview</code> </a>. </p>
      */
     inline CodeReviewType& WithRepositoryAnalysis(const RepositoryAnalysis& value) { SetRepositoryAnalysis(value); return *this;}
 
@@ -97,7 +97,7 @@ namespace Model
      * associated respository. The assocated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a> </p>
+     * <code>CreateCodeReview</code> </a>. </p>
      */
     inline CodeReviewType& WithRepositoryAnalysis(RepositoryAnalysis&& value) { SetRepositoryAnalysis(std::move(value)); return *this;}
 
