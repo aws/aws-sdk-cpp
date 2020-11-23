@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/RecrawlPolicy.h>
 #include <aws/glue/model/SchemaChangePolicy.h>
+#include <aws/glue/model/LineageConfiguration.h>
 #include <aws/glue/model/CrawlerState.h>
 #include <aws/glue/model/Schedule.h>
 #include <aws/core/utils/DateTime.h>
@@ -372,6 +373,43 @@ namespace Model
      * <p>The policy that specifies update and delete behaviors for the crawler.</p>
      */
     inline Crawler& WithSchemaChangePolicy(SchemaChangePolicy&& value) { SetSchemaChangePolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A configuration that specifies whether data lineage is enabled for the
+     * crawler.</p>
+     */
+    inline const LineageConfiguration& GetLineageConfiguration() const{ return m_lineageConfiguration; }
+
+    /**
+     * <p>A configuration that specifies whether data lineage is enabled for the
+     * crawler.</p>
+     */
+    inline bool LineageConfigurationHasBeenSet() const { return m_lineageConfigurationHasBeenSet; }
+
+    /**
+     * <p>A configuration that specifies whether data lineage is enabled for the
+     * crawler.</p>
+     */
+    inline void SetLineageConfiguration(const LineageConfiguration& value) { m_lineageConfigurationHasBeenSet = true; m_lineageConfiguration = value; }
+
+    /**
+     * <p>A configuration that specifies whether data lineage is enabled for the
+     * crawler.</p>
+     */
+    inline void SetLineageConfiguration(LineageConfiguration&& value) { m_lineageConfigurationHasBeenSet = true; m_lineageConfiguration = std::move(value); }
+
+    /**
+     * <p>A configuration that specifies whether data lineage is enabled for the
+     * crawler.</p>
+     */
+    inline Crawler& WithLineageConfiguration(const LineageConfiguration& value) { SetLineageConfiguration(value); return *this;}
+
+    /**
+     * <p>A configuration that specifies whether data lineage is enabled for the
+     * crawler.</p>
+     */
+    inline Crawler& WithLineageConfiguration(LineageConfiguration&& value) { SetLineageConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -760,6 +798,9 @@ namespace Model
 
     SchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet;
+
+    LineageConfiguration m_lineageConfiguration;
+    bool m_lineageConfigurationHasBeenSet;
 
     CrawlerState m_state;
     bool m_stateHasBeenSet;

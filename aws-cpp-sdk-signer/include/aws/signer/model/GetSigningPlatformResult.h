@@ -275,6 +275,25 @@ namespace Model
      */
     inline GetSigningPlatformResult& WithMaxSizeInMB(int value) { SetMaxSizeInMB(value); return *this;}
 
+
+    /**
+     * <p>A flag indicating whether signatures generated for the signing platform can
+     * be revoked.</p>
+     */
+    inline bool GetRevocationSupported() const{ return m_revocationSupported; }
+
+    /**
+     * <p>A flag indicating whether signatures generated for the signing platform can
+     * be revoked.</p>
+     */
+    inline void SetRevocationSupported(bool value) { m_revocationSupported = value; }
+
+    /**
+     * <p>A flag indicating whether signatures generated for the signing platform can
+     * be revoked.</p>
+     */
+    inline GetSigningPlatformResult& WithRevocationSupported(bool value) { SetRevocationSupported(value); return *this;}
+
   private:
 
     Aws::String m_platformId;
@@ -292,6 +311,8 @@ namespace Model
     SigningImageFormat m_signingImageFormat;
 
     int m_maxSizeInMB;
+
+    bool m_revocationSupported;
   };
 
 } // namespace Model

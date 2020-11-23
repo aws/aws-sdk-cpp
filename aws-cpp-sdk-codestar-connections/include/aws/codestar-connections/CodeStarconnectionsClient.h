@@ -22,6 +22,7 @@
 #include <aws/codestar-connections/model/ListTagsForResourceResult.h>
 #include <aws/codestar-connections/model/TagResourceResult.h>
 #include <aws/codestar-connections/model/UntagResourceResult.h>
+#include <aws/codestar-connections/model/UpdateHostResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -72,6 +73,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateHostRequest;
 
         typedef Aws::Utils::Outcome<CreateConnectionResult, CodeStarconnectionsError> CreateConnectionOutcome;
         typedef Aws::Utils::Outcome<CreateHostResult, CodeStarconnectionsError> CreateHostOutcome;
@@ -84,6 +86,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeStarconnectionsError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, CodeStarconnectionsError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, CodeStarconnectionsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateHostResult, CodeStarconnectionsError> UpdateHostOutcome;
 
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<CreateHostOutcome> CreateHostOutcomeCallable;
@@ -96,6 +99,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateHostOutcome> UpdateHostOutcomeCallable;
 } // namespace Model
 
   class CodeStarconnectionsClient;
@@ -111,28 +115,27 @@ namespace Model
     typedef std::function<void(const CodeStarconnectionsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CodeStarconnectionsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CodeStarconnectionsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const CodeStarconnectionsClient*, const Model::UpdateHostRequest&, const Model::UpdateHostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHostResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CodeStar Connections</fullname>  <p>The CodeStar
-   * Connections feature is in preview release and is subject to change.</p>
-   *  <p>This AWS CodeStar Connections API Reference provides
-   * descriptions and usage examples of the operations and data types for the AWS
-   * CodeStar Connections API. You can use the connections API to work with
-   * connections and installations.</p> <p> <i>Connections</i> are configurations
-   * that you use to connect AWS resources to external code repositories. Each
-   * connection is a resource that can be given to services such as CodePipeline to
-   * connect to a third-party repository such as Bitbucket. For example, you can add
-   * the connection in CodePipeline so that it triggers your pipeline when a code
-   * change is made to your third-party code repository. Each connection is named and
-   * associated with a unique ARN that is used to reference the connection.</p>
-   * <p>When you create a connection, the console initiates a third-party connection
-   * handshake. <i>Installations</i> are the apps that are used to conduct this
-   * handshake. For example, the installation for the Bitbucket provider type is the
-   * Bitbucket Cloud app. When you create a connection, you can choose an existing
-   * installation or create one.</p> <p>When you want to create a connection to an
-   * installed provider type such as GitHub Enterprise Server, you create a
-   * <i>host</i> for your connections.</p> <p>You can work with connections by
-   * calling:</p> <ul> <li> <p> <a>CreateConnection</a>, which creates a uniquely
+   * <fullname>AWS CodeStar Connections</fullname> <p>This AWS CodeStar Connections
+   * API Reference provides descriptions and usage examples of the operations and
+   * data types for the AWS CodeStar Connections API. You can use the connections API
+   * to work with connections and installations.</p> <p> <i>Connections</i> are
+   * configurations that you use to connect AWS resources to external code
+   * repositories. Each connection is a resource that can be given to services such
+   * as CodePipeline to connect to a third-party repository such as Bitbucket. For
+   * example, you can add the connection in CodePipeline so that it triggers your
+   * pipeline when a code change is made to your third-party code repository. Each
+   * connection is named and associated with a unique ARN that is used to reference
+   * the connection.</p> <p>When you create a connection, the console initiates a
+   * third-party connection handshake. <i>Installations</i> are the apps that are
+   * used to conduct this handshake. For example, the installation for the Bitbucket
+   * provider type is the Bitbucket app. When you create a connection, you can choose
+   * an existing installation or create one.</p> <p>When you want to create a
+   * connection to an installed provider type such as GitHub Enterprise Server, you
+   * create a <i>host</i> for your connections.</p> <p>You can work with connections
+   * by calling:</p> <ul> <li> <p> <a>CreateConnection</a>, which creates a uniquely
    * named connection that can be referenced by services such as CodePipeline.</p>
    * </li> <li> <p> <a>DeleteConnection</a>, which deletes the specified
    * connection.</p> </li> <li> <p> <a>GetConnection</a>, which returns information
@@ -508,6 +511,34 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates a specified host with the provided configurations.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateHostOutcome UpdateHost(const Model::UpdateHostRequest& request) const;
+
+        /**
+         * <p>Updates a specified host with the provided configurations.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateHostOutcomeCallable UpdateHostCallable(const Model::UpdateHostRequest& request) const;
+
+        /**
+         * <p>Updates a specified host with the provided configurations.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateHostAsync(const Model::UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -523,6 +554,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateHostAsyncHelper(const Model::UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The request was rejected because it attempted to create resources beyond the
-   * current AWS account limits. The error code describes the limit
+   * current AWS account or throttling limits. The error code describes the limit
    * exceeded.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/LimitExceededException">AWS
    * API Reference</a></p>

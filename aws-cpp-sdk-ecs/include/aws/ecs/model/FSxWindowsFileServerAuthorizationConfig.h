@@ -45,122 +45,66 @@ namespace Model
 
 
     /**
-     * <p>The authorization credential option to use.</p> <p>The authorization
-     * credential options can be provided using either the AWS Secrets Manager ARN or
-     * the AWS Systems Manager ARN. The ARNs refer to the stored credentials.</p> <p
-     * class="title"> <b>options:</b> </p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets
-     * Manager</a> secret.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.</p> </li> </ul>
+     * <p>The authorization credential option to use. The authorization credential
+     * options can be provided using either the Amazon Resource Name (ARN) of an AWS
+     * Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.</p>
      */
     inline const Aws::String& GetCredentialsParameter() const{ return m_credentialsParameter; }
 
     /**
-     * <p>The authorization credential option to use.</p> <p>The authorization
-     * credential options can be provided using either the AWS Secrets Manager ARN or
-     * the AWS Systems Manager ARN. The ARNs refer to the stored credentials.</p> <p
-     * class="title"> <b>options:</b> </p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets
-     * Manager</a> secret.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.</p> </li> </ul>
+     * <p>The authorization credential option to use. The authorization credential
+     * options can be provided using either the Amazon Resource Name (ARN) of an AWS
+     * Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.</p>
      */
     inline bool CredentialsParameterHasBeenSet() const { return m_credentialsParameterHasBeenSet; }
 
     /**
-     * <p>The authorization credential option to use.</p> <p>The authorization
-     * credential options can be provided using either the AWS Secrets Manager ARN or
-     * the AWS Systems Manager ARN. The ARNs refer to the stored credentials.</p> <p
-     * class="title"> <b>options:</b> </p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets
-     * Manager</a> secret.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.</p> </li> </ul>
+     * <p>The authorization credential option to use. The authorization credential
+     * options can be provided using either the Amazon Resource Name (ARN) of an AWS
+     * Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.</p>
      */
     inline void SetCredentialsParameter(const Aws::String& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = value; }
 
     /**
-     * <p>The authorization credential option to use.</p> <p>The authorization
-     * credential options can be provided using either the AWS Secrets Manager ARN or
-     * the AWS Systems Manager ARN. The ARNs refer to the stored credentials.</p> <p
-     * class="title"> <b>options:</b> </p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets
-     * Manager</a> secret.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.</p> </li> </ul>
+     * <p>The authorization credential option to use. The authorization credential
+     * options can be provided using either the Amazon Resource Name (ARN) of an AWS
+     * Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.</p>
      */
     inline void SetCredentialsParameter(Aws::String&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::move(value); }
 
     /**
-     * <p>The authorization credential option to use.</p> <p>The authorization
-     * credential options can be provided using either the AWS Secrets Manager ARN or
-     * the AWS Systems Manager ARN. The ARNs refer to the stored credentials.</p> <p
-     * class="title"> <b>options:</b> </p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets
-     * Manager</a> secret.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.</p> </li> </ul>
+     * <p>The authorization credential option to use. The authorization credential
+     * options can be provided using either the Amazon Resource Name (ARN) of an AWS
+     * Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.</p>
      */
     inline void SetCredentialsParameter(const char* value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter.assign(value); }
 
     /**
-     * <p>The authorization credential option to use.</p> <p>The authorization
-     * credential options can be provided using either the AWS Secrets Manager ARN or
-     * the AWS Systems Manager ARN. The ARNs refer to the stored credentials.</p> <p
-     * class="title"> <b>options:</b> </p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets
-     * Manager</a> secret.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.</p> </li> </ul>
+     * <p>The authorization credential option to use. The authorization credential
+     * options can be provided using either the Amazon Resource Name (ARN) of an AWS
+     * Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.</p>
      */
     inline FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(const Aws::String& value) { SetCredentialsParameter(value); return *this;}
 
     /**
-     * <p>The authorization credential option to use.</p> <p>The authorization
-     * credential options can be provided using either the AWS Secrets Manager ARN or
-     * the AWS Systems Manager ARN. The ARNs refer to the stored credentials.</p> <p
-     * class="title"> <b>options:</b> </p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets
-     * Manager</a> secret.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.</p> </li> </ul>
+     * <p>The authorization credential option to use. The authorization credential
+     * options can be provided using either the Amazon Resource Name (ARN) of an AWS
+     * Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.</p>
      */
     inline FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(Aws::String&& value) { SetCredentialsParameter(std::move(value)); return *this;}
 
     /**
-     * <p>The authorization credential option to use.</p> <p>The authorization
-     * credential options can be provided using either the AWS Secrets Manager ARN or
-     * the AWS Systems Manager ARN. The ARNs refer to the stored credentials.</p> <p
-     * class="title"> <b>options:</b> </p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets
-     * Manager</a> secret.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.</p> </li> </ul>
+     * <p>The authorization credential option to use. The authorization credential
+     * options can be provided using either the Amazon Resource Name (ARN) of an AWS
+     * Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.</p>
      */
     inline FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(const char* value) { SetCredentialsParameter(value); return *this;}
 
@@ -168,64 +112,64 @@ namespace Model
     /**
      * <p>A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2
-     * AD.</p>
+     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD
+     * on Amazon EC2.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2
-     * AD.</p>
+     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD
+     * on Amazon EC2.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2
-     * AD.</p>
+     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD
+     * on Amazon EC2.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2
-     * AD.</p>
+     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD
+     * on Amazon EC2.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2
-     * AD.</p>
+     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD
+     * on Amazon EC2.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2
-     * AD.</p>
+     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD
+     * on Amazon EC2.</p>
      */
     inline FSxWindowsFileServerAuthorizationConfig& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2
-     * AD.</p>
+     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD
+     * on Amazon EC2.</p>
      */
     inline FSxWindowsFileServerAuthorizationConfig& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2
-     * AD.</p>
+     * Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD
+     * on Amazon EC2.</p>
      */
     inline FSxWindowsFileServerAuthorizationConfig& WithDomain(const char* value) { SetDomain(value); return *this;}
 

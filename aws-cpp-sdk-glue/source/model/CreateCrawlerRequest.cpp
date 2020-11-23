@@ -23,6 +23,7 @@ CreateCrawlerRequest::CreateCrawlerRequest() :
     m_tablePrefixHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
     m_recrawlPolicyHasBeenSet(false),
+    m_lineageConfigurationHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_crawlerSecurityConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -95,6 +96,12 @@ Aws::String CreateCrawlerRequest::SerializePayload() const
   if(m_recrawlPolicyHasBeenSet)
   {
    payload.WithObject("RecrawlPolicy", m_recrawlPolicy.Jsonize());
+
+  }
+
+  if(m_lineageConfigurationHasBeenSet)
+  {
+   payload.WithObject("LineageConfiguration", m_lineageConfiguration.Jsonize());
 
   }
 

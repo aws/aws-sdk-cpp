@@ -33,31 +33,31 @@ namespace Model
 
 
     /**
-     * <p> Specifies the managed scaling policy that is attached to an Amazon EMR
+     * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
      * cluster. </p>
      */
     inline const ManagedScalingPolicy& GetManagedScalingPolicy() const{ return m_managedScalingPolicy; }
 
     /**
-     * <p> Specifies the managed scaling policy that is attached to an Amazon EMR
+     * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
      * cluster. </p>
      */
     inline void SetManagedScalingPolicy(const ManagedScalingPolicy& value) { m_managedScalingPolicy = value; }
 
     /**
-     * <p> Specifies the managed scaling policy that is attached to an Amazon EMR
+     * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
      * cluster. </p>
      */
     inline void SetManagedScalingPolicy(ManagedScalingPolicy&& value) { m_managedScalingPolicy = std::move(value); }
 
     /**
-     * <p> Specifies the managed scaling policy that is attached to an Amazon EMR
+     * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
      * cluster. </p>
      */
     inline GetManagedScalingPolicyResult& WithManagedScalingPolicy(const ManagedScalingPolicy& value) { SetManagedScalingPolicy(value); return *this;}
 
     /**
-     * <p> Specifies the managed scaling policy that is attached to an Amazon EMR
+     * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
      * cluster. </p>
      */
     inline GetManagedScalingPolicyResult& WithManagedScalingPolicy(ManagedScalingPolicy&& value) { SetManagedScalingPolicy(std::move(value)); return *this;}

@@ -43,9 +43,9 @@ namespace Model
      * relationship status with the master account. The default value is
      * <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to
      * <code>TRUE</code>, the response includes member accounts whose relationship
-     * status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to
-     * <code>FALSE</code>, the response includes all existing member accounts. </p>
+     * status with the master is set to <code>ENABLED</code>.</p> <p>If
+     * <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
+     * all existing member accounts. </p>
      */
     inline bool GetOnlyAssociated() const{ return m_onlyAssociated; }
 
@@ -54,9 +54,9 @@ namespace Model
      * relationship status with the master account. The default value is
      * <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to
      * <code>TRUE</code>, the response includes member accounts whose relationship
-     * status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to
-     * <code>FALSE</code>, the response includes all existing member accounts. </p>
+     * status with the master is set to <code>ENABLED</code>.</p> <p>If
+     * <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
+     * all existing member accounts. </p>
      */
     inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
 
@@ -65,9 +65,9 @@ namespace Model
      * relationship status with the master account. The default value is
      * <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to
      * <code>TRUE</code>, the response includes member accounts whose relationship
-     * status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to
-     * <code>FALSE</code>, the response includes all existing member accounts. </p>
+     * status with the master is set to <code>ENABLED</code>.</p> <p>If
+     * <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
+     * all existing member accounts. </p>
      */
     inline void SetOnlyAssociated(bool value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
 
@@ -76,9 +76,9 @@ namespace Model
      * relationship status with the master account. The default value is
      * <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to
      * <code>TRUE</code>, the response includes member accounts whose relationship
-     * status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to
-     * <code>FALSE</code>, the response includes all existing member accounts. </p>
+     * status with the master is set to <code>ENABLED</code>.</p> <p>If
+     * <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
+     * all existing member accounts. </p>
      */
     inline ListMembersRequest& WithOnlyAssociated(bool value) { SetOnlyAssociated(value); return *this;}
 

@@ -53,7 +53,9 @@ FunctionConfiguration::FunctionConfiguration() :
     m_lastUpdateStatusReasonHasBeenSet(false),
     m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
     m_lastUpdateStatusReasonCodeHasBeenSet(false),
-    m_fileSystemConfigsHasBeenSet(false)
+    m_fileSystemConfigsHasBeenSet(false),
+    m_signingProfileVersionArnHasBeenSet(false),
+    m_signingJobArnHasBeenSet(false)
 {
 }
 
@@ -92,7 +94,9 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_lastUpdateStatusReasonHasBeenSet(false),
     m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
     m_lastUpdateStatusReasonCodeHasBeenSet(false),
-    m_fileSystemConfigsHasBeenSet(false)
+    m_fileSystemConfigsHasBeenSet(false),
+    m_signingProfileVersionArnHasBeenSet(false),
+    m_signingJobArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -294,6 +298,20 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_fileSystemConfigsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SigningProfileVersionArn"))
+  {
+    m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
+
+    m_signingProfileVersionArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SigningJobArn"))
+  {
+    m_signingJobArn = jsonValue.GetString("SigningJobArn");
+
+    m_signingJobArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -465,6 +483,18 @@ JsonValue FunctionConfiguration::Jsonize() const
      fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
    }
    payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
+
+  }
+
+  if(m_signingProfileVersionArnHasBeenSet)
+  {
+   payload.WithString("SigningProfileVersionArn", m_signingProfileVersionArn);
+
+  }
+
+  if(m_signingJobArnHasBeenSet)
+  {
+   payload.WithString("SigningJobArn", m_signingJobArn);
 
   }
 

@@ -85,41 +85,46 @@ namespace Model
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
-         
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+   
+     *      
      */
     inline const ClusterState& GetState() const{ return m_state; }
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
-         
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+   
+     *      
      */
     inline void SetState(const ClusterState& value) { m_state = value; }
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
-         
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+   
+     *      
      */
     inline void SetState(ClusterState&& value) { m_state = std::move(value); }
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
-         
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+   
+     *      
      */
     inline DeleteClusterResult& WithState(const ClusterState& value) { SetState(value); return *this;}
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
-         
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+   
+     *      
      */
     inline DeleteClusterResult& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
 

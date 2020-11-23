@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Active,
-    Canceled
+    Canceled,
+    Revoked
   };
 
 namespace SigningProfileStatusMapper

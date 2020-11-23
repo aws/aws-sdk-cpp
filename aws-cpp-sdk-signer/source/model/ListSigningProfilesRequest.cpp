@@ -20,7 +20,9 @@ ListSigningProfilesRequest::ListSigningProfilesRequest() :
     m_includeCanceledHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_platformIdHasBeenSet(false),
+    m_statusesHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,23 @@ void ListSigningProfilesRequest::AddQueryStringParameters(URI& uri) const
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
       ss.str("");
+    }
+
+    if(m_platformIdHasBeenSet)
+    {
+      ss << m_platformId;
+      uri.AddQueryStringParameter("platformId", ss.str());
+      ss.str("");
+    }
+
+    if(m_statusesHasBeenSet)
+    {
+      for(const auto& item : m_statuses)
+      {
+        ss << SigningProfileStatusMapper::GetNameForSigningProfileStatus(item);
+        uri.AddQueryStringParameter("statuses", ss.str());
+        ss.str("");
+      }
     }
 
 }

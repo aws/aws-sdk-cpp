@@ -178,7 +178,8 @@ namespace Model
      * Google Android repository. </p> </li> <li> <p>
      * <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
      * </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare
-     * Android repository. </p> </li> </ul>
+     * Android repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> </ul>
      */
     inline const Aws::String& GetExternalConnection() const{ return m_externalConnection; }
 
@@ -191,7 +192,8 @@ namespace Model
      * Google Android repository. </p> </li> <li> <p>
      * <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
      * </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare
-     * Android repository. </p> </li> </ul>
+     * Android repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> </ul>
      */
     inline bool ExternalConnectionHasBeenSet() const { return m_externalConnectionHasBeenSet; }
 
@@ -204,7 +206,8 @@ namespace Model
      * Google Android repository. </p> </li> <li> <p>
      * <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
      * </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare
-     * Android repository. </p> </li> </ul>
+     * Android repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> </ul>
      */
     inline void SetExternalConnection(const Aws::String& value) { m_externalConnectionHasBeenSet = true; m_externalConnection = value; }
 
@@ -217,7 +220,8 @@ namespace Model
      * Google Android repository. </p> </li> <li> <p>
      * <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
      * </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare
-     * Android repository. </p> </li> </ul>
+     * Android repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> </ul>
      */
     inline void SetExternalConnection(Aws::String&& value) { m_externalConnectionHasBeenSet = true; m_externalConnection = std::move(value); }
 
@@ -230,7 +234,8 @@ namespace Model
      * Google Android repository. </p> </li> <li> <p>
      * <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
      * </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare
-     * Android repository. </p> </li> </ul>
+     * Android repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> </ul>
      */
     inline void SetExternalConnection(const char* value) { m_externalConnectionHasBeenSet = true; m_externalConnection.assign(value); }
 
@@ -243,7 +248,8 @@ namespace Model
      * Google Android repository. </p> </li> <li> <p>
      * <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
      * </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare
-     * Android repository. </p> </li> </ul>
+     * Android repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> </ul>
      */
     inline AssociateExternalConnectionRequest& WithExternalConnection(const Aws::String& value) { SetExternalConnection(value); return *this;}
 
@@ -256,7 +262,8 @@ namespace Model
      * Google Android repository. </p> </li> <li> <p>
      * <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
      * </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare
-     * Android repository. </p> </li> </ul>
+     * Android repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> </ul>
      */
     inline AssociateExternalConnectionRequest& WithExternalConnection(Aws::String&& value) { SetExternalConnection(std::move(value)); return *this;}
 
@@ -269,7 +276,8 @@ namespace Model
      * Google Android repository. </p> </li> <li> <p>
      * <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
      * </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare
-     * Android repository. </p> </li> </ul>
+     * Android repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> </ul>
      */
     inline AssociateExternalConnectionRequest& WithExternalConnection(const char* value) { SetExternalConnection(value); return *this;}
 

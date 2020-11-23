@@ -212,6 +212,18 @@ UpdateFunctionConfigurationResult& UpdateFunctionConfigurationResult::operator =
     }
   }
 
+  if(jsonValue.ValueExists("SigningProfileVersionArn"))
+  {
+    m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
+
+  }
+
+  if(jsonValue.ValueExists("SigningJobArn"))
+  {
+    m_signingJobArn = jsonValue.GetString("SigningJobArn");
+
+  }
+
 
 
   return *this;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/PartitionIndexStatus.h>
 #include <aws/glue/model/KeySchemaElement.h>
+#include <aws/glue/model/BackfillError.h>
 #include <utility>
 
 namespace Aws
@@ -131,34 +132,113 @@ namespace Model
 
 
     /**
-     * <p>The status of the partition index. </p>
+     * <p>The status of the partition index. </p> <p>The possible statuses are:</p>
+     * <ul> <li> <p>CREATING: The index is being created. When an index is in a
+     * CREATING state, the index or its table cannot be deleted.</p> </li> <li>
+     * <p>ACTIVE: The index creation succeeds.</p> </li> <li> <p>FAILED: The index
+     * creation fails. </p> </li> <li> <p>DELETING: The index is deleted from the list
+     * of indexes.</p> </li> </ul>
      */
     inline const PartitionIndexStatus& GetIndexStatus() const{ return m_indexStatus; }
 
     /**
-     * <p>The status of the partition index. </p>
+     * <p>The status of the partition index. </p> <p>The possible statuses are:</p>
+     * <ul> <li> <p>CREATING: The index is being created. When an index is in a
+     * CREATING state, the index or its table cannot be deleted.</p> </li> <li>
+     * <p>ACTIVE: The index creation succeeds.</p> </li> <li> <p>FAILED: The index
+     * creation fails. </p> </li> <li> <p>DELETING: The index is deleted from the list
+     * of indexes.</p> </li> </ul>
      */
     inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
 
     /**
-     * <p>The status of the partition index. </p>
+     * <p>The status of the partition index. </p> <p>The possible statuses are:</p>
+     * <ul> <li> <p>CREATING: The index is being created. When an index is in a
+     * CREATING state, the index or its table cannot be deleted.</p> </li> <li>
+     * <p>ACTIVE: The index creation succeeds.</p> </li> <li> <p>FAILED: The index
+     * creation fails. </p> </li> <li> <p>DELETING: The index is deleted from the list
+     * of indexes.</p> </li> </ul>
      */
     inline void SetIndexStatus(const PartitionIndexStatus& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
 
     /**
-     * <p>The status of the partition index. </p>
+     * <p>The status of the partition index. </p> <p>The possible statuses are:</p>
+     * <ul> <li> <p>CREATING: The index is being created. When an index is in a
+     * CREATING state, the index or its table cannot be deleted.</p> </li> <li>
+     * <p>ACTIVE: The index creation succeeds.</p> </li> <li> <p>FAILED: The index
+     * creation fails. </p> </li> <li> <p>DELETING: The index is deleted from the list
+     * of indexes.</p> </li> </ul>
      */
     inline void SetIndexStatus(PartitionIndexStatus&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = std::move(value); }
 
     /**
-     * <p>The status of the partition index. </p>
+     * <p>The status of the partition index. </p> <p>The possible statuses are:</p>
+     * <ul> <li> <p>CREATING: The index is being created. When an index is in a
+     * CREATING state, the index or its table cannot be deleted.</p> </li> <li>
+     * <p>ACTIVE: The index creation succeeds.</p> </li> <li> <p>FAILED: The index
+     * creation fails. </p> </li> <li> <p>DELETING: The index is deleted from the list
+     * of indexes.</p> </li> </ul>
      */
     inline PartitionIndexDescriptor& WithIndexStatus(const PartitionIndexStatus& value) { SetIndexStatus(value); return *this;}
 
     /**
-     * <p>The status of the partition index. </p>
+     * <p>The status of the partition index. </p> <p>The possible statuses are:</p>
+     * <ul> <li> <p>CREATING: The index is being created. When an index is in a
+     * CREATING state, the index or its table cannot be deleted.</p> </li> <li>
+     * <p>ACTIVE: The index creation succeeds.</p> </li> <li> <p>FAILED: The index
+     * creation fails. </p> </li> <li> <p>DELETING: The index is deleted from the list
+     * of indexes.</p> </li> </ul>
      */
     inline PartitionIndexDescriptor& WithIndexStatus(PartitionIndexStatus&& value) { SetIndexStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of errors that can occur when registering partition indexes for an
+     * existing table.</p>
+     */
+    inline const Aws::Vector<BackfillError>& GetBackfillErrors() const{ return m_backfillErrors; }
+
+    /**
+     * <p>A list of errors that can occur when registering partition indexes for an
+     * existing table.</p>
+     */
+    inline bool BackfillErrorsHasBeenSet() const { return m_backfillErrorsHasBeenSet; }
+
+    /**
+     * <p>A list of errors that can occur when registering partition indexes for an
+     * existing table.</p>
+     */
+    inline void SetBackfillErrors(const Aws::Vector<BackfillError>& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors = value; }
+
+    /**
+     * <p>A list of errors that can occur when registering partition indexes for an
+     * existing table.</p>
+     */
+    inline void SetBackfillErrors(Aws::Vector<BackfillError>&& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors = std::move(value); }
+
+    /**
+     * <p>A list of errors that can occur when registering partition indexes for an
+     * existing table.</p>
+     */
+    inline PartitionIndexDescriptor& WithBackfillErrors(const Aws::Vector<BackfillError>& value) { SetBackfillErrors(value); return *this;}
+
+    /**
+     * <p>A list of errors that can occur when registering partition indexes for an
+     * existing table.</p>
+     */
+    inline PartitionIndexDescriptor& WithBackfillErrors(Aws::Vector<BackfillError>&& value) { SetBackfillErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of errors that can occur when registering partition indexes for an
+     * existing table.</p>
+     */
+    inline PartitionIndexDescriptor& AddBackfillErrors(const BackfillError& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors.push_back(value); return *this; }
+
+    /**
+     * <p>A list of errors that can occur when registering partition indexes for an
+     * existing table.</p>
+     */
+    inline PartitionIndexDescriptor& AddBackfillErrors(BackfillError&& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -170,6 +250,9 @@ namespace Model
 
     PartitionIndexStatus m_indexStatus;
     bool m_indexStatusHasBeenSet;
+
+    Aws::Vector<BackfillError> m_backfillErrors;
+    bool m_backfillErrorsHasBeenSet;
   };
 
 } // namespace Model

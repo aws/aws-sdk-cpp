@@ -28,6 +28,7 @@ ServiceDetail::ServiceDetail() :
     m_ownerHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
+    m_privateDnsNamesHasBeenSet(false),
     m_vpcEndpointPolicySupported(false),
     m_vpcEndpointPolicySupportedHasBeenSet(false),
     m_acceptanceRequired(false),
@@ -48,6 +49,7 @@ ServiceDetail::ServiceDetail(const XmlNode& xmlNode) :
     m_ownerHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
+    m_privateDnsNamesHasBeenSet(false),
     m_vpcEndpointPolicySupported(false),
     m_vpcEndpointPolicySupportedHasBeenSet(false),
     m_acceptanceRequired(false),
@@ -126,6 +128,18 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     {
       m_privateDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameNode.GetText());
       m_privateDnsNameHasBeenSet = true;
+    }
+    XmlNode privateDnsNamesNode = resultNode.FirstChild("privateDnsNameSet");
+    if(!privateDnsNamesNode.IsNull())
+    {
+      XmlNode privateDnsNamesMember = privateDnsNamesNode.FirstChild("item");
+      while(!privateDnsNamesMember.IsNull())
+      {
+        m_privateDnsNames.push_back(privateDnsNamesMember);
+        privateDnsNamesMember = privateDnsNamesMember.NextNode("item");
+      }
+
+      m_privateDnsNamesHasBeenSet = true;
     }
     XmlNode vpcEndpointPolicySupportedNode = resultNode.FirstChild("vpcEndpointPolicySupported");
     if(!vpcEndpointPolicySupportedNode.IsNull())
@@ -219,6 +233,17 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
   }
 
+  if(m_privateDnsNamesHasBeenSet)
+  {
+      unsigned privateDnsNamesIdx = 1;
+      for(auto& item : m_privateDnsNames)
+      {
+        Aws::StringStream privateDnsNamesSs;
+        privateDnsNamesSs << location << index << locationValue << ".PrivateDnsNameSet." << privateDnsNamesIdx++;
+        item.OutputToStream(oStream, privateDnsNamesSs.str().c_str());
+      }
+  }
+
   if(m_vpcEndpointPolicySupportedHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcEndpointPolicySupported=" << std::boolalpha << m_vpcEndpointPolicySupported << "&";
@@ -295,6 +320,16 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_privateDnsNameHasBeenSet)
   {
       oStream << location << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
+  }
+  if(m_privateDnsNamesHasBeenSet)
+  {
+      unsigned privateDnsNamesIdx = 1;
+      for(auto& item : m_privateDnsNames)
+      {
+        Aws::StringStream privateDnsNamesSs;
+        privateDnsNamesSs << location <<  ".PrivateDnsNameSet." << privateDnsNamesIdx++;
+        item.OutputToStream(oStream, privateDnsNamesSs.str().c_str());
+      }
   }
   if(m_vpcEndpointPolicySupportedHasBeenSet)
   {

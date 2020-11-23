@@ -20,6 +20,8 @@ namespace Model
 
 OTAUpdateFile::OTAUpdateFile() : 
     m_fileNameHasBeenSet(false),
+    m_fileType(0),
+    m_fileTypeHasBeenSet(false),
     m_fileVersionHasBeenSet(false),
     m_fileLocationHasBeenSet(false),
     m_codeSigningHasBeenSet(false),
@@ -29,6 +31,8 @@ OTAUpdateFile::OTAUpdateFile() :
 
 OTAUpdateFile::OTAUpdateFile(JsonView jsonValue) : 
     m_fileNameHasBeenSet(false),
+    m_fileType(0),
+    m_fileTypeHasBeenSet(false),
     m_fileVersionHasBeenSet(false),
     m_fileLocationHasBeenSet(false),
     m_codeSigningHasBeenSet(false),
@@ -44,6 +48,13 @@ OTAUpdateFile& OTAUpdateFile::operator =(JsonView jsonValue)
     m_fileName = jsonValue.GetString("fileName");
 
     m_fileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fileType"))
+  {
+    m_fileType = jsonValue.GetInteger("fileType");
+
+    m_fileTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fileVersion"))
@@ -87,6 +98,12 @@ JsonValue OTAUpdateFile::Jsonize() const
   if(m_fileNameHasBeenSet)
   {
    payload.WithString("fileName", m_fileName);
+
+  }
+
+  if(m_fileTypeHasBeenSet)
+  {
+   payload.WithInteger("fileType", m_fileType);
 
   }
 

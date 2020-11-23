@@ -47,7 +47,9 @@ enum class LambdaErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CODE_STORAGE_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CODE_SIGNING_CONFIG_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CODE_STORAGE_EXCEEDED,
+  CODE_VERIFICATION_FAILED,
   E_C2_ACCESS_DENIED,
   E_C2_THROTTLED,
   E_C2_UNEXPECTED,
@@ -56,6 +58,7 @@ enum class LambdaErrors
   E_F_S_MOUNT_FAILURE,
   E_F_S_MOUNT_TIMEOUT,
   E_N_I_LIMIT_REACHED,
+  INVALID_CODE_SIGNATURE,
   INVALID_REQUEST_CONTENT,
   INVALID_RUNTIME,
   INVALID_SECURITY_GROUP_I_D,

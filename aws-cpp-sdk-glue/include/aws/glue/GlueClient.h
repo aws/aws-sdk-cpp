@@ -34,6 +34,7 @@
 #include <aws/glue/model/CreateJobResult.h>
 #include <aws/glue/model/CreateMLTransformResult.h>
 #include <aws/glue/model/CreatePartitionResult.h>
+#include <aws/glue/model/CreatePartitionIndexResult.h>
 #include <aws/glue/model/CreateRegistryResult.h>
 #include <aws/glue/model/CreateSchemaResult.h>
 #include <aws/glue/model/CreateScriptResult.h>
@@ -52,6 +53,7 @@
 #include <aws/glue/model/DeleteJobResult.h>
 #include <aws/glue/model/DeleteMLTransformResult.h>
 #include <aws/glue/model/DeletePartitionResult.h>
+#include <aws/glue/model/DeletePartitionIndexResult.h>
 #include <aws/glue/model/DeleteRegistryResult.h>
 #include <aws/glue/model/DeleteResourcePolicyResult.h>
 #include <aws/glue/model/DeleteSchemaResult.h>
@@ -228,6 +230,7 @@ namespace Model
         class CreateJobRequest;
         class CreateMLTransformRequest;
         class CreatePartitionRequest;
+        class CreatePartitionIndexRequest;
         class CreateRegistryRequest;
         class CreateSchemaRequest;
         class CreateScriptRequest;
@@ -246,6 +249,7 @@ namespace Model
         class DeleteJobRequest;
         class DeleteMLTransformRequest;
         class DeletePartitionRequest;
+        class DeletePartitionIndexRequest;
         class DeleteRegistryRequest;
         class DeleteResourcePolicyRequest;
         class DeleteSchemaRequest;
@@ -384,6 +388,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateJobResult, GlueError> CreateJobOutcome;
         typedef Aws::Utils::Outcome<CreateMLTransformResult, GlueError> CreateMLTransformOutcome;
         typedef Aws::Utils::Outcome<CreatePartitionResult, GlueError> CreatePartitionOutcome;
+        typedef Aws::Utils::Outcome<CreatePartitionIndexResult, GlueError> CreatePartitionIndexOutcome;
         typedef Aws::Utils::Outcome<CreateRegistryResult, GlueError> CreateRegistryOutcome;
         typedef Aws::Utils::Outcome<CreateSchemaResult, GlueError> CreateSchemaOutcome;
         typedef Aws::Utils::Outcome<CreateScriptResult, GlueError> CreateScriptOutcome;
@@ -402,6 +407,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteJobResult, GlueError> DeleteJobOutcome;
         typedef Aws::Utils::Outcome<DeleteMLTransformResult, GlueError> DeleteMLTransformOutcome;
         typedef Aws::Utils::Outcome<DeletePartitionResult, GlueError> DeletePartitionOutcome;
+        typedef Aws::Utils::Outcome<DeletePartitionIndexResult, GlueError> DeletePartitionIndexOutcome;
         typedef Aws::Utils::Outcome<DeleteRegistryResult, GlueError> DeleteRegistryOutcome;
         typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, GlueError> DeleteResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteSchemaResult, GlueError> DeleteSchemaOutcome;
@@ -540,6 +546,7 @@ namespace Model
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
         typedef std::future<CreateMLTransformOutcome> CreateMLTransformOutcomeCallable;
         typedef std::future<CreatePartitionOutcome> CreatePartitionOutcomeCallable;
+        typedef std::future<CreatePartitionIndexOutcome> CreatePartitionIndexOutcomeCallable;
         typedef std::future<CreateRegistryOutcome> CreateRegistryOutcomeCallable;
         typedef std::future<CreateSchemaOutcome> CreateSchemaOutcomeCallable;
         typedef std::future<CreateScriptOutcome> CreateScriptOutcomeCallable;
@@ -558,6 +565,7 @@ namespace Model
         typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
         typedef std::future<DeleteMLTransformOutcome> DeleteMLTransformOutcomeCallable;
         typedef std::future<DeletePartitionOutcome> DeletePartitionOutcomeCallable;
+        typedef std::future<DeletePartitionIndexOutcome> DeletePartitionIndexOutcomeCallable;
         typedef std::future<DeleteRegistryOutcome> DeleteRegistryOutcomeCallable;
         typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
         typedef std::future<DeleteSchemaOutcome> DeleteSchemaOutcomeCallable;
@@ -699,6 +707,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateMLTransformRequest&, const Model::CreateMLTransformOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMLTransformResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreatePartitionRequest&, const Model::CreatePartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartitionResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::CreatePartitionIndexRequest&, const Model::CreatePartitionIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartitionIndexResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateRegistryRequest&, const Model::CreateRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRegistryResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateSchemaRequest&, const Model::CreateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchemaResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateScriptRequest&, const Model::CreateScriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateScriptResponseReceivedHandler;
@@ -717,6 +726,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteMLTransformRequest&, const Model::DeleteMLTransformOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMLTransformResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeletePartitionRequest&, const Model::DeletePartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartitionResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::DeletePartitionIndexRequest&, const Model::DeletePartitionIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartitionIndexResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteRegistryRequest&, const Model::DeleteRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegistryResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteSchemaRequest&, const Model::DeleteSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaResponseReceivedHandler;
@@ -1622,6 +1632,34 @@ namespace Model
         virtual void CreatePartitionAsync(const Model::CreatePartitionRequest& request, const CreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a specified partition index in an existing table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePartitionIndexOutcome CreatePartitionIndex(const Model::CreatePartitionIndexRequest& request) const;
+
+        /**
+         * <p>Creates a specified partition index in an existing table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePartitionIndexOutcomeCallable CreatePartitionIndexCallable(const Model::CreatePartitionIndexRequest& request) const;
+
+        /**
+         * <p>Creates a specified partition index in an existing table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePartitionIndexAsync(const Model::CreatePartitionIndexRequest& request, const CreatePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new registry which may be used to hold a collection of
          * schemas.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateRegistry">AWS
@@ -2190,6 +2228,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePartitionAsync(const Model::DeletePartitionRequest& request, const DeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a specified partition index from an existing table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePartitionIndexOutcome DeletePartitionIndex(const Model::DeletePartitionIndexRequest& request) const;
+
+        /**
+         * <p>Deletes a specified partition index from an existing table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePartitionIndexOutcomeCallable DeletePartitionIndexCallable(const Model::DeletePartitionIndexRequest& request) const;
+
+        /**
+         * <p>Deletes a specified partition index from an existing table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePartitionIndexAsync(const Model::DeletePartitionIndexRequest& request, const DeletePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete the entire registry including schema and all of its versions. To get
@@ -5869,6 +5935,7 @@ namespace Model
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMLTransformAsyncHelper(const Model::CreateMLTransformRequest& request, const CreateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePartitionAsyncHelper(const Model::CreatePartitionRequest& request, const CreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePartitionIndexAsyncHelper(const Model::CreatePartitionIndexRequest& request, const CreatePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRegistryAsyncHelper(const Model::CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSchemaAsyncHelper(const Model::CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateScriptAsyncHelper(const Model::CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5887,6 +5954,7 @@ namespace Model
         void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMLTransformAsyncHelper(const Model::DeleteMLTransformRequest& request, const DeleteMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePartitionAsyncHelper(const Model::DeletePartitionRequest& request, const DeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePartitionIndexAsyncHelper(const Model::DeletePartitionIndexRequest& request, const DeletePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRegistryAsyncHelper(const Model::DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSchemaAsyncHelper(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

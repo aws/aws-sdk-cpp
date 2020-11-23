@@ -29,8 +29,7 @@ namespace Model
    * Forecast can assume to access the file(s). Optionally, includes an AWS Key
    * Management Service (KMS) key. This object is part of the <a>DataSource</a>
    * object that is submitted in the <a>CreateDatasetImportJob</a> request, and part
-   * of the <a>DataDestination</a> object that is submitted in the
-   * <a>CreateForecastExportJob</a> request.</p><p><h3>See Also:</h3>   <a
+   * of the <a>DataDestination</a> object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/S3Config">AWS
    * API Reference</a></p>
    */

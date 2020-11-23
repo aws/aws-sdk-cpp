@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>AWS Security Hub isn't enabled for the account used to make this
-   * request.</p><p><h3>See Also:</h3>   <a
+   * <p>There is an issue with the account used to make the request. Either Security
+   * Hub is not enabled for the account, or the account does not have permission to
+   * perform this action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InvalidAccessException">AWS
    * API Reference</a></p>
    */

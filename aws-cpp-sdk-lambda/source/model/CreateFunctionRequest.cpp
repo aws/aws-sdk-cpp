@@ -33,7 +33,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_tracingConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_layersHasBeenSet(false),
-    m_fileSystemConfigsHasBeenSet(false)
+    m_fileSystemConfigsHasBeenSet(false),
+    m_codeSigningConfigArnHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
      fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
    }
    payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
+
+  }
+
+  if(m_codeSigningConfigArnHasBeenSet)
+  {
+   payload.WithString("CodeSigningConfigArn", m_codeSigningConfigArn);
 
   }
 

@@ -18,9 +18,11 @@ namespace Model
     NOT_SET,
     ACTIVE,
     CREATING,
-    UPDATING,
     DELETING,
-    FAILED
+    FAILED,
+    MAINTENANCE,
+    REBOOTING_BROKER,
+    UPDATING
   };
 
 namespace ClusterStateMapper

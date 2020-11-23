@@ -58,6 +58,12 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
     }
   }
 
+  if(jsonValue.ValueExists("QueryStatus"))
+  {
+    m_queryStatus = jsonValue.GetObject("QueryStatus");
+
+  }
+
 
 
   return *this;

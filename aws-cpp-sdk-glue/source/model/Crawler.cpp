@@ -27,6 +27,7 @@ Crawler::Crawler() :
     m_classifiersHasBeenSet(false),
     m_recrawlPolicyHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
+    m_lineageConfigurationHasBeenSet(false),
     m_state(CrawlerState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tablePrefixHasBeenSet(false),
@@ -52,6 +53,7 @@ Crawler::Crawler(JsonView jsonValue) :
     m_classifiersHasBeenSet(false),
     m_recrawlPolicyHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
+    m_lineageConfigurationHasBeenSet(false),
     m_state(CrawlerState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tablePrefixHasBeenSet(false),
@@ -128,6 +130,13 @@ Crawler& Crawler::operator =(JsonView jsonValue)
     m_schemaChangePolicy = jsonValue.GetObject("SchemaChangePolicy");
 
     m_schemaChangePolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LineageConfiguration"))
+  {
+    m_lineageConfiguration = jsonValue.GetObject("LineageConfiguration");
+
+    m_lineageConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("State"))
@@ -257,6 +266,12 @@ JsonValue Crawler::Jsonize() const
   if(m_schemaChangePolicyHasBeenSet)
   {
    payload.WithObject("SchemaChangePolicy", m_schemaChangePolicy.Jsonize());
+
+  }
+
+  if(m_lineageConfigurationHasBeenSet)
+  {
+   payload.WithObject("LineageConfiguration", m_lineageConfiguration.Jsonize());
 
   }
 

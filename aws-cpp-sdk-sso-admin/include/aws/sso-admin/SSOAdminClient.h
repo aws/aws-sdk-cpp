@@ -13,12 +13,15 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso-admin/model/AttachManagedPolicyToPermissionSetResult.h>
 #include <aws/sso-admin/model/CreateAccountAssignmentResult.h>
+#include <aws/sso-admin/model/CreateInstanceAccessControlAttributeConfigurationResult.h>
 #include <aws/sso-admin/model/CreatePermissionSetResult.h>
 #include <aws/sso-admin/model/DeleteAccountAssignmentResult.h>
 #include <aws/sso-admin/model/DeleteInlinePolicyFromPermissionSetResult.h>
+#include <aws/sso-admin/model/DeleteInstanceAccessControlAttributeConfigurationResult.h>
 #include <aws/sso-admin/model/DeletePermissionSetResult.h>
 #include <aws/sso-admin/model/DescribeAccountAssignmentCreationStatusResult.h>
 #include <aws/sso-admin/model/DescribeAccountAssignmentDeletionStatusResult.h>
+#include <aws/sso-admin/model/DescribeInstanceAccessControlAttributeConfigurationResult.h>
 #include <aws/sso-admin/model/DescribePermissionSetResult.h>
 #include <aws/sso-admin/model/DescribePermissionSetProvisioningStatusResult.h>
 #include <aws/sso-admin/model/DetachManagedPolicyFromPermissionSetResult.h>
@@ -37,6 +40,7 @@
 #include <aws/sso-admin/model/PutInlinePolicyToPermissionSetResult.h>
 #include <aws/sso-admin/model/TagResourceResult.h>
 #include <aws/sso-admin/model/UntagResourceResult.h>
+#include <aws/sso-admin/model/UpdateInstanceAccessControlAttributeConfigurationResult.h>
 #include <aws/sso-admin/model/UpdatePermissionSetResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -79,12 +83,15 @@ namespace Model
 {
         class AttachManagedPolicyToPermissionSetRequest;
         class CreateAccountAssignmentRequest;
+        class CreateInstanceAccessControlAttributeConfigurationRequest;
         class CreatePermissionSetRequest;
         class DeleteAccountAssignmentRequest;
         class DeleteInlinePolicyFromPermissionSetRequest;
+        class DeleteInstanceAccessControlAttributeConfigurationRequest;
         class DeletePermissionSetRequest;
         class DescribeAccountAssignmentCreationStatusRequest;
         class DescribeAccountAssignmentDeletionStatusRequest;
+        class DescribeInstanceAccessControlAttributeConfigurationRequest;
         class DescribePermissionSetRequest;
         class DescribePermissionSetProvisioningStatusRequest;
         class DetachManagedPolicyFromPermissionSetRequest;
@@ -103,16 +110,20 @@ namespace Model
         class PutInlinePolicyToPermissionSetRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateInstanceAccessControlAttributeConfigurationRequest;
         class UpdatePermissionSetRequest;
 
         typedef Aws::Utils::Outcome<AttachManagedPolicyToPermissionSetResult, SSOAdminError> AttachManagedPolicyToPermissionSetOutcome;
         typedef Aws::Utils::Outcome<CreateAccountAssignmentResult, SSOAdminError> CreateAccountAssignmentOutcome;
+        typedef Aws::Utils::Outcome<CreateInstanceAccessControlAttributeConfigurationResult, SSOAdminError> CreateInstanceAccessControlAttributeConfigurationOutcome;
         typedef Aws::Utils::Outcome<CreatePermissionSetResult, SSOAdminError> CreatePermissionSetOutcome;
         typedef Aws::Utils::Outcome<DeleteAccountAssignmentResult, SSOAdminError> DeleteAccountAssignmentOutcome;
         typedef Aws::Utils::Outcome<DeleteInlinePolicyFromPermissionSetResult, SSOAdminError> DeleteInlinePolicyFromPermissionSetOutcome;
+        typedef Aws::Utils::Outcome<DeleteInstanceAccessControlAttributeConfigurationResult, SSOAdminError> DeleteInstanceAccessControlAttributeConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeletePermissionSetResult, SSOAdminError> DeletePermissionSetOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAssignmentCreationStatusResult, SSOAdminError> DescribeAccountAssignmentCreationStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAssignmentDeletionStatusResult, SSOAdminError> DescribeAccountAssignmentDeletionStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstanceAccessControlAttributeConfigurationResult, SSOAdminError> DescribeInstanceAccessControlAttributeConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribePermissionSetResult, SSOAdminError> DescribePermissionSetOutcome;
         typedef Aws::Utils::Outcome<DescribePermissionSetProvisioningStatusResult, SSOAdminError> DescribePermissionSetProvisioningStatusOutcome;
         typedef Aws::Utils::Outcome<DetachManagedPolicyFromPermissionSetResult, SSOAdminError> DetachManagedPolicyFromPermissionSetOutcome;
@@ -131,16 +142,20 @@ namespace Model
         typedef Aws::Utils::Outcome<PutInlinePolicyToPermissionSetResult, SSOAdminError> PutInlinePolicyToPermissionSetOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, SSOAdminError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, SSOAdminError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateInstanceAccessControlAttributeConfigurationResult, SSOAdminError> UpdateInstanceAccessControlAttributeConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdatePermissionSetResult, SSOAdminError> UpdatePermissionSetOutcome;
 
         typedef std::future<AttachManagedPolicyToPermissionSetOutcome> AttachManagedPolicyToPermissionSetOutcomeCallable;
         typedef std::future<CreateAccountAssignmentOutcome> CreateAccountAssignmentOutcomeCallable;
+        typedef std::future<CreateInstanceAccessControlAttributeConfigurationOutcome> CreateInstanceAccessControlAttributeConfigurationOutcomeCallable;
         typedef std::future<CreatePermissionSetOutcome> CreatePermissionSetOutcomeCallable;
         typedef std::future<DeleteAccountAssignmentOutcome> DeleteAccountAssignmentOutcomeCallable;
         typedef std::future<DeleteInlinePolicyFromPermissionSetOutcome> DeleteInlinePolicyFromPermissionSetOutcomeCallable;
+        typedef std::future<DeleteInstanceAccessControlAttributeConfigurationOutcome> DeleteInstanceAccessControlAttributeConfigurationOutcomeCallable;
         typedef std::future<DeletePermissionSetOutcome> DeletePermissionSetOutcomeCallable;
         typedef std::future<DescribeAccountAssignmentCreationStatusOutcome> DescribeAccountAssignmentCreationStatusOutcomeCallable;
         typedef std::future<DescribeAccountAssignmentDeletionStatusOutcome> DescribeAccountAssignmentDeletionStatusOutcomeCallable;
+        typedef std::future<DescribeInstanceAccessControlAttributeConfigurationOutcome> DescribeInstanceAccessControlAttributeConfigurationOutcomeCallable;
         typedef std::future<DescribePermissionSetOutcome> DescribePermissionSetOutcomeCallable;
         typedef std::future<DescribePermissionSetProvisioningStatusOutcome> DescribePermissionSetProvisioningStatusOutcomeCallable;
         typedef std::future<DetachManagedPolicyFromPermissionSetOutcome> DetachManagedPolicyFromPermissionSetOutcomeCallable;
@@ -159,6 +174,7 @@ namespace Model
         typedef std::future<PutInlinePolicyToPermissionSetOutcome> PutInlinePolicyToPermissionSetOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateInstanceAccessControlAttributeConfigurationOutcome> UpdateInstanceAccessControlAttributeConfigurationOutcomeCallable;
         typedef std::future<UpdatePermissionSetOutcome> UpdatePermissionSetOutcomeCallable;
 } // namespace Model
 
@@ -166,12 +182,15 @@ namespace Model
 
     typedef std::function<void(const SSOAdminClient*, const Model::AttachManagedPolicyToPermissionSetRequest&, const Model::AttachManagedPolicyToPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachManagedPolicyToPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::CreateAccountAssignmentRequest&, const Model::CreateAccountAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountAssignmentResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::CreateInstanceAccessControlAttributeConfigurationRequest&, const Model::CreateInstanceAccessControlAttributeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::CreatePermissionSetRequest&, const Model::CreatePermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DeleteAccountAssignmentRequest&, const Model::DeleteAccountAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountAssignmentResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DeleteInlinePolicyFromPermissionSetRequest&, const Model::DeleteInlinePolicyFromPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInlinePolicyFromPermissionSetResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::DeleteInstanceAccessControlAttributeConfigurationRequest&, const Model::DeleteInstanceAccessControlAttributeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DeletePermissionSetRequest&, const Model::DeletePermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DescribeAccountAssignmentCreationStatusRequest&, const Model::DescribeAccountAssignmentCreationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAssignmentCreationStatusResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DescribeAccountAssignmentDeletionStatusRequest&, const Model::DescribeAccountAssignmentDeletionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAssignmentDeletionStatusResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::DescribeInstanceAccessControlAttributeConfigurationRequest&, const Model::DescribeInstanceAccessControlAttributeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DescribePermissionSetRequest&, const Model::DescribePermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DescribePermissionSetProvisioningStatusRequest&, const Model::DescribePermissionSetProvisioningStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePermissionSetProvisioningStatusResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DetachManagedPolicyFromPermissionSetRequest&, const Model::DetachManagedPolicyFromPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachManagedPolicyFromPermissionSetResponseReceivedHandler;
@@ -190,6 +209,7 @@ namespace Model
     typedef std::function<void(const SSOAdminClient*, const Model::PutInlinePolicyToPermissionSetRequest&, const Model::PutInlinePolicyToPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInlinePolicyToPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::UpdateInstanceAccessControlAttributeConfigurationRequest&, const Model::UpdateInstanceAccessControlAttributeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::UpdatePermissionSetRequest&, const Model::UpdatePermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePermissionSetResponseReceivedHandler;
 
   class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient
@@ -309,6 +329,43 @@ namespace Model
         virtual void CreateAccountAssignmentAsync(const Model::CreateAccountAssignmentRequest& request, const CreateAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables the attributes-based access control (ABAC) feature for the specified
+         * AWS SSO instance. You can also specify new attributes to add to your ABAC
+         * configuration during the enabling process. For more information about ABAC, see
+         * <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInstanceAccessControlAttributeConfigurationOutcome CreateInstanceAccessControlAttributeConfiguration(const Model::CreateInstanceAccessControlAttributeConfigurationRequest& request) const;
+
+        /**
+         * <p>Enables the attributes-based access control (ABAC) feature for the specified
+         * AWS SSO instance. You can also specify new attributes to add to your ABAC
+         * configuration during the enabling process. For more information about ABAC, see
+         * <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateInstanceAccessControlAttributeConfigurationOutcomeCallable CreateInstanceAccessControlAttributeConfigurationCallable(const Model::CreateInstanceAccessControlAttributeConfigurationRequest& request) const;
+
+        /**
+         * <p>Enables the attributes-based access control (ABAC) feature for the specified
+         * AWS SSO instance. You can also specify new attributes to add to your ABAC
+         * configuration during the enabling process. For more information about ABAC, see
+         * <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateInstanceAccessControlAttributeConfigurationAsync(const Model::CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a permission set within a specified SSO instance.</p>  <p>To
          * grant users and groups access to AWS account resources, use <code>
          * <a>CreateAccountAssignment</a> </code>.</p> <p><h3>See Also:</h3>   <a
@@ -396,6 +453,49 @@ namespace Model
         virtual void DeleteInlinePolicyFromPermissionSetAsync(const Model::DeleteInlinePolicyFromPermissionSetRequest& request, const DeleteInlinePolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disables the attributes-based access control (ABAC) feature for the specified
+         * AWS SSO instance and deletes all of the attribute mappings that have been
+         * configured. Once deleted, any attributes that are received from an identity
+         * source and any custom attributes you have previously configured will not be
+         * passed. For more information about ABAC, see <a
+         * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInstanceAccessControlAttributeConfigurationOutcome DeleteInstanceAccessControlAttributeConfiguration(const Model::DeleteInstanceAccessControlAttributeConfigurationRequest& request) const;
+
+        /**
+         * <p>Disables the attributes-based access control (ABAC) feature for the specified
+         * AWS SSO instance and deletes all of the attribute mappings that have been
+         * configured. Once deleted, any attributes that are received from an identity
+         * source and any custom attributes you have previously configured will not be
+         * passed. For more information about ABAC, see <a
+         * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteInstanceAccessControlAttributeConfigurationOutcomeCallable DeleteInstanceAccessControlAttributeConfigurationCallable(const Model::DeleteInstanceAccessControlAttributeConfigurationRequest& request) const;
+
+        /**
+         * <p>Disables the attributes-based access control (ABAC) feature for the specified
+         * AWS SSO instance and deletes all of the attribute mappings that have been
+         * configured. Once deleted, any attributes that are received from an identity
+         * source and any custom attributes you have previously configured will not be
+         * passed. For more information about ABAC, see <a
+         * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteInstanceAccessControlAttributeConfigurationAsync(const Model::DeleteInstanceAccessControlAttributeConfigurationRequest& request, const DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified permission set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionSet">AWS
          * API Reference</a></p>
@@ -475,6 +575,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAccountAssignmentDeletionStatusAsync(const Model::DescribeAccountAssignmentDeletionStatusRequest& request, const DescribeAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the list of AWS SSO identity store attributes that have been
+         * configured to work with attributes-based access control (ABAC) for the specified
+         * AWS SSO instance. This will not return attributes configured and sent by an
+         * external identity provider. For more information about ABAC, see <a
+         * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceAccessControlAttributeConfigurationOutcome DescribeInstanceAccessControlAttributeConfiguration(const Model::DescribeInstanceAccessControlAttributeConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the list of AWS SSO identity store attributes that have been
+         * configured to work with attributes-based access control (ABAC) for the specified
+         * AWS SSO instance. This will not return attributes configured and sent by an
+         * external identity provider. For more information about ABAC, see <a
+         * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInstanceAccessControlAttributeConfigurationOutcomeCallable DescribeInstanceAccessControlAttributeConfigurationCallable(const Model::DescribeInstanceAccessControlAttributeConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the list of AWS SSO identity store attributes that have been
+         * configured to work with attributes-based access control (ABAC) for the specified
+         * AWS SSO instance. This will not return attributes configured and sent by an
+         * external identity provider. For more information about ABAC, see <a
+         * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInstanceAccessControlAttributeConfigurationAsync(const Model::DescribeInstanceAccessControlAttributeConfigurationRequest& request, const DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the details of the permission set.</p><p><h3>See Also:</h3>   <a
@@ -987,6 +1127,55 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the AWS SSO identity store attributes to use with the AWS SSO
+         * instance for attributes-based access control (ABAC). When using an external
+         * identity provider as an identity source, you can pass attributes through the
+         * SAML assertion as an alternative to configuring attributes from the AWS SSO
+         * identity store. If a SAML assertion passes any of these attributes, AWS SSO will
+         * replace the attribute value with the value from the AWS SSO identity store. For
+         * more information about ABAC, see <a
+         * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateInstanceAccessControlAttributeConfigurationOutcome UpdateInstanceAccessControlAttributeConfiguration(const Model::UpdateInstanceAccessControlAttributeConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the AWS SSO identity store attributes to use with the AWS SSO
+         * instance for attributes-based access control (ABAC). When using an external
+         * identity provider as an identity source, you can pass attributes through the
+         * SAML assertion as an alternative to configuring attributes from the AWS SSO
+         * identity store. If a SAML assertion passes any of these attributes, AWS SSO will
+         * replace the attribute value with the value from the AWS SSO identity store. For
+         * more information about ABAC, see <a
+         * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateInstanceAccessControlAttributeConfigurationOutcomeCallable UpdateInstanceAccessControlAttributeConfigurationCallable(const Model::UpdateInstanceAccessControlAttributeConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the AWS SSO identity store attributes to use with the AWS SSO
+         * instance for attributes-based access control (ABAC). When using an external
+         * identity provider as an identity source, you can pass attributes through the
+         * SAML assertion as an alternative to configuring attributes from the AWS SSO
+         * identity store. If a SAML assertion passes any of these attributes, AWS SSO will
+         * replace the attribute value with the value from the AWS SSO identity store. For
+         * more information about ABAC, see <a
+         * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access
+         * Control</a> in the <i>AWS SSO User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstanceAccessControlAttributeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateInstanceAccessControlAttributeConfigurationAsync(const Model::UpdateInstanceAccessControlAttributeConfigurationRequest& request, const UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing permission set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdatePermissionSet">AWS
          * API Reference</a></p>
@@ -1017,12 +1206,15 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AttachManagedPolicyToPermissionSetAsyncHelper(const Model::AttachManagedPolicyToPermissionSetRequest& request, const AttachManagedPolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAccountAssignmentAsyncHelper(const Model::CreateAccountAssignmentRequest& request, const CreateAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateInstanceAccessControlAttributeConfigurationAsyncHelper(const Model::CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePermissionSetAsyncHelper(const Model::CreatePermissionSetRequest& request, const CreatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccountAssignmentAsyncHelper(const Model::DeleteAccountAssignmentRequest& request, const DeleteAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInlinePolicyFromPermissionSetAsyncHelper(const Model::DeleteInlinePolicyFromPermissionSetRequest& request, const DeleteInlinePolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteInstanceAccessControlAttributeConfigurationAsyncHelper(const Model::DeleteInstanceAccessControlAttributeConfigurationRequest& request, const DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePermissionSetAsyncHelper(const Model::DeletePermissionSetRequest& request, const DeletePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAssignmentCreationStatusAsyncHelper(const Model::DescribeAccountAssignmentCreationStatusRequest& request, const DescribeAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAssignmentDeletionStatusAsyncHelper(const Model::DescribeAccountAssignmentDeletionStatusRequest& request, const DescribeAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInstanceAccessControlAttributeConfigurationAsyncHelper(const Model::DescribeInstanceAccessControlAttributeConfigurationRequest& request, const DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePermissionSetAsyncHelper(const Model::DescribePermissionSetRequest& request, const DescribePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePermissionSetProvisioningStatusAsyncHelper(const Model::DescribePermissionSetProvisioningStatusRequest& request, const DescribePermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachManagedPolicyFromPermissionSetAsyncHelper(const Model::DetachManagedPolicyFromPermissionSetRequest& request, const DetachManagedPolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1041,6 +1233,7 @@ namespace Model
         void PutInlinePolicyToPermissionSetAsyncHelper(const Model::PutInlinePolicyToPermissionSetRequest& request, const PutInlinePolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateInstanceAccessControlAttributeConfigurationAsyncHelper(const Model::UpdateInstanceAccessControlAttributeConfigurationRequest& request, const UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePermissionSetAsyncHelper(const Model::UpdatePermissionSetRequest& request, const UpdatePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

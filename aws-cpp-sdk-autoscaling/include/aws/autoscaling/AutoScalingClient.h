@@ -433,15 +433,18 @@ namespace Model
 
         /**
          * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
-         * <p>To describe the target groups for an Auto Scaling group, call the
+         * <p>This operation is used with the following load balancer types: </p> <ul> <li>
+         * <p> Application Load Balancer - Operates at the application layer (layer 7) and
+         * supports HTTP and HTTPS. </p> </li> <li> <p> Network Load Balancer - Operates at
+         * the transport layer (layer 4) and supports TCP, TLS, and UDP. </p> </li> <li>
+         * <p> Gateway Load Balancer - Operates at the network layer (layer 3).</p> </li>
+         * </ul> <p>To describe the target groups for an Auto Scaling group, call the
          * <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from the
          * Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
-         * <p>With Application Load Balancers and Network Load Balancers, instances are
-         * registered as targets with a target group. With Classic Load Balancers,
-         * instances are registered with the load balancer. For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
-         * a load balancer to your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
+         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">AWS
          * API Reference</a></p>
          */
@@ -449,15 +452,18 @@ namespace Model
 
         /**
          * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
-         * <p>To describe the target groups for an Auto Scaling group, call the
+         * <p>This operation is used with the following load balancer types: </p> <ul> <li>
+         * <p> Application Load Balancer - Operates at the application layer (layer 7) and
+         * supports HTTP and HTTPS. </p> </li> <li> <p> Network Load Balancer - Operates at
+         * the transport layer (layer 4) and supports TCP, TLS, and UDP. </p> </li> <li>
+         * <p> Gateway Load Balancer - Operates at the network layer (layer 3).</p> </li>
+         * </ul> <p>To describe the target groups for an Auto Scaling group, call the
          * <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from the
          * Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
-         * <p>With Application Load Balancers and Network Load Balancers, instances are
-         * registered as targets with a target group. With Classic Load Balancers,
-         * instances are registered with the load balancer. For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
-         * a load balancer to your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
+         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">AWS
          * API Reference</a></p>
          *
@@ -467,15 +473,18 @@ namespace Model
 
         /**
          * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
-         * <p>To describe the target groups for an Auto Scaling group, call the
+         * <p>This operation is used with the following load balancer types: </p> <ul> <li>
+         * <p> Application Load Balancer - Operates at the application layer (layer 7) and
+         * supports HTTP and HTTPS. </p> </li> <li> <p> Network Load Balancer - Operates at
+         * the transport layer (layer 4) and supports TCP, TLS, and UDP. </p> </li> <li>
+         * <p> Gateway Load Balancer - Operates at the network layer (layer 3).</p> </li>
+         * </ul> <p>To describe the target groups for an Auto Scaling group, call the
          * <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from the
          * Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
-         * <p>With Application Load Balancers and Network Load Balancers, instances are
-         * registered as targets with a target group. With Classic Load Balancers,
-         * instances are registered with the load balancer. For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
-         * a load balancer to your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
+         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">AWS
          * API Reference</a></p>
          *
@@ -484,34 +493,34 @@ namespace Model
         virtual void AttachLoadBalancerTargetGroupsAsync(const Model::AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>To attach an Application Load Balancer or a Network Load Balancer, use
-         * the <a>AttachLoadBalancerTargetGroups</a> API operation instead.</p> 
-         * <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling
-         * group. Amazon EC2 Auto Scaling registers the running instances with these
-         * Classic Load Balancers.</p> <p>To describe the load balancers for an Auto
-         * Scaling group, call the <a>DescribeLoadBalancers</a> API. To detach the load
-         * balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
-         * API.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
-         * a load balancer to your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         *  <p>To attach an Application Load Balancer, Network Load Balancer, or
+         * Gateway Load Balancer, use the <a>AttachLoadBalancerTargetGroups</a> API
+         * operation instead.</p>  <p>Attaches one or more Classic Load Balancers to
+         * the specified Auto Scaling group. Amazon EC2 Auto Scaling registers the running
+         * instances with these Classic Load Balancers.</p> <p>To describe the load
+         * balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API.
+         * To detach the load balancer from the Auto Scaling group, call the
+         * <a>DetachLoadBalancers</a> API.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
+         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachLoadBalancersOutcome AttachLoadBalancers(const Model::AttachLoadBalancersRequest& request) const;
 
         /**
-         *  <p>To attach an Application Load Balancer or a Network Load Balancer, use
-         * the <a>AttachLoadBalancerTargetGroups</a> API operation instead.</p> 
-         * <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling
-         * group. Amazon EC2 Auto Scaling registers the running instances with these
-         * Classic Load Balancers.</p> <p>To describe the load balancers for an Auto
-         * Scaling group, call the <a>DescribeLoadBalancers</a> API. To detach the load
-         * balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
-         * API.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
-         * a load balancer to your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         *  <p>To attach an Application Load Balancer, Network Load Balancer, or
+         * Gateway Load Balancer, use the <a>AttachLoadBalancerTargetGroups</a> API
+         * operation instead.</p>  <p>Attaches one or more Classic Load Balancers to
+         * the specified Auto Scaling group. Amazon EC2 Auto Scaling registers the running
+         * instances with these Classic Load Balancers.</p> <p>To describe the load
+         * balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API.
+         * To detach the load balancer from the Auto Scaling group, call the
+         * <a>DetachLoadBalancers</a> API.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
+         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">AWS
          * API Reference</a></p>
          *
@@ -520,17 +529,17 @@ namespace Model
         virtual Model::AttachLoadBalancersOutcomeCallable AttachLoadBalancersCallable(const Model::AttachLoadBalancersRequest& request) const;
 
         /**
-         *  <p>To attach an Application Load Balancer or a Network Load Balancer, use
-         * the <a>AttachLoadBalancerTargetGroups</a> API operation instead.</p> 
-         * <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling
-         * group. Amazon EC2 Auto Scaling registers the running instances with these
-         * Classic Load Balancers.</p> <p>To describe the load balancers for an Auto
-         * Scaling group, call the <a>DescribeLoadBalancers</a> API. To detach the load
-         * balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
-         * API.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
-         * a load balancer to your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         *  <p>To attach an Application Load Balancer, Network Load Balancer, or
+         * Gateway Load Balancer, use the <a>AttachLoadBalancerTargetGroups</a> API
+         * operation instead.</p>  <p>Attaches one or more Classic Load Balancers to
+         * the specified Auto Scaling group. Amazon EC2 Auto Scaling registers the running
+         * instances with these Classic Load Balancers.</p> <p>To describe the load
+         * balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API.
+         * To detach the load balancer from the Auto Scaling group, call the
+         * <a>DetachLoadBalancers</a> API.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
+         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">AWS
          * API Reference</a></p>
          *
@@ -1474,7 +1483,7 @@ namespace Model
         /**
          * <p>Describes the load balancers for the specified Auto Scaling group.</p>
          * <p>This operation describes only Classic Load Balancers. If you have Application
-         * Load Balancers or Network Load Balancers, use the
+         * Load Balancers, Network Load Balancers, or Gateway Load Balancers, use the
          * <a>DescribeLoadBalancerTargetGroups</a> API instead.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">AWS
@@ -1485,7 +1494,7 @@ namespace Model
         /**
          * <p>Describes the load balancers for the specified Auto Scaling group.</p>
          * <p>This operation describes only Classic Load Balancers. If you have Application
-         * Load Balancers or Network Load Balancers, use the
+         * Load Balancers, Network Load Balancers, or Gateway Load Balancers, use the
          * <a>DescribeLoadBalancerTargetGroups</a> API instead.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">AWS
@@ -1498,7 +1507,7 @@ namespace Model
         /**
          * <p>Describes the load balancers for the specified Auto Scaling group.</p>
          * <p>This operation describes only Classic Load Balancers. If you have Application
-         * Load Balancers or Network Load Balancers, use the
+         * Load Balancers, Network Load Balancers, or Gateway Load Balancers, use the
          * <a>DescribeLoadBalancerTargetGroups</a> API instead.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">AWS
@@ -1863,12 +1872,13 @@ namespace Model
         /**
          * <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling
          * group.</p> <p>This operation detaches only Classic Load Balancers. If you have
-         * Application Load Balancers or Network Load Balancers, use the
-         * <a>DetachLoadBalancerTargetGroups</a> API instead.</p> <p>When you detach a load
-         * balancer, it enters the <code>Removing</code> state while deregistering the
-         * instances in the group. When all instances are deregistered, then you can no
-         * longer describe the load balancer using the <a>DescribeLoadBalancers</a> API
-         * call. The instances remain running.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancers, Network Load Balancers, or Gateway Load Balancers,
+         * use the <a>DetachLoadBalancerTargetGroups</a> API instead.</p> <p>When you
+         * detach a load balancer, it enters the <code>Removing</code> state while
+         * deregistering the instances in the group. When all instances are deregistered,
+         * then you can no longer describe the load balancer using the
+         * <a>DescribeLoadBalancers</a> API call. The instances remain
+         * running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">AWS
          * API Reference</a></p>
          */
@@ -1877,12 +1887,13 @@ namespace Model
         /**
          * <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling
          * group.</p> <p>This operation detaches only Classic Load Balancers. If you have
-         * Application Load Balancers or Network Load Balancers, use the
-         * <a>DetachLoadBalancerTargetGroups</a> API instead.</p> <p>When you detach a load
-         * balancer, it enters the <code>Removing</code> state while deregistering the
-         * instances in the group. When all instances are deregistered, then you can no
-         * longer describe the load balancer using the <a>DescribeLoadBalancers</a> API
-         * call. The instances remain running.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancers, Network Load Balancers, or Gateway Load Balancers,
+         * use the <a>DetachLoadBalancerTargetGroups</a> API instead.</p> <p>When you
+         * detach a load balancer, it enters the <code>Removing</code> state while
+         * deregistering the instances in the group. When all instances are deregistered,
+         * then you can no longer describe the load balancer using the
+         * <a>DescribeLoadBalancers</a> API call. The instances remain
+         * running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">AWS
          * API Reference</a></p>
          *
@@ -1893,12 +1904,13 @@ namespace Model
         /**
          * <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling
          * group.</p> <p>This operation detaches only Classic Load Balancers. If you have
-         * Application Load Balancers or Network Load Balancers, use the
-         * <a>DetachLoadBalancerTargetGroups</a> API instead.</p> <p>When you detach a load
-         * balancer, it enters the <code>Removing</code> state while deregistering the
-         * instances in the group. When all instances are deregistered, then you can no
-         * longer describe the load balancer using the <a>DescribeLoadBalancers</a> API
-         * call. The instances remain running.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancers, Network Load Balancers, or Gateway Load Balancers,
+         * use the <a>DetachLoadBalancerTargetGroups</a> API instead.</p> <p>When you
+         * detach a load balancer, it enters the <code>Removing</code> state while
+         * deregistering the instances in the group. When all instances are deregistered,
+         * then you can no longer describe the load balancer using the
+         * <a>DescribeLoadBalancers</a> API call. The instances remain
+         * running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">AWS
          * API Reference</a></p>
          *

@@ -47,8 +47,10 @@ enum class CodeStarconnectionsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  RESOURCE_UNAVAILABLE
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  LIMIT_EXCEEDED,
+  RESOURCE_UNAVAILABLE,
+  UNSUPPORTED_OPERATION
 };
 
 class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsError : public Aws::Client::AWSError<CodeStarconnectionsErrors>

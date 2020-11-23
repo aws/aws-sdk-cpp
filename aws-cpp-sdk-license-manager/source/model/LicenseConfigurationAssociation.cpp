@@ -23,7 +23,8 @@ LicenseConfigurationAssociation::LicenseConfigurationAssociation() :
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceOwnerIdHasBeenSet(false),
-    m_associationTimeHasBeenSet(false)
+    m_associationTimeHasBeenSet(false),
+    m_amiAssociationScopeHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ LicenseConfigurationAssociation::LicenseConfigurationAssociation(JsonView jsonVa
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceOwnerIdHasBeenSet(false),
-    m_associationTimeHasBeenSet(false)
+    m_associationTimeHasBeenSet(false),
+    m_amiAssociationScopeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ LicenseConfigurationAssociation& LicenseConfigurationAssociation::operator =(Jso
     m_associationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AmiAssociationScope"))
+  {
+    m_amiAssociationScope = jsonValue.GetString("AmiAssociationScope");
+
+    m_amiAssociationScopeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue LicenseConfigurationAssociation::Jsonize() const
   if(m_associationTimeHasBeenSet)
   {
    payload.WithDouble("AssociationTime", m_associationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_amiAssociationScopeHasBeenSet)
+  {
+   payload.WithString("AmiAssociationScope", m_amiAssociationScope);
+
   }
 
   return payload;

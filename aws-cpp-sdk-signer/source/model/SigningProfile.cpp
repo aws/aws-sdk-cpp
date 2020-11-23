@@ -20,8 +20,12 @@ namespace Model
 
 SigningProfile::SigningProfile() : 
     m_profileNameHasBeenSet(false),
+    m_profileVersionHasBeenSet(false),
+    m_profileVersionArnHasBeenSet(false),
     m_signingMaterialHasBeenSet(false),
+    m_signatureValidityPeriodHasBeenSet(false),
     m_platformIdHasBeenSet(false),
+    m_platformDisplayNameHasBeenSet(false),
     m_signingParametersHasBeenSet(false),
     m_status(SigningProfileStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -32,8 +36,12 @@ SigningProfile::SigningProfile() :
 
 SigningProfile::SigningProfile(JsonView jsonValue) : 
     m_profileNameHasBeenSet(false),
+    m_profileVersionHasBeenSet(false),
+    m_profileVersionArnHasBeenSet(false),
     m_signingMaterialHasBeenSet(false),
+    m_signatureValidityPeriodHasBeenSet(false),
     m_platformIdHasBeenSet(false),
+    m_platformDisplayNameHasBeenSet(false),
     m_signingParametersHasBeenSet(false),
     m_status(SigningProfileStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -52,6 +60,20 @@ SigningProfile& SigningProfile::operator =(JsonView jsonValue)
     m_profileNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("profileVersion"))
+  {
+    m_profileVersion = jsonValue.GetString("profileVersion");
+
+    m_profileVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("profileVersionArn"))
+  {
+    m_profileVersionArn = jsonValue.GetString("profileVersionArn");
+
+    m_profileVersionArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("signingMaterial"))
   {
     m_signingMaterial = jsonValue.GetObject("signingMaterial");
@@ -59,11 +81,25 @@ SigningProfile& SigningProfile::operator =(JsonView jsonValue)
     m_signingMaterialHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("signatureValidityPeriod"))
+  {
+    m_signatureValidityPeriod = jsonValue.GetObject("signatureValidityPeriod");
+
+    m_signatureValidityPeriodHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("platformId"))
   {
     m_platformId = jsonValue.GetString("platformId");
 
     m_platformIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformDisplayName"))
+  {
+    m_platformDisplayName = jsonValue.GetString("platformDisplayName");
+
+    m_platformDisplayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("signingParameters"))
@@ -113,15 +149,39 @@ JsonValue SigningProfile::Jsonize() const
 
   }
 
+  if(m_profileVersionHasBeenSet)
+  {
+   payload.WithString("profileVersion", m_profileVersion);
+
+  }
+
+  if(m_profileVersionArnHasBeenSet)
+  {
+   payload.WithString("profileVersionArn", m_profileVersionArn);
+
+  }
+
   if(m_signingMaterialHasBeenSet)
   {
    payload.WithObject("signingMaterial", m_signingMaterial.Jsonize());
 
   }
 
+  if(m_signatureValidityPeriodHasBeenSet)
+  {
+   payload.WithObject("signatureValidityPeriod", m_signatureValidityPeriod.Jsonize());
+
+  }
+
   if(m_platformIdHasBeenSet)
   {
    payload.WithString("platformId", m_platformId);
+
+  }
+
+  if(m_platformDisplayNameHasBeenSet)
+  {
+   payload.WithString("platformDisplayName", m_platformDisplayName);
 
   }
 

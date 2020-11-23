@@ -34,6 +34,12 @@ StartSigningJobResult& StartSigningJobResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("jobOwner"))
+  {
+    m_jobOwner = jsonValue.GetString("jobOwner");
+
+  }
+
 
 
   return *this;

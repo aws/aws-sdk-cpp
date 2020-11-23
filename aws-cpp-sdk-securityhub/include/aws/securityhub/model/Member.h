@@ -176,9 +176,10 @@ namespace Model
      * account, but has not yet invited the member account.</p> </li> <li> <p>
      * <code>INVITED</code> - Indicates that the master account invited the member
      * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ASSOCIATED</code> - Indicates that the member account accepted
-     * the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates that the
-     * master account disassociated the member account.</p> </li> <li> <p>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
      * <code>RESIGNED</code> - Indicates that the member account disassociated
      * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates that the master account deleted the member account.</p> </li> </ul>
@@ -192,9 +193,10 @@ namespace Model
      * account, but has not yet invited the member account.</p> </li> <li> <p>
      * <code>INVITED</code> - Indicates that the master account invited the member
      * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ASSOCIATED</code> - Indicates that the member account accepted
-     * the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates that the
-     * master account disassociated the member account.</p> </li> <li> <p>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
      * <code>RESIGNED</code> - Indicates that the member account disassociated
      * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates that the master account deleted the member account.</p> </li> </ul>
@@ -208,9 +210,10 @@ namespace Model
      * account, but has not yet invited the member account.</p> </li> <li> <p>
      * <code>INVITED</code> - Indicates that the master account invited the member
      * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ASSOCIATED</code> - Indicates that the member account accepted
-     * the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates that the
-     * master account disassociated the member account.</p> </li> <li> <p>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
      * <code>RESIGNED</code> - Indicates that the member account disassociated
      * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates that the master account deleted the member account.</p> </li> </ul>
@@ -224,9 +227,10 @@ namespace Model
      * account, but has not yet invited the member account.</p> </li> <li> <p>
      * <code>INVITED</code> - Indicates that the master account invited the member
      * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ASSOCIATED</code> - Indicates that the member account accepted
-     * the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates that the
-     * master account disassociated the member account.</p> </li> <li> <p>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
      * <code>RESIGNED</code> - Indicates that the member account disassociated
      * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates that the master account deleted the member account.</p> </li> </ul>
@@ -240,9 +244,10 @@ namespace Model
      * account, but has not yet invited the member account.</p> </li> <li> <p>
      * <code>INVITED</code> - Indicates that the master account invited the member
      * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ASSOCIATED</code> - Indicates that the member account accepted
-     * the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates that the
-     * master account disassociated the member account.</p> </li> <li> <p>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
      * <code>RESIGNED</code> - Indicates that the member account disassociated
      * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates that the master account deleted the member account.</p> </li> </ul>
@@ -256,9 +261,10 @@ namespace Model
      * account, but has not yet invited the member account.</p> </li> <li> <p>
      * <code>INVITED</code> - Indicates that the master account invited the member
      * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ASSOCIATED</code> - Indicates that the member account accepted
-     * the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates that the
-     * master account disassociated the member account.</p> </li> <li> <p>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
      * <code>RESIGNED</code> - Indicates that the member account disassociated
      * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates that the master account deleted the member account.</p> </li> </ul>
@@ -272,9 +278,10 @@ namespace Model
      * account, but has not yet invited the member account.</p> </li> <li> <p>
      * <code>INVITED</code> - Indicates that the master account invited the member
      * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ASSOCIATED</code> - Indicates that the member account accepted
-     * the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates that the
-     * master account disassociated the member account.</p> </li> <li> <p>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
      * <code>RESIGNED</code> - Indicates that the member account disassociated
      * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates that the master account deleted the member account.</p> </li> </ul>
@@ -288,9 +295,10 @@ namespace Model
      * account, but has not yet invited the member account.</p> </li> <li> <p>
      * <code>INVITED</code> - Indicates that the master account invited the member
      * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ASSOCIATED</code> - Indicates that the member account accepted
-     * the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates that the
-     * master account disassociated the member account.</p> </li> <li> <p>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
      * <code>RESIGNED</code> - Indicates that the member account disassociated
      * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates that the master account deleted the member account.</p> </li> </ul>

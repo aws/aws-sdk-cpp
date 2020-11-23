@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = std::move(value); }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline void SetInstanceGroupId(const char* value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId.assign(value); }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline InstanceGroupModifyConfig& WithInstanceGroupId(const Aws::String& value) { SetInstanceGroupId(value); return *this;}
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline InstanceGroupModifyConfig& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline InstanceGroupModifyConfig& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
 

@@ -31,6 +31,7 @@
 #include <aws/codestar-connections/model/ListTagsForResourceRequest.h>
 #include <aws/codestar-connections/model/TagResourceRequest.h>
 #include <aws/codestar-connections/model/UntagResourceRequest.h>
+#include <aws/codestar-connections/model/UpdateHostRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -400,5 +401,32 @@ void CodeStarconnectionsClient::UntagResourceAsync(const UntagResourceRequest& r
 void CodeStarconnectionsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateHostOutcome CodeStarconnectionsClient::UpdateHost(const UpdateHostRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateHostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateHostOutcomeCallable CodeStarconnectionsClient::UpdateHostCallable(const UpdateHostRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHost(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeStarconnectionsClient::UpdateHostAsync(const UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateHostAsyncHelper( request, handler, context ); } );
+}
+
+void CodeStarconnectionsClient::UpdateHostAsyncHelper(const UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateHost(request), context);
 }
 

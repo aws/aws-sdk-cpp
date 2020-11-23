@@ -16,7 +16,10 @@ namespace Model
   enum class PartitionIndexStatus
   {
     NOT_SET,
-    ACTIVE
+    CREATING,
+    ACTIVE,
+    DELETING,
+    FAILED
   };
 
 namespace PartitionIndexStatusMapper

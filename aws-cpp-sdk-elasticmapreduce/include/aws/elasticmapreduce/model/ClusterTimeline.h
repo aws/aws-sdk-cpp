@@ -70,32 +70,32 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the cluster was ready to execute steps.</p>
+     * <p>The date and time when the cluster was ready to run steps.</p>
      */
     inline const Aws::Utils::DateTime& GetReadyDateTime() const{ return m_readyDateTime; }
 
     /**
-     * <p>The date and time when the cluster was ready to execute steps.</p>
+     * <p>The date and time when the cluster was ready to run steps.</p>
      */
     inline bool ReadyDateTimeHasBeenSet() const { return m_readyDateTimeHasBeenSet; }
 
     /**
-     * <p>The date and time when the cluster was ready to execute steps.</p>
+     * <p>The date and time when the cluster was ready to run steps.</p>
      */
     inline void SetReadyDateTime(const Aws::Utils::DateTime& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
 
     /**
-     * <p>The date and time when the cluster was ready to execute steps.</p>
+     * <p>The date and time when the cluster was ready to run steps.</p>
      */
     inline void SetReadyDateTime(Aws::Utils::DateTime&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = std::move(value); }
 
     /**
-     * <p>The date and time when the cluster was ready to execute steps.</p>
+     * <p>The date and time when the cluster was ready to run steps.</p>
      */
     inline ClusterTimeline& WithReadyDateTime(const Aws::Utils::DateTime& value) { SetReadyDateTime(value); return *this;}
 
     /**
-     * <p>The date and time when the cluster was ready to execute steps.</p>
+     * <p>The date and time when the cluster was ready to run steps.</p>
      */
     inline ClusterTimeline& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(std::move(value)); return *this;}
 

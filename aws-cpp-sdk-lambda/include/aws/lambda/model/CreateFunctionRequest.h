@@ -888,6 +888,63 @@ namespace Model
      */
     inline CreateFunctionRequest& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes set set of signing
+     * profiles, which define the trusted publishers for this function.</p>
+     */
+    inline const Aws::String& GetCodeSigningConfigArn() const{ return m_codeSigningConfigArn; }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes set set of signing
+     * profiles, which define the trusted publishers for this function.</p>
+     */
+    inline bool CodeSigningConfigArnHasBeenSet() const { return m_codeSigningConfigArnHasBeenSet; }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes set set of signing
+     * profiles, which define the trusted publishers for this function.</p>
+     */
+    inline void SetCodeSigningConfigArn(const Aws::String& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = value; }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes set set of signing
+     * profiles, which define the trusted publishers for this function.</p>
+     */
+    inline void SetCodeSigningConfigArn(Aws::String&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::move(value); }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes set set of signing
+     * profiles, which define the trusted publishers for this function.</p>
+     */
+    inline void SetCodeSigningConfigArn(const char* value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn.assign(value); }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes set set of signing
+     * profiles, which define the trusted publishers for this function.</p>
+     */
+    inline CreateFunctionRequest& WithCodeSigningConfigArn(const Aws::String& value) { SetCodeSigningConfigArn(value); return *this;}
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes set set of signing
+     * profiles, which define the trusted publishers for this function.</p>
+     */
+    inline CreateFunctionRequest& WithCodeSigningConfigArn(Aws::String&& value) { SetCodeSigningConfigArn(std::move(value)); return *this;}
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes set set of signing
+     * profiles, which define the trusted publishers for this function.</p>
+     */
+    inline CreateFunctionRequest& WithCodeSigningConfigArn(const char* value) { SetCodeSigningConfigArn(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -940,6 +997,9 @@ namespace Model
 
     Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
     bool m_fileSystemConfigsHasBeenSet;
+
+    Aws::String m_codeSigningConfigArn;
+    bool m_codeSigningConfigArnHasBeenSet;
   };
 
 } // namespace Model

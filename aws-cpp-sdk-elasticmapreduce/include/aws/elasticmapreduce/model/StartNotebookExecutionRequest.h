@@ -410,56 +410,56 @@ namespace Model
 
     /**
      * <p>A list of tags associated with a notebook execution. Tags are user-defined
-     * key value pairs that consist of a required key string with a maximum of 128
+     * key-value pairs that consist of a required key string with a maximum of 128
      * characters and an optional value string with a maximum of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of tags associated with a notebook execution. Tags are user-defined
-     * key value pairs that consist of a required key string with a maximum of 128
+     * key-value pairs that consist of a required key string with a maximum of 128
      * characters and an optional value string with a maximum of 256 characters.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags associated with a notebook execution. Tags are user-defined
-     * key value pairs that consist of a required key string with a maximum of 128
+     * key-value pairs that consist of a required key string with a maximum of 128
      * characters and an optional value string with a maximum of 256 characters.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of tags associated with a notebook execution. Tags are user-defined
-     * key value pairs that consist of a required key string with a maximum of 128
+     * key-value pairs that consist of a required key string with a maximum of 128
      * characters and an optional value string with a maximum of 256 characters.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tags associated with a notebook execution. Tags are user-defined
-     * key value pairs that consist of a required key string with a maximum of 128
+     * key-value pairs that consist of a required key string with a maximum of 128
      * characters and an optional value string with a maximum of 256 characters.</p>
      */
     inline StartNotebookExecutionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of tags associated with a notebook execution. Tags are user-defined
-     * key value pairs that consist of a required key string with a maximum of 128
+     * key-value pairs that consist of a required key string with a maximum of 128
      * characters and an optional value string with a maximum of 256 characters.</p>
      */
     inline StartNotebookExecutionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tags associated with a notebook execution. Tags are user-defined
-     * key value pairs that consist of a required key string with a maximum of 128
+     * key-value pairs that consist of a required key string with a maximum of 128
      * characters and an optional value string with a maximum of 256 characters.</p>
      */
     inline StartNotebookExecutionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of tags associated with a notebook execution. Tags are user-defined
-     * key value pairs that consist of a required key string with a maximum of 128
+     * key-value pairs that consist of a required key string with a maximum of 128
      * characters and an optional value string with a maximum of 256 characters.</p>
      */
     inline StartNotebookExecutionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

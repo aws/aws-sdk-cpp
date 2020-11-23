@@ -23,6 +23,9 @@ namespace Aws
         static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
         static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
+        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 
 
         CapacityProviderUpdateStatus GetCapacityProviderUpdateStatusForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           else if (hashCode == DELETE_FAILED_HASH)
           {
             return CapacityProviderUpdateStatus::DELETE_FAILED;
+          }
+          else if (hashCode == UPDATE_IN_PROGRESS_HASH)
+          {
+            return CapacityProviderUpdateStatus::UPDATE_IN_PROGRESS;
+          }
+          else if (hashCode == UPDATE_COMPLETE_HASH)
+          {
+            return CapacityProviderUpdateStatus::UPDATE_COMPLETE;
+          }
+          else if (hashCode == UPDATE_FAILED_HASH)
+          {
+            return CapacityProviderUpdateStatus::UPDATE_FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +75,12 @@ namespace Aws
             return "DELETE_COMPLETE";
           case CapacityProviderUpdateStatus::DELETE_FAILED:
             return "DELETE_FAILED";
+          case CapacityProviderUpdateStatus::UPDATE_IN_PROGRESS:
+            return "UPDATE_IN_PROGRESS";
+          case CapacityProviderUpdateStatus::UPDATE_COMPLETE:
+            return "UPDATE_COMPLETE";
+          case CapacityProviderUpdateStatus::UPDATE_FAILED:
+            return "UPDATE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

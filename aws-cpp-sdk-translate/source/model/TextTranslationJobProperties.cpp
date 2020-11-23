@@ -27,6 +27,7 @@ TextTranslationJobProperties::TextTranslationJobProperties() :
     m_sourceLanguageCodeHasBeenSet(false),
     m_targetLanguageCodesHasBeenSet(false),
     m_terminologyNamesHasBeenSet(false),
+    m_parallelDataNamesHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_submittedTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -45,6 +46,7 @@ TextTranslationJobProperties::TextTranslationJobProperties(JsonView jsonValue) :
     m_sourceLanguageCodeHasBeenSet(false),
     m_targetLanguageCodesHasBeenSet(false),
     m_terminologyNamesHasBeenSet(false),
+    m_parallelDataNamesHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_submittedTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -110,6 +112,16 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
       m_terminologyNames.push_back(terminologyNamesJsonList[terminologyNamesIndex].AsString());
     }
     m_terminologyNamesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ParallelDataNames"))
+  {
+    Array<JsonView> parallelDataNamesJsonList = jsonValue.GetArray("ParallelDataNames");
+    for(unsigned parallelDataNamesIndex = 0; parallelDataNamesIndex < parallelDataNamesJsonList.GetLength(); ++parallelDataNamesIndex)
+    {
+      m_parallelDataNames.push_back(parallelDataNamesJsonList[parallelDataNamesIndex].AsString());
+    }
+    m_parallelDataNamesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Message"))
@@ -209,6 +221,17 @@ JsonValue TextTranslationJobProperties::Jsonize() const
      terminologyNamesJsonList[terminologyNamesIndex].AsString(m_terminologyNames[terminologyNamesIndex]);
    }
    payload.WithArray("TerminologyNames", std::move(terminologyNamesJsonList));
+
+  }
+
+  if(m_parallelDataNamesHasBeenSet)
+  {
+   Array<JsonValue> parallelDataNamesJsonList(m_parallelDataNames.size());
+   for(unsigned parallelDataNamesIndex = 0; parallelDataNamesIndex < parallelDataNamesJsonList.GetLength(); ++parallelDataNamesIndex)
+   {
+     parallelDataNamesJsonList[parallelDataNamesIndex].AsString(m_parallelDataNames[parallelDataNamesIndex]);
+   }
+   payload.WithArray("ParallelDataNames", std::move(parallelDataNamesJsonList));
 
   }
 

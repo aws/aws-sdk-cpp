@@ -35,14 +35,17 @@
 #include <aws/securityhub/model/DeleteMembersRequest.h>
 #include <aws/securityhub/model/DescribeActionTargetsRequest.h>
 #include <aws/securityhub/model/DescribeHubRequest.h>
+#include <aws/securityhub/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/securityhub/model/DescribeProductsRequest.h>
 #include <aws/securityhub/model/DescribeStandardsRequest.h>
 #include <aws/securityhub/model/DescribeStandardsControlsRequest.h>
 #include <aws/securityhub/model/DisableImportFindingsForProductRequest.h>
+#include <aws/securityhub/model/DisableOrganizationAdminAccountRequest.h>
 #include <aws/securityhub/model/DisableSecurityHubRequest.h>
 #include <aws/securityhub/model/DisassociateFromMasterAccountRequest.h>
 #include <aws/securityhub/model/DisassociateMembersRequest.h>
 #include <aws/securityhub/model/EnableImportFindingsForProductRequest.h>
+#include <aws/securityhub/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/securityhub/model/EnableSecurityHubRequest.h>
 #include <aws/securityhub/model/GetEnabledStandardsRequest.h>
 #include <aws/securityhub/model/GetFindingsRequest.h>
@@ -55,12 +58,14 @@
 #include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
 #include <aws/securityhub/model/ListInvitationsRequest.h>
 #include <aws/securityhub/model/ListMembersRequest.h>
+#include <aws/securityhub/model/ListOrganizationAdminAccountsRequest.h>
 #include <aws/securityhub/model/ListTagsForResourceRequest.h>
 #include <aws/securityhub/model/TagResourceRequest.h>
 #include <aws/securityhub/model/UntagResourceRequest.h>
 #include <aws/securityhub/model/UpdateActionTargetRequest.h>
 #include <aws/securityhub/model/UpdateFindingsRequest.h>
 #include <aws/securityhub/model/UpdateInsightRequest.h>
+#include <aws/securityhub/model/UpdateOrganizationConfigurationRequest.h>
 #include <aws/securityhub/model/UpdateSecurityHubConfigurationRequest.h>
 #include <aws/securityhub/model/UpdateStandardsControlRequest.h>
 
@@ -554,6 +559,33 @@ void SecurityHubClient::DescribeHubAsyncHelper(const DescribeHubRequest& request
   handler(this, request, DescribeHub(request), context);
 }
 
+DescribeOrganizationConfigurationOutcome SecurityHubClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/organization/configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeOrganizationConfigurationOutcomeCallable SecurityHubClient::DescribeOrganizationConfigurationCallable(const DescribeOrganizationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::DescribeOrganizationConfigurationAsyncHelper(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOrganizationConfiguration(request), context);
+}
+
 DescribeProductsOutcome SecurityHubClient::DescribeProducts(const DescribeProductsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -674,6 +706,33 @@ void SecurityHubClient::DisableImportFindingsForProductAsyncHelper(const Disable
   handler(this, request, DisableImportFindingsForProduct(request), context);
 }
 
+DisableOrganizationAdminAccountOutcome SecurityHubClient::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/organization/admin/disable";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisableOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisableOrganizationAdminAccountOutcomeCallable SecurityHubClient::DisableOrganizationAdminAccountCallable(const DisableOrganizationAdminAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableOrganizationAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableOrganizationAdminAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::DisableOrganizationAdminAccountAsyncHelper(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableOrganizationAdminAccount(request), context);
+}
+
 DisableSecurityHubOutcome SecurityHubClient::DisableSecurityHub(const DisableSecurityHubRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -780,6 +839,33 @@ void SecurityHubClient::EnableImportFindingsForProductAsync(const EnableImportFi
 void SecurityHubClient::EnableImportFindingsForProductAsyncHelper(const EnableImportFindingsForProductRequest& request, const EnableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableImportFindingsForProduct(request), context);
+}
+
+EnableOrganizationAdminAccountOutcome SecurityHubClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/organization/admin/enable";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return EnableOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+EnableOrganizationAdminAccountOutcomeCallable SecurityHubClient::EnableOrganizationAdminAccountCallable(const EnableOrganizationAdminAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableOrganizationAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableOrganizationAdminAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::EnableOrganizationAdminAccountAsyncHelper(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableOrganizationAdminAccount(request), context);
 }
 
 EnableSecurityHubOutcome SecurityHubClient::EnableSecurityHub(const EnableSecurityHubRequest& request) const
@@ -1112,6 +1198,33 @@ void SecurityHubClient::ListMembersAsyncHelper(const ListMembersRequest& request
   handler(this, request, ListMembers(request), context);
 }
 
+ListOrganizationAdminAccountsOutcome SecurityHubClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/organization/admin";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListOrganizationAdminAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListOrganizationAdminAccountsOutcomeCallable SecurityHubClient::ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOrganizationAdminAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrganizationAdminAccounts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationAdminAccountsAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::ListOrganizationAdminAccountsAsyncHelper(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOrganizationAdminAccounts(request), context);
+}
+
 ListTagsForResourceOutcome SecurityHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -1307,6 +1420,33 @@ void SecurityHubClient::UpdateInsightAsync(const UpdateInsightRequest& request, 
 void SecurityHubClient::UpdateInsightAsyncHelper(const UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInsight(request), context);
+}
+
+UpdateOrganizationConfigurationOutcome SecurityHubClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/organization/configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateOrganizationConfigurationOutcomeCallable SecurityHubClient::UpdateOrganizationConfigurationCallable(const UpdateOrganizationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOrganizationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::UpdateOrganizationConfigurationAsyncHelper(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateOrganizationConfiguration(request), context);
 }
 
 UpdateSecurityHubConfigurationOutcome SecurityHubClient::UpdateSecurityHubConfiguration(const UpdateSecurityHubConfigurationRequest& request) const

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Active_HASH = HashingUtils::HashString("Active");
         static const int Canceled_HASH = HashingUtils::HashString("Canceled");
+        static const int Revoked_HASH = HashingUtils::HashString("Revoked");
 
 
         SigningProfileStatus GetSigningProfileStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Canceled_HASH)
           {
             return SigningProfileStatus::Canceled;
+          }
+          else if (hashCode == Revoked_HASH)
+          {
+            return SigningProfileStatus::Revoked;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "Active";
           case SigningProfileStatus::Canceled:
             return "Canceled";
+          case SigningProfileStatus::Revoked:
+            return "Revoked";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

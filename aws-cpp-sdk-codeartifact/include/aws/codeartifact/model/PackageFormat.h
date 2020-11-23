@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     npm,
     pypi,
-    maven
+    maven,
+    nuget
   };
 
 namespace PackageFormatMapper

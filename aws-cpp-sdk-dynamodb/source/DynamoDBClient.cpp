@@ -20,6 +20,7 @@
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBEndpoint.h>
 #include <aws/dynamodb/DynamoDBErrorMarshaller.h>
+#include <aws/dynamodb/model/BatchExecuteStatementRequest.h>
 #include <aws/dynamodb/model/BatchGetItemRequest.h>
 #include <aws/dynamodb/model/BatchWriteItemRequest.h>
 #include <aws/dynamodb/model/CreateBackupRequest.h>
@@ -35,10 +36,15 @@
 #include <aws/dynamodb/model/DescribeExportRequest.h>
 #include <aws/dynamodb/model/DescribeGlobalTableRequest.h>
 #include <aws/dynamodb/model/DescribeGlobalTableSettingsRequest.h>
+#include <aws/dynamodb/model/DescribeKinesisStreamingDestinationRequest.h>
 #include <aws/dynamodb/model/DescribeLimitsRequest.h>
 #include <aws/dynamodb/model/DescribeTableRequest.h>
 #include <aws/dynamodb/model/DescribeTableReplicaAutoScalingRequest.h>
 #include <aws/dynamodb/model/DescribeTimeToLiveRequest.h>
+#include <aws/dynamodb/model/DisableKinesisStreamingDestinationRequest.h>
+#include <aws/dynamodb/model/EnableKinesisStreamingDestinationRequest.h>
+#include <aws/dynamodb/model/ExecuteStatementRequest.h>
+#include <aws/dynamodb/model/ExecuteTransactionRequest.h>
 #include <aws/dynamodb/model/ExportTableToPointInTimeRequest.h>
 #include <aws/dynamodb/model/GetItemRequest.h>
 #include <aws/dynamodb/model/ListBackupsRequest.h>
@@ -145,6 +151,33 @@ void DynamoDBClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
   m_enableEndpointDiscovery = false;
+}
+
+BatchExecuteStatementOutcome DynamoDBClient::BatchExecuteStatement(const BatchExecuteStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return BatchExecuteStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchExecuteStatementOutcomeCallable DynamoDBClient::BatchExecuteStatementCallable(const BatchExecuteStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchExecuteStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchExecuteStatementAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::BatchExecuteStatementAsyncHelper(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchExecuteStatement(request), context);
 }
 
 BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& request) const
@@ -876,6 +909,60 @@ void DynamoDBClient::DescribeGlobalTableSettingsAsyncHelper(const DescribeGlobal
   handler(this, request, DescribeGlobalTableSettings(request), context);
 }
 
+DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStreamingDestination(const DescribeKinesisStreamingDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  if (m_enableEndpointDiscovery)
+  {
+    Aws::String endpointKey = "Shared";
+    Aws::String endpoint;
+    if (m_endpointsCache.Get(endpointKey, endpoint))
+    {
+      AWS_LOGSTREAM_TRACE("DescribeKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
+      uri = m_configScheme + "://" + endpoint;
+    }
+    else
+    {
+      AWS_LOGSTREAM_TRACE("DescribeKinesisStreamingDestination", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+      DescribeEndpointsRequest endpointRequest;
+      auto endpointOutcome = DescribeEndpoints(endpointRequest);
+      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+      {
+        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+        uri = m_configScheme + "://" + item.GetAddress();
+        AWS_LOGSTREAM_TRACE("DescribeKinesisStreamingDestination", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+      }
+      else
+      {
+        AWS_LOGSTREAM_ERROR("DescribeKinesisStreamingDestination", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+      }
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeKinesisStreamingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeKinesisStreamingDestinationOutcomeCallable DynamoDBClient::DescribeKinesisStreamingDestinationCallable(const DescribeKinesisStreamingDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeKinesisStreamingDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeKinesisStreamingDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::DescribeKinesisStreamingDestinationAsync(const DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeKinesisStreamingDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::DescribeKinesisStreamingDestinationAsyncHelper(const DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeKinesisStreamingDestination(request), context);
+}
+
 DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1063,6 +1150,168 @@ void DynamoDBClient::DescribeTimeToLiveAsync(const DescribeTimeToLiveRequest& re
 void DynamoDBClient::DescribeTimeToLiveAsyncHelper(const DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeTimeToLive(request), context);
+}
+
+DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamingDestination(const DisableKinesisStreamingDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  if (m_enableEndpointDiscovery)
+  {
+    Aws::String endpointKey = "Shared";
+    Aws::String endpoint;
+    if (m_endpointsCache.Get(endpointKey, endpoint))
+    {
+      AWS_LOGSTREAM_TRACE("DisableKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
+      uri = m_configScheme + "://" + endpoint;
+    }
+    else
+    {
+      AWS_LOGSTREAM_TRACE("DisableKinesisStreamingDestination", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+      DescribeEndpointsRequest endpointRequest;
+      auto endpointOutcome = DescribeEndpoints(endpointRequest);
+      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+      {
+        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+        uri = m_configScheme + "://" + item.GetAddress();
+        AWS_LOGSTREAM_TRACE("DisableKinesisStreamingDestination", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+      }
+      else
+      {
+        AWS_LOGSTREAM_ERROR("DisableKinesisStreamingDestination", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+      }
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisableKinesisStreamingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisableKinesisStreamingDestinationOutcomeCallable DynamoDBClient::DisableKinesisStreamingDestinationCallable(const DisableKinesisStreamingDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableKinesisStreamingDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableKinesisStreamingDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::DisableKinesisStreamingDestinationAsync(const DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableKinesisStreamingDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::DisableKinesisStreamingDestinationAsyncHelper(const DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableKinesisStreamingDestination(request), context);
+}
+
+EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingDestination(const EnableKinesisStreamingDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  if (m_enableEndpointDiscovery)
+  {
+    Aws::String endpointKey = "Shared";
+    Aws::String endpoint;
+    if (m_endpointsCache.Get(endpointKey, endpoint))
+    {
+      AWS_LOGSTREAM_TRACE("EnableKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
+      uri = m_configScheme + "://" + endpoint;
+    }
+    else
+    {
+      AWS_LOGSTREAM_TRACE("EnableKinesisStreamingDestination", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+      DescribeEndpointsRequest endpointRequest;
+      auto endpointOutcome = DescribeEndpoints(endpointRequest);
+      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+      {
+        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+        uri = m_configScheme + "://" + item.GetAddress();
+        AWS_LOGSTREAM_TRACE("EnableKinesisStreamingDestination", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+      }
+      else
+      {
+        AWS_LOGSTREAM_ERROR("EnableKinesisStreamingDestination", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+      }
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return EnableKinesisStreamingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+EnableKinesisStreamingDestinationOutcomeCallable DynamoDBClient::EnableKinesisStreamingDestinationCallable(const EnableKinesisStreamingDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableKinesisStreamingDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableKinesisStreamingDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::EnableKinesisStreamingDestinationAsync(const EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableKinesisStreamingDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::EnableKinesisStreamingDestinationAsyncHelper(const EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableKinesisStreamingDestination(request), context);
+}
+
+ExecuteStatementOutcome DynamoDBClient::ExecuteStatement(const ExecuteStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ExecuteStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExecuteStatementOutcomeCallable DynamoDBClient::ExecuteStatementCallable(const ExecuteStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExecuteStatementAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::ExecuteStatementAsyncHelper(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExecuteStatement(request), context);
+}
+
+ExecuteTransactionOutcome DynamoDBClient::ExecuteTransaction(const ExecuteTransactionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ExecuteTransactionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExecuteTransactionOutcomeCallable DynamoDBClient::ExecuteTransactionCallable(const ExecuteTransactionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteTransaction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::ExecuteTransactionAsync(const ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExecuteTransactionAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::ExecuteTransactionAsyncHelper(const ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExecuteTransaction(request), context);
 }
 
 ExportTableToPointInTimeOutcome DynamoDBClient::ExportTableToPointInTime(const ExportTableToPointInTimeRequest& request) const

@@ -23,6 +23,7 @@ namespace Aws
         static const int npm_HASH = HashingUtils::HashString("npm");
         static const int pypi_HASH = HashingUtils::HashString("pypi");
         static const int maven_HASH = HashingUtils::HashString("maven");
+        static const int nuget_HASH = HashingUtils::HashString("nuget");
 
 
         PackageFormat GetPackageFormatForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == maven_HASH)
           {
             return PackageFormat::maven;
+          }
+          else if (hashCode == nuget_HASH)
+          {
+            return PackageFormat::nuget;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "pypi";
           case PackageFormat::maven:
             return "maven";
+          case PackageFormat::nuget:
+            return "nuget";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

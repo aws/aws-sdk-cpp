@@ -39,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p> Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01),
-     * and the mean. </p>
+     * <p> The Forecast type used to compute WAPE and RMSE. </p>
      */
     inline const Aws::String& GetForecastType() const{ return m_forecastType; }
 
     /**
-     * <p> Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01),
-     * and the mean. </p>
+     * <p> The Forecast type used to compute WAPE and RMSE. </p>
      */
     inline bool ForecastTypeHasBeenSet() const { return m_forecastTypeHasBeenSet; }
 
     /**
-     * <p> Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01),
-     * and the mean. </p>
+     * <p> The Forecast type used to compute WAPE and RMSE. </p>
      */
     inline void SetForecastType(const Aws::String& value) { m_forecastTypeHasBeenSet = true; m_forecastType = value; }
 
     /**
-     * <p> Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01),
-     * and the mean. </p>
+     * <p> The Forecast type used to compute WAPE and RMSE. </p>
      */
     inline void SetForecastType(Aws::String&& value) { m_forecastTypeHasBeenSet = true; m_forecastType = std::move(value); }
 
     /**
-     * <p> Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01),
-     * and the mean. </p>
+     * <p> The Forecast type used to compute WAPE and RMSE. </p>
      */
     inline void SetForecastType(const char* value) { m_forecastTypeHasBeenSet = true; m_forecastType.assign(value); }
 
     /**
-     * <p> Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01),
-     * and the mean. </p>
+     * <p> The Forecast type used to compute WAPE and RMSE. </p>
      */
     inline ErrorMetric& WithForecastType(const Aws::String& value) { SetForecastType(value); return *this;}
 
     /**
-     * <p> Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01),
-     * and the mean. </p>
+     * <p> The Forecast type used to compute WAPE and RMSE. </p>
      */
     inline ErrorMetric& WithForecastType(Aws::String&& value) { SetForecastType(std::move(value)); return *this;}
 
     /**
-     * <p> Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01),
-     * and the mean. </p>
+     * <p> The Forecast type used to compute WAPE and RMSE. </p>
      */
     inline ErrorMetric& WithForecastType(const char* value) { SetForecastType(value); return *this;}
 

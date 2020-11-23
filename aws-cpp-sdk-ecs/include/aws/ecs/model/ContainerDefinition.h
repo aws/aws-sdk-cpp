@@ -2789,144 +2789,168 @@ namespace Model
 
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The user to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p> <p>You can use the following formats. If specifying a UID or GID,
-     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
-     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
-     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
-     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * run</a>.</p>  <p>When running tasks using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>You can
+     * specify the <code>user</code> using the following formats. If specifying a UID
+     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
+     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
+     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
+     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers or tasks
      * that use the awsvpc network mode.</p> 
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The user to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p> <p>You can use the following formats. If specifying a UID or GID,
-     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
-     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
-     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
-     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * run</a>.</p>  <p>When running tasks using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>You can
+     * specify the <code>user</code> using the following formats. If specifying a UID
+     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
+     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
+     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
+     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers or tasks
      * that use the awsvpc network mode.</p> 
      */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The user to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p> <p>You can use the following formats. If specifying a UID or GID,
-     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
-     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
-     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
-     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * run</a>.</p>  <p>When running tasks using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>You can
+     * specify the <code>user</code> using the following formats. If specifying a UID
+     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
+     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
+     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
+     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers or tasks
      * that use the awsvpc network mode.</p> 
      */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The user to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p> <p>You can use the following formats. If specifying a UID or GID,
-     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
-     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
-     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
-     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * run</a>.</p>  <p>When running tasks using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>You can
+     * specify the <code>user</code> using the following formats. If specifying a UID
+     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
+     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
+     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
+     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers or tasks
      * that use the awsvpc network mode.</p> 
      */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The user to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p> <p>You can use the following formats. If specifying a UID or GID,
-     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
-     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
-     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
-     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * run</a>.</p>  <p>When running tasks using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>You can
+     * specify the <code>user</code> using the following formats. If specifying a UID
+     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
+     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
+     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
+     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers or tasks
      * that use the awsvpc network mode.</p> 
      */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The user to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p> <p>You can use the following formats. If specifying a UID or GID,
-     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
-     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
-     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
-     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * run</a>.</p>  <p>When running tasks using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>You can
+     * specify the <code>user</code> using the following formats. If specifying a UID
+     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
+     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
+     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
+     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers or tasks
      * that use the awsvpc network mode.</p> 
      */
     inline ContainerDefinition& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The user to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p> <p>You can use the following formats. If specifying a UID or GID,
-     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
-     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
-     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
-     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * run</a>.</p>  <p>When running tasks using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>You can
+     * specify the <code>user</code> using the following formats. If specifying a UID
+     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
+     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
+     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
+     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers or tasks
      * that use the awsvpc network mode.</p> 
      */
     inline ContainerDefinition& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The user to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p> <p>You can use the following formats. If specifying a UID or GID,
-     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
-     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
-     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
-     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * run</a>.</p>  <p>When running tasks using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>You can
+     * specify the <code>user</code> using the following formats. If specifying a UID
+     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
+     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
+     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
+     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers or tasks
      * that use the awsvpc network mode.</p> 
      */

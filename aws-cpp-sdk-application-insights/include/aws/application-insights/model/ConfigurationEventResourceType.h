@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     CLOUDWATCH_ALARM,
+    CLOUDWATCH_LOG,
     CLOUDFORMATION,
     SSM_ASSOCIATION
   };

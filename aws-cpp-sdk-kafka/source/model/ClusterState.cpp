@@ -22,9 +22,11 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
+        static const int REBOOTING_BROKER_HASH = HashingUtils::HashString("REBOOTING_BROKER");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 
         ClusterState GetClusterStateForName(const Aws::String& name)
@@ -38,10 +40,6 @@ namespace Aws
           {
             return ClusterState::CREATING;
           }
-          else if (hashCode == UPDATING_HASH)
-          {
-            return ClusterState::UPDATING;
-          }
           else if (hashCode == DELETING_HASH)
           {
             return ClusterState::DELETING;
@@ -49,6 +47,18 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return ClusterState::FAILED;
+          }
+          else if (hashCode == MAINTENANCE_HASH)
+          {
+            return ClusterState::MAINTENANCE;
+          }
+          else if (hashCode == REBOOTING_BROKER_HASH)
+          {
+            return ClusterState::REBOOTING_BROKER;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return ClusterState::UPDATING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -68,12 +78,16 @@ namespace Aws
             return "ACTIVE";
           case ClusterState::CREATING:
             return "CREATING";
-          case ClusterState::UPDATING:
-            return "UPDATING";
           case ClusterState::DELETING:
             return "DELETING";
           case ClusterState::FAILED:
             return "FAILED";
+          case ClusterState::MAINTENANCE:
+            return "MAINTENANCE";
+          case ClusterState::REBOOTING_BROKER:
+            return "REBOOTING_BROKER";
+          case ClusterState::UPDATING:
+            return "UPDATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

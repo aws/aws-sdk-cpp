@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 PutSigningProfileRequest::PutSigningProfileRequest() : 
     m_profileNameHasBeenSet(false),
     m_signingMaterialHasBeenSet(false),
+    m_signatureValidityPeriodHasBeenSet(false),
     m_platformIdHasBeenSet(false),
     m_overridesHasBeenSet(false),
     m_signingParametersHasBeenSet(false),
@@ -29,6 +30,12 @@ Aws::String PutSigningProfileRequest::SerializePayload() const
   if(m_signingMaterialHasBeenSet)
   {
    payload.WithObject("signingMaterial", m_signingMaterial.Jsonize());
+
+  }
+
+  if(m_signatureValidityPeriodHasBeenSet)
+  {
+   payload.WithObject("signatureValidityPeriod", m_signatureValidityPeriod.Jsonize());
 
   }
 

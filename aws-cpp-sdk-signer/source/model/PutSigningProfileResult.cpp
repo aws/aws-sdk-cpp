@@ -34,6 +34,18 @@ PutSigningProfileResult& PutSigningProfileResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("profileVersion"))
+  {
+    m_profileVersion = jsonValue.GetString("profileVersion");
+
+  }
+
+  if(jsonValue.ValueExists("profileVersionArn"))
+  {
+    m_profileVersionArn = jsonValue.GetString("profileVersionArn");
+
+  }
+
 
 
   return *this;

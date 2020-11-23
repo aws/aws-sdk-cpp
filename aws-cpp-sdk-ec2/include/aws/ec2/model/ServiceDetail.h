@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/DnsNameState.h>
 #include <aws/ec2/model/ServiceTypeDetail.h>
+#include <aws/ec2/model/PrivateDnsDetails.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -341,6 +342,47 @@ namespace Model
 
 
     /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline const Aws::Vector<PrivateDnsDetails>& GetPrivateDnsNames() const{ return m_privateDnsNames; }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline bool PrivateDnsNamesHasBeenSet() const { return m_privateDnsNamesHasBeenSet; }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline void SetPrivateDnsNames(const Aws::Vector<PrivateDnsDetails>& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames = value; }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline void SetPrivateDnsNames(Aws::Vector<PrivateDnsDetails>&& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames = std::move(value); }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline ServiceDetail& WithPrivateDnsNames(const Aws::Vector<PrivateDnsDetails>& value) { SetPrivateDnsNames(value); return *this;}
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline ServiceDetail& WithPrivateDnsNames(Aws::Vector<PrivateDnsDetails>&& value) { SetPrivateDnsNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline ServiceDetail& AddPrivateDnsNames(const PrivateDnsDetails& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames.push_back(value); return *this; }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline ServiceDetail& AddPrivateDnsNames(PrivateDnsDetails&& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Indicates whether the service supports endpoint policies.</p>
      */
     inline bool GetVpcEndpointPolicySupported() const{ return m_vpcEndpointPolicySupported; }
@@ -516,6 +558,9 @@ namespace Model
 
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet;
+
+    Aws::Vector<PrivateDnsDetails> m_privateDnsNames;
+    bool m_privateDnsNamesHasBeenSet;
 
     bool m_vpcEndpointPolicySupported;
     bool m_vpcEndpointPolicySupportedHasBeenSet;

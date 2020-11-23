@@ -18,13 +18,15 @@ using namespace Aws;
 
 GetSigningPlatformResult::GetSigningPlatformResult() : 
     m_category(Category::NOT_SET),
-    m_maxSizeInMB(0)
+    m_maxSizeInMB(0),
+    m_revocationSupported(false)
 {
 }
 
 GetSigningPlatformResult::GetSigningPlatformResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_category(Category::NOT_SET),
-    m_maxSizeInMB(0)
+    m_maxSizeInMB(0),
+    m_revocationSupported(false)
 {
   *this = result;
 }
@@ -77,6 +79,12 @@ GetSigningPlatformResult& GetSigningPlatformResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("maxSizeInMB"))
   {
     m_maxSizeInMB = jsonValue.GetInteger("maxSizeInMB");
+
+  }
+
+  if(jsonValue.ValueExists("revocationSupported"))
+  {
+    m_revocationSupported = jsonValue.GetBool("revocationSupported");
 
   }
 

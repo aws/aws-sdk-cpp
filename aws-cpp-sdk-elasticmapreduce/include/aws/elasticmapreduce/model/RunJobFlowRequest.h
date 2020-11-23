@@ -142,57 +142,65 @@ namespace Model
 
     /**
      * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs will remain encrypted by AES-256. This attribute
-     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * value is not provided, the logs remain encrypted by AES-256. This attribute is
+     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
+     * 6.0.0.</p>
      */
     inline const Aws::String& GetLogEncryptionKmsKeyId() const{ return m_logEncryptionKmsKeyId; }
 
     /**
      * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs will remain encrypted by AES-256. This attribute
-     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * value is not provided, the logs remain encrypted by AES-256. This attribute is
+     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
+     * 6.0.0.</p>
      */
     inline bool LogEncryptionKmsKeyIdHasBeenSet() const { return m_logEncryptionKmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs will remain encrypted by AES-256. This attribute
-     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * value is not provided, the logs remain encrypted by AES-256. This attribute is
+     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
+     * 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(const Aws::String& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = value; }
 
     /**
      * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs will remain encrypted by AES-256. This attribute
-     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * value is not provided, the logs remain encrypted by AES-256. This attribute is
+     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
+     * 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(Aws::String&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::move(value); }
 
     /**
      * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs will remain encrypted by AES-256. This attribute
-     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * value is not provided, the logs remain encrypted by AES-256. This attribute is
+     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
+     * 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(const char* value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId.assign(value); }
 
     /**
      * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs will remain encrypted by AES-256. This attribute
-     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * value is not provided, the logs remain encrypted by AES-256. This attribute is
+     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
+     * 6.0.0.</p>
      */
     inline RunJobFlowRequest& WithLogEncryptionKmsKeyId(const Aws::String& value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
     /**
      * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs will remain encrypted by AES-256. This attribute
-     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * value is not provided, the logs remain encrypted by AES-256. This attribute is
+     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
+     * 6.0.0.</p>
      */
     inline RunJobFlowRequest& WithLogEncryptionKmsKeyId(Aws::String&& value) { SetLogEncryptionKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs will remain encrypted by AES-256. This attribute
-     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * value is not provided, the logs remain encrypted by AES-256. This attribute is
+     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
+     * 6.0.0.</p>
      */
     inline RunJobFlowRequest& WithLogEncryptionKmsKeyId(const char* value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
@@ -1213,13 +1221,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline const ScaleDownBehavior& GetScaleDownBehavior() const{ return m_scaleDownBehavior; }
 
@@ -1230,13 +1238,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline bool ScaleDownBehaviorHasBeenSet() const { return m_scaleDownBehaviorHasBeenSet; }
 
@@ -1247,13 +1255,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
 
@@ -1264,13 +1272,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = std::move(value); }
 
@@ -1281,13 +1289,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline RunJobFlowRequest& WithScaleDownBehavior(const ScaleDownBehavior& value) { SetScaleDownBehavior(value); return *this;}
 
@@ -1298,13 +1306,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline RunJobFlowRequest& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
@@ -1455,26 +1463,30 @@ namespace Model
 
 
     /**
-     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
-     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     * <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that
+     * is used for each EC2 instance. Available in Amazon EMR version 4.x and
+     * later.</p>
      */
     inline int GetEbsRootVolumeSize() const{ return m_ebsRootVolumeSize; }
 
     /**
-     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
-     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     * <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that
+     * is used for each EC2 instance. Available in Amazon EMR version 4.x and
+     * later.</p>
      */
     inline bool EbsRootVolumeSizeHasBeenSet() const { return m_ebsRootVolumeSizeHasBeenSet; }
 
     /**
-     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
-     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     * <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that
+     * is used for each EC2 instance. Available in Amazon EMR version 4.x and
+     * later.</p>
      */
     inline void SetEbsRootVolumeSize(int value) { m_ebsRootVolumeSizeHasBeenSet = true; m_ebsRootVolumeSize = value; }
 
     /**
-     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
-     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     * <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that
+     * is used for each EC2 instance. Available in Amazon EMR version 4.x and
+     * later.</p>
      */
     inline RunJobFlowRequest& WithEbsRootVolumeSize(int value) { SetEbsRootVolumeSize(value); return *this;}
 
@@ -1538,7 +1550,7 @@ namespace Model
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
      */
     inline const KerberosAttributes& GetKerberosAttributes() const{ return m_kerberosAttributes; }
 
@@ -1546,7 +1558,7 @@ namespace Model
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
      */
     inline bool KerberosAttributesHasBeenSet() const { return m_kerberosAttributesHasBeenSet; }
 
@@ -1554,7 +1566,7 @@ namespace Model
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
      */
     inline void SetKerberosAttributes(const KerberosAttributes& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = value; }
 
@@ -1562,7 +1574,7 @@ namespace Model
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
      */
     inline void SetKerberosAttributes(KerberosAttributes&& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = std::move(value); }
 
@@ -1570,7 +1582,7 @@ namespace Model
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
      */
     inline RunJobFlowRequest& WithKerberosAttributes(const KerberosAttributes& value) { SetKerberosAttributes(value); return *this;}
 
@@ -1578,7 +1590,7 @@ namespace Model
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
      */
     inline RunJobFlowRequest& WithKerberosAttributes(KerberosAttributes&& value) { SetKerberosAttributes(std::move(value)); return *this;}
 

@@ -186,7 +186,7 @@ namespace Model
 
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
@@ -194,7 +194,7 @@ namespace Model
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
@@ -202,7 +202,7 @@ namespace Model
     inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
@@ -210,7 +210,7 @@ namespace Model
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
@@ -218,7 +218,7 @@ namespace Model
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
@@ -226,7 +226,7 @@ namespace Model
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
@@ -234,7 +234,7 @@ namespace Model
     inline InstanceGroupDetail& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
@@ -242,7 +242,7 @@ namespace Model
     inline InstanceGroupDetail& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>

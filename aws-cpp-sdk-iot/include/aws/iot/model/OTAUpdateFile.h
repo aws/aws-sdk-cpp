@@ -83,6 +83,31 @@ namespace Model
 
 
     /**
+     * <p>An integer value you can include in the job document to allow your devices to
+     * identify the type of file received from the cloud.</p>
+     */
+    inline int GetFileType() const{ return m_fileType; }
+
+    /**
+     * <p>An integer value you can include in the job document to allow your devices to
+     * identify the type of file received from the cloud.</p>
+     */
+    inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
+
+    /**
+     * <p>An integer value you can include in the job document to allow your devices to
+     * identify the type of file received from the cloud.</p>
+     */
+    inline void SetFileType(int value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
+
+    /**
+     * <p>An integer value you can include in the job document to allow your devices to
+     * identify the type of file received from the cloud.</p>
+     */
+    inline OTAUpdateFile& WithFileType(int value) { SetFileType(value); return *this;}
+
+
+    /**
      * <p>The file version.</p>
      */
     inline const Aws::String& GetFileVersion() const{ return m_fileVersion; }
@@ -254,6 +279,9 @@ namespace Model
 
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet;
+
+    int m_fileType;
+    bool m_fileTypeHasBeenSet;
 
     Aws::String m_fileVersion;
     bool m_fileVersionHasBeenSet;

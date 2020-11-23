@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int CLOUDWATCH_ALARM_HASH = HashingUtils::HashString("CLOUDWATCH_ALARM");
+        static const int CLOUDWATCH_LOG_HASH = HashingUtils::HashString("CLOUDWATCH_LOG");
         static const int CLOUDFORMATION_HASH = HashingUtils::HashString("CLOUDFORMATION");
         static const int SSM_ASSOCIATION_HASH = HashingUtils::HashString("SSM_ASSOCIATION");
 
@@ -31,6 +32,10 @@ namespace Aws
           if (hashCode == CLOUDWATCH_ALARM_HASH)
           {
             return ConfigurationEventResourceType::CLOUDWATCH_ALARM;
+          }
+          else if (hashCode == CLOUDWATCH_LOG_HASH)
+          {
+            return ConfigurationEventResourceType::CLOUDWATCH_LOG;
           }
           else if (hashCode == CLOUDFORMATION_HASH)
           {
@@ -56,6 +61,8 @@ namespace Aws
           {
           case ConfigurationEventResourceType::CLOUDWATCH_ALARM:
             return "CLOUDWATCH_ALARM";
+          case ConfigurationEventResourceType::CLOUDWATCH_LOG:
+            return "CLOUDWATCH_LOG";
           case ConfigurationEventResourceType::CLOUDFORMATION:
             return "CLOUDFORMATION";
           case ConfigurationEventResourceType::SSM_ASSOCIATION:

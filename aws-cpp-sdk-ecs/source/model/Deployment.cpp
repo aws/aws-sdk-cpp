@@ -28,13 +28,18 @@ Deployment::Deployment() :
     m_pendingCountHasBeenSet(false),
     m_runningCount(0),
     m_runningCountHasBeenSet(false),
+    m_failedTasks(0),
+    m_failedTasksHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_rolloutState(DeploymentRolloutState::NOT_SET),
+    m_rolloutStateHasBeenSet(false),
+    m_rolloutStateReasonHasBeenSet(false)
 {
 }
 
@@ -48,13 +53,18 @@ Deployment::Deployment(JsonView jsonValue) :
     m_pendingCountHasBeenSet(false),
     m_runningCount(0),
     m_runningCountHasBeenSet(false),
+    m_failedTasks(0),
+    m_failedTasksHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_rolloutState(DeploymentRolloutState::NOT_SET),
+    m_rolloutStateHasBeenSet(false),
+    m_rolloutStateReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +113,13 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_runningCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("failedTasks"))
+  {
+    m_failedTasks = jsonValue.GetInteger("failedTasks");
+
+    m_failedTasksHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
@@ -148,6 +165,20 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_networkConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rolloutState"))
+  {
+    m_rolloutState = DeploymentRolloutStateMapper::GetDeploymentRolloutStateForName(jsonValue.GetString("rolloutState"));
+
+    m_rolloutStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rolloutStateReason"))
+  {
+    m_rolloutStateReason = jsonValue.GetString("rolloutStateReason");
+
+    m_rolloutStateReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -191,6 +222,12 @@ JsonValue Deployment::Jsonize() const
 
   }
 
+  if(m_failedTasksHasBeenSet)
+  {
+   payload.WithInteger("failedTasks", m_failedTasks);
+
+  }
+
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
@@ -226,6 +263,17 @@ JsonValue Deployment::Jsonize() const
   if(m_networkConfigurationHasBeenSet)
   {
    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_rolloutStateHasBeenSet)
+  {
+   payload.WithString("rolloutState", DeploymentRolloutStateMapper::GetNameForDeploymentRolloutState(m_rolloutState));
+  }
+
+  if(m_rolloutStateReasonHasBeenSet)
+  {
+   payload.WithString("rolloutStateReason", m_rolloutStateReason);
 
   }
 

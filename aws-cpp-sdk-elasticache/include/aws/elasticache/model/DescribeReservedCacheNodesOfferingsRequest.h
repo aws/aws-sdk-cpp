@@ -711,56 +711,64 @@ namespace Model
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
+     * Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
      */
     inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
+     * Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
      */
     inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
+     * Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
      */
     inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
+     * Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
      */
     inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
+     * Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
      */
     inline void SetOfferingType(const char* value) { m_offeringTypeHasBeenSet = true; m_offeringType.assign(value); }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
+     * Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
      */
     inline DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
+     * Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
      */
     inline DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(Aws::String&& value) { SetOfferingType(std::move(value)); return *this;}
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
+     * Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
      */
     inline DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 

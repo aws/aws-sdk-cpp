@@ -67,9 +67,47 @@ namespace Model
      */
     inline StartSigningJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline const Aws::String& GetJobOwner() const{ return m_jobOwner; }
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline void SetJobOwner(const Aws::String& value) { m_jobOwner = value; }
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline void SetJobOwner(Aws::String&& value) { m_jobOwner = std::move(value); }
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline void SetJobOwner(const char* value) { m_jobOwner.assign(value); }
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline StartSigningJobResult& WithJobOwner(const Aws::String& value) { SetJobOwner(value); return *this;}
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline StartSigningJobResult& WithJobOwner(Aws::String&& value) { SetJobOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline StartSigningJobResult& WithJobOwner(const char* value) { SetJobOwner(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
+
+    Aws::String m_jobOwner;
   };
 
 } // namespace Model

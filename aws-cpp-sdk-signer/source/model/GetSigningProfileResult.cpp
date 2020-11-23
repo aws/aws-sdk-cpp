@@ -36,6 +36,24 @@ GetSigningProfileResult& GetSigningProfileResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("profileVersion"))
+  {
+    m_profileVersion = jsonValue.GetString("profileVersion");
+
+  }
+
+  if(jsonValue.ValueExists("profileVersionArn"))
+  {
+    m_profileVersionArn = jsonValue.GetString("profileVersionArn");
+
+  }
+
+  if(jsonValue.ValueExists("revocationRecord"))
+  {
+    m_revocationRecord = jsonValue.GetObject("revocationRecord");
+
+  }
+
   if(jsonValue.ValueExists("signingMaterial"))
   {
     m_signingMaterial = jsonValue.GetObject("signingMaterial");
@@ -45,6 +63,18 @@ GetSigningProfileResult& GetSigningProfileResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("platformId"))
   {
     m_platformId = jsonValue.GetString("platformId");
+
+  }
+
+  if(jsonValue.ValueExists("platformDisplayName"))
+  {
+    m_platformDisplayName = jsonValue.GetString("platformDisplayName");
+
+  }
+
+  if(jsonValue.ValueExists("signatureValidityPeriod"))
+  {
+    m_signatureValidityPeriod = jsonValue.GetObject("signatureValidityPeriod");
 
   }
 
@@ -66,6 +96,12 @@ GetSigningProfileResult& GetSigningProfileResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("status"))
   {
     m_status = SigningProfileStatusMapper::GetSigningProfileStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("statusReason"))
+  {
+    m_statusReason = jsonValue.GetString("statusReason");
 
   }
 

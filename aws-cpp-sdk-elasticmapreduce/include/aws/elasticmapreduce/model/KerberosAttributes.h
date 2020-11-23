@@ -27,8 +27,8 @@ namespace Model
    * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
    * using a security configuration. For more information see <a
    * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-   * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * Kerberos Authentication</a> in the <i>Amazon EMR Management
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/KerberosAttributes">AWS
    * API Reference</a></p>
    */

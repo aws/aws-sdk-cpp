@@ -19,12 +19,14 @@ namespace Model
 {
 
 LicenseSpecification::LicenseSpecification() : 
-    m_licenseConfigurationArnHasBeenSet(false)
+    m_licenseConfigurationArnHasBeenSet(false),
+    m_amiAssociationScopeHasBeenSet(false)
 {
 }
 
 LicenseSpecification::LicenseSpecification(JsonView jsonValue) : 
-    m_licenseConfigurationArnHasBeenSet(false)
+    m_licenseConfigurationArnHasBeenSet(false),
+    m_amiAssociationScopeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ LicenseSpecification& LicenseSpecification::operator =(JsonView jsonValue)
     m_licenseConfigurationArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AmiAssociationScope"))
+  {
+    m_amiAssociationScope = jsonValue.GetString("AmiAssociationScope");
+
+    m_amiAssociationScopeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue LicenseSpecification::Jsonize() const
   if(m_licenseConfigurationArnHasBeenSet)
   {
    payload.WithString("LicenseConfigurationArn", m_licenseConfigurationArn);
+
+  }
+
+  if(m_amiAssociationScopeHasBeenSet)
+  {
+   payload.WithString("AmiAssociationScope", m_amiAssociationScope);
 
   }
 

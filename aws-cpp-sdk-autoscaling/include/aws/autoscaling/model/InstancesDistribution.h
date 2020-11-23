@@ -228,97 +228,97 @@ namespace Model
 
     /**
      * <p>Indicates how to allocate instances across Spot Instance pools. If the
-     * allocation strategy is <code>lowest-price</code>, the Auto Scaling group
-     * launches instances using the Spot pools with the lowest price, and evenly
-     * allocates your instances across the number of Spot pools that you specify. If
-     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
-     * group launches instances using Spot pools that are optimally chosen based on the
-     * available Spot capacity. Defaults to <code>lowest-price</code> if not
-     * specified.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), the Auto
+     * Scaling group launches instances using Spot pools that are optimally chosen
+     * based on the available Spot capacity. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the
+     * Spot pools with the lowest price, and evenly allocates your instances across the
+     * number of Spot pools that you specify. Defaults to <code>lowest-price</code> if
+     * not specified.</p>
      */
     inline const Aws::String& GetSpotAllocationStrategy() const{ return m_spotAllocationStrategy; }
 
     /**
      * <p>Indicates how to allocate instances across Spot Instance pools. If the
-     * allocation strategy is <code>lowest-price</code>, the Auto Scaling group
-     * launches instances using the Spot pools with the lowest price, and evenly
-     * allocates your instances across the number of Spot pools that you specify. If
-     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
-     * group launches instances using Spot pools that are optimally chosen based on the
-     * available Spot capacity. Defaults to <code>lowest-price</code> if not
-     * specified.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), the Auto
+     * Scaling group launches instances using Spot pools that are optimally chosen
+     * based on the available Spot capacity. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the
+     * Spot pools with the lowest price, and evenly allocates your instances across the
+     * number of Spot pools that you specify. Defaults to <code>lowest-price</code> if
+     * not specified.</p>
      */
     inline bool SpotAllocationStrategyHasBeenSet() const { return m_spotAllocationStrategyHasBeenSet; }
 
     /**
      * <p>Indicates how to allocate instances across Spot Instance pools. If the
-     * allocation strategy is <code>lowest-price</code>, the Auto Scaling group
-     * launches instances using the Spot pools with the lowest price, and evenly
-     * allocates your instances across the number of Spot pools that you specify. If
-     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
-     * group launches instances using Spot pools that are optimally chosen based on the
-     * available Spot capacity. Defaults to <code>lowest-price</code> if not
-     * specified.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), the Auto
+     * Scaling group launches instances using Spot pools that are optimally chosen
+     * based on the available Spot capacity. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the
+     * Spot pools with the lowest price, and evenly allocates your instances across the
+     * number of Spot pools that you specify. Defaults to <code>lowest-price</code> if
+     * not specified.</p>
      */
     inline void SetSpotAllocationStrategy(const Aws::String& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = value; }
 
     /**
      * <p>Indicates how to allocate instances across Spot Instance pools. If the
-     * allocation strategy is <code>lowest-price</code>, the Auto Scaling group
-     * launches instances using the Spot pools with the lowest price, and evenly
-     * allocates your instances across the number of Spot pools that you specify. If
-     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
-     * group launches instances using Spot pools that are optimally chosen based on the
-     * available Spot capacity. Defaults to <code>lowest-price</code> if not
-     * specified.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), the Auto
+     * Scaling group launches instances using Spot pools that are optimally chosen
+     * based on the available Spot capacity. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the
+     * Spot pools with the lowest price, and evenly allocates your instances across the
+     * number of Spot pools that you specify. Defaults to <code>lowest-price</code> if
+     * not specified.</p>
      */
     inline void SetSpotAllocationStrategy(Aws::String&& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = std::move(value); }
 
     /**
      * <p>Indicates how to allocate instances across Spot Instance pools. If the
-     * allocation strategy is <code>lowest-price</code>, the Auto Scaling group
-     * launches instances using the Spot pools with the lowest price, and evenly
-     * allocates your instances across the number of Spot pools that you specify. If
-     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
-     * group launches instances using Spot pools that are optimally chosen based on the
-     * available Spot capacity. Defaults to <code>lowest-price</code> if not
-     * specified.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), the Auto
+     * Scaling group launches instances using Spot pools that are optimally chosen
+     * based on the available Spot capacity. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the
+     * Spot pools with the lowest price, and evenly allocates your instances across the
+     * number of Spot pools that you specify. Defaults to <code>lowest-price</code> if
+     * not specified.</p>
      */
     inline void SetSpotAllocationStrategy(const char* value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy.assign(value); }
 
     /**
      * <p>Indicates how to allocate instances across Spot Instance pools. If the
-     * allocation strategy is <code>lowest-price</code>, the Auto Scaling group
-     * launches instances using the Spot pools with the lowest price, and evenly
-     * allocates your instances across the number of Spot pools that you specify. If
-     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
-     * group launches instances using Spot pools that are optimally chosen based on the
-     * available Spot capacity. Defaults to <code>lowest-price</code> if not
-     * specified.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), the Auto
+     * Scaling group launches instances using Spot pools that are optimally chosen
+     * based on the available Spot capacity. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the
+     * Spot pools with the lowest price, and evenly allocates your instances across the
+     * number of Spot pools that you specify. Defaults to <code>lowest-price</code> if
+     * not specified.</p>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(const Aws::String& value) { SetSpotAllocationStrategy(value); return *this;}
 
     /**
      * <p>Indicates how to allocate instances across Spot Instance pools. If the
-     * allocation strategy is <code>lowest-price</code>, the Auto Scaling group
-     * launches instances using the Spot pools with the lowest price, and evenly
-     * allocates your instances across the number of Spot pools that you specify. If
-     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
-     * group launches instances using Spot pools that are optimally chosen based on the
-     * available Spot capacity. Defaults to <code>lowest-price</code> if not
-     * specified.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), the Auto
+     * Scaling group launches instances using Spot pools that are optimally chosen
+     * based on the available Spot capacity. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the
+     * Spot pools with the lowest price, and evenly allocates your instances across the
+     * number of Spot pools that you specify. Defaults to <code>lowest-price</code> if
+     * not specified.</p>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(Aws::String&& value) { SetSpotAllocationStrategy(std::move(value)); return *this;}
 
     /**
      * <p>Indicates how to allocate instances across Spot Instance pools. If the
-     * allocation strategy is <code>lowest-price</code>, the Auto Scaling group
-     * launches instances using the Spot pools with the lowest price, and evenly
-     * allocates your instances across the number of Spot pools that you specify. If
-     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
-     * group launches instances using Spot pools that are optimally chosen based on the
-     * available Spot capacity. Defaults to <code>lowest-price</code> if not
-     * specified.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), the Auto
+     * Scaling group launches instances using Spot pools that are optimally chosen
+     * based on the available Spot capacity. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the
+     * Spot pools with the lowest price, and evenly allocates your instances across the
+     * number of Spot pools that you specify. Defaults to <code>lowest-price</code> if
+     * not specified.</p>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(const char* value) { SetSpotAllocationStrategy(value); return *this;}
 
@@ -326,101 +326,109 @@ namespace Model
     /**
      * <p>The number of Spot Instance pools across which to allocate your Spot
      * Instances. The Spot pools are determined from the different instance types in
-     * the overrides. Defaults to 2 if not specified. Valid only when the Spot
-     * allocation strategy is <code>lowest-price</code>.</p> <p>Valid Range: Minimum
-     * value of 1. Maximum value of 20.</p>
+     * the overrides. Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2
+     * if not specified.</p>
      */
     inline int GetSpotInstancePools() const{ return m_spotInstancePools; }
 
     /**
      * <p>The number of Spot Instance pools across which to allocate your Spot
      * Instances. The Spot pools are determined from the different instance types in
-     * the overrides. Defaults to 2 if not specified. Valid only when the Spot
-     * allocation strategy is <code>lowest-price</code>.</p> <p>Valid Range: Minimum
-     * value of 1. Maximum value of 20.</p>
+     * the overrides. Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2
+     * if not specified.</p>
      */
     inline bool SpotInstancePoolsHasBeenSet() const { return m_spotInstancePoolsHasBeenSet; }
 
     /**
      * <p>The number of Spot Instance pools across which to allocate your Spot
      * Instances. The Spot pools are determined from the different instance types in
-     * the overrides. Defaults to 2 if not specified. Valid only when the Spot
-     * allocation strategy is <code>lowest-price</code>.</p> <p>Valid Range: Minimum
-     * value of 1. Maximum value of 20.</p>
+     * the overrides. Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2
+     * if not specified.</p>
      */
     inline void SetSpotInstancePools(int value) { m_spotInstancePoolsHasBeenSet = true; m_spotInstancePools = value; }
 
     /**
      * <p>The number of Spot Instance pools across which to allocate your Spot
      * Instances. The Spot pools are determined from the different instance types in
-     * the overrides. Defaults to 2 if not specified. Valid only when the Spot
-     * allocation strategy is <code>lowest-price</code>.</p> <p>Valid Range: Minimum
-     * value of 1. Maximum value of 20.</p>
+     * the overrides. Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2
+     * if not specified.</p>
      */
     inline InstancesDistribution& WithSpotInstancePools(int value) { SetSpotInstancePools(value); return *this;}
 
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave the value of this parameter blank (which is the default),
-     * the maximum Spot price is set at the On-Demand price. To remove a value that you
-     * previously set, include the parameter but leave the value blank.</p>
+     * Instance. If you leave the value at its default (empty), Amazon EC2 Auto Scaling
+     * uses the On-Demand price as the maximum Spot price. To remove a value that you
+     * previously set, include the property but specify an empty string ("") for the
+     * value.</p>
      */
     inline const Aws::String& GetSpotMaxPrice() const{ return m_spotMaxPrice; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave the value of this parameter blank (which is the default),
-     * the maximum Spot price is set at the On-Demand price. To remove a value that you
-     * previously set, include the parameter but leave the value blank.</p>
+     * Instance. If you leave the value at its default (empty), Amazon EC2 Auto Scaling
+     * uses the On-Demand price as the maximum Spot price. To remove a value that you
+     * previously set, include the property but specify an empty string ("") for the
+     * value.</p>
      */
     inline bool SpotMaxPriceHasBeenSet() const { return m_spotMaxPriceHasBeenSet; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave the value of this parameter blank (which is the default),
-     * the maximum Spot price is set at the On-Demand price. To remove a value that you
-     * previously set, include the parameter but leave the value blank.</p>
+     * Instance. If you leave the value at its default (empty), Amazon EC2 Auto Scaling
+     * uses the On-Demand price as the maximum Spot price. To remove a value that you
+     * previously set, include the property but specify an empty string ("") for the
+     * value.</p>
      */
     inline void SetSpotMaxPrice(const Aws::String& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = value; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave the value of this parameter blank (which is the default),
-     * the maximum Spot price is set at the On-Demand price. To remove a value that you
-     * previously set, include the parameter but leave the value blank.</p>
+     * Instance. If you leave the value at its default (empty), Amazon EC2 Auto Scaling
+     * uses the On-Demand price as the maximum Spot price. To remove a value that you
+     * previously set, include the property but specify an empty string ("") for the
+     * value.</p>
      */
     inline void SetSpotMaxPrice(Aws::String&& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = std::move(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave the value of this parameter blank (which is the default),
-     * the maximum Spot price is set at the On-Demand price. To remove a value that you
-     * previously set, include the parameter but leave the value blank.</p>
+     * Instance. If you leave the value at its default (empty), Amazon EC2 Auto Scaling
+     * uses the On-Demand price as the maximum Spot price. To remove a value that you
+     * previously set, include the property but specify an empty string ("") for the
+     * value.</p>
      */
     inline void SetSpotMaxPrice(const char* value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice.assign(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave the value of this parameter blank (which is the default),
-     * the maximum Spot price is set at the On-Demand price. To remove a value that you
-     * previously set, include the parameter but leave the value blank.</p>
+     * Instance. If you leave the value at its default (empty), Amazon EC2 Auto Scaling
+     * uses the On-Demand price as the maximum Spot price. To remove a value that you
+     * previously set, include the property but specify an empty string ("") for the
+     * value.</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const Aws::String& value) { SetSpotMaxPrice(value); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave the value of this parameter blank (which is the default),
-     * the maximum Spot price is set at the On-Demand price. To remove a value that you
-     * previously set, include the parameter but leave the value blank.</p>
+     * Instance. If you leave the value at its default (empty), Amazon EC2 Auto Scaling
+     * uses the On-Demand price as the maximum Spot price. To remove a value that you
+     * previously set, include the property but specify an empty string ("") for the
+     * value.</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(Aws::String&& value) { SetSpotMaxPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave the value of this parameter blank (which is the default),
-     * the maximum Spot price is set at the On-Demand price. To remove a value that you
-     * previously set, include the parameter but leave the value blank.</p>
+     * Instance. If you leave the value at its default (empty), Amazon EC2 Auto Scaling
+     * uses the On-Demand price as the maximum Spot price. To remove a value that you
+     * previously set, include the property but specify an empty string ("") for the
+     * value.</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const char* value) { SetSpotMaxPrice(value); return *this;}
 

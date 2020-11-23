@@ -17,7 +17,8 @@ CreateOutpostRequest::CreateOutpostRequest() :
     m_descriptionHasBeenSet(false),
     m_siteIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
+    m_availabilityZoneIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,17 @@ Aws::String CreateOutpostRequest::SerializePayload() const
   if(m_availabilityZoneIdHasBeenSet)
   {
    payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

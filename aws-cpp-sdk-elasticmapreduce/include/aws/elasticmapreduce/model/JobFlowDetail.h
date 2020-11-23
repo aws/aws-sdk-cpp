@@ -425,64 +425,64 @@ namespace Model
 
 
     /**
-     * <p>A list of strings set by third party software when the job flow is launched.
-     * If you are not using third party software to manage the job flow this value is
+     * <p>A list of strings set by third-party software when the job flow is launched.
+     * If you are not using third-party software to manage the job flow, this value is
      * empty.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedProducts() const{ return m_supportedProducts; }
 
     /**
-     * <p>A list of strings set by third party software when the job flow is launched.
-     * If you are not using third party software to manage the job flow this value is
+     * <p>A list of strings set by third-party software when the job flow is launched.
+     * If you are not using third-party software to manage the job flow, this value is
      * empty.</p>
      */
     inline bool SupportedProductsHasBeenSet() const { return m_supportedProductsHasBeenSet; }
 
     /**
-     * <p>A list of strings set by third party software when the job flow is launched.
-     * If you are not using third party software to manage the job flow this value is
+     * <p>A list of strings set by third-party software when the job flow is launched.
+     * If you are not using third-party software to manage the job flow, this value is
      * empty.</p>
      */
     inline void SetSupportedProducts(const Aws::Vector<Aws::String>& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = value; }
 
     /**
-     * <p>A list of strings set by third party software when the job flow is launched.
-     * If you are not using third party software to manage the job flow this value is
+     * <p>A list of strings set by third-party software when the job flow is launched.
+     * If you are not using third-party software to manage the job flow, this value is
      * empty.</p>
      */
     inline void SetSupportedProducts(Aws::Vector<Aws::String>&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = std::move(value); }
 
     /**
-     * <p>A list of strings set by third party software when the job flow is launched.
-     * If you are not using third party software to manage the job flow this value is
+     * <p>A list of strings set by third-party software when the job flow is launched.
+     * If you are not using third-party software to manage the job flow, this value is
      * empty.</p>
      */
     inline JobFlowDetail& WithSupportedProducts(const Aws::Vector<Aws::String>& value) { SetSupportedProducts(value); return *this;}
 
     /**
-     * <p>A list of strings set by third party software when the job flow is launched.
-     * If you are not using third party software to manage the job flow this value is
+     * <p>A list of strings set by third-party software when the job flow is launched.
+     * If you are not using third-party software to manage the job flow, this value is
      * empty.</p>
      */
     inline JobFlowDetail& WithSupportedProducts(Aws::Vector<Aws::String>&& value) { SetSupportedProducts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of strings set by third party software when the job flow is launched.
-     * If you are not using third party software to manage the job flow this value is
+     * <p>A list of strings set by third-party software when the job flow is launched.
+     * If you are not using third-party software to manage the job flow, this value is
      * empty.</p>
      */
     inline JobFlowDetail& AddSupportedProducts(const Aws::String& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
 
     /**
-     * <p>A list of strings set by third party software when the job flow is launched.
-     * If you are not using third party software to manage the job flow this value is
+     * <p>A list of strings set by third-party software when the job flow is launched.
+     * If you are not using third-party software to manage the job flow, this value is
      * empty.</p>
      */
     inline JobFlowDetail& AddSupportedProducts(Aws::String&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of strings set by third party software when the job flow is launched.
-     * If you are not using third party software to manage the job flow this value is
+     * <p>A list of strings set by third-party software when the job flow is launched.
+     * If you are not using third-party software to manage the job flow, this value is
      * empty.</p>
      */
     inline JobFlowDetail& AddSupportedProducts(const char* value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
@@ -591,49 +591,49 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that is assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that is assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that is assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that is assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that is assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that is assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
     inline JobFlowDetail& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that is assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
     inline JobFlowDetail& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that is assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
     inline JobFlowDetail& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
@@ -711,13 +711,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline const ScaleDownBehavior& GetScaleDownBehavior() const{ return m_scaleDownBehavior; }
 
@@ -728,13 +728,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline bool ScaleDownBehaviorHasBeenSet() const { return m_scaleDownBehaviorHasBeenSet; }
 
@@ -745,13 +745,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
 
@@ -762,13 +762,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = std::move(value); }
 
@@ -779,13 +779,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline JobFlowDetail& WithScaleDownBehavior(const ScaleDownBehavior& value) { SetScaleDownBehavior(value); return *this;}
 
@@ -796,13 +796,13 @@ namespace Model
      * nodes at the instance-hour boundary, regardless of when the request to terminate
      * the instance was submitted. This option is only available with Amazon EMR 5.1.0
      * and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     * and drains tasks from nodes before terminating the Amazon EC2 instances,
-     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could
-     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
-     * Amazon EMR earlier than 5.1.0.</p>
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     * to a deny list and drains tasks from nodes before terminating the Amazon EC2
+     * instances, regardless of the instance-hour boundary. With either behavior,
+     * Amazon EMR removes the least active nodes first and blocks instance termination
+     * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     * available only in Amazon EMR version 4.1.0 and later, and is the default for
+     * versions of Amazon EMR earlier than 5.1.0.</p>
      */
     inline JobFlowDetail& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 

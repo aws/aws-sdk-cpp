@@ -477,23 +477,26 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
@@ -514,23 +517,26 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
@@ -551,23 +557,26 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
@@ -588,23 +597,26 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
@@ -625,23 +637,26 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
@@ -662,23 +677,26 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon

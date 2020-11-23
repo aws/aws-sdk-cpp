@@ -22,12 +22,15 @@
 #include <aws/sso-admin/SSOAdminErrorMarshaller.h>
 #include <aws/sso-admin/model/AttachManagedPolicyToPermissionSetRequest.h>
 #include <aws/sso-admin/model/CreateAccountAssignmentRequest.h>
+#include <aws/sso-admin/model/CreateInstanceAccessControlAttributeConfigurationRequest.h>
 #include <aws/sso-admin/model/CreatePermissionSetRequest.h>
 #include <aws/sso-admin/model/DeleteAccountAssignmentRequest.h>
 #include <aws/sso-admin/model/DeleteInlinePolicyFromPermissionSetRequest.h>
+#include <aws/sso-admin/model/DeleteInstanceAccessControlAttributeConfigurationRequest.h>
 #include <aws/sso-admin/model/DeletePermissionSetRequest.h>
 #include <aws/sso-admin/model/DescribeAccountAssignmentCreationStatusRequest.h>
 #include <aws/sso-admin/model/DescribeAccountAssignmentDeletionStatusRequest.h>
+#include <aws/sso-admin/model/DescribeInstanceAccessControlAttributeConfigurationRequest.h>
 #include <aws/sso-admin/model/DescribePermissionSetRequest.h>
 #include <aws/sso-admin/model/DescribePermissionSetProvisioningStatusRequest.h>
 #include <aws/sso-admin/model/DetachManagedPolicyFromPermissionSetRequest.h>
@@ -46,6 +49,7 @@
 #include <aws/sso-admin/model/PutInlinePolicyToPermissionSetRequest.h>
 #include <aws/sso-admin/model/TagResourceRequest.h>
 #include <aws/sso-admin/model/UntagResourceRequest.h>
+#include <aws/sso-admin/model/UpdateInstanceAccessControlAttributeConfigurationRequest.h>
 #include <aws/sso-admin/model/UpdatePermissionSetRequest.h>
 
 using namespace Aws;
@@ -175,6 +179,33 @@ void SSOAdminClient::CreateAccountAssignmentAsyncHelper(const CreateAccountAssig
   handler(this, request, CreateAccountAssignment(request), context);
 }
 
+CreateInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::CreateInstanceAccessControlAttributeConfiguration(const CreateInstanceAccessControlAttributeConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateInstanceAccessControlAttributeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateInstanceAccessControlAttributeConfigurationOutcomeCallable SSOAdminClient::CreateInstanceAccessControlAttributeConfigurationCallable(const CreateInstanceAccessControlAttributeConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateInstanceAccessControlAttributeConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInstanceAccessControlAttributeConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::CreateInstanceAccessControlAttributeConfigurationAsync(const CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceAccessControlAttributeConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::CreateInstanceAccessControlAttributeConfigurationAsyncHelper(const CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateInstanceAccessControlAttributeConfiguration(request), context);
+}
+
 CreatePermissionSetOutcome SSOAdminClient::CreatePermissionSet(const CreatePermissionSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -256,6 +287,33 @@ void SSOAdminClient::DeleteInlinePolicyFromPermissionSetAsyncHelper(const Delete
   handler(this, request, DeleteInlinePolicyFromPermissionSet(request), context);
 }
 
+DeleteInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::DeleteInstanceAccessControlAttributeConfiguration(const DeleteInstanceAccessControlAttributeConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteInstanceAccessControlAttributeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteInstanceAccessControlAttributeConfigurationOutcomeCallable SSOAdminClient::DeleteInstanceAccessControlAttributeConfigurationCallable(const DeleteInstanceAccessControlAttributeConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInstanceAccessControlAttributeConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInstanceAccessControlAttributeConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::DeleteInstanceAccessControlAttributeConfigurationAsync(const DeleteInstanceAccessControlAttributeConfigurationRequest& request, const DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceAccessControlAttributeConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::DeleteInstanceAccessControlAttributeConfigurationAsyncHelper(const DeleteInstanceAccessControlAttributeConfigurationRequest& request, const DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteInstanceAccessControlAttributeConfiguration(request), context);
+}
+
 DeletePermissionSetOutcome SSOAdminClient::DeletePermissionSet(const DeletePermissionSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -335,6 +393,33 @@ void SSOAdminClient::DescribeAccountAssignmentDeletionStatusAsync(const Describe
 void SSOAdminClient::DescribeAccountAssignmentDeletionStatusAsyncHelper(const DescribeAccountAssignmentDeletionStatusRequest& request, const DescribeAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAccountAssignmentDeletionStatus(request), context);
+}
+
+DescribeInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::DescribeInstanceAccessControlAttributeConfiguration(const DescribeInstanceAccessControlAttributeConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeInstanceAccessControlAttributeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeInstanceAccessControlAttributeConfigurationOutcomeCallable SSOAdminClient::DescribeInstanceAccessControlAttributeConfigurationCallable(const DescribeInstanceAccessControlAttributeConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInstanceAccessControlAttributeConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInstanceAccessControlAttributeConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::DescribeInstanceAccessControlAttributeConfigurationAsync(const DescribeInstanceAccessControlAttributeConfigurationRequest& request, const DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceAccessControlAttributeConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::DescribeInstanceAccessControlAttributeConfigurationAsyncHelper(const DescribeInstanceAccessControlAttributeConfigurationRequest& request, const DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInstanceAccessControlAttributeConfiguration(request), context);
 }
 
 DescribePermissionSetOutcome SSOAdminClient::DescribePermissionSet(const DescribePermissionSetRequest& request) const
@@ -821,6 +906,33 @@ void SSOAdminClient::UntagResourceAsync(const UntagResourceRequest& request, con
 void SSOAdminClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::UpdateInstanceAccessControlAttributeConfiguration(const UpdateInstanceAccessControlAttributeConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateInstanceAccessControlAttributeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateInstanceAccessControlAttributeConfigurationOutcomeCallable SSOAdminClient::UpdateInstanceAccessControlAttributeConfigurationCallable(const UpdateInstanceAccessControlAttributeConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateInstanceAccessControlAttributeConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInstanceAccessControlAttributeConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::UpdateInstanceAccessControlAttributeConfigurationAsync(const UpdateInstanceAccessControlAttributeConfigurationRequest& request, const UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateInstanceAccessControlAttributeConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::UpdateInstanceAccessControlAttributeConfigurationAsyncHelper(const UpdateInstanceAccessControlAttributeConfigurationRequest& request, const UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateInstanceAccessControlAttributeConfiguration(request), context);
 }
 
 UpdatePermissionSetOutcome SSOAdminClient::UpdatePermissionSet(const UpdatePermissionSetRequest& request) const

@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     DELETE_IN_PROGRESS,
     DELETE_COMPLETE,
-    DELETE_FAILED
+    DELETE_FAILED,
+    UPDATE_IN_PROGRESS,
+    UPDATE_COMPLETE,
+    UPDATE_FAILED
   };
 
 namespace CapacityProviderUpdateStatusMapper

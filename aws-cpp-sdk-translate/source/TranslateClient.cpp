@@ -20,15 +20,20 @@
 #include <aws/translate/TranslateClient.h>
 #include <aws/translate/TranslateEndpoint.h>
 #include <aws/translate/TranslateErrorMarshaller.h>
+#include <aws/translate/model/CreateParallelDataRequest.h>
+#include <aws/translate/model/DeleteParallelDataRequest.h>
 #include <aws/translate/model/DeleteTerminologyRequest.h>
 #include <aws/translate/model/DescribeTextTranslationJobRequest.h>
+#include <aws/translate/model/GetParallelDataRequest.h>
 #include <aws/translate/model/GetTerminologyRequest.h>
 #include <aws/translate/model/ImportTerminologyRequest.h>
+#include <aws/translate/model/ListParallelDataRequest.h>
 #include <aws/translate/model/ListTerminologiesRequest.h>
 #include <aws/translate/model/ListTextTranslationJobsRequest.h>
 #include <aws/translate/model/StartTextTranslationJobRequest.h>
 #include <aws/translate/model/StopTextTranslationJobRequest.h>
 #include <aws/translate/model/TranslateTextRequest.h>
+#include <aws/translate/model/UpdateParallelDataRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -103,6 +108,60 @@ void TranslateClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CreateParallelDataOutcome TranslateClient::CreateParallelData(const CreateParallelDataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateParallelDataOutcomeCallable TranslateClient::CreateParallelDataCallable(const CreateParallelDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateParallelDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateParallelData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::CreateParallelDataAsync(const CreateParallelDataRequest& request, const CreateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateParallelDataAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::CreateParallelDataAsyncHelper(const CreateParallelDataRequest& request, const CreateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateParallelData(request), context);
+}
+
+DeleteParallelDataOutcome TranslateClient::DeleteParallelData(const DeleteParallelDataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteParallelDataOutcomeCallable TranslateClient::DeleteParallelDataCallable(const DeleteParallelDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteParallelDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteParallelData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::DeleteParallelDataAsync(const DeleteParallelDataRequest& request, const DeleteParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteParallelDataAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::DeleteParallelDataAsyncHelper(const DeleteParallelDataRequest& request, const DeleteParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteParallelData(request), context);
+}
+
 DeleteTerminologyOutcome TranslateClient::DeleteTerminology(const DeleteTerminologyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -157,6 +216,33 @@ void TranslateClient::DescribeTextTranslationJobAsyncHelper(const DescribeTextTr
   handler(this, request, DescribeTextTranslationJob(request), context);
 }
 
+GetParallelDataOutcome TranslateClient::GetParallelData(const GetParallelDataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetParallelDataOutcomeCallable TranslateClient::GetParallelDataCallable(const GetParallelDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetParallelDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetParallelData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::GetParallelDataAsync(const GetParallelDataRequest& request, const GetParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetParallelDataAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::GetParallelDataAsyncHelper(const GetParallelDataRequest& request, const GetParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetParallelData(request), context);
+}
+
 GetTerminologyOutcome TranslateClient::GetTerminology(const GetTerminologyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -209,6 +295,33 @@ void TranslateClient::ImportTerminologyAsync(const ImportTerminologyRequest& req
 void TranslateClient::ImportTerminologyAsyncHelper(const ImportTerminologyRequest& request, const ImportTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ImportTerminology(request), context);
+}
+
+ListParallelDataOutcome TranslateClient::ListParallelData(const ListParallelDataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListParallelDataOutcomeCallable TranslateClient::ListParallelDataCallable(const ListParallelDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListParallelDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListParallelData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::ListParallelDataAsync(const ListParallelDataRequest& request, const ListParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListParallelDataAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::ListParallelDataAsyncHelper(const ListParallelDataRequest& request, const ListParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListParallelData(request), context);
 }
 
 ListTerminologiesOutcome TranslateClient::ListTerminologies(const ListTerminologiesRequest& request) const
@@ -344,5 +457,32 @@ void TranslateClient::TranslateTextAsync(const TranslateTextRequest& request, co
 void TranslateClient::TranslateTextAsyncHelper(const TranslateTextRequest& request, const TranslateTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TranslateText(request), context);
+}
+
+UpdateParallelDataOutcome TranslateClient::UpdateParallelData(const UpdateParallelDataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateParallelDataOutcomeCallable TranslateClient::UpdateParallelDataCallable(const UpdateParallelDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateParallelDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateParallelData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::UpdateParallelDataAsync(const UpdateParallelDataRequest& request, const UpdateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateParallelDataAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::UpdateParallelDataAsyncHelper(const UpdateParallelDataRequest& request, const UpdateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateParallelData(request), context);
 }
 

@@ -267,10 +267,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
-     * either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
@@ -287,10 +284,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
-     * either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
@@ -307,10 +301,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
-     * either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
@@ -327,10 +318,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
-     * either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
@@ -347,10 +335,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
-     * either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
@@ -367,10 +352,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Conditional: You must specify
-     * either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
 
@@ -712,64 +694,64 @@ namespace Model
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify
-     * <code>TargetGroupARNs</code> instead.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify
-     * <code>TargetGroupARNs</code> instead.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline bool LoadBalancerNamesHasBeenSet() const { return m_loadBalancerNamesHasBeenSet; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify
-     * <code>TargetGroupARNs</code> instead.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify
-     * <code>TargetGroupARNs</code> instead.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::move(value); }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify
-     * <code>TargetGroupARNs</code> instead.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify
-     * <code>TargetGroupARNs</code> instead.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify
-     * <code>TargetGroupARNs</code> instead.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify
-     * <code>TargetGroupARNs</code> instead.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify
-     * <code>TargetGroupARNs</code> instead.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 

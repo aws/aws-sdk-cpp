@@ -17,7 +17,8 @@ StartSigningJobRequest::StartSigningJobRequest() :
     m_destinationHasBeenSet(false),
     m_profileNameHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_profileOwnerHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String StartSigningJobRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_profileOwnerHasBeenSet)
+  {
+   payload.WithString("profileOwner", m_profileOwner);
 
   }
 

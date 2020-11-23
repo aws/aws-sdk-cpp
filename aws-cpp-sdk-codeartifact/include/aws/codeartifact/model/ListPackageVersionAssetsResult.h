@@ -72,7 +72,9 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
+     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
@@ -82,7 +84,9 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
+     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
+     * </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
 
@@ -92,7 +96,9 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
+     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
+     * </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespace = std::move(value); }
 
@@ -102,7 +108,9 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
+     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
+     * </ul>
      */
     inline void SetNamespace(const char* value) { m_namespace.assign(value); }
 
@@ -112,7 +120,9 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
+     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
+     * </ul>
      */
     inline ListPackageVersionAssetsResult& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
@@ -122,7 +132,9 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
+     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
+     * </ul>
      */
     inline ListPackageVersionAssetsResult& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
@@ -132,7 +144,9 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
+     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
+     * </ul>
      */
     inline ListPackageVersionAssetsResult& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

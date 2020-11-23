@@ -316,6 +316,27 @@ namespace Model
      */
     inline SigningPlatform& WithMaxSizeInMB(int value) { SetMaxSizeInMB(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether revocation is supported for the platform.</p>
+     */
+    inline bool GetRevocationSupported() const{ return m_revocationSupported; }
+
+    /**
+     * <p>Indicates whether revocation is supported for the platform.</p>
+     */
+    inline bool RevocationSupportedHasBeenSet() const { return m_revocationSupportedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether revocation is supported for the platform.</p>
+     */
+    inline void SetRevocationSupported(bool value) { m_revocationSupportedHasBeenSet = true; m_revocationSupported = value; }
+
+    /**
+     * <p>Indicates whether revocation is supported for the platform.</p>
+     */
+    inline SigningPlatform& WithRevocationSupported(bool value) { SetRevocationSupported(value); return *this;}
+
   private:
 
     Aws::String m_platformId;
@@ -341,6 +362,9 @@ namespace Model
 
     int m_maxSizeInMB;
     bool m_maxSizeInMBHasBeenSet;
+
+    bool m_revocationSupported;
+    bool m_revocationSupportedHasBeenSet;
   };
 
 } // namespace Model

@@ -229,41 +229,44 @@ namespace Model
 
   /**
    * <p> AWS CodeArtifact is a fully managed artifact repository compatible with
-   * language-native package managers and build tools such as npm, Apache Maven, and
-   * pip. You can use CodeArtifact to share packages with development teams and pull
-   * packages. Packages can be pulled from both public and CodeArtifact repositories.
-   * You can also create an upstream relationship between a CodeArtifact repository
-   * and another repository, which effectively merges their contents from the point
-   * of view of a package manager client. </p> <p> <b>AWS CodeArtifact Components</b>
-   * </p> <p>Use the information in this guide to help you work with the following
-   * CodeArtifact components:</p> <ul> <li> <p> <b>Repository</b>: A CodeArtifact
-   * repository contains a set of <a
+   * language-native package managers and build tools such as npm, Apache Maven,
+   * NuGet, and pip. You can use CodeArtifact to share packages with development
+   * teams and pull packages. Packages can be pulled from both public and
+   * CodeArtifact repositories. You can also create an upstream relationship between
+   * a CodeArtifact repository and another repository, which effectively merges their
+   * contents from the point of view of a package manager client. </p> <p> <b>AWS
+   * CodeArtifact Components</b> </p> <p>Use the information in this guide to help
+   * you work with the following CodeArtifact components:</p> <ul> <li> <p>
+   * <b>Repository</b>: A CodeArtifact repository contains a set of <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
    * versions</a>, each of which maps to a set of assets, or files. Repositories are
    * polyglot, so a single repository can contain packages of any supported type.
    * Each repository exposes endpoints for fetching and publishing packages using
-   * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b>
-   * <code>mvn</code> </b>), and <b> <code>pip</code> </b>.</p> </li> <li> <p>
-   * <b>Domain</b>: Repositories are aggregated into a higher-level entity known as a
-   * <i>domain</i>. All package assets and metadata are stored in the domain, but are
-   * consumed through repositories. A given package asset, such as a Maven JAR file,
-   * is stored once per domain, no matter how many repositories it's present in. All
-   * of the assets and metadata in a domain are encrypted with the same customer
-   * master key (CMK) stored in AWS Key Management Service (AWS KMS).</p> <p>Each
-   * repository is a member of a single domain and can't be moved to a different
-   * domain.</p> <p>The domain allows organizational policy to be applied across
-   * multiple repositories, such as which accounts can access repositories in the
-   * domain, and which public repositories can be used as sources of packages.</p>
-   * <p>Although an organization can have multiple domains, we recommend a single
-   * production domain that contains all published artifacts so that teams can find
-   * and share packages across their organization.</p> </li> <li> <p> <b>Package</b>:
-   * A <i>package</i> is a bundle of software and the metadata required to resolve
-   * dependencies and install the software. CodeArtifact supports <a
+   * tools like the <b> <code>npm</code> </b> CLI, the <b> <code>NuGet</code> </b>
+   * CLI, the Maven CLI (<b> <code>mvn</code> </b>), and <b> <code>pip</code>
+   * </b>.</p> </li> <li> <p> <b>Domain</b>: Repositories are aggregated into a
+   * higher-level entity known as a <i>domain</i>. All package assets and metadata
+   * are stored in the domain, but are consumed through repositories. A given package
+   * asset, such as a Maven JAR file, is stored once per domain, no matter how many
+   * repositories it's present in. All of the assets and metadata in a domain are
+   * encrypted with the same customer master key (CMK) stored in AWS Key Management
+   * Service (AWS KMS).</p> <p>Each repository is a member of a single domain and
+   * can't be moved to a different domain.</p> <p>The domain allows organizational
+   * policy to be applied across multiple repositories, such as which accounts can
+   * access repositories in the domain, and which public repositories can be used as
+   * sources of packages.</p> <p>Although an organization can have multiple domains,
+   * we recommend a single production domain that contains all published artifacts so
+   * that teams can find and share packages across their organization.</p> </li> <li>
+   * <p> <b>Package</b>: A <i>package</i> is a bundle of software and the metadata
+   * required to resolve dependencies and install the software. CodeArtifact supports
+   * <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
    * <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
    * and <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>
    * package formats.</p> <p>In CodeArtifact, a package consists of:</p> <ul> <li>
    * <p>A <i>name</i> (for example, <code>webpack</code> is the name of a popular npm
    * package)</p> </li> <li> <p>An optional namespace (for example,
@@ -325,14 +328,15 @@ namespace Model
    * <p> <code>GetRepositoryEndpoint</code>: Returns the endpoint of a repository for
    * a specific package format. A repository has one endpoint for each package
    * format: </p> <ul> <li> <p> <code>npm</code> </p> </li> <li> <p>
-   * <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li> </ul> </li>
-   * <li> <p> <code>GetRepositoryPermissionsPolicy</code>: Returns the resource
-   * policy that is set on a repository. </p> </li> <li> <p>
-   * <code>ListDomains</code>: Returns a list of <code>DomainSummary</code> objects.
-   * Each returned <code>DomainSummary</code> object contains information about a
-   * domain.</p> </li> <li> <p> <code>ListPackages</code>: Lists the packages in a
-   * repository.</p> </li> <li> <p> <code>ListPackageVersionAssets</code>: Lists the
-   * assets for a given package version.</p> </li> <li> <p>
+   * <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li> <li> <p>
+   * <code>nuget</code> </p> </li> </ul> </li> <li> <p>
+   * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is
+   * set on a repository. </p> </li> <li> <p> <code>ListDomains</code>: Returns a
+   * list of <code>DomainSummary</code> objects. Each returned
+   * <code>DomainSummary</code> object contains information about a domain.</p> </li>
+   * <li> <p> <code>ListPackages</code>: Lists the packages in a repository.</p>
+   * </li> <li> <p> <code>ListPackageVersionAssets</code>: Lists the assets for a
+   * given package version.</p> </li> <li> <p>
    * <code>ListPackageVersionDependencies</code>: Returns a list of the direct
    * dependencies for a package version. </p> </li> <li> <p>
    * <code>ListPackageVersions</code>: Returns a list of package versions for a
@@ -340,13 +344,17 @@ namespace Model
    * <code>ListRepositories</code>: Returns a list of repositories owned by the AWS
    * account that called this method.</p> </li> <li> <p>
    * <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a
-   * domain.</p> </li> <li> <p> <code>PutDomainPermissionsPolicy</code>: Attaches a
-   * resource policy to a domain.</p> </li> <li> <p>
-   * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a
-   * repository that specifies permissions to access it. </p> </li> <li> <p>
-   * <code>UpdatePackageVersionsStatus</code>: Updates the status of one or more
-   * versions of a package.</p> </li> <li> <p> <code>UpdateRepository</code>: Updates
-   * the properties of a repository.</p> </li> </ul>
+   * domain.</p> </li> <li> <p> <code>ListTagsForResource</code>: Returns a list of
+   * the tags associated with a resource.</p> </li> <li> <p>
+   * <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a
+   * domain.</p> </li> <li> <p> <code>PutRepositoryPermissionsPolicy</code>: Sets the
+   * resource policy on a repository that specifies permissions to access it. </p>
+   * </li> <li> <p> <code>TagResource</code>: Adds or updates tags for a
+   * resource.</p> </li> <li> <p> <code>UntagResource</code>: Removes a tag from a
+   * resource. </p> </li> <li> <p> <code>UpdatePackageVersionsStatus</code>: Updates
+   * the status of one or more versions of a package.</p> </li> <li> <p>
+   * <code>UpdateRepository</code>: Updates the properties of a repository.</p> </li>
+   * </ul>
    */
   class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClient
   {
@@ -1072,7 +1080,8 @@ namespace Model
          * <p> Returns the endpoint of a repository for a specific package format. A
          * repository has one endpoint for each package format: </p> <ul> <li> <p>
          * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-         * <code>maven</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">AWS
          * API Reference</a></p>
          */
@@ -1082,7 +1091,8 @@ namespace Model
          * <p> Returns the endpoint of a repository for a specific package format. A
          * repository has one endpoint for each package format: </p> <ul> <li> <p>
          * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-         * <code>maven</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">AWS
          * API Reference</a></p>
          *
@@ -1094,7 +1104,8 @@ namespace Model
          * <p> Returns the endpoint of a repository for a specific package format. A
          * repository has one endpoint for each package format: </p> <ul> <li> <p>
          * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-         * <code>maven</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>maven</code> </p> </li> <li> <p> <code>nuget</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">AWS
          * API Reference</a></p>
          *

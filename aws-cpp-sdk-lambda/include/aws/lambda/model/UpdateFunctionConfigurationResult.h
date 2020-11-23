@@ -923,6 +923,78 @@ namespace Model
      */
     inline UpdateFunctionConfigurationResult& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigs.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline const Aws::String& GetSigningProfileVersionArn() const{ return m_signingProfileVersionArn; }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(const Aws::String& value) { m_signingProfileVersionArn = value; }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(Aws::String&& value) { m_signingProfileVersionArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(const char* value) { m_signingProfileVersionArn.assign(value); }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithSigningProfileVersionArn(const Aws::String& value) { SetSigningProfileVersionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithSigningProfileVersionArn(Aws::String&& value) { SetSigningProfileVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithSigningProfileVersionArn(const char* value) { SetSigningProfileVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline const Aws::String& GetSigningJobArn() const{ return m_signingJobArn; }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline void SetSigningJobArn(const Aws::String& value) { m_signingJobArn = value; }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline void SetSigningJobArn(Aws::String&& value) { m_signingJobArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline void SetSigningJobArn(const char* value) { m_signingJobArn.assign(value); }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithSigningJobArn(const Aws::String& value) { SetSigningJobArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithSigningJobArn(Aws::String&& value) { SetSigningJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithSigningJobArn(const char* value) { SetSigningJobArn(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -978,6 +1050,10 @@ namespace Model
     LastUpdateStatusReasonCode m_lastUpdateStatusReasonCode;
 
     Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
+
+    Aws::String m_signingProfileVersionArn;
+
+    Aws::String m_signingJobArn;
   };
 
 } // namespace Model

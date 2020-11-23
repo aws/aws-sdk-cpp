@@ -15,14 +15,17 @@
 #include <aws/lambda/model/PolicyLengthExceededException.h>
 #include <aws/lambda/model/KMSNotFoundException.h>
 #include <aws/lambda/model/PreconditionFailedException.h>
+#include <aws/lambda/model/CodeVerificationFailedException.h>
 #include <aws/lambda/model/ResourceInUseException.h>
 #include <aws/lambda/model/SubnetIPAddressLimitReachedException.h>
 #include <aws/lambda/model/InvalidRequestContentException.h>
 #include <aws/lambda/model/EC2AccessDeniedException.h>
 #include <aws/lambda/model/RequestTooLargeException.h>
+#include <aws/lambda/model/InvalidCodeSignatureException.h>
 #include <aws/lambda/model/EFSIOException.h>
 #include <aws/lambda/model/InvalidSecurityGroupIDException.h>
 #include <aws/lambda/model/InvalidSubnetIDException.h>
+#include <aws/lambda/model/CodeSigningConfigNotFoundException.h>
 #include <aws/lambda/model/EFSMountTimeoutException.h>
 #include <aws/lambda/model/InvalidRuntimeException.h>
 #include <aws/lambda/model/EC2UnexpectedException.h>
@@ -101,6 +104,12 @@ template<> AWS_LAMBDA_API PreconditionFailedException LambdaError::GetModeledErr
   return PreconditionFailedException(this->GetJsonPayload().View());
 }
 
+template<> AWS_LAMBDA_API CodeVerificationFailedException LambdaError::GetModeledError()
+{
+  assert(this->GetErrorType() == LambdaErrors::CODE_VERIFICATION_FAILED);
+  return CodeVerificationFailedException(this->GetJsonPayload().View());
+}
+
 template<> AWS_LAMBDA_API ResourceInUseException LambdaError::GetModeledError()
 {
   assert(this->GetErrorType() == LambdaErrors::RESOURCE_IN_USE);
@@ -131,6 +140,12 @@ template<> AWS_LAMBDA_API RequestTooLargeException LambdaError::GetModeledError(
   return RequestTooLargeException(this->GetJsonPayload().View());
 }
 
+template<> AWS_LAMBDA_API InvalidCodeSignatureException LambdaError::GetModeledError()
+{
+  assert(this->GetErrorType() == LambdaErrors::INVALID_CODE_SIGNATURE);
+  return InvalidCodeSignatureException(this->GetJsonPayload().View());
+}
+
 template<> AWS_LAMBDA_API EFSIOException LambdaError::GetModeledError()
 {
   assert(this->GetErrorType() == LambdaErrors::E_F_S_I_O);
@@ -147,6 +162,12 @@ template<> AWS_LAMBDA_API InvalidSubnetIDException LambdaError::GetModeledError(
 {
   assert(this->GetErrorType() == LambdaErrors::INVALID_SUBNET_I_D);
   return InvalidSubnetIDException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LAMBDA_API CodeSigningConfigNotFoundException LambdaError::GetModeledError()
+{
+  assert(this->GetErrorType() == LambdaErrors::CODE_SIGNING_CONFIG_NOT_FOUND);
+  return CodeSigningConfigNotFoundException(this->GetJsonPayload().View());
 }
 
 template<> AWS_LAMBDA_API EFSMountTimeoutException LambdaError::GetModeledError()
@@ -243,14 +264,17 @@ static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalid
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
+static const int CODE_VERIFICATION_FAILED_HASH = HashingUtils::HashString("CodeVerificationFailedException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashString("SubnetIPAddressLimitReachedException");
 static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
 static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
 static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
+static const int INVALID_CODE_SIGNATURE_HASH = HashingUtils::HashString("InvalidCodeSignatureException");
 static const int E_F_S_I_O_HASH = HashingUtils::HashString("EFSIOException");
 static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
 static const int INVALID_SUBNET_I_D_HASH = HashingUtils::HashString("InvalidSubnetIDException");
+static const int CODE_SIGNING_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("CodeSigningConfigNotFoundException");
 static const int E_F_S_MOUNT_TIMEOUT_HASH = HashingUtils::HashString("EFSMountTimeoutException");
 static const int INVALID_RUNTIME_HASH = HashingUtils::HashString("InvalidRuntimeException");
 static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
@@ -299,6 +323,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PRECONDITION_FAILED), false);
   }
+  else if (hashCode == CODE_VERIFICATION_FAILED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_VERIFICATION_FAILED), false);
+  }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_IN_USE), false);
@@ -319,6 +347,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), false);
   }
+  else if (hashCode == INVALID_CODE_SIGNATURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_CODE_SIGNATURE), false);
+  }
   else if (hashCode == E_F_S_I_O_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_I_O), false);
@@ -330,6 +362,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_SUBNET_I_D_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SUBNET_I_D), false);
+  }
+  else if (hashCode == CODE_SIGNING_CONFIG_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_SIGNING_CONFIG_NOT_FOUND), false);
   }
   else if (hashCode == E_F_S_MOUNT_TIMEOUT_HASH)
   {

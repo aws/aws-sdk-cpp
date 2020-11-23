@@ -33,10 +33,12 @@ template<> AWS_TRANSLATE_API DetectedLanguageLowConfidenceException TranslateErr
 namespace TranslateErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int UNSUPPORTED_LANGUAGE_PAIR_HASH = HashingUtils::HashString("UnsupportedLanguagePairException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int DETECTED_LANGUAGE_LOW_CONFIDENCE_HASH = HashingUtils::HashString("DetectedLanguageLowConfidenceException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilterException");
 static const int TEXT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TextSizeLimitExceededException");
@@ -47,7 +49,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == UNSUPPORTED_LANGUAGE_PAIR_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::CONFLICT), false);
+  }
+  else if (hashCode == UNSUPPORTED_LANGUAGE_PAIR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::UNSUPPORTED_LANGUAGE_PAIR), false);
   }
@@ -62,6 +68,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::LIMIT_EXCEEDED), true);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {

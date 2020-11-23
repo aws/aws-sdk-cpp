@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The encryption key used to encrypt the custom terminologies used by Amazon
-   * Translate.</p><p><h3>See Also:</h3>   <a
+   * <p>The encryption key used to encrypt this object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/EncryptionKey">AWS
    * API Reference</a></p>
    */

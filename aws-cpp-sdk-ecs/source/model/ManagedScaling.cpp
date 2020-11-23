@@ -26,7 +26,9 @@ ManagedScaling::ManagedScaling() :
     m_minimumScalingStepSize(0),
     m_minimumScalingStepSizeHasBeenSet(false),
     m_maximumScalingStepSize(0),
-    m_maximumScalingStepSizeHasBeenSet(false)
+    m_maximumScalingStepSizeHasBeenSet(false),
+    m_instanceWarmupPeriod(0),
+    m_instanceWarmupPeriodHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ ManagedScaling::ManagedScaling(JsonView jsonValue) :
     m_minimumScalingStepSize(0),
     m_minimumScalingStepSizeHasBeenSet(false),
     m_maximumScalingStepSize(0),
-    m_maximumScalingStepSizeHasBeenSet(false)
+    m_maximumScalingStepSizeHasBeenSet(false),
+    m_instanceWarmupPeriod(0),
+    m_instanceWarmupPeriodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +77,13 @@ ManagedScaling& ManagedScaling::operator =(JsonView jsonValue)
     m_maximumScalingStepSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceWarmupPeriod"))
+  {
+    m_instanceWarmupPeriod = jsonValue.GetInteger("instanceWarmupPeriod");
+
+    m_instanceWarmupPeriodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -100,6 +111,12 @@ JsonValue ManagedScaling::Jsonize() const
   if(m_maximumScalingStepSizeHasBeenSet)
   {
    payload.WithInteger("maximumScalingStepSize", m_maximumScalingStepSize);
+
+  }
+
+  if(m_instanceWarmupPeriodHasBeenSet)
+  {
+   payload.WithInteger("instanceWarmupPeriod", m_instanceWarmupPeriod);
 
   }
 

@@ -19,6 +19,7 @@ namespace Model
 {
 
 DeploymentConfiguration::DeploymentConfiguration() : 
+    m_deploymentCircuitBreakerHasBeenSet(false),
     m_maximumPercent(0),
     m_maximumPercentHasBeenSet(false),
     m_minimumHealthyPercent(0),
@@ -27,6 +28,7 @@ DeploymentConfiguration::DeploymentConfiguration() :
 }
 
 DeploymentConfiguration::DeploymentConfiguration(JsonView jsonValue) : 
+    m_deploymentCircuitBreakerHasBeenSet(false),
     m_maximumPercent(0),
     m_maximumPercentHasBeenSet(false),
     m_minimumHealthyPercent(0),
@@ -37,6 +39,13 @@ DeploymentConfiguration::DeploymentConfiguration(JsonView jsonValue) :
 
 DeploymentConfiguration& DeploymentConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("deploymentCircuitBreaker"))
+  {
+    m_deploymentCircuitBreaker = jsonValue.GetObject("deploymentCircuitBreaker");
+
+    m_deploymentCircuitBreakerHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("maximumPercent"))
   {
     m_maximumPercent = jsonValue.GetInteger("maximumPercent");
@@ -57,6 +66,12 @@ DeploymentConfiguration& DeploymentConfiguration::operator =(JsonView jsonValue)
 JsonValue DeploymentConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_deploymentCircuitBreakerHasBeenSet)
+  {
+   payload.WithObject("deploymentCircuitBreaker", m_deploymentCircuitBreaker.Jsonize());
+
+  }
 
   if(m_maximumPercentHasBeenSet)
   {

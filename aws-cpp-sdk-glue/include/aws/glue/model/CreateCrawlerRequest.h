@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/SchemaChangePolicy.h>
 #include <aws/glue/model/RecrawlPolicy.h>
+#include <aws/glue/model/LineageConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -489,6 +490,37 @@ namespace Model
 
 
     /**
+     * <p>Specifies data lineage configuration settings for the crawler.</p>
+     */
+    inline const LineageConfiguration& GetLineageConfiguration() const{ return m_lineageConfiguration; }
+
+    /**
+     * <p>Specifies data lineage configuration settings for the crawler.</p>
+     */
+    inline bool LineageConfigurationHasBeenSet() const { return m_lineageConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies data lineage configuration settings for the crawler.</p>
+     */
+    inline void SetLineageConfiguration(const LineageConfiguration& value) { m_lineageConfigurationHasBeenSet = true; m_lineageConfiguration = value; }
+
+    /**
+     * <p>Specifies data lineage configuration settings for the crawler.</p>
+     */
+    inline void SetLineageConfiguration(LineageConfiguration&& value) { m_lineageConfigurationHasBeenSet = true; m_lineageConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies data lineage configuration settings for the crawler.</p>
+     */
+    inline CreateCrawlerRequest& WithLineageConfiguration(const LineageConfiguration& value) { SetLineageConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies data lineage configuration settings for the crawler.</p>
+     */
+    inline CreateCrawlerRequest& WithLineageConfiguration(LineageConfiguration&& value) { SetLineageConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
@@ -737,6 +769,9 @@ namespace Model
 
     RecrawlPolicy m_recrawlPolicy;
     bool m_recrawlPolicyHasBeenSet;
+
+    LineageConfiguration m_lineageConfiguration;
+    bool m_lineageConfigurationHasBeenSet;
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet;

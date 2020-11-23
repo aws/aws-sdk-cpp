@@ -50,8 +50,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
 
@@ -60,8 +60,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
@@ -70,8 +70,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
@@ -80,8 +80,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
 
@@ -90,8 +90,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
 
@@ -100,8 +100,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
 
@@ -110,8 +110,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
 
@@ -120,8 +120,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
 
@@ -132,8 +132,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
 
@@ -143,8 +143,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
@@ -154,8 +154,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
@@ -165,8 +165,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
 
@@ -176,8 +176,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
 
@@ -187,8 +187,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
 
@@ -198,8 +198,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
 
@@ -209,8 +209,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
      * API operation. New launch templates can be created using the Amazon EC2 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-     * API. You must specify either a <code>LaunchTemplateId</code> or a
-     * <code>LaunchTemplateName</code>.</p>
+     * API. </p> <p>Conditional: You must specify either a
+     * <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
 

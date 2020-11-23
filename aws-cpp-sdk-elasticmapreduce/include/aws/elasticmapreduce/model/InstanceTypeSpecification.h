@@ -118,77 +118,77 @@ namespace Model
 
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline InstanceTypeSpecification& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline InstanceTypeSpecification& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline InstanceTypeSpecification& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
+     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
      * specifies 20%).</p>
      */
     inline double GetBidPriceAsPercentageOfOnDemandPrice() const{ return m_bidPriceAsPercentageOfOnDemandPrice; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
+     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
      * specifies 20%).</p>
      */
     inline bool BidPriceAsPercentageOfOnDemandPriceHasBeenSet() const { return m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
+     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
      * specifies 20%).</p>
      */
     inline void SetBidPriceAsPercentageOfOnDemandPrice(double value) { m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = true; m_bidPriceAsPercentageOfOnDemandPrice = value; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
+     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
      * specifies 20%).</p>
      */
@@ -253,50 +253,50 @@ namespace Model
 
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
-     * instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
+     * each instance as defined by <code>InstanceType</code>.</p>
      */
     inline const Aws::Vector<EbsBlockDevice>& GetEbsBlockDevices() const{ return m_ebsBlockDevices; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
-     * instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
+     * each instance as defined by <code>InstanceType</code>.</p>
      */
     inline bool EbsBlockDevicesHasBeenSet() const { return m_ebsBlockDevicesHasBeenSet; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
-     * instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
+     * each instance as defined by <code>InstanceType</code>.</p>
      */
     inline void SetEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = value; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
-     * instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
+     * each instance as defined by <code>InstanceType</code>.</p>
      */
     inline void SetEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = std::move(value); }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
-     * instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
+     * each instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& WithEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { SetEbsBlockDevices(value); return *this;}
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
-     * instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
+     * each instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& WithEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { SetEbsBlockDevices(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
-     * instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
+     * each instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& AddEbsBlockDevices(const EbsBlockDevice& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(value); return *this; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
-     * instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
+     * each instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(std::move(value)); return *this; }
 

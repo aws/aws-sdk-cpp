@@ -47,7 +47,9 @@ enum class TranslateErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DETECTED_LANGUAGE_LOW_CONFIDENCE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
+  DETECTED_LANGUAGE_LOW_CONFIDENCE,
   INTERNAL_SERVER,
   INVALID_FILTER,
   INVALID_REQUEST,

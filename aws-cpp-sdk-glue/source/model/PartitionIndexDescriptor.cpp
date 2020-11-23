@@ -22,7 +22,8 @@ PartitionIndexDescriptor::PartitionIndexDescriptor() :
     m_indexNameHasBeenSet(false),
     m_keysHasBeenSet(false),
     m_indexStatus(PartitionIndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false)
+    m_indexStatusHasBeenSet(false),
+    m_backfillErrorsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ PartitionIndexDescriptor::PartitionIndexDescriptor(JsonView jsonValue) :
     m_indexNameHasBeenSet(false),
     m_keysHasBeenSet(false),
     m_indexStatus(PartitionIndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false)
+    m_indexStatusHasBeenSet(false),
+    m_backfillErrorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,16 @@ PartitionIndexDescriptor& PartitionIndexDescriptor::operator =(JsonView jsonValu
     m_indexStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BackfillErrors"))
+  {
+    Array<JsonView> backfillErrorsJsonList = jsonValue.GetArray("BackfillErrors");
+    for(unsigned backfillErrorsIndex = 0; backfillErrorsIndex < backfillErrorsJsonList.GetLength(); ++backfillErrorsIndex)
+    {
+      m_backfillErrors.push_back(backfillErrorsJsonList[backfillErrorsIndex].AsObject());
+    }
+    m_backfillErrorsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +100,17 @@ JsonValue PartitionIndexDescriptor::Jsonize() const
   if(m_indexStatusHasBeenSet)
   {
    payload.WithString("IndexStatus", PartitionIndexStatusMapper::GetNameForPartitionIndexStatus(m_indexStatus));
+  }
+
+  if(m_backfillErrorsHasBeenSet)
+  {
+   Array<JsonValue> backfillErrorsJsonList(m_backfillErrors.size());
+   for(unsigned backfillErrorsIndex = 0; backfillErrorsIndex < backfillErrorsJsonList.GetLength(); ++backfillErrorsIndex)
+   {
+     backfillErrorsJsonList[backfillErrorsIndex].AsObject(m_backfillErrors[backfillErrorsIndex].Jsonize());
+   }
+   payload.WithArray("BackfillErrors", std::move(backfillErrorsJsonList));
+
   }
 
   return payload;

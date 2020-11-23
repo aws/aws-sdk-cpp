@@ -63,6 +63,7 @@
 #include <aws/ecs/model/SubmitTaskStateChangeRequest.h>
 #include <aws/ecs/model/TagResourceRequest.h>
 #include <aws/ecs/model/UntagResourceRequest.h>
+#include <aws/ecs/model/UpdateCapacityProviderRequest.h>
 #include <aws/ecs/model/UpdateClusterSettingsRequest.h>
 #include <aws/ecs/model/UpdateContainerAgentRequest.h>
 #include <aws/ecs/model/UpdateContainerInstancesStateRequest.h>
@@ -1302,6 +1303,33 @@ void ECSClient::UntagResourceAsync(const UntagResourceRequest& request, const Un
 void ECSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateCapacityProviderOutcome ECSClient::UpdateCapacityProvider(const UpdateCapacityProviderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateCapacityProviderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateCapacityProviderOutcomeCallable ECSClient::UpdateCapacityProviderCallable(const UpdateCapacityProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCapacityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCapacityProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::UpdateCapacityProviderAsync(const UpdateCapacityProviderRequest& request, const UpdateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateCapacityProviderAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::UpdateCapacityProviderAsyncHelper(const UpdateCapacityProviderRequest& request, const UpdateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateCapacityProvider(request), context);
 }
 
 UpdateClusterSettingsOutcome ECSClient::UpdateClusterSettings(const UpdateClusterSettingsRequest& request) const

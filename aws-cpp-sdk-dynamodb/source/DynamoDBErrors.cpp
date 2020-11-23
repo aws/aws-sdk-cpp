@@ -43,14 +43,15 @@ static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseE
 static const int INVALID_RESTORE_TIME_HASH = HashingUtils::HashString("InvalidRestoreTimeException");
 static const int ITEM_COLLECTION_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ItemCollectionSizeLimitExceededException");
 static const int BACKUP_NOT_FOUND_HASH = HashingUtils::HashString("BackupNotFoundException");
-static const int POINT_IN_TIME_RECOVERY_UNAVAILABLE_HASH = HashingUtils::HashString("PointInTimeRecoveryUnavailableException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
+static const int POINT_IN_TIME_RECOVERY_UNAVAILABLE_HASH = HashingUtils::HashString("PointInTimeRecoveryUnavailableException");
 static const int TABLE_ALREADY_EXISTS_HASH = HashingUtils::HashString("TableAlreadyExistsException");
 static const int EXPORT_CONFLICT_HASH = HashingUtils::HashString("ExportConflictException");
 static const int GLOBAL_TABLE_ALREADY_EXISTS_HASH = HashingUtils::HashString("GlobalTableAlreadyExistsException");
 static const int INVALID_EXPORT_TIME_HASH = HashingUtils::HashString("InvalidExportTimeException");
 static const int REQUEST_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RequestLimitExceeded");
 static const int GLOBAL_TABLE_NOT_FOUND_HASH = HashingUtils::HashString("GlobalTableNotFoundException");
+static const int DUPLICATE_ITEM_HASH = HashingUtils::HashString("DuplicateItemException");
 static const int INDEX_NOT_FOUND_HASH = HashingUtils::HashString("IndexNotFoundException");
 
 
@@ -126,13 +127,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::BACKUP_NOT_FOUND), false);
   }
-  else if (hashCode == POINT_IN_TIME_RECOVERY_UNAVAILABLE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::POINT_IN_TIME_RECOVERY_UNAVAILABLE), false);
-  }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+  }
+  else if (hashCode == POINT_IN_TIME_RECOVERY_UNAVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::POINT_IN_TIME_RECOVERY_UNAVAILABLE), false);
   }
   else if (hashCode == TABLE_ALREADY_EXISTS_HASH)
   {
@@ -157,6 +158,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == GLOBAL_TABLE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::GLOBAL_TABLE_NOT_FOUND), false);
+  }
+  else if (hashCode == DUPLICATE_ITEM_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::DUPLICATE_ITEM), false);
   }
   else if (hashCode == INDEX_NOT_FOUND_HASH)
   {

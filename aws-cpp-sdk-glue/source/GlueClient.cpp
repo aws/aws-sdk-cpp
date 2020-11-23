@@ -43,6 +43,7 @@
 #include <aws/glue/model/CreateJobRequest.h>
 #include <aws/glue/model/CreateMLTransformRequest.h>
 #include <aws/glue/model/CreatePartitionRequest.h>
+#include <aws/glue/model/CreatePartitionIndexRequest.h>
 #include <aws/glue/model/CreateRegistryRequest.h>
 #include <aws/glue/model/CreateSchemaRequest.h>
 #include <aws/glue/model/CreateScriptRequest.h>
@@ -61,6 +62,7 @@
 #include <aws/glue/model/DeleteJobRequest.h>
 #include <aws/glue/model/DeleteMLTransformRequest.h>
 #include <aws/glue/model/DeletePartitionRequest.h>
+#include <aws/glue/model/DeletePartitionIndexRequest.h>
 #include <aws/glue/model/DeleteRegistryRequest.h>
 #include <aws/glue/model/DeleteResourcePolicyRequest.h>
 #include <aws/glue/model/DeleteSchemaRequest.h>
@@ -870,6 +872,33 @@ void GlueClient::CreatePartitionAsyncHelper(const CreatePartitionRequest& reques
   handler(this, request, CreatePartition(request), context);
 }
 
+CreatePartitionIndexOutcome GlueClient::CreatePartitionIndex(const CreatePartitionIndexRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreatePartitionIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePartitionIndexOutcomeCallable GlueClient::CreatePartitionIndexCallable(const CreatePartitionIndexRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePartitionIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePartitionIndex(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CreatePartitionIndexAsync(const CreatePartitionIndexRequest& request, const CreatePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePartitionIndexAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CreatePartitionIndexAsyncHelper(const CreatePartitionIndexRequest& request, const CreatePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePartitionIndex(request), context);
+}
+
 CreateRegistryOutcome GlueClient::CreateRegistry(const CreateRegistryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1354,6 +1383,33 @@ void GlueClient::DeletePartitionAsync(const DeletePartitionRequest& request, con
 void GlueClient::DeletePartitionAsyncHelper(const DeletePartitionRequest& request, const DeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePartition(request), context);
+}
+
+DeletePartitionIndexOutcome GlueClient::DeletePartitionIndex(const DeletePartitionIndexRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeletePartitionIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePartitionIndexOutcomeCallable GlueClient::DeletePartitionIndexCallable(const DeletePartitionIndexRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePartitionIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePartitionIndex(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeletePartitionIndexAsync(const DeletePartitionIndexRequest& request, const DeletePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePartitionIndexAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeletePartitionIndexAsyncHelper(const DeletePartitionIndexRequest& request, const DeletePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePartitionIndex(request), context);
 }
 
 DeleteRegistryOutcome GlueClient::DeleteRegistry(const DeleteRegistryRequest& request) const

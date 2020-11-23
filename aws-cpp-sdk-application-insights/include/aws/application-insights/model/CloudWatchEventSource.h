@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     EC2,
     CODE_DEPLOY,
-    HEALTH
+    HEALTH,
+    RDS
   };
 
 namespace CloudWatchEventSourceMapper

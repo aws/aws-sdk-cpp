@@ -23,19 +23,24 @@
 #include <aws/lambda/model/AddLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/AddPermissionRequest.h>
 #include <aws/lambda/model/CreateAliasRequest.h>
+#include <aws/lambda/model/CreateCodeSigningConfigRequest.h>
 #include <aws/lambda/model/CreateEventSourceMappingRequest.h>
 #include <aws/lambda/model/CreateFunctionRequest.h>
 #include <aws/lambda/model/DeleteAliasRequest.h>
+#include <aws/lambda/model/DeleteCodeSigningConfigRequest.h>
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
 #include <aws/lambda/model/DeleteFunctionRequest.h>
+#include <aws/lambda/model/DeleteFunctionCodeSigningConfigRequest.h>
 #include <aws/lambda/model/DeleteFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/DeleteFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/DeleteLayerVersionRequest.h>
 #include <aws/lambda/model/DeleteProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
 #include <aws/lambda/model/GetAliasRequest.h>
+#include <aws/lambda/model/GetCodeSigningConfigRequest.h>
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/GetFunctionRequest.h>
+#include <aws/lambda/model/GetFunctionCodeSigningConfigRequest.h>
 #include <aws/lambda/model/GetFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/GetFunctionConfigurationRequest.h>
 #include <aws/lambda/model/GetFunctionEventInvokeConfigRequest.h>
@@ -46,9 +51,11 @@
 #include <aws/lambda/model/GetProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/lambda/model/ListAliasesRequest.h>
+#include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
 #include <aws/lambda/model/ListFunctionEventInvokeConfigsRequest.h>
 #include <aws/lambda/model/ListFunctionsRequest.h>
+#include <aws/lambda/model/ListFunctionsByCodeSigningConfigRequest.h>
 #include <aws/lambda/model/ListLayerVersionsRequest.h>
 #include <aws/lambda/model/ListLayersRequest.h>
 #include <aws/lambda/model/ListProvisionedConcurrencyConfigsRequest.h>
@@ -56,6 +63,7 @@
 #include <aws/lambda/model/ListVersionsByFunctionRequest.h>
 #include <aws/lambda/model/PublishLayerVersionRequest.h>
 #include <aws/lambda/model/PublishVersionRequest.h>
+#include <aws/lambda/model/PutFunctionCodeSigningConfigRequest.h>
 #include <aws/lambda/model/PutFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/PutFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigRequest.h>
@@ -64,6 +72,7 @@
 #include <aws/lambda/model/TagResourceRequest.h>
 #include <aws/lambda/model/UntagResourceRequest.h>
 #include <aws/lambda/model/UpdateAliasRequest.h>
+#include <aws/lambda/model/UpdateCodeSigningConfigRequest.h>
 #include <aws/lambda/model/UpdateEventSourceMappingRequest.h>
 #include <aws/lambda/model/UpdateFunctionCodeRequest.h>
 #include <aws/lambda/model/UpdateFunctionConfigurationRequest.h>
@@ -251,6 +260,33 @@ void LambdaClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, con
   handler(this, request, CreateAlias(request), context);
 }
 
+CreateCodeSigningConfigOutcome LambdaClient::CreateCodeSigningConfig(const CreateCodeSigningConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-04-22/code-signing-configs/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateCodeSigningConfigOutcomeCallable LambdaClient::CreateCodeSigningConfigCallable(const CreateCodeSigningConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCodeSigningConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::CreateCodeSigningConfigAsync(const CreateCodeSigningConfigRequest& request, const CreateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCodeSigningConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::CreateCodeSigningConfigAsyncHelper(const CreateCodeSigningConfigRequest& request, const CreateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCodeSigningConfig(request), context);
+}
+
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -345,6 +381,39 @@ void LambdaClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, con
   handler(this, request, DeleteAlias(request), context);
 }
 
+DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const DeleteCodeSigningConfigRequest& request) const
+{
+  if (!request.CodeSigningConfigArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCodeSigningConfig", "Required field: CodeSigningConfigArn, is not set");
+    return DeleteCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-04-22/code-signing-configs/";
+  ss << request.GetCodeSigningConfigArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteCodeSigningConfigOutcomeCallable LambdaClient::DeleteCodeSigningConfigCallable(const DeleteCodeSigningConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCodeSigningConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::DeleteCodeSigningConfigAsync(const DeleteCodeSigningConfigRequest& request, const DeleteCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCodeSigningConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::DeleteCodeSigningConfigAsyncHelper(const DeleteCodeSigningConfigRequest& request, const DeleteCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCodeSigningConfig(request), context);
+}
+
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const
 {
   if (!request.UUIDHasBeenSet())
@@ -409,6 +478,40 @@ void LambdaClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, con
 void LambdaClient::DeleteFunctionAsyncHelper(const DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteFunction(request), context);
+}
+
+DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningConfig(const DeleteFunctionCodeSigningConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunctionCodeSigningConfig", "Required field: FunctionName, is not set");
+    return DeleteFunctionCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-06-30/functions/";
+  ss << request.GetFunctionName();
+  ss << "/code-signing-config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteFunctionCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFunctionCodeSigningConfigOutcomeCallable LambdaClient::DeleteFunctionCodeSigningConfigCallable(const DeleteFunctionCodeSigningConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFunctionCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunctionCodeSigningConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::DeleteFunctionCodeSigningConfigAsync(const DeleteFunctionCodeSigningConfigRequest& request, const DeleteFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFunctionCodeSigningConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::DeleteFunctionCodeSigningConfigAsyncHelper(const DeleteFunctionCodeSigningConfigRequest& request, const DeleteFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFunctionCodeSigningConfig(request), context);
 }
 
 DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const DeleteFunctionConcurrencyRequest& request) const
@@ -625,6 +728,39 @@ void LambdaClient::GetAliasAsyncHelper(const GetAliasRequest& request, const Get
   handler(this, request, GetAlias(request), context);
 }
 
+GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSigningConfigRequest& request) const
+{
+  if (!request.CodeSigningConfigArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCodeSigningConfig", "Required field: CodeSigningConfigArn, is not set");
+    return GetCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-04-22/code-signing-configs/";
+  ss << request.GetCodeSigningConfigArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCodeSigningConfigOutcomeCallable LambdaClient::GetCodeSigningConfigCallable(const GetCodeSigningConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCodeSigningConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetCodeSigningConfigAsync(const GetCodeSigningConfigRequest& request, const GetCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCodeSigningConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetCodeSigningConfigAsyncHelper(const GetCodeSigningConfigRequest& request, const GetCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCodeSigningConfig(request), context);
+}
+
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const
 {
   if (!request.UUIDHasBeenSet())
@@ -689,6 +825,40 @@ void LambdaClient::GetFunctionAsync(const GetFunctionRequest& request, const Get
 void LambdaClient::GetFunctionAsyncHelper(const GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetFunction(request), context);
+}
+
+GetFunctionCodeSigningConfigOutcome LambdaClient::GetFunctionCodeSigningConfig(const GetFunctionCodeSigningConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunctionCodeSigningConfig", "Required field: FunctionName, is not set");
+    return GetFunctionCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-06-30/functions/";
+  ss << request.GetFunctionName();
+  ss << "/code-signing-config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetFunctionCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFunctionCodeSigningConfigOutcomeCallable LambdaClient::GetFunctionCodeSigningConfigCallable(const GetFunctionCodeSigningConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFunctionCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunctionCodeSigningConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetFunctionCodeSigningConfigAsync(const GetFunctionCodeSigningConfigRequest& request, const GetFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFunctionCodeSigningConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetFunctionCodeSigningConfigAsyncHelper(const GetFunctionCodeSigningConfigRequest& request, const GetFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFunctionCodeSigningConfig(request), context);
 }
 
 GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunctionConcurrencyRequest& request) const
@@ -1049,6 +1219,33 @@ void LambdaClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, con
   handler(this, request, ListAliases(request), context);
 }
 
+ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCodeSigningConfigsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-04-22/code-signing-configs/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListCodeSigningConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCodeSigningConfigsOutcomeCallable LambdaClient::ListCodeSigningConfigsCallable(const ListCodeSigningConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCodeSigningConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCodeSigningConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::ListCodeSigningConfigsAsync(const ListCodeSigningConfigsRequest& request, const ListCodeSigningConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCodeSigningConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::ListCodeSigningConfigsAsyncHelper(const ListCodeSigningConfigsRequest& request, const ListCodeSigningConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCodeSigningConfigs(request), context);
+}
+
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1135,6 +1332,40 @@ void LambdaClient::ListFunctionsAsync(const ListFunctionsRequest& request, const
 void LambdaClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFunctions(request), context);
+}
+
+ListFunctionsByCodeSigningConfigOutcome LambdaClient::ListFunctionsByCodeSigningConfig(const ListFunctionsByCodeSigningConfigRequest& request) const
+{
+  if (!request.CodeSigningConfigArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFunctionsByCodeSigningConfig", "Required field: CodeSigningConfigArn, is not set");
+    return ListFunctionsByCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-04-22/code-signing-configs/";
+  ss << request.GetCodeSigningConfigArn();
+  ss << "/functions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListFunctionsByCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFunctionsByCodeSigningConfigOutcomeCallable LambdaClient::ListFunctionsByCodeSigningConfigCallable(const ListFunctionsByCodeSigningConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFunctionsByCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctionsByCodeSigningConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::ListFunctionsByCodeSigningConfigAsync(const ListFunctionsByCodeSigningConfigRequest& request, const ListFunctionsByCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFunctionsByCodeSigningConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::ListFunctionsByCodeSigningConfigAsyncHelper(const ListFunctionsByCodeSigningConfigRequest& request, const ListFunctionsByCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFunctionsByCodeSigningConfig(request), context);
 }
 
 ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersionsRequest& request) const
@@ -1367,6 +1598,40 @@ void LambdaClient::PublishVersionAsync(const PublishVersionRequest& request, con
 void LambdaClient::PublishVersionAsyncHelper(const PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PublishVersion(request), context);
+}
+
+PutFunctionCodeSigningConfigOutcome LambdaClient::PutFunctionCodeSigningConfig(const PutFunctionCodeSigningConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutFunctionCodeSigningConfig", "Required field: FunctionName, is not set");
+    return PutFunctionCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-06-30/functions/";
+  ss << request.GetFunctionName();
+  ss << "/code-signing-config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutFunctionCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutFunctionCodeSigningConfigOutcomeCallable LambdaClient::PutFunctionCodeSigningConfigCallable(const PutFunctionCodeSigningConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutFunctionCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFunctionCodeSigningConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::PutFunctionCodeSigningConfigAsync(const PutFunctionCodeSigningConfigRequest& request, const PutFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutFunctionCodeSigningConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::PutFunctionCodeSigningConfigAsyncHelper(const PutFunctionCodeSigningConfigRequest& request, const PutFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutFunctionCodeSigningConfig(request), context);
 }
 
 PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunctionConcurrencyRequest& request) const
@@ -1672,6 +1937,39 @@ void LambdaClient::UpdateAliasAsync(const UpdateAliasRequest& request, const Upd
 void LambdaClient::UpdateAliasAsyncHelper(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAlias(request), context);
+}
+
+UpdateCodeSigningConfigOutcome LambdaClient::UpdateCodeSigningConfig(const UpdateCodeSigningConfigRequest& request) const
+{
+  if (!request.CodeSigningConfigArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCodeSigningConfig", "Required field: CodeSigningConfigArn, is not set");
+    return UpdateCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-04-22/code-signing-configs/";
+  ss << request.GetCodeSigningConfigArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateCodeSigningConfigOutcomeCallable LambdaClient::UpdateCodeSigningConfigCallable(const UpdateCodeSigningConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCodeSigningConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::UpdateCodeSigningConfigAsync(const UpdateCodeSigningConfigRequest& request, const UpdateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateCodeSigningConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::UpdateCodeSigningConfigAsyncHelper(const UpdateCodeSigningConfigRequest& request, const UpdateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateCodeSigningConfig(request), context);
 }
 
 UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const UpdateEventSourceMappingRequest& request) const

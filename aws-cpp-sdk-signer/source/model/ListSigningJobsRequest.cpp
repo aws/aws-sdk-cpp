@@ -22,7 +22,12 @@ ListSigningJobsRequest::ListSigningJobsRequest() :
     m_requestedByHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_isRevoked(false),
+    m_isRevokedHasBeenSet(false),
+    m_signatureExpiresBeforeHasBeenSet(false),
+    m_signatureExpiresAfterHasBeenSet(false),
+    m_jobInvokerHasBeenSet(false)
 {
 }
 
@@ -66,6 +71,34 @@ void ListSigningJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_isRevokedHasBeenSet)
+    {
+      ss << m_isRevoked;
+      uri.AddQueryStringParameter("isRevoked", ss.str());
+      ss.str("");
+    }
+
+    if(m_signatureExpiresBeforeHasBeenSet)
+    {
+      ss << m_signatureExpiresBefore.ToGmtString(DateFormat::RFC822);
+      uri.AddQueryStringParameter("signatureExpiresBefore", ss.str());
+      ss.str("");
+    }
+
+    if(m_signatureExpiresAfterHasBeenSet)
+    {
+      ss << m_signatureExpiresAfter.ToGmtString(DateFormat::RFC822);
+      uri.AddQueryStringParameter("signatureExpiresAfter", ss.str());
+      ss.str("");
+    }
+
+    if(m_jobInvokerHasBeenSet)
+    {
+      ss << m_jobInvoker;
+      uri.AddQueryStringParameter("jobInvoker", ss.str());
       ss.str("");
     }
 

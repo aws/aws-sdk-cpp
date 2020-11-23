@@ -39,37 +39,37 @@ namespace Model
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. The valid provider type is Bitbucket.</p>
+     * configured.</p>
      */
     inline const ProviderType& GetProviderType() const{ return m_providerType; }
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. The valid provider type is Bitbucket.</p>
+     * configured.</p>
      */
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. The valid provider type is Bitbucket.</p>
+     * configured.</p>
      */
     inline void SetProviderType(const ProviderType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. The valid provider type is Bitbucket.</p>
+     * configured.</p>
      */
     inline void SetProviderType(ProviderType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. The valid provider type is Bitbucket.</p>
+     * configured.</p>
      */
     inline CreateConnectionRequest& WithProviderType(const ProviderType& value) { SetProviderType(value); return *this;}
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. The valid provider type is Bitbucket.</p>
+     * configured.</p>
      */
     inline CreateConnectionRequest& WithProviderType(ProviderType&& value) { SetProviderType(std::move(value)); return *this;}
 

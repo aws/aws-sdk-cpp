@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace signer
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "GetSigningProfile"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -72,10 +78,54 @@ namespace Model
      */
     inline GetSigningProfileRequest& WithProfileName(const char* value) { SetProfileName(value); return *this;}
 
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline const Aws::String& GetProfileOwner() const{ return m_profileOwner; }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline bool ProfileOwnerHasBeenSet() const { return m_profileOwnerHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline void SetProfileOwner(const Aws::String& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = value; }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline void SetProfileOwner(Aws::String&& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = std::move(value); }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline void SetProfileOwner(const char* value) { m_profileOwnerHasBeenSet = true; m_profileOwner.assign(value); }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline GetSigningProfileRequest& WithProfileOwner(const Aws::String& value) { SetProfileOwner(value); return *this;}
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline GetSigningProfileRequest& WithProfileOwner(Aws::String&& value) { SetProfileOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline GetSigningProfileRequest& WithProfileOwner(const char* value) { SetProfileOwner(value); return *this;}
+
   private:
 
     Aws::String m_profileName;
     bool m_profileNameHasBeenSet;
+
+    Aws::String m_profileOwner;
+    bool m_profileOwnerHasBeenSet;
   };
 
 } // namespace Model

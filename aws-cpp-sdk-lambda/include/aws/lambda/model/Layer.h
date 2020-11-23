@@ -100,6 +100,88 @@ namespace Model
      */
     inline Layer& WithCodeSize(long long value) { SetCodeSize(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
+     */
+    inline const Aws::String& GetSigningProfileVersionArn() const{ return m_signingProfileVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
+     */
+    inline bool SigningProfileVersionArnHasBeenSet() const { return m_signingProfileVersionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(const Aws::String& value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(Aws::String&& value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(const char* value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
+     */
+    inline Layer& WithSigningProfileVersionArn(const Aws::String& value) { SetSigningProfileVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
+     */
+    inline Layer& WithSigningProfileVersionArn(Aws::String&& value) { SetSigningProfileVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
+     */
+    inline Layer& WithSigningProfileVersionArn(const char* value) { SetSigningProfileVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a signing job.</p>
+     */
+    inline const Aws::String& GetSigningJobArn() const{ return m_signingJobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a signing job.</p>
+     */
+    inline bool SigningJobArnHasBeenSet() const { return m_signingJobArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a signing job.</p>
+     */
+    inline void SetSigningJobArn(const Aws::String& value) { m_signingJobArnHasBeenSet = true; m_signingJobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a signing job.</p>
+     */
+    inline void SetSigningJobArn(Aws::String&& value) { m_signingJobArnHasBeenSet = true; m_signingJobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a signing job.</p>
+     */
+    inline void SetSigningJobArn(const char* value) { m_signingJobArnHasBeenSet = true; m_signingJobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a signing job.</p>
+     */
+    inline Layer& WithSigningJobArn(const Aws::String& value) { SetSigningJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a signing job.</p>
+     */
+    inline Layer& WithSigningJobArn(Aws::String&& value) { SetSigningJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a signing job.</p>
+     */
+    inline Layer& WithSigningJobArn(const char* value) { SetSigningJobArn(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -107,6 +189,12 @@ namespace Model
 
     long long m_codeSize;
     bool m_codeSizeHasBeenSet;
+
+    Aws::String m_signingProfileVersionArn;
+    bool m_signingProfileVersionArnHasBeenSet;
+
+    Aws::String m_signingJobArn;
+    bool m_signingJobArnHasBeenSet;
   };
 
 } // namespace Model

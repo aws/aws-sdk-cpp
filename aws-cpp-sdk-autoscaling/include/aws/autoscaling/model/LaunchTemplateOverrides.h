@@ -130,7 +130,7 @@ namespace Model
      * desired capacity is exceeded by 3 units. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     * Guide</i>. Value must be in the range of 1 to 999.</p>
      */
     inline const Aws::String& GetWeightedCapacity() const{ return m_weightedCapacity; }
 
@@ -146,7 +146,7 @@ namespace Model
      * desired capacity is exceeded by 3 units. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     * Guide</i>. Value must be in the range of 1 to 999.</p>
      */
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
 
@@ -162,7 +162,7 @@ namespace Model
      * desired capacity is exceeded by 3 units. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     * Guide</i>. Value must be in the range of 1 to 999.</p>
      */
     inline void SetWeightedCapacity(const Aws::String& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
 
@@ -178,7 +178,7 @@ namespace Model
      * desired capacity is exceeded by 3 units. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     * Guide</i>. Value must be in the range of 1 to 999.</p>
      */
     inline void SetWeightedCapacity(Aws::String&& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = std::move(value); }
 
@@ -194,7 +194,7 @@ namespace Model
      * desired capacity is exceeded by 3 units. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     * Guide</i>. Value must be in the range of 1 to 999.</p>
      */
     inline void SetWeightedCapacity(const char* value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity.assign(value); }
 
@@ -210,7 +210,7 @@ namespace Model
      * desired capacity is exceeded by 3 units. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     * Guide</i>. Value must be in the range of 1 to 999.</p>
      */
     inline LaunchTemplateOverrides& WithWeightedCapacity(const Aws::String& value) { SetWeightedCapacity(value); return *this;}
 
@@ -226,7 +226,7 @@ namespace Model
      * desired capacity is exceeded by 3 units. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     * Guide</i>. Value must be in the range of 1 to 999.</p>
      */
     inline LaunchTemplateOverrides& WithWeightedCapacity(Aws::String&& value) { SetWeightedCapacity(std::move(value)); return *this;}
 
@@ -242,7 +242,7 @@ namespace Model
      * desired capacity is exceeded by 3 units. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     * Guide</i>. Value must be in the range of 1 to 999.</p>
      */
     inline LaunchTemplateOverrides& WithWeightedCapacity(const char* value) { SetWeightedCapacity(value); return *this;}
 

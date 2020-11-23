@@ -35,9 +35,7 @@ namespace Model
    * later, then they contain the required versions of the container agent and
    * <code>ecs-init</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-   * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-   * requires platform version 1.3.0 or later.</p><p><h3>See Also:</h3>   <a
+   * ECS-optimized Linux AMI</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ProxyConfiguration">AWS
    * API Reference</a></p>
    */

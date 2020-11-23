@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/BatchExecuteStatementResult.h>
 #include <aws/dynamodb/model/BatchGetItemResult.h>
 #include <aws/dynamodb/model/BatchWriteItemResult.h>
 #include <aws/dynamodb/model/CreateBackupResult.h>
@@ -26,10 +27,15 @@
 #include <aws/dynamodb/model/DescribeExportResult.h>
 #include <aws/dynamodb/model/DescribeGlobalTableResult.h>
 #include <aws/dynamodb/model/DescribeGlobalTableSettingsResult.h>
+#include <aws/dynamodb/model/DescribeKinesisStreamingDestinationResult.h>
 #include <aws/dynamodb/model/DescribeLimitsResult.h>
 #include <aws/dynamodb/model/DescribeTableResult.h>
 #include <aws/dynamodb/model/DescribeTableReplicaAutoScalingResult.h>
 #include <aws/dynamodb/model/DescribeTimeToLiveResult.h>
+#include <aws/dynamodb/model/DisableKinesisStreamingDestinationResult.h>
+#include <aws/dynamodb/model/EnableKinesisStreamingDestinationResult.h>
+#include <aws/dynamodb/model/ExecuteStatementResult.h>
+#include <aws/dynamodb/model/ExecuteTransactionResult.h>
 #include <aws/dynamodb/model/ExportTableToPointInTimeResult.h>
 #include <aws/dynamodb/model/GetItemResult.h>
 #include <aws/dynamodb/model/ListBackupsResult.h>
@@ -94,6 +100,7 @@ namespace DynamoDB
 
 namespace Model
 {
+        class BatchExecuteStatementRequest;
         class BatchGetItemRequest;
         class BatchWriteItemRequest;
         class CreateBackupRequest;
@@ -109,10 +116,15 @@ namespace Model
         class DescribeExportRequest;
         class DescribeGlobalTableRequest;
         class DescribeGlobalTableSettingsRequest;
+        class DescribeKinesisStreamingDestinationRequest;
         class DescribeLimitsRequest;
         class DescribeTableRequest;
         class DescribeTableReplicaAutoScalingRequest;
         class DescribeTimeToLiveRequest;
+        class DisableKinesisStreamingDestinationRequest;
+        class EnableKinesisStreamingDestinationRequest;
+        class ExecuteStatementRequest;
+        class ExecuteTransactionRequest;
         class ExportTableToPointInTimeRequest;
         class GetItemRequest;
         class ListBackupsRequest;
@@ -139,6 +151,7 @@ namespace Model
         class UpdateTableReplicaAutoScalingRequest;
         class UpdateTimeToLiveRequest;
 
+        typedef Aws::Utils::Outcome<BatchExecuteStatementResult, DynamoDBError> BatchExecuteStatementOutcome;
         typedef Aws::Utils::Outcome<BatchGetItemResult, DynamoDBError> BatchGetItemOutcome;
         typedef Aws::Utils::Outcome<BatchWriteItemResult, DynamoDBError> BatchWriteItemOutcome;
         typedef Aws::Utils::Outcome<CreateBackupResult, DynamoDBError> CreateBackupOutcome;
@@ -154,10 +167,15 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeExportResult, DynamoDBError> DescribeExportOutcome;
         typedef Aws::Utils::Outcome<DescribeGlobalTableResult, DynamoDBError> DescribeGlobalTableOutcome;
         typedef Aws::Utils::Outcome<DescribeGlobalTableSettingsResult, DynamoDBError> DescribeGlobalTableSettingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeKinesisStreamingDestinationResult, DynamoDBError> DescribeKinesisStreamingDestinationOutcome;
         typedef Aws::Utils::Outcome<DescribeLimitsResult, DynamoDBError> DescribeLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeTableResult, DynamoDBError> DescribeTableOutcome;
         typedef Aws::Utils::Outcome<DescribeTableReplicaAutoScalingResult, DynamoDBError> DescribeTableReplicaAutoScalingOutcome;
         typedef Aws::Utils::Outcome<DescribeTimeToLiveResult, DynamoDBError> DescribeTimeToLiveOutcome;
+        typedef Aws::Utils::Outcome<DisableKinesisStreamingDestinationResult, DynamoDBError> DisableKinesisStreamingDestinationOutcome;
+        typedef Aws::Utils::Outcome<EnableKinesisStreamingDestinationResult, DynamoDBError> EnableKinesisStreamingDestinationOutcome;
+        typedef Aws::Utils::Outcome<ExecuteStatementResult, DynamoDBError> ExecuteStatementOutcome;
+        typedef Aws::Utils::Outcome<ExecuteTransactionResult, DynamoDBError> ExecuteTransactionOutcome;
         typedef Aws::Utils::Outcome<ExportTableToPointInTimeResult, DynamoDBError> ExportTableToPointInTimeOutcome;
         typedef Aws::Utils::Outcome<GetItemResult, DynamoDBError> GetItemOutcome;
         typedef Aws::Utils::Outcome<ListBackupsResult, DynamoDBError> ListBackupsOutcome;
@@ -184,6 +202,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateTableReplicaAutoScalingResult, DynamoDBError> UpdateTableReplicaAutoScalingOutcome;
         typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, DynamoDBError> UpdateTimeToLiveOutcome;
 
+        typedef std::future<BatchExecuteStatementOutcome> BatchExecuteStatementOutcomeCallable;
         typedef std::future<BatchGetItemOutcome> BatchGetItemOutcomeCallable;
         typedef std::future<BatchWriteItemOutcome> BatchWriteItemOutcomeCallable;
         typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
@@ -199,10 +218,15 @@ namespace Model
         typedef std::future<DescribeExportOutcome> DescribeExportOutcomeCallable;
         typedef std::future<DescribeGlobalTableOutcome> DescribeGlobalTableOutcomeCallable;
         typedef std::future<DescribeGlobalTableSettingsOutcome> DescribeGlobalTableSettingsOutcomeCallable;
+        typedef std::future<DescribeKinesisStreamingDestinationOutcome> DescribeKinesisStreamingDestinationOutcomeCallable;
         typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
         typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
         typedef std::future<DescribeTableReplicaAutoScalingOutcome> DescribeTableReplicaAutoScalingOutcomeCallable;
         typedef std::future<DescribeTimeToLiveOutcome> DescribeTimeToLiveOutcomeCallable;
+        typedef std::future<DisableKinesisStreamingDestinationOutcome> DisableKinesisStreamingDestinationOutcomeCallable;
+        typedef std::future<EnableKinesisStreamingDestinationOutcome> EnableKinesisStreamingDestinationOutcomeCallable;
+        typedef std::future<ExecuteStatementOutcome> ExecuteStatementOutcomeCallable;
+        typedef std::future<ExecuteTransactionOutcome> ExecuteTransactionOutcomeCallable;
         typedef std::future<ExportTableToPointInTimeOutcome> ExportTableToPointInTimeOutcomeCallable;
         typedef std::future<GetItemOutcome> GetItemOutcomeCallable;
         typedef std::future<ListBackupsOutcome> ListBackupsOutcomeCallable;
@@ -232,6 +256,7 @@ namespace Model
 
   class DynamoDBClient;
 
+    typedef std::function<void(const DynamoDBClient*, const Model::BatchExecuteStatementRequest&, const Model::BatchExecuteStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchExecuteStatementResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::BatchGetItemRequest&, const Model::BatchGetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::BatchWriteItemRequest&, const Model::BatchWriteItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchWriteItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupResponseReceivedHandler;
@@ -247,10 +272,15 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeExportRequest&, const Model::DescribeExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableRequest&, const Model::DescribeGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableSettingsRequest&, const Model::DescribeGlobalTableSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableSettingsResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeKinesisStreamingDestinationRequest&, const Model::DescribeKinesisStreamingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKinesisStreamingDestinationResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableReplicaAutoScalingRequest&, const Model::DescribeTableReplicaAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableReplicaAutoScalingResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTimeToLiveRequest&, const Model::DescribeTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTimeToLiveResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DisableKinesisStreamingDestinationRequest&, const Model::DisableKinesisStreamingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableKinesisStreamingDestinationResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::EnableKinesisStreamingDestinationRequest&, const Model::EnableKinesisStreamingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableKinesisStreamingDestinationResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ExecuteStatementRequest&, const Model::ExecuteStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteStatementResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ExecuteTransactionRequest&, const Model::ExecuteTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteTransactionResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ExportTableToPointInTimeRequest&, const Model::ExportTableToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportTableToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::GetItemRequest&, const Model::GetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListBackupsRequest&, const Model::ListBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupsResponseReceivedHandler;
@@ -321,6 +351,34 @@ namespace Model
 
         virtual ~DynamoDBClient();
 
+
+        /**
+         * <p> This operation allows you to perform batch reads and writes on data stored
+         * in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchExecuteStatementOutcome BatchExecuteStatement(const Model::BatchExecuteStatementRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform batch reads and writes on data stored
+         * in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchExecuteStatementOutcomeCallable BatchExecuteStatementCallable(const Model::BatchExecuteStatementRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform batch reads and writes on data stored
+         * in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchExecuteStatementAsync(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>BatchGetItem</code> operation returns the attributes of one or more
@@ -1316,6 +1374,34 @@ namespace Model
         virtual void DescribeGlobalTableSettingsAsync(const Model::DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about the status of Kinesis streaming.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeKinesisStreamingDestinationOutcome DescribeKinesisStreamingDestination(const Model::DescribeKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Returns information about the status of Kinesis streaming.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeKinesisStreamingDestinationOutcomeCallable DescribeKinesisStreamingDestinationCallable(const Model::DescribeKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Returns information about the status of Kinesis streaming.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeKinesisStreamingDestinationAsync(const Model::DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the current provisioned-capacity quotas for your AWS account in a
          * Region, both for the Region as a whole and for any one DynamoDB table that you
          * create there.</p> <p>When you establish an AWS account, the account has initial
@@ -1570,6 +1656,124 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTimeToLiveAsync(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is
+         * done without deleting either of the resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableKinesisStreamingDestinationOutcome DisableKinesisStreamingDestination(const Model::DisableKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is
+         * done without deleting either of the resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableKinesisStreamingDestinationOutcomeCallable DisableKinesisStreamingDestinationCallable(const Model::DisableKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is
+         * done without deleting either of the resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableKinesisStreamingDestinationAsync(const Model::DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts table data replication to the specified Kinesis data stream at a
+         * timestamp chosen during the enable workflow. If this operation doesn't return
+         * results immediately, use DescribeKinesisStreamingDestination to check if
+         * streaming to the Kinesis data stream is ACTIVE.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableKinesisStreamingDestinationOutcome EnableKinesisStreamingDestination(const Model::EnableKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Starts table data replication to the specified Kinesis data stream at a
+         * timestamp chosen during the enable workflow. If this operation doesn't return
+         * results immediately, use DescribeKinesisStreamingDestination to check if
+         * streaming to the Kinesis data stream is ACTIVE.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableKinesisStreamingDestinationOutcomeCallable EnableKinesisStreamingDestinationCallable(const Model::EnableKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Starts table data replication to the specified Kinesis data stream at a
+         * timestamp chosen during the enable workflow. If this operation doesn't return
+         * results immediately, use DescribeKinesisStreamingDestination to check if
+         * streaming to the Kinesis data stream is ACTIVE.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableKinesisStreamingDestinationAsync(const Model::EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> This operation allows you to perform reads and singleton writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteStatementOutcome ExecuteStatement(const Model::ExecuteStatementRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform reads and singleton writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExecuteStatementOutcomeCallable ExecuteStatementCallable(const Model::ExecuteStatementRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform reads and singleton writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExecuteStatementAsync(const Model::ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> This operation allows you to perform transactional reads or writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteTransactionOutcome ExecuteTransaction(const Model::ExecuteTransactionRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform transactional reads or writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExecuteTransactionOutcomeCallable ExecuteTransactionCallable(const Model::ExecuteTransactionRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform transactional reads or writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExecuteTransactionAsync(const Model::ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports table data to an S3 bucket. The table must have point in time
@@ -3082,6 +3286,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void BatchExecuteStatementAsyncHelper(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetItemAsyncHelper(const Model::BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchWriteItemAsyncHelper(const Model::BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBackupAsyncHelper(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3097,10 +3302,15 @@ namespace Model
         void DescribeExportAsyncHelper(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGlobalTableAsyncHelper(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGlobalTableSettingsAsyncHelper(const Model::DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeKinesisStreamingDestinationAsyncHelper(const Model::DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableReplicaAutoScalingAsyncHelper(const Model::DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTimeToLiveAsyncHelper(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableKinesisStreamingDestinationAsyncHelper(const Model::DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableKinesisStreamingDestinationAsyncHelper(const Model::EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExecuteStatementAsyncHelper(const Model::ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExecuteTransactionAsyncHelper(const Model::ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportTableToPointInTimeAsyncHelper(const Model::ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetItemAsyncHelper(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBackupsAsyncHelper(const Model::ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -183,6 +183,47 @@ namespace Model
      */
     inline LicenseConfigurationAssociation& WithAssociationTime(Aws::Utils::DateTime&& value) { SetAssociationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Scope of AMI associations.</p>
+     */
+    inline const Aws::String& GetAmiAssociationScope() const{ return m_amiAssociationScope; }
+
+    /**
+     * <p>Scope of AMI associations.</p>
+     */
+    inline bool AmiAssociationScopeHasBeenSet() const { return m_amiAssociationScopeHasBeenSet; }
+
+    /**
+     * <p>Scope of AMI associations.</p>
+     */
+    inline void SetAmiAssociationScope(const Aws::String& value) { m_amiAssociationScopeHasBeenSet = true; m_amiAssociationScope = value; }
+
+    /**
+     * <p>Scope of AMI associations.</p>
+     */
+    inline void SetAmiAssociationScope(Aws::String&& value) { m_amiAssociationScopeHasBeenSet = true; m_amiAssociationScope = std::move(value); }
+
+    /**
+     * <p>Scope of AMI associations.</p>
+     */
+    inline void SetAmiAssociationScope(const char* value) { m_amiAssociationScopeHasBeenSet = true; m_amiAssociationScope.assign(value); }
+
+    /**
+     * <p>Scope of AMI associations.</p>
+     */
+    inline LicenseConfigurationAssociation& WithAmiAssociationScope(const Aws::String& value) { SetAmiAssociationScope(value); return *this;}
+
+    /**
+     * <p>Scope of AMI associations.</p>
+     */
+    inline LicenseConfigurationAssociation& WithAmiAssociationScope(Aws::String&& value) { SetAmiAssociationScope(std::move(value)); return *this;}
+
+    /**
+     * <p>Scope of AMI associations.</p>
+     */
+    inline LicenseConfigurationAssociation& WithAmiAssociationScope(const char* value) { SetAmiAssociationScope(value); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -196,6 +237,9 @@ namespace Model
 
     Aws::Utils::DateTime m_associationTime;
     bool m_associationTimeHasBeenSet;
+
+    Aws::String m_amiAssociationScope;
+    bool m_amiAssociationScopeHasBeenSet;
   };
 
 } // namespace Model

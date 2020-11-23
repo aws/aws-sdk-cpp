@@ -54,9 +54,21 @@ DescribeSigningJobResult& DescribeSigningJobResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("platformDisplayName"))
+  {
+    m_platformDisplayName = jsonValue.GetString("platformDisplayName");
+
+  }
+
   if(jsonValue.ValueExists("profileName"))
   {
     m_profileName = jsonValue.GetString("profileName");
+
+  }
+
+  if(jsonValue.ValueExists("profileVersion"))
+  {
+    m_profileVersion = jsonValue.GetString("profileVersion");
 
   }
 
@@ -87,6 +99,12 @@ DescribeSigningJobResult& DescribeSigningJobResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("signatureExpiresAt"))
+  {
+    m_signatureExpiresAt = jsonValue.GetDouble("signatureExpiresAt");
+
+  }
+
   if(jsonValue.ValueExists("requestedBy"))
   {
     m_requestedBy = jsonValue.GetString("requestedBy");
@@ -105,9 +123,27 @@ DescribeSigningJobResult& DescribeSigningJobResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("revocationRecord"))
+  {
+    m_revocationRecord = jsonValue.GetObject("revocationRecord");
+
+  }
+
   if(jsonValue.ValueExists("signedObject"))
   {
     m_signedObject = jsonValue.GetObject("signedObject");
+
+  }
+
+  if(jsonValue.ValueExists("jobOwner"))
+  {
+    m_jobOwner = jsonValue.GetString("jobOwner");
+
+  }
+
+  if(jsonValue.ValueExists("jobInvoker"))
+  {
+    m_jobInvoker = jsonValue.GetString("jobInvoker");
 
   }
 

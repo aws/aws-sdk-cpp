@@ -84,79 +84,79 @@ namespace Model
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline void SetProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopStepConfig& WithProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetProperties(value); return *this;}
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopStepConfig& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopStepConfig& AddProperties(const Aws::String& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopStepConfig& AddProperties(Aws::String&& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopStepConfig& AddProperties(const Aws::String& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopStepConfig& AddProperties(Aws::String&& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopStepConfig& AddProperties(const char* key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopStepConfig& AddProperties(Aws::String&& key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
-     * these properties to pass key value pairs to your main function.</p>
+     * these properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopStepConfig& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 

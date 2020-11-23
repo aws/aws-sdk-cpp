@@ -212,6 +212,18 @@ CreateFunctionResult& CreateFunctionResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("SigningProfileVersionArn"))
+  {
+    m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
+
+  }
+
+  if(jsonValue.ValueExists("SigningJobArn"))
+  {
+    m_signingJobArn = jsonValue.GetString("SigningJobArn");
+
+  }
+
 
 
   return *this;

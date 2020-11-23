@@ -7,6 +7,7 @@
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/timestream-query/model/QueryStatus.h>
 #include <aws/timestream-query/model/Row.h>
 #include <aws/timestream-query/model/ColumnInfo.h>
 #include <utility>
@@ -185,6 +186,37 @@ namespace Model
      */
     inline QueryResult& AddColumnInfo(ColumnInfo&& value) { m_columnInfo.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the status of the query, including progress and bytes
+     * scannned.</p>
+     */
+    inline const QueryStatus& GetQueryStatus() const{ return m_queryStatus; }
+
+    /**
+     * <p>Information about the status of the query, including progress and bytes
+     * scannned.</p>
+     */
+    inline void SetQueryStatus(const QueryStatus& value) { m_queryStatus = value; }
+
+    /**
+     * <p>Information about the status of the query, including progress and bytes
+     * scannned.</p>
+     */
+    inline void SetQueryStatus(QueryStatus&& value) { m_queryStatus = std::move(value); }
+
+    /**
+     * <p>Information about the status of the query, including progress and bytes
+     * scannned.</p>
+     */
+    inline QueryResult& WithQueryStatus(const QueryStatus& value) { SetQueryStatus(value); return *this;}
+
+    /**
+     * <p>Information about the status of the query, including progress and bytes
+     * scannned.</p>
+     */
+    inline QueryResult& WithQueryStatus(QueryStatus&& value) { SetQueryStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_queryId;
@@ -194,6 +226,8 @@ namespace Model
     Aws::Vector<Row> m_rows;
 
     Aws::Vector<ColumnInfo> m_columnInfo;
+
+    QueryStatus m_queryStatus;
   };
 
 } // namespace Model

@@ -26,24 +26,28 @@
 #include <aws/forecast/model/CreateForecastRequest.h>
 #include <aws/forecast/model/CreateForecastExportJobRequest.h>
 #include <aws/forecast/model/CreatePredictorRequest.h>
+#include <aws/forecast/model/CreatePredictorBacktestExportJobRequest.h>
 #include <aws/forecast/model/DeleteDatasetRequest.h>
 #include <aws/forecast/model/DeleteDatasetGroupRequest.h>
 #include <aws/forecast/model/DeleteDatasetImportJobRequest.h>
 #include <aws/forecast/model/DeleteForecastRequest.h>
 #include <aws/forecast/model/DeleteForecastExportJobRequest.h>
 #include <aws/forecast/model/DeletePredictorRequest.h>
+#include <aws/forecast/model/DeletePredictorBacktestExportJobRequest.h>
 #include <aws/forecast/model/DescribeDatasetRequest.h>
 #include <aws/forecast/model/DescribeDatasetGroupRequest.h>
 #include <aws/forecast/model/DescribeDatasetImportJobRequest.h>
 #include <aws/forecast/model/DescribeForecastRequest.h>
 #include <aws/forecast/model/DescribeForecastExportJobRequest.h>
 #include <aws/forecast/model/DescribePredictorRequest.h>
+#include <aws/forecast/model/DescribePredictorBacktestExportJobRequest.h>
 #include <aws/forecast/model/GetAccuracyMetricsRequest.h>
 #include <aws/forecast/model/ListDatasetGroupsRequest.h>
 #include <aws/forecast/model/ListDatasetImportJobsRequest.h>
 #include <aws/forecast/model/ListDatasetsRequest.h>
 #include <aws/forecast/model/ListForecastExportJobsRequest.h>
 #include <aws/forecast/model/ListForecastsRequest.h>
+#include <aws/forecast/model/ListPredictorBacktestExportJobsRequest.h>
 #include <aws/forecast/model/ListPredictorsRequest.h>
 #include <aws/forecast/model/ListTagsForResourceRequest.h>
 #include <aws/forecast/model/TagResourceRequest.h>
@@ -285,6 +289,33 @@ void ForecastServiceClient::CreatePredictorAsyncHelper(const CreatePredictorRequ
   handler(this, request, CreatePredictor(request), context);
 }
 
+CreatePredictorBacktestExportJobOutcome ForecastServiceClient::CreatePredictorBacktestExportJob(const CreatePredictorBacktestExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreatePredictorBacktestExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePredictorBacktestExportJobOutcomeCallable ForecastServiceClient::CreatePredictorBacktestExportJobCallable(const CreatePredictorBacktestExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePredictorBacktestExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePredictorBacktestExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::CreatePredictorBacktestExportJobAsync(const CreatePredictorBacktestExportJobRequest& request, const CreatePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePredictorBacktestExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::CreatePredictorBacktestExportJobAsyncHelper(const CreatePredictorBacktestExportJobRequest& request, const CreatePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePredictorBacktestExportJob(request), context);
+}
+
 DeleteDatasetOutcome ForecastServiceClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -445,6 +476,33 @@ void ForecastServiceClient::DeletePredictorAsync(const DeletePredictorRequest& r
 void ForecastServiceClient::DeletePredictorAsyncHelper(const DeletePredictorRequest& request, const DeletePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePredictor(request), context);
+}
+
+DeletePredictorBacktestExportJobOutcome ForecastServiceClient::DeletePredictorBacktestExportJob(const DeletePredictorBacktestExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeletePredictorBacktestExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePredictorBacktestExportJobOutcomeCallable ForecastServiceClient::DeletePredictorBacktestExportJobCallable(const DeletePredictorBacktestExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePredictorBacktestExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePredictorBacktestExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DeletePredictorBacktestExportJobAsync(const DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePredictorBacktestExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DeletePredictorBacktestExportJobAsyncHelper(const DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePredictorBacktestExportJob(request), context);
 }
 
 DescribeDatasetOutcome ForecastServiceClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -609,6 +667,33 @@ void ForecastServiceClient::DescribePredictorAsyncHelper(const DescribePredictor
   handler(this, request, DescribePredictor(request), context);
 }
 
+DescribePredictorBacktestExportJobOutcome ForecastServiceClient::DescribePredictorBacktestExportJob(const DescribePredictorBacktestExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribePredictorBacktestExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribePredictorBacktestExportJobOutcomeCallable ForecastServiceClient::DescribePredictorBacktestExportJobCallable(const DescribePredictorBacktestExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePredictorBacktestExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePredictorBacktestExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DescribePredictorBacktestExportJobAsync(const DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePredictorBacktestExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DescribePredictorBacktestExportJobAsyncHelper(const DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePredictorBacktestExportJob(request), context);
+}
+
 GetAccuracyMetricsOutcome ForecastServiceClient::GetAccuracyMetrics(const GetAccuracyMetricsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -769,6 +854,33 @@ void ForecastServiceClient::ListForecastsAsync(const ListForecastsRequest& reque
 void ForecastServiceClient::ListForecastsAsyncHelper(const ListForecastsRequest& request, const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListForecasts(request), context);
+}
+
+ListPredictorBacktestExportJobsOutcome ForecastServiceClient::ListPredictorBacktestExportJobs(const ListPredictorBacktestExportJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListPredictorBacktestExportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPredictorBacktestExportJobsOutcomeCallable ForecastServiceClient::ListPredictorBacktestExportJobsCallable(const ListPredictorBacktestExportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPredictorBacktestExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPredictorBacktestExportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::ListPredictorBacktestExportJobsAsync(const ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPredictorBacktestExportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::ListPredictorBacktestExportJobsAsyncHelper(const ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPredictorBacktestExportJobs(request), context);
 }
 
 ListPredictorsOutcome ForecastServiceClient::ListPredictors(const ListPredictorsRequest& request) const

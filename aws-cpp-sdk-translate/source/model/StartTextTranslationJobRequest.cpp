@@ -20,6 +20,7 @@ StartTextTranslationJobRequest::StartTextTranslationJobRequest() :
     m_sourceLanguageCodeHasBeenSet(false),
     m_targetLanguageCodesHasBeenSet(false),
     m_terminologyNamesHasBeenSet(false),
+    m_parallelDataNamesHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
@@ -78,6 +79,17 @@ Aws::String StartTextTranslationJobRequest::SerializePayload() const
      terminologyNamesJsonList[terminologyNamesIndex].AsString(m_terminologyNames[terminologyNamesIndex]);
    }
    payload.WithArray("TerminologyNames", std::move(terminologyNamesJsonList));
+
+  }
+
+  if(m_parallelDataNamesHasBeenSet)
+  {
+   Array<JsonValue> parallelDataNamesJsonList(m_parallelDataNames.size());
+   for(unsigned parallelDataNamesIndex = 0; parallelDataNamesIndex < parallelDataNamesJsonList.GetLength(); ++parallelDataNamesIndex)
+   {
+     parallelDataNamesJsonList[parallelDataNamesIndex].AsString(m_parallelDataNames[parallelDataNamesIndex]);
+   }
+   payload.WithArray("ParallelDataNames", std::move(parallelDataNamesJsonList));
 
   }
 

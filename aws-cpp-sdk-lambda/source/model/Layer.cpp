@@ -21,14 +21,18 @@ namespace Model
 Layer::Layer() : 
     m_arnHasBeenSet(false),
     m_codeSize(0),
-    m_codeSizeHasBeenSet(false)
+    m_codeSizeHasBeenSet(false),
+    m_signingProfileVersionArnHasBeenSet(false),
+    m_signingJobArnHasBeenSet(false)
 {
 }
 
 Layer::Layer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_codeSize(0),
-    m_codeSizeHasBeenSet(false)
+    m_codeSizeHasBeenSet(false),
+    m_signingProfileVersionArnHasBeenSet(false),
+    m_signingJobArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,20 @@ Layer& Layer::operator =(JsonView jsonValue)
     m_codeSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SigningProfileVersionArn"))
+  {
+    m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
+
+    m_signingProfileVersionArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SigningJobArn"))
+  {
+    m_signingJobArn = jsonValue.GetString("SigningJobArn");
+
+    m_signingJobArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +83,18 @@ JsonValue Layer::Jsonize() const
   if(m_codeSizeHasBeenSet)
   {
    payload.WithInt64("CodeSize", m_codeSize);
+
+  }
+
+  if(m_signingProfileVersionArnHasBeenSet)
+  {
+   payload.WithString("SigningProfileVersionArn", m_signingProfileVersionArn);
+
+  }
+
+  if(m_signingJobArnHasBeenSet)
+  {
+   payload.WithString("SigningJobArn", m_signingJobArn);
 
   }
 

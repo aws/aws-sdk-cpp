@@ -28,7 +28,9 @@ SigningPlatform::SigningPlatform() :
     m_signingConfigurationHasBeenSet(false),
     m_signingImageFormatHasBeenSet(false),
     m_maxSizeInMB(0),
-    m_maxSizeInMBHasBeenSet(false)
+    m_maxSizeInMBHasBeenSet(false),
+    m_revocationSupported(false),
+    m_revocationSupportedHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ SigningPlatform::SigningPlatform(JsonView jsonValue) :
     m_signingConfigurationHasBeenSet(false),
     m_signingImageFormatHasBeenSet(false),
     m_maxSizeInMB(0),
-    m_maxSizeInMBHasBeenSet(false)
+    m_maxSizeInMBHasBeenSet(false),
+    m_revocationSupported(false),
+    m_revocationSupportedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +109,13 @@ SigningPlatform& SigningPlatform::operator =(JsonView jsonValue)
     m_maxSizeInMBHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("revocationSupported"))
+  {
+    m_revocationSupported = jsonValue.GetBool("revocationSupported");
+
+    m_revocationSupportedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +167,12 @@ JsonValue SigningPlatform::Jsonize() const
   if(m_maxSizeInMBHasBeenSet)
   {
    payload.WithInteger("maxSizeInMB", m_maxSizeInMB);
+
+  }
+
+  if(m_revocationSupportedHasBeenSet)
+  {
+   payload.WithBool("revocationSupported", m_revocationSupported);
 
   }
 
