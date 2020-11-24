@@ -19,6 +19,10 @@ namespace Model
 {
 
 MpdSettings::MpdSettings() : 
+    m_accessibilityCaptionHints(MpdAccessibilityCaptionHints::NOT_SET),
+    m_accessibilityCaptionHintsHasBeenSet(false),
+    m_audioDuration(MpdAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
@@ -29,6 +33,10 @@ MpdSettings::MpdSettings() :
 }
 
 MpdSettings::MpdSettings(JsonView jsonValue) : 
+    m_accessibilityCaptionHints(MpdAccessibilityCaptionHints::NOT_SET),
+    m_accessibilityCaptionHintsHasBeenSet(false),
+    m_audioDuration(MpdAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
@@ -41,6 +49,20 @@ MpdSettings::MpdSettings(JsonView jsonValue) :
 
 MpdSettings& MpdSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accessibilityCaptionHints"))
+  {
+    m_accessibilityCaptionHints = MpdAccessibilityCaptionHintsMapper::GetMpdAccessibilityCaptionHintsForName(jsonValue.GetString("accessibilityCaptionHints"));
+
+    m_accessibilityCaptionHintsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = MpdAudioDurationMapper::GetMpdAudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("captionContainerType"))
   {
     m_captionContainerType = MpdCaptionContainerTypeMapper::GetMpdCaptionContainerTypeForName(jsonValue.GetString("captionContainerType"));
@@ -68,6 +90,16 @@ MpdSettings& MpdSettings::operator =(JsonView jsonValue)
 JsonValue MpdSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accessibilityCaptionHintsHasBeenSet)
+  {
+   payload.WithString("accessibilityCaptionHints", MpdAccessibilityCaptionHintsMapper::GetNameForMpdAccessibilityCaptionHints(m_accessibilityCaptionHints));
+  }
+
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", MpdAudioDurationMapper::GetNameForMpdAudioDuration(m_audioDuration));
+  }
 
   if(m_captionContainerTypeHasBeenSet)
   {

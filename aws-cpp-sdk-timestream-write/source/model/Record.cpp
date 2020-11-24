@@ -26,7 +26,9 @@ Record::Record() :
     m_measureValueTypeHasBeenSet(false),
     m_timeHasBeenSet(false),
     m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false)
+    m_timeUnitHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ Record::Record(JsonView jsonValue) :
     m_measureValueTypeHasBeenSet(false),
     m_timeHasBeenSet(false),
     m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false)
+    m_timeUnitHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +94,13 @@ Record& Record::operator =(JsonView jsonValue)
     m_timeUnitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetInt64("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +145,12 @@ JsonValue Record::Jsonize() const
   if(m_timeUnitHasBeenSet)
   {
    payload.WithString("TimeUnit", TimeUnitMapper::GetNameForTimeUnit(m_timeUnit));
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("Version", m_version);
+
   }
 
   return payload;

@@ -27,11 +27,11 @@ namespace Model
   /**
    * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to
    * which StackSets deploys. StackSets does not deploy stack instances to the
-   * organization master account, even if the master account is in your organization
-   * or in an OU in your organization.</p> <p>For update operations, you can specify
-   * either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create
-   * and delete operations, specify <code>OrganizationalUnitIds</code>.</p><p><h3>See
-   * Also:</h3>   <a
+   * organization management account, even if the organization management account is
+   * in your organization or in an OU in your organization.</p> <p>For update
+   * operations, you can specify either <code>Accounts</code> or
+   * <code>OrganizationalUnitIds</code>. For create and delete operations, specify
+   * <code>OrganizationalUnitIds</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeploymentTargets">AWS
    * API Reference</a></p>
    */

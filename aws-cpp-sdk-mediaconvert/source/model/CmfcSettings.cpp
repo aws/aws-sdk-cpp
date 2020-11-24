@@ -19,6 +19,8 @@ namespace Model
 {
 
 CmfcSettings::CmfcSettings() : 
+    m_audioDuration(CmfcAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
@@ -27,6 +29,8 @@ CmfcSettings::CmfcSettings() :
 }
 
 CmfcSettings::CmfcSettings(JsonView jsonValue) : 
+    m_audioDuration(CmfcAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
@@ -37,6 +41,13 @@ CmfcSettings::CmfcSettings(JsonView jsonValue) :
 
 CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = CmfcAudioDurationMapper::GetCmfcAudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scte35Esam"))
   {
     m_scte35Esam = CmfcScte35EsamMapper::GetCmfcScte35EsamForName(jsonValue.GetString("scte35Esam"));
@@ -57,6 +68,11 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
 JsonValue CmfcSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", CmfcAudioDurationMapper::GetNameForCmfcAudioDuration(m_audioDuration));
+  }
 
   if(m_scte35EsamHasBeenSet)
   {

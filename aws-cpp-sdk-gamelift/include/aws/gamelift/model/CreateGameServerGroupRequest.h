@@ -688,7 +688,7 @@ namespace Model
      * are used. You can use this parameter to specify VPCs that you've set up. This
      * property cannot be updated after the game server group is created, and the
      * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly</p>
+     * with this request, even if the Auto Scaling group is updated directly.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSubnets() const{ return m_vpcSubnets; }
 
@@ -698,7 +698,7 @@ namespace Model
      * are used. You can use this parameter to specify VPCs that you've set up. This
      * property cannot be updated after the game server group is created, and the
      * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly</p>
+     * with this request, even if the Auto Scaling group is updated directly.</p>
      */
     inline bool VpcSubnetsHasBeenSet() const { return m_vpcSubnetsHasBeenSet; }
 
@@ -708,7 +708,7 @@ namespace Model
      * are used. You can use this parameter to specify VPCs that you've set up. This
      * property cannot be updated after the game server group is created, and the
      * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly</p>
+     * with this request, even if the Auto Scaling group is updated directly.</p>
      */
     inline void SetVpcSubnets(const Aws::Vector<Aws::String>& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets = value; }
 
@@ -718,7 +718,7 @@ namespace Model
      * are used. You can use this parameter to specify VPCs that you've set up. This
      * property cannot be updated after the game server group is created, and the
      * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly</p>
+     * with this request, even if the Auto Scaling group is updated directly.</p>
      */
     inline void SetVpcSubnets(Aws::Vector<Aws::String>&& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets = std::move(value); }
 
@@ -728,7 +728,7 @@ namespace Model
      * are used. You can use this parameter to specify VPCs that you've set up. This
      * property cannot be updated after the game server group is created, and the
      * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly</p>
+     * with this request, even if the Auto Scaling group is updated directly.</p>
      */
     inline CreateGameServerGroupRequest& WithVpcSubnets(const Aws::Vector<Aws::String>& value) { SetVpcSubnets(value); return *this;}
 
@@ -738,7 +738,7 @@ namespace Model
      * are used. You can use this parameter to specify VPCs that you've set up. This
      * property cannot be updated after the game server group is created, and the
      * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly</p>
+     * with this request, even if the Auto Scaling group is updated directly.</p>
      */
     inline CreateGameServerGroupRequest& WithVpcSubnets(Aws::Vector<Aws::String>&& value) { SetVpcSubnets(std::move(value)); return *this;}
 
@@ -748,7 +748,7 @@ namespace Model
      * are used. You can use this parameter to specify VPCs that you've set up. This
      * property cannot be updated after the game server group is created, and the
      * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly</p>
+     * with this request, even if the Auto Scaling group is updated directly.</p>
      */
     inline CreateGameServerGroupRequest& AddVpcSubnets(const Aws::String& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.push_back(value); return *this; }
 
@@ -758,7 +758,7 @@ namespace Model
      * are used. You can use this parameter to specify VPCs that you've set up. This
      * property cannot be updated after the game server group is created, and the
      * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly</p>
+     * with this request, even if the Auto Scaling group is updated directly.</p>
      */
     inline CreateGameServerGroupRequest& AddVpcSubnets(Aws::String&& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.push_back(std::move(value)); return *this; }
 
@@ -768,7 +768,7 @@ namespace Model
      * are used. You can use this parameter to specify VPCs that you've set up. This
      * property cannot be updated after the game server group is created, and the
      * corresponding Auto Scaling group will always use the property value that is set
-     * with this request, even if the Auto Scaling group is updated directly</p>
+     * with this request, even if the Auto Scaling group is updated directly.</p>
      */
     inline CreateGameServerGroupRequest& AddVpcSubnets(const char* value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.push_back(value); return *this; }
 

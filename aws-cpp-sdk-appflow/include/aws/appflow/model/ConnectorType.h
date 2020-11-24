@@ -32,7 +32,8 @@ namespace Model
     Infornexus,
     Amplitude,
     Veeva,
-    EventBridge
+    EventBridge,
+    Upsolver
   };
 
 namespace ConnectorTypeMapper

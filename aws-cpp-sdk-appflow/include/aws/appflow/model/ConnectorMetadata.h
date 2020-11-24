@@ -22,6 +22,7 @@
 #include <aws/appflow/model/VeevaMetadata.h>
 #include <aws/appflow/model/ZendeskMetadata.h>
 #include <aws/appflow/model/EventBridgeMetadata.h>
+#include <aws/appflow/model/UpsolverMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -581,6 +582,37 @@ namespace Model
      */
     inline ConnectorMetadata& WithEventBridge(EventBridgeMetadata&& value) { SetEventBridge(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The connector metadata specific to Upsolver. </p>
+     */
+    inline const UpsolverMetadata& GetUpsolver() const{ return m_upsolver; }
+
+    /**
+     * <p> The connector metadata specific to Upsolver. </p>
+     */
+    inline bool UpsolverHasBeenSet() const { return m_upsolverHasBeenSet; }
+
+    /**
+     * <p> The connector metadata specific to Upsolver. </p>
+     */
+    inline void SetUpsolver(const UpsolverMetadata& value) { m_upsolverHasBeenSet = true; m_upsolver = value; }
+
+    /**
+     * <p> The connector metadata specific to Upsolver. </p>
+     */
+    inline void SetUpsolver(UpsolverMetadata&& value) { m_upsolverHasBeenSet = true; m_upsolver = std::move(value); }
+
+    /**
+     * <p> The connector metadata specific to Upsolver. </p>
+     */
+    inline ConnectorMetadata& WithUpsolver(const UpsolverMetadata& value) { SetUpsolver(value); return *this;}
+
+    /**
+     * <p> The connector metadata specific to Upsolver. </p>
+     */
+    inline ConnectorMetadata& WithUpsolver(UpsolverMetadata&& value) { SetUpsolver(std::move(value)); return *this;}
+
   private:
 
     AmplitudeMetadata m_amplitude;
@@ -633,6 +665,9 @@ namespace Model
 
     EventBridgeMetadata m_eventBridge;
     bool m_eventBridgeHasBeenSet;
+
+    UpsolverMetadata m_upsolver;
+    bool m_upsolverHasBeenSet;
   };
 
 } // namespace Model

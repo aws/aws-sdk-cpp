@@ -3140,7 +3140,11 @@ namespace Model
          * set as preferred. The preferred MFA factor will be used to authenticate a user
          * if multiple factors are enabled. If multiple options are enabled and no
          * preference is set, a challenge to choose an MFA option will be returned during
-         * sign in.</p><p><h3>See Also:</h3>   <a
+         * sign in. If an MFA type is enabled for a user, the user will be prompted for MFA
+         * during all sign in attempts, unless device tracking is turned on and the device
+         * has been trusted. If you would like MFA to be applied selectively based on the
+         * assessed risk level of sign in attempts, disable MFA for users and turn on
+         * Adaptive Authentication for the user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          */
@@ -3152,7 +3156,11 @@ namespace Model
          * set as preferred. The preferred MFA factor will be used to authenticate a user
          * if multiple factors are enabled. If multiple options are enabled and no
          * preference is set, a challenge to choose an MFA option will be returned during
-         * sign in.</p><p><h3>See Also:</h3>   <a
+         * sign in. If an MFA type is enabled for a user, the user will be prompted for MFA
+         * during all sign in attempts, unless device tracking is turned on and the device
+         * has been trusted. If you would like MFA to be applied selectively based on the
+         * assessed risk level of sign in attempts, disable MFA for users and turn on
+         * Adaptive Authentication for the user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          *
@@ -3166,7 +3174,11 @@ namespace Model
          * set as preferred. The preferred MFA factor will be used to authenticate a user
          * if multiple factors are enabled. If multiple options are enabled and no
          * preference is set, a challenge to choose an MFA option will be returned during
-         * sign in.</p><p><h3>See Also:</h3>   <a
+         * sign in. If an MFA type is enabled for a user, the user will be prompted for MFA
+         * during all sign in attempts, unless device tracking is turned on and the device
+         * has been trusted. If you would like MFA to be applied selectively based on the
+         * assessed risk level of sign in attempts, disable MFA for users and turn on
+         * Adaptive Authentication for the user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          *

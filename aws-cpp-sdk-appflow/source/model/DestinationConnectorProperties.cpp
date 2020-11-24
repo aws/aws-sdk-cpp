@@ -23,7 +23,8 @@ DestinationConnectorProperties::DestinationConnectorProperties() :
     m_s3HasBeenSet(false),
     m_salesforceHasBeenSet(false),
     m_snowflakeHasBeenSet(false),
-    m_eventBridgeHasBeenSet(false)
+    m_eventBridgeHasBeenSet(false),
+    m_upsolverHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ DestinationConnectorProperties::DestinationConnectorProperties(JsonView jsonValu
     m_s3HasBeenSet(false),
     m_salesforceHasBeenSet(false),
     m_snowflakeHasBeenSet(false),
-    m_eventBridgeHasBeenSet(false)
+    m_eventBridgeHasBeenSet(false),
+    m_upsolverHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ DestinationConnectorProperties& DestinationConnectorProperties::operator =(JsonV
     m_eventBridgeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Upsolver"))
+  {
+    m_upsolver = jsonValue.GetObject("Upsolver");
+
+    m_upsolverHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue DestinationConnectorProperties::Jsonize() const
   if(m_eventBridgeHasBeenSet)
   {
    payload.WithObject("EventBridge", m_eventBridge.Jsonize());
+
+  }
+
+  if(m_upsolverHasBeenSet)
+  {
+   payload.WithObject("Upsolver", m_upsolver.Jsonize());
 
   }
 

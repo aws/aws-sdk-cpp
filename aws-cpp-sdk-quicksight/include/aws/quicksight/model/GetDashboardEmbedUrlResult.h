@@ -24,6 +24,12 @@ namespace QuickSight
 {
 namespace Model
 {
+  /**
+   * <p>Output returned from the <code>GetDashboardEmbedUrl</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrlResponse">AWS
+   * API Reference</a></p>
+   */
   class AWS_QUICKSIGHT_API GetDashboardEmbedUrlResult
   {
   public:

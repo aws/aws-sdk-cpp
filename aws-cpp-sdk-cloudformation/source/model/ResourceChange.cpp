@@ -30,7 +30,8 @@ ResourceChange::ResourceChange() :
     m_replacementHasBeenSet(false),
     m_scopeHasBeenSet(false),
     m_detailsHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false)
+    m_changeSetIdHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ResourceChange::ResourceChange(const XmlNode& xmlNode) :
     m_replacementHasBeenSet(false),
     m_scopeHasBeenSet(false),
     m_detailsHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false)
+    m_changeSetIdHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -115,6 +117,12 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
       m_changeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(changeSetIdNode.GetText());
       m_changeSetIdHasBeenSet = true;
     }
+    XmlNode moduleInfoNode = resultNode.FirstChild("ModuleInfo");
+    if(!moduleInfoNode.IsNull())
+    {
+      m_moduleInfo = moduleInfoNode;
+      m_moduleInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -172,6 +180,13 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
   }
 
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::StringStream moduleInfoLocationAndMemberSs;
+      moduleInfoLocationAndMemberSs << location << index << locationValue << ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -217,6 +232,12 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_changeSetIdHasBeenSet)
   {
       oStream << location << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
+  }
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::String moduleInfoLocationAndMember(location);
+      moduleInfoLocationAndMember += ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMember.c_str());
   }
 }
 

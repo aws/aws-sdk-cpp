@@ -405,38 +405,44 @@ namespace Model
 
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline const HlsClientCache& GetClientCache() const{ return m_clientCache; }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline bool ClientCacheHasBeenSet() const { return m_clientCacheHasBeenSet; }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline void SetClientCache(const HlsClientCache& value) { m_clientCacheHasBeenSet = true; m_clientCache = value; }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline void SetClientCache(HlsClientCache&& value) { m_clientCacheHasBeenSet = true; m_clientCache = std::move(value); }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline HlsGroupSettings& WithClientCache(const HlsClientCache& value) { SetClientCache(value); return *this;}
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline HlsGroupSettings& WithClientCache(HlsClientCache&& value) { SetClientCache(std::move(value)); return *this;}
 

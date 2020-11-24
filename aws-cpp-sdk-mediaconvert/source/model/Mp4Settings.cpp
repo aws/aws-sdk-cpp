@@ -19,6 +19,8 @@ namespace Model
 {
 
 Mp4Settings::Mp4Settings() : 
+    m_audioDuration(CmfcAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_cslgAtom(Mp4CslgAtom::NOT_SET),
     m_cslgAtomHasBeenSet(false),
     m_cttsVersion(0),
@@ -32,6 +34,8 @@ Mp4Settings::Mp4Settings() :
 }
 
 Mp4Settings::Mp4Settings(JsonView jsonValue) : 
+    m_audioDuration(CmfcAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_cslgAtom(Mp4CslgAtom::NOT_SET),
     m_cslgAtomHasBeenSet(false),
     m_cttsVersion(0),
@@ -47,6 +51,13 @@ Mp4Settings::Mp4Settings(JsonView jsonValue) :
 
 Mp4Settings& Mp4Settings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = CmfcAudioDurationMapper::GetCmfcAudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("cslgAtom"))
   {
     m_cslgAtom = Mp4CslgAtomMapper::GetMp4CslgAtomForName(jsonValue.GetString("cslgAtom"));
@@ -88,6 +99,11 @@ Mp4Settings& Mp4Settings::operator =(JsonView jsonValue)
 JsonValue Mp4Settings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", CmfcAudioDurationMapper::GetNameForCmfcAudioDuration(m_audioDuration));
+  }
 
   if(m_cslgAtomHasBeenSet)
   {

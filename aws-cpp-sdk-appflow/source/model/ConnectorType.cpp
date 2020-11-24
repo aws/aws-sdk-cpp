@@ -37,6 +37,7 @@ namespace Aws
         static const int Amplitude_HASH = HashingUtils::HashString("Amplitude");
         static const int Veeva_HASH = HashingUtils::HashString("Veeva");
         static const int EventBridge_HASH = HashingUtils::HashString("EventBridge");
+        static const int Upsolver_HASH = HashingUtils::HashString("Upsolver");
 
 
         ConnectorType GetConnectorTypeForName(const Aws::String& name)
@@ -110,6 +111,10 @@ namespace Aws
           {
             return ConnectorType::EventBridge;
           }
+          else if (hashCode == Upsolver_HASH)
+          {
+            return ConnectorType::Upsolver;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -158,6 +163,8 @@ namespace Aws
             return "Veeva";
           case ConnectorType::EventBridge:
             return "EventBridge";
+          case ConnectorType::Upsolver:
+            return "Upsolver";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

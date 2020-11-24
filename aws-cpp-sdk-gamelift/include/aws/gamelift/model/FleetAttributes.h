@@ -1224,105 +1224,49 @@ namespace Model
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
 

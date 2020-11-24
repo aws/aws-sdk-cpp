@@ -914,7 +914,7 @@ namespace Model
      * matchmaking configuration used, it contains data on all players assigned to the
      * match, including player attributes and team assignments. For more details on
      * matchmaker data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
      * <a>StartMatchBackfill</a>). </p>
@@ -927,7 +927,7 @@ namespace Model
      * matchmaking configuration used, it contains data on all players assigned to the
      * match, including player attributes and team assignments. For more details on
      * matchmaker data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
      * <a>StartMatchBackfill</a>). </p>
@@ -940,7 +940,7 @@ namespace Model
      * matchmaking configuration used, it contains data on all players assigned to the
      * match, including player attributes and team assignments. For more details on
      * matchmaker data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
      * <a>StartMatchBackfill</a>). </p>
@@ -953,7 +953,7 @@ namespace Model
      * matchmaking configuration used, it contains data on all players assigned to the
      * match, including player attributes and team assignments. For more details on
      * matchmaker data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
      * <a>StartMatchBackfill</a>). </p>
@@ -966,7 +966,7 @@ namespace Model
      * matchmaking configuration used, it contains data on all players assigned to the
      * match, including player attributes and team assignments. For more details on
      * matchmaker data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
      * <a>StartMatchBackfill</a>). </p>
@@ -979,7 +979,7 @@ namespace Model
      * matchmaking configuration used, it contains data on all players assigned to the
      * match, including player attributes and team assignments. For more details on
      * matchmaker data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
      * <a>StartMatchBackfill</a>). </p>
@@ -992,7 +992,7 @@ namespace Model
      * matchmaking configuration used, it contains data on all players assigned to the
      * match, including player attributes and team assignments. For more details on
      * matchmaker data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
      * <a>StartMatchBackfill</a>). </p>
@@ -1005,7 +1005,7 @@ namespace Model
      * matchmaking configuration used, it contains data on all players assigned to the
      * match, including player attributes and team assignments. For more details on
      * matchmaker data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>. Matchmaker data is useful when requesting match backfills, and is
      * updated whenever new players are added during a successful backfill (see
      * <a>StartMatchBackfill</a>). </p>

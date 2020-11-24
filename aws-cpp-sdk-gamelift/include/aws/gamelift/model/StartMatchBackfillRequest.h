@@ -242,7 +242,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the Region that
      * the game session is currently in. Do not include latency values for any other
@@ -258,7 +258,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the Region that
      * the game session is currently in. Do not include latency values for any other
@@ -274,7 +274,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the Region that
      * the game session is currently in. Do not include latency values for any other
@@ -290,7 +290,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the Region that
      * the game session is currently in. Do not include latency values for any other
@@ -306,7 +306,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the Region that
      * the game session is currently in. Do not include latency values for any other
@@ -322,7 +322,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the Region that
      * the game session is currently in. Do not include latency values for any other
@@ -338,7 +338,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the Region that
      * the game session is currently in. Do not include latency values for any other
@@ -354,7 +354,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the Region that
      * the game session is currently in. Do not include latency values for any other

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/LaunchTemplateSpecification.h>
+#include <aws/batch/model/Ec2Configuration.h>
 #include <utility>
 
 namespace Aws
@@ -363,55 +364,6 @@ namespace Model
      * the demand of your job queues.</p>
      */
     inline ComputeResource& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
-
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline ComputeResource& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline ComputeResource& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline ComputeResource& WithImageId(const char* value) { SetImageId(value); return *this;}
 
 
     /**
@@ -1145,6 +1097,55 @@ namespace Model
      */
     inline ComputeResource& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides additional details used to selecting the AMI to use for instances in
+     * a compute environment.</p>
+     */
+    inline const Aws::Vector<Ec2Configuration>& GetEc2Configuration() const{ return m_ec2Configuration; }
+
+    /**
+     * <p>Provides additional details used to selecting the AMI to use for instances in
+     * a compute environment.</p>
+     */
+    inline bool Ec2ConfigurationHasBeenSet() const { return m_ec2ConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides additional details used to selecting the AMI to use for instances in
+     * a compute environment.</p>
+     */
+    inline void SetEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = value; }
+
+    /**
+     * <p>Provides additional details used to selecting the AMI to use for instances in
+     * a compute environment.</p>
+     */
+    inline void SetEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = std::move(value); }
+
+    /**
+     * <p>Provides additional details used to selecting the AMI to use for instances in
+     * a compute environment.</p>
+     */
+    inline ComputeResource& WithEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { SetEc2Configuration(value); return *this;}
+
+    /**
+     * <p>Provides additional details used to selecting the AMI to use for instances in
+     * a compute environment.</p>
+     */
+    inline ComputeResource& WithEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { SetEc2Configuration(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides additional details used to selecting the AMI to use for instances in
+     * a compute environment.</p>
+     */
+    inline ComputeResource& AddEc2Configuration(const Ec2Configuration& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(value); return *this; }
+
+    /**
+     * <p>Provides additional details used to selecting the AMI to use for instances in
+     * a compute environment.</p>
+     */
+    inline ComputeResource& AddEc2Configuration(Ec2Configuration&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(std::move(value)); return *this; }
+
   private:
 
     CRType m_type;
@@ -1164,9 +1165,6 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceTypes;
     bool m_instanceTypesHasBeenSet;
-
-    Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
 
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
@@ -1194,6 +1192,9 @@ namespace Model
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet;
+
+    Aws::Vector<Ec2Configuration> m_ec2Configuration;
+    bool m_ec2ConfigurationHasBeenSet;
   };
 
 } // namespace Model

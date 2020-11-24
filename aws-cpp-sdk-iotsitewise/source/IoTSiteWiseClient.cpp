@@ -44,6 +44,7 @@
 #include <aws/iotsitewise/model/DescribeAssetModelRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetPropertyRequest.h>
 #include <aws/iotsitewise/model/DescribeDashboardRequest.h>
+#include <aws/iotsitewise/model/DescribeDefaultEncryptionConfigurationRequest.h>
 #include <aws/iotsitewise/model/DescribeGatewayRequest.h>
 #include <aws/iotsitewise/model/DescribeGatewayCapabilityConfigurationRequest.h>
 #include <aws/iotsitewise/model/DescribeLoggingOptionsRequest.h>
@@ -63,6 +64,7 @@
 #include <aws/iotsitewise/model/ListProjectAssetsRequest.h>
 #include <aws/iotsitewise/model/ListProjectsRequest.h>
 #include <aws/iotsitewise/model/ListTagsForResourceRequest.h>
+#include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationRequest.h>
 #include <aws/iotsitewise/model/PutLoggingOptionsRequest.h>
 #include <aws/iotsitewise/model/TagResourceRequest.h>
 #include <aws/iotsitewise/model/UntagResourceRequest.h>
@@ -1129,6 +1131,33 @@ void IoTSiteWiseClient::DescribeDashboardAsyncHelper(const DescribeDashboardRequ
   handler(this, request, DescribeDashboard(request), context);
 }
 
+DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefaultEncryptionConfiguration(const DescribeDefaultEncryptionConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  Aws::StringStream ss;
+  ss << "/configuration/account/encryption";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeDefaultEncryptionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDefaultEncryptionConfigurationOutcomeCallable IoTSiteWiseClient::DescribeDefaultEncryptionConfigurationCallable(const DescribeDefaultEncryptionConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDefaultEncryptionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDefaultEncryptionConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::DescribeDefaultEncryptionConfigurationAsync(const DescribeDefaultEncryptionConfigurationRequest& request, const DescribeDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDefaultEncryptionConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::DescribeDefaultEncryptionConfigurationAsyncHelper(const DescribeDefaultEncryptionConfigurationRequest& request, const DescribeDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDefaultEncryptionConfiguration(request), context);
+}
+
 DescribeGatewayOutcome IoTSiteWiseClient::DescribeGateway(const DescribeGatewayRequest& request) const
 {
   if (!request.GatewayIdHasBeenSet())
@@ -1889,6 +1918,33 @@ void IoTSiteWiseClient::ListTagsForResourceAsync(const ListTagsForResourceReques
 void IoTSiteWiseClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+PutDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::PutDefaultEncryptionConfiguration(const PutDefaultEncryptionConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  Aws::StringStream ss;
+  ss << "/configuration/account/encryption";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutDefaultEncryptionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutDefaultEncryptionConfigurationOutcomeCallable IoTSiteWiseClient::PutDefaultEncryptionConfigurationCallable(const PutDefaultEncryptionConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutDefaultEncryptionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDefaultEncryptionConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::PutDefaultEncryptionConfigurationAsync(const PutDefaultEncryptionConfigurationRequest& request, const PutDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutDefaultEncryptionConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::PutDefaultEncryptionConfigurationAsyncHelper(const PutDefaultEncryptionConfigurationRequest& request, const PutDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutDefaultEncryptionConfiguration(request), context);
 }
 
 PutLoggingOptionsOutcome IoTSiteWiseClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const

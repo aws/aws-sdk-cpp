@@ -39,7 +39,9 @@ MatchmakingConfiguration::MatchmakingConfiguration() :
     m_gamePropertiesHasBeenSet(false),
     m_gameSessionDataHasBeenSet(false),
     m_backfillMode(BackfillMode::NOT_SET),
-    m_backfillModeHasBeenSet(false)
+    m_backfillModeHasBeenSet(false),
+    m_flexMatchMode(FlexMatchMode::NOT_SET),
+    m_flexMatchModeHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ MatchmakingConfiguration::MatchmakingConfiguration(JsonView jsonValue) :
     m_gamePropertiesHasBeenSet(false),
     m_gameSessionDataHasBeenSet(false),
     m_backfillMode(BackfillMode::NOT_SET),
-    m_backfillModeHasBeenSet(false)
+    m_backfillModeHasBeenSet(false),
+    m_flexMatchMode(FlexMatchMode::NOT_SET),
+    m_flexMatchModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -189,6 +193,13 @@ MatchmakingConfiguration& MatchmakingConfiguration::operator =(JsonView jsonValu
     m_backfillModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FlexMatchMode"))
+  {
+    m_flexMatchMode = FlexMatchModeMapper::GetFlexMatchModeForName(jsonValue.GetString("FlexMatchMode"));
+
+    m_flexMatchModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -298,6 +309,11 @@ JsonValue MatchmakingConfiguration::Jsonize() const
   if(m_backfillModeHasBeenSet)
   {
    payload.WithString("BackfillMode", BackfillModeMapper::GetNameForBackfillMode(m_backfillMode));
+  }
+
+  if(m_flexMatchModeHasBeenSet)
+  {
+   payload.WithString("FlexMatchMode", FlexMatchModeMapper::GetNameForFlexMatchMode(m_flexMatchMode));
   }
 
   return payload;

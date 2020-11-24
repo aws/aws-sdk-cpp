@@ -9,6 +9,7 @@
 #include <aws/cloudformation/model/Visibility.h>
 #include <aws/cloudformation/model/ProvisioningType.h>
 #include <aws/cloudformation/model/DeprecatedStatus.h>
+#include <aws/cloudformation/model/RegistryType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -247,6 +248,37 @@ namespace Model
 
 
     /**
+     * <p>The type of extension.</p>
+     */
+    inline const RegistryType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline ListTypesRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline ListTypesRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum number of results to be returned with a single call. If the
      * number of available results exceeds this maximum, the response includes a
      * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
@@ -369,6 +401,9 @@ namespace Model
 
     DeprecatedStatus m_deprecatedStatus;
     bool m_deprecatedStatusHasBeenSet;
+
+    RegistryType m_type;
+    bool m_typeHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

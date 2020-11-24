@@ -20,6 +20,7 @@ namespace Model
     en_AU,
     en_GB,
     en_US,
+    es_419,
     es_ES,
     es_US,
     fr_FR,

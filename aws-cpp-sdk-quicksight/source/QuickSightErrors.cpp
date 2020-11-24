@@ -16,6 +16,7 @@
 #include <aws/quicksight/model/InvalidNextTokenException.h>
 #include <aws/quicksight/model/InternalFailureException.h>
 #include <aws/quicksight/model/DomainNotWhitelistedException.h>
+#include <aws/quicksight/model/UnsupportedPricingPlanException.h>
 #include <aws/quicksight/model/ThrottlingException.h>
 #include <aws/quicksight/model/UnsupportedUserEditionException.h>
 #include <aws/quicksight/model/SessionLifetimeInMinutesInvalidException.h>
@@ -93,6 +94,12 @@ template<> AWS_QUICKSIGHT_API DomainNotWhitelistedException QuickSightError::Get
   return DomainNotWhitelistedException(this->GetJsonPayload().View());
 }
 
+template<> AWS_QUICKSIGHT_API UnsupportedPricingPlanException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::UNSUPPORTED_PRICING_PLAN);
+  return UnsupportedPricingPlanException(this->GetJsonPayload().View());
+}
+
 template<> AWS_QUICKSIGHT_API ThrottlingException QuickSightError::GetModeledError()
 {
   assert(this->GetErrorType() == QuickSightErrors::THROTTLING);
@@ -140,15 +147,16 @@ namespace QuickSightErrorMapper
 
 static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int UNSUPPORTED_USER_EDITION_HASH = HashingUtils::HashString("UnsupportedUserEditionException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int QUICK_SIGHT_USER_NOT_FOUND_HASH = HashingUtils::HashString("QuickSightUserNotFoundException");
-static const int SESSION_LIFETIME_IN_MINUTES_INVALID_HASH = HashingUtils::HashString("SessionLifetimeInMinutesInvalidException");
 static const int IDENTITY_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("IdentityTypeNotSupportedException");
-static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
-static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int DOMAIN_NOT_WHITELISTED_HASH = HashingUtils::HashString("DomainNotWhitelistedException");
+static const int UNSUPPORTED_PRICING_PLAN_HASH = HashingUtils::HashString("UnsupportedPricingPlanException");
+static const int UNSUPPORTED_USER_EDITION_HASH = HashingUtils::HashString("UnsupportedUserEditionException");
+static const int SESSION_LIFETIME_IN_MINUTES_INVALID_HASH = HashingUtils::HashString("SessionLifetimeInMinutesInvalidException");
+static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
+static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
 static const int CONCURRENT_UPDATING_HASH = HashingUtils::HashString("ConcurrentUpdatingException");
 
 
@@ -164,10 +172,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONFLICT), false);
   }
-  else if (hashCode == UNSUPPORTED_USER_EDITION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::UNSUPPORTED_USER_EDITION), false);
-  }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::LIMIT_EXCEEDED), true);
@@ -176,21 +180,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::QUICK_SIGHT_USER_NOT_FOUND), false);
   }
-  else if (hashCode == SESSION_LIFETIME_IN_MINUTES_INVALID_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::SESSION_LIFETIME_IN_MINUTES_INVALID), false);
-  }
   else if (hashCode == IDENTITY_TYPE_NOT_SUPPORTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::IDENTITY_TYPE_NOT_SUPPORTED), false);
-  }
-  else if (hashCode == PRECONDITION_NOT_MET_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::PRECONDITION_NOT_MET), false);
-  }
-  else if (hashCode == RESOURCE_UNAVAILABLE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_UNAVAILABLE), false);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
@@ -199,6 +191,26 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DOMAIN_NOT_WHITELISTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::DOMAIN_NOT_WHITELISTED), false);
+  }
+  else if (hashCode == UNSUPPORTED_PRICING_PLAN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::UNSUPPORTED_PRICING_PLAN), false);
+  }
+  else if (hashCode == UNSUPPORTED_USER_EDITION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::UNSUPPORTED_USER_EDITION), false);
+  }
+  else if (hashCode == SESSION_LIFETIME_IN_MINUTES_INVALID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::SESSION_LIFETIME_IN_MINUTES_INVALID), false);
+  }
+  else if (hashCode == PRECONDITION_NOT_MET_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::PRECONDITION_NOT_MET), false);
+  }
+  else if (hashCode == RESOURCE_UNAVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_UNAVAILABLE), false);
   }
   else if (hashCode == CONCURRENT_UPDATING_HASH)
   {

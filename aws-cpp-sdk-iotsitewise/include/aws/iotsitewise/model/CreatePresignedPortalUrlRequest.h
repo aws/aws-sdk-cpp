@@ -81,25 +81,25 @@ namespace Model
 
     /**
      * <p>The duration (in seconds) for which the session at the URL is valid.</p>
-     * <p>Default: 900 seconds (15 minutes)</p>
+     * <p>Default: 43,200 seconds (12 hours)</p>
      */
     inline int GetSessionDurationSeconds() const{ return m_sessionDurationSeconds; }
 
     /**
      * <p>The duration (in seconds) for which the session at the URL is valid.</p>
-     * <p>Default: 900 seconds (15 minutes)</p>
+     * <p>Default: 43,200 seconds (12 hours)</p>
      */
     inline bool SessionDurationSecondsHasBeenSet() const { return m_sessionDurationSecondsHasBeenSet; }
 
     /**
      * <p>The duration (in seconds) for which the session at the URL is valid.</p>
-     * <p>Default: 900 seconds (15 minutes)</p>
+     * <p>Default: 43,200 seconds (12 hours)</p>
      */
     inline void SetSessionDurationSeconds(int value) { m_sessionDurationSecondsHasBeenSet = true; m_sessionDurationSeconds = value; }
 
     /**
      * <p>The duration (in seconds) for which the session at the URL is valid.</p>
-     * <p>Default: 900 seconds (15 minutes)</p>
+     * <p>Default: 43,200 seconds (12 hours)</p>
      */
     inline CreatePresignedPortalUrlRequest& WithSessionDurationSeconds(int value) { SetSessionDurationSeconds(value); return *this;}
 

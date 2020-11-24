@@ -29,6 +29,7 @@
 #include <aws/states/model/SendTaskHeartbeatResult.h>
 #include <aws/states/model/SendTaskSuccessResult.h>
 #include <aws/states/model/StartExecutionResult.h>
+#include <aws/states/model/StartSyncExecutionResult.h>
 #include <aws/states/model/StopExecutionResult.h>
 #include <aws/states/model/TagResourceResult.h>
 #include <aws/states/model/UntagResourceResult.h>
@@ -90,6 +91,7 @@ namespace Model
         class SendTaskHeartbeatRequest;
         class SendTaskSuccessRequest;
         class StartExecutionRequest;
+        class StartSyncExecutionRequest;
         class StopExecutionRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -113,6 +115,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SendTaskHeartbeatResult, SFNError> SendTaskHeartbeatOutcome;
         typedef Aws::Utils::Outcome<SendTaskSuccessResult, SFNError> SendTaskSuccessOutcome;
         typedef Aws::Utils::Outcome<StartExecutionResult, SFNError> StartExecutionOutcome;
+        typedef Aws::Utils::Outcome<StartSyncExecutionResult, SFNError> StartSyncExecutionOutcome;
         typedef Aws::Utils::Outcome<StopExecutionResult, SFNError> StopExecutionOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, SFNError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, SFNError> UntagResourceOutcome;
@@ -136,6 +139,7 @@ namespace Model
         typedef std::future<SendTaskHeartbeatOutcome> SendTaskHeartbeatOutcomeCallable;
         typedef std::future<SendTaskSuccessOutcome> SendTaskSuccessOutcomeCallable;
         typedef std::future<StartExecutionOutcome> StartExecutionOutcomeCallable;
+        typedef std::future<StartSyncExecutionOutcome> StartSyncExecutionOutcomeCallable;
         typedef std::future<StopExecutionOutcome> StopExecutionOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -162,6 +166,7 @@ namespace Model
     typedef std::function<void(const SFNClient*, const Model::SendTaskHeartbeatRequest&, const Model::SendTaskHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskHeartbeatResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::SendTaskSuccessRequest&, const Model::SendTaskSuccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskSuccessResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::StartExecutionRequest&, const Model::StartExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExecutionResponseReceivedHandler;
+    typedef std::function<void(const SFNClient*, const Model::StartSyncExecutionRequest&, const Model::StartSyncExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSyncExecutionResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::StopExecutionRequest&, const Model::StopExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopExecutionResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -1033,6 +1038,34 @@ namespace Model
         virtual void StartExecutionAsync(const Model::StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts a Synchronous Express state machine execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSyncExecutionOutcome StartSyncExecution(const Model::StartSyncExecutionRequest& request) const;
+
+        /**
+         * <p>Starts a Synchronous Express state machine execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartSyncExecutionOutcomeCallable StartSyncExecutionCallable(const Model::StartSyncExecutionRequest& request) const;
+
+        /**
+         * <p>Starts a Synchronous Express state machine execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartSyncExecutionAsync(const Model::StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops an execution.</p> <p>This API action is not supported by
          * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">AWS
@@ -1211,12 +1244,15 @@ namespace Model
         void SendTaskHeartbeatAsyncHelper(const Model::SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendTaskSuccessAsyncHelper(const Model::SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartExecutionAsyncHelper(const Model::StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartSyncExecutionAsyncHelper(const Model::StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopExecutionAsyncHelper(const Model::StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStateMachineAsyncHelper(const Model::UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
-      Aws::String m_uri;
+      Aws::String m_baseUri;
+      Aws::String m_scheme;
+      bool m_enableHostPrefixInjection;
       Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };

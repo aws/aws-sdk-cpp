@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The filter used to determine which endpoints are are returned. You can filter
+   * <p>The filter used to determine which endpoints are returned. You can filter
    * jobs on their name, model, status, or the date and time that they were created.
    * You can only set one filter at a time. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EndpointFilter">AWS

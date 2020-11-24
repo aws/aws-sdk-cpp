@@ -30,6 +30,8 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_hbbtvComplianceHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(DashIsoMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
     m_segmentControl(DashIsoSegmentControl::NOT_SET),
@@ -53,6 +55,8 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_hbbtvComplianceHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(DashIsoMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
     m_segmentControl(DashIsoSegmentControl::NOT_SET),
@@ -124,6 +128,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_minBufferTime = jsonValue.GetInteger("minBufferTime");
 
     m_minBufferTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minFinalSegmentLength"))
+  {
+    m_minFinalSegmentLength = jsonValue.GetDouble("minFinalSegmentLength");
+
+    m_minFinalSegmentLengthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("mpdProfile"))
@@ -210,6 +221,12 @@ JsonValue DashIsoGroupSettings::Jsonize() const
   if(m_minBufferTimeHasBeenSet)
   {
    payload.WithInteger("minBufferTime", m_minBufferTime);
+
+  }
+
+  if(m_minFinalSegmentLengthHasBeenSet)
+  {
+   payload.WithDouble("minFinalSegmentLength", m_minFinalSegmentLength);
 
   }
 

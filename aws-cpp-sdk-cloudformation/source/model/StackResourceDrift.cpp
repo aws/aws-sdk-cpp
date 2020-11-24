@@ -31,7 +31,8 @@ StackResourceDrift::StackResourceDrift() :
     m_propertyDifferencesHasBeenSet(false),
     m_stackResourceDriftStatus(StackResourceDriftStatus::NOT_SET),
     m_stackResourceDriftStatusHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ StackResourceDrift::StackResourceDrift(const XmlNode& xmlNode) :
     m_propertyDifferencesHasBeenSet(false),
     m_stackResourceDriftStatus(StackResourceDriftStatus::NOT_SET),
     m_stackResourceDriftStatusHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -129,6 +131,12 @@ StackResourceDrift& StackResourceDrift::operator =(const XmlNode& xmlNode)
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
+    XmlNode moduleInfoNode = resultNode.FirstChild("ModuleInfo");
+    if(!moduleInfoNode.IsNull())
+    {
+      m_moduleInfo = moduleInfoNode;
+      m_moduleInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -198,6 +206,13 @@ void StackResourceDrift::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::StringStream moduleInfoLocationAndMemberSs;
+      moduleInfoLocationAndMemberSs << location << index << locationValue << ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackResourceDrift::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -253,6 +268,12 @@ void StackResourceDrift::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_timestampHasBeenSet)
   {
       oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::String moduleInfoLocationAndMember(location);
+      moduleInfoLocationAndMember += ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMember.c_str());
   }
 }
 

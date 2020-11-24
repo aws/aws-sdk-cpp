@@ -26,8 +26,7 @@ namespace Model
 
   /**
    * <p> Configuration parameters for an optional private Virtual Private Cloud (VPC)
-   * containing the resources you are using for the job. For For more information,
-   * see <a
+   * containing the resources you are using for the job. For more information, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
    * VPC</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/VpcConfig">AWS

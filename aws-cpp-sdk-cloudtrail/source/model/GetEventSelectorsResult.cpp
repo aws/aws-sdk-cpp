@@ -43,6 +43,15 @@ GetEventSelectorsResult& GetEventSelectorsResult::operator =(const Aws::AmazonWe
     }
   }
 
+  if(jsonValue.ValueExists("AdvancedEventSelectors"))
+  {
+    Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
+    for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
+    {
+      m_advancedEventSelectors.push_back(advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

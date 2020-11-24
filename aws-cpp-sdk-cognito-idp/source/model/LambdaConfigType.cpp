@@ -28,7 +28,10 @@ LambdaConfigType::LambdaConfigType() :
     m_createAuthChallengeHasBeenSet(false),
     m_verifyAuthChallengeResponseHasBeenSet(false),
     m_preTokenGenerationHasBeenSet(false),
-    m_userMigrationHasBeenSet(false)
+    m_userMigrationHasBeenSet(false),
+    m_customSMSSenderHasBeenSet(false),
+    m_customEmailSenderHasBeenSet(false),
+    m_kMSKeyIDHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ LambdaConfigType::LambdaConfigType(JsonView jsonValue) :
     m_createAuthChallengeHasBeenSet(false),
     m_verifyAuthChallengeResponseHasBeenSet(false),
     m_preTokenGenerationHasBeenSet(false),
-    m_userMigrationHasBeenSet(false)
+    m_userMigrationHasBeenSet(false),
+    m_customSMSSenderHasBeenSet(false),
+    m_customEmailSenderHasBeenSet(false),
+    m_kMSKeyIDHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +125,27 @@ LambdaConfigType& LambdaConfigType::operator =(JsonView jsonValue)
     m_userMigrationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomSMSSender"))
+  {
+    m_customSMSSender = jsonValue.GetObject("CustomSMSSender");
+
+    m_customSMSSenderHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomEmailSender"))
+  {
+    m_customEmailSender = jsonValue.GetObject("CustomEmailSender");
+
+    m_customEmailSenderHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KMSKeyID"))
+  {
+    m_kMSKeyID = jsonValue.GetString("KMSKeyID");
+
+    m_kMSKeyIDHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +210,24 @@ JsonValue LambdaConfigType::Jsonize() const
   if(m_userMigrationHasBeenSet)
   {
    payload.WithString("UserMigration", m_userMigration);
+
+  }
+
+  if(m_customSMSSenderHasBeenSet)
+  {
+   payload.WithObject("CustomSMSSender", m_customSMSSender.Jsonize());
+
+  }
+
+  if(m_customEmailSenderHasBeenSet)
+  {
+   payload.WithObject("CustomEmailSender", m_customEmailSender.Jsonize());
+
+  }
+
+  if(m_kMSKeyIDHasBeenSet)
+  {
+   payload.WithString("KMSKeyID", m_kMSKeyID);
 
   }
 

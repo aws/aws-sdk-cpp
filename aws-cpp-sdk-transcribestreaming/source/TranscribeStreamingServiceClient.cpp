@@ -21,6 +21,7 @@
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceEndpoint.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrorMarshaller.h>
+#include <aws/transcribestreaming/model/StartMedicalStreamTranscriptionRequest.h>
 #include <aws/transcribestreaming/model/StartStreamTranscriptionRequest.h>
 
 using namespace Aws;
@@ -96,6 +97,71 @@ void TranscribeStreamingServiceClient::OverrideEndpoint(const Aws::String& endpo
   }
 }
 
+void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Model::StartMedicalStreamTranscriptionRequest& request,
+                const StartMedicalStreamTranscriptionStreamReadyHandler& streamReadyHandler,
+                const StartMedicalStreamTranscriptionResponseReceivedHandler& responseHandler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+{
+  Aws::Http::URI uri = m_uri;
+  if (!request.LanguageCodeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartMedicalStreamTranscription", "Required field: LanguageCode, is not set");
+    responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LanguageCode]", false)), handlerContext);
+    return;
+  }
+  if (!request.MediaSampleRateHertzHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartMedicalStreamTranscription", "Required field: MediaSampleRateHertz, is not set");
+    responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaSampleRateHertz]", false)), handlerContext);
+    return;
+  }
+  if (!request.MediaEncodingHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartMedicalStreamTranscription", "Required field: MediaEncoding, is not set");
+    responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaEncoding]", false)), handlerContext);
+    return;
+  }
+  if (!request.SpecialtyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartMedicalStreamTranscription", "Required field: Specialty, is not set");
+    responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Specialty]", false)), handlerContext);
+    return;
+  }
+  if (!request.TypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartMedicalStreamTranscription", "Required field: Type, is not set");
+    responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false)), handlerContext);
+    return;
+  }
+  Aws::StringStream ss;
+  ss << "/medical-stream-transcription";
+  uri.SetPath(uri.GetPath() + ss.str());
+  request.SetResponseStreamFactory(
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+
+  auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
+  eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
+  request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
+  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
+
+  m_executor->Submit([this, uri, &request, responseHandler, handlerContext] () mutable {
+      JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+      if(outcome.IsSuccess())
+      {
+        responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(NoResult()), handlerContext);
+      }
+      else
+      {
+        request.GetAudioStream()->Close();
+        responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
+      }
+      return StartMedicalStreamTranscriptionOutcome(NoResult());
+  });
+  sem->WaitOne();
+  streamReadyHandler(*request.GetAudioStream());
+}
 void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::StartStreamTranscriptionRequest& request,
                 const StartStreamTranscriptionStreamReadyHandler& streamReadyHandler,
                 const StartStreamTranscriptionResponseReceivedHandler& responseHandler,

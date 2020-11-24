@@ -121,38 +121,32 @@ namespace Model
 
 
     /**
-     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
-     * value.</p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline const MediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
 
     /**
-     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
-     * value.</p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
 
     /**
-     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
-     * value.</p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline void SetMediaEncoding(const MediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
 
     /**
-     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
-     * value.</p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
 
     /**
-     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
-     * value.</p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
 
     /**
-     * <p>The encoding used for the input audio. <code>pcm</code> is the only valid
-     * value.</p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaEncoding(MediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
 

@@ -7,7 +7,8 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/quicksight/model/IdentityType.h>
+#include <aws/quicksight/model/EmbeddingIdentityType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -22,6 +23,10 @@ namespace Model
 {
 
   /**
+   * <p>Parameter input for the <code>GetDashboardEmbedUrl</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrlRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_QUICKSIGHT_API GetDashboardEmbedUrlRequest : public QuickSightRequest
   {
@@ -132,7 +137,7 @@ namespace Model
     /**
      * <p>The authentication method that the user uses to sign in.</p>
      */
-    inline const IdentityType& GetIdentityType() const{ return m_identityType; }
+    inline const EmbeddingIdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
      * <p>The authentication method that the user uses to sign in.</p>
@@ -142,22 +147,22 @@ namespace Model
     /**
      * <p>The authentication method that the user uses to sign in.</p>
      */
-    inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
+    inline void SetIdentityType(const EmbeddingIdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
      * <p>The authentication method that the user uses to sign in.</p>
      */
-    inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
+    inline void SetIdentityType(EmbeddingIdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
      * <p>The authentication method that the user uses to sign in.</p>
      */
-    inline GetDashboardEmbedUrlRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
+    inline GetDashboardEmbedUrlRequest& WithIdentityType(const EmbeddingIdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
      * <p>The authentication method that the user uses to sign in.</p>
      */
-    inline GetDashboardEmbedUrlRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    inline GetDashboardEmbedUrlRequest& WithIdentityType(EmbeddingIdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 
 
     /**
@@ -376,6 +381,146 @@ namespace Model
      */
     inline GetDashboardEmbedUrlRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
+
+    /**
+     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
+     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     */
+    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
+     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
+     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     */
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /**
+     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
+     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
+
+    /**
+     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
+     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     */
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
+
+    /**
+     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
+     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     */
+    inline GetDashboardEmbedUrlRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /**
+     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
+     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     */
+    inline GetDashboardEmbedUrlRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
+
+    /**
+     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
+     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     */
+    inline GetDashboardEmbedUrlRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
+
+    /**
+     * <p>A list of one or more dashboard ids that you want to add to a session that
+     * includes anonymous authorizations. <code>IdentityType</code> must be set to
+     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
+     * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+     * can access all three dashboards. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAdditionalDashboardIds() const{ return m_additionalDashboardIds; }
+
+    /**
+     * <p>A list of one or more dashboard ids that you want to add to a session that
+     * includes anonymous authorizations. <code>IdentityType</code> must be set to
+     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
+     * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+     * can access all three dashboards. </p>
+     */
+    inline bool AdditionalDashboardIdsHasBeenSet() const { return m_additionalDashboardIdsHasBeenSet; }
+
+    /**
+     * <p>A list of one or more dashboard ids that you want to add to a session that
+     * includes anonymous authorizations. <code>IdentityType</code> must be set to
+     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
+     * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+     * can access all three dashboards. </p>
+     */
+    inline void SetAdditionalDashboardIds(const Aws::Vector<Aws::String>& value) { m_additionalDashboardIdsHasBeenSet = true; m_additionalDashboardIds = value; }
+
+    /**
+     * <p>A list of one or more dashboard ids that you want to add to a session that
+     * includes anonymous authorizations. <code>IdentityType</code> must be set to
+     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
+     * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+     * can access all three dashboards. </p>
+     */
+    inline void SetAdditionalDashboardIds(Aws::Vector<Aws::String>&& value) { m_additionalDashboardIdsHasBeenSet = true; m_additionalDashboardIds = std::move(value); }
+
+    /**
+     * <p>A list of one or more dashboard ids that you want to add to a session that
+     * includes anonymous authorizations. <code>IdentityType</code> must be set to
+     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
+     * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+     * can access all three dashboards. </p>
+     */
+    inline GetDashboardEmbedUrlRequest& WithAdditionalDashboardIds(const Aws::Vector<Aws::String>& value) { SetAdditionalDashboardIds(value); return *this;}
+
+    /**
+     * <p>A list of one or more dashboard ids that you want to add to a session that
+     * includes anonymous authorizations. <code>IdentityType</code> must be set to
+     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
+     * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+     * can access all three dashboards. </p>
+     */
+    inline GetDashboardEmbedUrlRequest& WithAdditionalDashboardIds(Aws::Vector<Aws::String>&& value) { SetAdditionalDashboardIds(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of one or more dashboard ids that you want to add to a session that
+     * includes anonymous authorizations. <code>IdentityType</code> must be set to
+     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
+     * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+     * can access all three dashboards. </p>
+     */
+    inline GetDashboardEmbedUrlRequest& AddAdditionalDashboardIds(const Aws::String& value) { m_additionalDashboardIdsHasBeenSet = true; m_additionalDashboardIds.push_back(value); return *this; }
+
+    /**
+     * <p>A list of one or more dashboard ids that you want to add to a session that
+     * includes anonymous authorizations. <code>IdentityType</code> must be set to
+     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
+     * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+     * can access all three dashboards. </p>
+     */
+    inline GetDashboardEmbedUrlRequest& AddAdditionalDashboardIds(Aws::String&& value) { m_additionalDashboardIdsHasBeenSet = true; m_additionalDashboardIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of one or more dashboard ids that you want to add to a session that
+     * includes anonymous authorizations. <code>IdentityType</code> must be set to
+     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
+     * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+     * can access all three dashboards. </p>
+     */
+    inline GetDashboardEmbedUrlRequest& AddAdditionalDashboardIds(const char* value) { m_additionalDashboardIdsHasBeenSet = true; m_additionalDashboardIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_awsAccountId;
@@ -384,7 +529,7 @@ namespace Model
     Aws::String m_dashboardId;
     bool m_dashboardIdHasBeenSet;
 
-    IdentityType m_identityType;
+    EmbeddingIdentityType m_identityType;
     bool m_identityTypeHasBeenSet;
 
     long long m_sessionLifetimeInMinutes;
@@ -401,6 +546,12 @@ namespace Model
 
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
+
+    Aws::String m_namespace;
+    bool m_namespaceHasBeenSet;
+
+    Aws::Vector<Aws::String> m_additionalDashboardIds;
+    bool m_additionalDashboardIdsHasBeenSet;
   };
 
 } // namespace Model

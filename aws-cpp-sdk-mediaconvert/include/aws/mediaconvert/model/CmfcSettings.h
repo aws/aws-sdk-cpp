@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/CmfcAudioDuration.h>
 #include <aws/mediaconvert/model/CmfcScte35Esam.h>
 #include <aws/mediaconvert/model/CmfcScte35Source.h>
 #include <utility>
@@ -36,6 +37,109 @@ namespace Model
     CmfcSettings(Aws::Utils::Json::JsonView jsonValue);
     CmfcSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline const CmfcAudioDuration& GetAudioDuration() const{ return m_audioDuration; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline void SetAudioDuration(const CmfcAudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline void SetAudioDuration(CmfcAudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline CmfcSettings& WithAudioDuration(const CmfcAudioDuration& value) { SetAudioDuration(value); return *this;}
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline CmfcSettings& WithAudioDuration(CmfcAudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
 
 
     /**
@@ -130,6 +234,9 @@ namespace Model
     inline CmfcSettings& WithScte35Source(CmfcScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 
   private:
+
+    CmfcAudioDuration m_audioDuration;
+    bool m_audioDurationHasBeenSet;
 
     CmfcScte35Esam m_scte35Esam;
     bool m_scte35EsamHasBeenSet;

@@ -33,6 +33,7 @@
 #include <aws/iotsitewise/model/DescribeAssetModelResult.h>
 #include <aws/iotsitewise/model/DescribeAssetPropertyResult.h>
 #include <aws/iotsitewise/model/DescribeDashboardResult.h>
+#include <aws/iotsitewise/model/DescribeDefaultEncryptionConfigurationResult.h>
 #include <aws/iotsitewise/model/DescribeGatewayResult.h>
 #include <aws/iotsitewise/model/DescribeGatewayCapabilityConfigurationResult.h>
 #include <aws/iotsitewise/model/DescribeLoggingOptionsResult.h>
@@ -51,6 +52,7 @@
 #include <aws/iotsitewise/model/ListProjectAssetsResult.h>
 #include <aws/iotsitewise/model/ListProjectsResult.h>
 #include <aws/iotsitewise/model/ListTagsForResourceResult.h>
+#include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationResult.h>
 #include <aws/iotsitewise/model/PutLoggingOptionsResult.h>
 #include <aws/iotsitewise/model/TagResourceResult.h>
 #include <aws/iotsitewise/model/UntagResourceResult.h>
@@ -125,6 +127,7 @@ namespace Model
         class DescribeAssetModelRequest;
         class DescribeAssetPropertyRequest;
         class DescribeDashboardRequest;
+        class DescribeDefaultEncryptionConfigurationRequest;
         class DescribeGatewayRequest;
         class DescribeGatewayCapabilityConfigurationRequest;
         class DescribeLoggingOptionsRequest;
@@ -144,6 +147,7 @@ namespace Model
         class ListProjectAssetsRequest;
         class ListProjectsRequest;
         class ListTagsForResourceRequest;
+        class PutDefaultEncryptionConfigurationRequest;
         class PutLoggingOptionsRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -181,6 +185,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAssetModelResult, IoTSiteWiseError> DescribeAssetModelOutcome;
         typedef Aws::Utils::Outcome<DescribeAssetPropertyResult, IoTSiteWiseError> DescribeAssetPropertyOutcome;
         typedef Aws::Utils::Outcome<DescribeDashboardResult, IoTSiteWiseError> DescribeDashboardOutcome;
+        typedef Aws::Utils::Outcome<DescribeDefaultEncryptionConfigurationResult, IoTSiteWiseError> DescribeDefaultEncryptionConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeGatewayResult, IoTSiteWiseError> DescribeGatewayOutcome;
         typedef Aws::Utils::Outcome<DescribeGatewayCapabilityConfigurationResult, IoTSiteWiseError> DescribeGatewayCapabilityConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeLoggingOptionsResult, IoTSiteWiseError> DescribeLoggingOptionsOutcome;
@@ -200,6 +205,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListProjectAssetsResult, IoTSiteWiseError> ListProjectAssetsOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, IoTSiteWiseError> ListProjectsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTSiteWiseError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutDefaultEncryptionConfigurationResult, IoTSiteWiseError> PutDefaultEncryptionConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutLoggingOptionsResult, IoTSiteWiseError> PutLoggingOptionsOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, IoTSiteWiseError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, IoTSiteWiseError> UntagResourceOutcome;
@@ -237,6 +243,7 @@ namespace Model
         typedef std::future<DescribeAssetModelOutcome> DescribeAssetModelOutcomeCallable;
         typedef std::future<DescribeAssetPropertyOutcome> DescribeAssetPropertyOutcomeCallable;
         typedef std::future<DescribeDashboardOutcome> DescribeDashboardOutcomeCallable;
+        typedef std::future<DescribeDefaultEncryptionConfigurationOutcome> DescribeDefaultEncryptionConfigurationOutcomeCallable;
         typedef std::future<DescribeGatewayOutcome> DescribeGatewayOutcomeCallable;
         typedef std::future<DescribeGatewayCapabilityConfigurationOutcome> DescribeGatewayCapabilityConfigurationOutcomeCallable;
         typedef std::future<DescribeLoggingOptionsOutcome> DescribeLoggingOptionsOutcomeCallable;
@@ -256,6 +263,7 @@ namespace Model
         typedef std::future<ListProjectAssetsOutcome> ListProjectAssetsOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<PutDefaultEncryptionConfigurationOutcome> PutDefaultEncryptionConfigurationOutcomeCallable;
         typedef std::future<PutLoggingOptionsOutcome> PutLoggingOptionsOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -296,6 +304,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetModelRequest&, const Model::DescribeAssetModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetModelResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetPropertyRequest&, const Model::DescribeAssetPropertyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetPropertyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeDashboardRequest&, const Model::DescribeDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeDefaultEncryptionConfigurationRequest&, const Model::DescribeDefaultEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDefaultEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeGatewayRequest&, const Model::DescribeGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGatewayResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeGatewayCapabilityConfigurationRequest&, const Model::DescribeGatewayCapabilityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGatewayCapabilityConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeLoggingOptionsRequest&, const Model::DescribeLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoggingOptionsResponseReceivedHandler;
@@ -315,6 +324,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListProjectAssetsRequest&, const Model::ListProjectAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::PutDefaultEncryptionConfigurationRequest&, const Model::PutDefaultEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDefaultEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::PutLoggingOptionsRequest&, const Model::PutLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingOptionsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -779,8 +789,8 @@ namespace Model
          * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
          * portals that use AWS Identity and Access Management (IAM) to authenticate users.
          * An IAM user with access to a portal can call this API to get a URL to that
-         * portal. The URL contains a session token that lets the IAM user access the
-         * portal.</p><p><h3>See Also:</h3>   <a
+         * portal. The URL contains an authentication token that lets the IAM user access
+         * the portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
          * API Reference</a></p>
          */
@@ -790,8 +800,8 @@ namespace Model
          * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
          * portals that use AWS Identity and Access Management (IAM) to authenticate users.
          * An IAM user with access to a portal can call this API to get a URL to that
-         * portal. The URL contains a session token that lets the IAM user access the
-         * portal.</p><p><h3>See Also:</h3>   <a
+         * portal. The URL contains an authentication token that lets the IAM user access
+         * the portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
          * API Reference</a></p>
          *
@@ -803,8 +813,8 @@ namespace Model
          * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
          * portals that use AWS Identity and Access Management (IAM) to authenticate users.
          * An IAM user with access to a portal can call this API to get a URL to that
-         * portal. The URL contains a session token that lets the IAM user access the
-         * portal.</p><p><h3>See Also:</h3>   <a
+         * portal. The URL contains an authentication token that lets the IAM user access
+         * the portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
          * API Reference</a></p>
          *
@@ -1220,6 +1230,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDashboardAsync(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about the default encryption configuration for the AWS
+         * account in the default or specified region. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDefaultEncryptionConfigurationOutcome DescribeDefaultEncryptionConfiguration(const Model::DescribeDefaultEncryptionConfigurationRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the default encryption configuration for the AWS
+         * account in the default or specified region. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDefaultEncryptionConfigurationOutcomeCallable DescribeDefaultEncryptionConfigurationCallable(const Model::DescribeDefaultEncryptionConfigurationRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the default encryption configuration for the AWS
+         * account in the default or specified region. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDefaultEncryptionConfigurationAsync(const Model::DescribeDefaultEncryptionConfigurationRequest& request, const DescribeDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a gateway.</p><p><h3>See Also:</h3>   <a
@@ -1859,6 +1906,43 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the default encryption configuration for the AWS account. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDefaultEncryptionConfigurationOutcome PutDefaultEncryptionConfiguration(const Model::PutDefaultEncryptionConfigurationRequest& request) const;
+
+        /**
+         * <p>Sets the default encryption configuration for the AWS account. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutDefaultEncryptionConfigurationOutcomeCallable PutDefaultEncryptionConfigurationCallable(const Model::PutDefaultEncryptionConfigurationRequest& request) const;
+
+        /**
+         * <p>Sets the default encryption configuration for the AWS account. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutDefaultEncryptionConfigurationAsync(const Model::PutDefaultEncryptionConfigurationRequest& request, const PutDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets logging options for AWS IoT SiteWise.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -2288,6 +2372,7 @@ namespace Model
         void DescribeAssetModelAsyncHelper(const Model::DescribeAssetModelRequest& request, const DescribeAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAssetPropertyAsyncHelper(const Model::DescribeAssetPropertyRequest& request, const DescribeAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDashboardAsyncHelper(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDefaultEncryptionConfigurationAsyncHelper(const Model::DescribeDefaultEncryptionConfigurationRequest& request, const DescribeDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGatewayAsyncHelper(const Model::DescribeGatewayRequest& request, const DescribeGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGatewayCapabilityConfigurationAsyncHelper(const Model::DescribeGatewayCapabilityConfigurationRequest& request, const DescribeGatewayCapabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoggingOptionsAsyncHelper(const Model::DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2307,6 +2392,7 @@ namespace Model
         void ListProjectAssetsAsyncHelper(const Model::ListProjectAssetsRequest& request, const ListProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutDefaultEncryptionConfigurationAsyncHelper(const Model::PutDefaultEncryptionConfigurationRequest& request, const PutDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLoggingOptionsAsyncHelper(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

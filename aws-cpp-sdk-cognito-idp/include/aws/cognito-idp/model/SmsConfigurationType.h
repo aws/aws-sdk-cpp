@@ -44,56 +44,72 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages.</p>
+     * will use to send SMS messages. SMS messages are subject to a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
+     * limit</a>. </p>
      */
     inline const Aws::String& GetSnsCallerArn() const{ return m_snsCallerArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages.</p>
+     * will use to send SMS messages. SMS messages are subject to a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
+     * limit</a>. </p>
      */
     inline bool SnsCallerArnHasBeenSet() const { return m_snsCallerArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages.</p>
+     * will use to send SMS messages. SMS messages are subject to a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
+     * limit</a>. </p>
      */
     inline void SetSnsCallerArn(const Aws::String& value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages.</p>
+     * will use to send SMS messages. SMS messages are subject to a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
+     * limit</a>. </p>
      */
     inline void SetSnsCallerArn(Aws::String&& value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages.</p>
+     * will use to send SMS messages. SMS messages are subject to a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
+     * limit</a>. </p>
      */
     inline void SetSnsCallerArn(const char* value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages.</p>
+     * will use to send SMS messages. SMS messages are subject to a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
+     * limit</a>. </p>
      */
     inline SmsConfigurationType& WithSnsCallerArn(const Aws::String& value) { SetSnsCallerArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages.</p>
+     * will use to send SMS messages. SMS messages are subject to a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
+     * limit</a>. </p>
      */
     inline SmsConfigurationType& WithSnsCallerArn(Aws::String&& value) { SetSnsCallerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages.</p>
+     * will use to send SMS messages. SMS messages are subject to a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
+     * limit</a>. </p>
      */
     inline SmsConfigurationType& WithSnsCallerArn(const char* value) { SetSnsCallerArn(value); return *this;}
 

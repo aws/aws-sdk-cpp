@@ -38,6 +38,7 @@
 #include <aws/states/model/SendTaskHeartbeatRequest.h>
 #include <aws/states/model/SendTaskSuccessRequest.h>
 #include <aws/states/model/StartExecutionRequest.h>
+#include <aws/states/model/StartSyncExecutionRequest.h>
 #include <aws/states/model/StopExecutionRequest.h>
 #include <aws/states/model/TagResourceRequest.h>
 #include <aws/states/model/UntagResourceRequest.h>
@@ -94,31 +95,40 @@ void SFNClient::init(const ClientConfiguration& config)
 {
   SetServiceClientName("SFN");
   m_configScheme = SchemeMapper::ToString(config.scheme);
+  m_scheme = m_configScheme;
   if (config.endpointOverride.empty())
   {
-      m_uri = m_configScheme + "://" + SFNEndpoint::ForRegion(config.region, config.useDualStack);
+      m_baseUri = SFNEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
       OverrideEndpoint(config.endpointOverride);
   }
+  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
 }
 
 void SFNClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  if (endpoint.compare(0, 7, "http://") == 0)
   {
-      m_uri = endpoint;
+      m_scheme = "http";
+      m_baseUri = endpoint.substr(7);
+  }
+  else if (endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_scheme = "https";
+      m_baseUri = endpoint.substr(8);
   }
   else
   {
-      m_uri = m_configScheme + "://" + endpoint;
+      m_scheme = m_configScheme;
+      m_baseUri = endpoint;
   }
 }
 
 CreateActivityOutcome SFNClient::CreateActivity(const CreateActivityRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -145,7 +155,7 @@ void SFNClient::CreateActivityAsyncHelper(const CreateActivityRequest& request, 
 
 CreateStateMachineOutcome SFNClient::CreateStateMachine(const CreateStateMachineRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -172,7 +182,7 @@ void SFNClient::CreateStateMachineAsyncHelper(const CreateStateMachineRequest& r
 
 DeleteActivityOutcome SFNClient::DeleteActivity(const DeleteActivityRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -199,7 +209,7 @@ void SFNClient::DeleteActivityAsyncHelper(const DeleteActivityRequest& request, 
 
 DeleteStateMachineOutcome SFNClient::DeleteStateMachine(const DeleteStateMachineRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -226,7 +236,7 @@ void SFNClient::DeleteStateMachineAsyncHelper(const DeleteStateMachineRequest& r
 
 DescribeActivityOutcome SFNClient::DescribeActivity(const DescribeActivityRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -253,7 +263,7 @@ void SFNClient::DescribeActivityAsyncHelper(const DescribeActivityRequest& reque
 
 DescribeExecutionOutcome SFNClient::DescribeExecution(const DescribeExecutionRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -280,7 +290,7 @@ void SFNClient::DescribeExecutionAsyncHelper(const DescribeExecutionRequest& req
 
 DescribeStateMachineOutcome SFNClient::DescribeStateMachine(const DescribeStateMachineRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -307,7 +317,7 @@ void SFNClient::DescribeStateMachineAsyncHelper(const DescribeStateMachineReques
 
 DescribeStateMachineForExecutionOutcome SFNClient::DescribeStateMachineForExecution(const DescribeStateMachineForExecutionRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -334,7 +344,7 @@ void SFNClient::DescribeStateMachineForExecutionAsyncHelper(const DescribeStateM
 
 GetActivityTaskOutcome SFNClient::GetActivityTask(const GetActivityTaskRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -361,7 +371,7 @@ void SFNClient::GetActivityTaskAsyncHelper(const GetActivityTaskRequest& request
 
 GetExecutionHistoryOutcome SFNClient::GetExecutionHistory(const GetExecutionHistoryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -388,7 +398,7 @@ void SFNClient::GetExecutionHistoryAsyncHelper(const GetExecutionHistoryRequest&
 
 ListActivitiesOutcome SFNClient::ListActivities(const ListActivitiesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -415,7 +425,7 @@ void SFNClient::ListActivitiesAsyncHelper(const ListActivitiesRequest& request, 
 
 ListExecutionsOutcome SFNClient::ListExecutions(const ListExecutionsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -442,7 +452,7 @@ void SFNClient::ListExecutionsAsyncHelper(const ListExecutionsRequest& request, 
 
 ListStateMachinesOutcome SFNClient::ListStateMachines(const ListStateMachinesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -469,7 +479,7 @@ void SFNClient::ListStateMachinesAsyncHelper(const ListStateMachinesRequest& req
 
 ListTagsForResourceOutcome SFNClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -496,7 +506,7 @@ void SFNClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest&
 
 SendTaskFailureOutcome SFNClient::SendTaskFailure(const SendTaskFailureRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -523,7 +533,7 @@ void SFNClient::SendTaskFailureAsyncHelper(const SendTaskFailureRequest& request
 
 SendTaskHeartbeatOutcome SFNClient::SendTaskHeartbeat(const SendTaskHeartbeatRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -550,7 +560,7 @@ void SFNClient::SendTaskHeartbeatAsyncHelper(const SendTaskHeartbeatRequest& req
 
 SendTaskSuccessOutcome SFNClient::SendTaskSuccess(const SendTaskSuccessRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -577,7 +587,7 @@ void SFNClient::SendTaskSuccessAsyncHelper(const SendTaskSuccessRequest& request
 
 StartExecutionOutcome SFNClient::StartExecution(const StartExecutionRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -602,9 +612,45 @@ void SFNClient::StartExecutionAsyncHelper(const StartExecutionRequest& request, 
   handler(this, request, StartExecution(request), context);
 }
 
+StartSyncExecutionOutcome SFNClient::StartSyncExecution(const StartSyncExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("sync-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("StartSyncExecution", "Invalid DNS host: " << uri.GetAuthority());
+      return StartSyncExecutionOutcome(Aws::Client::AWSError<SFNErrors>(SFNErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartSyncExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartSyncExecutionOutcomeCallable SFNClient::StartSyncExecutionCallable(const StartSyncExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSyncExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSyncExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SFNClient::StartSyncExecutionAsync(const StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSyncExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void SFNClient::StartSyncExecutionAsyncHelper(const StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSyncExecution(request), context);
+}
+
 StopExecutionOutcome SFNClient::StopExecution(const StopExecutionRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -631,7 +677,7 @@ void SFNClient::StopExecutionAsyncHelper(const StopExecutionRequest& request, co
 
 TagResourceOutcome SFNClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -658,7 +704,7 @@ void SFNClient::TagResourceAsyncHelper(const TagResourceRequest& request, const 
 
 UntagResourceOutcome SFNClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -685,7 +731,7 @@ void SFNClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, co
 
 UpdateStateMachineOutcome SFNClient::UpdateStateMachine(const UpdateStateMachineRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());

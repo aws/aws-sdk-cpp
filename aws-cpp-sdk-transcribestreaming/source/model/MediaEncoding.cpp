@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int pcm_HASH = HashingUtils::HashString("pcm");
+        static const int ogg_opus_HASH = HashingUtils::HashString("ogg-opus");
+        static const int flac_HASH = HashingUtils::HashString("flac");
 
 
         MediaEncoding GetMediaEncodingForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == pcm_HASH)
           {
             return MediaEncoding::pcm;
+          }
+          else if (hashCode == ogg_opus_HASH)
+          {
+            return MediaEncoding::ogg_opus;
+          }
+          else if (hashCode == flac_HASH)
+          {
+            return MediaEncoding::flac;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +56,10 @@ namespace Aws
           {
           case MediaEncoding::pcm:
             return "pcm";
+          case MediaEncoding::ogg_opus:
+            return "ogg-opus";
+          case MediaEncoding::flac:
+            return "flac";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

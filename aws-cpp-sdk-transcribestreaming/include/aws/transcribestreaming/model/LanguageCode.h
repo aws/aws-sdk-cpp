@@ -23,7 +23,10 @@ namespace Model
     fr_FR,
     en_AU,
     it_IT,
-    de_DE
+    de_DE,
+    pt_BR,
+    ja_JP,
+    ko_KR
   };
 
 namespace LanguageCodeMapper

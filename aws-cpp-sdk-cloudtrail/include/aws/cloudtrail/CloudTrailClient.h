@@ -608,8 +608,8 @@ namespace Model
          * attributes are optional. The default number of results returned is 50, with a
          * maximum of 50 possible. The response includes a token that you can use to get
          * the next page of results.</p>  <p>The rate of lookup requests is
-         * limited to two per second per account. If this limit is exceeded, a throttling
-         * error occurs.</p> <p><h3>See Also:</h3>   <a
+         * limited to two per second, per account, per region. If this limit is exceeded, a
+         * throttling error occurs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          */
@@ -631,8 +631,8 @@ namespace Model
          * attributes are optional. The default number of results returned is 50, with a
          * maximum of 50 possible. The response includes a token that you can use to get
          * the next page of results.</p>  <p>The rate of lookup requests is
-         * limited to two per second per account. If this limit is exceeded, a throttling
-         * error occurs.</p> <p><h3>See Also:</h3>   <a
+         * limited to two per second, per account, per region. If this limit is exceeded, a
+         * throttling error occurs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *
@@ -656,8 +656,8 @@ namespace Model
          * attributes are optional. The default number of results returned is 50, with a
          * maximum of 50 possible. The response includes a token that you can use to get
          * the next page of results.</p>  <p>The rate of lookup requests is
-         * limited to two per second per account. If this limit is exceeded, a throttling
-         * error occurs.</p> <p><h3>See Also:</h3>   <a
+         * limited to two per second, per account, per region. If this limit is exceeded, a
+         * throttling error occurs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *

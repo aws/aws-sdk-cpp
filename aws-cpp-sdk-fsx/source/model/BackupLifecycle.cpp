@@ -25,6 +25,7 @@ namespace Aws
         static const int TRANSFERRING_HASH = HashingUtils::HashString("TRANSFERRING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 
 
         BackupLifecycle GetBackupLifecycleForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return BackupLifecycle::FAILED;
           }
+          else if (hashCode == PENDING_HASH)
+          {
+            return BackupLifecycle::PENDING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "DELETED";
           case BackupLifecycle::FAILED:
             return "FAILED";
+          case BackupLifecycle::PENDING:
+            return "PENDING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -29,8 +29,8 @@ namespace Model
   class FileSystem;
 
   /**
-   * <p>Describes a specific Amazon FSx Administrative Action for the current Windows
-   * file system.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a specific Amazon FSx administrative action for the current Windows
+   * or Lustre file system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AdministrativeAction">AWS
    * API Reference</a></p>
    */
@@ -134,7 +134,11 @@ namespace Model
      * storage capacity, and is now performing the storage optimization process. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * Storage Capacity</a>.</p> </li> </ul>
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p> </li> </ul>
      */
     inline const Status& GetStatus() const{ return m_status; }
 
@@ -150,7 +154,11 @@ namespace Model
      * storage capacity, and is now performing the storage optimization process. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * Storage Capacity</a>.</p> </li> </ul>
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -166,7 +174,11 @@ namespace Model
      * storage capacity, and is now performing the storage optimization process. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * Storage Capacity</a>.</p> </li> </ul>
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p> </li> </ul>
      */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -182,7 +194,11 @@ namespace Model
      * storage capacity, and is now performing the storage optimization process. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * Storage Capacity</a>.</p> </li> </ul>
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p> </li> </ul>
      */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -198,7 +214,11 @@ namespace Model
      * storage capacity, and is now performing the storage optimization process. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * Storage Capacity</a>.</p> </li> </ul>
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p> </li> </ul>
      */
     inline AdministrativeAction& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
@@ -214,7 +234,11 @@ namespace Model
      * storage capacity, and is now performing the storage optimization process. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * Storage Capacity</a>.</p> </li> </ul>
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p> </li> </ul>
      */
     inline AdministrativeAction& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 

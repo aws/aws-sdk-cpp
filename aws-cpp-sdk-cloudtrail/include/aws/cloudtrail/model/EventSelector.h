@@ -101,7 +101,11 @@ namespace Model
      * trail.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
-     * is <code>true</code>.</p>
+     * is <code>true</code>.</p> <p>The first copy of management events is free. You
+     * are charged for additional copies of management events that you are logging on
+     * any subsequent trail in the same region. For more information about CloudTrail
+     * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail
+     * Pricing</a>.</p>
      */
     inline bool GetIncludeManagementEvents() const{ return m_includeManagementEvents; }
 
@@ -110,7 +114,11 @@ namespace Model
      * trail.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
-     * is <code>true</code>.</p>
+     * is <code>true</code>.</p> <p>The first copy of management events is free. You
+     * are charged for additional copies of management events that you are logging on
+     * any subsequent trail in the same region. For more information about CloudTrail
+     * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail
+     * Pricing</a>.</p>
      */
     inline bool IncludeManagementEventsHasBeenSet() const { return m_includeManagementEventsHasBeenSet; }
 
@@ -119,7 +127,11 @@ namespace Model
      * trail.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
-     * is <code>true</code>.</p>
+     * is <code>true</code>.</p> <p>The first copy of management events is free. You
+     * are charged for additional copies of management events that you are logging on
+     * any subsequent trail in the same region. For more information about CloudTrail
+     * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail
+     * Pricing</a>.</p>
      */
     inline void SetIncludeManagementEvents(bool value) { m_includeManagementEventsHasBeenSet = true; m_includeManagementEvents = value; }
 
@@ -128,7 +140,11 @@ namespace Model
      * trail.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
-     * is <code>true</code>.</p>
+     * is <code>true</code>.</p> <p>The first copy of management events is free. You
+     * are charged for additional copies of management events that you are logging on
+     * any subsequent trail in the same region. For more information about CloudTrail
+     * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail
+     * Pricing</a>.</p>
      */
     inline EventSelector& WithIncludeManagementEvents(bool value) { SetIncludeManagementEvents(value); return *this;}
 

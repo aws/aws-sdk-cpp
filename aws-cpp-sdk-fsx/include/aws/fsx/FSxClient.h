@@ -291,7 +291,7 @@ namespace Model
          * for Lustre file systems, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
          * with FSx for Lustre backups</a>.</p> <p>For more information about backing up
-         * Amazon FSx for Lustre file systems, see <a
+         * Amazon FSx for Windows file systems, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
          * with FSx for Windows backups</a>.</p> <p>If a backup with the specified client
          * request token exists, and the parameters match, this operation returns the
@@ -327,7 +327,7 @@ namespace Model
          * for Lustre file systems, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
          * with FSx for Lustre backups</a>.</p> <p>For more information about backing up
-         * Amazon FSx for Lustre file systems, see <a
+         * Amazon FSx for Windows file systems, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
          * with FSx for Windows backups</a>.</p> <p>If a backup with the specified client
          * request token exists, and the parameters match, this operation returns the
@@ -365,7 +365,7 @@ namespace Model
          * for Lustre file systems, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
          * with FSx for Lustre backups</a>.</p> <p>For more information about backing up
-         * Amazon FSx for Lustre file systems, see <a
+         * Amazon FSx for Windows file systems, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
          * with FSx for Windows backups</a>.</p> <p>If a backup with the specified client
          * request token exists, and the parameters match, this operation returns the
@@ -401,11 +401,11 @@ namespace Model
          * linked data repository. A <code>CreateDataRepositoryTask</code> operation will
          * fail if a data repository is not linked to the FSx file system. To learn more
          * about data repository tasks, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
-         * Data Repository Tasks</a>. To learn more about linking a data repository to your
-         * file system, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting
-         * the Export Prefix</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
+         * Repository Tasks</a>. To learn more about linking a data repository to your file
+         * system, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking
+         * your file system to an S3 bucket</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">AWS
          * API Reference</a></p>
          */
@@ -420,11 +420,11 @@ namespace Model
          * linked data repository. A <code>CreateDataRepositoryTask</code> operation will
          * fail if a data repository is not linked to the FSx file system. To learn more
          * about data repository tasks, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
-         * Data Repository Tasks</a>. To learn more about linking a data repository to your
-         * file system, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting
-         * the Export Prefix</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
+         * Repository Tasks</a>. To learn more about linking a data repository to your file
+         * system, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking
+         * your file system to an S3 bucket</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">AWS
          * API Reference</a></p>
          *
@@ -441,11 +441,11 @@ namespace Model
          * linked data repository. A <code>CreateDataRepositoryTask</code> operation will
          * fail if a data repository is not linked to the FSx file system. To learn more
          * about data repository tasks, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
-         * Data Repository Tasks</a>. To learn more about linking a data repository to your
-         * file system, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting
-         * the Export Prefix</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
+         * Repository Tasks</a>. To learn more about linking a data repository to your file
+         * system, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking
+         * your file system to an S3 bucket</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">AWS
          * API Reference</a></p>
          *
@@ -1205,8 +1205,9 @@ namespace Model
          * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>For Amazon FSx for Lustre file
          * systems, you can update the following properties:</p> <ul> <li>
          * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
-         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li>
-         * <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>StorageCapacity</p>
+         * </li> <li> <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          */
@@ -1223,8 +1224,9 @@ namespace Model
          * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>For Amazon FSx for Lustre file
          * systems, you can update the following properties:</p> <ul> <li>
          * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
-         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li>
-         * <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>StorageCapacity</p>
+         * </li> <li> <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *
@@ -1243,8 +1245,9 @@ namespace Model
          * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>For Amazon FSx for Lustre file
          * systems, you can update the following properties:</p> <ul> <li>
          * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
-         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li>
-         * <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>StorageCapacity</p>
+         * </li> <li> <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *

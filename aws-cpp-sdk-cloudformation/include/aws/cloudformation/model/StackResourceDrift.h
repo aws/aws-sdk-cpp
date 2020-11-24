@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/StackResourceDriftStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudformation/model/ModuleInfo.h>
 #include <aws/cloudformation/model/PhysicalResourceIdContextKeyValuePair.h>
 #include <aws/cloudformation/model/PropertyDifference.h>
 #include <utility>
@@ -596,6 +597,43 @@ namespace Model
      */
     inline StackResourceDrift& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline const ModuleInfo& GetModuleInfo() const{ return m_moduleInfo; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline bool ModuleInfoHasBeenSet() const { return m_moduleInfoHasBeenSet; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline void SetModuleInfo(const ModuleInfo& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = value; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline void SetModuleInfo(ModuleInfo&& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = std::move(value); }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline StackResourceDrift& WithModuleInfo(const ModuleInfo& value) { SetModuleInfo(value); return *this;}
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline StackResourceDrift& WithModuleInfo(ModuleInfo&& value) { SetModuleInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stackId;
@@ -627,6 +665,9 @@ namespace Model
 
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
+    ModuleInfo m_moduleInfo;
+    bool m_moduleInfoHasBeenSet;
   };
 
 } // namespace Model

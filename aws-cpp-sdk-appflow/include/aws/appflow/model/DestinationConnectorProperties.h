@@ -10,6 +10,7 @@
 #include <aws/appflow/model/SalesforceDestinationProperties.h>
 #include <aws/appflow/model/SnowflakeDestinationProperties.h>
 #include <aws/appflow/model/EventBridgeDestinationProperties.h>
+#include <aws/appflow/model/UpsolverDestinationProperties.h>
 #include <utility>
 
 namespace Aws
@@ -196,6 +197,37 @@ namespace Model
      */
     inline DestinationConnectorProperties& WithEventBridge(EventBridgeDestinationProperties&& value) { SetEventBridge(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The properties required to query Upsolver. </p>
+     */
+    inline const UpsolverDestinationProperties& GetUpsolver() const{ return m_upsolver; }
+
+    /**
+     * <p> The properties required to query Upsolver. </p>
+     */
+    inline bool UpsolverHasBeenSet() const { return m_upsolverHasBeenSet; }
+
+    /**
+     * <p> The properties required to query Upsolver. </p>
+     */
+    inline void SetUpsolver(const UpsolverDestinationProperties& value) { m_upsolverHasBeenSet = true; m_upsolver = value; }
+
+    /**
+     * <p> The properties required to query Upsolver. </p>
+     */
+    inline void SetUpsolver(UpsolverDestinationProperties&& value) { m_upsolverHasBeenSet = true; m_upsolver = std::move(value); }
+
+    /**
+     * <p> The properties required to query Upsolver. </p>
+     */
+    inline DestinationConnectorProperties& WithUpsolver(const UpsolverDestinationProperties& value) { SetUpsolver(value); return *this;}
+
+    /**
+     * <p> The properties required to query Upsolver. </p>
+     */
+    inline DestinationConnectorProperties& WithUpsolver(UpsolverDestinationProperties&& value) { SetUpsolver(std::move(value)); return *this;}
+
   private:
 
     RedshiftDestinationProperties m_redshift;
@@ -212,6 +244,9 @@ namespace Model
 
     EventBridgeDestinationProperties m_eventBridge;
     bool m_eventBridgeHasBeenSet;
+
+    UpsolverDestinationProperties m_upsolver;
+    bool m_upsolverHasBeenSet;
   };
 
 } // namespace Model

@@ -17,6 +17,8 @@ ListTypesRequest::ListTypesRequest() :
     m_provisioningTypeHasBeenSet(false),
     m_deprecatedStatus(DeprecatedStatus::NOT_SET),
     m_deprecatedStatusHasBeenSet(false),
+    m_type(RegistryType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -40,6 +42,11 @@ Aws::String ListTypesRequest::SerializePayload() const
   if(m_deprecatedStatusHasBeenSet)
   {
     ss << "DeprecatedStatus=" << DeprecatedStatusMapper::GetNameForDeprecatedStatus(m_deprecatedStatus) << "&";
+  }
+
+  if(m_typeHasBeenSet)
+  {
+    ss << "Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
   }
 
   if(m_maxResultsHasBeenSet)

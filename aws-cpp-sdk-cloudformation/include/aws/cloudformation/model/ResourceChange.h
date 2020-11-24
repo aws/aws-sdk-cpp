@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/Replacement.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/ModuleInfo.h>
 #include <aws/cloudformation/model/ResourceAttribute.h>
 #include <aws/cloudformation/model/ResourceChangeDetail.h>
 #include <utility>
@@ -503,6 +504,43 @@ namespace Model
      */
     inline ResourceChange& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
 
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline const ModuleInfo& GetModuleInfo() const{ return m_moduleInfo; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline bool ModuleInfoHasBeenSet() const { return m_moduleInfoHasBeenSet; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline void SetModuleInfo(const ModuleInfo& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = value; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline void SetModuleInfo(ModuleInfo&& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = std::move(value); }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline ResourceChange& WithModuleInfo(const ModuleInfo& value) { SetModuleInfo(value); return *this;}
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline ResourceChange& WithModuleInfo(ModuleInfo&& value) { SetModuleInfo(std::move(value)); return *this;}
+
   private:
 
     ChangeAction m_action;
@@ -528,6 +566,9 @@ namespace Model
 
     Aws::String m_changeSetId;
     bool m_changeSetIdHasBeenSet;
+
+    ModuleInfo m_moduleInfo;
+    bool m_moduleInfoHasBeenSet;
   };
 
 } // namespace Model

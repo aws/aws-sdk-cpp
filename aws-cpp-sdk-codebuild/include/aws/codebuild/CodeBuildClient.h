@@ -29,6 +29,7 @@
 #include <aws/codebuild/model/DeleteWebhookResult.h>
 #include <aws/codebuild/model/DescribeCodeCoveragesResult.h>
 #include <aws/codebuild/model/DescribeTestCasesResult.h>
+#include <aws/codebuild/model/GetReportGroupTrendResult.h>
 #include <aws/codebuild/model/GetResourcePolicyResult.h>
 #include <aws/codebuild/model/ImportSourceCredentialsResult.h>
 #include <aws/codebuild/model/InvalidateProjectCacheResult.h>
@@ -111,6 +112,7 @@ namespace Model
         class DeleteWebhookRequest;
         class DescribeCodeCoveragesRequest;
         class DescribeTestCasesRequest;
+        class GetReportGroupTrendRequest;
         class GetResourcePolicyRequest;
         class ImportSourceCredentialsRequest;
         class InvalidateProjectCacheRequest;
@@ -155,6 +157,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteWebhookResult, CodeBuildError> DeleteWebhookOutcome;
         typedef Aws::Utils::Outcome<DescribeCodeCoveragesResult, CodeBuildError> DescribeCodeCoveragesOutcome;
         typedef Aws::Utils::Outcome<DescribeTestCasesResult, CodeBuildError> DescribeTestCasesOutcome;
+        typedef Aws::Utils::Outcome<GetReportGroupTrendResult, CodeBuildError> GetReportGroupTrendOutcome;
         typedef Aws::Utils::Outcome<GetResourcePolicyResult, CodeBuildError> GetResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<ImportSourceCredentialsResult, CodeBuildError> ImportSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<InvalidateProjectCacheResult, CodeBuildError> InvalidateProjectCacheOutcome;
@@ -199,6 +202,7 @@ namespace Model
         typedef std::future<DeleteWebhookOutcome> DeleteWebhookOutcomeCallable;
         typedef std::future<DescribeCodeCoveragesOutcome> DescribeCodeCoveragesOutcomeCallable;
         typedef std::future<DescribeTestCasesOutcome> DescribeTestCasesOutcomeCallable;
+        typedef std::future<GetReportGroupTrendOutcome> GetReportGroupTrendOutcomeCallable;
         typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
         typedef std::future<ImportSourceCredentialsOutcome> ImportSourceCredentialsOutcomeCallable;
         typedef std::future<InvalidateProjectCacheOutcome> InvalidateProjectCacheOutcomeCallable;
@@ -246,6 +250,7 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteWebhookRequest&, const Model::DeleteWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebhookResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DescribeCodeCoveragesRequest&, const Model::DescribeCodeCoveragesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeCoveragesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DescribeTestCasesRequest&, const Model::DescribeTestCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTestCasesResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::GetReportGroupTrendRequest&, const Model::GetReportGroupTrendOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReportGroupTrendResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ImportSourceCredentialsRequest&, const Model::ImportSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::InvalidateProjectCacheRequest&, const Model::InvalidateProjectCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvalidateProjectCacheResponseReceivedHandler;
@@ -890,6 +895,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTestCasesAsync(const Model::DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::GetReportGroupTrendOutcome GetReportGroupTrend(const Model::GetReportGroupTrendRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetReportGroupTrendOutcomeCallable GetReportGroupTrendCallable(const Model::GetReportGroupTrendRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetReportGroupTrendAsync(const Model::GetReportGroupTrendRequest& request, const GetReportGroupTrendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets a resource policy that is identified by its resource ARN.
@@ -1595,6 +1619,7 @@ namespace Model
         void DeleteWebhookAsyncHelper(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCodeCoveragesAsyncHelper(const Model::DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTestCasesAsyncHelper(const Model::DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetReportGroupTrendAsyncHelper(const Model::GetReportGroupTrendRequest& request, const GetReportGroupTrendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourcePolicyAsyncHelper(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportSourceCredentialsAsyncHelper(const Model::ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InvalidateProjectCacheAsyncHelper(const Model::InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

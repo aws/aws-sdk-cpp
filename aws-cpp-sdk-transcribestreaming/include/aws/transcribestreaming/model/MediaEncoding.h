@@ -16,7 +16,9 @@ namespace Model
   enum class MediaEncoding
   {
     NOT_SET,
-    pcm
+    pcm,
+    ogg_opus,
+    flac
   };
 
 namespace MediaEncodingMapper

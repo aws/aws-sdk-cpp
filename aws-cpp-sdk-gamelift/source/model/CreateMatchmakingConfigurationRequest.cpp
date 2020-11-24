@@ -31,6 +31,8 @@ CreateMatchmakingConfigurationRequest::CreateMatchmakingConfigurationRequest() :
     m_gameSessionDataHasBeenSet(false),
     m_backfillMode(BackfillMode::NOT_SET),
     m_backfillModeHasBeenSet(false),
+    m_flexMatchMode(FlexMatchMode::NOT_SET),
+    m_flexMatchModeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -124,6 +126,11 @@ Aws::String CreateMatchmakingConfigurationRequest::SerializePayload() const
   if(m_backfillModeHasBeenSet)
   {
    payload.WithString("BackfillMode", BackfillModeMapper::GetNameForBackfillMode(m_backfillMode));
+  }
+
+  if(m_flexMatchModeHasBeenSet)
+  {
+   payload.WithString("FlexMatchMode", FlexMatchModeMapper::GetNameForFlexMatchMode(m_flexMatchMode));
   }
 
   if(m_tagsHasBeenSet)

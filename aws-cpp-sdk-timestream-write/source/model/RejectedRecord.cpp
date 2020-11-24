@@ -21,14 +21,18 @@ namespace Model
 RejectedRecord::RejectedRecord() : 
     m_recordIndex(0),
     m_recordIndexHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_existingVersion(0),
+    m_existingVersionHasBeenSet(false)
 {
 }
 
 RejectedRecord::RejectedRecord(JsonView jsonValue) : 
     m_recordIndex(0),
     m_recordIndexHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_existingVersion(0),
+    m_existingVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ RejectedRecord& RejectedRecord::operator =(JsonView jsonValue)
     m_reasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExistingVersion"))
+  {
+    m_existingVersion = jsonValue.GetInt64("ExistingVersion");
+
+    m_existingVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +76,12 @@ JsonValue RejectedRecord::Jsonize() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("Reason", m_reason);
+
+  }
+
+  if(m_existingVersionHasBeenSet)
+  {
+   payload.WithInt64("ExistingVersion", m_existingVersion);
 
   }
 

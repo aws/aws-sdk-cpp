@@ -330,22 +330,22 @@ namespace Model
 
 
     /**
-     * <p>The storage capacity of the file system in gigabytes (GB).</p>
+     * <p>The storage capacity of the file system in gibibytes (GiB).</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The storage capacity of the file system in gigabytes (GB).</p>
+     * <p>The storage capacity of the file system in gibibytes (GiB).</p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
-     * <p>The storage capacity of the file system in gigabytes (GB).</p>
+     * <p>The storage capacity of the file system in gibibytes (GiB).</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
-     * <p>The storage capacity of the file system in gigabytes (GB).</p>
+     * <p>The storage capacity of the file system in gibibytes (GiB).</p>
      */
     inline FileSystem& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 

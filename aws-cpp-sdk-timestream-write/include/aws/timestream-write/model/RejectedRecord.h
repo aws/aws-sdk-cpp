@@ -70,8 +70,17 @@ namespace Model
      * data where there are multiple records with the same dimensions, timestamps, and
      * measure names but different measure values. </p> </li> <li> <p> Records with
      * timestamps that lie outside the retention duration of the memory store </p>
-     * </li> <li> <p> Records with dimensions or measures that exceed the Timestream
-     * defined limits. </p> </li> </ul> <p> For more information, see <a
+     *  <p>When the retention window is updated, you will receive a
+     * <code>RejectedRecords</code> exception if you immediately try to ingest data
+     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
+     * until the duration of the new window to ingest new data. For further
+     * information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+     * Best Practices for Configuring Timestream</a> and <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
+     * explanation of how storage works in Timestream</a>.</p>  </li> <li> <p>
+     * Records with dimensions or measures that exceed the Timestream defined limits.
+     * </p> </li> </ul> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
      * Management</a> in the Timestream Developer Guide. </p>
      */
@@ -83,8 +92,17 @@ namespace Model
      * data where there are multiple records with the same dimensions, timestamps, and
      * measure names but different measure values. </p> </li> <li> <p> Records with
      * timestamps that lie outside the retention duration of the memory store </p>
-     * </li> <li> <p> Records with dimensions or measures that exceed the Timestream
-     * defined limits. </p> </li> </ul> <p> For more information, see <a
+     *  <p>When the retention window is updated, you will receive a
+     * <code>RejectedRecords</code> exception if you immediately try to ingest data
+     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
+     * until the duration of the new window to ingest new data. For further
+     * information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+     * Best Practices for Configuring Timestream</a> and <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
+     * explanation of how storage works in Timestream</a>.</p>  </li> <li> <p>
+     * Records with dimensions or measures that exceed the Timestream defined limits.
+     * </p> </li> </ul> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
      * Management</a> in the Timestream Developer Guide. </p>
      */
@@ -96,8 +114,17 @@ namespace Model
      * data where there are multiple records with the same dimensions, timestamps, and
      * measure names but different measure values. </p> </li> <li> <p> Records with
      * timestamps that lie outside the retention duration of the memory store </p>
-     * </li> <li> <p> Records with dimensions or measures that exceed the Timestream
-     * defined limits. </p> </li> </ul> <p> For more information, see <a
+     *  <p>When the retention window is updated, you will receive a
+     * <code>RejectedRecords</code> exception if you immediately try to ingest data
+     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
+     * until the duration of the new window to ingest new data. For further
+     * information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+     * Best Practices for Configuring Timestream</a> and <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
+     * explanation of how storage works in Timestream</a>.</p>  </li> <li> <p>
+     * Records with dimensions or measures that exceed the Timestream defined limits.
+     * </p> </li> </ul> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
      * Management</a> in the Timestream Developer Guide. </p>
      */
@@ -109,8 +136,17 @@ namespace Model
      * data where there are multiple records with the same dimensions, timestamps, and
      * measure names but different measure values. </p> </li> <li> <p> Records with
      * timestamps that lie outside the retention duration of the memory store </p>
-     * </li> <li> <p> Records with dimensions or measures that exceed the Timestream
-     * defined limits. </p> </li> </ul> <p> For more information, see <a
+     *  <p>When the retention window is updated, you will receive a
+     * <code>RejectedRecords</code> exception if you immediately try to ingest data
+     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
+     * until the duration of the new window to ingest new data. For further
+     * information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+     * Best Practices for Configuring Timestream</a> and <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
+     * explanation of how storage works in Timestream</a>.</p>  </li> <li> <p>
+     * Records with dimensions or measures that exceed the Timestream defined limits.
+     * </p> </li> </ul> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
      * Management</a> in the Timestream Developer Guide. </p>
      */
@@ -122,8 +158,17 @@ namespace Model
      * data where there are multiple records with the same dimensions, timestamps, and
      * measure names but different measure values. </p> </li> <li> <p> Records with
      * timestamps that lie outside the retention duration of the memory store </p>
-     * </li> <li> <p> Records with dimensions or measures that exceed the Timestream
-     * defined limits. </p> </li> </ul> <p> For more information, see <a
+     *  <p>When the retention window is updated, you will receive a
+     * <code>RejectedRecords</code> exception if you immediately try to ingest data
+     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
+     * until the duration of the new window to ingest new data. For further
+     * information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+     * Best Practices for Configuring Timestream</a> and <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
+     * explanation of how storage works in Timestream</a>.</p>  </li> <li> <p>
+     * Records with dimensions or measures that exceed the Timestream defined limits.
+     * </p> </li> </ul> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
      * Management</a> in the Timestream Developer Guide. </p>
      */
@@ -135,8 +180,17 @@ namespace Model
      * data where there are multiple records with the same dimensions, timestamps, and
      * measure names but different measure values. </p> </li> <li> <p> Records with
      * timestamps that lie outside the retention duration of the memory store </p>
-     * </li> <li> <p> Records with dimensions or measures that exceed the Timestream
-     * defined limits. </p> </li> </ul> <p> For more information, see <a
+     *  <p>When the retention window is updated, you will receive a
+     * <code>RejectedRecords</code> exception if you immediately try to ingest data
+     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
+     * until the duration of the new window to ingest new data. For further
+     * information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+     * Best Practices for Configuring Timestream</a> and <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
+     * explanation of how storage works in Timestream</a>.</p>  </li> <li> <p>
+     * Records with dimensions or measures that exceed the Timestream defined limits.
+     * </p> </li> </ul> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
      * Management</a> in the Timestream Developer Guide. </p>
      */
@@ -148,8 +202,17 @@ namespace Model
      * data where there are multiple records with the same dimensions, timestamps, and
      * measure names but different measure values. </p> </li> <li> <p> Records with
      * timestamps that lie outside the retention duration of the memory store </p>
-     * </li> <li> <p> Records with dimensions or measures that exceed the Timestream
-     * defined limits. </p> </li> </ul> <p> For more information, see <a
+     *  <p>When the retention window is updated, you will receive a
+     * <code>RejectedRecords</code> exception if you immediately try to ingest data
+     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
+     * until the duration of the new window to ingest new data. For further
+     * information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+     * Best Practices for Configuring Timestream</a> and <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
+     * explanation of how storage works in Timestream</a>.</p>  </li> <li> <p>
+     * Records with dimensions or measures that exceed the Timestream defined limits.
+     * </p> </li> </ul> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
      * Management</a> in the Timestream Developer Guide. </p>
      */
@@ -161,12 +224,50 @@ namespace Model
      * data where there are multiple records with the same dimensions, timestamps, and
      * measure names but different measure values. </p> </li> <li> <p> Records with
      * timestamps that lie outside the retention duration of the memory store </p>
-     * </li> <li> <p> Records with dimensions or measures that exceed the Timestream
-     * defined limits. </p> </li> </ul> <p> For more information, see <a
+     *  <p>When the retention window is updated, you will receive a
+     * <code>RejectedRecords</code> exception if you immediately try to ingest data
+     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
+     * until the duration of the new window to ingest new data. For further
+     * information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+     * Best Practices for Configuring Timestream</a> and <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
+     * explanation of how storage works in Timestream</a>.</p>  </li> <li> <p>
+     * Records with dimensions or measures that exceed the Timestream defined limits.
+     * </p> </li> </ul> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
      * Management</a> in the Timestream Developer Guide. </p>
      */
     inline RejectedRecord& WithReason(const char* value) { SetReason(value); return *this;}
+
+
+    /**
+     * <p>The existing version of the record. This value is populated in scenarios
+     * where an identical record exists with a higher version than the version in the
+     * write request.</p>
+     */
+    inline long long GetExistingVersion() const{ return m_existingVersion; }
+
+    /**
+     * <p>The existing version of the record. This value is populated in scenarios
+     * where an identical record exists with a higher version than the version in the
+     * write request.</p>
+     */
+    inline bool ExistingVersionHasBeenSet() const { return m_existingVersionHasBeenSet; }
+
+    /**
+     * <p>The existing version of the record. This value is populated in scenarios
+     * where an identical record exists with a higher version than the version in the
+     * write request.</p>
+     */
+    inline void SetExistingVersion(long long value) { m_existingVersionHasBeenSet = true; m_existingVersion = value; }
+
+    /**
+     * <p>The existing version of the record. This value is populated in scenarios
+     * where an identical record exists with a higher version than the version in the
+     * write request.</p>
+     */
+    inline RejectedRecord& WithExistingVersion(long long value) { SetExistingVersion(value); return *this;}
 
   private:
 
@@ -175,6 +276,9 @@ namespace Model
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
+    long long m_existingVersion;
+    bool m_existingVersionHasBeenSet;
   };
 
 } // namespace Model

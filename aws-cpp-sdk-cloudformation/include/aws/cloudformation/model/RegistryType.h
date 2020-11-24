@@ -16,7 +16,8 @@ namespace Model
   enum class RegistryType
   {
     NOT_SET,
-    RESOURCE
+    RESOURCE,
+    MODULE
   };
 
 namespace RegistryTypeMapper

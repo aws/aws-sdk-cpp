@@ -43,72 +43,80 @@ namespace Model
     /**
      * <p> Dimension represents the meta data attributes of the time series. For
      * example, the name and availability zone of an EC2 instance or the name of the
-     * manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with
-     * an underscore.</i> </p>
+     * manufacturer of a wind turbine are dimensions. </p> <p>For constraints on
+     * Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p> Dimension represents the meta data attributes of the time series. For
      * example, the name and availability zone of an EC2 instance or the name of the
-     * manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with
-     * an underscore.</i> </p>
+     * manufacturer of a wind turbine are dimensions. </p> <p>For constraints on
+     * Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p> Dimension represents the meta data attributes of the time series. For
      * example, the name and availability zone of an EC2 instance or the name of the
-     * manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with
-     * an underscore.</i> </p>
+     * manufacturer of a wind turbine are dimensions. </p> <p>For constraints on
+     * Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p> Dimension represents the meta data attributes of the time series. For
      * example, the name and availability zone of an EC2 instance or the name of the
-     * manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with
-     * an underscore.</i> </p>
+     * manufacturer of a wind turbine are dimensions. </p> <p>For constraints on
+     * Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p> Dimension represents the meta data attributes of the time series. For
      * example, the name and availability zone of an EC2 instance or the name of the
-     * manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with
-     * an underscore.</i> </p>
+     * manufacturer of a wind turbine are dimensions. </p> <p>For constraints on
+     * Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p> Dimension represents the meta data attributes of the time series. For
      * example, the name and availability zone of an EC2 instance or the name of the
-     * manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with
-     * an underscore.</i> </p>
+     * manufacturer of a wind turbine are dimensions. </p> <p>For constraints on
+     * Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.</p>
      */
     inline Dimension& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p> Dimension represents the meta data attributes of the time series. For
      * example, the name and availability zone of an EC2 instance or the name of the
-     * manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with
-     * an underscore.</i> </p>
+     * manufacturer of a wind turbine are dimensions. </p> <p>For constraints on
+     * Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.</p>
      */
     inline Dimension& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p> Dimension represents the meta data attributes of the time series. For
      * example, the name and availability zone of an EC2 instance or the name of the
-     * manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with
-     * an underscore.</i> </p>
+     * manufacturer of a wind turbine are dimensions. </p> <p>For constraints on
+     * Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.</p>
      */
     inline Dimension& WithName(const char* value) { SetName(value); return *this;}
 

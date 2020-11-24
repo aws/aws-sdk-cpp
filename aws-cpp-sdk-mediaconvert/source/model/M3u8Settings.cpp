@@ -19,6 +19,8 @@ namespace Model
 {
 
 M3u8Settings::M3u8Settings() : 
+    m_audioDuration(M3u8AudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -54,6 +56,8 @@ M3u8Settings::M3u8Settings() :
 }
 
 M3u8Settings::M3u8Settings(JsonView jsonValue) : 
+    m_audioDuration(M3u8AudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -91,6 +95,13 @@ M3u8Settings::M3u8Settings(JsonView jsonValue) :
 
 M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = M3u8AudioDurationMapper::GetM3u8AudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audioFramesPerPes"))
   {
     m_audioFramesPerPes = jsonValue.GetInteger("audioFramesPerPes");
@@ -212,6 +223,11 @@ M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
 JsonValue M3u8Settings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", M3u8AudioDurationMapper::GetNameForM3u8AudioDuration(m_audioDuration));
+  }
 
   if(m_audioFramesPerPesHasBeenSet)
   {

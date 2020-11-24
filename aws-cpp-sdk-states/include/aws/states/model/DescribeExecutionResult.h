@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline const Aws::String& GetExecutionArn() const{ return m_executionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline void SetExecutionArn(const Aws::String& value) { m_executionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline void SetExecutionArn(Aws::String&& value) { m_executionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline void SetExecutionArn(const char* value) { m_executionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline DescribeExecutionResult& WithExecutionArn(const Aws::String& value) { SetExecutionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline DescribeExecutionResult& WithExecutionArn(Aws::String&& value) { SetExecutionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline DescribeExecutionResult& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
 
@@ -403,37 +403,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
      */
     inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
 
     /**
-     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
      */
     inline void SetTraceHeader(const Aws::String& value) { m_traceHeader = value; }
 
     /**
-     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
      */
     inline void SetTraceHeader(Aws::String&& value) { m_traceHeader = std::move(value); }
 
     /**
-     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
      */
     inline void SetTraceHeader(const char* value) { m_traceHeader.assign(value); }
 
     /**
-     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
      */
     inline DescribeExecutionResult& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
 
     /**
-     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
      */
     inline DescribeExecutionResult& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS X-Ray trace header which was passed to the execution.</p>
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
      */
     inline DescribeExecutionResult& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
 

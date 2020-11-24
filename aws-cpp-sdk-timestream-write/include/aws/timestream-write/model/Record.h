@@ -227,49 +227,65 @@ namespace Model
 
     /**
      * <p> Contains the time at which the measure value for the data point was
-     * collected. </p>
+     * collected. The time value plus the unit provides the time elapsed since the
+     * epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch. </p>
      */
     inline const Aws::String& GetTime() const{ return m_time; }
 
     /**
      * <p> Contains the time at which the measure value for the data point was
-     * collected. </p>
+     * collected. The time value plus the unit provides the time elapsed since the
+     * epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch. </p>
      */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
 
     /**
      * <p> Contains the time at which the measure value for the data point was
-     * collected. </p>
+     * collected. The time value plus the unit provides the time elapsed since the
+     * epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch. </p>
      */
     inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
      * <p> Contains the time at which the measure value for the data point was
-     * collected. </p>
+     * collected. The time value plus the unit provides the time elapsed since the
+     * epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch. </p>
      */
     inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
     /**
      * <p> Contains the time at which the measure value for the data point was
-     * collected. </p>
+     * collected. The time value plus the unit provides the time elapsed since the
+     * epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch. </p>
      */
     inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
 
     /**
      * <p> Contains the time at which the measure value for the data point was
-     * collected. </p>
+     * collected. The time value plus the unit provides the time elapsed since the
+     * epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch. </p>
      */
     inline Record& WithTime(const Aws::String& value) { SetTime(value); return *this;}
 
     /**
      * <p> Contains the time at which the measure value for the data point was
-     * collected. </p>
+     * collected. The time value plus the unit provides the time elapsed since the
+     * epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch. </p>
      */
     inline Record& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
 
     /**
      * <p> Contains the time at which the measure value for the data point was
-     * collected. </p>
+     * collected. The time value plus the unit provides the time elapsed since the
+     * epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch. </p>
      */
     inline Record& WithTime(const char* value) { SetTime(value); return *this;}
 
@@ -310,6 +326,39 @@ namespace Model
      */
     inline Record& WithTimeUnit(TimeUnit&& value) { SetTimeUnit(std::move(value)); return *this;}
 
+
+    /**
+     * <p>64-bit attribute used for record updates. Write requests for duplicate data
+     * with a higher version number will update the existing measure value and version.
+     * In cases where the measure value is the same, <code>Version</code> will still be
+     * updated . Default value is to 1.</p>
+     */
+    inline long long GetVersion() const{ return m_version; }
+
+    /**
+     * <p>64-bit attribute used for record updates. Write requests for duplicate data
+     * with a higher version number will update the existing measure value and version.
+     * In cases where the measure value is the same, <code>Version</code> will still be
+     * updated . Default value is to 1.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>64-bit attribute used for record updates. Write requests for duplicate data
+     * with a higher version number will update the existing measure value and version.
+     * In cases where the measure value is the same, <code>Version</code> will still be
+     * updated . Default value is to 1.</p>
+     */
+    inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>64-bit attribute used for record updates. Write requests for duplicate data
+     * with a higher version number will update the existing measure value and version.
+     * In cases where the measure value is the same, <code>Version</code> will still be
+     * updated . Default value is to 1.</p>
+     */
+    inline Record& WithVersion(long long value) { SetVersion(value); return *this;}
+
   private:
 
     Aws::Vector<Dimension> m_dimensions;
@@ -329,6 +378,9 @@ namespace Model
 
     TimeUnit m_timeUnit;
     bool m_timeUnitHasBeenSet;
+
+    long long m_version;
+    bool m_versionHasBeenSet;
   };
 
 } // namespace Model

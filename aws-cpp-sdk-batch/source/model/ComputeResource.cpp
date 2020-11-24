@@ -30,7 +30,6 @@ ComputeResource::ComputeResource() :
     m_desiredvCpus(0),
     m_desiredvCpusHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_ec2KeyPairHasBeenSet(false),
@@ -40,7 +39,8 @@ ComputeResource::ComputeResource() :
     m_bidPercentage(0),
     m_bidPercentageHasBeenSet(false),
     m_spotIamFleetRoleHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false)
+    m_launchTemplateHasBeenSet(false),
+    m_ec2ConfigurationHasBeenSet(false)
 {
 }
 
@@ -56,7 +56,6 @@ ComputeResource::ComputeResource(JsonView jsonValue) :
     m_desiredvCpus(0),
     m_desiredvCpusHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_ec2KeyPairHasBeenSet(false),
@@ -66,7 +65,8 @@ ComputeResource::ComputeResource(JsonView jsonValue) :
     m_bidPercentage(0),
     m_bidPercentageHasBeenSet(false),
     m_spotIamFleetRoleHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false)
+    m_launchTemplateHasBeenSet(false),
+    m_ec2ConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,13 +116,6 @@ ComputeResource& ComputeResource::operator =(JsonView jsonValue)
       m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
     }
     m_instanceTypesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("imageId"))
-  {
-    m_imageId = jsonValue.GetString("imageId");
-
-    m_imageIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("subnets"))
@@ -197,6 +190,16 @@ ComputeResource& ComputeResource::operator =(JsonView jsonValue)
     m_launchTemplateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ec2Configuration"))
+  {
+    Array<JsonView> ec2ConfigurationJsonList = jsonValue.GetArray("ec2Configuration");
+    for(unsigned ec2ConfigurationIndex = 0; ec2ConfigurationIndex < ec2ConfigurationJsonList.GetLength(); ++ec2ConfigurationIndex)
+    {
+      m_ec2Configuration.push_back(ec2ConfigurationJsonList[ec2ConfigurationIndex].AsObject());
+    }
+    m_ec2ConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -240,12 +243,6 @@ JsonValue ComputeResource::Jsonize() const
      instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
    }
    payload.WithArray("instanceTypes", std::move(instanceTypesJsonList));
-
-  }
-
-  if(m_imageIdHasBeenSet)
-  {
-   payload.WithString("imageId", m_imageId);
 
   }
 
@@ -315,6 +312,17 @@ JsonValue ComputeResource::Jsonize() const
   if(m_launchTemplateHasBeenSet)
   {
    payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
+
+  }
+
+  if(m_ec2ConfigurationHasBeenSet)
+  {
+   Array<JsonValue> ec2ConfigurationJsonList(m_ec2Configuration.size());
+   for(unsigned ec2ConfigurationIndex = 0; ec2ConfigurationIndex < ec2ConfigurationJsonList.GetLength(); ++ec2ConfigurationIndex)
+   {
+     ec2ConfigurationJsonList[ec2ConfigurationIndex].AsObject(m_ec2Configuration[ec2ConfigurationIndex].Jsonize());
+   }
+   payload.WithArray("ec2Configuration", std::move(ec2ConfigurationJsonList));
 
   }
 

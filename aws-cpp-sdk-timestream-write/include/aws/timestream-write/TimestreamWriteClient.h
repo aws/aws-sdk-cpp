@@ -269,7 +269,10 @@ namespace Model
          * <p>Deletes a given Timestream database. <i>This is an irreversible operation.
          * After a database is deleted, the time series data from its tables cannot be
          * recovered.</i> </p> <p>All tables in the database must be deleted first, or a
-         * ValidationException error will be thrown. </p><p><h3>See Also:</h3>   <a
+         * ValidationException error will be thrown. </p> <p>Due to the nature of
+         * distributed retries, the operation can return either success or a
+         * ResourceNotFoundException. Clients should consider them
+         * equivalent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteDatabase">AWS
          * API Reference</a></p>
          */
@@ -279,7 +282,10 @@ namespace Model
          * <p>Deletes a given Timestream database. <i>This is an irreversible operation.
          * After a database is deleted, the time series data from its tables cannot be
          * recovered.</i> </p> <p>All tables in the database must be deleted first, or a
-         * ValidationException error will be thrown. </p><p><h3>See Also:</h3>   <a
+         * ValidationException error will be thrown. </p> <p>Due to the nature of
+         * distributed retries, the operation can return either success or a
+         * ResourceNotFoundException. Clients should consider them
+         * equivalent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteDatabase">AWS
          * API Reference</a></p>
          *
@@ -291,7 +297,10 @@ namespace Model
          * <p>Deletes a given Timestream database. <i>This is an irreversible operation.
          * After a database is deleted, the time series data from its tables cannot be
          * recovered.</i> </p> <p>All tables in the database must be deleted first, or a
-         * ValidationException error will be thrown. </p><p><h3>See Also:</h3>   <a
+         * ValidationException error will be thrown. </p> <p>Due to the nature of
+         * distributed retries, the operation can return either success or a
+         * ResourceNotFoundException. Clients should consider them
+         * equivalent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteDatabase">AWS
          * API Reference</a></p>
          *
@@ -302,7 +311,9 @@ namespace Model
         /**
          * <p>Deletes a given Timestream table. This is an irreversible operation. After a
          * Timestream database table is deleted, the time series data stored in the table
-         * cannot be recovered. </p><p><h3>See Also:</h3>   <a
+         * cannot be recovered. </p> <p>Due to the nature of distributed retries, the
+         * operation can return either success or a ResourceNotFoundException. Clients
+         * should consider them equivalent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteTable">AWS
          * API Reference</a></p>
          */
@@ -311,7 +322,9 @@ namespace Model
         /**
          * <p>Deletes a given Timestream table. This is an irreversible operation. After a
          * Timestream database table is deleted, the time series data stored in the table
-         * cannot be recovered. </p><p><h3>See Also:</h3>   <a
+         * cannot be recovered. </p> <p>Due to the nature of distributed retries, the
+         * operation can return either success or a ResourceNotFoundException. Clients
+         * should consider them equivalent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteTable">AWS
          * API Reference</a></p>
          *
@@ -322,7 +335,9 @@ namespace Model
         /**
          * <p>Deletes a given Timestream table. This is an irreversible operation. After a
          * Timestream database table is deleted, the time series data stored in the table
-         * cannot be recovered. </p><p><h3>See Also:</h3>   <a
+         * cannot be recovered. </p> <p>Due to the nature of distributed retries, the
+         * operation can return either success or a ResourceNotFoundException. Clients
+         * should consider them equivalent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteTable">AWS
          * API Reference</a></p>
          *

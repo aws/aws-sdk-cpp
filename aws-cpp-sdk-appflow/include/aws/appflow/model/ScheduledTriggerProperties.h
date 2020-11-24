@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p> The scheduling expression that determines when and how often the rule runs.
-     * </p>
+     * <p> The scheduling expression that determines the rate at which the schedule
+     * will run, for example <code>rate(5minutes)</code>. </p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p> The scheduling expression that determines when and how often the rule runs.
-     * </p>
+     * <p> The scheduling expression that determines the rate at which the schedule
+     * will run, for example <code>rate(5minutes)</code>. </p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
-     * <p> The scheduling expression that determines when and how often the rule runs.
-     * </p>
+     * <p> The scheduling expression that determines the rate at which the schedule
+     * will run, for example <code>rate(5minutes)</code>. </p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p> The scheduling expression that determines when and how often the rule runs.
-     * </p>
+     * <p> The scheduling expression that determines the rate at which the schedule
+     * will run, for example <code>rate(5minutes)</code>. </p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p> The scheduling expression that determines when and how often the rule runs.
-     * </p>
+     * <p> The scheduling expression that determines the rate at which the schedule
+     * will run, for example <code>rate(5minutes)</code>. </p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p> The scheduling expression that determines when and how often the rule runs.
-     * </p>
+     * <p> The scheduling expression that determines the rate at which the schedule
+     * will run, for example <code>rate(5minutes)</code>. </p>
      */
     inline ScheduledTriggerProperties& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p> The scheduling expression that determines when and how often the rule runs.
-     * </p>
+     * <p> The scheduling expression that determines the rate at which the schedule
+     * will run, for example <code>rate(5minutes)</code>. </p>
      */
     inline ScheduledTriggerProperties& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p> The scheduling expression that determines when and how often the rule runs.
-     * </p>
+     * <p> The scheduling expression that determines the rate at which the schedule
+     * will run, for example <code>rate(5minutes)</code>. </p>
      */
     inline ScheduledTriggerProperties& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 

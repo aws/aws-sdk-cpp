@@ -32,8 +32,13 @@ namespace Model
 {
 
   /**
-   * <p>A backup of an Amazon FSx for file system.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup">AWS API
+   * <p>A backup of an Amazon FSx file system. For more information see:</p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+   * with backups for Windows file systems</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+   * with backups for Lustre file systems</a> </p> </li> </ul><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup">AWS API
    * Reference</a></p>
    */
   class AWS_FSX_API Backup
@@ -88,67 +93,79 @@ namespace Model
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
-     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
-     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
-     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
-     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
-     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
-     * backup.</p> </li> </ul>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline const BackupLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
-     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
-     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
-     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
-     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
-     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
-     * backup.</p> </li> </ul>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
-     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
-     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
-     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
-     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
-     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
-     * backup.</p> </li> </ul>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline void SetLifecycle(const BackupLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
-     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
-     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
-     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
-     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
-     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
-     * backup.</p> </li> </ul>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline void SetLifecycle(BackupLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
-     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
-     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
-     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
-     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
-     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
-     * backup.</p> </li> </ul>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline Backup& WithLifecycle(const BackupLifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
-     * - The backup is fully available.</p> </li> <li> <p> <code>CREATING</code> - FSx
-     * is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
-     * Lustre file systems only; FSx is transferring the backup to S3.</p> </li> <li>
-     * <p> <code>DELETED</code> - The backup was deleted is no longer available.</p>
-     * </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the
-     * backup.</p> </li> </ul>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline Backup& WithLifecycle(BackupLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 

@@ -32,7 +32,8 @@ StackResourceDetail::StackResourceDetail() :
     m_resourceStatusReasonHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_driftInformationHasBeenSet(false)
+    m_driftInformationHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ StackResourceDetail::StackResourceDetail(const XmlNode& xmlNode) :
     m_resourceStatusReasonHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_driftInformationHasBeenSet(false)
+    m_driftInformationHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -125,6 +127,12 @@ StackResourceDetail& StackResourceDetail::operator =(const XmlNode& xmlNode)
       m_driftInformation = driftInformationNode;
       m_driftInformationHasBeenSet = true;
     }
+    XmlNode moduleInfoNode = resultNode.FirstChild("ModuleInfo");
+    if(!moduleInfoNode.IsNull())
+    {
+      m_moduleInfo = moduleInfoNode;
+      m_moduleInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -189,6 +197,13 @@ void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* loca
       m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::StringStream moduleInfoLocationAndMemberSs;
+      moduleInfoLocationAndMemberSs << location << index << locationValue << ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -238,6 +253,12 @@ void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* loca
       Aws::String driftInformationLocationAndMember(location);
       driftInformationLocationAndMember += ".DriftInformation";
       m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMember.c_str());
+  }
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::String moduleInfoLocationAndMember(location);
+      moduleInfoLocationAndMember += ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMember.c_str());
   }
 }
 

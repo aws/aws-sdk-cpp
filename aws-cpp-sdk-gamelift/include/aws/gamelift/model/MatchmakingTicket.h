@@ -614,42 +614,48 @@ namespace Model
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline const GameSessionConnectionInfo& GetGameSessionConnectionInfo() const{ return m_gameSessionConnectionInfo; }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline bool GameSessionConnectionInfoHasBeenSet() const { return m_gameSessionConnectionInfoHasBeenSet; }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline void SetGameSessionConnectionInfo(const GameSessionConnectionInfo& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = value; }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline void SetGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = std::move(value); }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline MatchmakingTicket& WithGameSessionConnectionInfo(const GameSessionConnectionInfo& value) { SetGameSessionConnectionInfo(value); return *this;}
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline MatchmakingTicket& WithGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { SetGameSessionConnectionInfo(std::move(value)); return *this;}
 

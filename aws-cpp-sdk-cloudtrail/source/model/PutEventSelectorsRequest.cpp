@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 PutEventSelectorsRequest::PutEventSelectorsRequest() : 
     m_trailNameHasBeenSet(false),
-    m_eventSelectorsHasBeenSet(false)
+    m_eventSelectorsHasBeenSet(false),
+    m_advancedEventSelectorsHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,17 @@ Aws::String PutEventSelectorsRequest::SerializePayload() const
      eventSelectorsJsonList[eventSelectorsIndex].AsObject(m_eventSelectors[eventSelectorsIndex].Jsonize());
    }
    payload.WithArray("EventSelectors", std::move(eventSelectorsJsonList));
+
+  }
+
+  if(m_advancedEventSelectorsHasBeenSet)
+  {
+   Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
+   for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
+   {
+     advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject(m_advancedEventSelectors[advancedEventSelectorsIndex].Jsonize());
+   }
+   payload.WithArray("AdvancedEventSelectors", std::move(advancedEventSelectorsJsonList));
 
   }
 

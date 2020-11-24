@@ -20,7 +20,8 @@ namespace Model
     CREATING,
     TRANSFERRING,
     DELETED,
-    FAILED
+    FAILED,
+    PENDING
   };
 
 namespace BackupLifecycleMapper

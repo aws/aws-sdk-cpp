@@ -18,7 +18,7 @@ using namespace Aws::Http;
 GetDashboardEmbedUrlRequest::GetDashboardEmbedUrlRequest() : 
     m_awsAccountIdHasBeenSet(false),
     m_dashboardIdHasBeenSet(false),
-    m_identityType(IdentityType::NOT_SET),
+    m_identityType(EmbeddingIdentityType::NOT_SET),
     m_identityTypeHasBeenSet(false),
     m_sessionLifetimeInMinutes(0),
     m_sessionLifetimeInMinutesHasBeenSet(false),
@@ -28,7 +28,9 @@ GetDashboardEmbedUrlRequest::GetDashboardEmbedUrlRequest() :
     m_resetDisabledHasBeenSet(false),
     m_statePersistenceEnabled(false),
     m_statePersistenceEnabledHasBeenSet(false),
-    m_userArnHasBeenSet(false)
+    m_userArnHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_additionalDashboardIdsHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,7 @@ void GetDashboardEmbedUrlRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_identityTypeHasBeenSet)
     {
-      ss << IdentityTypeMapper::GetNameForIdentityType(m_identityType);
+      ss << EmbeddingIdentityTypeMapper::GetNameForEmbeddingIdentityType(m_identityType);
       uri.AddQueryStringParameter("creds-type", ss.str());
       ss.str("");
     }
@@ -80,6 +82,23 @@ void GetDashboardEmbedUrlRequest::AddQueryStringParameters(URI& uri) const
       ss << m_userArn;
       uri.AddQueryStringParameter("user-arn", ss.str());
       ss.str("");
+    }
+
+    if(m_namespaceHasBeenSet)
+    {
+      ss << m_namespace;
+      uri.AddQueryStringParameter("namespace", ss.str());
+      ss.str("");
+    }
+
+    if(m_additionalDashboardIdsHasBeenSet)
+    {
+      for(const auto& item : m_additionalDashboardIds)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("additional-dashboard-ids", ss.str());
+        ss.str("");
+      }
     }
 
 }

@@ -35,7 +35,8 @@ ConnectorMetadata::ConnectorMetadata() :
     m_trendmicroHasBeenSet(false),
     m_veevaHasBeenSet(false),
     m_zendeskHasBeenSet(false),
-    m_eventBridgeHasBeenSet(false)
+    m_eventBridgeHasBeenSet(false),
+    m_upsolverHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ConnectorMetadata::ConnectorMetadata(JsonView jsonValue) :
     m_trendmicroHasBeenSet(false),
     m_veevaHasBeenSet(false),
     m_zendeskHasBeenSet(false),
-    m_eventBridgeHasBeenSet(false)
+    m_eventBridgeHasBeenSet(false),
+    m_upsolverHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -182,6 +184,13 @@ ConnectorMetadata& ConnectorMetadata::operator =(JsonView jsonValue)
     m_eventBridgeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Upsolver"))
+  {
+    m_upsolver = jsonValue.GetObject("Upsolver");
+
+    m_upsolverHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -288,6 +297,12 @@ JsonValue ConnectorMetadata::Jsonize() const
   if(m_eventBridgeHasBeenSet)
   {
    payload.WithObject("EventBridge", m_eventBridge.Jsonize());
+
+  }
+
+  if(m_upsolverHasBeenSet)
+  {
+   payload.WithObject("Upsolver", m_upsolver.Jsonize());
 
   }
 
