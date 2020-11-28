@@ -69,7 +69,10 @@ if(PLATFORM_APPLE)
         set(PLATFORM_LIBS ${PLATFORM_LIBS} ${FOUNDATION_LIBRARY})
 
         add_definitions("-DCORE_AUDIO")
-        add_definitions("-Wno-gnu-zero-variadic-macro-arguments -Wno-four-char-constants -Wno-nullability-extension")
+        add_compile_options(
+            $<$<CXX_COMPILER_ID:Clang>:-Wno-gnu-zero-variadic-macro-arguments;-Wno-four-char-constants;-Wno-nullability-extension>
+            $<$<CXX_COMPILER_ID:GNU>:-Wno-multichar>
+        )
     endif()
 endif()
 
