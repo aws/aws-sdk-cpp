@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about where and how you want to obtain the inputs for an
-   * processing job.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration for processing job inputs in Amazon S3.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingS3Input">AWS
    * API Reference</a></p>
    */
@@ -94,56 +94,64 @@ namespace Model
     /**
      * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
      * download the inputs to run a processing job. <code>LocalPath</code> is an
-     * absolute path to the input data.</p>
+     * absolute path to the input data. This is a required parameter when
+     * <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline const Aws::String& GetLocalPath() const{ return m_localPath; }
 
     /**
      * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
      * download the inputs to run a processing job. <code>LocalPath</code> is an
-     * absolute path to the input data.</p>
+     * absolute path to the input data. This is a required parameter when
+     * <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline bool LocalPathHasBeenSet() const { return m_localPathHasBeenSet; }
 
     /**
      * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
      * download the inputs to run a processing job. <code>LocalPath</code> is an
-     * absolute path to the input data.</p>
+     * absolute path to the input data. This is a required parameter when
+     * <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline void SetLocalPath(const Aws::String& value) { m_localPathHasBeenSet = true; m_localPath = value; }
 
     /**
      * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
      * download the inputs to run a processing job. <code>LocalPath</code> is an
-     * absolute path to the input data.</p>
+     * absolute path to the input data. This is a required parameter when
+     * <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline void SetLocalPath(Aws::String&& value) { m_localPathHasBeenSet = true; m_localPath = std::move(value); }
 
     /**
      * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
      * download the inputs to run a processing job. <code>LocalPath</code> is an
-     * absolute path to the input data.</p>
+     * absolute path to the input data. This is a required parameter when
+     * <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline void SetLocalPath(const char* value) { m_localPathHasBeenSet = true; m_localPath.assign(value); }
 
     /**
      * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
      * download the inputs to run a processing job. <code>LocalPath</code> is an
-     * absolute path to the input data.</p>
+     * absolute path to the input data. This is a required parameter when
+     * <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline ProcessingS3Input& WithLocalPath(const Aws::String& value) { SetLocalPath(value); return *this;}
 
     /**
      * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
      * download the inputs to run a processing job. <code>LocalPath</code> is an
-     * absolute path to the input data.</p>
+     * absolute path to the input data. This is a required parameter when
+     * <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline ProcessingS3Input& WithLocalPath(Aws::String&& value) { SetLocalPath(std::move(value)); return *this;}
 
     /**
      * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
      * download the inputs to run a processing job. <code>LocalPath</code> is an
-     * absolute path to the input data.</p>
+     * absolute path to the input data. This is a required parameter when
+     * <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline ProcessingS3Input& WithLocalPath(const char* value) { SetLocalPath(value); return *this;}
 
@@ -221,7 +229,8 @@ namespace Model
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
      * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
-     * directly to your algorithm without using the EBS volume.</p>
+     * directly to your algorithm without using the EBS volume.This is a required
+     * parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline const ProcessingS3InputMode& GetS3InputMode() const{ return m_s3InputMode; }
 
@@ -231,7 +240,8 @@ namespace Model
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
      * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
-     * directly to your algorithm without using the EBS volume.</p>
+     * directly to your algorithm without using the EBS volume.This is a required
+     * parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline bool S3InputModeHasBeenSet() const { return m_s3InputModeHasBeenSet; }
 
@@ -241,7 +251,8 @@ namespace Model
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
      * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
-     * directly to your algorithm without using the EBS volume.</p>
+     * directly to your algorithm without using the EBS volume.This is a required
+     * parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline void SetS3InputMode(const ProcessingS3InputMode& value) { m_s3InputModeHasBeenSet = true; m_s3InputMode = value; }
 
@@ -251,7 +262,8 @@ namespace Model
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
      * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
-     * directly to your algorithm without using the EBS volume.</p>
+     * directly to your algorithm without using the EBS volume.This is a required
+     * parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline void SetS3InputMode(ProcessingS3InputMode&& value) { m_s3InputModeHasBeenSet = true; m_s3InputMode = std::move(value); }
 
@@ -261,7 +273,8 @@ namespace Model
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
      * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
-     * directly to your algorithm without using the EBS volume.</p>
+     * directly to your algorithm without using the EBS volume.This is a required
+     * parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline ProcessingS3Input& WithS3InputMode(const ProcessingS3InputMode& value) { SetS3InputMode(value); return *this;}
 
@@ -271,7 +284,8 @@ namespace Model
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
      * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
-     * directly to your algorithm without using the EBS volume.</p>
+     * directly to your algorithm without using the EBS volume.This is a required
+     * parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
      */
     inline ProcessingS3Input& WithS3InputMode(ProcessingS3InputMode&& value) { SetS3InputMode(std::move(value)); return *this;}
 

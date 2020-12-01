@@ -31,6 +31,8 @@ EbsBlockDevice::EbsBlockDevice() :
     m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false)
 {
@@ -47,6 +49,8 @@ EbsBlockDevice::EbsBlockDevice(const XmlNode& xmlNode) :
     m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false)
 {
@@ -95,6 +99,12 @@ EbsBlockDevice& EbsBlockDevice::operator =(const XmlNode& xmlNode)
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
     }
+    XmlNode throughputNode = resultNode.FirstChild("throughput");
+    if(!throughputNode.IsNull())
+    {
+      m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
+      m_throughputHasBeenSet = true;
+    }
     XmlNode encryptedNode = resultNode.FirstChild("encrypted");
     if(!encryptedNode.IsNull())
     {
@@ -138,6 +148,11 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Throughput=" << m_throughput << "&";
+  }
+
   if(m_encryptedHasBeenSet)
   {
       oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
@@ -170,6 +185,10 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << ".Throughput=" << m_throughput << "&";
   }
   if(m_encryptedHasBeenSet)
   {

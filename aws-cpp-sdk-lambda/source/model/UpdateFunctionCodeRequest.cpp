@@ -19,6 +19,7 @@ UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
     m_s3BucketHasBeenSet(false),
     m_s3KeyHasBeenSet(false),
     m_s3ObjectVersionHasBeenSet(false),
+    m_imageUriHasBeenSet(false),
     m_publish(false),
     m_publishHasBeenSet(false),
     m_dryRun(false),
@@ -51,6 +52,12 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const
   if(m_s3ObjectVersionHasBeenSet)
   {
    payload.WithString("S3ObjectVersion", m_s3ObjectVersion);
+
+  }
+
+  if(m_imageUriHasBeenSet)
+  {
+   payload.WithString("ImageUri", m_imageUri);
 
   }
 

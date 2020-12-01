@@ -237,6 +237,27 @@ namespace Model
 
 
     /**
+     * <p>The target throughput of the volume, in MiB/s.</p>
+     */
+    inline int GetTargetThroughput() const{ return m_targetThroughput; }
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s.</p>
+     */
+    inline bool TargetThroughputHasBeenSet() const { return m_targetThroughputHasBeenSet; }
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s.</p>
+     */
+    inline void SetTargetThroughput(int value) { m_targetThroughputHasBeenSet = true; m_targetThroughput = value; }
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s.</p>
+     */
+    inline VolumeModification& WithTargetThroughput(int value) { SetTargetThroughput(value); return *this;}
+
+
+    /**
      * <p>The original size of the volume, in GiB.</p>
      */
     inline int GetOriginalSize() const{ return m_originalSize; }
@@ -307,6 +328,27 @@ namespace Model
      * <p>The original EBS volume type of the volume.</p>
      */
     inline VolumeModification& WithOriginalVolumeType(VolumeType&& value) { SetOriginalVolumeType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The original throughput of the volume, in MiB/s.</p>
+     */
+    inline int GetOriginalThroughput() const{ return m_originalThroughput; }
+
+    /**
+     * <p>The original throughput of the volume, in MiB/s.</p>
+     */
+    inline bool OriginalThroughputHasBeenSet() const { return m_originalThroughputHasBeenSet; }
+
+    /**
+     * <p>The original throughput of the volume, in MiB/s.</p>
+     */
+    inline void SetOriginalThroughput(int value) { m_originalThroughputHasBeenSet = true; m_originalThroughput = value; }
+
+    /**
+     * <p>The original throughput of the volume, in MiB/s.</p>
+     */
+    inline VolumeModification& WithOriginalThroughput(int value) { SetOriginalThroughput(value); return *this;}
 
 
     /**
@@ -411,6 +453,9 @@ namespace Model
     VolumeType m_targetVolumeType;
     bool m_targetVolumeTypeHasBeenSet;
 
+    int m_targetThroughput;
+    bool m_targetThroughputHasBeenSet;
+
     int m_originalSize;
     bool m_originalSizeHasBeenSet;
 
@@ -419,6 +464,9 @@ namespace Model
 
     VolumeType m_originalVolumeType;
     bool m_originalVolumeTypeHasBeenSet;
+
+    int m_originalThroughput;
+    bool m_originalThroughputHasBeenSet;
 
     long long m_progress;
     bool m_progressHasBeenSet;

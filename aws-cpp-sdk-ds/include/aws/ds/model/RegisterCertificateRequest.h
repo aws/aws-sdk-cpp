@@ -7,6 +7,8 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/model/CertificateType.h>
+#include <aws/ds/model/ClientCertAuthSettings.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +117,56 @@ namespace Model
      */
     inline RegisterCertificateRequest& WithCertificateData(const char* value) { SetCertificateData(value); return *this;}
 
+
+    /**
+     * <p>The certificate type to register for the request.</p>
+     */
+    inline const CertificateType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The certificate type to register for the request.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The certificate type to register for the request.</p>
+     */
+    inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The certificate type to register for the request.</p>
+     */
+    inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The certificate type to register for the request.</p>
+     */
+    inline RegisterCertificateRequest& WithType(const CertificateType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The certificate type to register for the request.</p>
+     */
+    inline RegisterCertificateRequest& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
+
+
+    
+    inline const ClientCertAuthSettings& GetClientCertAuthSettings() const{ return m_clientCertAuthSettings; }
+
+    
+    inline bool ClientCertAuthSettingsHasBeenSet() const { return m_clientCertAuthSettingsHasBeenSet; }
+
+    
+    inline void SetClientCertAuthSettings(const ClientCertAuthSettings& value) { m_clientCertAuthSettingsHasBeenSet = true; m_clientCertAuthSettings = value; }
+
+    
+    inline void SetClientCertAuthSettings(ClientCertAuthSettings&& value) { m_clientCertAuthSettingsHasBeenSet = true; m_clientCertAuthSettings = std::move(value); }
+
+    
+    inline RegisterCertificateRequest& WithClientCertAuthSettings(const ClientCertAuthSettings& value) { SetClientCertAuthSettings(value); return *this;}
+
+    
+    inline RegisterCertificateRequest& WithClientCertAuthSettings(ClientCertAuthSettings&& value) { SetClientCertAuthSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_directoryId;
@@ -122,6 +174,12 @@ namespace Model
 
     Aws::String m_certificateData;
     bool m_certificateDataHasBeenSet;
+
+    CertificateType m_type;
+    bool m_typeHasBeenSet;
+
+    ClientCertAuthSettings m_clientCertAuthSettings;
+    bool m_clientCertAuthSettingsHasBeenSet;
   };
 
 } // namespace Model

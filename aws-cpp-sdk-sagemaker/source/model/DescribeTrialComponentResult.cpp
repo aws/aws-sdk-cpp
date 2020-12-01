@@ -121,6 +121,12 @@ DescribeTrialComponentResult& DescribeTrialComponentResult::operator =(const Aws
     }
   }
 
+  if(jsonValue.ValueExists("MetadataProperties"))
+  {
+    m_metadataProperties = jsonValue.GetObject("MetadataProperties");
+
+  }
+
   if(jsonValue.ValueExists("Metrics"))
   {
     Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");

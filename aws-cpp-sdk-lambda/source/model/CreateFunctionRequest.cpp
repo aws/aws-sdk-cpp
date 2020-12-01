@@ -27,6 +27,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_publish(false),
     m_publishHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_packageType(PackageType::NOT_SET),
+    m_packageTypeHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
@@ -34,6 +36,7 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_tagsHasBeenSet(false),
     m_layersHasBeenSet(false),
     m_fileSystemConfigsHasBeenSet(false),
+    m_imageConfigHasBeenSet(false),
     m_codeSigningConfigArnHasBeenSet(false)
 {
 }
@@ -101,6 +104,11 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   }
 
+  if(m_packageTypeHasBeenSet)
+  {
+   payload.WithString("PackageType", PackageTypeMapper::GetNameForPackageType(m_packageType));
+  }
+
   if(m_deadLetterConfigHasBeenSet)
   {
    payload.WithObject("DeadLetterConfig", m_deadLetterConfig.Jsonize());
@@ -155,6 +163,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
      fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
    }
    payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
+
+  }
+
+  if(m_imageConfigHasBeenSet)
+  {
+   payload.WithObject("ImageConfig", m_imageConfig.Jsonize());
 
   }
 

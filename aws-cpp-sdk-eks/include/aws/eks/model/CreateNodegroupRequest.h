@@ -13,6 +13,7 @@
 #include <aws/eks/model/RemoteAccessConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/eks/model/LaunchTemplateSpecification.h>
+#include <aws/eks/model/CapacityTypes.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -345,119 +346,173 @@ namespace Model
 
 
     /**
-     * <p>The instance type to use for your node group. You can specify a single
-     * instance type for a node group. The default value for <code>instanceTypes</code>
-     * is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify
-     * <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>instanceTypes</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>Specify the instance types for a node group. If you specify a GPU instance
+     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
+     * you can specify zero or one instance type in your launch template <i>or</i> you
+     * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
+     * specify an instance type in your launch template <i>and</i> specify any
+     * <code>instanceTypes</code>, the node group deployment will fail. If you don't
+     * specify an instance type in a launch template or for <code>instanceTypes</code>,
+     * then <code>t3.medium</code> is used, by default. If you specify
+     * <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+     * multiple values for <code>instanceTypes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-node-groups.html#managed-node-group-capacity-types">Managed
+     * node group capacity types</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p>The instance type to use for your node group. You can specify a single
-     * instance type for a node group. The default value for <code>instanceTypes</code>
-     * is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify
-     * <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>instanceTypes</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>Specify the instance types for a node group. If you specify a GPU instance
+     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
+     * you can specify zero or one instance type in your launch template <i>or</i> you
+     * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
+     * specify an instance type in your launch template <i>and</i> specify any
+     * <code>instanceTypes</code>, the node group deployment will fail. If you don't
+     * specify an instance type in a launch template or for <code>instanceTypes</code>,
+     * then <code>t3.medium</code> is used, by default. If you specify
+     * <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+     * multiple values for <code>instanceTypes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-node-groups.html#managed-node-group-capacity-types">Managed
+     * node group capacity types</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
-     * <p>The instance type to use for your node group. You can specify a single
-     * instance type for a node group. The default value for <code>instanceTypes</code>
-     * is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify
-     * <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>instanceTypes</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>Specify the instance types for a node group. If you specify a GPU instance
+     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
+     * you can specify zero or one instance type in your launch template <i>or</i> you
+     * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
+     * specify an instance type in your launch template <i>and</i> specify any
+     * <code>instanceTypes</code>, the node group deployment will fail. If you don't
+     * specify an instance type in a launch template or for <code>instanceTypes</code>,
+     * then <code>t3.medium</code> is used, by default. If you specify
+     * <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+     * multiple values for <code>instanceTypes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-node-groups.html#managed-node-group-capacity-types">Managed
+     * node group capacity types</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p>The instance type to use for your node group. You can specify a single
-     * instance type for a node group. The default value for <code>instanceTypes</code>
-     * is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify
-     * <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>instanceTypes</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>Specify the instance types for a node group. If you specify a GPU instance
+     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
+     * you can specify zero or one instance type in your launch template <i>or</i> you
+     * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
+     * specify an instance type in your launch template <i>and</i> specify any
+     * <code>instanceTypes</code>, the node group deployment will fail. If you don't
+     * specify an instance type in a launch template or for <code>instanceTypes</code>,
+     * then <code>t3.medium</code> is used, by default. If you specify
+     * <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+     * multiple values for <code>instanceTypes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-node-groups.html#managed-node-group-capacity-types">Managed
+     * node group capacity types</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
-     * <p>The instance type to use for your node group. You can specify a single
-     * instance type for a node group. The default value for <code>instanceTypes</code>
-     * is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify
-     * <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>instanceTypes</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>Specify the instance types for a node group. If you specify a GPU instance
+     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
+     * you can specify zero or one instance type in your launch template <i>or</i> you
+     * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
+     * specify an instance type in your launch template <i>and</i> specify any
+     * <code>instanceTypes</code>, the node group deployment will fail. If you don't
+     * specify an instance type in a launch template or for <code>instanceTypes</code>,
+     * then <code>t3.medium</code> is used, by default. If you specify
+     * <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+     * multiple values for <code>instanceTypes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-node-groups.html#managed-node-group-capacity-types">Managed
+     * node group capacity types</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instance type to use for your node group. You can specify a single
-     * instance type for a node group. The default value for <code>instanceTypes</code>
-     * is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify
-     * <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>instanceTypes</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>Specify the instance types for a node group. If you specify a GPU instance
+     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
+     * you can specify zero or one instance type in your launch template <i>or</i> you
+     * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
+     * specify an instance type in your launch template <i>and</i> specify any
+     * <code>instanceTypes</code>, the node group deployment will fail. If you don't
+     * specify an instance type in a launch template or for <code>instanceTypes</code>,
+     * then <code>t3.medium</code> is used, by default. If you specify
+     * <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+     * multiple values for <code>instanceTypes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-node-groups.html#managed-node-group-capacity-types">Managed
+     * node group capacity types</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type to use for your node group. You can specify a single
-     * instance type for a node group. The default value for <code>instanceTypes</code>
-     * is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify
-     * <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>instanceTypes</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>Specify the instance types for a node group. If you specify a GPU instance
+     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
+     * you can specify zero or one instance type in your launch template <i>or</i> you
+     * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
+     * specify an instance type in your launch template <i>and</i> specify any
+     * <code>instanceTypes</code>, the node group deployment will fail. If you don't
+     * specify an instance type in a launch template or for <code>instanceTypes</code>,
+     * then <code>t3.medium</code> is used, by default. If you specify
+     * <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+     * multiple values for <code>instanceTypes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-node-groups.html#managed-node-group-capacity-types">Managed
+     * node group capacity types</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instance type to use for your node group. You can specify a single
-     * instance type for a node group. The default value for <code>instanceTypes</code>
-     * is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify
-     * <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>instanceTypes</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>Specify the instance types for a node group. If you specify a GPU instance
+     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
+     * you can specify zero or one instance type in your launch template <i>or</i> you
+     * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
+     * specify an instance type in your launch template <i>and</i> specify any
+     * <code>instanceTypes</code>, the node group deployment will fail. If you don't
+     * specify an instance type in a launch template or for <code>instanceTypes</code>,
+     * then <code>t3.medium</code> is used, by default. If you specify
+     * <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+     * multiple values for <code>instanceTypes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-node-groups.html#managed-node-group-capacity-types">Managed
+     * node group capacity types</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instance type to use for your node group. You can specify a single
-     * instance type for a node group. The default value for <code>instanceTypes</code>
-     * is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify
-     * <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>instanceTypes</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>Specify the instance types for a node group. If you specify a GPU instance
+     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
+     * you can specify zero or one instance type in your launch template <i>or</i> you
+     * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
+     * specify an instance type in your launch template <i>and</i> specify any
+     * <code>instanceTypes</code>, the node group deployment will fail. If you don't
+     * specify an instance type in a launch template or for <code>instanceTypes</code>,
+     * then <code>t3.medium</code> is used, by default. If you specify
+     * <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+     * multiple values for <code>instanceTypes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-node-groups.html#managed-node-group-capacity-types">Managed
+     * node group capacity types</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the Amazon EKS User Guide.</p>
+     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
@@ -466,7 +521,7 @@ namespace Model
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS-optimized Amazon
+     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
      * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
      * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
      * group deployment will fail. For more information about using launch templates
@@ -480,7 +535,7 @@ namespace Model
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS-optimized Amazon
+     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
      * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
      * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
      * group deployment will fail. For more information about using launch templates
@@ -494,7 +549,7 @@ namespace Model
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS-optimized Amazon
+     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
      * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
      * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
      * group deployment will fail. For more information about using launch templates
@@ -508,7 +563,7 @@ namespace Model
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS-optimized Amazon
+     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
      * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
      * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
      * group deployment will fail. For more information about using launch templates
@@ -522,7 +577,7 @@ namespace Model
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS-optimized Amazon
+     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
      * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
      * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
      * group deployment will fail. For more information about using launch templates
@@ -536,7 +591,7 @@ namespace Model
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS-optimized Amazon
+     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
      * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
      * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
      * group deployment will fail. For more information about using launch templates
@@ -1050,6 +1105,37 @@ namespace Model
 
 
     /**
+     * <p>The capacity type for your node group.</p>
+     */
+    inline const CapacityTypes& GetCapacityType() const{ return m_capacityType; }
+
+    /**
+     * <p>The capacity type for your node group.</p>
+     */
+    inline bool CapacityTypeHasBeenSet() const { return m_capacityTypeHasBeenSet; }
+
+    /**
+     * <p>The capacity type for your node group.</p>
+     */
+    inline void SetCapacityType(const CapacityTypes& value) { m_capacityTypeHasBeenSet = true; m_capacityType = value; }
+
+    /**
+     * <p>The capacity type for your node group.</p>
+     */
+    inline void SetCapacityType(CapacityTypes&& value) { m_capacityTypeHasBeenSet = true; m_capacityType = std::move(value); }
+
+    /**
+     * <p>The capacity type for your node group.</p>
+     */
+    inline CreateNodegroupRequest& WithCapacityType(const CapacityTypes& value) { SetCapacityType(value); return *this;}
+
+    /**
+     * <p>The capacity type for your node group.</p>
+     */
+    inline CreateNodegroupRequest& WithCapacityType(CapacityTypes&& value) { SetCapacityType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Kubernetes version to use for your managed nodes. By default, the
      * Kubernetes version of the cluster is used, and this is the only accepted
      * specified value. If you specify <code>launchTemplate</code>, and your launch
@@ -1147,120 +1233,120 @@ namespace Model
 
 
     /**
-     * <p>The AMI version of the Amazon EKS-optimized AMI to use with your node group.
+     * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
      * Kubernetes version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. If you
-     * specify <code>launchTemplate</code>, and your launch template uses a custom AMI,
-     * then don't specify <code>releaseVersion</code>, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
+     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
+     * group deployment will fail. For more information about using launch templates
+     * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
 
     /**
-     * <p>The AMI version of the Amazon EKS-optimized AMI to use with your node group.
+     * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
      * Kubernetes version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. If you
-     * specify <code>launchTemplate</code>, and your launch template uses a custom AMI,
-     * then don't specify <code>releaseVersion</code>, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
+     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
+     * group deployment will fail. For more information about using launch templates
+     * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
 
     /**
-     * <p>The AMI version of the Amazon EKS-optimized AMI to use with your node group.
+     * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
      * Kubernetes version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. If you
-     * specify <code>launchTemplate</code>, and your launch template uses a custom AMI,
-     * then don't specify <code>releaseVersion</code>, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
+     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
+     * group deployment will fail. For more information about using launch templates
+     * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
 
     /**
-     * <p>The AMI version of the Amazon EKS-optimized AMI to use with your node group.
+     * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
      * Kubernetes version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. If you
-     * specify <code>launchTemplate</code>, and your launch template uses a custom AMI,
-     * then don't specify <code>releaseVersion</code>, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
+     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
+     * group deployment will fail. For more information about using launch templates
+     * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
 
     /**
-     * <p>The AMI version of the Amazon EKS-optimized AMI to use with your node group.
+     * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
      * Kubernetes version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. If you
-     * specify <code>launchTemplate</code>, and your launch template uses a custom AMI,
-     * then don't specify <code>releaseVersion</code>, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
+     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
+     * group deployment will fail. For more information about using launch templates
+     * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
 
     /**
-     * <p>The AMI version of the Amazon EKS-optimized AMI to use with your node group.
+     * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
      * Kubernetes version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. If you
-     * specify <code>launchTemplate</code>, and your launch template uses a custom AMI,
-     * then don't specify <code>releaseVersion</code>, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
+     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
+     * group deployment will fail. For more information about using launch templates
+     * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline CreateNodegroupRequest& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
 
     /**
-     * <p>The AMI version of the Amazon EKS-optimized AMI to use with your node group.
+     * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
      * Kubernetes version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. If you
-     * specify <code>launchTemplate</code>, and your launch template uses a custom AMI,
-     * then don't specify <code>releaseVersion</code>, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
+     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
+     * group deployment will fail. For more information about using launch templates
+     * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the Amazon EKS User Guide.</p>
      */
     inline CreateNodegroupRequest& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The AMI version of the Amazon EKS-optimized AMI to use with your node group.
+     * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
      * Kubernetes version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. If you
-     * specify <code>launchTemplate</code>, and your launch template uses a custom AMI,
-     * then don't specify <code>releaseVersion</code>, or the node group deployment
-     * will fail. For more information about using launch templates with Amazon EKS,
-     * see <a
+     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
+     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
+     * group deployment will fail. For more information about using launch templates
+     * with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the Amazon EKS User Guide.</p>
      */
@@ -1306,6 +1392,9 @@ namespace Model
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet;
+
+    CapacityTypes m_capacityType;
+    bool m_capacityTypeHasBeenSet;
 
     Aws::String m_version;
     bool m_versionHasBeenSet;

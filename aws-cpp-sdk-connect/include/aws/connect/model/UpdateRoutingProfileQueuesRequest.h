@@ -117,42 +117,58 @@ namespace Model
 
 
     /**
-     * <p>The queues to be updated for this routing profile.</p>
+     * <p>The queues to be updated for this routing profile. Queues must first be
+     * associated to the routing profile. You can do this using
+     * AssociateRoutingProfileQueues.</p>
      */
     inline const Aws::Vector<RoutingProfileQueueConfig>& GetQueueConfigs() const{ return m_queueConfigs; }
 
     /**
-     * <p>The queues to be updated for this routing profile.</p>
+     * <p>The queues to be updated for this routing profile. Queues must first be
+     * associated to the routing profile. You can do this using
+     * AssociateRoutingProfileQueues.</p>
      */
     inline bool QueueConfigsHasBeenSet() const { return m_queueConfigsHasBeenSet; }
 
     /**
-     * <p>The queues to be updated for this routing profile.</p>
+     * <p>The queues to be updated for this routing profile. Queues must first be
+     * associated to the routing profile. You can do this using
+     * AssociateRoutingProfileQueues.</p>
      */
     inline void SetQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = value; }
 
     /**
-     * <p>The queues to be updated for this routing profile.</p>
+     * <p>The queues to be updated for this routing profile. Queues must first be
+     * associated to the routing profile. You can do this using
+     * AssociateRoutingProfileQueues.</p>
      */
     inline void SetQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = std::move(value); }
 
     /**
-     * <p>The queues to be updated for this routing profile.</p>
+     * <p>The queues to be updated for this routing profile. Queues must first be
+     * associated to the routing profile. You can do this using
+     * AssociateRoutingProfileQueues.</p>
      */
     inline UpdateRoutingProfileQueuesRequest& WithQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { SetQueueConfigs(value); return *this;}
 
     /**
-     * <p>The queues to be updated for this routing profile.</p>
+     * <p>The queues to be updated for this routing profile. Queues must first be
+     * associated to the routing profile. You can do this using
+     * AssociateRoutingProfileQueues.</p>
      */
     inline UpdateRoutingProfileQueuesRequest& WithQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { SetQueueConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>The queues to be updated for this routing profile.</p>
+     * <p>The queues to be updated for this routing profile. Queues must first be
+     * associated to the routing profile. You can do this using
+     * AssociateRoutingProfileQueues.</p>
      */
     inline UpdateRoutingProfileQueuesRequest& AddQueueConfigs(const RoutingProfileQueueConfig& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(value); return *this; }
 
     /**
-     * <p>The queues to be updated for this routing profile.</p>
+     * <p>The queues to be updated for this routing profile. Queues must first be
+     * associated to the routing profile. You can do this using
+     * AssociateRoutingProfileQueues.</p>
      */
     inline UpdateRoutingProfileQueuesRequest& AddQueueConfigs(RoutingProfileQueueConfig&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(std::move(value)); return *this; }
 

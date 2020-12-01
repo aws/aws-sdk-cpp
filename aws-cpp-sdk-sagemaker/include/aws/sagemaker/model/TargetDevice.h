@@ -42,7 +42,8 @@ namespace Model
     amba_cv22,
     x86_win32,
     x86_win64,
-    coreml
+    coreml,
+    jacinto_tda4vm
   };
 
 namespace TargetDeviceMapper

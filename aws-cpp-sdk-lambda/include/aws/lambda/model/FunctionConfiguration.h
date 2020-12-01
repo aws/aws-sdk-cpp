@@ -16,6 +16,8 @@
 #include <aws/lambda/model/StateReasonCode.h>
 #include <aws/lambda/model/LastUpdateStatus.h>
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
+#include <aws/lambda/model/PackageType.h>
+#include <aws/lambda/model/ImageConfigResponse.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
@@ -1069,6 +1071,74 @@ namespace Model
 
 
     /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline const PackageType& GetPackageType() const{ return m_packageType; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline FunctionConfiguration& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline FunctionConfiguration& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline const ImageConfigResponse& GetImageConfigResponse() const{ return m_imageConfigResponse; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline bool ImageConfigResponseHasBeenSet() const { return m_imageConfigResponseHasBeenSet; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline void SetImageConfigResponse(const ImageConfigResponse& value) { m_imageConfigResponseHasBeenSet = true; m_imageConfigResponse = value; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline void SetImageConfigResponse(ImageConfigResponse&& value) { m_imageConfigResponseHasBeenSet = true; m_imageConfigResponse = std::move(value); }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline FunctionConfiguration& WithImageConfigResponse(const ImageConfigResponse& value) { SetImageConfigResponse(value); return *this;}
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline FunctionConfiguration& WithImageConfigResponse(ImageConfigResponse&& value) { SetImageConfigResponse(std::move(value)); return *this;}
+
+
+    /**
      * <p>The ARN of the signing profile version.</p>
      */
     inline const Aws::String& GetSigningProfileVersionArn() const{ return m_signingProfileVersionArn; }
@@ -1231,6 +1301,12 @@ namespace Model
 
     Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
     bool m_fileSystemConfigsHasBeenSet;
+
+    PackageType m_packageType;
+    bool m_packageTypeHasBeenSet;
+
+    ImageConfigResponse m_imageConfigResponse;
+    bool m_imageConfigResponseHasBeenSet;
 
     Aws::String m_signingProfileVersionArn;
     bool m_signingProfileVersionArnHasBeenSet;

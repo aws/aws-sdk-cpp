@@ -118,6 +118,88 @@ namespace Model
      */
     inline FunctionCodeLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline FunctionCodeLocation& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline FunctionCodeLocation& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline FunctionCodeLocation& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline const Aws::String& GetResolvedImageUri() const{ return m_resolvedImageUri; }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline bool ResolvedImageUriHasBeenSet() const { return m_resolvedImageUriHasBeenSet; }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline void SetResolvedImageUri(const Aws::String& value) { m_resolvedImageUriHasBeenSet = true; m_resolvedImageUri = value; }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline void SetResolvedImageUri(Aws::String&& value) { m_resolvedImageUriHasBeenSet = true; m_resolvedImageUri = std::move(value); }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline void SetResolvedImageUri(const char* value) { m_resolvedImageUriHasBeenSet = true; m_resolvedImageUri.assign(value); }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline FunctionCodeLocation& WithResolvedImageUri(const Aws::String& value) { SetResolvedImageUri(value); return *this;}
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline FunctionCodeLocation& WithResolvedImageUri(Aws::String&& value) { SetResolvedImageUri(std::move(value)); return *this;}
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline FunctionCodeLocation& WithResolvedImageUri(const char* value) { SetResolvedImageUri(value); return *this;}
+
   private:
 
     Aws::String m_repositoryType;
@@ -125,6 +207,12 @@ namespace Model
 
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
+    Aws::String m_imageUri;
+    bool m_imageUriHasBeenSet;
+
+    Aws::String m_resolvedImageUri;
+    bool m_resolvedImageUriHasBeenSet;
   };
 
 } // namespace Model

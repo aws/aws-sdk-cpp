@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>The replicated regional information for a directory.</p><p><h3>See Also:</h3>
+   * <p>The replicated Region information for a directory.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegionDescription">AWS
    * API Reference</a></p>
@@ -125,32 +125,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies if the Region is the primary Region or an additional Region.</p>
+     * <p>Specifies whether the Region is the primary Region or an additional
+     * Region.</p>
      */
     inline const RegionType& GetRegionType() const{ return m_regionType; }
 
     /**
-     * <p>Specifies if the Region is the primary Region or an additional Region.</p>
+     * <p>Specifies whether the Region is the primary Region or an additional
+     * Region.</p>
      */
     inline bool RegionTypeHasBeenSet() const { return m_regionTypeHasBeenSet; }
 
     /**
-     * <p>Specifies if the Region is the primary Region or an additional Region.</p>
+     * <p>Specifies whether the Region is the primary Region or an additional
+     * Region.</p>
      */
     inline void SetRegionType(const RegionType& value) { m_regionTypeHasBeenSet = true; m_regionType = value; }
 
     /**
-     * <p>Specifies if the Region is the primary Region or an additional Region.</p>
+     * <p>Specifies whether the Region is the primary Region or an additional
+     * Region.</p>
      */
     inline void SetRegionType(RegionType&& value) { m_regionTypeHasBeenSet = true; m_regionType = std::move(value); }
 
     /**
-     * <p>Specifies if the Region is the primary Region or an additional Region.</p>
+     * <p>Specifies whether the Region is the primary Region or an additional
+     * Region.</p>
      */
     inline RegionDescription& WithRegionType(const RegionType& value) { SetRegionType(value); return *this;}
 
     /**
-     * <p>Specifies if the Region is the primary Region or an additional Region.</p>
+     * <p>Specifies whether the Region is the primary Region or an additional
+     * Region.</p>
      */
     inline RegionDescription& WithRegionType(RegionType&& value) { SetRegionType(std::move(value)); return *this;}
 

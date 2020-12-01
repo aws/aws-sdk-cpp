@@ -660,18 +660,19 @@ namespace Model
 
         /**
          * <p>Creates a Lambda function. To create a function, you need a <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
          * package</a> and an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-         * role</a>. The deployment package contains your function code. The execution role
-         * grants the function permission to use AWS services, such as Amazon CloudWatch
-         * Logs for log streaming and AWS X-Ray for request tracing.</p> <p>When you create
-         * a function, Lambda provisions an instance of the function and its supporting
-         * resources. If your function connects to a VPC, this process can take a minute or
-         * so. During this time, you can't invoke or modify the function. The
-         * <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code>
-         * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
-         * function is ready to invoke. For more information, see <a
+         * role</a>. The deployment package is a ZIP archive or image container that
+         * contains your function code. The execution role grants the function permission
+         * to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS
+         * X-Ray for request tracing.</p> <p>When you create a function, Lambda provisions
+         * an instance of the function and its supporting resources. If your function
+         * connects to a VPC, this process can take a minute or so. During this time, you
+         * can't invoke or modify the function. The <code>State</code>,
+         * <code>StateReason</code>, and <code>StateReasonCode</code> fields in the
+         * response from <a>GetFunctionConfiguration</a> indicate when the function is
+         * ready to invoke. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
          * States</a>.</p> <p>A function has an unpublished version, and can have published
          * versions and aliases. The unpublished version changes when you update your
@@ -684,10 +685,11 @@ namespace Model
          * version-specific settings later with <a>UpdateFunctionConfiguration</a>.
          * Function-level settings apply to both the unpublished and published versions of
          * the function, and include tags (<a>TagResource</a>) and per-function concurrency
-         * limits (<a>PutFunctionConcurrency</a>).</p> <p>To enable code signing for this
-         * function, specify the ARN of a code-signing configuration. When a user attempts
-         * to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks that the
-         * code package has a valid signature from a trusted publisher. The code-signing
+         * limits (<a>PutFunctionConcurrency</a>).</p> <p>You can use code signing if your
+         * deployment package is a ZIP archive. To enable code signing for this function,
+         * specify the ARN of a code-signing configuration. When a user attempts to deploy
+         * a code package with <a>UpdateFunctionCode</a>, Lambda checks that the code
+         * package has a valid signature from a trusted publisher. The code-signing
          * configuration includes set set of signing profiles, which define the trusted
          * publishers for this function.</p> <p>If another account or an AWS service
          * invokes your function, use <a>AddPermission</a> to grant permission by creating
@@ -705,18 +707,19 @@ namespace Model
 
         /**
          * <p>Creates a Lambda function. To create a function, you need a <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
          * package</a> and an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-         * role</a>. The deployment package contains your function code. The execution role
-         * grants the function permission to use AWS services, such as Amazon CloudWatch
-         * Logs for log streaming and AWS X-Ray for request tracing.</p> <p>When you create
-         * a function, Lambda provisions an instance of the function and its supporting
-         * resources. If your function connects to a VPC, this process can take a minute or
-         * so. During this time, you can't invoke or modify the function. The
-         * <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code>
-         * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
-         * function is ready to invoke. For more information, see <a
+         * role</a>. The deployment package is a ZIP archive or image container that
+         * contains your function code. The execution role grants the function permission
+         * to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS
+         * X-Ray for request tracing.</p> <p>When you create a function, Lambda provisions
+         * an instance of the function and its supporting resources. If your function
+         * connects to a VPC, this process can take a minute or so. During this time, you
+         * can't invoke or modify the function. The <code>State</code>,
+         * <code>StateReason</code>, and <code>StateReasonCode</code> fields in the
+         * response from <a>GetFunctionConfiguration</a> indicate when the function is
+         * ready to invoke. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
          * States</a>.</p> <p>A function has an unpublished version, and can have published
          * versions and aliases. The unpublished version changes when you update your
@@ -729,10 +732,11 @@ namespace Model
          * version-specific settings later with <a>UpdateFunctionConfiguration</a>.
          * Function-level settings apply to both the unpublished and published versions of
          * the function, and include tags (<a>TagResource</a>) and per-function concurrency
-         * limits (<a>PutFunctionConcurrency</a>).</p> <p>To enable code signing for this
-         * function, specify the ARN of a code-signing configuration. When a user attempts
-         * to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks that the
-         * code package has a valid signature from a trusted publisher. The code-signing
+         * limits (<a>PutFunctionConcurrency</a>).</p> <p>You can use code signing if your
+         * deployment package is a ZIP archive. To enable code signing for this function,
+         * specify the ARN of a code-signing configuration. When a user attempts to deploy
+         * a code package with <a>UpdateFunctionCode</a>, Lambda checks that the code
+         * package has a valid signature from a trusted publisher. The code-signing
          * configuration includes set set of signing profiles, which define the trusted
          * publishers for this function.</p> <p>If another account or an AWS service
          * invokes your function, use <a>AddPermission</a> to grant permission by creating
@@ -752,18 +756,19 @@ namespace Model
 
         /**
          * <p>Creates a Lambda function. To create a function, you need a <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
          * package</a> and an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-         * role</a>. The deployment package contains your function code. The execution role
-         * grants the function permission to use AWS services, such as Amazon CloudWatch
-         * Logs for log streaming and AWS X-Ray for request tracing.</p> <p>When you create
-         * a function, Lambda provisions an instance of the function and its supporting
-         * resources. If your function connects to a VPC, this process can take a minute or
-         * so. During this time, you can't invoke or modify the function. The
-         * <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code>
-         * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
-         * function is ready to invoke. For more information, see <a
+         * role</a>. The deployment package is a ZIP archive or image container that
+         * contains your function code. The execution role grants the function permission
+         * to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS
+         * X-Ray for request tracing.</p> <p>When you create a function, Lambda provisions
+         * an instance of the function and its supporting resources. If your function
+         * connects to a VPC, this process can take a minute or so. During this time, you
+         * can't invoke or modify the function. The <code>State</code>,
+         * <code>StateReason</code>, and <code>StateReasonCode</code> fields in the
+         * response from <a>GetFunctionConfiguration</a> indicate when the function is
+         * ready to invoke. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
          * States</a>.</p> <p>A function has an unpublished version, and can have published
          * versions and aliases. The unpublished version changes when you update your
@@ -776,10 +781,11 @@ namespace Model
          * version-specific settings later with <a>UpdateFunctionConfiguration</a>.
          * Function-level settings apply to both the unpublished and published versions of
          * the function, and include tags (<a>TagResource</a>) and per-function concurrency
-         * limits (<a>PutFunctionConcurrency</a>).</p> <p>To enable code signing for this
-         * function, specify the ARN of a code-signing configuration. When a user attempts
-         * to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks that the
-         * code package has a valid signature from a trusted publisher. The code-signing
+         * limits (<a>PutFunctionConcurrency</a>).</p> <p>You can use code signing if your
+         * deployment package is a ZIP archive. To enable code signing for this function,
+         * specify the ARN of a code-signing configuration. When a user attempts to deploy
+         * a code package with <a>UpdateFunctionCode</a>, Lambda checks that the code
+         * package has a valid signature from a trusted publisher. The code-signing
          * configuration includes set set of signing profiles, which define the trusted
          * publishers for this function.</p> <p>If another account or an AWS service
          * invokes your function, use <a>AddPermission</a> to grant permission by creating
@@ -1704,9 +1710,9 @@ namespace Model
         /**
          * <p>Returns a list of <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
-         * signing configurations</a> for the specified function. A request returns up to
-         * 10,000 configurations per call. You can use the <code>MaxItems</code> parameter
-         * to return fewer configurations per call. </p><p><h3>See Also:</h3>   <a
+         * signing configurations</a>. A request returns up to 10,000 configurations per
+         * call. You can use the <code>MaxItems</code> parameter to return fewer
+         * configurations per call. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">AWS
          * API Reference</a></p>
          */
@@ -1715,9 +1721,9 @@ namespace Model
         /**
          * <p>Returns a list of <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
-         * signing configurations</a> for the specified function. A request returns up to
-         * 10,000 configurations per call. You can use the <code>MaxItems</code> parameter
-         * to return fewer configurations per call. </p><p><h3>See Also:</h3>   <a
+         * signing configurations</a>. A request returns up to 10,000 configurations per
+         * call. You can use the <code>MaxItems</code> parameter to return fewer
+         * configurations per call. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">AWS
          * API Reference</a></p>
          *
@@ -1728,9 +1734,9 @@ namespace Model
         /**
          * <p>Returns a list of <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
-         * signing configurations</a> for the specified function. A request returns up to
-         * 10,000 configurations per call. You can use the <code>MaxItems</code> parameter
-         * to return fewer configurations per call. </p><p><h3>See Also:</h3>   <a
+         * signing configurations</a>. A request returns up to 10,000 configurations per
+         * call. You can use the <code>MaxItems</code> parameter to return fewer
+         * configurations per call. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">AWS
          * API Reference</a></p>
          *

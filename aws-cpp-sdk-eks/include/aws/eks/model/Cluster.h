@@ -367,32 +367,32 @@ namespace Model
 
 
     /**
-     * <p>Network configuration settings for your cluster.</p>
+     * <p>The Kubernetes network configuration for the cluster.</p>
      */
     inline const KubernetesNetworkConfigResponse& GetKubernetesNetworkConfig() const{ return m_kubernetesNetworkConfig; }
 
     /**
-     * <p>Network configuration settings for your cluster.</p>
+     * <p>The Kubernetes network configuration for the cluster.</p>
      */
     inline bool KubernetesNetworkConfigHasBeenSet() const { return m_kubernetesNetworkConfigHasBeenSet; }
 
     /**
-     * <p>Network configuration settings for your cluster.</p>
+     * <p>The Kubernetes network configuration for the cluster.</p>
      */
     inline void SetKubernetesNetworkConfig(const KubernetesNetworkConfigResponse& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = value; }
 
     /**
-     * <p>Network configuration settings for your cluster.</p>
+     * <p>The Kubernetes network configuration for the cluster.</p>
      */
     inline void SetKubernetesNetworkConfig(KubernetesNetworkConfigResponse&& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = std::move(value); }
 
     /**
-     * <p>Network configuration settings for your cluster.</p>
+     * <p>The Kubernetes network configuration for the cluster.</p>
      */
     inline Cluster& WithKubernetesNetworkConfig(const KubernetesNetworkConfigResponse& value) { SetKubernetesNetworkConfig(value); return *this;}
 
     /**
-     * <p>Network configuration settings for your cluster.</p>
+     * <p>The Kubernetes network configuration for the cluster.</p>
      */
     inline Cluster& WithKubernetesNetworkConfig(KubernetesNetworkConfigResponse&& value) { SetKubernetesNetworkConfig(std::move(value)); return *this;}
 

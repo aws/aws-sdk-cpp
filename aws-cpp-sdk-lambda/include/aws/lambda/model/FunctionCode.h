@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>The code for the Lambda function. You can specify either an object in Amazon
-   * S3, or upload a deployment package directly.</p><p><h3>See Also:</h3>   <a
+   * S3, upload a ZIP archive deployment package directly, or specify the URI of a
+   * container image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode">AWS
    * API Reference</a></p>
    */
@@ -214,6 +215,47 @@ namespace Model
      */
     inline FunctionCode& WithS3ObjectVersion(const char* value) { SetS3ObjectVersion(value); return *this;}
 
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline FunctionCode& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline FunctionCode& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline FunctionCode& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+
   private:
 
     Aws::Utils::CryptoBuffer m_zipFile;
@@ -227,6 +269,9 @@ namespace Model
 
     Aws::String m_s3ObjectVersion;
     bool m_s3ObjectVersionHasBeenSet;
+
+    Aws::String m_imageUri;
+    bool m_imageUriHasBeenSet;
   };
 
 } // namespace Model

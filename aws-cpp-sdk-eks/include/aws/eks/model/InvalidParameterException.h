@@ -162,6 +162,31 @@ namespace Model
 
 
     
+    inline const Aws::String& GetAddonName() const{ return m_addonName; }
+
+    
+    inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
+
+    
+    inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
+
+    
+    inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
+
+    
+    inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
+
+    
+    inline InvalidParameterException& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
+
+    
+    inline InvalidParameterException& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
+
+    
+    inline InvalidParameterException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+
+
+    
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     
@@ -195,6 +220,9 @@ namespace Model
 
     Aws::String m_fargateProfileName;
     bool m_fargateProfileNameHasBeenSet;
+
+    Aws::String m_addonName;
+    bool m_addonNameHasBeenSet;
 
     Aws::String m_message;
     bool m_messageHasBeenSet;

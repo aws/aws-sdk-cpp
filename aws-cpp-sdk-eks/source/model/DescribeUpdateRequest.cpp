@@ -18,7 +18,8 @@ using namespace Aws::Http;
 DescribeUpdateRequest::DescribeUpdateRequest() : 
     m_nameHasBeenSet(false),
     m_updateIdHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false)
+    m_nodegroupNameHasBeenSet(false),
+    m_addonNameHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,13 @@ void DescribeUpdateRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nodegroupName;
       uri.AddQueryStringParameter("nodegroupName", ss.str());
+      ss.str("");
+    }
+
+    if(m_addonNameHasBeenSet)
+    {
+      ss << m_addonName;
+      uri.AddQueryStringParameter("addonName", ss.str());
       ss.str("");
     }
 

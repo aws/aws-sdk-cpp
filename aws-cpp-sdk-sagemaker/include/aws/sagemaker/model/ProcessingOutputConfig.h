@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>Output configuration information for a processing job.</p>
+     * <p>List of output configurations for the processing job.</p>
      */
     inline const Aws::Vector<ProcessingOutput>& GetOutputs() const{ return m_outputs; }
 
     /**
-     * <p>Output configuration information for a processing job.</p>
+     * <p>List of output configurations for the processing job.</p>
      */
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
 
     /**
-     * <p>Output configuration information for a processing job.</p>
+     * <p>List of output configurations for the processing job.</p>
      */
     inline void SetOutputs(const Aws::Vector<ProcessingOutput>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
 
     /**
-     * <p>Output configuration information for a processing job.</p>
+     * <p>List of output configurations for the processing job.</p>
      */
     inline void SetOutputs(Aws::Vector<ProcessingOutput>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
 
     /**
-     * <p>Output configuration information for a processing job.</p>
+     * <p>List of output configurations for the processing job.</p>
      */
     inline ProcessingOutputConfig& WithOutputs(const Aws::Vector<ProcessingOutput>& value) { SetOutputs(value); return *this;}
 
     /**
-     * <p>Output configuration information for a processing job.</p>
+     * <p>List of output configurations for the processing job.</p>
      */
     inline ProcessingOutputConfig& WithOutputs(Aws::Vector<ProcessingOutput>&& value) { SetOutputs(std::move(value)); return *this;}
 
     /**
-     * <p>Output configuration information for a processing job.</p>
+     * <p>List of output configurations for the processing job.</p>
      */
     inline ProcessingOutputConfig& AddOutputs(const ProcessingOutput& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
 
     /**
-     * <p>Output configuration information for a processing job.</p>
+     * <p>List of output configurations for the processing job.</p>
      */
     inline ProcessingOutputConfig& AddOutputs(ProcessingOutput&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 

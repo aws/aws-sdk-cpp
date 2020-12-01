@@ -27,6 +27,8 @@ namespace Aws
         static const int SubnetOutOfIPAddresses_HASH = HashingUtils::HashString("SubnetOutOfIPAddresses");
         static const int InvalidSubnet_HASH = HashingUtils::HashString("InvalidSubnet");
         static const int InvalidSecurityGroup_HASH = HashingUtils::HashString("InvalidSecurityGroup");
+        static const int ImageDeleted_HASH = HashingUtils::HashString("ImageDeleted");
+        static const int ImageAccessDenied_HASH = HashingUtils::HashString("ImageAccessDenied");
 
 
         LastUpdateStatusReasonCode GetLastUpdateStatusReasonCodeForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return LastUpdateStatusReasonCode::InvalidSecurityGroup;
           }
+          else if (hashCode == ImageDeleted_HASH)
+          {
+            return LastUpdateStatusReasonCode::ImageDeleted;
+          }
+          else if (hashCode == ImageAccessDenied_HASH)
+          {
+            return LastUpdateStatusReasonCode::ImageAccessDenied;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +98,10 @@ namespace Aws
             return "InvalidSubnet";
           case LastUpdateStatusReasonCode::InvalidSecurityGroup:
             return "InvalidSecurityGroup";
+          case LastUpdateStatusReasonCode::ImageDeleted:
+            return "ImageDeleted";
+          case LastUpdateStatusReasonCode::ImageAccessDenied:
+            return "ImageAccessDenied";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

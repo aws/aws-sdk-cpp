@@ -29,7 +29,8 @@ namespace Model
     Completed,
     Failed,
     Interrupted,
-    MaxWaitTimeExceeded
+    MaxWaitTimeExceeded,
+    Updating
   };
 
 namespace SecondaryStatusMapper

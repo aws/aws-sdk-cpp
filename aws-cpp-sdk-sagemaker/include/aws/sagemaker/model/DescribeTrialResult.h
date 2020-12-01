@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/TrialSource.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
+#include <aws/sagemaker/model/MetadataProperties.h>
 #include <utility>
 
 namespace Aws
@@ -320,6 +321,22 @@ namespace Model
      */
     inline DescribeTrialResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
+
+    
+    inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
+
+    
+    inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataProperties = value; }
+
+    
+    inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataProperties = std::move(value); }
+
+    
+    inline DescribeTrialResult& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
+
+    
+    inline DescribeTrialResult& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trialName;
@@ -339,6 +356,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
 
     UserContext m_lastModifiedBy;
+
+    MetadataProperties m_metadataProperties;
   };
 
 } // namespace Model

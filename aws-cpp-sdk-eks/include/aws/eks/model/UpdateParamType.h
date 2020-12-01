@@ -27,7 +27,10 @@ namespace Model
     MaxSize,
     MinSize,
     ReleaseVersion,
-    PublicAccessCidrs
+    PublicAccessCidrs,
+    AddonVersion,
+    ServiceAccountRoleArn,
+    ResolveConflicts
   };
 
 namespace UpdateParamTypeMapper

@@ -199,110 +199,110 @@ namespace Model
 
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline const Aws::Map<Aws::String, VariableValue>& GetVariables() const{ return m_variables; }
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline void SetVariables(const Aws::Map<Aws::String, VariableValue>& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline void SetVariables(Aws::Map<Aws::String, VariableValue>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline InvokeScreenAutomationRequest& WithVariables(const Aws::Map<Aws::String, VariableValue>& value) { SetVariables(value); return *this;}
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline InvokeScreenAutomationRequest& WithVariables(Aws::Map<Aws::String, VariableValue>&& value) { SetVariables(std::move(value)); return *this;}
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline InvokeScreenAutomationRequest& AddVariables(const Aws::String& key, const VariableValue& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline InvokeScreenAutomationRequest& AddVariables(Aws::String&& key, const VariableValue& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline InvokeScreenAutomationRequest& AddVariables(const Aws::String& key, VariableValue&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline InvokeScreenAutomationRequest& AddVariables(Aws::String&& key, VariableValue&& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline InvokeScreenAutomationRequest& AddVariables(const char* key, VariableValue&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> Variables are optional and are needed only if the screen requires them to
-     * render correctly. Variables are specified as a map where the key is the name of
-     * the variable as defined on the screen. The value is an object which currently
-     * has only one property, rawValue, which holds the value of the variable to be
-     * passed to the screen. </p>
+     * <p> Variables are specified as a map where the key is the name of the variable
+     * as defined on the screen. The value is an object which currently has only one
+     * property, rawValue, which holds the value of the variable to be passed to the
+     * screen. Any variables defined in a screen are required to be passed in the call.
+     * </p>
      */
     inline InvokeScreenAutomationRequest& AddVariables(const char* key, const VariableValue& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 

@@ -49,7 +49,8 @@ enum class HoneycodeErrors
 
   AUTOMATION_EXECUTION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   AUTOMATION_EXECUTION_TIMEOUT,
-  INTERNAL_SERVER
+  INTERNAL_SERVER,
+  SERVICE_QUOTA_EXCEEDED
 };
 
 class AWS_HONEYCODE_API HoneycodeError : public Aws::Client::AWSError<HoneycodeErrors>

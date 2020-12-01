@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/eks/model/NodegroupStatus.h>
+#include <aws/eks/model/CapacityTypes.h>
 #include <aws/eks/model/NodegroupScalingConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/model/RemoteAccessConfig.h>
@@ -216,7 +217,7 @@ namespace Model
      * <p>If the node group was deployed using a launch template with a custom AMI,
      * then this is the AMI ID that was specified in the launch template. For node
      * groups that weren't deployed using a launch template, this is the version of the
-     * Amazon EKS-optimized AMI that the node group was deployed with.</p>
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
 
@@ -224,7 +225,7 @@ namespace Model
      * <p>If the node group was deployed using a launch template with a custom AMI,
      * then this is the AMI ID that was specified in the launch template. For node
      * groups that weren't deployed using a launch template, this is the version of the
-     * Amazon EKS-optimized AMI that the node group was deployed with.</p>
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
 
@@ -232,7 +233,7 @@ namespace Model
      * <p>If the node group was deployed using a launch template with a custom AMI,
      * then this is the AMI ID that was specified in the launch template. For node
      * groups that weren't deployed using a launch template, this is the version of the
-     * Amazon EKS-optimized AMI that the node group was deployed with.</p>
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
 
@@ -240,7 +241,7 @@ namespace Model
      * <p>If the node group was deployed using a launch template with a custom AMI,
      * then this is the AMI ID that was specified in the launch template. For node
      * groups that weren't deployed using a launch template, this is the version of the
-     * Amazon EKS-optimized AMI that the node group was deployed with.</p>
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
 
@@ -248,7 +249,7 @@ namespace Model
      * <p>If the node group was deployed using a launch template with a custom AMI,
      * then this is the AMI ID that was specified in the launch template. For node
      * groups that weren't deployed using a launch template, this is the version of the
-     * Amazon EKS-optimized AMI that the node group was deployed with.</p>
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
 
@@ -256,7 +257,7 @@ namespace Model
      * <p>If the node group was deployed using a launch template with a custom AMI,
      * then this is the AMI ID that was specified in the launch template. For node
      * groups that weren't deployed using a launch template, this is the version of the
-     * Amazon EKS-optimized AMI that the node group was deployed with.</p>
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline Nodegroup& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
 
@@ -264,7 +265,7 @@ namespace Model
      * <p>If the node group was deployed using a launch template with a custom AMI,
      * then this is the AMI ID that was specified in the launch template. For node
      * groups that weren't deployed using a launch template, this is the version of the
-     * Amazon EKS-optimized AMI that the node group was deployed with.</p>
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline Nodegroup& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
 
@@ -272,7 +273,7 @@ namespace Model
      * <p>If the node group was deployed using a launch template with a custom AMI,
      * then this is the AMI ID that was specified in the launch template. For node
      * groups that weren't deployed using a launch template, this is the version of the
-     * Amazon EKS-optimized AMI that the node group was deployed with.</p>
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline Nodegroup& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
 
@@ -380,6 +381,37 @@ namespace Model
      * <p>The current status of the managed node group.</p>
      */
     inline Nodegroup& WithStatus(NodegroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline const CapacityTypes& GetCapacityType() const{ return m_capacityType; }
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline bool CapacityTypeHasBeenSet() const { return m_capacityTypeHasBeenSet; }
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline void SetCapacityType(const CapacityTypes& value) { m_capacityTypeHasBeenSet = true; m_capacityType = value; }
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline void SetCapacityType(CapacityTypes&& value) { m_capacityTypeHasBeenSet = true; m_capacityType = std::move(value); }
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline Nodegroup& WithCapacityType(const CapacityTypes& value) { SetCapacityType(value); return *this;}
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline Nodegroup& WithCapacityType(CapacityTypes&& value) { SetCapacityType(std::move(value)); return *this;}
 
 
     /**
@@ -1056,6 +1088,9 @@ namespace Model
 
     NodegroupStatus m_status;
     bool m_statusHasBeenSet;
+
+    CapacityTypes m_capacityType;
+    bool m_capacityTypeHasBeenSet;
 
     NodegroupScalingConfig m_scalingConfig;
     bool m_scalingConfigHasBeenSet;

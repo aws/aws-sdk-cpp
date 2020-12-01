@@ -90,6 +90,12 @@ DescribeCompilationJobResult& DescribeCompilationJobResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("ModelDigests"))
+  {
+    m_modelDigests = jsonValue.GetObject("ModelDigests");
+
+  }
+
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");

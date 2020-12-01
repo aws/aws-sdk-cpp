@@ -23,7 +23,8 @@ OutputConfig::OutputConfig() :
     m_targetDevice(TargetDevice::NOT_SET),
     m_targetDeviceHasBeenSet(false),
     m_targetPlatformHasBeenSet(false),
-    m_compilerOptionsHasBeenSet(false)
+    m_compilerOptionsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ OutputConfig::OutputConfig(JsonView jsonValue) :
     m_targetDevice(TargetDevice::NOT_SET),
     m_targetDeviceHasBeenSet(false),
     m_targetPlatformHasBeenSet(false),
-    m_compilerOptionsHasBeenSet(false)
+    m_compilerOptionsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ OutputConfig& OutputConfig::operator =(JsonView jsonValue)
     m_compilerOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+    m_kmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue OutputConfig::Jsonize() const
   if(m_compilerOptionsHasBeenSet)
   {
    payload.WithString("CompilerOptions", m_compilerOptions);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

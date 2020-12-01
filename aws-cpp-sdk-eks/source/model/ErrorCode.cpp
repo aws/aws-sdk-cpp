@@ -32,6 +32,8 @@ namespace Aws
         static const int PodEvictionFailure_HASH = HashingUtils::HashString("PodEvictionFailure");
         static const int InsufficientFreeAddresses_HASH = HashingUtils::HashString("InsufficientFreeAddresses");
         static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
+        static const int InsufficientNumberOfReplicas_HASH = HashingUtils::HashString("InsufficientNumberOfReplicas");
+        static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return ErrorCode::ClusterUnreachable;
           }
+          else if (hashCode == InsufficientNumberOfReplicas_HASH)
+          {
+            return ErrorCode::InsufficientNumberOfReplicas;
+          }
+          else if (hashCode == ConfigurationConflict_HASH)
+          {
+            return ErrorCode::ConfigurationConflict;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +133,10 @@ namespace Aws
             return "InsufficientFreeAddresses";
           case ErrorCode::ClusterUnreachable:
             return "ClusterUnreachable";
+          case ErrorCode::InsufficientNumberOfReplicas:
+            return "InsufficientNumberOfReplicas";
+          case ErrorCode::ConfigurationConflict:
+            return "ConfigurationConflict";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

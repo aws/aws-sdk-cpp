@@ -34,6 +34,7 @@ TrialComponent::TrialComponent() :
     m_inputArtifactsHasBeenSet(false),
     m_outputArtifactsHasBeenSet(false),
     m_metricsHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_sourceDetailHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_parentsHasBeenSet(false)
@@ -56,6 +57,7 @@ TrialComponent::TrialComponent(JsonView jsonValue) :
     m_inputArtifactsHasBeenSet(false),
     m_outputArtifactsHasBeenSet(false),
     m_metricsHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_sourceDetailHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_parentsHasBeenSet(false)
@@ -180,6 +182,13 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
       m_metrics.push_back(metricsJsonList[metricsIndex].AsObject());
     }
     m_metricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MetadataProperties"))
+  {
+    m_metadataProperties = jsonValue.GetObject("MetadataProperties");
+
+    m_metadataPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SourceDetail"))
@@ -319,6 +328,12 @@ JsonValue TrialComponent::Jsonize() const
      metricsJsonList[metricsIndex].AsObject(m_metrics[metricsIndex].Jsonize());
    }
    payload.WithArray("Metrics", std::move(metricsJsonList));
+
+  }
+
+  if(m_metadataPropertiesHasBeenSet)
+  {
+   payload.WithObject("MetadataProperties", m_metadataProperties.Jsonize());
 
   }
 

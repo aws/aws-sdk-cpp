@@ -25,7 +25,10 @@ Certificate::Certificate() :
     m_stateReasonHasBeenSet(false),
     m_commonNameHasBeenSet(false),
     m_registeredDateTimeHasBeenSet(false),
-    m_expiryDateTimeHasBeenSet(false)
+    m_expiryDateTimeHasBeenSet(false),
+    m_type(CertificateType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_clientCertAuthSettingsHasBeenSet(false)
 {
 }
 
@@ -36,7 +39,10 @@ Certificate::Certificate(JsonView jsonValue) :
     m_stateReasonHasBeenSet(false),
     m_commonNameHasBeenSet(false),
     m_registeredDateTimeHasBeenSet(false),
-    m_expiryDateTimeHasBeenSet(false)
+    m_expiryDateTimeHasBeenSet(false),
+    m_type(CertificateType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_clientCertAuthSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +91,20 @@ Certificate& Certificate::operator =(JsonView jsonValue)
     m_expiryDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ClientCertAuthSettings"))
+  {
+    m_clientCertAuthSettings = jsonValue.GetObject("ClientCertAuthSettings");
+
+    m_clientCertAuthSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +143,17 @@ JsonValue Certificate::Jsonize() const
   if(m_expiryDateTimeHasBeenSet)
   {
    payload.WithDouble("ExpiryDateTime", m_expiryDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", CertificateTypeMapper::GetNameForCertificateType(m_type));
+  }
+
+  if(m_clientCertAuthSettingsHasBeenSet)
+  {
+   payload.WithObject("ClientCertAuthSettings", m_clientCertAuthSettings.Jsonize());
+
   }
 
   return payload;

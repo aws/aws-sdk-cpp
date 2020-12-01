@@ -54,6 +54,9 @@ FunctionConfiguration::FunctionConfiguration() :
     m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
     m_lastUpdateStatusReasonCodeHasBeenSet(false),
     m_fileSystemConfigsHasBeenSet(false),
+    m_packageType(PackageType::NOT_SET),
+    m_packageTypeHasBeenSet(false),
+    m_imageConfigResponseHasBeenSet(false),
     m_signingProfileVersionArnHasBeenSet(false),
     m_signingJobArnHasBeenSet(false)
 {
@@ -95,6 +98,9 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
     m_lastUpdateStatusReasonCodeHasBeenSet(false),
     m_fileSystemConfigsHasBeenSet(false),
+    m_packageType(PackageType::NOT_SET),
+    m_packageTypeHasBeenSet(false),
+    m_imageConfigResponseHasBeenSet(false),
     m_signingProfileVersionArnHasBeenSet(false),
     m_signingJobArnHasBeenSet(false)
 {
@@ -298,6 +304,20 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_fileSystemConfigsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PackageType"))
+  {
+    m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("PackageType"));
+
+    m_packageTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImageConfigResponse"))
+  {
+    m_imageConfigResponse = jsonValue.GetObject("ImageConfigResponse");
+
+    m_imageConfigResponseHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SigningProfileVersionArn"))
   {
     m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
@@ -483,6 +503,17 @@ JsonValue FunctionConfiguration::Jsonize() const
      fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
    }
    payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
+
+  }
+
+  if(m_packageTypeHasBeenSet)
+  {
+   payload.WithString("PackageType", PackageTypeMapper::GetNameForPackageType(m_packageType));
+  }
+
+  if(m_imageConfigResponseHasBeenSet)
+  {
+   payload.WithObject("ImageConfigResponse", m_imageConfigResponse.Jsonize());
 
   }
 

@@ -16,6 +16,8 @@
 #include <aws/lambda/model/StateReasonCode.h>
 #include <aws/lambda/model/LastUpdateStatus.h>
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
+#include <aws/lambda/model/PackageType.h>
+#include <aws/lambda/model/ImageConfigResponse.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
@@ -925,6 +927,63 @@ namespace Model
 
 
     /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline const PackageType& GetPackageType() const{ return m_packageType; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline void SetPackageType(const PackageType& value) { m_packageType = value; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline void SetPackageType(PackageType&& value) { m_packageType = std::move(value); }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline UpdateFunctionCodeResult& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline UpdateFunctionCodeResult& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline const ImageConfigResponse& GetImageConfigResponse() const{ return m_imageConfigResponse; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline void SetImageConfigResponse(const ImageConfigResponse& value) { m_imageConfigResponse = value; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline void SetImageConfigResponse(ImageConfigResponse&& value) { m_imageConfigResponse = std::move(value); }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline UpdateFunctionCodeResult& WithImageConfigResponse(const ImageConfigResponse& value) { SetImageConfigResponse(value); return *this;}
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline UpdateFunctionCodeResult& WithImageConfigResponse(ImageConfigResponse&& value) { SetImageConfigResponse(std::move(value)); return *this;}
+
+
+    /**
      * <p>The ARN of the signing profile version.</p>
      */
     inline const Aws::String& GetSigningProfileVersionArn() const{ return m_signingProfileVersionArn; }
@@ -1050,6 +1109,10 @@ namespace Model
     LastUpdateStatusReasonCode m_lastUpdateStatusReasonCode;
 
     Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
+
+    PackageType m_packageType;
+
+    ImageConfigResponse m_imageConfigResponse;
 
     Aws::String m_signingProfileVersionArn;
 

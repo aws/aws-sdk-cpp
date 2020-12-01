@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>You have reached the limit for maximum number of simultaneous region
+   * <p>You have reached the limit for maximum number of simultaneous Region
    * replications per directory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegionLimitExceededException">AWS
    * API Reference</a></p>

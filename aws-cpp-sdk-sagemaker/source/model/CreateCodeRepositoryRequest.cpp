@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateCodeRepositoryRequest::CreateCodeRepositoryRequest() : 
     m_codeRepositoryNameHasBeenSet(false),
-    m_gitConfigHasBeenSet(false)
+    m_gitConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,17 @@ Aws::String CreateCodeRepositoryRequest::SerializePayload() const
   if(m_gitConfigHasBeenSet)
   {
    payload.WithObject("GitConfig", m_gitConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

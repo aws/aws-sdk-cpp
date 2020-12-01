@@ -18,6 +18,7 @@ using namespace Aws::Http;
 ListUpdatesRequest::ListUpdatesRequest() : 
     m_nameHasBeenSet(false),
     m_nodegroupNameHasBeenSet(false),
+    m_addonNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -36,6 +37,13 @@ void ListUpdatesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nodegroupName;
       uri.AddQueryStringParameter("nodegroupName", ss.str());
+      ss.str("");
+    }
+
+    if(m_addonNameHasBeenSet)
+    {
+      ss << m_addonName;
+      uri.AddQueryStringParameter("addonName", ss.str());
       ss.str("");
     }
 

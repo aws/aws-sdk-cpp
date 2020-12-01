@@ -117,50 +117,50 @@ namespace Model
 
 
     /**
-     * <p>The <i>DescribeRegionsResult.NextToken</i> value from a previous call to
-     * <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call
+     * to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <i>DescribeRegionsResult.NextToken</i> value from a previous call to
-     * <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call
+     * to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The <i>DescribeRegionsResult.NextToken</i> value from a previous call to
-     * <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call
+     * to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <i>DescribeRegionsResult.NextToken</i> value from a previous call to
-     * <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call
+     * to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <i>DescribeRegionsResult.NextToken</i> value from a previous call to
-     * <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call
+     * to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <i>DescribeRegionsResult.NextToken</i> value from a previous call to
-     * <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call
+     * to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
      */
     inline DescribeRegionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <i>DescribeRegionsResult.NextToken</i> value from a previous call to
-     * <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call
+     * to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
      */
     inline DescribeRegionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <i>DescribeRegionsResult.NextToken</i> value from a previous call to
-     * <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call
+     * to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
      */
     inline DescribeRegionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

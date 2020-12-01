@@ -43,6 +43,8 @@ Volume::Volume() :
     m_fastRestoredHasBeenSet(false),
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -70,6 +72,8 @@ Volume::Volume(const XmlNode& xmlNode) :
     m_fastRestoredHasBeenSet(false),
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -183,6 +187,12 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
       m_multiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAttachEnabledNode.GetText()).c_str()).c_str());
       m_multiAttachEnabledHasBeenSet = true;
     }
+    XmlNode throughputNode = resultNode.FirstChild("throughput");
+    if(!throughputNode.IsNull())
+    {
+      m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
+      m_throughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -277,6 +287,11 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
   }
 
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Throughput=" << m_throughput << "&";
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -359,6 +374,10 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_multiAttachEnabledHasBeenSet)
   {
       oStream << location << ".MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
+  }
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << ".Throughput=" << m_throughput << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/TrialSource.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
+#include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/TrialComponentSimpleSummary.h>
@@ -335,6 +336,25 @@ namespace Model
     inline Trial& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
 
+    
+    inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
+
+    
+    inline bool MetadataPropertiesHasBeenSet() const { return m_metadataPropertiesHasBeenSet; }
+
+    
+    inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = value; }
+
+    
+    inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = std::move(value); }
+
+    
+    inline Trial& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
+
+    
+    inline Trial& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
+
+
     /**
      * <p>The list of tags that are associated with the trial. You can use
      * <a>Search</a> API to search on the tags.</p>
@@ -460,6 +480,9 @@ namespace Model
 
     UserContext m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;
+
+    MetadataProperties m_metadataProperties;
+    bool m_metadataPropertiesHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

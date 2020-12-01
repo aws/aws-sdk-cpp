@@ -13,6 +13,7 @@
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/TracingConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/ImageConfig.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
 
@@ -799,6 +800,37 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -845,6 +877,9 @@ namespace Model
 
     Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
     bool m_fileSystemConfigsHasBeenSet;
+
+    ImageConfig m_imageConfig;
+    bool m_imageConfigHasBeenSet;
   };
 
 } // namespace Model

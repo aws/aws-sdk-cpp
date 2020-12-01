@@ -21,6 +21,7 @@ CreateTrialComponentRequest::CreateTrialComponentRequest() :
     m_parametersHasBeenSet(false),
     m_inputArtifactsHasBeenSet(false),
     m_outputArtifactsHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -87,6 +88,12 @@ Aws::String CreateTrialComponentRequest::SerializePayload() const
      outputArtifactsJsonMap.WithObject(outputArtifactsItem.first, outputArtifactsItem.second.Jsonize());
    }
    payload.WithObject("OutputArtifacts", std::move(outputArtifactsJsonMap));
+
+  }
+
+  if(m_metadataPropertiesHasBeenSet)
+  {
+   payload.WithObject("MetadataProperties", m_metadataProperties.Jsonize());
 
   }
 

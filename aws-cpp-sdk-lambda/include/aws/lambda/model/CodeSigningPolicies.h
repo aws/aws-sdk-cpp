@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Code signing configuration policy for deployment validation failure. If you
      * set the policy to <code>Enforce</code>, Lambda blocks the deployment request if
-     * code-signing validation checks fail. If you set the policy to <code>Warn</code>,
+     * signature validation checks fail. If you set the policy to <code>Warn</code>,
      * Lambda allows the deployment and creates a CloudWatch log. </p> <p>Default
      * value: <code>Warn</code> </p>
      */
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>Code signing configuration policy for deployment validation failure. If you
      * set the policy to <code>Enforce</code>, Lambda blocks the deployment request if
-     * code-signing validation checks fail. If you set the policy to <code>Warn</code>,
+     * signature validation checks fail. If you set the policy to <code>Warn</code>,
      * Lambda allows the deployment and creates a CloudWatch log. </p> <p>Default
      * value: <code>Warn</code> </p>
      */
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>Code signing configuration policy for deployment validation failure. If you
      * set the policy to <code>Enforce</code>, Lambda blocks the deployment request if
-     * code-signing validation checks fail. If you set the policy to <code>Warn</code>,
+     * signature validation checks fail. If you set the policy to <code>Warn</code>,
      * Lambda allows the deployment and creates a CloudWatch log. </p> <p>Default
      * value: <code>Warn</code> </p>
      */
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>Code signing configuration policy for deployment validation failure. If you
      * set the policy to <code>Enforce</code>, Lambda blocks the deployment request if
-     * code-signing validation checks fail. If you set the policy to <code>Warn</code>,
+     * signature validation checks fail. If you set the policy to <code>Warn</code>,
      * Lambda allows the deployment and creates a CloudWatch log. </p> <p>Default
      * value: <code>Warn</code> </p>
      */
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>Code signing configuration policy for deployment validation failure. If you
      * set the policy to <code>Enforce</code>, Lambda blocks the deployment request if
-     * code-signing validation checks fail. If you set the policy to <code>Warn</code>,
+     * signature validation checks fail. If you set the policy to <code>Warn</code>,
      * Lambda allows the deployment and creates a CloudWatch log. </p> <p>Default
      * value: <code>Warn</code> </p>
      */
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>Code signing configuration policy for deployment validation failure. If you
      * set the policy to <code>Enforce</code>, Lambda blocks the deployment request if
-     * code-signing validation checks fail. If you set the policy to <code>Warn</code>,
+     * signature validation checks fail. If you set the policy to <code>Warn</code>,
      * Lambda allows the deployment and creates a CloudWatch log. </p> <p>Default
      * value: <code>Warn</code> </p>
      */

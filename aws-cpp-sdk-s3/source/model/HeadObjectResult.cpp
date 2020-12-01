@@ -22,6 +22,7 @@ HeadObjectResult::HeadObjectResult() :
     m_contentLength(0),
     m_missingMeta(0),
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_storageClass(StorageClass::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET),
     m_replicationStatus(ReplicationStatus::NOT_SET),
@@ -37,6 +38,7 @@ HeadObjectResult::HeadObjectResult(const Aws::AmazonWebServiceResult<XmlDocument
     m_contentLength(0),
     m_missingMeta(0),
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_storageClass(StorageClass::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET),
     m_replicationStatus(ReplicationStatus::NOT_SET),
@@ -192,6 +194,12 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
   if(sSEKMSKeyIdIter != headers.end())
   {
     m_sSEKMSKeyId = sSEKMSKeyIdIter->second;
+  }
+
+  const auto& bucketKeyEnabledIter = headers.find("x-amz-server-side-encryption-bucket-key-enabled");
+  if(bucketKeyEnabledIter != headers.end())
+  {
+     m_bucketKeyEnabled = StringUtils::ConvertToBool(bucketKeyEnabledIter->second.c_str());
   }
 
   const auto& storageClassIter = headers.find("x-amz-storage-class");

@@ -23,7 +23,8 @@ namespace Model
     PYTORCH,
     XGBOOST,
     TFLITE,
-    DARKNET
+    DARKNET,
+    SKLEARN
   };
 
 namespace FrameworkMapper

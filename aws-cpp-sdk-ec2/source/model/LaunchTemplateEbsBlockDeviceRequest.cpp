@@ -32,7 +32,9 @@ LaunchTemplateEbsBlockDeviceRequest::LaunchTemplateEbsBlockDeviceRequest() :
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
+    m_volumeTypeHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ LaunchTemplateEbsBlockDeviceRequest::LaunchTemplateEbsBlockDeviceRequest(const X
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
+    m_volumeTypeHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -101,6 +105,12 @@ LaunchTemplateEbsBlockDeviceRequest& LaunchTemplateEbsBlockDeviceRequest::operat
       m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()).c_str());
       m_volumeTypeHasBeenSet = true;
     }
+    XmlNode throughputNode = resultNode.FirstChild("Throughput");
+    if(!throughputNode.IsNull())
+    {
+      m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
+      m_throughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -143,6 +153,11 @@ void LaunchTemplateEbsBlockDeviceRequest::OutputToStream(Aws::OStream& oStream, 
       oStream << location << index << locationValue << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
   }
 
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Throughput=" << m_throughput << "&";
+  }
+
 }
 
 void LaunchTemplateEbsBlockDeviceRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -174,6 +189,10 @@ void LaunchTemplateEbsBlockDeviceRequest::OutputToStream(Aws::OStream& oStream, 
   if(m_volumeTypeHasBeenSet)
   {
       oStream << location << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+  }
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << ".Throughput=" << m_throughput << "&";
   }
 }
 

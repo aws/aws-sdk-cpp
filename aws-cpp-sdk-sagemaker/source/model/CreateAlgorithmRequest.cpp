@@ -19,7 +19,8 @@ CreateAlgorithmRequest::CreateAlgorithmRequest() :
     m_inferenceSpecificationHasBeenSet(false),
     m_validationSpecificationHasBeenSet(false),
     m_certifyForMarketplace(false),
-    m_certifyForMarketplaceHasBeenSet(false)
+    m_certifyForMarketplaceHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,17 @@ Aws::String CreateAlgorithmRequest::SerializePayload() const
   if(m_certifyForMarketplaceHasBeenSet)
   {
    payload.WithBool("CertifyForMarketplace", m_certifyForMarketplace);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

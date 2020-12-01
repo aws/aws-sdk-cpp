@@ -121,6 +121,31 @@ namespace Model
 
 
     
+    inline const Aws::String& GetAddonName() const{ return m_addonName; }
+
+    
+    inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
+
+    
+    inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
+
+    
+    inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
+
+    
+    inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
+
+    
+    inline ServerException& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
+
+    
+    inline ServerException& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
+
+    
+    inline ServerException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+
+
+    
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     
@@ -151,6 +176,9 @@ namespace Model
 
     Aws::String m_nodegroupName;
     bool m_nodegroupNameHasBeenSet;
+
+    Aws::String m_addonName;
+    bool m_addonNameHasBeenSet;
 
     Aws::String m_message;
     bool m_messageHasBeenSet;

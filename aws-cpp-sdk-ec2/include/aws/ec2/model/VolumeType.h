@@ -21,7 +21,8 @@ namespace Model
     io2,
     gp2,
     sc1,
-    st1
+    st1,
+    gp3
   };
 
 namespace VolumeTypeMapper

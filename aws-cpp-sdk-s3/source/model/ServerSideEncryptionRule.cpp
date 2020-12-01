@@ -21,12 +21,16 @@ namespace Model
 {
 
 ServerSideEncryptionRule::ServerSideEncryptionRule() : 
-    m_applyServerSideEncryptionByDefaultHasBeenSet(false)
+    m_applyServerSideEncryptionByDefaultHasBeenSet(false),
+    m_bucketKeyEnabled(false),
+    m_bucketKeyEnabledHasBeenSet(false)
 {
 }
 
 ServerSideEncryptionRule::ServerSideEncryptionRule(const XmlNode& xmlNode) : 
-    m_applyServerSideEncryptionByDefaultHasBeenSet(false)
+    m_applyServerSideEncryptionByDefaultHasBeenSet(false),
+    m_bucketKeyEnabled(false),
+    m_bucketKeyEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +47,12 @@ ServerSideEncryptionRule& ServerSideEncryptionRule::operator =(const XmlNode& xm
       m_applyServerSideEncryptionByDefault = applyServerSideEncryptionByDefaultNode;
       m_applyServerSideEncryptionByDefaultHasBeenSet = true;
     }
+    XmlNode bucketKeyEnabledNode = resultNode.FirstChild("BucketKeyEnabled");
+    if(!bucketKeyEnabledNode.IsNull())
+    {
+      m_bucketKeyEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bucketKeyEnabledNode.GetText()).c_str()).c_str());
+      m_bucketKeyEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +65,14 @@ void ServerSideEncryptionRule::AddToNode(XmlNode& parentNode) const
   {
    XmlNode applyServerSideEncryptionByDefaultNode = parentNode.CreateChildElement("ApplyServerSideEncryptionByDefault");
    m_applyServerSideEncryptionByDefault.AddToNode(applyServerSideEncryptionByDefaultNode);
+  }
+
+  if(m_bucketKeyEnabledHasBeenSet)
+  {
+   XmlNode bucketKeyEnabledNode = parentNode.CreateChildElement("BucketKeyEnabled");
+   ss << std::boolalpha << m_bucketKeyEnabled;
+   bucketKeyEnabledNode.SetText(ss.str());
+   ss.str("");
   }
 
 }

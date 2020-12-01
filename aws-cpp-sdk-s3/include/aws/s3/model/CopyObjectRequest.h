@@ -1829,6 +1829,43 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
+     * with SSE-KMS. </p> <p>Specifying this header with a COPY operation doesn’t
+     * affect bucket-level settings for S3 Bucket Key.</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
+     * with SSE-KMS. </p> <p>Specifying this header with a COPY operation doesn’t
+     * affect bucket-level settings for S3 Bucket Key.</p>
+     */
+    inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
+     * with SSE-KMS. </p> <p>Specifying this header with a COPY operation doesn’t
+     * affect bucket-level settings for S3 Bucket Key.</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
+     * with SSE-KMS. </p> <p>Specifying this header with a COPY operation doesn’t
+     * affect bucket-level settings for S3 Bucket Key.</p>
+     */
+    inline CopyObjectRequest& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
+
+    /**
      * <p>Specifies the algorithm to use when decrypting the source object (for
      * example, AES256).</p>
      */
@@ -2407,6 +2444,9 @@ namespace Model
 
     Aws::String m_sSEKMSEncryptionContext;
     bool m_sSEKMSEncryptionContextHasBeenSet;
+
+    bool m_bucketKeyEnabled;
+    bool m_bucketKeyEnabledHasBeenSet;
 
     Aws::String m_copySourceSSECustomerAlgorithm;
     bool m_copySourceSSECustomerAlgorithmHasBeenSet;

@@ -10,11 +10,13 @@
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/FunctionCode.h>
 #include <aws/lambda/model/VpcConfig.h>
+#include <aws/lambda/model/PackageType.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/TracingConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/ImageConfig.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
 
@@ -498,6 +500,43 @@ namespace Model
 
 
     /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline const PackageType& GetPackageType() const{ return m_packageType; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline CreateFunctionRequest& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline CreateFunctionRequest& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
+
+
+    /**
      * <p>A dead letter queue configuration that specifies the queue or topic where
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
@@ -890,58 +929,89 @@ namespace Model
 
 
     /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline CreateFunctionRequest& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline CreateFunctionRequest& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>To enable code signing for this function, specify the ARN of a code-signing
-     * configuration. A code-signing configuration includes set set of signing
-     * profiles, which define the trusted publishers for this function.</p>
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
      */
     inline const Aws::String& GetCodeSigningConfigArn() const{ return m_codeSigningConfigArn; }
 
     /**
      * <p>To enable code signing for this function, specify the ARN of a code-signing
-     * configuration. A code-signing configuration includes set set of signing
-     * profiles, which define the trusted publishers for this function.</p>
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
      */
     inline bool CodeSigningConfigArnHasBeenSet() const { return m_codeSigningConfigArnHasBeenSet; }
 
     /**
      * <p>To enable code signing for this function, specify the ARN of a code-signing
-     * configuration. A code-signing configuration includes set set of signing
-     * profiles, which define the trusted publishers for this function.</p>
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
      */
     inline void SetCodeSigningConfigArn(const Aws::String& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = value; }
 
     /**
      * <p>To enable code signing for this function, specify the ARN of a code-signing
-     * configuration. A code-signing configuration includes set set of signing
-     * profiles, which define the trusted publishers for this function.</p>
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
      */
     inline void SetCodeSigningConfigArn(Aws::String&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::move(value); }
 
     /**
      * <p>To enable code signing for this function, specify the ARN of a code-signing
-     * configuration. A code-signing configuration includes set set of signing
-     * profiles, which define the trusted publishers for this function.</p>
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
      */
     inline void SetCodeSigningConfigArn(const char* value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn.assign(value); }
 
     /**
      * <p>To enable code signing for this function, specify the ARN of a code-signing
-     * configuration. A code-signing configuration includes set set of signing
-     * profiles, which define the trusted publishers for this function.</p>
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
      */
     inline CreateFunctionRequest& WithCodeSigningConfigArn(const Aws::String& value) { SetCodeSigningConfigArn(value); return *this;}
 
     /**
      * <p>To enable code signing for this function, specify the ARN of a code-signing
-     * configuration. A code-signing configuration includes set set of signing
-     * profiles, which define the trusted publishers for this function.</p>
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
      */
     inline CreateFunctionRequest& WithCodeSigningConfigArn(Aws::String&& value) { SetCodeSigningConfigArn(std::move(value)); return *this;}
 
     /**
      * <p>To enable code signing for this function, specify the ARN of a code-signing
-     * configuration. A code-signing configuration includes set set of signing
-     * profiles, which define the trusted publishers for this function.</p>
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
      */
     inline CreateFunctionRequest& WithCodeSigningConfigArn(const char* value) { SetCodeSigningConfigArn(value); return *this;}
 
@@ -977,6 +1047,9 @@ namespace Model
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
 
+    PackageType m_packageType;
+    bool m_packageTypeHasBeenSet;
+
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet;
 
@@ -997,6 +1070,9 @@ namespace Model
 
     Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
     bool m_fileSystemConfigsHasBeenSet;
+
+    ImageConfig m_imageConfig;
+    bool m_imageConfigHasBeenSet;
 
     Aws::String m_codeSigningConfigArn;
     bool m_codeSigningConfigArnHasBeenSet;

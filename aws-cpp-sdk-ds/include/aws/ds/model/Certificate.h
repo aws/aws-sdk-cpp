@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/CertificateState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ds/model/CertificateType.h>
+#include <aws/ds/model/ClientCertAuthSettings.h>
 #include <utility>
 
 namespace Aws
@@ -254,6 +256,74 @@ namespace Model
      */
     inline Certificate& WithExpiryDateTime(Aws::Utils::DateTime&& value) { SetExpiryDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     */
+    inline const CertificateType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     */
+    inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     */
+    inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     */
+    inline Certificate& WithType(const CertificateType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     */
+    inline Certificate& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides information about the client certificate authentication settings.
+     * The default value is <code>ClientLDAPS</code>.</p>
+     */
+    inline const ClientCertAuthSettings& GetClientCertAuthSettings() const{ return m_clientCertAuthSettings; }
+
+    /**
+     * <p>Provides information about the client certificate authentication settings.
+     * The default value is <code>ClientLDAPS</code>.</p>
+     */
+    inline bool ClientCertAuthSettingsHasBeenSet() const { return m_clientCertAuthSettingsHasBeenSet; }
+
+    /**
+     * <p>Provides information about the client certificate authentication settings.
+     * The default value is <code>ClientLDAPS</code>.</p>
+     */
+    inline void SetClientCertAuthSettings(const ClientCertAuthSettings& value) { m_clientCertAuthSettingsHasBeenSet = true; m_clientCertAuthSettings = value; }
+
+    /**
+     * <p>Provides information about the client certificate authentication settings.
+     * The default value is <code>ClientLDAPS</code>.</p>
+     */
+    inline void SetClientCertAuthSettings(ClientCertAuthSettings&& value) { m_clientCertAuthSettingsHasBeenSet = true; m_clientCertAuthSettings = std::move(value); }
+
+    /**
+     * <p>Provides information about the client certificate authentication settings.
+     * The default value is <code>ClientLDAPS</code>.</p>
+     */
+    inline Certificate& WithClientCertAuthSettings(const ClientCertAuthSettings& value) { SetClientCertAuthSettings(value); return *this;}
+
+    /**
+     * <p>Provides information about the client certificate authentication settings.
+     * The default value is <code>ClientLDAPS</code>.</p>
+     */
+    inline Certificate& WithClientCertAuthSettings(ClientCertAuthSettings&& value) { SetClientCertAuthSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateId;
@@ -273,6 +343,12 @@ namespace Model
 
     Aws::Utils::DateTime m_expiryDateTime;
     bool m_expiryDateTimeHasBeenSet;
+
+    CertificateType m_type;
+    bool m_typeHasBeenSet;
+
+    ClientCertAuthSettings m_clientCertAuthSettings;
+    bool m_clientCertAuthSettingsHasBeenSet;
   };
 
 } // namespace Model

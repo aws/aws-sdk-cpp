@@ -24,7 +24,8 @@ UpdateFunctionConfigurationResult::UpdateFunctionConfigurationResult() :
     m_state(State::NOT_SET),
     m_stateReasonCode(StateReasonCode::NOT_SET),
     m_lastUpdateStatus(LastUpdateStatus::NOT_SET),
-    m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET)
+    m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
+    m_packageType(PackageType::NOT_SET)
 {
 }
 
@@ -36,7 +37,8 @@ UpdateFunctionConfigurationResult::UpdateFunctionConfigurationResult(const Aws::
     m_state(State::NOT_SET),
     m_stateReasonCode(StateReasonCode::NOT_SET),
     m_lastUpdateStatus(LastUpdateStatus::NOT_SET),
-    m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET)
+    m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
+    m_packageType(PackageType::NOT_SET)
 {
   *this = result;
 }
@@ -210,6 +212,18 @@ UpdateFunctionConfigurationResult& UpdateFunctionConfigurationResult::operator =
     {
       m_fileSystemConfigs.push_back(fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("PackageType"))
+  {
+    m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("PackageType"));
+
+  }
+
+  if(jsonValue.ValueExists("ImageConfigResponse"))
+  {
+    m_imageConfigResponse = jsonValue.GetObject("ImageConfigResponse");
+
   }
 
   if(jsonValue.ValueExists("SigningProfileVersionArn"))

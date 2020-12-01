@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/TrialComponentParameterValue.h>
 #include <aws/sagemaker/model/TrialComponentArtifact.h>
@@ -542,6 +543,22 @@ namespace Model
     inline DescribeTrialComponentResult& AddOutputArtifacts(const char* key, const TrialComponentArtifact& value) { m_outputArtifacts.emplace(key, value); return *this; }
 
 
+    
+    inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
+
+    
+    inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataProperties = value; }
+
+    
+    inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataProperties = std::move(value); }
+
+    
+    inline DescribeTrialComponentResult& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
+
+    
+    inline DescribeTrialComponentResult& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
+
+
     /**
      * <p>The metrics for the component.</p>
      */
@@ -606,6 +623,8 @@ namespace Model
     Aws::Map<Aws::String, TrialComponentArtifact> m_inputArtifacts;
 
     Aws::Map<Aws::String, TrialComponentArtifact> m_outputArtifacts;
+
+    MetadataProperties m_metadataProperties;
 
     Aws::Vector<TrialComponentMetricSummary> m_metrics;
   };

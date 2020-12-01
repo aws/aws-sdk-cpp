@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/CertificateState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ds/model/CertificateType.h>
 #include <utility>
 
 namespace Aws
@@ -183,6 +184,37 @@ namespace Model
      */
     inline CertificateInfo& WithExpiryDateTime(Aws::Utils::DateTime&& value) { SetExpiryDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Displays the type of certificate.</p>
+     */
+    inline const CertificateType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Displays the type of certificate.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Displays the type of certificate.</p>
+     */
+    inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Displays the type of certificate.</p>
+     */
+    inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Displays the type of certificate.</p>
+     */
+    inline CertificateInfo& WithType(const CertificateType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Displays the type of certificate.</p>
+     */
+    inline CertificateInfo& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateId;
@@ -196,6 +228,9 @@ namespace Model
 
     Aws::Utils::DateTime m_expiryDateTime;
     bool m_expiryDateTimeHasBeenSet;
+
+    CertificateType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

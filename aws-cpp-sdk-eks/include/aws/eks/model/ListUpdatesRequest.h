@@ -121,6 +121,47 @@ namespace Model
 
 
     /**
+     * <p>The names of the installed add-ons that have available updates.</p>
+     */
+    inline const Aws::String& GetAddonName() const{ return m_addonName; }
+
+    /**
+     * <p>The names of the installed add-ons that have available updates.</p>
+     */
+    inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
+
+    /**
+     * <p>The names of the installed add-ons that have available updates.</p>
+     */
+    inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
+
+    /**
+     * <p>The names of the installed add-ons that have available updates.</p>
+     */
+    inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
+
+    /**
+     * <p>The names of the installed add-ons that have available updates.</p>
+     */
+    inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
+
+    /**
+     * <p>The names of the installed add-ons that have available updates.</p>
+     */
+    inline ListUpdatesRequest& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
+
+    /**
+     * <p>The names of the installed add-ons that have available updates.</p>
+     */
+    inline ListUpdatesRequest& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of the installed add-ons that have available updates.</p>
+     */
+    inline ListUpdatesRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+
+
+    /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListUpdates</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
@@ -240,6 +281,9 @@ namespace Model
 
     Aws::String m_nodegroupName;
     bool m_nodegroupNameHasBeenSet;
+
+    Aws::String m_addonName;
+    bool m_addonNameHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

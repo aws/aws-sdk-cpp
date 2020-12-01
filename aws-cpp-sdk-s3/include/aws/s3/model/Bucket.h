@@ -82,32 +82,38 @@ namespace Model
 
 
     /**
-     * <p>Date the bucket was created.</p>
+     * <p>Date the bucket was created. This date can change when making changes to your
+     * bucket, such as editing its bucket policy.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>Date the bucket was created.</p>
+     * <p>Date the bucket was created. This date can change when making changes to your
+     * bucket, such as editing its bucket policy.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>Date the bucket was created.</p>
+     * <p>Date the bucket was created. This date can change when making changes to your
+     * bucket, such as editing its bucket policy.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>Date the bucket was created.</p>
+     * <p>Date the bucket was created. This date can change when making changes to your
+     * bucket, such as editing its bucket policy.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>Date the bucket was created.</p>
+     * <p>Date the bucket was created. This date can change when making changes to your
+     * bucket, such as editing its bucket policy.</p>
      */
     inline Bucket& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>Date the bucket was created.</p>
+     * <p>Date the bucket was created. This date can change when making changes to your
+     * bucket, such as editing its bucket policy.</p>
      */
     inline Bucket& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 

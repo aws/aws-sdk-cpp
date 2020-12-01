@@ -378,8 +378,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -388,8 +388,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -398,8 +398,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -408,8 +408,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -418,8 +418,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
@@ -428,8 +428,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
@@ -438,8 +438,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
@@ -448,8 +448,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

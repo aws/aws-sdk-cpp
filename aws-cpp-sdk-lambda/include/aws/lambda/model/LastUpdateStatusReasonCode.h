@@ -22,7 +22,9 @@ namespace Model
     InternalError,
     SubnetOutOfIPAddresses,
     InvalidSubnet,
-    InvalidSecurityGroup
+    InvalidSecurityGroup,
+    ImageDeleted,
+    ImageAccessDenied
   };
 
 namespace LastUpdateStatusReasonCodeMapper

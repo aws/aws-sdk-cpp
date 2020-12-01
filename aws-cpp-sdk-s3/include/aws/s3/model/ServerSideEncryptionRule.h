@@ -80,10 +80,58 @@ namespace Model
      */
     inline ServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(ServerSideEncryptionByDefault&& value) { SetApplyServerSideEncryptionByDefault(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side
+     * encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects
+     * are not affected. Setting the <code>BucketKeyEnabled</code> element to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3
+     * Bucket Key is not enabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+     * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side
+     * encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects
+     * are not affected. Setting the <code>BucketKeyEnabled</code> element to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3
+     * Bucket Key is not enabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+     * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     */
+    inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side
+     * encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects
+     * are not affected. Setting the <code>BucketKeyEnabled</code> element to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3
+     * Bucket Key is not enabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+     * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side
+     * encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects
+     * are not affected. Setting the <code>BucketKeyEnabled</code> element to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3
+     * Bucket Key is not enabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+     * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     */
+    inline ServerSideEncryptionRule& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
   private:
 
     ServerSideEncryptionByDefault m_applyServerSideEncryptionByDefault;
     bool m_applyServerSideEncryptionByDefaultHasBeenSet;
+
+    bool m_bucketKeyEnabled;
+    bool m_bucketKeyEnabledHasBeenSet;
   };
 
 } // namespace Model

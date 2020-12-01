@@ -29,6 +29,8 @@ CreateNodegroupRequest::CreateNodegroupRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_launchTemplateHasBeenSet(false),
+    m_capacityType(CapacityTypes::NOT_SET),
+    m_capacityTypeHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_releaseVersionHasBeenSet(false)
 {
@@ -127,6 +129,11 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
   {
    payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
 
+  }
+
+  if(m_capacityTypeHasBeenSet)
+  {
+   payload.WithString("capacityType", CapacityTypesMapper::GetNameForCapacityTypes(m_capacityType));
   }
 
   if(m_versionHasBeenSet)

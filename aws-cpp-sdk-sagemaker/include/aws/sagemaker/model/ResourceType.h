@@ -19,7 +19,13 @@ namespace Model
     TrainingJob,
     Experiment,
     ExperimentTrial,
-    ExperimentTrialComponent
+    ExperimentTrialComponent,
+    Endpoint,
+    ModelPackage,
+    ModelPackageGroup,
+    Pipeline,
+    PipelineExecution,
+    FeatureGroup
   };
 
 namespace ResourceTypeMapper

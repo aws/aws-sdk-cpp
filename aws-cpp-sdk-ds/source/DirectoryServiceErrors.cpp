@@ -31,6 +31,7 @@
 #include <aws/ds/model/ShareLimitExceededException.h>
 #include <aws/ds/model/DirectoryDoesNotExistException.h>
 #include <aws/ds/model/NoAvailableCertificateException.h>
+#include <aws/ds/model/InvalidClientAuthStatusException.h>
 #include <aws/ds/model/OrganizationsException.h>
 #include <aws/ds/model/InvalidTargetException.h>
 #include <aws/ds/model/DomainControllerLimitExceededException.h>
@@ -199,6 +200,12 @@ template<> AWS_DIRECTORYSERVICE_API NoAvailableCertificateException DirectorySer
   return NoAvailableCertificateException(this->GetJsonPayload().View());
 }
 
+template<> AWS_DIRECTORYSERVICE_API InvalidClientAuthStatusException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_CLIENT_AUTH_STATUS);
+  return InvalidClientAuthStatusException(this->GetJsonPayload().View());
+}
+
 template<> AWS_DIRECTORYSERVICE_API OrganizationsException DirectoryServiceError::GetModeledError()
 {
   assert(this->GetErrorType() == DirectoryServiceErrors::ORGANIZATIONS);
@@ -274,6 +281,7 @@ static const int CERTIFICATE_IN_USE_HASH = HashingUtils::HashString("Certificate
 static const int SHARE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ShareLimitExceededException");
 static const int DIRECTORY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("DirectoryDoesNotExistException");
 static const int NO_AVAILABLE_CERTIFICATE_HASH = HashingUtils::HashString("NoAvailableCertificateException");
+static const int INVALID_CLIENT_AUTH_STATUS_HASH = HashingUtils::HashString("InvalidClientAuthStatusException");
 static const int ORGANIZATIONS_HASH = HashingUtils::HashString("OrganizationsException");
 static const int INVALID_TARGET_HASH = HashingUtils::HashString("InvalidTargetException");
 static const int DOMAIN_CONTROLLER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DomainControllerLimitExceededException");
@@ -383,6 +391,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NO_AVAILABLE_CERTIFICATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::NO_AVAILABLE_CERTIFICATE), false);
+  }
+  else if (hashCode == INVALID_CLIENT_AUTH_STATUS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_CLIENT_AUTH_STATUS), false);
   }
   else if (hashCode == ORGANIZATIONS_HASH)
   {

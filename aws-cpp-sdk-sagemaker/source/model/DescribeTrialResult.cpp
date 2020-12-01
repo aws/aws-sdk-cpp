@@ -82,6 +82,12 @@ DescribeTrialResult& DescribeTrialResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("MetadataProperties"))
+  {
+    m_metadataProperties = jsonValue.GetObject("MetadataProperties");
+
+  }
+
 
 
   return *this;

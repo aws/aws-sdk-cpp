@@ -418,6 +418,25 @@ namespace Model
     inline PutObjectResult& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
 
 
+    /**
+     * <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side
+     * encryption with AWS KMS (SSE-KMS).</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side
+     * encryption with AWS KMS (SSE-KMS).</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side
+     * encryption with AWS KMS (SSE-KMS).</p>
+     */
+    inline PutObjectResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -450,6 +469,8 @@ namespace Model
     Aws::String m_sSEKMSKeyId;
 
     Aws::String m_sSEKMSEncryptionContext;
+
+    bool m_bucketKeyEnabled;
 
     RequestCharged m_requestCharged;
   };

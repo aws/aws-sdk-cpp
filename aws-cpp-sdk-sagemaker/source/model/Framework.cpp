@@ -28,6 +28,7 @@ namespace Aws
         static const int XGBOOST_HASH = HashingUtils::HashString("XGBOOST");
         static const int TFLITE_HASH = HashingUtils::HashString("TFLITE");
         static const int DARKNET_HASH = HashingUtils::HashString("DARKNET");
+        static const int SKLEARN_HASH = HashingUtils::HashString("SKLEARN");
 
 
         Framework GetFrameworkForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return Framework::DARKNET;
           }
+          else if (hashCode == SKLEARN_HASH)
+          {
+            return Framework::SKLEARN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "TFLITE";
           case Framework::DARKNET:
             return "DARKNET";
+          case Framework::SKLEARN:
+            return "SKLEARN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

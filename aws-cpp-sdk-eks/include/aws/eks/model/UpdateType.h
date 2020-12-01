@@ -19,7 +19,8 @@ namespace Model
     VersionUpdate,
     EndpointAccessUpdate,
     LoggingUpdate,
-    ConfigUpdate
+    ConfigUpdate,
+    AddonUpdate
   };
 
 namespace UpdateTypeMapper

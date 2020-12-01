@@ -20,16 +20,21 @@
 #include <aws/eks/EKSClient.h>
 #include <aws/eks/EKSEndpoint.h>
 #include <aws/eks/EKSErrorMarshaller.h>
+#include <aws/eks/model/CreateAddonRequest.h>
 #include <aws/eks/model/CreateClusterRequest.h>
 #include <aws/eks/model/CreateFargateProfileRequest.h>
 #include <aws/eks/model/CreateNodegroupRequest.h>
+#include <aws/eks/model/DeleteAddonRequest.h>
 #include <aws/eks/model/DeleteClusterRequest.h>
 #include <aws/eks/model/DeleteFargateProfileRequest.h>
 #include <aws/eks/model/DeleteNodegroupRequest.h>
+#include <aws/eks/model/DescribeAddonRequest.h>
+#include <aws/eks/model/DescribeAddonVersionsRequest.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
 #include <aws/eks/model/DescribeFargateProfileRequest.h>
 #include <aws/eks/model/DescribeNodegroupRequest.h>
 #include <aws/eks/model/DescribeUpdateRequest.h>
+#include <aws/eks/model/ListAddonsRequest.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/ListFargateProfilesRequest.h>
 #include <aws/eks/model/ListNodegroupsRequest.h>
@@ -37,6 +42,7 @@
 #include <aws/eks/model/ListUpdatesRequest.h>
 #include <aws/eks/model/TagResourceRequest.h>
 #include <aws/eks/model/UntagResourceRequest.h>
+#include <aws/eks/model/UpdateAddonRequest.h>
 #include <aws/eks/model/UpdateClusterConfigRequest.h>
 #include <aws/eks/model/UpdateClusterVersionRequest.h>
 #include <aws/eks/model/UpdateNodegroupConfigRequest.h>
@@ -113,6 +119,40 @@ void EKSClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAddon", "Required field: ClusterName, is not set");
+    return CreateAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/addons";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAddonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAddonOutcomeCallable EKSClient::CreateAddonCallable(const CreateAddonRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAddonOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAddon(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::CreateAddonAsync(const CreateAddonRequest& request, const CreateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAddonAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::CreateAddonAsyncHelper(const CreateAddonRequest& request, const CreateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAddon(request), context);
 }
 
 CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& request) const
@@ -208,6 +248,46 @@ void EKSClient::CreateNodegroupAsync(const CreateNodegroupRequest& request, cons
 void EKSClient::CreateNodegroupAsyncHelper(const CreateNodegroupRequest& request, const CreateNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateNodegroup(request), context);
+}
+
+DeleteAddonOutcome EKSClient::DeleteAddon(const DeleteAddonRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAddon", "Required field: ClusterName, is not set");
+    return DeleteAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.AddonNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAddon", "Required field: AddonName, is not set");
+    return DeleteAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AddonName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/addons/";
+  ss << request.GetAddonName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAddonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAddonOutcomeCallable EKSClient::DeleteAddonCallable(const DeleteAddonRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAddonOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAddon(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DeleteAddonAsync(const DeleteAddonRequest& request, const DeleteAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAddonAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DeleteAddonAsyncHelper(const DeleteAddonRequest& request, const DeleteAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAddon(request), context);
 }
 
 DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& request) const
@@ -321,6 +401,73 @@ void EKSClient::DeleteNodegroupAsync(const DeleteNodegroupRequest& request, cons
 void EKSClient::DeleteNodegroupAsyncHelper(const DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteNodegroup(request), context);
+}
+
+DescribeAddonOutcome EKSClient::DescribeAddon(const DescribeAddonRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAddon", "Required field: ClusterName, is not set");
+    return DescribeAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.AddonNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAddon", "Required field: AddonName, is not set");
+    return DescribeAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AddonName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/addons/";
+  ss << request.GetAddonName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAddonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAddonOutcomeCallable EKSClient::DescribeAddonCallable(const DescribeAddonRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAddonOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAddon(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DescribeAddonAsync(const DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAddonAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DescribeAddonAsyncHelper(const DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAddon(request), context);
+}
+
+DescribeAddonVersionsOutcome EKSClient::DescribeAddonVersions(const DescribeAddonVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/addons/supported-versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAddonVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAddonVersionsOutcomeCallable EKSClient::DescribeAddonVersionsCallable(const DescribeAddonVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAddonVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAddonVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DescribeAddonVersionsAsync(const DescribeAddonVersionsRequest& request, const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAddonVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DescribeAddonVersionsAsyncHelper(const DescribeAddonVersionsRequest& request, const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAddonVersions(request), context);
 }
 
 DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& request) const
@@ -474,6 +621,40 @@ void EKSClient::DescribeUpdateAsync(const DescribeUpdateRequest& request, const 
 void EKSClient::DescribeUpdateAsyncHelper(const DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeUpdate(request), context);
+}
+
+ListAddonsOutcome EKSClient::ListAddons(const ListAddonsRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAddons", "Required field: ClusterName, is not set");
+    return ListAddonsOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/addons";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAddonsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAddonsOutcomeCallable EKSClient::ListAddonsCallable(const ListAddonsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAddonsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAddons(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::ListAddonsAsync(const ListAddonsRequest& request, const ListAddonsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAddonsAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::ListAddonsAsyncHelper(const ListAddonsRequest& request, const ListAddonsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAddons(request), context);
 }
 
 ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) const
@@ -707,6 +888,47 @@ void EKSClient::UntagResourceAsync(const UntagResourceRequest& request, const Un
 void EKSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateAddonOutcome EKSClient::UpdateAddon(const UpdateAddonRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAddon", "Required field: ClusterName, is not set");
+    return UpdateAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.AddonNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAddon", "Required field: AddonName, is not set");
+    return UpdateAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AddonName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/addons/";
+  ss << request.GetAddonName();
+  ss << "/update";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAddonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAddonOutcomeCallable EKSClient::UpdateAddonCallable(const UpdateAddonRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAddonOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAddon(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::UpdateAddonAsync(const UpdateAddonRequest& request, const UpdateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAddonAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::UpdateAddonAsyncHelper(const UpdateAddonRequest& request, const UpdateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAddon(request), context);
 }
 
 UpdateClusterConfigOutcome EKSClient::UpdateClusterConfig(const UpdateClusterConfigRequest& request) const

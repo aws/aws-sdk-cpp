@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/TrialComponentSourceDetail.h>
 #include <aws/sagemaker/model/TrialComponentParameterValue.h>
 #include <aws/sagemaker/model/TrialComponentArtifact.h>
@@ -623,6 +624,25 @@ namespace Model
     inline TrialComponent& AddMetrics(TrialComponentMetricSummary&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
+
+    
+    inline bool MetadataPropertiesHasBeenSet() const { return m_metadataPropertiesHasBeenSet; }
+
+    
+    inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = value; }
+
+    
+    inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = std::move(value); }
+
+    
+    inline TrialComponent& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
+
+    
+    inline TrialComponent& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
+
+
     /**
      * <p>Details of the source of the component.</p>
      */
@@ -805,6 +825,9 @@ namespace Model
 
     Aws::Vector<TrialComponentMetricSummary> m_metrics;
     bool m_metricsHasBeenSet;
+
+    MetadataProperties m_metadataProperties;
+    bool m_metadataPropertiesHasBeenSet;
 
     TrialComponentSourceDetail m_sourceDetail;
     bool m_sourceDetailHasBeenSet;

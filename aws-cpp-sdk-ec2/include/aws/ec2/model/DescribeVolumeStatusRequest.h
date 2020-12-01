@@ -269,11 +269,11 @@ namespace Model
      * used, the request only returns <code>MaxResults</code> results in a single page
      * along with a <code>NextToken</code> response element. The remaining results of
      * the initial request can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. If this parameter is not used, then <code>DescribeVolumeStatus</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
+     * <code>NextToken</code> value. This value can be between 5 and 1,000; if
+     * <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results
+     * are returned. If this parameter is not used, then
+     * <code>DescribeVolumeStatus</code> returns all results. You cannot specify this
+     * parameter and the volume IDs parameter in the same request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -283,11 +283,11 @@ namespace Model
      * used, the request only returns <code>MaxResults</code> results in a single page
      * along with a <code>NextToken</code> response element. The remaining results of
      * the initial request can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. If this parameter is not used, then <code>DescribeVolumeStatus</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
+     * <code>NextToken</code> value. This value can be between 5 and 1,000; if
+     * <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results
+     * are returned. If this parameter is not used, then
+     * <code>DescribeVolumeStatus</code> returns all results. You cannot specify this
+     * parameter and the volume IDs parameter in the same request.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -297,11 +297,11 @@ namespace Model
      * used, the request only returns <code>MaxResults</code> results in a single page
      * along with a <code>NextToken</code> response element. The remaining results of
      * the initial request can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. If this parameter is not used, then <code>DescribeVolumeStatus</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
+     * <code>NextToken</code> value. This value can be between 5 and 1,000; if
+     * <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results
+     * are returned. If this parameter is not used, then
+     * <code>DescribeVolumeStatus</code> returns all results. You cannot specify this
+     * parameter and the volume IDs parameter in the same request.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -311,11 +311,11 @@ namespace Model
      * used, the request only returns <code>MaxResults</code> results in a single page
      * along with a <code>NextToken</code> response element. The remaining results of
      * the initial request can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. If this parameter is not used, then <code>DescribeVolumeStatus</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
+     * <code>NextToken</code> value. This value can be between 5 and 1,000; if
+     * <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results
+     * are returned. If this parameter is not used, then
+     * <code>DescribeVolumeStatus</code> returns all results. You cannot specify this
+     * parameter and the volume IDs parameter in the same request.</p>
      */
     inline DescribeVolumeStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

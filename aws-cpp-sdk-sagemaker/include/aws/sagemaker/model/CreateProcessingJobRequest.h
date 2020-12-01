@@ -45,58 +45,42 @@ namespace Model
 
 
     /**
-     * <p>For each input, data is downloaded from S3 into the processing container
-     * before the processing job begins running if "S3InputMode" is set to
-     * <code>File</code>.</p>
+     * <p>List of input configurations for the processing job.</p>
      */
     inline const Aws::Vector<ProcessingInput>& GetProcessingInputs() const{ return m_processingInputs; }
 
     /**
-     * <p>For each input, data is downloaded from S3 into the processing container
-     * before the processing job begins running if "S3InputMode" is set to
-     * <code>File</code>.</p>
+     * <p>List of input configurations for the processing job.</p>
      */
     inline bool ProcessingInputsHasBeenSet() const { return m_processingInputsHasBeenSet; }
 
     /**
-     * <p>For each input, data is downloaded from S3 into the processing container
-     * before the processing job begins running if "S3InputMode" is set to
-     * <code>File</code>.</p>
+     * <p>List of input configurations for the processing job.</p>
      */
     inline void SetProcessingInputs(const Aws::Vector<ProcessingInput>& value) { m_processingInputsHasBeenSet = true; m_processingInputs = value; }
 
     /**
-     * <p>For each input, data is downloaded from S3 into the processing container
-     * before the processing job begins running if "S3InputMode" is set to
-     * <code>File</code>.</p>
+     * <p>List of input configurations for the processing job.</p>
      */
     inline void SetProcessingInputs(Aws::Vector<ProcessingInput>&& value) { m_processingInputsHasBeenSet = true; m_processingInputs = std::move(value); }
 
     /**
-     * <p>For each input, data is downloaded from S3 into the processing container
-     * before the processing job begins running if "S3InputMode" is set to
-     * <code>File</code>.</p>
+     * <p>List of input configurations for the processing job.</p>
      */
     inline CreateProcessingJobRequest& WithProcessingInputs(const Aws::Vector<ProcessingInput>& value) { SetProcessingInputs(value); return *this;}
 
     /**
-     * <p>For each input, data is downloaded from S3 into the processing container
-     * before the processing job begins running if "S3InputMode" is set to
-     * <code>File</code>.</p>
+     * <p>List of input configurations for the processing job.</p>
      */
     inline CreateProcessingJobRequest& WithProcessingInputs(Aws::Vector<ProcessingInput>&& value) { SetProcessingInputs(std::move(value)); return *this;}
 
     /**
-     * <p>For each input, data is downloaded from S3 into the processing container
-     * before the processing job begins running if "S3InputMode" is set to
-     * <code>File</code>.</p>
+     * <p>List of input configurations for the processing job.</p>
      */
     inline CreateProcessingJobRequest& AddProcessingInputs(const ProcessingInput& value) { m_processingInputsHasBeenSet = true; m_processingInputs.push_back(value); return *this; }
 
     /**
-     * <p>For each input, data is downloaded from S3 into the processing container
-     * before the processing job begins running if "S3InputMode" is set to
-     * <code>File</code>.</p>
+     * <p>List of input configurations for the processing job.</p>
      */
     inline CreateProcessingJobRequest& AddProcessingInputs(ProcessingInput&& value) { m_processingInputsHasBeenSet = true; m_processingInputs.push_back(std::move(value)); return *this; }
 

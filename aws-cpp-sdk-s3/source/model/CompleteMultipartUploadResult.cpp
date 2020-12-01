@@ -18,12 +18,14 @@ using namespace Aws;
 
 CompleteMultipartUploadResult::CompleteMultipartUploadResult() : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
 CompleteMultipartUploadResult::CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
@@ -81,6 +83,12 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
   if(sSEKMSKeyIdIter != headers.end())
   {
     m_sSEKMSKeyId = sSEKMSKeyIdIter->second;
+  }
+
+  const auto& bucketKeyEnabledIter = headers.find("x-amz-server-side-encryption-bucket-key-enabled");
+  if(bucketKeyEnabledIter != headers.end())
+  {
+     m_bucketKeyEnabled = StringUtils::ConvertToBool(bucketKeyEnabledIter->second.c_str());
   }
 
   const auto& requestChargedIter = headers.find("x-amz-request-charged");

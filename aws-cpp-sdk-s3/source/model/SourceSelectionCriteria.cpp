@@ -21,12 +21,14 @@ namespace Model
 {
 
 SourceSelectionCriteria::SourceSelectionCriteria() : 
-    m_sseKmsEncryptedObjectsHasBeenSet(false)
+    m_sseKmsEncryptedObjectsHasBeenSet(false),
+    m_replicaModificationsHasBeenSet(false)
 {
 }
 
 SourceSelectionCriteria::SourceSelectionCriteria(const XmlNode& xmlNode) : 
-    m_sseKmsEncryptedObjectsHasBeenSet(false)
+    m_sseKmsEncryptedObjectsHasBeenSet(false),
+    m_replicaModificationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +45,12 @@ SourceSelectionCriteria& SourceSelectionCriteria::operator =(const XmlNode& xmlN
       m_sseKmsEncryptedObjects = sseKmsEncryptedObjectsNode;
       m_sseKmsEncryptedObjectsHasBeenSet = true;
     }
+    XmlNode replicaModificationsNode = resultNode.FirstChild("ReplicaModifications");
+    if(!replicaModificationsNode.IsNull())
+    {
+      m_replicaModifications = replicaModificationsNode;
+      m_replicaModificationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +63,12 @@ void SourceSelectionCriteria::AddToNode(XmlNode& parentNode) const
   {
    XmlNode sseKmsEncryptedObjectsNode = parentNode.CreateChildElement("SseKmsEncryptedObjects");
    m_sseKmsEncryptedObjects.AddToNode(sseKmsEncryptedObjectsNode);
+  }
+
+  if(m_replicaModificationsHasBeenSet)
+  {
+   XmlNode replicaModificationsNode = parentNode.CreateChildElement("ReplicaModifications");
+   m_replicaModifications.AddToNode(replicaModificationsNode);
   }
 
 }

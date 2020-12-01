@@ -28,6 +28,7 @@ Trial::Trial() :
     m_createdByHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_trialComponentSummariesHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ Trial::Trial(JsonView jsonValue) :
     m_createdByHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_trialComponentSummariesHasBeenSet(false)
 {
@@ -112,6 +114,13 @@ Trial& Trial::operator =(JsonView jsonValue)
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
 
     m_lastModifiedByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MetadataProperties"))
+  {
+    m_metadataProperties = jsonValue.GetObject("MetadataProperties");
+
+    m_metadataPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -190,6 +199,12 @@ JsonValue Trial::Jsonize() const
   if(m_lastModifiedByHasBeenSet)
   {
    payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
+
+  }
+
+  if(m_metadataPropertiesHasBeenSet)
+  {
+   payload.WithObject("MetadataProperties", m_metadataProperties.Jsonize());
 
   }
 

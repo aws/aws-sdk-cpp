@@ -244,6 +244,27 @@ namespace Model
      */
     inline LaunchTemplateEbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The throughput that the volume supports, in MiB/s.</p>
+     */
+    inline int GetThroughput() const{ return m_throughput; }
+
+    /**
+     * <p>The throughput that the volume supports, in MiB/s.</p>
+     */
+    inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
+
+    /**
+     * <p>The throughput that the volume supports, in MiB/s.</p>
+     */
+    inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
+
+    /**
+     * <p>The throughput that the volume supports, in MiB/s.</p>
+     */
+    inline LaunchTemplateEbsBlockDevice& WithThroughput(int value) { SetThroughput(value); return *this;}
+
   private:
 
     bool m_encrypted;
@@ -266,6 +287,9 @@ namespace Model
 
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
+    int m_throughput;
+    bool m_throughputHasBeenSet;
   };
 
 } // namespace Model

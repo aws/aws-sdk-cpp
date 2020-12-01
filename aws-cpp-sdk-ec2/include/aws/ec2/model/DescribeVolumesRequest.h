@@ -70,11 +70,9 @@ namespace Model
      * - The key of a tag assigned to the resource. Use this filter to find all
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> |
+     * <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> |
+     * <code>sc1</code>| <code>standard</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -110,11 +108,9 @@ namespace Model
      * - The key of a tag assigned to the resource. Use this filter to find all
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> |
+     * <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> |
+     * <code>sc1</code>| <code>standard</code>)</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -150,11 +146,9 @@ namespace Model
      * - The key of a tag assigned to the resource. Use this filter to find all
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> |
+     * <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> |
+     * <code>sc1</code>| <code>standard</code>)</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -190,11 +184,9 @@ namespace Model
      * - The key of a tag assigned to the resource. Use this filter to find all
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> |
+     * <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> |
+     * <code>sc1</code>| <code>standard</code>)</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -230,11 +222,9 @@ namespace Model
      * - The key of a tag assigned to the resource. Use this filter to find all
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> |
+     * <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> |
+     * <code>sc1</code>| <code>standard</code>)</p> </li> </ul>
      */
     inline DescribeVolumesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -270,11 +260,9 @@ namespace Model
      * - The key of a tag assigned to the resource. Use this filter to find all
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> |
+     * <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> |
+     * <code>sc1</code>| <code>standard</code>)</p> </li> </ul>
      */
     inline DescribeVolumesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -310,11 +298,9 @@ namespace Model
      * - The key of a tag assigned to the resource. Use this filter to find all
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> |
+     * <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> |
+     * <code>sc1</code>| <code>standard</code>)</p> </li> </ul>
      */
     inline DescribeVolumesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -350,11 +336,9 @@ namespace Model
      * - The key of a tag assigned to the resource. Use this filter to find all
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> <li> <p> <code>volume-id</code> - The volume ID.</p> </li> <li> <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> |
+     * <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> |
+     * <code>sc1</code>| <code>standard</code>)</p> </li> </ul>
      */
     inline DescribeVolumesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

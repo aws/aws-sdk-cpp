@@ -51,6 +51,8 @@ CopyObjectRequest::CopyObjectRequest() :
     m_sSECustomerKeyMD5HasBeenSet(false),
     m_sSEKMSKeyIdHasBeenSet(false),
     m_sSEKMSEncryptionContextHasBeenSet(false),
+    m_bucketKeyEnabled(false),
+    m_bucketKeyEnabledHasBeenSet(false),
     m_copySourceSSECustomerAlgorithmHasBeenSet(false),
     m_copySourceSSECustomerKeyHasBeenSet(false),
     m_copySourceSSECustomerKeyMD5HasBeenSet(false),
@@ -272,6 +274,13 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
   {
     ss << m_sSEKMSEncryptionContext;
     headers.emplace("x-amz-server-side-encryption-context",  ss.str());
+    ss.str("");
+  }
+
+  if(m_bucketKeyEnabledHasBeenSet)
+  {
+    ss << m_bucketKeyEnabled;
+    headers.emplace("x-amz-server-side-encryption-bucket-key-enabled",  ss.str());
     ss.str("");
   }
 

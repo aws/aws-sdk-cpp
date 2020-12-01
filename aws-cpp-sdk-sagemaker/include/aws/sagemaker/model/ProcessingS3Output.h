@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about where and how you want to store the results of an
-   * processing job.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration for processing job outputs in Amazon S3.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingS3Output">AWS
    * API Reference</a></p>
    */

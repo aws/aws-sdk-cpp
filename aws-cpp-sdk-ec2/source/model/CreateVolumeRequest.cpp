@@ -27,7 +27,9 @@ CreateVolumeRequest::CreateVolumeRequest() :
     m_dryRunHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_multiAttachEnabled(false),
-    m_multiAttachEnabledHasBeenSet(false)
+    m_multiAttachEnabledHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,11 @@ Aws::String CreateVolumeRequest::SerializePayload() const
   if(m_multiAttachEnabledHasBeenSet)
   {
     ss << "MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
+  }
+
+  if(m_throughputHasBeenSet)
+  {
+    ss << "Throughput=" << m_throughput << "&";
   }
 
   ss << "Version=2016-11-15";

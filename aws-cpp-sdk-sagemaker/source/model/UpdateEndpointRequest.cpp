@@ -17,7 +17,8 @@ UpdateEndpointRequest::UpdateEndpointRequest() :
     m_endpointConfigNameHasBeenSet(false),
     m_retainAllVariantProperties(false),
     m_retainAllVariantPropertiesHasBeenSet(false),
-    m_excludeRetainedVariantPropertiesHasBeenSet(false)
+    m_excludeRetainedVariantPropertiesHasBeenSet(false),
+    m_deploymentConfigHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,12 @@ Aws::String UpdateEndpointRequest::SerializePayload() const
      excludeRetainedVariantPropertiesJsonList[excludeRetainedVariantPropertiesIndex].AsObject(m_excludeRetainedVariantProperties[excludeRetainedVariantPropertiesIndex].Jsonize());
    }
    payload.WithArray("ExcludeRetainedVariantProperties", std::move(excludeRetainedVariantPropertiesJsonList));
+
+  }
+
+  if(m_deploymentConfigHasBeenSet)
+  {
+   payload.WithObject("DeploymentConfig", m_deploymentConfig.Jsonize());
 
   }
 

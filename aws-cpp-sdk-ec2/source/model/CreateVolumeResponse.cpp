@@ -24,7 +24,8 @@ CreateVolumeResponse::CreateVolumeResponse() :
     m_iops(0),
     m_volumeType(VolumeType::NOT_SET),
     m_fastRestored(false),
-    m_multiAttachEnabled(false)
+    m_multiAttachEnabled(false),
+    m_throughput(0)
 {
 }
 
@@ -35,7 +36,8 @@ CreateVolumeResponse::CreateVolumeResponse(const Aws::AmazonWebServiceResult<Xml
     m_iops(0),
     m_volumeType(VolumeType::NOT_SET),
     m_fastRestored(false),
-    m_multiAttachEnabled(false)
+    m_multiAttachEnabled(false),
+    m_throughput(0)
 {
   *this = result;
 }
@@ -138,6 +140,11 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     if(!multiAttachEnabledNode.IsNull())
     {
       m_multiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAttachEnabledNode.GetText()).c_str()).c_str());
+    }
+    XmlNode throughputNode = resultNode.FirstChild("throughput");
+    if(!throughputNode.IsNull())
+    {
+      m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
     }
   }
 

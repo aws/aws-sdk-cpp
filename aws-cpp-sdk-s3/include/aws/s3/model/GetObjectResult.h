@@ -909,6 +909,25 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline GetObjectResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
+
+    /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
      * header for all objects except for S3 Standard storage class objects.</p>
      */
@@ -1191,6 +1210,8 @@ namespace Model
     Aws::String m_sSECustomerKeyMD5;
 
     Aws::String m_sSEKMSKeyId;
+
+    bool m_bucketKeyEnabled;
 
     StorageClass m_storageClass;
 

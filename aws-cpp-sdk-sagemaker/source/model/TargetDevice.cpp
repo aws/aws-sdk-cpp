@@ -47,6 +47,7 @@ namespace Aws
         static const int x86_win32_HASH = HashingUtils::HashString("x86_win32");
         static const int x86_win64_HASH = HashingUtils::HashString("x86_win64");
         static const int coreml_HASH = HashingUtils::HashString("coreml");
+        static const int jacinto_tda4vm_HASH = HashingUtils::HashString("jacinto_tda4vm");
 
 
         TargetDevice GetTargetDeviceForName(const Aws::String& name)
@@ -160,6 +161,10 @@ namespace Aws
           {
             return TargetDevice::coreml;
           }
+          else if (hashCode == jacinto_tda4vm_HASH)
+          {
+            return TargetDevice::jacinto_tda4vm;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -228,6 +233,8 @@ namespace Aws
             return "x86_win64";
           case TargetDevice::coreml:
             return "coreml";
+          case TargetDevice::jacinto_tda4vm:
+            return "jacinto_tda4vm";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

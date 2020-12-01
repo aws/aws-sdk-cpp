@@ -30,7 +30,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_tracingConfigHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
     m_layersHasBeenSet(false),
-    m_fileSystemConfigsHasBeenSet(false)
+    m_fileSystemConfigsHasBeenSet(false),
+    m_imageConfigHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,12 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
      fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
    }
    payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
+
+  }
+
+  if(m_imageConfigHasBeenSet)
+  {
+   payload.WithObject("ImageConfig", m_imageConfig.Jsonize());
 
   }
 

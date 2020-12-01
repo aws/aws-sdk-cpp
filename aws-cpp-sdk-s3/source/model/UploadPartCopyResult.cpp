@@ -18,12 +18,14 @@ using namespace Aws;
 
 UploadPartCopyResult::UploadPartCopyResult() : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
 UploadPartCopyResult::UploadPartCopyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
@@ -68,6 +70,12 @@ UploadPartCopyResult& UploadPartCopyResult::operator =(const Aws::AmazonWebServi
   if(sSEKMSKeyIdIter != headers.end())
   {
     m_sSEKMSKeyId = sSEKMSKeyIdIter->second;
+  }
+
+  const auto& bucketKeyEnabledIter = headers.find("x-amz-server-side-encryption-bucket-key-enabled");
+  if(bucketKeyEnabledIter != headers.end())
+  {
+     m_bucketKeyEnabled = StringUtils::ConvertToBool(bucketKeyEnabledIter->second.c_str());
   }
 
   const auto& requestChargedIter = headers.find("x-amz-request-charged");

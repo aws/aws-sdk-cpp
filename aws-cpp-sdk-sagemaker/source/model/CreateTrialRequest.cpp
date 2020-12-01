@@ -16,6 +16,7 @@ CreateTrialRequest::CreateTrialRequest() :
     m_trialNameHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_experimentNameHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -39,6 +40,12 @@ Aws::String CreateTrialRequest::SerializePayload() const
   if(m_experimentNameHasBeenSet)
   {
    payload.WithString("ExperimentName", m_experimentName);
+
+  }
+
+  if(m_metadataPropertiesHasBeenSet)
+  {
+   payload.WithObject("MetadataProperties", m_metadataProperties.Jsonize());
 
   }
 

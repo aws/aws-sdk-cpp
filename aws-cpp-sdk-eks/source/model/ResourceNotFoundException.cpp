@@ -22,6 +22,7 @@ ResourceNotFoundException::ResourceNotFoundException() :
     m_clusterNameHasBeenSet(false),
     m_nodegroupNameHasBeenSet(false),
     m_fargateProfileNameHasBeenSet(false),
+    m_addonNameHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) :
     m_clusterNameHasBeenSet(false),
     m_nodegroupNameHasBeenSet(false),
     m_fargateProfileNameHasBeenSet(false),
+    m_addonNameHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
   *this = jsonValue;
@@ -56,6 +58,13 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
     m_fargateProfileName = jsonValue.GetString("fargateProfileName");
 
     m_fargateProfileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("addonName"))
+  {
+    m_addonName = jsonValue.GetString("addonName");
+
+    m_addonNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("message"))
@@ -87,6 +96,12 @@ JsonValue ResourceNotFoundException::Jsonize() const
   if(m_fargateProfileNameHasBeenSet)
   {
    payload.WithString("fargateProfileName", m_fargateProfileName);
+
+  }
+
+  if(m_addonNameHasBeenSet)
+  {
+   payload.WithString("addonName", m_addonName);
 
   }
 

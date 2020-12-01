@@ -18,6 +18,7 @@ namespace Honeycode
 namespace HoneycodeErrorMapper
 {
 
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int AUTOMATION_EXECUTION_TIMEOUT_HASH = HashingUtils::HashString("AutomationExecutionTimeoutException");
 static const int AUTOMATION_EXECUTION_HASH = HashingUtils::HashString("AutomationExecutionException");
@@ -27,7 +28,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVER_HASH)
+  if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::SERVICE_QUOTA_EXCEEDED), false);
+  }
+  else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(HoneycodeErrors::INTERNAL_SERVER), false);
   }

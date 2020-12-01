@@ -893,25 +893,24 @@ namespace Aws
          * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
          * evaluates to true</p> </li> </ul>  <p>All headers with the
          * <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>, must be
-         * signed.</p>  <p> <b>Encryption</b> </p> <p>The source object that you are
-         * copying can be encrypted or unencrypted. The source object can be encrypted with
-         * server-side encryption using AWS managed encryption keys (SSE-S3 or SSE-KMS) or
-         * by using a customer-provided encryption key. With server-side encryption, Amazon
-         * S3 encrypts your data as it writes it to disks in its data centers and decrypts
-         * the data when you access it. </p> <p>You can optionally use the appropriate
-         * encryption-related headers to request server-side encryption for the target
-         * object. You have the option to provide your own encryption key or use SSE-S3 or
-         * SSE-KMS, regardless of the form of server-side encryption that was used to
-         * encrypt the source object. You can even request encryption if the source object
-         * was not encrypted. For more information about server-side encryption, see <a
+         * signed.</p>  <p> <b>Server-side encryption</b> </p> <p>When you perform a
+         * CopyObject operation, you can optionally use the appropriate encryption-related
+         * headers to encrypt the object using server-side encryption with AWS managed
+         * encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With
+         * server-side encryption, Amazon S3 encrypts your data as it writes it to disks in
+         * its data centers and decrypts the data when you access it. For more information
+         * about server-side encryption, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
-         * Server-Side Encryption</a>.</p> <p> <b>Access Control List (ACL)-Specific
-         * Request Headers</b> </p> <p>When copying an object, you can optionally use
-         * headers to grant ACL-based permissions. By default, all objects are private.
-         * Only the owner has full access control. When adding a new object, you can grant
-         * permissions to individual AWS accounts or to predefined groups defined by Amazon
-         * S3. These permissions are then added to the ACL on the object. For more
-         * information, see <a
+         * Server-Side Encryption</a>.</p> <p>If a target object uses SSE-KMS, you can
+         * enable an S3 Bucket Key for the object. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+         * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         * <p> <b>Access Control List (ACL)-Specific Request Headers</b> </p> <p>When
+         * copying an object, you can optionally use headers to grant ACL-based
+         * permissions. By default, all objects are private. Only the owner has full access
+         * control. When adding a new object, you can grant permissions to individual AWS
+         * accounts or to predefined groups defined by Amazon S3. These permissions are
+         * then added to the ACL on the object. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
@@ -1019,25 +1018,24 @@ namespace Aws
          * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
          * evaluates to true</p> </li> </ul>  <p>All headers with the
          * <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>, must be
-         * signed.</p>  <p> <b>Encryption</b> </p> <p>The source object that you are
-         * copying can be encrypted or unencrypted. The source object can be encrypted with
-         * server-side encryption using AWS managed encryption keys (SSE-S3 or SSE-KMS) or
-         * by using a customer-provided encryption key. With server-side encryption, Amazon
-         * S3 encrypts your data as it writes it to disks in its data centers and decrypts
-         * the data when you access it. </p> <p>You can optionally use the appropriate
-         * encryption-related headers to request server-side encryption for the target
-         * object. You have the option to provide your own encryption key or use SSE-S3 or
-         * SSE-KMS, regardless of the form of server-side encryption that was used to
-         * encrypt the source object. You can even request encryption if the source object
-         * was not encrypted. For more information about server-side encryption, see <a
+         * signed.</p>  <p> <b>Server-side encryption</b> </p> <p>When you perform a
+         * CopyObject operation, you can optionally use the appropriate encryption-related
+         * headers to encrypt the object using server-side encryption with AWS managed
+         * encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With
+         * server-side encryption, Amazon S3 encrypts your data as it writes it to disks in
+         * its data centers and decrypts the data when you access it. For more information
+         * about server-side encryption, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
-         * Server-Side Encryption</a>.</p> <p> <b>Access Control List (ACL)-Specific
-         * Request Headers</b> </p> <p>When copying an object, you can optionally use
-         * headers to grant ACL-based permissions. By default, all objects are private.
-         * Only the owner has full access control. When adding a new object, you can grant
-         * permissions to individual AWS accounts or to predefined groups defined by Amazon
-         * S3. These permissions are then added to the ACL on the object. For more
-         * information, see <a
+         * Server-Side Encryption</a>.</p> <p>If a target object uses SSE-KMS, you can
+         * enable an S3 Bucket Key for the object. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+         * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         * <p> <b>Access Control List (ACL)-Specific Request Headers</b> </p> <p>When
+         * copying an object, you can optionally use headers to grant ACL-based
+         * permissions. By default, all objects are private. Only the owner has full access
+         * control. When adding a new object, you can grant permissions to individual AWS
+         * accounts or to predefined groups defined by Amazon S3. These permissions are
+         * then added to the ACL on the object. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
@@ -1147,25 +1145,24 @@ namespace Aws
          * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
          * evaluates to true</p> </li> </ul>  <p>All headers with the
          * <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>, must be
-         * signed.</p>  <p> <b>Encryption</b> </p> <p>The source object that you are
-         * copying can be encrypted or unencrypted. The source object can be encrypted with
-         * server-side encryption using AWS managed encryption keys (SSE-S3 or SSE-KMS) or
-         * by using a customer-provided encryption key. With server-side encryption, Amazon
-         * S3 encrypts your data as it writes it to disks in its data centers and decrypts
-         * the data when you access it. </p> <p>You can optionally use the appropriate
-         * encryption-related headers to request server-side encryption for the target
-         * object. You have the option to provide your own encryption key or use SSE-S3 or
-         * SSE-KMS, regardless of the form of server-side encryption that was used to
-         * encrypt the source object. You can even request encryption if the source object
-         * was not encrypted. For more information about server-side encryption, see <a
+         * signed.</p>  <p> <b>Server-side encryption</b> </p> <p>When you perform a
+         * CopyObject operation, you can optionally use the appropriate encryption-related
+         * headers to encrypt the object using server-side encryption with AWS managed
+         * encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With
+         * server-side encryption, Amazon S3 encrypts your data as it writes it to disks in
+         * its data centers and decrypts the data when you access it. For more information
+         * about server-side encryption, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
-         * Server-Side Encryption</a>.</p> <p> <b>Access Control List (ACL)-Specific
-         * Request Headers</b> </p> <p>When copying an object, you can optionally use
-         * headers to grant ACL-based permissions. By default, all objects are private.
-         * Only the owner has full access control. When adding a new object, you can grant
-         * permissions to individual AWS accounts or to predefined groups defined by Amazon
-         * S3. These permissions are then added to the ACL on the object. For more
-         * information, see <a
+         * Server-Side Encryption</a>.</p> <p>If a target object uses SSE-KMS, you can
+         * enable an S3 Bucket Key for the object. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+         * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         * <p> <b>Access Control List (ACL)-Specific Request Headers</b> </p> <p>When
+         * copying an object, you can optionally use headers to grant ACL-based
+         * permissions. By default, all objects are private. Only the owner has full access
+         * control. When adding a new object, you can grant permissions to individual AWS
+         * accounts or to predefined groups defined by Amazon S3. These permissions are
+         * then added to the ACL on the object. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
@@ -7119,20 +7116,24 @@ namespace Aws
         virtual void PutBucketCorsAsync(const Model::PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This implementation of the <code>PUT</code> operation uses the
-         * <code>encryption</code> subresource to set the default encryption state of an
-         * existing bucket.</p> <p>This implementation of the <code>PUT</code> operation
-         * sets default encryption for a bucket using server-side encryption with Amazon
-         * S3-managed keys SSE-S3 or AWS KMS customer master keys (CMKs) (SSE-KMS). For
-         * information about the Amazon S3 default encryption feature, see <a
+         * <p>This operation uses the <code>encryption</code> subresource to configure
+         * default encryption and Amazon S3 Bucket Key for an existing bucket.</p>
+         * <p>Default encryption for a bucket can use server-side encryption with Amazon
+         * S3-managed keys (SSE-S3) or AWS KMS customer master keys (SSE-KMS). If you
+         * specify default encryption using SSE-KMS, you can also configure Amazon S3
+         * Bucket Key. For information about default encryption, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-         * S3 Default Bucket Encryption</a>.</p>  <p>This operation requires AWS
-         * Signature Version 4. For more information, see <a
-         * href="sig-v4-authenticating-requests.html"> Authenticating Requests (AWS
-         * Signature Version 4)</a>. </p>  <p>To use this operation, you must
-         * have permissions to perform the <code>s3:PutEncryptionConfiguration</code>
-         * action. The bucket owner has this permission by default. The bucket owner can
-         * grant this permission to others. For more information about permissions, see <a
+         * S3 default bucket encryption</a> in the <i>Amazon Simple Storage Service
+         * Developer Guide</i>. For more information about S3 Bucket Keys, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+         * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         *  <p>This operation requires AWS Signature Version 4. For more
+         * information, see <a href="sig-v4-authenticating-requests.html"> Authenticating
+         * Requests (AWS Signature Version 4)</a>. </p>  <p>To use this
+         * operation, you must have permissions to perform the
+         * <code>s3:PutEncryptionConfiguration</code> action. The bucket owner has this
+         * permission by default. The bucket owner can grant this permission to others. For
+         * more information about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
@@ -7149,20 +7150,24 @@ namespace Aws
         virtual Model::PutBucketEncryptionOutcome PutBucketEncryption(const Model::PutBucketEncryptionRequest& request) const;
 
         /**
-         * <p>This implementation of the <code>PUT</code> operation uses the
-         * <code>encryption</code> subresource to set the default encryption state of an
-         * existing bucket.</p> <p>This implementation of the <code>PUT</code> operation
-         * sets default encryption for a bucket using server-side encryption with Amazon
-         * S3-managed keys SSE-S3 or AWS KMS customer master keys (CMKs) (SSE-KMS). For
-         * information about the Amazon S3 default encryption feature, see <a
+         * <p>This operation uses the <code>encryption</code> subresource to configure
+         * default encryption and Amazon S3 Bucket Key for an existing bucket.</p>
+         * <p>Default encryption for a bucket can use server-side encryption with Amazon
+         * S3-managed keys (SSE-S3) or AWS KMS customer master keys (SSE-KMS). If you
+         * specify default encryption using SSE-KMS, you can also configure Amazon S3
+         * Bucket Key. For information about default encryption, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-         * S3 Default Bucket Encryption</a>.</p>  <p>This operation requires AWS
-         * Signature Version 4. For more information, see <a
-         * href="sig-v4-authenticating-requests.html"> Authenticating Requests (AWS
-         * Signature Version 4)</a>. </p>  <p>To use this operation, you must
-         * have permissions to perform the <code>s3:PutEncryptionConfiguration</code>
-         * action. The bucket owner has this permission by default. The bucket owner can
-         * grant this permission to others. For more information about permissions, see <a
+         * S3 default bucket encryption</a> in the <i>Amazon Simple Storage Service
+         * Developer Guide</i>. For more information about S3 Bucket Keys, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+         * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         *  <p>This operation requires AWS Signature Version 4. For more
+         * information, see <a href="sig-v4-authenticating-requests.html"> Authenticating
+         * Requests (AWS Signature Version 4)</a>. </p>  <p>To use this
+         * operation, you must have permissions to perform the
+         * <code>s3:PutEncryptionConfiguration</code> action. The bucket owner has this
+         * permission by default. The bucket owner can grant this permission to others. For
+         * more information about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
@@ -7181,20 +7186,24 @@ namespace Aws
         virtual Model::PutBucketEncryptionOutcomeCallable PutBucketEncryptionCallable(const Model::PutBucketEncryptionRequest& request) const;
 
         /**
-         * <p>This implementation of the <code>PUT</code> operation uses the
-         * <code>encryption</code> subresource to set the default encryption state of an
-         * existing bucket.</p> <p>This implementation of the <code>PUT</code> operation
-         * sets default encryption for a bucket using server-side encryption with Amazon
-         * S3-managed keys SSE-S3 or AWS KMS customer master keys (CMKs) (SSE-KMS). For
-         * information about the Amazon S3 default encryption feature, see <a
+         * <p>This operation uses the <code>encryption</code> subresource to configure
+         * default encryption and Amazon S3 Bucket Key for an existing bucket.</p>
+         * <p>Default encryption for a bucket can use server-side encryption with Amazon
+         * S3-managed keys (SSE-S3) or AWS KMS customer master keys (SSE-KMS). If you
+         * specify default encryption using SSE-KMS, you can also configure Amazon S3
+         * Bucket Key. For information about default encryption, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-         * S3 Default Bucket Encryption</a>.</p>  <p>This operation requires AWS
-         * Signature Version 4. For more information, see <a
-         * href="sig-v4-authenticating-requests.html"> Authenticating Requests (AWS
-         * Signature Version 4)</a>. </p>  <p>To use this operation, you must
-         * have permissions to perform the <code>s3:PutEncryptionConfiguration</code>
-         * action. The bucket owner has this permission by default. The bucket owner can
-         * grant this permission to others. For more information about permissions, see <a
+         * S3 default bucket encryption</a> in the <i>Amazon Simple Storage Service
+         * Developer Guide</i>. For more information about S3 Bucket Keys, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+         * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         *  <p>This operation requires AWS Signature Version 4. For more
+         * information, see <a href="sig-v4-authenticating-requests.html"> Authenticating
+         * Requests (AWS Signature Version 4)</a>. </p>  <p>To use this
+         * operation, you must have permissions to perform the
+         * <code>s3:PutEncryptionConfiguration</code> action. The bucket owner has this
+         * permission by default. The bucket owner can grant this permission to others. For
+         * more information about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
@@ -8156,21 +8165,20 @@ namespace Aws
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
          * permission.</p>  <p>Specify the replication configuration in the request
          * body. In the replication configuration, you provide the name of the destination
-         * bucket where you want Amazon S3 to replicate objects, the IAM role that Amazon
-         * S3 can assume to replicate objects on your behalf, and other relevant
-         * information.</p> <p>A replication configuration must include at least one rule,
-         * and can contain a maximum of 1,000. Each rule identifies a subset of objects to
-         * replicate by filtering the objects in the source bucket. To choose additional
-         * subsets of objects to replicate, add a rule for each subset. All rules must
-         * specify the same destination bucket.</p> <p>To specify a subset of the objects
-         * in the source bucket to apply a replication rule to, add the Filter element as a
-         * child of the Rule element. You can filter objects based on an object key prefix,
-         * one or more object tags, or both. When you add the Filter element in the
-         * configuration, you must also add the following elements:
-         * <code>DeleteMarkerReplication</code>, <code>Status</code>, and
-         * <code>Priority</code>.</p>  <p>If you are using an earlier version of the
-         * replication configuration, Amazon S3 handles replication of delete markers
-         * differently. For more information, see <a
+         * bucket or buckets where you want Amazon S3 to replicate objects, the IAM role
+         * that Amazon S3 can assume to replicate objects on your behalf, and other
+         * relevant information.</p> <p>A replication configuration must include at least
+         * one rule, and can contain a maximum of 1,000. Each rule identifies a subset of
+         * objects to replicate by filtering the objects in the source bucket. To choose
+         * additional subsets of objects to replicate, add a rule for each subset.</p>
+         * <p>To specify a subset of the objects in the source bucket to apply a
+         * replication rule to, add the Filter element as a child of the Rule element. You
+         * can filter objects based on an object key prefix, one or more object tags, or
+         * both. When you add the Filter element in the configuration, you must also add
+         * the following elements: <code>DeleteMarkerReplication</code>,
+         * <code>Status</code>, and <code>Priority</code>.</p>  <p>If you are using
+         * an earlier version of the replication configuration, Amazon S3 handles
+         * replication of delete markers differently. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward
          * Compatibility</a>.</p>  <p>For information about enabling versioning on a
          * bucket, see <a
@@ -8214,21 +8222,20 @@ namespace Aws
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
          * permission.</p>  <p>Specify the replication configuration in the request
          * body. In the replication configuration, you provide the name of the destination
-         * bucket where you want Amazon S3 to replicate objects, the IAM role that Amazon
-         * S3 can assume to replicate objects on your behalf, and other relevant
-         * information.</p> <p>A replication configuration must include at least one rule,
-         * and can contain a maximum of 1,000. Each rule identifies a subset of objects to
-         * replicate by filtering the objects in the source bucket. To choose additional
-         * subsets of objects to replicate, add a rule for each subset. All rules must
-         * specify the same destination bucket.</p> <p>To specify a subset of the objects
-         * in the source bucket to apply a replication rule to, add the Filter element as a
-         * child of the Rule element. You can filter objects based on an object key prefix,
-         * one or more object tags, or both. When you add the Filter element in the
-         * configuration, you must also add the following elements:
-         * <code>DeleteMarkerReplication</code>, <code>Status</code>, and
-         * <code>Priority</code>.</p>  <p>If you are using an earlier version of the
-         * replication configuration, Amazon S3 handles replication of delete markers
-         * differently. For more information, see <a
+         * bucket or buckets where you want Amazon S3 to replicate objects, the IAM role
+         * that Amazon S3 can assume to replicate objects on your behalf, and other
+         * relevant information.</p> <p>A replication configuration must include at least
+         * one rule, and can contain a maximum of 1,000. Each rule identifies a subset of
+         * objects to replicate by filtering the objects in the source bucket. To choose
+         * additional subsets of objects to replicate, add a rule for each subset.</p>
+         * <p>To specify a subset of the objects in the source bucket to apply a
+         * replication rule to, add the Filter element as a child of the Rule element. You
+         * can filter objects based on an object key prefix, one or more object tags, or
+         * both. When you add the Filter element in the configuration, you must also add
+         * the following elements: <code>DeleteMarkerReplication</code>,
+         * <code>Status</code>, and <code>Priority</code>.</p>  <p>If you are using
+         * an earlier version of the replication configuration, Amazon S3 handles
+         * replication of delete markers differently. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward
          * Compatibility</a>.</p>  <p>For information about enabling versioning on a
          * bucket, see <a
@@ -8274,21 +8281,20 @@ namespace Aws
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
          * permission.</p>  <p>Specify the replication configuration in the request
          * body. In the replication configuration, you provide the name of the destination
-         * bucket where you want Amazon S3 to replicate objects, the IAM role that Amazon
-         * S3 can assume to replicate objects on your behalf, and other relevant
-         * information.</p> <p>A replication configuration must include at least one rule,
-         * and can contain a maximum of 1,000. Each rule identifies a subset of objects to
-         * replicate by filtering the objects in the source bucket. To choose additional
-         * subsets of objects to replicate, add a rule for each subset. All rules must
-         * specify the same destination bucket.</p> <p>To specify a subset of the objects
-         * in the source bucket to apply a replication rule to, add the Filter element as a
-         * child of the Rule element. You can filter objects based on an object key prefix,
-         * one or more object tags, or both. When you add the Filter element in the
-         * configuration, you must also add the following elements:
-         * <code>DeleteMarkerReplication</code>, <code>Status</code>, and
-         * <code>Priority</code>.</p>  <p>If you are using an earlier version of the
-         * replication configuration, Amazon S3 handles replication of delete markers
-         * differently. For more information, see <a
+         * bucket or buckets where you want Amazon S3 to replicate objects, the IAM role
+         * that Amazon S3 can assume to replicate objects on your behalf, and other
+         * relevant information.</p> <p>A replication configuration must include at least
+         * one rule, and can contain a maximum of 1,000. Each rule identifies a subset of
+         * objects to replicate by filtering the objects in the source bucket. To choose
+         * additional subsets of objects to replicate, add a rule for each subset.</p>
+         * <p>To specify a subset of the objects in the source bucket to apply a
+         * replication rule to, add the Filter element as a child of the Rule element. You
+         * can filter objects based on an object key prefix, one or more object tags, or
+         * both. When you add the Filter element in the configuration, you must also add
+         * the following elements: <code>DeleteMarkerReplication</code>,
+         * <code>Status</code>, and <code>Priority</code>.</p>  <p>If you are using
+         * an earlier version of the replication configuration, Amazon S3 handles
+         * replication of delete markers differently. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward
          * Compatibility</a>.</p>  <p>For information about enabling versioning on a
          * bucket, see <a
@@ -8789,14 +8795,20 @@ namespace Aws
          * optionally request server-side encryption. With server-side encryption, Amazon
          * S3 encrypts your data as it writes it to disks in its data centers and decrypts
          * the data when you access it. You have the option to provide your own encryption
-         * key or use AWS managed encryption keys. For more information, see <a
+         * key or use AWS managed encryption keys (SSE-S3 or SSE-KMS). For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
-         * Server-Side Encryption</a>.</p> <p> <b>Access Control List (ACL)-Specific
-         * Request Headers</b> </p> <p>You can use headers to grant ACL- based permissions.
-         * By default, all objects are private. Only the owner has full access control.
-         * When adding a new object, you can grant permissions to individual AWS accounts
-         * or to predefined groups defined by Amazon S3. These permissions are then added
-         * to the ACL on the object. For more information, see <a
+         * Server-Side Encryption</a>.</p> <p>If you request server-side encryption using
+         * AWS Key Management Service (SSE-KMS), you can enable an S3 Bucket Key at the
+         * object-level. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+         * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         * <p> <b>Access Control List (ACL)-Specific Request Headers</b> </p> <p>You can
+         * use headers to grant ACL- based permissions. By default, all objects are
+         * private. Only the owner has full access control. When adding a new object, you
+         * can grant permissions to individual AWS accounts or to predefined groups defined
+         * by Amazon S3. These permissions are then added to the ACL on the object. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
@@ -8850,14 +8862,20 @@ namespace Aws
          * optionally request server-side encryption. With server-side encryption, Amazon
          * S3 encrypts your data as it writes it to disks in its data centers and decrypts
          * the data when you access it. You have the option to provide your own encryption
-         * key or use AWS managed encryption keys. For more information, see <a
+         * key or use AWS managed encryption keys (SSE-S3 or SSE-KMS). For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
-         * Server-Side Encryption</a>.</p> <p> <b>Access Control List (ACL)-Specific
-         * Request Headers</b> </p> <p>You can use headers to grant ACL- based permissions.
-         * By default, all objects are private. Only the owner has full access control.
-         * When adding a new object, you can grant permissions to individual AWS accounts
-         * or to predefined groups defined by Amazon S3. These permissions are then added
-         * to the ACL on the object. For more information, see <a
+         * Server-Side Encryption</a>.</p> <p>If you request server-side encryption using
+         * AWS Key Management Service (SSE-KMS), you can enable an S3 Bucket Key at the
+         * object-level. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+         * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         * <p> <b>Access Control List (ACL)-Specific Request Headers</b> </p> <p>You can
+         * use headers to grant ACL- based permissions. By default, all objects are
+         * private. Only the owner has full access control. When adding a new object, you
+         * can grant permissions to individual AWS accounts or to predefined groups defined
+         * by Amazon S3. These permissions are then added to the ACL on the object. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
@@ -8913,14 +8931,20 @@ namespace Aws
          * optionally request server-side encryption. With server-side encryption, Amazon
          * S3 encrypts your data as it writes it to disks in its data centers and decrypts
          * the data when you access it. You have the option to provide your own encryption
-         * key or use AWS managed encryption keys. For more information, see <a
+         * key or use AWS managed encryption keys (SSE-S3 or SSE-KMS). For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
-         * Server-Side Encryption</a>.</p> <p> <b>Access Control List (ACL)-Specific
-         * Request Headers</b> </p> <p>You can use headers to grant ACL- based permissions.
-         * By default, all objects are private. Only the owner has full access control.
-         * When adding a new object, you can grant permissions to individual AWS accounts
-         * or to predefined groups defined by Amazon S3. These permissions are then added
-         * to the ACL on the object. For more information, see <a
+         * Server-Side Encryption</a>.</p> <p>If you request server-side encryption using
+         * AWS Key Management Service (SSE-KMS), you can enable an S3 Bucket Key at the
+         * object-level. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+         * Bucket Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         * <p> <b>Access Control List (ACL)-Specific Request Headers</b> </p> <p>You can
+         * use headers to grant ACL- based permissions. By default, all objects are
+         * private. Only the owner has full access control. When adding a new object, you
+         * can grant permissions to individual AWS accounts or to predefined groups defined
+         * by Amazon S3. These permissions are then added to the ACL on the object. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing

@@ -93,98 +93,114 @@ namespace Model
 
     /**
      * <p>A list of the instance types on which a transformation job can be run or on
-     * which an endpoint can be deployed.</p>
+     * which an endpoint can be deployed.</p> <p>This parameter is required for
+     * unversioned models, and optional for versioned models.</p>
      */
     inline const Aws::Vector<TransformInstanceType>& GetSupportedTransformInstanceTypes() const{ return m_supportedTransformInstanceTypes; }
 
     /**
      * <p>A list of the instance types on which a transformation job can be run or on
-     * which an endpoint can be deployed.</p>
+     * which an endpoint can be deployed.</p> <p>This parameter is required for
+     * unversioned models, and optional for versioned models.</p>
      */
     inline bool SupportedTransformInstanceTypesHasBeenSet() const { return m_supportedTransformInstanceTypesHasBeenSet; }
 
     /**
      * <p>A list of the instance types on which a transformation job can be run or on
-     * which an endpoint can be deployed.</p>
+     * which an endpoint can be deployed.</p> <p>This parameter is required for
+     * unversioned models, and optional for versioned models.</p>
      */
     inline void SetSupportedTransformInstanceTypes(const Aws::Vector<TransformInstanceType>& value) { m_supportedTransformInstanceTypesHasBeenSet = true; m_supportedTransformInstanceTypes = value; }
 
     /**
      * <p>A list of the instance types on which a transformation job can be run or on
-     * which an endpoint can be deployed.</p>
+     * which an endpoint can be deployed.</p> <p>This parameter is required for
+     * unversioned models, and optional for versioned models.</p>
      */
     inline void SetSupportedTransformInstanceTypes(Aws::Vector<TransformInstanceType>&& value) { m_supportedTransformInstanceTypesHasBeenSet = true; m_supportedTransformInstanceTypes = std::move(value); }
 
     /**
      * <p>A list of the instance types on which a transformation job can be run or on
-     * which an endpoint can be deployed.</p>
+     * which an endpoint can be deployed.</p> <p>This parameter is required for
+     * unversioned models, and optional for versioned models.</p>
      */
     inline InferenceSpecification& WithSupportedTransformInstanceTypes(const Aws::Vector<TransformInstanceType>& value) { SetSupportedTransformInstanceTypes(value); return *this;}
 
     /**
      * <p>A list of the instance types on which a transformation job can be run or on
-     * which an endpoint can be deployed.</p>
+     * which an endpoint can be deployed.</p> <p>This parameter is required for
+     * unversioned models, and optional for versioned models.</p>
      */
     inline InferenceSpecification& WithSupportedTransformInstanceTypes(Aws::Vector<TransformInstanceType>&& value) { SetSupportedTransformInstanceTypes(std::move(value)); return *this;}
 
     /**
      * <p>A list of the instance types on which a transformation job can be run or on
-     * which an endpoint can be deployed.</p>
+     * which an endpoint can be deployed.</p> <p>This parameter is required for
+     * unversioned models, and optional for versioned models.</p>
      */
     inline InferenceSpecification& AddSupportedTransformInstanceTypes(const TransformInstanceType& value) { m_supportedTransformInstanceTypesHasBeenSet = true; m_supportedTransformInstanceTypes.push_back(value); return *this; }
 
     /**
      * <p>A list of the instance types on which a transformation job can be run or on
-     * which an endpoint can be deployed.</p>
+     * which an endpoint can be deployed.</p> <p>This parameter is required for
+     * unversioned models, and optional for versioned models.</p>
      */
     inline InferenceSpecification& AddSupportedTransformInstanceTypes(TransformInstanceType&& value) { m_supportedTransformInstanceTypesHasBeenSet = true; m_supportedTransformInstanceTypes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A list of the instance types that are used to generate inferences in
-     * real-time.</p>
+     * real-time.</p> <p>This parameter is required for unversioned models, and
+     * optional for versioned models.</p>
      */
     inline const Aws::Vector<ProductionVariantInstanceType>& GetSupportedRealtimeInferenceInstanceTypes() const{ return m_supportedRealtimeInferenceInstanceTypes; }
 
     /**
      * <p>A list of the instance types that are used to generate inferences in
-     * real-time.</p>
+     * real-time.</p> <p>This parameter is required for unversioned models, and
+     * optional for versioned models.</p>
      */
     inline bool SupportedRealtimeInferenceInstanceTypesHasBeenSet() const { return m_supportedRealtimeInferenceInstanceTypesHasBeenSet; }
 
     /**
      * <p>A list of the instance types that are used to generate inferences in
-     * real-time.</p>
+     * real-time.</p> <p>This parameter is required for unversioned models, and
+     * optional for versioned models.</p>
      */
     inline void SetSupportedRealtimeInferenceInstanceTypes(const Aws::Vector<ProductionVariantInstanceType>& value) { m_supportedRealtimeInferenceInstanceTypesHasBeenSet = true; m_supportedRealtimeInferenceInstanceTypes = value; }
 
     /**
      * <p>A list of the instance types that are used to generate inferences in
-     * real-time.</p>
+     * real-time.</p> <p>This parameter is required for unversioned models, and
+     * optional for versioned models.</p>
      */
     inline void SetSupportedRealtimeInferenceInstanceTypes(Aws::Vector<ProductionVariantInstanceType>&& value) { m_supportedRealtimeInferenceInstanceTypesHasBeenSet = true; m_supportedRealtimeInferenceInstanceTypes = std::move(value); }
 
     /**
      * <p>A list of the instance types that are used to generate inferences in
-     * real-time.</p>
+     * real-time.</p> <p>This parameter is required for unversioned models, and
+     * optional for versioned models.</p>
      */
     inline InferenceSpecification& WithSupportedRealtimeInferenceInstanceTypes(const Aws::Vector<ProductionVariantInstanceType>& value) { SetSupportedRealtimeInferenceInstanceTypes(value); return *this;}
 
     /**
      * <p>A list of the instance types that are used to generate inferences in
-     * real-time.</p>
+     * real-time.</p> <p>This parameter is required for unversioned models, and
+     * optional for versioned models.</p>
      */
     inline InferenceSpecification& WithSupportedRealtimeInferenceInstanceTypes(Aws::Vector<ProductionVariantInstanceType>&& value) { SetSupportedRealtimeInferenceInstanceTypes(std::move(value)); return *this;}
 
     /**
      * <p>A list of the instance types that are used to generate inferences in
-     * real-time.</p>
+     * real-time.</p> <p>This parameter is required for unversioned models, and
+     * optional for versioned models.</p>
      */
     inline InferenceSpecification& AddSupportedRealtimeInferenceInstanceTypes(const ProductionVariantInstanceType& value) { m_supportedRealtimeInferenceInstanceTypesHasBeenSet = true; m_supportedRealtimeInferenceInstanceTypes.push_back(value); return *this; }
 
     /**
      * <p>A list of the instance types that are used to generate inferences in
-     * real-time.</p>
+     * real-time.</p> <p>This parameter is required for unversioned models, and
+     * optional for versioned models.</p>
      */
     inline InferenceSpecification& AddSupportedRealtimeInferenceInstanceTypes(ProductionVariantInstanceType&& value) { m_supportedRealtimeInferenceInstanceTypesHasBeenSet = true; m_supportedRealtimeInferenceInstanceTypes.push_back(std::move(value)); return *this; }
 

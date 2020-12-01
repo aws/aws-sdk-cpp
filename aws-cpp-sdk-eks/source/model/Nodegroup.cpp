@@ -28,6 +28,8 @@ Nodegroup::Nodegroup() :
     m_modifiedAtHasBeenSet(false),
     m_status(NodegroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_capacityType(CapacityTypes::NOT_SET),
+    m_capacityTypeHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
     m_subnetsHasBeenSet(false),
@@ -55,6 +57,8 @@ Nodegroup::Nodegroup(JsonView jsonValue) :
     m_modifiedAtHasBeenSet(false),
     m_status(NodegroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_capacityType(CapacityTypes::NOT_SET),
+    m_capacityTypeHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
     m_subnetsHasBeenSet(false),
@@ -129,6 +133,13 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     m_status = NodegroupStatusMapper::GetNodegroupStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("capacityType"))
+  {
+    m_capacityType = CapacityTypesMapper::GetCapacityTypesForName(jsonValue.GetString("capacityType"));
+
+    m_capacityTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scalingConfig"))
@@ -277,6 +288,11 @@ JsonValue Nodegroup::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", NodegroupStatusMapper::GetNameForNodegroupStatus(m_status));
+  }
+
+  if(m_capacityTypeHasBeenSet)
+  {
+   payload.WithString("capacityType", CapacityTypesMapper::GetNameForCapacityTypes(m_capacityType));
   }
 
   if(m_scalingConfigHasBeenSet)

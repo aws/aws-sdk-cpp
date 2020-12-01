@@ -87,6 +87,12 @@ DescribeEndpointResult& DescribeEndpointResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("LastDeploymentConfig"))
+  {
+    m_lastDeploymentConfig = jsonValue.GetObject("LastDeploymentConfig");
+
+  }
+
 
 
   return *this;

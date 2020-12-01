@@ -19,7 +19,9 @@ ModifyVolumeRequest::ModifyVolumeRequest() :
     m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,11 @@ Aws::String ModifyVolumeRequest::SerializePayload() const
   if(m_iopsHasBeenSet)
   {
     ss << "Iops=" << m_iops << "&";
+  }
+
+  if(m_throughputHasBeenSet)
+  {
+    ss << "Throughput=" << m_throughput << "&";
   }
 
   ss << "Version=2016-11-15";

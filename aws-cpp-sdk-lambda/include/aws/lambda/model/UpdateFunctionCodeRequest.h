@@ -307,6 +307,47 @@ namespace Model
 
 
     /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline UpdateFunctionCodeRequest& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline UpdateFunctionCodeRequest& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline UpdateFunctionCodeRequest& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+
+
+    /**
      * <p>Set to true to publish a new version of the function after updating the code.
      * This has the same effect as calling <a>PublishVersion</a> separately.</p>
      */
@@ -428,6 +469,9 @@ namespace Model
 
     Aws::String m_s3ObjectVersion;
     bool m_s3ObjectVersionHasBeenSet;
+
+    Aws::String m_imageUri;
+    bool m_imageUriHasBeenSet;
 
     bool m_publish;
     bool m_publishHasBeenSet;

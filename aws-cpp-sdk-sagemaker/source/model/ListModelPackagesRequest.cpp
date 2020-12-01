@@ -18,6 +18,11 @@ ListModelPackagesRequest::ListModelPackagesRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nameContainsHasBeenSet(false),
+    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
+    m_modelApprovalStatusHasBeenSet(false),
+    m_modelPackageGroupNameHasBeenSet(false),
+    m_modelPackageType(ModelPackageType::NOT_SET),
+    m_modelPackageTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_sortBy(ModelPackageSortBy::NOT_SET),
     m_sortByHasBeenSet(false),
@@ -50,6 +55,22 @@ Aws::String ListModelPackagesRequest::SerializePayload() const
   {
    payload.WithString("NameContains", m_nameContains);
 
+  }
+
+  if(m_modelApprovalStatusHasBeenSet)
+  {
+   payload.WithString("ModelApprovalStatus", ModelApprovalStatusMapper::GetNameForModelApprovalStatus(m_modelApprovalStatus));
+  }
+
+  if(m_modelPackageGroupNameHasBeenSet)
+  {
+   payload.WithString("ModelPackageGroupName", m_modelPackageGroupName);
+
+  }
+
+  if(m_modelPackageTypeHasBeenSet)
+  {
+   payload.WithString("ModelPackageType", ModelPackageTypeMapper::GetNameForModelPackageType(m_modelPackageType));
   }
 
   if(m_nextTokenHasBeenSet)

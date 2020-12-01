@@ -30,6 +30,8 @@ namespace Aws
         static const int SubnetOutOfIPAddresses_HASH = HashingUtils::HashString("SubnetOutOfIPAddresses");
         static const int InvalidSubnet_HASH = HashingUtils::HashString("InvalidSubnet");
         static const int InvalidSecurityGroup_HASH = HashingUtils::HashString("InvalidSecurityGroup");
+        static const int ImageDeleted_HASH = HashingUtils::HashString("ImageDeleted");
+        static const int ImageAccessDenied_HASH = HashingUtils::HashString("ImageAccessDenied");
 
 
         StateReasonCode GetStateReasonCodeForName(const Aws::String& name)
@@ -75,6 +77,14 @@ namespace Aws
           {
             return StateReasonCode::InvalidSecurityGroup;
           }
+          else if (hashCode == ImageDeleted_HASH)
+          {
+            return StateReasonCode::ImageDeleted;
+          }
+          else if (hashCode == ImageAccessDenied_HASH)
+          {
+            return StateReasonCode::ImageAccessDenied;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +119,10 @@ namespace Aws
             return "InvalidSubnet";
           case StateReasonCode::InvalidSecurityGroup:
             return "InvalidSecurityGroup";
+          case StateReasonCode::ImageDeleted:
+            return "ImageDeleted";
+          case StateReasonCode::ImageAccessDenied:
+            return "ImageAccessDenied";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

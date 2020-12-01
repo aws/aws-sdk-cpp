@@ -113,121 +113,178 @@ namespace Model
 
     /**
      * <p>The target size of the volume, in GiB. The target volume size must be greater
-     * than or equal to than the existing size of the volume. For information about
-     * available EBS volume sizes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
+     * than or equal to the existing size of the volume.</p> <p>The following are the
+     * supported volumes sizes for each volume type:</p> <ul> <li> <p> <code>gp2</code>
+     * and <code>gp3</code>: 1-16,384</p> </li> <li> <p> <code>io1</code> and
+     * <code>io2</code>: 4-16,384</p> </li> <li> <p> <code>st1</code> and
+     * <code>sc1</code>: 125-16,384</p> </li> <li> <p> <code>standard</code>:
+     * 1-1,024</p> </li> </ul> <p>Default: If no size is specified, the existing size
      * is retained.</p>
      */
     inline int GetSize() const{ return m_size; }
 
     /**
      * <p>The target size of the volume, in GiB. The target volume size must be greater
-     * than or equal to than the existing size of the volume. For information about
-     * available EBS volume sizes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
+     * than or equal to the existing size of the volume.</p> <p>The following are the
+     * supported volumes sizes for each volume type:</p> <ul> <li> <p> <code>gp2</code>
+     * and <code>gp3</code>: 1-16,384</p> </li> <li> <p> <code>io1</code> and
+     * <code>io2</code>: 4-16,384</p> </li> <li> <p> <code>st1</code> and
+     * <code>sc1</code>: 125-16,384</p> </li> <li> <p> <code>standard</code>:
+     * 1-1,024</p> </li> </ul> <p>Default: If no size is specified, the existing size
      * is retained.</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
      * <p>The target size of the volume, in GiB. The target volume size must be greater
-     * than or equal to than the existing size of the volume. For information about
-     * available EBS volume sizes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
+     * than or equal to the existing size of the volume.</p> <p>The following are the
+     * supported volumes sizes for each volume type:</p> <ul> <li> <p> <code>gp2</code>
+     * and <code>gp3</code>: 1-16,384</p> </li> <li> <p> <code>io1</code> and
+     * <code>io2</code>: 4-16,384</p> </li> <li> <p> <code>st1</code> and
+     * <code>sc1</code>: 125-16,384</p> </li> <li> <p> <code>standard</code>:
+     * 1-1,024</p> </li> </ul> <p>Default: If no size is specified, the existing size
      * is retained.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
      * <p>The target size of the volume, in GiB. The target volume size must be greater
-     * than or equal to than the existing size of the volume. For information about
-     * available EBS volume sizes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
+     * than or equal to the existing size of the volume.</p> <p>The following are the
+     * supported volumes sizes for each volume type:</p> <ul> <li> <p> <code>gp2</code>
+     * and <code>gp3</code>: 1-16,384</p> </li> <li> <p> <code>io1</code> and
+     * <code>io2</code>: 4-16,384</p> </li> <li> <p> <code>st1</code> and
+     * <code>sc1</code>: 125-16,384</p> </li> <li> <p> <code>standard</code>:
+     * 1-1,024</p> </li> </ul> <p>Default: If no size is specified, the existing size
      * is retained.</p>
      */
     inline ModifyVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
 
 
     /**
-     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
-     * specified, the existing type is retained.</p>
+     * <p>The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: If no type is specified, the existing type is retained.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
-     * specified, the existing type is retained.</p>
+     * <p>The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: If no type is specified, the existing type is retained.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
-     * specified, the existing type is retained.</p>
+     * <p>The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: If no type is specified, the existing type is retained.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
-     * specified, the existing type is retained.</p>
+     * <p>The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: If no type is specified, the existing type is retained.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
-     * specified, the existing type is retained.</p>
+     * <p>The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: If no type is specified, the existing type is retained.</p>
      */
     inline ModifyVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
-     * specified, the existing type is retained.</p>
+     * <p>The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: If no type is specified, the existing type is retained.</p>
      */
     inline ModifyVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
-     * IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     * Provisioned IOPS SSD (io1 and io2) volumes</a>.</p> <p>Default: If no IOPS value
-     * is specified, the existing value is retained.</p>
+     * <p>The target IOPS rate of the volume. This parameter is valid only for
+     * <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p> <p>The
+     * following are the supported values for each volume type:</p> <ul> <li> <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
+     * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+     * </ul> <p>Default: If no IOPS value is specified, the existing value is
+     * retained.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
-     * IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     * Provisioned IOPS SSD (io1 and io2) volumes</a>.</p> <p>Default: If no IOPS value
-     * is specified, the existing value is retained.</p>
+     * <p>The target IOPS rate of the volume. This parameter is valid only for
+     * <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p> <p>The
+     * following are the supported values for each volume type:</p> <ul> <li> <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
+     * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+     * </ul> <p>Default: If no IOPS value is specified, the existing value is
+     * retained.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
-     * IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     * Provisioned IOPS SSD (io1 and io2) volumes</a>.</p> <p>Default: If no IOPS value
-     * is specified, the existing value is retained.</p>
+     * <p>The target IOPS rate of the volume. This parameter is valid only for
+     * <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p> <p>The
+     * following are the supported values for each volume type:</p> <ul> <li> <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
+     * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+     * </ul> <p>Default: If no IOPS value is specified, the existing value is
+     * retained.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
-     * IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     * Provisioned IOPS SSD (io1 and io2) volumes</a>.</p> <p>Default: If no IOPS value
-     * is specified, the existing value is retained.</p>
+     * <p>The target IOPS rate of the volume. This parameter is valid only for
+     * <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p> <p>The
+     * following are the supported values for each volume type:</p> <ul> <li> <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
+     * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+     * </ul> <p>Default: If no IOPS value is specified, the existing value is
+     * retained.</p>
      */
     inline ModifyVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
+
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s. This parameter is valid only
+     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: If no
+     * throughput value is specified, the existing value is retained.</p> <p>Valid
+     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     */
+    inline int GetThroughput() const{ return m_throughput; }
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s. This parameter is valid only
+     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: If no
+     * throughput value is specified, the existing value is retained.</p> <p>Valid
+     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     */
+    inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s. This parameter is valid only
+     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: If no
+     * throughput value is specified, the existing value is retained.</p> <p>Valid
+     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     */
+    inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s. This parameter is valid only
+     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: If no
+     * throughput value is specified, the existing value is retained.</p> <p>Valid
+     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     */
+    inline ModifyVolumeRequest& WithThroughput(int value) { SetThroughput(value); return *this;}
 
   private:
 
@@ -245,6 +302,9 @@ namespace Model
 
     int m_iops;
     bool m_iopsHasBeenSet;
+
+    int m_throughput;
+    bool m_throughputHasBeenSet;
   };
 
 } // namespace Model

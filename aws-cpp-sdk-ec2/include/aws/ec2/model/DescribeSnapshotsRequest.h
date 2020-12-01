@@ -270,10 +270,11 @@ namespace Model
      * single page along with a <code>NextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * value. This value can be between 5 and 1,000; if <code>MaxResults</code> is
+     * given a value larger than 1,000, only 1,000 results are returned. If this
+     * parameter is not used, then <code>DescribeSnapshots</code> returns all results.
+     * You cannot specify this parameter and the snapshot IDs parameter in the same
+     * request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -284,10 +285,11 @@ namespace Model
      * single page along with a <code>NextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * value. This value can be between 5 and 1,000; if <code>MaxResults</code> is
+     * given a value larger than 1,000, only 1,000 results are returned. If this
+     * parameter is not used, then <code>DescribeSnapshots</code> returns all results.
+     * You cannot specify this parameter and the snapshot IDs parameter in the same
+     * request.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -298,10 +300,11 @@ namespace Model
      * single page along with a <code>NextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * value. This value can be between 5 and 1,000; if <code>MaxResults</code> is
+     * given a value larger than 1,000, only 1,000 results are returned. If this
+     * parameter is not used, then <code>DescribeSnapshots</code> returns all results.
+     * You cannot specify this parameter and the snapshot IDs parameter in the same
+     * request.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -312,10 +315,11 @@ namespace Model
      * single page along with a <code>NextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * value. This value can be between 5 and 1,000; if <code>MaxResults</code> is
+     * given a value larger than 1,000, only 1,000 results are returned. If this
+     * parameter is not used, then <code>DescribeSnapshots</code> returns all results.
+     * You cannot specify this parameter and the snapshot IDs parameter in the same
+     * request.</p>
      */
     inline DescribeSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

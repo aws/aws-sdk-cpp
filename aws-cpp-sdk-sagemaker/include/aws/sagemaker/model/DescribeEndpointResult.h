@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/DataCaptureConfigSummary.h>
 #include <aws/sagemaker/model/EndpointStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/DeploymentConfig.h>
 #include <aws/sagemaker/model/ProductionVariantSummary.h>
 #include <utility>
 
@@ -434,6 +435,32 @@ namespace Model
      */
     inline DescribeEndpointResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The most recent deployment configuration for the endpoint.</p>
+     */
+    inline const DeploymentConfig& GetLastDeploymentConfig() const{ return m_lastDeploymentConfig; }
+
+    /**
+     * <p>The most recent deployment configuration for the endpoint.</p>
+     */
+    inline void SetLastDeploymentConfig(const DeploymentConfig& value) { m_lastDeploymentConfig = value; }
+
+    /**
+     * <p>The most recent deployment configuration for the endpoint.</p>
+     */
+    inline void SetLastDeploymentConfig(DeploymentConfig&& value) { m_lastDeploymentConfig = std::move(value); }
+
+    /**
+     * <p>The most recent deployment configuration for the endpoint.</p>
+     */
+    inline DescribeEndpointResult& WithLastDeploymentConfig(const DeploymentConfig& value) { SetLastDeploymentConfig(value); return *this;}
+
+    /**
+     * <p>The most recent deployment configuration for the endpoint.</p>
+     */
+    inline DescribeEndpointResult& WithLastDeploymentConfig(DeploymentConfig&& value) { SetLastDeploymentConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -453,6 +480,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_lastModifiedTime;
+
+    DeploymentConfig m_lastDeploymentConfig;
   };
 
 } // namespace Model

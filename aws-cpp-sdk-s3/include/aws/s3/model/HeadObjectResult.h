@@ -971,6 +971,25 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline HeadObjectResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
+
+    /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
      * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
@@ -1034,125 +1053,160 @@ namespace Model
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline const ReplicationStatus& GetReplicationStatus() const{ return m_replicationStatus; }
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline void SetReplicationStatus(const ReplicationStatus& value) { m_replicationStatus = value; }
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline void SetReplicationStatus(ReplicationStatus&& value) { m_replicationStatus = std::move(value); }
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline HeadObjectResult& WithReplicationStatus(const ReplicationStatus& value) { SetReplicationStatus(value); return *this;}
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline HeadObjectResult& WithReplicationStatus(ReplicationStatus&& value) { SetReplicationStatus(std::move(value)); return *this;}
@@ -1356,6 +1410,8 @@ namespace Model
     Aws::String m_sSECustomerKeyMD5;
 
     Aws::String m_sSEKMSKeyId;
+
+    bool m_bucketKeyEnabled;
 
     StorageClass m_storageClass;
 
