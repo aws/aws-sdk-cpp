@@ -370,6 +370,7 @@ namespace Aws
         static const int m6gd_8xlarge_HASH = HashingUtils::HashString("m6gd.8xlarge");
         static const int m6gd_12xlarge_HASH = HashingUtils::HashString("m6gd.12xlarge");
         static const int m6gd_16xlarge_HASH = HashingUtils::HashString("m6gd.16xlarge");
+        static const int mac1_metal_HASH = HashingUtils::HashString("mac1.metal");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -2136,6 +2137,11 @@ namespace Aws
             enumValue = InstanceType::m6gd_16xlarge;
             return true;
           }
+          else if (hashCode == mac1_metal_HASH)
+          {
+            enumValue = InstanceType::mac1_metal;
+            return true;
+          }
           return false;
         }
 
@@ -3208,6 +3214,9 @@ namespace Aws
             return true;
           case InstanceType::m6gd_16xlarge:
             value = "m6gd.16xlarge";
+            return true;
+          case InstanceType::mac1_metal:
+            value = "mac1.metal";
             return true;
           default:
             return false;

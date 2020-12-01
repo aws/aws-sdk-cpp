@@ -365,7 +365,8 @@ namespace Model
     m6gd_4xlarge,
     m6gd_8xlarge,
     m6gd_12xlarge,
-    m6gd_16xlarge
+    m6gd_16xlarge,
+    mac1_metal
   };
 
 namespace InstanceTypeMapper
