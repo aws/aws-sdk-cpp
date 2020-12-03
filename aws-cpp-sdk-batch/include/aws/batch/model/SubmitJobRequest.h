@@ -529,37 +529,49 @@ namespace Model
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline const NodeOverrides& GetNodeOverrides() const{ return m_nodeOverrides; }
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline bool NodeOverridesHasBeenSet() const { return m_nodeOverridesHasBeenSet; }
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline void SetNodeOverrides(const NodeOverrides& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = value; }
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline void SetNodeOverrides(NodeOverrides&& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = std::move(value); }
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline SubmitJobRequest& WithNodeOverrides(const NodeOverrides& value) { SetNodeOverrides(value); return *this;}
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline SubmitJobRequest& WithNodeOverrides(NodeOverrides&& value) { SetNodeOverrides(std::move(value)); return *this;}
 
@@ -608,11 +620,56 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state. When specified, this
+     * overrides the tag propagation setting in the job definition.</p>
+     */
+    inline bool GetPropagateTags() const{ return m_propagateTags; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state. When specified, this
+     * overrides the tag propagation setting in the job definition.</p>
+     */
+    inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state. When specified, this
+     * overrides the tag propagation setting in the job definition.</p>
+     */
+    inline void SetPropagateTags(bool value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state. When specified, this
+     * overrides the tag propagation setting in the job definition.</p>
+     */
+    inline SubmitJobRequest& WithPropagateTags(bool value) { SetPropagateTags(value); return *this;}
+
+
+    /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -623,9 +680,9 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -636,9 +693,9 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -649,9 +706,9 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -662,9 +719,9 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -675,9 +732,9 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -831,6 +888,9 @@ namespace Model
 
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet;
+
+    bool m_propagateTags;
+    bool m_propagateTagsHasBeenSet;
 
     JobTimeout m_timeout;
     bool m_timeoutHasBeenSet;

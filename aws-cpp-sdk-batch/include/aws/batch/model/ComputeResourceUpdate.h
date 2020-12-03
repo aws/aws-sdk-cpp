@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -38,25 +41,29 @@ namespace Model
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>
+     * maintain.</p>  <p>This parameter isnt applicable to jobs running on
+     * Fargate resources, and shouldn't be specified.</p> 
      */
     inline int GetMinvCpus() const{ return m_minvCpus; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>
+     * maintain.</p>  <p>This parameter isnt applicable to jobs running on
+     * Fargate resources, and shouldn't be specified.</p> 
      */
     inline bool MinvCpusHasBeenSet() const { return m_minvCpusHasBeenSet; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>
+     * maintain.</p>  <p>This parameter isnt applicable to jobs running on
+     * Fargate resources, and shouldn't be specified.</p> 
      */
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>
+     * maintain.</p>  <p>This parameter isnt applicable to jobs running on
+     * Fargate resources, and shouldn't be specified.</p> 
      */
     inline ComputeResourceUpdate& WithMinvCpus(int value) { SetMinvCpus(value); return *this;}
 
@@ -83,24 +90,214 @@ namespace Model
 
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
+     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
+     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
+     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline void SetDesiredvCpus(int value) { m_desiredvCpusHasBeenSet = true; m_desiredvCpus = value; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
+     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline ComputeResourceUpdate& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
+
+
+    /**
+     * <p>The VPC subnets that the compute resources are launched into. This parameter
+     * is required for jobs running on Fargate compute resources, where it can contain
+     * up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
+     * EC2 compute resources. Providing an empty list will be handled as if this
+     * parameter wasn't specified and no change is made.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+
+    /**
+     * <p>The VPC subnets that the compute resources are launched into. This parameter
+     * is required for jobs running on Fargate compute resources, where it can contain
+     * up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
+     * EC2 compute resources. Providing an empty list will be handled as if this
+     * parameter wasn't specified and no change is made.</p>
+     */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+
+    /**
+     * <p>The VPC subnets that the compute resources are launched into. This parameter
+     * is required for jobs running on Fargate compute resources, where it can contain
+     * up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
+     * EC2 compute resources. Providing an empty list will be handled as if this
+     * parameter wasn't specified and no change is made.</p>
+     */
+    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+
+    /**
+     * <p>The VPC subnets that the compute resources are launched into. This parameter
+     * is required for jobs running on Fargate compute resources, where it can contain
+     * up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
+     * EC2 compute resources. Providing an empty list will be handled as if this
+     * parameter wasn't specified and no change is made.</p>
+     */
+    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
+
+    /**
+     * <p>The VPC subnets that the compute resources are launched into. This parameter
+     * is required for jobs running on Fargate compute resources, where it can contain
+     * up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
+     * EC2 compute resources. Providing an empty list will be handled as if this
+     * parameter wasn't specified and no change is made.</p>
+     */
+    inline ComputeResourceUpdate& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
+
+    /**
+     * <p>The VPC subnets that the compute resources are launched into. This parameter
+     * is required for jobs running on Fargate compute resources, where it can contain
+     * up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
+     * EC2 compute resources. Providing an empty list will be handled as if this
+     * parameter wasn't specified and no change is made.</p>
+     */
+    inline ComputeResourceUpdate& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
+
+    /**
+     * <p>The VPC subnets that the compute resources are launched into. This parameter
+     * is required for jobs running on Fargate compute resources, where it can contain
+     * up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
+     * EC2 compute resources. Providing an empty list will be handled as if this
+     * parameter wasn't specified and no change is made.</p>
+     */
+    inline ComputeResourceUpdate& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
+    /**
+     * <p>The VPC subnets that the compute resources are launched into. This parameter
+     * is required for jobs running on Fargate compute resources, where it can contain
+     * up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
+     * EC2 compute resources. Providing an empty list will be handled as if this
+     * parameter wasn't specified and no change is made.</p>
+     */
+    inline ComputeResourceUpdate& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The VPC subnets that the compute resources are launched into. This parameter
+     * is required for jobs running on Fargate compute resources, where it can contain
+     * up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
+     * EC2 compute resources. Providing an empty list will be handled as if this
+     * parameter wasn't specified and no change is made.</p>
+     */
+    inline ComputeResourceUpdate& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
+
+    /**
+     * <p>The Amazon EC2 security groups associated with instances launched in the
+     * compute environment. This parameter is required for Fargate compute resources,
+     * where it can contain up to 5 security groups. This can't be specified for EC2
+     * compute resources. Providing an empty list is handled as if this parameter
+     * wasn't specified and no changeis made.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The Amazon EC2 security groups associated with instances launched in the
+     * compute environment. This parameter is required for Fargate compute resources,
+     * where it can contain up to 5 security groups. This can't be specified for EC2
+     * compute resources. Providing an empty list is handled as if this parameter
+     * wasn't specified and no changeis made.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 security groups associated with instances launched in the
+     * compute environment. This parameter is required for Fargate compute resources,
+     * where it can contain up to 5 security groups. This can't be specified for EC2
+     * compute resources. Providing an empty list is handled as if this parameter
+     * wasn't specified and no changeis made.</p>
+     */
+    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+
+    /**
+     * <p>The Amazon EC2 security groups associated with instances launched in the
+     * compute environment. This parameter is required for Fargate compute resources,
+     * where it can contain up to 5 security groups. This can't be specified for EC2
+     * compute resources. Providing an empty list is handled as if this parameter
+     * wasn't specified and no changeis made.</p>
+     */
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
+
+    /**
+     * <p>The Amazon EC2 security groups associated with instances launched in the
+     * compute environment. This parameter is required for Fargate compute resources,
+     * where it can contain up to 5 security groups. This can't be specified for EC2
+     * compute resources. Providing an empty list is handled as if this parameter
+     * wasn't specified and no changeis made.</p>
+     */
+    inline ComputeResourceUpdate& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
+
+    /**
+     * <p>The Amazon EC2 security groups associated with instances launched in the
+     * compute environment. This parameter is required for Fargate compute resources,
+     * where it can contain up to 5 security groups. This can't be specified for EC2
+     * compute resources. Providing an empty list is handled as if this parameter
+     * wasn't specified and no changeis made.</p>
+     */
+    inline ComputeResourceUpdate& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EC2 security groups associated with instances launched in the
+     * compute environment. This parameter is required for Fargate compute resources,
+     * where it can contain up to 5 security groups. This can't be specified for EC2
+     * compute resources. Providing an empty list is handled as if this parameter
+     * wasn't specified and no changeis made.</p>
+     */
+    inline ComputeResourceUpdate& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon EC2 security groups associated with instances launched in the
+     * compute environment. This parameter is required for Fargate compute resources,
+     * where it can contain up to 5 security groups. This can't be specified for EC2
+     * compute resources. Providing an empty list is handled as if this parameter
+     * wasn't specified and no changeis made.</p>
+     */
+    inline ComputeResourceUpdate& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon EC2 security groups associated with instances launched in the
+     * compute environment. This parameter is required for Fargate compute resources,
+     * where it can contain up to 5 security groups. This can't be specified for EC2
+     * compute resources. Providing an empty list is handled as if this parameter
+     * wasn't specified and no changeis made.</p>
+     */
+    inline ComputeResourceUpdate& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
   private:
 
@@ -112,6 +309,12 @@ namespace Model
 
     int m_desiredvCpus;
     bool m_desiredvCpusHasBeenSet;
+
+    Aws::Vector<Aws::String> m_subnets;
+    bool m_subnetsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet;
   };
 
 } // namespace Model

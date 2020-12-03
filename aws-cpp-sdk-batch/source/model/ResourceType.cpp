@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int GPU_HASH = HashingUtils::HashString("GPU");
+        static const int VCPU_HASH = HashingUtils::HashString("VCPU");
+        static const int MEMORY_HASH = HashingUtils::HashString("MEMORY");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == GPU_HASH)
           {
             return ResourceType::GPU;
+          }
+          else if (hashCode == VCPU_HASH)
+          {
+            return ResourceType::VCPU;
+          }
+          else if (hashCode == MEMORY_HASH)
+          {
+            return ResourceType::MEMORY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +56,10 @@ namespace Aws
           {
           case ResourceType::GPU:
             return "GPU";
+          case ResourceType::VCPU:
+            return "VCPU";
+          case ResourceType::MEMORY:
+            return "MEMORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

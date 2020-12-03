@@ -143,31 +143,31 @@ namespace Model
 
     /**
      * <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to
-     * login with.</p>
+     * log in with.</p>
      */
     inline const LoginAuthConfigReqObj& GetLoginAuthConfig() const{ return m_loginAuthConfig; }
 
     /**
      * <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to
-     * login with.</p>
+     * log in with.</p>
      */
     inline void SetLoginAuthConfig(const LoginAuthConfigReqObj& value) { m_loginAuthConfig = value; }
 
     /**
      * <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to
-     * login with.</p>
+     * log in with.</p>
      */
     inline void SetLoginAuthConfig(LoginAuthConfigReqObj&& value) { m_loginAuthConfig = std::move(value); }
 
     /**
      * <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to
-     * login with.</p>
+     * log in with.</p>
      */
     inline UpdateBackendConfigResult& WithLoginAuthConfig(const LoginAuthConfigReqObj& value) { SetLoginAuthConfig(value); return *this;}
 
     /**
      * <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to
-     * login with.</p>
+     * log in with.</p>
      */
     inline UpdateBackendConfigResult& WithLoginAuthConfig(LoginAuthConfigReqObj&& value) { SetLoginAuthConfig(std::move(value)); return *this;}
 

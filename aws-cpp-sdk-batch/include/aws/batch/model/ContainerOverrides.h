@@ -42,56 +42,6 @@ namespace Model
 
 
     /**
-     * <p>The number of vCPUs to reserve for the container. This value overrides the
-     * value set in the job definition.</p>
-     */
-    inline int GetVcpus() const{ return m_vcpus; }
-
-    /**
-     * <p>The number of vCPUs to reserve for the container. This value overrides the
-     * value set in the job definition.</p>
-     */
-    inline bool VcpusHasBeenSet() const { return m_vcpusHasBeenSet; }
-
-    /**
-     * <p>The number of vCPUs to reserve for the container. This value overrides the
-     * value set in the job definition.</p>
-     */
-    inline void SetVcpus(int value) { m_vcpusHasBeenSet = true; m_vcpus = value; }
-
-    /**
-     * <p>The number of vCPUs to reserve for the container. This value overrides the
-     * value set in the job definition.</p>
-     */
-    inline ContainerOverrides& WithVcpus(int value) { SetVcpus(value); return *this;}
-
-
-    /**
-     * <p>The number of MiB of memory reserved for the job. This value overrides the
-     * value set in the job definition.</p>
-     */
-    inline int GetMemory() const{ return m_memory; }
-
-    /**
-     * <p>The number of MiB of memory reserved for the job. This value overrides the
-     * value set in the job definition.</p>
-     */
-    inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
-
-    /**
-     * <p>The number of MiB of memory reserved for the job. This value overrides the
-     * value set in the job definition.</p>
-     */
-    inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
-
-    /**
-     * <p>The number of MiB of memory reserved for the job. This value overrides the
-     * value set in the job definition.</p>
-     */
-    inline ContainerOverrides& WithMemory(int value) { SetMemory(value); return *this;}
-
-
-    /**
      * <p>The command to send to the container that overrides the default command from
      * the Docker image or the job definition.</p>
      */
@@ -147,50 +97,58 @@ namespace Model
 
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. This parameter is not
-     * valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. This parameter is not
-     * valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. This parameter is not
-     * valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. This parameter is not
-     * valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. This parameter is not
-     * valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. This parameter is not
-     * valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline ContainerOverrides& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. This parameter is not
-     * valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline ContainerOverrides& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. This parameter is not
-     * valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline ContainerOverrides& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -277,68 +235,62 @@ namespace Model
 
 
     /**
-     * <p>The type and amount of a resource to assign to a container. This value
-     * overrides the value set in the job definition. Currently, the only supported
-     * resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. This overrides the
+     * settings in the job definition. The supported resources include
+     * <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
      */
     inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. This value
-     * overrides the value set in the job definition. Currently, the only supported
-     * resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. This overrides the
+     * settings in the job definition. The supported resources include
+     * <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
      */
     inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. This value
-     * overrides the value set in the job definition. Currently, the only supported
-     * resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. This overrides the
+     * settings in the job definition. The supported resources include
+     * <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
      */
     inline void SetResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. This value
-     * overrides the value set in the job definition. Currently, the only supported
-     * resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. This overrides the
+     * settings in the job definition. The supported resources include
+     * <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
      */
     inline void SetResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. This value
-     * overrides the value set in the job definition. Currently, the only supported
-     * resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. This overrides the
+     * settings in the job definition. The supported resources include
+     * <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
      */
     inline ContainerOverrides& WithResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
 
     /**
-     * <p>The type and amount of a resource to assign to a container. This value
-     * overrides the value set in the job definition. Currently, the only supported
-     * resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. This overrides the
+     * settings in the job definition. The supported resources include
+     * <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
      */
     inline ContainerOverrides& WithResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
 
     /**
-     * <p>The type and amount of a resource to assign to a container. This value
-     * overrides the value set in the job definition. Currently, the only supported
-     * resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. This overrides the
+     * settings in the job definition. The supported resources include
+     * <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
      */
     inline ContainerOverrides& AddResourceRequirements(const ResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. This value
-     * overrides the value set in the job definition. Currently, the only supported
-     * resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. This overrides the
+     * settings in the job definition. The supported resources include
+     * <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
      */
     inline ContainerOverrides& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
 
   private:
-
-    int m_vcpus;
-    bool m_vcpusHasBeenSet;
-
-    int m_memory;
-    bool m_memoryHasBeenSet;
 
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet;

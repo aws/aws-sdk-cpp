@@ -185,42 +185,50 @@ namespace Model
 
 
     /**
-     * <p>Scope of AMI associations.</p>
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
      */
     inline const Aws::String& GetAmiAssociationScope() const{ return m_amiAssociationScope; }
 
     /**
-     * <p>Scope of AMI associations.</p>
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
      */
     inline bool AmiAssociationScopeHasBeenSet() const { return m_amiAssociationScopeHasBeenSet; }
 
     /**
-     * <p>Scope of AMI associations.</p>
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
      */
     inline void SetAmiAssociationScope(const Aws::String& value) { m_amiAssociationScopeHasBeenSet = true; m_amiAssociationScope = value; }
 
     /**
-     * <p>Scope of AMI associations.</p>
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
      */
     inline void SetAmiAssociationScope(Aws::String&& value) { m_amiAssociationScopeHasBeenSet = true; m_amiAssociationScope = std::move(value); }
 
     /**
-     * <p>Scope of AMI associations.</p>
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
      */
     inline void SetAmiAssociationScope(const char* value) { m_amiAssociationScopeHasBeenSet = true; m_amiAssociationScope.assign(value); }
 
     /**
-     * <p>Scope of AMI associations.</p>
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
      */
     inline LicenseConfigurationAssociation& WithAmiAssociationScope(const Aws::String& value) { SetAmiAssociationScope(value); return *this;}
 
     /**
-     * <p>Scope of AMI associations.</p>
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
      */
     inline LicenseConfigurationAssociation& WithAmiAssociationScope(Aws::String&& value) { SetAmiAssociationScope(std::move(value)); return *this;}
 
     /**
-     * <p>Scope of AMI associations.</p>
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
      */
     inline LicenseConfigurationAssociation& WithAmiAssociationScope(const char* value) { SetAmiAssociationScope(value); return *this;}
 

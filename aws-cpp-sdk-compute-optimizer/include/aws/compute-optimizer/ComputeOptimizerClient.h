@@ -15,6 +15,7 @@
 #include <aws/compute-optimizer/model/ExportAutoScalingGroupRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportEC2InstanceRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetAutoScalingGroupRecommendationsResult.h>
+#include <aws/compute-optimizer/model/GetEBSVolumeRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusResult.h>
@@ -63,6 +64,7 @@ namespace Model
         class ExportAutoScalingGroupRecommendationsRequest;
         class ExportEC2InstanceRecommendationsRequest;
         class GetAutoScalingGroupRecommendationsRequest;
+        class GetEBSVolumeRecommendationsRequest;
         class GetEC2InstanceRecommendationsRequest;
         class GetEC2RecommendationProjectedMetricsRequest;
         class GetEnrollmentStatusRequest;
@@ -73,6 +75,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ExportAutoScalingGroupRecommendationsResult, ComputeOptimizerError> ExportAutoScalingGroupRecommendationsOutcome;
         typedef Aws::Utils::Outcome<ExportEC2InstanceRecommendationsResult, ComputeOptimizerError> ExportEC2InstanceRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetAutoScalingGroupRecommendationsResult, ComputeOptimizerError> GetAutoScalingGroupRecommendationsOutcome;
+        typedef Aws::Utils::Outcome<GetEBSVolumeRecommendationsResult, ComputeOptimizerError> GetEBSVolumeRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetEC2InstanceRecommendationsResult, ComputeOptimizerError> GetEC2InstanceRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetEC2RecommendationProjectedMetricsResult, ComputeOptimizerError> GetEC2RecommendationProjectedMetricsOutcome;
         typedef Aws::Utils::Outcome<GetEnrollmentStatusResult, ComputeOptimizerError> GetEnrollmentStatusOutcome;
@@ -83,6 +86,7 @@ namespace Model
         typedef std::future<ExportAutoScalingGroupRecommendationsOutcome> ExportAutoScalingGroupRecommendationsOutcomeCallable;
         typedef std::future<ExportEC2InstanceRecommendationsOutcome> ExportEC2InstanceRecommendationsOutcomeCallable;
         typedef std::future<GetAutoScalingGroupRecommendationsOutcome> GetAutoScalingGroupRecommendationsOutcomeCallable;
+        typedef std::future<GetEBSVolumeRecommendationsOutcome> GetEBSVolumeRecommendationsOutcomeCallable;
         typedef std::future<GetEC2InstanceRecommendationsOutcome> GetEC2InstanceRecommendationsOutcomeCallable;
         typedef std::future<GetEC2RecommendationProjectedMetricsOutcome> GetEC2RecommendationProjectedMetricsOutcomeCallable;
         typedef std::future<GetEnrollmentStatusOutcome> GetEnrollmentStatusOutcomeCallable;
@@ -96,6 +100,7 @@ namespace Model
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportAutoScalingGroupRecommendationsRequest&, const Model::ExportAutoScalingGroupRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportAutoScalingGroupRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportEC2InstanceRecommendationsRequest&, const Model::ExportEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportEC2InstanceRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetAutoScalingGroupRecommendationsRequest&, const Model::GetAutoScalingGroupRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoScalingGroupRecommendationsResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEBSVolumeRecommendationsRequest&, const Model::GetEBSVolumeRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEBSVolumeRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2InstanceRecommendationsRequest&, const Model::GetEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2InstanceRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2RecommendationProjectedMetricsRequest&, const Model::GetEC2RecommendationProjectedMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2RecommendationProjectedMetricsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusRequest&, const Model::GetEnrollmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusResponseReceivedHandler;
@@ -104,16 +109,16 @@ namespace Model
 
   /**
    * <p>AWS Compute Optimizer is a service that analyzes the configuration and
-   * utilization metrics of your AWS resources, such as EC2 instances and Auto
-   * Scaling groups. It reports whether your resources are optimal, and generates
-   * optimization recommendations to reduce the cost and improve the performance of
-   * your workloads. Compute Optimizer also provides recent utilization metric data,
-   * as well as projected utilization metric data for the recommendations, which you
-   * can use to evaluate which recommendation provides the best price-performance
-   * trade-off. The analysis of your usage patterns can help you decide when to move
-   * or resize your running resources, and still meet your performance and capacity
-   * requirements. For more information about Compute Optimizer, including the
-   * required permissions to use the service, see the <a
+   * utilization metrics of your AWS compute resources, such as EC2 instances, Auto
+   * Scaling groups, and Amazon EBS volumes. It reports whether your resources are
+   * optimal, and generates optimization recommendations to reduce the cost and
+   * improve the performance of your workloads. Compute Optimizer also provides
+   * recent utilization metric data, as well as projected utilization metric data for
+   * the recommendations, which you can use to evaluate which recommendation provides
+   * the best price-performance trade-off. The analysis of your usage patterns can
+   * help you decide when to move or resize your running resources, and still meet
+   * your performance and capacity requirements. For more information about Compute
+   * Optimizer, including the required permissions to use the service, see the <a
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute
    * Optimizer User Guide</a>.</p>
    */
@@ -320,6 +325,46 @@ namespace Model
         virtual void GetAutoScalingGroupRecommendationsAsync(const Model::GetAutoScalingGroupRecommendationsRequest& request, const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.</p>
+         * <p>AWS Compute Optimizer generates recommendations for Amazon EBS volumes that
+         * meet a specific set of requirements. For more information, see the <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEBSVolumeRecommendationsOutcome GetEBSVolumeRecommendations(const Model::GetEBSVolumeRecommendationsRequest& request) const;
+
+        /**
+         * <p>Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.</p>
+         * <p>AWS Compute Optimizer generates recommendations for Amazon EBS volumes that
+         * meet a specific set of requirements. For more information, see the <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEBSVolumeRecommendationsOutcomeCallable GetEBSVolumeRecommendationsCallable(const Model::GetEBSVolumeRecommendationsRequest& request) const;
+
+        /**
+         * <p>Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.</p>
+         * <p>AWS Compute Optimizer generates recommendations for Amazon EBS volumes that
+         * meet a specific set of requirements. For more information, see the <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEBSVolumeRecommendationsAsync(const Model::GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns Amazon EC2 instance recommendations.</p> <p>AWS Compute Optimizer
          * generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2)
          * instances that meet a specific set of requirements. For more information, see
@@ -413,7 +458,7 @@ namespace Model
 
         /**
          * <p>Returns the enrollment (opt in) status of an account to the AWS Compute
-         * Optimizer service.</p> <p>If the account is the master account of an
+         * Optimizer service.</p> <p>If the account is the management account of an
          * organization, this action also confirms the enrollment status of member accounts
          * within the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">AWS
@@ -423,7 +468,7 @@ namespace Model
 
         /**
          * <p>Returns the enrollment (opt in) status of an account to the AWS Compute
-         * Optimizer service.</p> <p>If the account is the master account of an
+         * Optimizer service.</p> <p>If the account is the management account of an
          * organization, this action also confirms the enrollment status of member accounts
          * within the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">AWS
@@ -435,7 +480,7 @@ namespace Model
 
         /**
          * <p>Returns the enrollment (opt in) status of an account to the AWS Compute
-         * Optimizer service.</p> <p>If the account is the master account of an
+         * Optimizer service.</p> <p>If the account is the management account of an
          * organization, this action also confirms the enrollment status of member accounts
          * within the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">AWS
@@ -484,8 +529,8 @@ namespace Model
 
         /**
          * <p>Updates the enrollment (opt in) status of an account to the AWS Compute
-         * Optimizer service.</p> <p>If the account is a master account of an organization,
-         * this action can also be used to enroll member accounts within the
+         * Optimizer service.</p> <p>If the account is a management account of an
+         * organization, this action can also be used to enroll member accounts within the
          * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">AWS
          * API Reference</a></p>
@@ -494,8 +539,8 @@ namespace Model
 
         /**
          * <p>Updates the enrollment (opt in) status of an account to the AWS Compute
-         * Optimizer service.</p> <p>If the account is a master account of an organization,
-         * this action can also be used to enroll member accounts within the
+         * Optimizer service.</p> <p>If the account is a management account of an
+         * organization, this action can also be used to enroll member accounts within the
          * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">AWS
          * API Reference</a></p>
@@ -506,8 +551,8 @@ namespace Model
 
         /**
          * <p>Updates the enrollment (opt in) status of an account to the AWS Compute
-         * Optimizer service.</p> <p>If the account is a master account of an organization,
-         * this action can also be used to enroll member accounts within the
+         * Optimizer service.</p> <p>If the account is a management account of an
+         * organization, this action can also be used to enroll member accounts within the
          * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">AWS
          * API Reference</a></p>
@@ -524,6 +569,7 @@ namespace Model
         void ExportAutoScalingGroupRecommendationsAsyncHelper(const Model::ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportEC2InstanceRecommendationsAsyncHelper(const Model::ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAutoScalingGroupRecommendationsAsyncHelper(const Model::GetAutoScalingGroupRecommendationsRequest& request, const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEBSVolumeRecommendationsAsyncHelper(const Model::GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEC2InstanceRecommendationsAsyncHelper(const Model::GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEC2RecommendationProjectedMetricsAsyncHelper(const Model::GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnrollmentStatusAsyncHelper(const Model::GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

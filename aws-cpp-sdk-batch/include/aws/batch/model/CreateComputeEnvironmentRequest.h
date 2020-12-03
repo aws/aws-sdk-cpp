@@ -86,42 +86,48 @@ namespace Model
 
 
     /**
-     * <p>The type of the compute environment. For more information, see <a
+     * <p>The type of the compute environment: <code>MANAGED</code> or
+     * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const CEType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the compute environment. For more information, see <a
+     * <p>The type of the compute environment: <code>MANAGED</code> or
+     * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the compute environment. For more information, see <a
+     * <p>The type of the compute environment: <code>MANAGED</code> or
+     * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(const CEType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the compute environment. For more information, see <a
+     * <p>The type of the compute environment: <code>MANAGED</code> or
+     * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the compute environment. For more information, see <a
+     * <p>The type of the compute environment: <code>MANAGED</code> or
+     * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline CreateComputeEnvironmentRequest& WithType(const CEType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the compute environment. For more information, see <a
+     * <p>The type of the compute environment: <code>MANAGED</code> or
+     * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
@@ -172,7 +178,7 @@ namespace Model
 
 
     /**
-     * <p>Details of the compute resources managed by the compute environment. This
+     * <p>Details about the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
@@ -181,7 +187,7 @@ namespace Model
     inline const ComputeResource& GetComputeResources() const{ return m_computeResources; }
 
     /**
-     * <p>Details of the compute resources managed by the compute environment. This
+     * <p>Details about the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
@@ -190,7 +196,7 @@ namespace Model
     inline bool ComputeResourcesHasBeenSet() const { return m_computeResourcesHasBeenSet; }
 
     /**
-     * <p>Details of the compute resources managed by the compute environment. This
+     * <p>Details about the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
@@ -199,7 +205,7 @@ namespace Model
     inline void SetComputeResources(const ComputeResource& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
 
     /**
-     * <p>Details of the compute resources managed by the compute environment. This
+     * <p>Details about the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
@@ -208,7 +214,7 @@ namespace Model
     inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
 
     /**
-     * <p>Details of the compute resources managed by the compute environment. This
+     * <p>Details about the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
@@ -217,7 +223,7 @@ namespace Model
     inline CreateComputeEnvironmentRequest& WithComputeResources(const ComputeResource& value) { SetComputeResources(value); return *this;}
 
     /**
-     * <p>Details of the compute resources managed by the compute environment. This
+     * <p>Details about the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
@@ -233,7 +239,7 @@ namespace Model
      * ARN (this is recommended) or prefix the role name with the path.</p> 
      * <p>Depending on how you created your AWS Batch service role, its ARN may contain
      * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -247,7 +253,7 @@ namespace Model
      * ARN (this is recommended) or prefix the role name with the path.</p> 
      * <p>Depending on how you created your AWS Batch service role, its ARN may contain
      * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -261,7 +267,7 @@ namespace Model
      * ARN (this is recommended) or prefix the role name with the path.</p> 
      * <p>Depending on how you created your AWS Batch service role, its ARN may contain
      * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -275,7 +281,7 @@ namespace Model
      * ARN (this is recommended) or prefix the role name with the path.</p> 
      * <p>Depending on how you created your AWS Batch service role, its ARN may contain
      * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -289,7 +295,7 @@ namespace Model
      * ARN (this is recommended) or prefix the role name with the path.</p> 
      * <p>Depending on how you created your AWS Batch service role, its ARN may contain
      * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -303,7 +309,7 @@ namespace Model
      * ARN (this is recommended) or prefix the role name with the path.</p> 
      * <p>Depending on how you created your AWS Batch service role, its ARN may contain
      * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -317,7 +323,7 @@ namespace Model
      * ARN (this is recommended) or prefix the role name with the path.</p> 
      * <p>Depending on how you created your AWS Batch service role, its ARN may contain
      * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -331,7 +337,7 @@ namespace Model
      * ARN (this is recommended) or prefix the role name with the path.</p> 
      * <p>Depending on how you created your AWS Batch service role, its ARN may contain
      * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -349,7 +355,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -364,7 +370,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -379,7 +385,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -394,7 +400,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -409,7 +415,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline CreateComputeEnvironmentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
@@ -424,7 +430,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline CreateComputeEnvironmentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
@@ -439,7 +445,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline CreateComputeEnvironmentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -454,7 +460,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline CreateComputeEnvironmentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -469,7 +475,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline CreateComputeEnvironmentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -484,7 +490,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline CreateComputeEnvironmentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
@@ -499,7 +505,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline CreateComputeEnvironmentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -514,7 +520,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline CreateComputeEnvironmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -529,7 +535,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
      * and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-     * API operations. These tags do not propagate to the underlying compute
+     * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
     inline CreateComputeEnvironmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }

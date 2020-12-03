@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     EC2,
-    SPOT
+    SPOT,
+    FARGATE,
+    FARGATE_SPOT
   };
 
 namespace CRTypeMapper

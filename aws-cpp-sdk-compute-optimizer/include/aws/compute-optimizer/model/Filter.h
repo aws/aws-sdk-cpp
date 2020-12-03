@@ -26,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a filter that returns a more specific list of
-   * recommendations.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a filter that returns a more specific list of recommendations.</p>
+   * <p>This filter is used with the <code>GetAutoScalingGroupRecommendations</code>
+   * and <code>GetEC2InstanceRecommendations</code> actions.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/Filter">AWS
    * API Reference</a></p>
    */
@@ -42,7 +44,7 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific findings classification (e.g.,
+     * recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
      * resource type (e.g., <code>AutoScalingGroup</code>).</p>
@@ -51,7 +53,7 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific findings classification (e.g.,
+     * recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
      * resource type (e.g., <code>AutoScalingGroup</code>).</p>
@@ -60,7 +62,7 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific findings classification (e.g.,
+     * recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
      * resource type (e.g., <code>AutoScalingGroup</code>).</p>
@@ -69,7 +71,7 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific findings classification (e.g.,
+     * recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
      * resource type (e.g., <code>AutoScalingGroup</code>).</p>
@@ -78,7 +80,7 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific findings classification (e.g.,
+     * recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
      * resource type (e.g., <code>AutoScalingGroup</code>).</p>
@@ -87,7 +89,7 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific findings classification (e.g.,
+     * recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
      * resource type (e.g., <code>AutoScalingGroup</code>).</p>
@@ -96,128 +98,146 @@ namespace Model
 
 
     /**
-     * <p>The value of the filter.</p> <p>If you specify the <code>name</code>
-     * parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     * <code>Overprovisioned</code>, <code>NotOptimized</code>, or
-     * <code>Optimized</code>.</p> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, and you request recommendations for an <i>Auto Scaling
-     * group</i>, then the valid values are <code>Optimized</code>, or
-     * <code>NotOptimized</code>.</p> <p>If you specify the <code>name</code> parameter
-     * as <code>RecommendationSourceType</code>, then the valid values are
-     * <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.</p>
+     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
+     * follows, depending on what you specify for the <code>name</code> parameter and
+     * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
+     * <code>Optimized</code> or <code>NotOptimized</code> if you specified the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter
+     * results for Auto Scaling groups.</p> </li> <li> <p>Specify
+     * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>
+     * <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+     * specified the <code>name</code> parameter as
+     * <code>RecommendationSourceType</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>The value of the filter.</p> <p>If you specify the <code>name</code>
-     * parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     * <code>Overprovisioned</code>, <code>NotOptimized</code>, or
-     * <code>Optimized</code>.</p> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, and you request recommendations for an <i>Auto Scaling
-     * group</i>, then the valid values are <code>Optimized</code>, or
-     * <code>NotOptimized</code>.</p> <p>If you specify the <code>name</code> parameter
-     * as <code>RecommendationSourceType</code>, then the valid values are
-     * <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.</p>
+     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
+     * follows, depending on what you specify for the <code>name</code> parameter and
+     * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
+     * <code>Optimized</code> or <code>NotOptimized</code> if you specified the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter
+     * results for Auto Scaling groups.</p> </li> <li> <p>Specify
+     * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>
+     * <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+     * specified the <code>name</code> parameter as
+     * <code>RecommendationSourceType</code>.</p> </li> </ul>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p>The value of the filter.</p> <p>If you specify the <code>name</code>
-     * parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     * <code>Overprovisioned</code>, <code>NotOptimized</code>, or
-     * <code>Optimized</code>.</p> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, and you request recommendations for an <i>Auto Scaling
-     * group</i>, then the valid values are <code>Optimized</code>, or
-     * <code>NotOptimized</code>.</p> <p>If you specify the <code>name</code> parameter
-     * as <code>RecommendationSourceType</code>, then the valid values are
-     * <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.</p>
+     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
+     * follows, depending on what you specify for the <code>name</code> parameter and
+     * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
+     * <code>Optimized</code> or <code>NotOptimized</code> if you specified the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter
+     * results for Auto Scaling groups.</p> </li> <li> <p>Specify
+     * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>
+     * <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+     * specified the <code>name</code> parameter as
+     * <code>RecommendationSourceType</code>.</p> </li> </ul>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>The value of the filter.</p> <p>If you specify the <code>name</code>
-     * parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     * <code>Overprovisioned</code>, <code>NotOptimized</code>, or
-     * <code>Optimized</code>.</p> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, and you request recommendations for an <i>Auto Scaling
-     * group</i>, then the valid values are <code>Optimized</code>, or
-     * <code>NotOptimized</code>.</p> <p>If you specify the <code>name</code> parameter
-     * as <code>RecommendationSourceType</code>, then the valid values are
-     * <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.</p>
+     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
+     * follows, depending on what you specify for the <code>name</code> parameter and
+     * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
+     * <code>Optimized</code> or <code>NotOptimized</code> if you specified the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter
+     * results for Auto Scaling groups.</p> </li> <li> <p>Specify
+     * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>
+     * <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+     * specified the <code>name</code> parameter as
+     * <code>RecommendationSourceType</code>.</p> </li> </ul>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>The value of the filter.</p> <p>If you specify the <code>name</code>
-     * parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     * <code>Overprovisioned</code>, <code>NotOptimized</code>, or
-     * <code>Optimized</code>.</p> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, and you request recommendations for an <i>Auto Scaling
-     * group</i>, then the valid values are <code>Optimized</code>, or
-     * <code>NotOptimized</code>.</p> <p>If you specify the <code>name</code> parameter
-     * as <code>RecommendationSourceType</code>, then the valid values are
-     * <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.</p>
+     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
+     * follows, depending on what you specify for the <code>name</code> parameter and
+     * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
+     * <code>Optimized</code> or <code>NotOptimized</code> if you specified the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter
+     * results for Auto Scaling groups.</p> </li> <li> <p>Specify
+     * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>
+     * <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+     * specified the <code>name</code> parameter as
+     * <code>RecommendationSourceType</code>.</p> </li> </ul>
      */
     inline Filter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>The value of the filter.</p> <p>If you specify the <code>name</code>
-     * parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     * <code>Overprovisioned</code>, <code>NotOptimized</code>, or
-     * <code>Optimized</code>.</p> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, and you request recommendations for an <i>Auto Scaling
-     * group</i>, then the valid values are <code>Optimized</code>, or
-     * <code>NotOptimized</code>.</p> <p>If you specify the <code>name</code> parameter
-     * as <code>RecommendationSourceType</code>, then the valid values are
-     * <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.</p>
+     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
+     * follows, depending on what you specify for the <code>name</code> parameter and
+     * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
+     * <code>Optimized</code> or <code>NotOptimized</code> if you specified the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter
+     * results for Auto Scaling groups.</p> </li> <li> <p>Specify
+     * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>
+     * <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+     * specified the <code>name</code> parameter as
+     * <code>RecommendationSourceType</code>.</p> </li> </ul>
      */
     inline Filter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>The value of the filter.</p> <p>If you specify the <code>name</code>
-     * parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     * <code>Overprovisioned</code>, <code>NotOptimized</code>, or
-     * <code>Optimized</code>.</p> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, and you request recommendations for an <i>Auto Scaling
-     * group</i>, then the valid values are <code>Optimized</code>, or
-     * <code>NotOptimized</code>.</p> <p>If you specify the <code>name</code> parameter
-     * as <code>RecommendationSourceType</code>, then the valid values are
-     * <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.</p>
+     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
+     * follows, depending on what you specify for the <code>name</code> parameter and
+     * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
+     * <code>Optimized</code> or <code>NotOptimized</code> if you specified the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter
+     * results for Auto Scaling groups.</p> </li> <li> <p>Specify
+     * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>
+     * <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+     * specified the <code>name</code> parameter as
+     * <code>RecommendationSourceType</code>.</p> </li> </ul>
      */
     inline Filter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>The value of the filter.</p> <p>If you specify the <code>name</code>
-     * parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     * <code>Overprovisioned</code>, <code>NotOptimized</code>, or
-     * <code>Optimized</code>.</p> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, and you request recommendations for an <i>Auto Scaling
-     * group</i>, then the valid values are <code>Optimized</code>, or
-     * <code>NotOptimized</code>.</p> <p>If you specify the <code>name</code> parameter
-     * as <code>RecommendationSourceType</code>, then the valid values are
-     * <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.</p>
+     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
+     * follows, depending on what you specify for the <code>name</code> parameter and
+     * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
+     * <code>Optimized</code> or <code>NotOptimized</code> if you specified the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter
+     * results for Auto Scaling groups.</p> </li> <li> <p>Specify
+     * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>
+     * <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+     * specified the <code>name</code> parameter as
+     * <code>RecommendationSourceType</code>.</p> </li> </ul>
      */
     inline Filter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The value of the filter.</p> <p>If you specify the <code>name</code>
-     * parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     * <code>Overprovisioned</code>, <code>NotOptimized</code>, or
-     * <code>Optimized</code>.</p> <p>If you specify the <code>name</code> parameter as
-     * <code>Finding</code>, and you request recommendations for an <i>Auto Scaling
-     * group</i>, then the valid values are <code>Optimized</code>, or
-     * <code>NotOptimized</code>.</p> <p>If you specify the <code>name</code> parameter
-     * as <code>RecommendationSourceType</code>, then the valid values are
-     * <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.</p>
+     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
+     * follows, depending on what you specify for the <code>name</code> parameter and
+     * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
+     * <code>Optimized</code> or <code>NotOptimized</code> if you specified the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter
+     * results for Auto Scaling groups.</p> </li> <li> <p>Specify
+     * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>
+     * <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+     * specified the <code>name</code> parameter as
+     * <code>RecommendationSourceType</code>.</p> </li> </ul>
      */
     inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

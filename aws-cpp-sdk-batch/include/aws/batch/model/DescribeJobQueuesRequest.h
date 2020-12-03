@@ -95,7 +95,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>DescribeJobQueues</code> request
      * with the returned <code>nextToken</code> value. This value can be between 1 and
-     * 100. If this parameter is not used, then <code>DescribeJobQueues</code> returns
+     * 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns
      * up to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -107,7 +107,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>DescribeJobQueues</code> request
      * with the returned <code>nextToken</code> value. This value can be between 1 and
-     * 100. If this parameter is not used, then <code>DescribeJobQueues</code> returns
+     * 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns
      * up to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -119,7 +119,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>DescribeJobQueues</code> request
      * with the returned <code>nextToken</code> value. This value can be between 1 and
-     * 100. If this parameter is not used, then <code>DescribeJobQueues</code> returns
+     * 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns
      * up to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -131,7 +131,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>DescribeJobQueues</code> request
      * with the returned <code>nextToken</code> value. This value can be between 1 and
-     * 100. If this parameter is not used, then <code>DescribeJobQueues</code> returns
+     * 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns
      * up to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline DescribeJobQueuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

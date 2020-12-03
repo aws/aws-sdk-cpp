@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the password policy for your Amazon Cognito user pool configured as
-   * a part of your Amplify project.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the password policy for your Amazon Cognito user pool that's
+   * configured as a part of your Amplify project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthPasswordPolicyConfig">AWS
    * API Reference</a></p>
    */
@@ -40,75 +40,75 @@ namespace Model
 
 
     /**
-     * <p>Describes additional constrains on password requirements to sign in into the
-     * auth resource, configured as a part of your Ampify project.</p>
+     * <p>Describes additional constrains on the password requirements to sign in to
+     * the auth resource, configured as a part of your Amplify project.</p>
      */
     inline const Aws::Vector<AdditionalConstraintsElement>& GetAdditionalConstraints() const{ return m_additionalConstraints; }
 
     /**
-     * <p>Describes additional constrains on password requirements to sign in into the
-     * auth resource, configured as a part of your Ampify project.</p>
+     * <p>Describes additional constrains on the password requirements to sign in to
+     * the auth resource, configured as a part of your Amplify project.</p>
      */
     inline bool AdditionalConstraintsHasBeenSet() const { return m_additionalConstraintsHasBeenSet; }
 
     /**
-     * <p>Describes additional constrains on password requirements to sign in into the
-     * auth resource, configured as a part of your Ampify project.</p>
+     * <p>Describes additional constrains on the password requirements to sign in to
+     * the auth resource, configured as a part of your Amplify project.</p>
      */
     inline void SetAdditionalConstraints(const Aws::Vector<AdditionalConstraintsElement>& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints = value; }
 
     /**
-     * <p>Describes additional constrains on password requirements to sign in into the
-     * auth resource, configured as a part of your Ampify project.</p>
+     * <p>Describes additional constrains on the password requirements to sign in to
+     * the auth resource, configured as a part of your Amplify project.</p>
      */
     inline void SetAdditionalConstraints(Aws::Vector<AdditionalConstraintsElement>&& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints = std::move(value); }
 
     /**
-     * <p>Describes additional constrains on password requirements to sign in into the
-     * auth resource, configured as a part of your Ampify project.</p>
+     * <p>Describes additional constrains on the password requirements to sign in to
+     * the auth resource, configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthPasswordPolicyConfig& WithAdditionalConstraints(const Aws::Vector<AdditionalConstraintsElement>& value) { SetAdditionalConstraints(value); return *this;}
 
     /**
-     * <p>Describes additional constrains on password requirements to sign in into the
-     * auth resource, configured as a part of your Ampify project.</p>
+     * <p>Describes additional constrains on the password requirements to sign in to
+     * the auth resource, configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthPasswordPolicyConfig& WithAdditionalConstraints(Aws::Vector<AdditionalConstraintsElement>&& value) { SetAdditionalConstraints(std::move(value)); return *this;}
 
     /**
-     * <p>Describes additional constrains on password requirements to sign in into the
-     * auth resource, configured as a part of your Ampify project.</p>
+     * <p>Describes additional constrains on the password requirements to sign in to
+     * the auth resource, configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthPasswordPolicyConfig& AddAdditionalConstraints(const AdditionalConstraintsElement& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints.push_back(value); return *this; }
 
     /**
-     * <p>Describes additional constrains on password requirements to sign in into the
-     * auth resource, configured as a part of your Ampify project.</p>
+     * <p>Describes additional constrains on the password requirements to sign in to
+     * the auth resource, configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthPasswordPolicyConfig& AddAdditionalConstraints(AdditionalConstraintsElement&& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Describes the minimum length of password required to sign in into the auth
-     * resource, configured as a part of your Ampify project.</p>
+     * <p>Describes the minimum length of the password required to sign in to the auth
+     * resource, configured as a part of your Amplify project.</p>
      */
     inline double GetMinimumLength() const{ return m_minimumLength; }
 
     /**
-     * <p>Describes the minimum length of password required to sign in into the auth
-     * resource, configured as a part of your Ampify project.</p>
+     * <p>Describes the minimum length of the password required to sign in to the auth
+     * resource, configured as a part of your Amplify project.</p>
      */
     inline bool MinimumLengthHasBeenSet() const { return m_minimumLengthHasBeenSet; }
 
     /**
-     * <p>Describes the minimum length of password required to sign in into the auth
-     * resource, configured as a part of your Ampify project.</p>
+     * <p>Describes the minimum length of the password required to sign in to the auth
+     * resource, configured as a part of your Amplify project.</p>
      */
     inline void SetMinimumLength(double value) { m_minimumLengthHasBeenSet = true; m_minimumLength = value; }
 
     /**
-     * <p>Describes the minimum length of password required to sign in into the auth
-     * resource, configured as a part of your Ampify project.</p>
+     * <p>Describes the minimum length of the password required to sign in to the auth
+     * resource, configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthPasswordPolicyConfig& WithMinimumLength(double value) { SetMinimumLength(value); return *this;}
 

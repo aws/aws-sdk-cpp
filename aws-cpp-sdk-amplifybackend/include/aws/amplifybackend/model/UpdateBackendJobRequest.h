@@ -159,98 +159,98 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline const Aws::String& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline UpdateBackendJobRequest& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline UpdateBackendJobRequest& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline UpdateBackendJobRequest& WithOperation(const char* value) { SetOperation(value); return *this;}
 
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * status.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * status.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * status.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * status.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * status.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * status.</p>
      */
     inline UpdateBackendJobRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * status.</p>
      */
     inline UpdateBackendJobRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * status.</p>
      */
     inline UpdateBackendJobRequest& WithStatus(const char* value) { SetStatus(value); return *this;}

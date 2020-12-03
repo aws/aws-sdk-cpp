@@ -20,10 +20,6 @@ namespace Model
 
 ContainerProperties::ContainerProperties() : 
     m_imageHasBeenSet(false),
-    m_vcpus(0),
-    m_vcpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_jobRoleArnHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
@@ -40,16 +36,14 @@ ContainerProperties::ContainerProperties() :
     m_resourceRequirementsHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
-    m_secretsHasBeenSet(false)
+    m_secretsHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_fargatePlatformConfigurationHasBeenSet(false)
 {
 }
 
 ContainerProperties::ContainerProperties(JsonView jsonValue) : 
     m_imageHasBeenSet(false),
-    m_vcpus(0),
-    m_vcpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_jobRoleArnHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
@@ -66,7 +60,9 @@ ContainerProperties::ContainerProperties(JsonView jsonValue) :
     m_resourceRequirementsHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
-    m_secretsHasBeenSet(false)
+    m_secretsHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_fargatePlatformConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,20 +74,6 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_image = jsonValue.GetString("image");
 
     m_imageHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("vcpus"))
-  {
-    m_vcpus = jsonValue.GetInteger("vcpus");
-
-    m_vcpusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("memory"))
-  {
-    m_memory = jsonValue.GetInteger("memory");
-
-    m_memoryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("command"))
@@ -220,6 +202,20 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_secretsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("networkConfiguration"))
+  {
+    m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
+
+    m_networkConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fargatePlatformConfiguration"))
+  {
+    m_fargatePlatformConfiguration = jsonValue.GetObject("fargatePlatformConfiguration");
+
+    m_fargatePlatformConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -230,18 +226,6 @@ JsonValue ContainerProperties::Jsonize() const
   if(m_imageHasBeenSet)
   {
    payload.WithString("image", m_image);
-
-  }
-
-  if(m_vcpusHasBeenSet)
-  {
-   payload.WithInteger("vcpus", m_vcpus);
-
-  }
-
-  if(m_memoryHasBeenSet)
-  {
-   payload.WithInteger("memory", m_memory);
 
   }
 
@@ -367,6 +351,18 @@ JsonValue ContainerProperties::Jsonize() const
      secretsJsonList[secretsIndex].AsObject(m_secrets[secretsIndex].Jsonize());
    }
    payload.WithArray("secrets", std::move(secretsJsonList));
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_fargatePlatformConfigurationHasBeenSet)
+  {
+   payload.WithObject("fargatePlatformConfiguration", m_fargatePlatformConfiguration.Jsonize());
 
   }
 

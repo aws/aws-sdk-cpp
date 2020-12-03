@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The password policy configuration for the backend to your Amplify
+   * <p>The password policy configuration for the backend of your Amplify
    * project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthPasswordPolicyConfig">AWS
    * API Reference</a></p>
@@ -40,74 +40,74 @@ namespace Model
 
 
     /**
-     * <p>Additional constraints for the pasword used to access the backend of your
+     * <p>Additional constraints for the password used to access the backend of your
      * Amplify project.</p>
      */
     inline const Aws::Vector<AdditionalConstraintsElement>& GetAdditionalConstraints() const{ return m_additionalConstraints; }
 
     /**
-     * <p>Additional constraints for the pasword used to access the backend of your
+     * <p>Additional constraints for the password used to access the backend of your
      * Amplify project.</p>
      */
     inline bool AdditionalConstraintsHasBeenSet() const { return m_additionalConstraintsHasBeenSet; }
 
     /**
-     * <p>Additional constraints for the pasword used to access the backend of your
+     * <p>Additional constraints for the password used to access the backend of your
      * Amplify project.</p>
      */
     inline void SetAdditionalConstraints(const Aws::Vector<AdditionalConstraintsElement>& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints = value; }
 
     /**
-     * <p>Additional constraints for the pasword used to access the backend of your
+     * <p>Additional constraints for the password used to access the backend of your
      * Amplify project.</p>
      */
     inline void SetAdditionalConstraints(Aws::Vector<AdditionalConstraintsElement>&& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints = std::move(value); }
 
     /**
-     * <p>Additional constraints for the pasword used to access the backend of your
+     * <p>Additional constraints for the password used to access the backend of your
      * Amplify project.</p>
      */
     inline CreateBackendAuthPasswordPolicyConfig& WithAdditionalConstraints(const Aws::Vector<AdditionalConstraintsElement>& value) { SetAdditionalConstraints(value); return *this;}
 
     /**
-     * <p>Additional constraints for the pasword used to access the backend of your
+     * <p>Additional constraints for the password used to access the backend of your
      * Amplify project.</p>
      */
     inline CreateBackendAuthPasswordPolicyConfig& WithAdditionalConstraints(Aws::Vector<AdditionalConstraintsElement>&& value) { SetAdditionalConstraints(std::move(value)); return *this;}
 
     /**
-     * <p>Additional constraints for the pasword used to access the backend of your
+     * <p>Additional constraints for the password used to access the backend of your
      * Amplify project.</p>
      */
     inline CreateBackendAuthPasswordPolicyConfig& AddAdditionalConstraints(const AdditionalConstraintsElement& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints.push_back(value); return *this; }
 
     /**
-     * <p>Additional constraints for the pasword used to access the backend of your
+     * <p>Additional constraints for the password used to access the backend of your
      * Amplify project.</p>
      */
     inline CreateBackendAuthPasswordPolicyConfig& AddAdditionalConstraints(AdditionalConstraintsElement&& value) { m_additionalConstraintsHasBeenSet = true; m_additionalConstraints.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The minimum length of password used to access the backend of your Amplify
+     * <p>The minimum length of the password used to access the backend of your Amplify
      * project.</p>
      */
     inline double GetMinimumLength() const{ return m_minimumLength; }
 
     /**
-     * <p>The minimum length of password used to access the backend of your Amplify
+     * <p>The minimum length of the password used to access the backend of your Amplify
      * project.</p>
      */
     inline bool MinimumLengthHasBeenSet() const { return m_minimumLengthHasBeenSet; }
 
     /**
-     * <p>The minimum length of password used to access the backend of your Amplify
+     * <p>The minimum length of the password used to access the backend of your Amplify
      * project.</p>
      */
     inline void SetMinimumLength(double value) { m_minimumLengthHasBeenSet = true; m_minimumLength = value; }
 
     /**
-     * <p>The minimum length of password used to access the backend of your Amplify
+     * <p>The minimum length of the password used to access the backend of your Amplify
      * project.</p>
      */
     inline CreateBackendAuthPasswordPolicyConfig& WithMinimumLength(double value) { SetMinimumLength(value); return *this;}

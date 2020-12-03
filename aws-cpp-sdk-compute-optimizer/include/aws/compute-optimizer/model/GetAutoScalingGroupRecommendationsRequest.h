@@ -38,7 +38,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to return Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
      * can be specified per request.</p>
@@ -47,7 +47,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to return Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
      * can be specified per request.</p>
@@ -56,7 +56,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to return Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
      * can be specified per request.</p>
@@ -65,7 +65,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to return Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
      * can be specified per request.</p>
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to return Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
      * can be specified per request.</p>
@@ -83,7 +83,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to return Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
      * can be specified per request.</p>
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to return Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
      * can be specified per request.</p>
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to return Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
      * can be specified per request.</p>
@@ -110,7 +110,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to return Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
      * can be specified per request.</p>

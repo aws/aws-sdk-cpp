@@ -80,42 +80,42 @@ namespace Model
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
      * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
-     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
+     * jobs can't be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline const JQState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
      * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
-     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
+     * jobs can't be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
      * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
-     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
+     * jobs can't be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline void SetState(const JQState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
      * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
-     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
+     * jobs can't be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
      * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
-     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
+     * jobs can't be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline CreateJobQueueRequest& WithState(const JQState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
      * it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new
-     * jobs cannot be added to the queue, but jobs already in the queue can finish.</p>
+     * jobs can't be added to the queue, but jobs already in the queue can finish.</p>
      */
     inline CreateJobQueueRequest& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
 
@@ -124,7 +124,7 @@ namespace Model
      * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
      * associated with the same compute environment. Priority is determined in
-     * descending order, for example, a job queue with a priority value of
+     * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
      * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
      * associated with the same compute environment. Priority is determined in
-     * descending order, for example, a job queue with a priority value of
+     * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>.</p>
      */
@@ -144,7 +144,7 @@ namespace Model
      * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
      * associated with the same compute environment. Priority is determined in
-     * descending order, for example, a job queue with a priority value of
+     * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>.</p>
      */
@@ -154,7 +154,7 @@ namespace Model
      * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
      * associated with the same compute environment. Priority is determined in
-     * descending order, for example, a job queue with a priority value of
+     * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>.</p>
      */
@@ -164,72 +164,96 @@ namespace Model
     /**
      * <p>The set of compute environments mapped to a job queue and their order
      * relative to each other. The job scheduler uses this parameter to determine which
-     * compute environment should execute a given job. Compute environments must be in
+     * compute environment should run a specific job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to three compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue. All of the
+     * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
+     * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
+     * compute environments can't be mixed.</p>
      */
     inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
      * relative to each other. The job scheduler uses this parameter to determine which
-     * compute environment should execute a given job. Compute environments must be in
+     * compute environment should run a specific job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to three compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue. All of the
+     * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
+     * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
+     * compute environments can't be mixed.</p>
      */
     inline bool ComputeEnvironmentOrderHasBeenSet() const { return m_computeEnvironmentOrderHasBeenSet; }
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
      * relative to each other. The job scheduler uses this parameter to determine which
-     * compute environment should execute a given job. Compute environments must be in
+     * compute environment should run a specific job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to three compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue. All of the
+     * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
+     * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
+     * compute environments can't be mixed.</p>
      */
     inline void SetComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
      * relative to each other. The job scheduler uses this parameter to determine which
-     * compute environment should execute a given job. Compute environments must be in
+     * compute environment should run a specific job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to three compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue. All of the
+     * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
+     * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
+     * compute environments can't be mixed.</p>
      */
     inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
      * relative to each other. The job scheduler uses this parameter to determine which
-     * compute environment should execute a given job. Compute environments must be in
+     * compute environment should run a specific job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to three compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue. All of the
+     * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
+     * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
+     * compute environments can't be mixed.</p>
      */
     inline CreateJobQueueRequest& WithComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { SetComputeEnvironmentOrder(value); return *this;}
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
      * relative to each other. The job scheduler uses this parameter to determine which
-     * compute environment should execute a given job. Compute environments must be in
+     * compute environment should run a specific job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to three compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue. All of the
+     * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
+     * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
+     * compute environments can't be mixed.</p>
      */
     inline CreateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
      * relative to each other. The job scheduler uses this parameter to determine which
-     * compute environment should execute a given job. Compute environments must be in
+     * compute environment should run a specific job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to three compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue. All of the
+     * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
+     * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
+     * compute environments can't be mixed.</p>
      */
     inline CreateJobQueueRequest& AddComputeEnvironmentOrder(const ComputeEnvironmentOrder& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
      * relative to each other. The job scheduler uses this parameter to determine which
-     * compute environment should execute a given job. Compute environments must be in
+     * compute environment should run a specific job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to three compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue. All of the
+     * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
+     * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
+     * compute environments can't be mixed.</p>
      */
     inline CreateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 

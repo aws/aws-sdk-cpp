@@ -41,109 +41,109 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
-     * <p>If your account is the master account of an organization, use this parameter
-     * to specify the member accounts for which you want to export recommendations.</p>
-     * <p>This parameter cannot be specified together with the include member accounts
-     * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
-     * member accounts are not included in the export if this parameter, or the include
-     * member accounts parameter, is omitted.</p> <p>You can specify multiple account
-     * IDs per request.</p>
+     * <p>If your account is the management account of an organization, use this
+     * parameter to specify the member accounts for which you want to export
+     * recommendations.</p> <p>This parameter cannot be specified together with the
+     * include member accounts parameter. The parameters are mutually exclusive.</p>
+     * <p>Recommendations for member accounts are not included in the export if this
+     * parameter, or the include member accounts parameter, is omitted.</p> <p>You can
+     * specify multiple account IDs per request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
-     * <p>If your account is the master account of an organization, use this parameter
-     * to specify the member accounts for which you want to export recommendations.</p>
-     * <p>This parameter cannot be specified together with the include member accounts
-     * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
-     * member accounts are not included in the export if this parameter, or the include
-     * member accounts parameter, is omitted.</p> <p>You can specify multiple account
-     * IDs per request.</p>
+     * <p>If your account is the management account of an organization, use this
+     * parameter to specify the member accounts for which you want to export
+     * recommendations.</p> <p>This parameter cannot be specified together with the
+     * include member accounts parameter. The parameters are mutually exclusive.</p>
+     * <p>Recommendations for member accounts are not included in the export if this
+     * parameter, or the include member accounts parameter, is omitted.</p> <p>You can
+     * specify multiple account IDs per request.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
-     * <p>If your account is the master account of an organization, use this parameter
-     * to specify the member accounts for which you want to export recommendations.</p>
-     * <p>This parameter cannot be specified together with the include member accounts
-     * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
-     * member accounts are not included in the export if this parameter, or the include
-     * member accounts parameter, is omitted.</p> <p>You can specify multiple account
-     * IDs per request.</p>
+     * <p>If your account is the management account of an organization, use this
+     * parameter to specify the member accounts for which you want to export
+     * recommendations.</p> <p>This parameter cannot be specified together with the
+     * include member accounts parameter. The parameters are mutually exclusive.</p>
+     * <p>Recommendations for member accounts are not included in the export if this
+     * parameter, or the include member accounts parameter, is omitted.</p> <p>You can
+     * specify multiple account IDs per request.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
-     * <p>If your account is the master account of an organization, use this parameter
-     * to specify the member accounts for which you want to export recommendations.</p>
-     * <p>This parameter cannot be specified together with the include member accounts
-     * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
-     * member accounts are not included in the export if this parameter, or the include
-     * member accounts parameter, is omitted.</p> <p>You can specify multiple account
-     * IDs per request.</p>
+     * <p>If your account is the management account of an organization, use this
+     * parameter to specify the member accounts for which you want to export
+     * recommendations.</p> <p>This parameter cannot be specified together with the
+     * include member accounts parameter. The parameters are mutually exclusive.</p>
+     * <p>Recommendations for member accounts are not included in the export if this
+     * parameter, or the include member accounts parameter, is omitted.</p> <p>You can
+     * specify multiple account IDs per request.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
-     * <p>If your account is the master account of an organization, use this parameter
-     * to specify the member accounts for which you want to export recommendations.</p>
-     * <p>This parameter cannot be specified together with the include member accounts
-     * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
-     * member accounts are not included in the export if this parameter, or the include
-     * member accounts parameter, is omitted.</p> <p>You can specify multiple account
-     * IDs per request.</p>
+     * <p>If your account is the management account of an organization, use this
+     * parameter to specify the member accounts for which you want to export
+     * recommendations.</p> <p>This parameter cannot be specified together with the
+     * include member accounts parameter. The parameters are mutually exclusive.</p>
+     * <p>Recommendations for member accounts are not included in the export if this
+     * parameter, or the include member accounts parameter, is omitted.</p> <p>You can
+     * specify multiple account IDs per request.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
-     * <p>If your account is the master account of an organization, use this parameter
-     * to specify the member accounts for which you want to export recommendations.</p>
-     * <p>This parameter cannot be specified together with the include member accounts
-     * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
-     * member accounts are not included in the export if this parameter, or the include
-     * member accounts parameter, is omitted.</p> <p>You can specify multiple account
-     * IDs per request.</p>
+     * <p>If your account is the management account of an organization, use this
+     * parameter to specify the member accounts for which you want to export
+     * recommendations.</p> <p>This parameter cannot be specified together with the
+     * include member accounts parameter. The parameters are mutually exclusive.</p>
+     * <p>Recommendations for member accounts are not included in the export if this
+     * parameter, or the include member accounts parameter, is omitted.</p> <p>You can
+     * specify multiple account IDs per request.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
-     * <p>If your account is the master account of an organization, use this parameter
-     * to specify the member accounts for which you want to export recommendations.</p>
-     * <p>This parameter cannot be specified together with the include member accounts
-     * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
-     * member accounts are not included in the export if this parameter, or the include
-     * member accounts parameter, is omitted.</p> <p>You can specify multiple account
-     * IDs per request.</p>
+     * <p>If your account is the management account of an organization, use this
+     * parameter to specify the member accounts for which you want to export
+     * recommendations.</p> <p>This parameter cannot be specified together with the
+     * include member accounts parameter. The parameters are mutually exclusive.</p>
+     * <p>Recommendations for member accounts are not included in the export if this
+     * parameter, or the include member accounts parameter, is omitted.</p> <p>You can
+     * specify multiple account IDs per request.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
-     * <p>If your account is the master account of an organization, use this parameter
-     * to specify the member accounts for which you want to export recommendations.</p>
-     * <p>This parameter cannot be specified together with the include member accounts
-     * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
-     * member accounts are not included in the export if this parameter, or the include
-     * member accounts parameter, is omitted.</p> <p>You can specify multiple account
-     * IDs per request.</p>
+     * <p>If your account is the management account of an organization, use this
+     * parameter to specify the member accounts for which you want to export
+     * recommendations.</p> <p>This parameter cannot be specified together with the
+     * include member accounts parameter. The parameters are mutually exclusive.</p>
+     * <p>Recommendations for member accounts are not included in the export if this
+     * parameter, or the include member accounts parameter, is omitted.</p> <p>You can
+     * specify multiple account IDs per request.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
-     * <p>If your account is the master account of an organization, use this parameter
-     * to specify the member accounts for which you want to export recommendations.</p>
-     * <p>This parameter cannot be specified together with the include member accounts
-     * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
-     * member accounts are not included in the export if this parameter, or the include
-     * member accounts parameter, is omitted.</p> <p>You can specify multiple account
-     * IDs per request.</p>
+     * <p>If your account is the management account of an organization, use this
+     * parameter to specify the member accounts for which you want to export
+     * recommendations.</p> <p>This parameter cannot be specified together with the
+     * include member accounts parameter. The parameters are mutually exclusive.</p>
+     * <p>Recommendations for member accounts are not included in the export if this
+     * parameter, or the include member accounts parameter, is omitted.</p> <p>You can
+     * specify multiple account IDs per request.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
@@ -392,7 +392,7 @@ namespace Model
 
     /**
      * <p>Indicates whether to include recommendations for resources in all member
-     * accounts of the organization if your account is the master account of an
+     * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
      * Optimizer.</p> <p>Recommendations for member accounts of the organization are
      * not included in the export file if this parameter is omitted.</p>
@@ -403,7 +403,7 @@ namespace Model
 
     /**
      * <p>Indicates whether to include recommendations for resources in all member
-     * accounts of the organization if your account is the master account of an
+     * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
      * Optimizer.</p> <p>Recommendations for member accounts of the organization are
      * not included in the export file if this parameter is omitted.</p>
@@ -414,7 +414,7 @@ namespace Model
 
     /**
      * <p>Indicates whether to include recommendations for resources in all member
-     * accounts of the organization if your account is the master account of an
+     * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
      * Optimizer.</p> <p>Recommendations for member accounts of the organization are
      * not included in the export file if this parameter is omitted.</p>
@@ -425,7 +425,7 @@ namespace Model
 
     /**
      * <p>Indicates whether to include recommendations for resources in all member
-     * accounts of the organization if your account is the master account of an
+     * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
      * Optimizer.</p> <p>Recommendations for member accounts of the organization are
      * not included in the export file if this parameter is omitted.</p>

@@ -31,10 +31,9 @@ namespace Model
    * reference sensitive information in the log configuration of a container, use the
    * <code>secretOptions</code> container definition parameter.</p> </li> </ul>
    * <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-   * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Secret">AWS API
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+   * sensitive data</a> in the <i>AWS Batch User Guide</i>.</p><p><h3>See Also:</h3> 
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Secret">AWS API
    * Reference</a></p>
    */
   class AWS_BATCH_API Secret
@@ -91,7 +90,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
      * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
-     * Manager Parameter Store parameter exists in the same Region as the task you are
+     * Manager Parameter Store parameter exists in the same Region as the job you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
      * 
@@ -102,7 +101,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
      * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
-     * Manager Parameter Store parameter exists in the same Region as the task you are
+     * Manager Parameter Store parameter exists in the same Region as the job you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
      * 
@@ -113,7 +112,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
      * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
-     * Manager Parameter Store parameter exists in the same Region as the task you are
+     * Manager Parameter Store parameter exists in the same Region as the job you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
      * 
@@ -124,7 +123,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
      * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
-     * Manager Parameter Store parameter exists in the same Region as the task you are
+     * Manager Parameter Store parameter exists in the same Region as the job you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
      * 
@@ -135,7 +134,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
      * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
-     * Manager Parameter Store parameter exists in the same Region as the task you are
+     * Manager Parameter Store parameter exists in the same Region as the job you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
      * 
@@ -146,7 +145,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
      * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
-     * Manager Parameter Store parameter exists in the same Region as the task you are
+     * Manager Parameter Store parameter exists in the same Region as the job you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
      * 
@@ -157,7 +156,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
      * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
-     * Manager Parameter Store parameter exists in the same Region as the task you are
+     * Manager Parameter Store parameter exists in the same Region as the job you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
      * 
@@ -168,7 +167,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
      * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
-     * Manager Parameter Store parameter exists in the same Region as the task you are
+     * Manager Parameter Store parameter exists in the same Region as the job you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
      * 

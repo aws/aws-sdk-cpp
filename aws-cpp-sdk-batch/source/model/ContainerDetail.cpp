@@ -47,7 +47,9 @@ ContainerDetail::ContainerDetail() :
     m_resourceRequirementsHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
-    m_secretsHasBeenSet(false)
+    m_secretsHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_fargatePlatformConfigurationHasBeenSet(false)
 {
 }
 
@@ -80,7 +82,9 @@ ContainerDetail::ContainerDetail(JsonView jsonValue) :
     m_resourceRequirementsHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
-    m_secretsHasBeenSet(false)
+    m_secretsHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_fargatePlatformConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -279,6 +283,20 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     m_secretsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("networkConfiguration"))
+  {
+    m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
+
+    m_networkConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fargatePlatformConfiguration"))
+  {
+    m_fargatePlatformConfiguration = jsonValue.GetObject("fargatePlatformConfiguration");
+
+    m_fargatePlatformConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -467,6 +485,18 @@ JsonValue ContainerDetail::Jsonize() const
      secretsJsonList[secretsIndex].AsObject(m_secrets[secretsIndex].Jsonize());
    }
    payload.WithArray("secrets", std::move(secretsJsonList));
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_fargatePlatformConfigurationHasBeenSet)
+  {
+   payload.WithObject("fargatePlatformConfiguration", m_fargatePlatformConfiguration.Jsonize());
 
   }
 

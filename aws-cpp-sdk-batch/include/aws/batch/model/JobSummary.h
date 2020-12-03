@@ -404,32 +404,38 @@ namespace Model
 
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
      */
     inline const NodePropertiesSummary& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
      */
     inline void SetNodeProperties(const NodePropertiesSummary& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
      */
     inline void SetNodeProperties(NodePropertiesSummary&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
      */
     inline JobSummary& WithNodeProperties(const NodePropertiesSummary& value) { SetNodeProperties(value); return *this;}
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
      */
     inline JobSummary& WithNodeProperties(NodePropertiesSummary&& value) { SetNodeProperties(std::move(value)); return *this;}
 

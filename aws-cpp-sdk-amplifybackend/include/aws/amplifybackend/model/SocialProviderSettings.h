@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The settings for using the social providers for access to your Amplify
-   * app.</p><p><h3>See Also:</h3>   <a
+   * <p>The settings for using the social identity providers for access to your
+   * Amplify app.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/SocialProviderSettings">AWS
    * API Reference</a></p>
    */

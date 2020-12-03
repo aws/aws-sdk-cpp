@@ -25,9 +25,10 @@ namespace Model
 
   /**
    * <p>Provides information used to select Amazon Machine Images (AMIs) for
-   * instances in the compute environment. If the <code>Ec2Configuration</code> is
-   * not specified, the default is <code>ECS_AL1</code>.</p><p><h3>See Also:</h3>  
-   * <a
+   * instances in the compute environment. If the <code>Ec2Configuration</code> isn't
+   * specified, the default is <code>ECS_AL1</code>.</p>  <p>This object isn't
+   * applicable to jobs running on Fargate resources.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ec2Configuration">AWS
    * API Reference</a></p>
    */
@@ -41,10 +42,10 @@ namespace Model
 
 
     /**
-     * <p>The image type to match with the instance type to pick an AMI. If the
-     * <code>imageIdOverride</code> parameter is not specified, then a recent <a
+     * <p>The image type to match with the instance type to select an AMI. If the
+     * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> will be used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -57,16 +58,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
      */
     inline const Aws::String& GetImageType() const{ return m_imageType; }
 
     /**
-     * <p>The image type to match with the instance type to pick an AMI. If the
-     * <code>imageIdOverride</code> parameter is not specified, then a recent <a
+     * <p>The image type to match with the instance type to select an AMI. If the
+     * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> will be used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -79,16 +80,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
      */
     inline bool ImageTypeHasBeenSet() const { return m_imageTypeHasBeenSet; }
 
     /**
-     * <p>The image type to match with the instance type to pick an AMI. If the
-     * <code>imageIdOverride</code> parameter is not specified, then a recent <a
+     * <p>The image type to match with the instance type to select an AMI. If the
+     * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> will be used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -101,16 +102,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
      */
     inline void SetImageType(const Aws::String& value) { m_imageTypeHasBeenSet = true; m_imageType = value; }
 
     /**
-     * <p>The image type to match with the instance type to pick an AMI. If the
-     * <code>imageIdOverride</code> parameter is not specified, then a recent <a
+     * <p>The image type to match with the instance type to select an AMI. If the
+     * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> will be used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -123,16 +124,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
      */
     inline void SetImageType(Aws::String&& value) { m_imageTypeHasBeenSet = true; m_imageType = std::move(value); }
 
     /**
-     * <p>The image type to match with the instance type to pick an AMI. If the
-     * <code>imageIdOverride</code> parameter is not specified, then a recent <a
+     * <p>The image type to match with the instance type to select an AMI. If the
+     * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> will be used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -145,16 +146,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
      */
     inline void SetImageType(const char* value) { m_imageTypeHasBeenSet = true; m_imageType.assign(value); }
 
     /**
-     * <p>The image type to match with the instance type to pick an AMI. If the
-     * <code>imageIdOverride</code> parameter is not specified, then a recent <a
+     * <p>The image type to match with the instance type to select an AMI. If the
+     * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> will be used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -167,16 +168,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
      */
     inline Ec2Configuration& WithImageType(const Aws::String& value) { SetImageType(value); return *this;}
 
     /**
-     * <p>The image type to match with the instance type to pick an AMI. If the
-     * <code>imageIdOverride</code> parameter is not specified, then a recent <a
+     * <p>The image type to match with the instance type to select an AMI. If the
+     * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> will be used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -189,16 +190,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
      */
     inline Ec2Configuration& WithImageType(Aws::String&& value) { SetImageType(std::move(value)); return *this;}
 
     /**
-     * <p>The image type to match with the instance type to pick an AMI. If the
-     * <code>imageIdOverride</code> parameter is not specified, then a recent <a
+     * <p>The image type to match with the instance type to select an AMI. If the
+     * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> will be used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -211,7 +212,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
      */
     inline Ec2Configuration& WithImageType(const char* value) { SetImageType(value); return *this;}

@@ -127,49 +127,49 @@ namespace Model
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline const JQState& GetState() const{ return m_state; }
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline void SetState(const JQState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline JobQueueDetail& WithState(const JQState& value) { SetState(value); return *this;}
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline JobQueueDetail& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
 
@@ -282,57 +282,57 @@ namespace Model
 
 
     /**
-     * <p>The compute environments that are attached to the job queue and the order in
-     * which job placement is preferred. Compute environments are selected for job
+     * <p>The compute environments that are attached to the job queue and the order
+     * that job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
     inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
 
     /**
-     * <p>The compute environments that are attached to the job queue and the order in
-     * which job placement is preferred. Compute environments are selected for job
+     * <p>The compute environments that are attached to the job queue and the order
+     * that job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
     inline bool ComputeEnvironmentOrderHasBeenSet() const { return m_computeEnvironmentOrderHasBeenSet; }
 
     /**
-     * <p>The compute environments that are attached to the job queue and the order in
-     * which job placement is preferred. Compute environments are selected for job
+     * <p>The compute environments that are attached to the job queue and the order
+     * that job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
     inline void SetComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
 
     /**
-     * <p>The compute environments that are attached to the job queue and the order in
-     * which job placement is preferred. Compute environments are selected for job
+     * <p>The compute environments that are attached to the job queue and the order
+     * that job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
     inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
 
     /**
-     * <p>The compute environments that are attached to the job queue and the order in
-     * which job placement is preferred. Compute environments are selected for job
+     * <p>The compute environments that are attached to the job queue and the order
+     * that job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
     inline JobQueueDetail& WithComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { SetComputeEnvironmentOrder(value); return *this;}
 
     /**
-     * <p>The compute environments that are attached to the job queue and the order in
-     * which job placement is preferred. Compute environments are selected for job
+     * <p>The compute environments that are attached to the job queue and the order
+     * that job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
     inline JobQueueDetail& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
 
     /**
-     * <p>The compute environments that are attached to the job queue and the order in
-     * which job placement is preferred. Compute environments are selected for job
+     * <p>The compute environments that are attached to the job queue and the order
+     * that job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
     inline JobQueueDetail& AddComputeEnvironmentOrder(const ComputeEnvironmentOrder& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
 
     /**
-     * <p>The compute environments that are attached to the job queue and the order in
-     * which job placement is preferred. Compute environments are selected for job
+     * <p>The compute environments that are attached to the job queue and the order
+     * that job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
     inline JobQueueDetail& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }

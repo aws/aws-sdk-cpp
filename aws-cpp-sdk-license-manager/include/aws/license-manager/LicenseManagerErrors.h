@@ -48,13 +48,18 @@ enum class LicenseManagerErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   AUTHORIZATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
+  ENTITLEMENT_NOT_ALLOWED,
   FAILED_DEPENDENCY,
   FILTER_LIMIT_EXCEEDED,
   INVALID_RESOURCE_STATE,
   LICENSE_USAGE,
+  NO_ENTITLEMENTS_ALLOWED,
   RATE_LIMIT_EXCEEDED,
+  REDIRECT,
   RESOURCE_LIMIT_EXCEEDED,
-  SERVER_INTERNAL
+  SERVER_INTERNAL,
+  UNSUPPORTED_DIGITAL_SIGNATURE_METHOD
 };
 
 class AWS_LICENSEMANAGER_API LicenseManagerError : public Aws::Client::AWSError<LicenseManagerErrors>

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Reserved.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes key/value pairs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Metadata">AWS
    * API Reference</a></p>
    */
@@ -38,83 +38,83 @@ namespace Model
 
 
     /**
-     * <p>Reserved.</p>
+     * <p>The key name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The key name.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The key name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The key name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The key name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The key name.</p>
      */
     inline Metadata& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Reserved.</p>
+     * <p>The key name.</p>
      */
     inline Metadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved.</p>
+     * <p>The key name.</p>
      */
     inline Metadata& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Reserved.</p>
+     * <p>The value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The value.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The value.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The value.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The value.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Reserved.</p>
+     * <p>The value.</p>
      */
     inline Metadata& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Reserved.</p>
+     * <p>The value.</p>
      */
     inline Metadata& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved.</p>
+     * <p>The value.</p>
      */
     inline Metadata& WithValue(const char* value) { SetValue(value); return *this;}
 

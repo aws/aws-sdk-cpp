@@ -11,6 +11,8 @@
 #include <aws/batch/model/ContainerProperties.h>
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/NodeProperties.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/PlatformCapability.h>
 #include <utility>
 
 namespace Aws
@@ -188,42 +190,74 @@ namespace Model
 
 
     /**
-     * <p>The type of job definition.</p>
+     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported. For more information about multi-node
+     * parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of job definition.</p>
+     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported. For more information about multi-node
+     * parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of job definition.</p>
+     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported. For more information about multi-node
+     * parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of job definition.</p>
+     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported. For more information about multi-node
+     * parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of job definition.</p>
+     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported. For more information about multi-node
+     * parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of job definition.</p>
+     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported. For more information about multi-node
+     * parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of job definition.</p>
+     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported. For more information about multi-node
+     * parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of job definition.</p>
+     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported. For more information about multi-node
+     * parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithType(const char* value) { SetType(value); return *this;}
 
@@ -443,73 +477,91 @@ namespace Model
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they have not finished.</p>
+     * your jobs if they haven't finished.</p>
      */
     inline const JobTimeout& GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they have not finished.</p>
+     * your jobs if they haven't finished.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they have not finished.</p>
+     * your jobs if they haven't finished.</p>
      */
     inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they have not finished.</p>
+     * your jobs if they haven't finished.</p>
      */
     inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they have not finished.</p>
+     * your jobs if they haven't finished.</p>
      */
     inline JobDefinition& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition. You can specify a timeout duration after which AWS Batch terminates
-     * your jobs if they have not finished.</p>
+     * your jobs if they haven't finished.</p>
      */
     inline JobDefinition& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
 
     /**
      * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     *  <p>If the job runs on Fargate resources, then you must not specify
+     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * 
      */
     inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
      * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     *  <p>If the job runs on Fargate resources, then you must not specify
+     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
      * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     *  <p>If the job runs on Fargate resources, then you must not specify
+     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * 
      */
     inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
      * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     *  <p>If the job runs on Fargate resources, then you must not specify
+     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * 
      */
     inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
      * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     *  <p>If the job runs on Fargate resources, then you must not specify
+     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * 
      */
     inline JobDefinition& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
 
     /**
      * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     *  <p>If the job runs on Fargate resources, then you must not specify
+     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * 
      */
     inline JobDefinition& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
 
@@ -579,6 +631,104 @@ namespace Model
      */
     inline JobDefinition& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state.</p>
+     */
+    inline bool GetPropagateTags() const{ return m_propagateTags; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state.</p>
+     */
+    inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state.</p>
+     */
+    inline void SetPropagateTags(bool value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state.</p>
+     */
+    inline JobDefinition& WithPropagateTags(bool value) { SetPropagateTags(value); return *this;}
+
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline const Aws::Vector<PlatformCapability>& GetPlatformCapabilities() const{ return m_platformCapabilities; }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline bool PlatformCapabilitiesHasBeenSet() const { return m_platformCapabilitiesHasBeenSet; }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline void SetPlatformCapabilities(const Aws::Vector<PlatformCapability>& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities = value; }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline void SetPlatformCapabilities(Aws::Vector<PlatformCapability>&& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities = std::move(value); }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline JobDefinition& WithPlatformCapabilities(const Aws::Vector<PlatformCapability>& value) { SetPlatformCapabilities(value); return *this;}
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline JobDefinition& WithPlatformCapabilities(Aws::Vector<PlatformCapability>&& value) { SetPlatformCapabilities(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline JobDefinition& AddPlatformCapabilities(const PlatformCapability& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities.push_back(value); return *this; }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline JobDefinition& AddPlatformCapabilities(PlatformCapability&& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobDefinitionName;
@@ -613,6 +763,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_propagateTags;
+    bool m_propagateTagsHasBeenSet;
+
+    Aws::Vector<PlatformCapability> m_platformCapabilities;
+    bool m_platformCapabilitiesHasBeenSet;
   };
 
 } // namespace Model

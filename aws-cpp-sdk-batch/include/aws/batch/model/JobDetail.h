@@ -17,6 +17,7 @@
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/AttemptDetail.h>
 #include <aws/batch/model/JobDependency.h>
+#include <aws/batch/model/PlatformCapability.h>
 #include <utility>
 
 namespace Aws
@@ -172,50 +173,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
-     * associated.</p>
+     * <p>The Amazon Resource Name (ARN) of the job queue that the job is associated
+     * with.</p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
-     * associated.</p>
+     * <p>The Amazon Resource Name (ARN) of the job queue that the job is associated
+     * with.</p>
      */
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
-     * associated.</p>
+     * <p>The Amazon Resource Name (ARN) of the job queue that the job is associated
+     * with.</p>
      */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
-     * associated.</p>
+     * <p>The Amazon Resource Name (ARN) of the job queue that the job is associated
+     * with.</p>
      */
     inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
-     * associated.</p>
+     * <p>The Amazon Resource Name (ARN) of the job queue that the job is associated
+     * with.</p>
      */
     inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
-     * associated.</p>
+     * <p>The Amazon Resource Name (ARN) of the job queue that the job is associated
+     * with.</p>
      */
     inline JobDetail& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
-     * associated.</p>
+     * <p>The Amazon Resource Name (ARN) of the job queue that the job is associated
+     * with.</p>
      */
     inline JobDetail& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
-     * associated.</p>
+     * <p>The Amazon Resource Name (ARN) of the job queue that the job is associated
+     * with.</p>
      */
     inline JobDetail& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
@@ -436,7 +437,7 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
      * job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * <code>RUNNING</code> state). This parameter isn't provided for child jobs of
      * array jobs or multi-node parallel jobs.</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
@@ -444,7 +445,7 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
      * job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * <code>RUNNING</code> state). This parameter isn't provided for child jobs of
      * array jobs or multi-node parallel jobs.</p>
      */
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
@@ -452,7 +453,7 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
      * job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * <code>RUNNING</code> state). This parameter isn't provided for child jobs of
      * array jobs or multi-node parallel jobs.</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
@@ -460,7 +461,7 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
      * job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * <code>RUNNING</code> state). This parameter isn't provided for child jobs of
      * array jobs or multi-node parallel jobs.</p>
      */
     inline JobDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
@@ -496,42 +497,42 @@ namespace Model
 
 
     /**
-     * <p>A list of job IDs on which this job depends.</p>
+     * <p>A list of job IDs that this job depends on.</p>
      */
     inline const Aws::Vector<JobDependency>& GetDependsOn() const{ return m_dependsOn; }
 
     /**
-     * <p>A list of job IDs on which this job depends.</p>
+     * <p>A list of job IDs that this job depends on.</p>
      */
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
 
     /**
-     * <p>A list of job IDs on which this job depends.</p>
+     * <p>A list of job IDs that this job depends on.</p>
      */
     inline void SetDependsOn(const Aws::Vector<JobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
     /**
-     * <p>A list of job IDs on which this job depends.</p>
+     * <p>A list of job IDs that this job depends on.</p>
      */
     inline void SetDependsOn(Aws::Vector<JobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
 
     /**
-     * <p>A list of job IDs on which this job depends.</p>
+     * <p>A list of job IDs that this job depends on.</p>
      */
     inline JobDetail& WithDependsOn(const Aws::Vector<JobDependency>& value) { SetDependsOn(value); return *this;}
 
     /**
-     * <p>A list of job IDs on which this job depends.</p>
+     * <p>A list of job IDs that this job depends on.</p>
      */
     inline JobDetail& WithDependsOn(Aws::Vector<JobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
 
     /**
-     * <p>A list of job IDs on which this job depends.</p>
+     * <p>A list of job IDs that this job depends on.</p>
      */
     inline JobDetail& AddDependsOn(const JobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
     /**
-     * <p>A list of job IDs on which this job depends.</p>
+     * <p>A list of job IDs that this job depends on.</p>
      */
     inline JobDetail& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 
@@ -670,37 +671,37 @@ namespace Model
 
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline const ContainerDetail& GetContainer() const{ return m_container; }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline void SetContainer(const ContainerDetail& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline void SetContainer(ContainerDetail&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline JobDetail& WithContainer(const ContainerDetail& value) { SetContainer(value); return *this;}
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline JobDetail& WithContainer(ContainerDetail&& value) { SetContainer(std::move(value)); return *this;}
@@ -745,31 +746,43 @@ namespace Model
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
+     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
+     * 
      */
     inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
+     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
+     * 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
+     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
+     * 
      */
     inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
+     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
+     * 
      */
     inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
+     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
+     * 
      */
     inline JobDetail& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
+     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
+     * 
      */
     inline JobDetail& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
 
@@ -901,6 +914,104 @@ namespace Model
      */
     inline JobDetail& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags are not
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state.</p>
+     */
+    inline bool GetPropagateTags() const{ return m_propagateTags; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags are not
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state.</p>
+     */
+    inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags are not
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state.</p>
+     */
+    inline void SetPropagateTags(bool value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags are not
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state.</p>
+     */
+    inline JobDetail& WithPropagateTags(bool value) { SetPropagateTags(value); return *this;}
+
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline const Aws::Vector<PlatformCapability>& GetPlatformCapabilities() const{ return m_platformCapabilities; }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline bool PlatformCapabilitiesHasBeenSet() const { return m_platformCapabilitiesHasBeenSet; }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline void SetPlatformCapabilities(const Aws::Vector<PlatformCapability>& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities = value; }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline void SetPlatformCapabilities(Aws::Vector<PlatformCapability>&& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities = std::move(value); }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline JobDetail& WithPlatformCapabilities(const Aws::Vector<PlatformCapability>& value) { SetPlatformCapabilities(value); return *this;}
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline JobDetail& WithPlatformCapabilities(Aws::Vector<PlatformCapability>&& value) { SetPlatformCapabilities(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline JobDetail& AddPlatformCapabilities(const PlatformCapability& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities.push_back(value); return *this; }
+
+    /**
+     * <p>The platform capabilities required by the job definition. If no value is
+     * specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources
+     * specify <code>FARGATE</code>.</p>
+     */
+    inline JobDetail& AddPlatformCapabilities(PlatformCapability&& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobArn;
@@ -962,6 +1073,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_propagateTags;
+    bool m_propagateTagsHasBeenSet;
+
+    Aws::Vector<PlatformCapability> m_platformCapabilities;
+    bool m_platformCapabilitiesHasBeenSet;
   };
 
 } // namespace Model

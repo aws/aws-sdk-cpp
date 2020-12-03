@@ -336,7 +336,7 @@ namespace Model
         virtual void CreateBackendConfigAsync(const Model::CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a one time challenge code to authenticate a user into your Amplify
+         * <p>Generates a one-time challenge code to authenticate a user into your Amplify
          * Admin UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateToken">AWS
          * API Reference</a></p>
@@ -344,7 +344,7 @@ namespace Model
         virtual Model::CreateTokenOutcome CreateToken(const Model::CreateTokenRequest& request) const;
 
         /**
-         * <p>Generates a one time challenge code to authenticate a user into your Amplify
+         * <p>Generates a one-time challenge code to authenticate a user into your Amplify
          * Admin UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateToken">AWS
          * API Reference</a></p>
@@ -354,7 +354,7 @@ namespace Model
         virtual Model::CreateTokenOutcomeCallable CreateTokenCallable(const Model::CreateTokenRequest& request) const;
 
         /**
-         * <p>Generates a one time challenge code to authenticate a user into your Amplify
+         * <p>Generates a one-time challenge code to authenticate a user into your Amplify
          * Admin UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateToken">AWS
          * API Reference</a></p>
@@ -364,7 +364,7 @@ namespace Model
         virtual void CreateTokenAsync(const Model::CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes an existing environment from your Ampify project.</p><p><h3>See
+         * <p>Removes an existing environment from your Amplify project.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackend">AWS
          * API Reference</a></p>
@@ -372,7 +372,7 @@ namespace Model
         virtual Model::DeleteBackendOutcome DeleteBackend(const Model::DeleteBackendRequest& request) const;
 
         /**
-         * <p>Removes an existing environment from your Ampify project.</p><p><h3>See
+         * <p>Removes an existing environment from your Amplify project.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackend">AWS
          * API Reference</a></p>
@@ -382,7 +382,7 @@ namespace Model
         virtual Model::DeleteBackendOutcomeCallable DeleteBackendCallable(const Model::DeleteBackendRequest& request) const;
 
         /**
-         * <p>Removes an existing environment from your Ampify project.</p><p><h3>See
+         * <p>Removes an existing environment from your Amplify project.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackend">AWS
          * API Reference</a></p>
@@ -501,7 +501,7 @@ namespace Model
         virtual void GenerateBackendAPIModelsAsync(const Model::GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides project level details for your Amplify UI project.</p><p><h3>See
+         * <p>Provides project-level details for your Amplify UI project.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackend">AWS
          * API Reference</a></p>
@@ -509,7 +509,7 @@ namespace Model
         virtual Model::GetBackendOutcome GetBackend(const Model::GetBackendRequest& request) const;
 
         /**
-         * <p>Provides project level details for your Amplify UI project.</p><p><h3>See
+         * <p>Provides project-level details for your Amplify UI project.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackend">AWS
          * API Reference</a></p>
@@ -519,7 +519,7 @@ namespace Model
         virtual Model::GetBackendOutcomeCallable GetBackendCallable(const Model::GetBackendRequest& request) const;
 
         /**
-         * <p>Provides project level details for your Amplify UI project.</p><p><h3>See
+         * <p>Provides project-level details for your Amplify UI project.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackend">AWS
          * API Reference</a></p>
@@ -529,14 +529,14 @@ namespace Model
         virtual void GetBackendAsync(const Model::GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the details for a backend api.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the details for a backend API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPI">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBackendAPIOutcome GetBackendAPI(const Model::GetBackendAPIRequest& request) const;
 
         /**
-         * <p>Gets the details for a backend api.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the details for a backend API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPI">AWS
          * API Reference</a></p>
          *
@@ -545,7 +545,7 @@ namespace Model
         virtual Model::GetBackendAPIOutcomeCallable GetBackendAPICallable(const Model::GetBackendAPIRequest& request) const;
 
         /**
-         * <p>Gets the details for a backend api.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the details for a backend API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPI">AWS
          * API Reference</a></p>
          *
@@ -582,14 +582,14 @@ namespace Model
         virtual void GetBackendAPIModelsAsync(const Model::GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a backend auth details.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets backend auth details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBackendAuthOutcome GetBackendAuth(const Model::GetBackendAuthRequest& request) const;
 
         /**
-         * <p>Gets a backend auth details.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets backend auth details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">AWS
          * API Reference</a></p>
          *
@@ -598,7 +598,7 @@ namespace Model
         virtual Model::GetBackendAuthOutcomeCallable GetBackendAuthCallable(const Model::GetBackendAuthRequest& request) const;
 
         /**
-         * <p>Gets a backend auth details.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets backend auth details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">AWS
          * API Reference</a></p>
          *
@@ -716,7 +716,7 @@ namespace Model
         virtual void RemoveAllBackendsAsync(const Model::RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the AWS resources required to access the Amplify Admin
+         * <p>Removes the AWS resources that are required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">AWS
          * API Reference</a></p>
@@ -724,7 +724,7 @@ namespace Model
         virtual Model::RemoveBackendConfigOutcome RemoveBackendConfig(const Model::RemoveBackendConfigRequest& request) const;
 
         /**
-         * <p>Removes the AWS resources required to access the Amplify Admin
+         * <p>Removes the AWS resources that are required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">AWS
          * API Reference</a></p>
@@ -734,7 +734,7 @@ namespace Model
         virtual Model::RemoveBackendConfigOutcomeCallable RemoveBackendConfigCallable(const Model::RemoveBackendConfigRequest& request) const;
 
         /**
-         * <p>Removes the AWS resources required to access the Amplify Admin
+         * <p>Removes the AWS resources that are required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">AWS
          * API Reference</a></p>
@@ -797,7 +797,7 @@ namespace Model
         virtual void UpdateBackendAuthAsync(const Model::UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the AWS resources required to access the Amplify Admin
+         * <p>Updates the AWS resources that are required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">AWS
          * API Reference</a></p>
@@ -805,7 +805,7 @@ namespace Model
         virtual Model::UpdateBackendConfigOutcome UpdateBackendConfig(const Model::UpdateBackendConfigRequest& request) const;
 
         /**
-         * <p>Updates the AWS resources required to access the Amplify Admin
+         * <p>Updates the AWS resources that are required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">AWS
          * API Reference</a></p>
@@ -815,7 +815,7 @@ namespace Model
         virtual Model::UpdateBackendConfigOutcomeCallable UpdateBackendConfigCallable(const Model::UpdateBackendConfigRequest& request) const;
 
         /**
-         * <p>Updates the AWS resources required to access the Amplify Admin
+         * <p>Updates the AWS resources that are required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">AWS
          * API Reference</a></p>

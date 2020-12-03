@@ -19,10 +19,6 @@ namespace Model
 {
 
 ContainerOverrides::ContainerOverrides() : 
-    m_vcpus(0),
-    m_vcpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_environmentHasBeenSet(false),
@@ -31,10 +27,6 @@ ContainerOverrides::ContainerOverrides() :
 }
 
 ContainerOverrides::ContainerOverrides(JsonView jsonValue) : 
-    m_vcpus(0),
-    m_vcpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_environmentHasBeenSet(false),
@@ -45,20 +37,6 @@ ContainerOverrides::ContainerOverrides(JsonView jsonValue) :
 
 ContainerOverrides& ContainerOverrides::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("vcpus"))
-  {
-    m_vcpus = jsonValue.GetInteger("vcpus");
-
-    m_vcpusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("memory"))
-  {
-    m_memory = jsonValue.GetInteger("memory");
-
-    m_memoryHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("command"))
   {
     Array<JsonView> commandJsonList = jsonValue.GetArray("command");
@@ -102,18 +80,6 @@ ContainerOverrides& ContainerOverrides::operator =(JsonView jsonValue)
 JsonValue ContainerOverrides::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_vcpusHasBeenSet)
-  {
-   payload.WithInteger("vcpus", m_vcpus);
-
-  }
-
-  if(m_memoryHasBeenSet)
-  {
-   payload.WithInteger("memory", m_memory);
-
-  }
 
   if(m_commandHasBeenSet)
   {

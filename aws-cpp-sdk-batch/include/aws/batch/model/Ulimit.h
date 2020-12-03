@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The <code>ulimit</code> settings to pass to the container.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The <code>ulimit</code> settings to pass to the container.</p>  <p>This
+   * object isn't applicable to jobs running on Fargate resources.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ulimit">AWS API
    * Reference</a></p>
    */

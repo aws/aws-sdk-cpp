@@ -175,8 +175,7 @@ namespace Model
      * Scaling group is considered optimized when Compute Optimizer determines that the
      * group is correctly provisioned to run your workload based on the chosen instance
      * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>  <p>The values that are returned
-     * might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.</p> 
+     * generation instance type.</p> </li> </ul>
      */
     inline const Finding& GetFinding() const{ return m_finding; }
 
@@ -189,8 +188,7 @@ namespace Model
      * Scaling group is considered optimized when Compute Optimizer determines that the
      * group is correctly provisioned to run your workload based on the chosen instance
      * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>  <p>The values that are returned
-     * might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.</p> 
+     * generation instance type.</p> </li> </ul>
      */
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
@@ -203,8 +201,7 @@ namespace Model
      * Scaling group is considered optimized when Compute Optimizer determines that the
      * group is correctly provisioned to run your workload based on the chosen instance
      * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>  <p>The values that are returned
-     * might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.</p> 
+     * generation instance type.</p> </li> </ul>
      */
     inline void SetFinding(const Finding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
@@ -217,8 +214,7 @@ namespace Model
      * Scaling group is considered optimized when Compute Optimizer determines that the
      * group is correctly provisioned to run your workload based on the chosen instance
      * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>  <p>The values that are returned
-     * might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.</p> 
+     * generation instance type.</p> </li> </ul>
      */
     inline void SetFinding(Finding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
@@ -231,8 +227,7 @@ namespace Model
      * Scaling group is considered optimized when Compute Optimizer determines that the
      * group is correctly provisioned to run your workload based on the chosen instance
      * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>  <p>The values that are returned
-     * might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.</p> 
+     * generation instance type.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& WithFinding(const Finding& value) { SetFinding(value); return *this;}
 
@@ -245,8 +240,7 @@ namespace Model
      * Scaling group is considered optimized when Compute Optimizer determines that the
      * group is correctly provisioned to run your workload based on the chosen instance
      * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>  <p>The values that are returned
-     * might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.</p> 
+     * generation instance type.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& WithFinding(Finding&& value) { SetFinding(std::move(value)); return *this;}
 

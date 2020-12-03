@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Ec2Instance,
-    AutoScalingGroup
+    AutoScalingGroup,
+    EbsVolume
   };
 
 namespace RecommendationSourceTypeMapper

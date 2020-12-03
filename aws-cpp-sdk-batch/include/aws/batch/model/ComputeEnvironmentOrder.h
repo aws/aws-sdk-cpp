@@ -42,22 +42,34 @@ namespace Model
 
 
     /**
-     * <p>The order of the compute environment.</p>
+     * <p>The order of the compute environment. Compute environments are tried in
+     * ascending order. For example, if two compute environments are associated with a
+     * job queue, the compute environment with a lower <code>order</code> integer value
+     * is tried for job placement first.</p>
      */
     inline int GetOrder() const{ return m_order; }
 
     /**
-     * <p>The order of the compute environment.</p>
+     * <p>The order of the compute environment. Compute environments are tried in
+     * ascending order. For example, if two compute environments are associated with a
+     * job queue, the compute environment with a lower <code>order</code> integer value
+     * is tried for job placement first.</p>
      */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     /**
-     * <p>The order of the compute environment.</p>
+     * <p>The order of the compute environment. Compute environments are tried in
+     * ascending order. For example, if two compute environments are associated with a
+     * job queue, the compute environment with a lower <code>order</code> integer value
+     * is tried for job placement first.</p>
      */
     inline void SetOrder(int value) { m_orderHasBeenSet = true; m_order = value; }
 
     /**
-     * <p>The order of the compute environment.</p>
+     * <p>The order of the compute environment. Compute environments are tried in
+     * ascending order. For example, if two compute environments are associated with a
+     * job queue, the compute environment with a lower <code>order</code> integer value
+     * is tried for job placement first.</p>
      */
     inline ComputeEnvironmentOrder& WithOrder(int value) { SetOrder(value); return *this;}
 

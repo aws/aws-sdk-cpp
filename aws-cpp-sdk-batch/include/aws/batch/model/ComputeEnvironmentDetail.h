@@ -241,32 +241,50 @@ namespace Model
 
 
     /**
-     * <p>The type of the compute environment.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const CEType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the compute environment.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the compute environment.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(const CEType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the compute environment.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the compute environment.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithType(const CEType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the compute environment.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
 
@@ -278,7 +296,7 @@ namespace Model
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
+     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
      * environments in the <code>DISABLED</code> state do not scale out. However, they
@@ -293,7 +311,7 @@ namespace Model
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
+     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
      * environments in the <code>DISABLED</code> state do not scale out. However, they
@@ -308,7 +326,7 @@ namespace Model
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
+     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
      * environments in the <code>DISABLED</code> state do not scale out. However, they
@@ -323,7 +341,7 @@ namespace Model
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
+     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
      * environments in the <code>DISABLED</code> state do not scale out. However, they
@@ -338,7 +356,7 @@ namespace Model
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
+     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
      * environments in the <code>DISABLED</code> state do not scale out. However, they
@@ -353,7 +371,7 @@ namespace Model
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
+     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
      * environments in the <code>DISABLED</code> state do not scale out. However, they

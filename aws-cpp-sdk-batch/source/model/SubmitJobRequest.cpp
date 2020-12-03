@@ -22,6 +22,8 @@ SubmitJobRequest::SubmitJobRequest() :
     m_containerOverridesHasBeenSet(false),
     m_nodeOverridesHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
+    m_propagateTags(false),
+    m_propagateTagsHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -92,6 +94,12 @@ Aws::String SubmitJobRequest::SerializePayload() const
   if(m_retryStrategyHasBeenSet)
   {
    payload.WithObject("retryStrategy", m_retryStrategy.Jsonize());
+
+  }
+
+  if(m_propagateTagsHasBeenSet)
+  {
+   payload.WithBool("propagateTags", m_propagateTags);
 
   }
 

@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
      * returned for a job. The patten can be up to 512 characters long, can contain
-     * letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
+     * letters, numbers, periods (.), colons (:), and white space (spaces, tabs). and
      * can optionally end with an asterisk (*) so that only the start of the string
      * needs to be an exact match.</p>
      */
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
      * returned for a job. The patten can be up to 512 characters long, can contain
-     * letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
+     * letters, numbers, periods (.), colons (:), and white space (spaces, tabs). and
      * can optionally end with an asterisk (*) so that only the start of the string
      * needs to be an exact match.</p>
      */
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
      * returned for a job. The patten can be up to 512 characters long, can contain
-     * letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
+     * letters, numbers, periods (.), colons (:), and white space (spaces, tabs). and
      * can optionally end with an asterisk (*) so that only the start of the string
      * needs to be an exact match.</p>
      */
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
      * returned for a job. The patten can be up to 512 characters long, can contain
-     * letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
+     * letters, numbers, periods (.), colons (:), and white space (spaces, tabs). and
      * can optionally end with an asterisk (*) so that only the start of the string
      * needs to be an exact match.</p>
      */
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
      * returned for a job. The patten can be up to 512 characters long, can contain
-     * letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
+     * letters, numbers, periods (.), colons (:), and white space (spaces, tabs). and
      * can optionally end with an asterisk (*) so that only the start of the string
      * needs to be an exact match.</p>
      */
@@ -88,7 +88,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
      * returned for a job. The patten can be up to 512 characters long, can contain
-     * letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
+     * letters, numbers, periods (.), colons (:), and white space (spaces, tabs). and
      * can optionally end with an asterisk (*) so that only the start of the string
      * needs to be an exact match.</p>
      */
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
      * returned for a job. The patten can be up to 512 characters long, can contain
-     * letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
+     * letters, numbers, periods (.), colons (:), and white space (spaces, tabs). and
      * can optionally end with an asterisk (*) so that only the start of the string
      * needs to be an exact match.</p>
      */
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
      * returned for a job. The patten can be up to 512 characters long, can contain
-     * letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
+     * letters, numbers, periods (.), colons (:), and white space (spaces, tabs). and
      * can optionally end with an asterisk (*) so that only the start of the string
      * needs to be an exact match.</p>
      */
@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
      * a job. The patten can be up to 512 characters long, can contain letters,
-     * numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs
      * to be an exact match.</p>
      */
@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
      * a job. The patten can be up to 512 characters long, can contain letters,
-     * numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs
      * to be an exact match.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
      * a job. The patten can be up to 512 characters long, can contain letters,
-     * numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs
      * to be an exact match.</p>
      */
@@ -143,7 +143,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
      * a job. The patten can be up to 512 characters long, can contain letters,
-     * numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs
      * to be an exact match.</p>
      */
@@ -152,7 +152,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
      * a job. The patten can be up to 512 characters long, can contain letters,
-     * numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs
      * to be an exact match.</p>
      */
@@ -161,7 +161,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
      * a job. The patten can be up to 512 characters long, can contain letters,
-     * numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs
      * to be an exact match.</p>
      */
@@ -170,7 +170,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
      * a job. The patten can be up to 512 characters long, can contain letters,
-     * numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs
      * to be an exact match.</p>
      */
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
      * a job. The patten can be up to 512 characters long, can contain letters,
-     * numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs
      * to be an exact match.</p>
      */
@@ -254,42 +254,42 @@ namespace Model
     /**
      * <p>Specifies the action to take if all of the specified conditions
      * (<code>onStatusReason</code>, <code>onReason</code>, and
-     * <code>onExitCode</code>) are met.</p>
+     * <code>onExitCode</code>) are met. The values are not case sensitive.</p>
      */
     inline const RetryAction& GetAction() const{ return m_action; }
 
     /**
      * <p>Specifies the action to take if all of the specified conditions
      * (<code>onStatusReason</code>, <code>onReason</code>, and
-     * <code>onExitCode</code>) are met.</p>
+     * <code>onExitCode</code>) are met. The values are not case sensitive.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>Specifies the action to take if all of the specified conditions
      * (<code>onStatusReason</code>, <code>onReason</code>, and
-     * <code>onExitCode</code>) are met.</p>
+     * <code>onExitCode</code>) are met. The values are not case sensitive.</p>
      */
     inline void SetAction(const RetryAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>Specifies the action to take if all of the specified conditions
      * (<code>onStatusReason</code>, <code>onReason</code>, and
-     * <code>onExitCode</code>) are met.</p>
+     * <code>onExitCode</code>) are met. The values are not case sensitive.</p>
      */
     inline void SetAction(RetryAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>Specifies the action to take if all of the specified conditions
      * (<code>onStatusReason</code>, <code>onReason</code>, and
-     * <code>onExitCode</code>) are met.</p>
+     * <code>onExitCode</code>) are met. The values are not case sensitive.</p>
      */
     inline EvaluateOnExit& WithAction(const RetryAction& value) { SetAction(value); return *this;}
 
     /**
      * <p>Specifies the action to take if all of the specified conditions
      * (<code>onStatusReason</code>, <code>onReason</code>, and
-     * <code>onExitCode</code>) are met.</p>
+     * <code>onExitCode</code>) are met. The values are not case sensitive.</p>
      */
     inline EvaluateOnExit& WithAction(RetryAction&& value) { SetAction(std::move(value)); return *this;}
 

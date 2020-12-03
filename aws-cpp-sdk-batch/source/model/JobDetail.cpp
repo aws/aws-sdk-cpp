@@ -42,7 +42,10 @@ JobDetail::JobDetail() :
     m_nodePropertiesHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_propagateTags(false),
+    m_propagateTagsHasBeenSet(false),
+    m_platformCapabilitiesHasBeenSet(false)
 {
 }
 
@@ -70,7 +73,10 @@ JobDetail::JobDetail(JsonView jsonValue) :
     m_nodePropertiesHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_propagateTags(false),
+    m_propagateTagsHasBeenSet(false),
+    m_platformCapabilitiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -229,6 +235,23 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("propagateTags"))
+  {
+    m_propagateTags = jsonValue.GetBool("propagateTags");
+
+    m_propagateTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformCapabilities"))
+  {
+    Array<JsonView> platformCapabilitiesJsonList = jsonValue.GetArray("platformCapabilities");
+    for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
+    {
+      m_platformCapabilities.push_back(PlatformCapabilityMapper::GetPlatformCapabilityForName(platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString()));
+    }
+    m_platformCapabilitiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -372,6 +395,23 @@ JsonValue JobDetail::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_propagateTagsHasBeenSet)
+  {
+   payload.WithBool("propagateTags", m_propagateTags);
+
+  }
+
+  if(m_platformCapabilitiesHasBeenSet)
+  {
+   Array<JsonValue> platformCapabilitiesJsonList(m_platformCapabilities.size());
+   for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
+   {
+     platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString(PlatformCapabilityMapper::GetNameForPlatformCapability(m_platformCapabilities[platformCapabilitiesIndex]));
+   }
+   payload.WithArray("platformCapabilities", std::move(platformCapabilitiesJsonList));
 
   }
 

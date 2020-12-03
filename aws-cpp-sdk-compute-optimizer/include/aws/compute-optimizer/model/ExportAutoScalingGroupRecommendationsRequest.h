@@ -41,7 +41,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -53,7 +53,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -65,7 +65,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -77,7 +77,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -89,7 +89,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -113,7 +113,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -125,7 +125,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -137,7 +137,7 @@ namespace Model
 
     /**
      * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the master account of an
+     * recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member accounts for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -392,7 +392,7 @@ namespace Model
 
     /**
      * <p>Indicates whether to include recommendations for resources in all member
-     * accounts of the organization if your account is the master account of an
+     * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
      * Optimizer.</p> <p>Recommendations for member accounts of the organization are
      * not included in the export file if this parameter is omitted.</p> <p>This
@@ -405,7 +405,7 @@ namespace Model
 
     /**
      * <p>Indicates whether to include recommendations for resources in all member
-     * accounts of the organization if your account is the master account of an
+     * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
      * Optimizer.</p> <p>Recommendations for member accounts of the organization are
      * not included in the export file if this parameter is omitted.</p> <p>This
@@ -418,7 +418,7 @@ namespace Model
 
     /**
      * <p>Indicates whether to include recommendations for resources in all member
-     * accounts of the organization if your account is the master account of an
+     * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
      * Optimizer.</p> <p>Recommendations for member accounts of the organization are
      * not included in the export file if this parameter is omitted.</p> <p>This
@@ -431,7 +431,7 @@ namespace Model
 
     /**
      * <p>Indicates whether to include recommendations for resources in all member
-     * accounts of the organization if your account is the master account of an
+     * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
      * Optimizer.</p> <p>Recommendations for member accounts of the organization are
      * not included in the export file if this parameter is omitted.</p> <p>This

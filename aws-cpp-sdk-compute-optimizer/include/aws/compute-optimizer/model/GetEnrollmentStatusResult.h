@@ -111,19 +111,19 @@ namespace Model
 
     /**
      * <p>Confirms the enrollment status of member accounts within the organization, if
-     * the account is a master account of an organization.</p>
+     * the account is a management account of an organization.</p>
      */
     inline bool GetMemberAccountsEnrolled() const{ return m_memberAccountsEnrolled; }
 
     /**
      * <p>Confirms the enrollment status of member accounts within the organization, if
-     * the account is a master account of an organization.</p>
+     * the account is a management account of an organization.</p>
      */
     inline void SetMemberAccountsEnrolled(bool value) { m_memberAccountsEnrolled = value; }
 
     /**
      * <p>Confirms the enrollment status of member accounts within the organization, if
-     * the account is a master account of an organization.</p>
+     * the account is a management account of an organization.</p>
      */
     inline GetEnrollmentStatusResult& WithMemberAccountsEnrolled(bool value) { SetMemberAccountsEnrolled(value); return *this;}
 

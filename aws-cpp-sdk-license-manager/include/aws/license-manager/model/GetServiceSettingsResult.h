@@ -113,48 +113,48 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline const OrganizationConfiguration& GetOrganizationConfiguration() const{ return m_organizationConfiguration; }
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(const OrganizationConfiguration& value) { m_organizationConfiguration = value; }
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(OrganizationConfiguration&& value) { m_organizationConfiguration = std::move(value); }
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline GetServiceSettingsResult& WithOrganizationConfiguration(const OrganizationConfiguration& value) { SetOrganizationConfiguration(value); return *this;}
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline GetServiceSettingsResult& WithOrganizationConfiguration(OrganizationConfiguration&& value) { SetOrganizationConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether cross-account discovery has been enabled.</p>
+     * <p>Indicates whether cross-account discovery is enabled.</p>
      */
     inline bool GetEnableCrossAccountsDiscovery() const{ return m_enableCrossAccountsDiscovery; }
 
     /**
-     * <p>Indicates whether cross-account discovery has been enabled.</p>
+     * <p>Indicates whether cross-account discovery is enabled.</p>
      */
     inline void SetEnableCrossAccountsDiscovery(bool value) { m_enableCrossAccountsDiscovery = value; }
 
     /**
-     * <p>Indicates whether cross-account discovery has been enabled.</p>
+     * <p>Indicates whether cross-account discovery is enabled.</p>
      */
     inline GetServiceSettingsResult& WithEnableCrossAccountsDiscovery(bool value) { SetEnableCrossAccountsDiscovery(value); return *this;}
 

@@ -42,70 +42,70 @@ namespace Model
 
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline void SetContainerPath(const char* value) { m_containerPathHasBeenSet = true; m_containerPath.assign(value); }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline MountPoint& WithContainerPath(const Aws::String& value) { SetContainerPath(value); return *this;}
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline MountPoint& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline MountPoint& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
 
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
-     * volume; otherwise, the container can write to the volume. The default value is
+     * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
-     * volume; otherwise, the container can write to the volume. The default value is
+     * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
-     * volume; otherwise, the container can write to the volume. The default value is
+     * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
-     * volume; otherwise, the container can write to the volume. The default value is
+     * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
     inline MountPoint& WithReadOnly(bool value) { SetReadOnly(value); return *this;}

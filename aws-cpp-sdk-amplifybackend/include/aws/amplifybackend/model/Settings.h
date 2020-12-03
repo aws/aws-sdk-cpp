@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The supported MFA types</p>
+     * <p>The supported MFA types.</p>
      */
     inline const Aws::Vector<MfaTypesElement>& GetMfaTypes() const{ return m_mfaTypes; }
 
     /**
-     * <p>The supported MFA types</p>
+     * <p>The supported MFA types.</p>
      */
     inline bool MfaTypesHasBeenSet() const { return m_mfaTypesHasBeenSet; }
 
     /**
-     * <p>The supported MFA types</p>
+     * <p>The supported MFA types.</p>
      */
     inline void SetMfaTypes(const Aws::Vector<MfaTypesElement>& value) { m_mfaTypesHasBeenSet = true; m_mfaTypes = value; }
 
     /**
-     * <p>The supported MFA types</p>
+     * <p>The supported MFA types.</p>
      */
     inline void SetMfaTypes(Aws::Vector<MfaTypesElement>&& value) { m_mfaTypesHasBeenSet = true; m_mfaTypes = std::move(value); }
 
     /**
-     * <p>The supported MFA types</p>
+     * <p>The supported MFA types.</p>
      */
     inline Settings& WithMfaTypes(const Aws::Vector<MfaTypesElement>& value) { SetMfaTypes(value); return *this;}
 
     /**
-     * <p>The supported MFA types</p>
+     * <p>The supported MFA types.</p>
      */
     inline Settings& WithMfaTypes(Aws::Vector<MfaTypesElement>&& value) { SetMfaTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The supported MFA types</p>
+     * <p>The supported MFA types.</p>
      */
     inline Settings& AddMfaTypes(const MfaTypesElement& value) { m_mfaTypesHasBeenSet = true; m_mfaTypes.push_back(value); return *this; }
 
     /**
-     * <p>The supported MFA types</p>
+     * <p>The supported MFA types.</p>
      */
     inline Settings& AddMfaTypes(MfaTypesElement&& value) { m_mfaTypesHasBeenSet = true; m_mfaTypes.push_back(std::move(value)); return *this; }
 

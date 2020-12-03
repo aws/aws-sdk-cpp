@@ -168,9 +168,9 @@ namespace Model
      * make calls to other AWS services on your behalf.</p> <p>If your specified role
      * has a path other than <code>/</code>, then you must either specify the full role
      * ARN (this is recommended) or prefix the role name with the path.</p> 
-     * <p>Depending on how you created your AWS Batch service role, its ARN may contain
-     * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * <p>Depending on how you created your AWS Batch service role, its ARN might
+     * contain the <code>service-role</code> path prefix. When you only specify the
+     * name of the service role, AWS Batch assumes that your ARN does not use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -182,9 +182,9 @@ namespace Model
      * make calls to other AWS services on your behalf.</p> <p>If your specified role
      * has a path other than <code>/</code>, then you must either specify the full role
      * ARN (this is recommended) or prefix the role name with the path.</p> 
-     * <p>Depending on how you created your AWS Batch service role, its ARN may contain
-     * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * <p>Depending on how you created your AWS Batch service role, its ARN might
+     * contain the <code>service-role</code> path prefix. When you only specify the
+     * name of the service role, AWS Batch assumes that your ARN does not use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -196,9 +196,9 @@ namespace Model
      * make calls to other AWS services on your behalf.</p> <p>If your specified role
      * has a path other than <code>/</code>, then you must either specify the full role
      * ARN (this is recommended) or prefix the role name with the path.</p> 
-     * <p>Depending on how you created your AWS Batch service role, its ARN may contain
-     * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * <p>Depending on how you created your AWS Batch service role, its ARN might
+     * contain the <code>service-role</code> path prefix. When you only specify the
+     * name of the service role, AWS Batch assumes that your ARN does not use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -210,9 +210,9 @@ namespace Model
      * make calls to other AWS services on your behalf.</p> <p>If your specified role
      * has a path other than <code>/</code>, then you must either specify the full role
      * ARN (this is recommended) or prefix the role name with the path.</p> 
-     * <p>Depending on how you created your AWS Batch service role, its ARN may contain
-     * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * <p>Depending on how you created your AWS Batch service role, its ARN might
+     * contain the <code>service-role</code> path prefix. When you only specify the
+     * name of the service role, AWS Batch assumes that your ARN does not use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -224,9 +224,9 @@ namespace Model
      * make calls to other AWS services on your behalf.</p> <p>If your specified role
      * has a path other than <code>/</code>, then you must either specify the full role
      * ARN (this is recommended) or prefix the role name with the path.</p> 
-     * <p>Depending on how you created your AWS Batch service role, its ARN may contain
-     * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * <p>Depending on how you created your AWS Batch service role, its ARN might
+     * contain the <code>service-role</code> path prefix. When you only specify the
+     * name of the service role, AWS Batch assumes that your ARN does not use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -238,9 +238,9 @@ namespace Model
      * make calls to other AWS services on your behalf.</p> <p>If your specified role
      * has a path other than <code>/</code>, then you must either specify the full role
      * ARN (this is recommended) or prefix the role name with the path.</p> 
-     * <p>Depending on how you created your AWS Batch service role, its ARN may contain
-     * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * <p>Depending on how you created your AWS Batch service role, its ARN might
+     * contain the <code>service-role</code> path prefix. When you only specify the
+     * name of the service role, AWS Batch assumes that your ARN does not use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -252,9 +252,9 @@ namespace Model
      * make calls to other AWS services on your behalf.</p> <p>If your specified role
      * has a path other than <code>/</code>, then you must either specify the full role
      * ARN (this is recommended) or prefix the role name with the path.</p> 
-     * <p>Depending on how you created your AWS Batch service role, its ARN may contain
-     * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * <p>Depending on how you created your AWS Batch service role, its ARN might
+     * contain the <code>service-role</code> path prefix. When you only specify the
+     * name of the service role, AWS Batch assumes that your ARN does not use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
@@ -266,9 +266,9 @@ namespace Model
      * make calls to other AWS services on your behalf.</p> <p>If your specified role
      * has a path other than <code>/</code>, then you must either specify the full role
      * ARN (this is recommended) or prefix the role name with the path.</p> 
-     * <p>Depending on how you created your AWS Batch service role, its ARN may contain
-     * the <code>service-role</code> path prefix. When you only specify the name of the
-     * service role, AWS Batch assumes that your ARN does not use the
+     * <p>Depending on how you created your AWS Batch service role, its ARN might
+     * contain the <code>service-role</code> path prefix. When you only specify the
+     * name of the service role, AWS Batch assumes that your ARN does not use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you
      * specify the full ARN of your service role when you create compute
      * environments.</p> 

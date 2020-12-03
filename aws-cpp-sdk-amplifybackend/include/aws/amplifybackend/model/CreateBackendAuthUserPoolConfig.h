@@ -83,38 +83,44 @@ namespace Model
 
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication (MFA) policies for
+     * your Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline const CreateBackendAuthMFAConfig& GetMfa() const{ return m_mfa; }
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication (MFA) policies for
+     * your Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline bool MfaHasBeenSet() const { return m_mfaHasBeenSet; }
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication (MFA) policies for
+     * your Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline void SetMfa(const CreateBackendAuthMFAConfig& value) { m_mfaHasBeenSet = true; m_mfa = value; }
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication (MFA) policies for
+     * your Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline void SetMfa(CreateBackendAuthMFAConfig&& value) { m_mfaHasBeenSet = true; m_mfa = std::move(value); }
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication (MFA) policies for
+     * your Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline CreateBackendAuthUserPoolConfig& WithMfa(const CreateBackendAuthMFAConfig& value) { SetMfa(value); return *this;}
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication (MFA) policies for
+     * your Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline CreateBackendAuthUserPoolConfig& WithMfa(CreateBackendAuthMFAConfig&& value) { SetMfa(std::move(value)); return *this;}
 
@@ -194,79 +200,93 @@ namespace Model
 
 
     /**
-     * <p>The required attributes to sign up new users in the user pool.</p>
+     * <p>The required attributes to sign up new users in the Amazon Cognito user
+     * pool.</p>
      */
     inline const Aws::Vector<RequiredSignUpAttributesElement>& GetRequiredSignUpAttributes() const{ return m_requiredSignUpAttributes; }
 
     /**
-     * <p>The required attributes to sign up new users in the user pool.</p>
+     * <p>The required attributes to sign up new users in the Amazon Cognito user
+     * pool.</p>
      */
     inline bool RequiredSignUpAttributesHasBeenSet() const { return m_requiredSignUpAttributesHasBeenSet; }
 
     /**
-     * <p>The required attributes to sign up new users in the user pool.</p>
+     * <p>The required attributes to sign up new users in the Amazon Cognito user
+     * pool.</p>
      */
     inline void SetRequiredSignUpAttributes(const Aws::Vector<RequiredSignUpAttributesElement>& value) { m_requiredSignUpAttributesHasBeenSet = true; m_requiredSignUpAttributes = value; }
 
     /**
-     * <p>The required attributes to sign up new users in the user pool.</p>
+     * <p>The required attributes to sign up new users in the Amazon Cognito user
+     * pool.</p>
      */
     inline void SetRequiredSignUpAttributes(Aws::Vector<RequiredSignUpAttributesElement>&& value) { m_requiredSignUpAttributesHasBeenSet = true; m_requiredSignUpAttributes = std::move(value); }
 
     /**
-     * <p>The required attributes to sign up new users in the user pool.</p>
+     * <p>The required attributes to sign up new users in the Amazon Cognito user
+     * pool.</p>
      */
     inline CreateBackendAuthUserPoolConfig& WithRequiredSignUpAttributes(const Aws::Vector<RequiredSignUpAttributesElement>& value) { SetRequiredSignUpAttributes(value); return *this;}
 
     /**
-     * <p>The required attributes to sign up new users in the user pool.</p>
+     * <p>The required attributes to sign up new users in the Amazon Cognito user
+     * pool.</p>
      */
     inline CreateBackendAuthUserPoolConfig& WithRequiredSignUpAttributes(Aws::Vector<RequiredSignUpAttributesElement>&& value) { SetRequiredSignUpAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The required attributes to sign up new users in the user pool.</p>
+     * <p>The required attributes to sign up new users in the Amazon Cognito user
+     * pool.</p>
      */
     inline CreateBackendAuthUserPoolConfig& AddRequiredSignUpAttributes(const RequiredSignUpAttributesElement& value) { m_requiredSignUpAttributesHasBeenSet = true; m_requiredSignUpAttributes.push_back(value); return *this; }
 
     /**
-     * <p>The required attributes to sign up new users in the user pool.</p>
+     * <p>The required attributes to sign up new users in the Amazon Cognito user
+     * pool.</p>
      */
     inline CreateBackendAuthUserPoolConfig& AddRequiredSignUpAttributes(RequiredSignUpAttributesElement&& value) { m_requiredSignUpAttributesHasBeenSet = true; m_requiredSignUpAttributes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Describes the sign-in methods that your Amplify app users to login using the
-     * Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+     * <p>Describes the sign-in methods that your Amplify app users to log in using the
+     * Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline const SignInMethod& GetSignInMethod() const{ return m_signInMethod; }
 
     /**
-     * <p>Describes the sign-in methods that your Amplify app users to login using the
-     * Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+     * <p>Describes the sign-in methods that your Amplify app users to log in using the
+     * Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline bool SignInMethodHasBeenSet() const { return m_signInMethodHasBeenSet; }
 
     /**
-     * <p>Describes the sign-in methods that your Amplify app users to login using the
-     * Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+     * <p>Describes the sign-in methods that your Amplify app users to log in using the
+     * Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline void SetSignInMethod(const SignInMethod& value) { m_signInMethodHasBeenSet = true; m_signInMethod = value; }
 
     /**
-     * <p>Describes the sign-in methods that your Amplify app users to login using the
-     * Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+     * <p>Describes the sign-in methods that your Amplify app users to log in using the
+     * Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline void SetSignInMethod(SignInMethod&& value) { m_signInMethodHasBeenSet = true; m_signInMethod = std::move(value); }
 
     /**
-     * <p>Describes the sign-in methods that your Amplify app users to login using the
-     * Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+     * <p>Describes the sign-in methods that your Amplify app users to log in using the
+     * Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline CreateBackendAuthUserPoolConfig& WithSignInMethod(const SignInMethod& value) { SetSignInMethod(value); return *this;}
 
     /**
-     * <p>Describes the sign-in methods that your Amplify app users to login using the
-     * Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+     * <p>Describes the sign-in methods that your Amplify app users to log in using the
+     * Amazon Cognito user pool that's configured as a part of your Amplify
+     * project.</p>
      */
     inline CreateBackendAuthUserPoolConfig& WithSignInMethod(SignInMethod&& value) { SetSignInMethod(std::move(value)); return *this;}
 

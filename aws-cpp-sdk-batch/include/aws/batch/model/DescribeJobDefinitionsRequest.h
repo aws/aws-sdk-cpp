@@ -96,8 +96,8 @@ namespace Model
      * remaining results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>DescribeJobDefinitions</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -109,8 +109,8 @@ namespace Model
      * remaining results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>DescribeJobDefinitions</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -122,8 +122,8 @@ namespace Model
      * remaining results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>DescribeJobDefinitions</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -135,8 +135,8 @@ namespace Model
      * remaining results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>DescribeJobDefinitions</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline DescribeJobDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -183,42 +183,42 @@ namespace Model
 
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline DescribeJobDefinitionsRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline DescribeJobDefinitionsRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline DescribeJobDefinitionsRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
 

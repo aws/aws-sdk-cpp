@@ -40,7 +40,7 @@ namespace Model
 
 
     /**
-     * <p>The range of nodes, using node index values, with which to override. A range
+     * <p>The range of nodes, using node index values, that's used to override. A range
      * of <code>0:3</code> indicates nodes with index values of <code>0</code> through
      * <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted
@@ -50,7 +50,7 @@ namespace Model
     inline const Aws::String& GetTargetNodes() const{ return m_targetNodes; }
 
     /**
-     * <p>The range of nodes, using node index values, with which to override. A range
+     * <p>The range of nodes, using node index values, that's used to override. A range
      * of <code>0:3</code> indicates nodes with index values of <code>0</code> through
      * <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted
@@ -60,7 +60,7 @@ namespace Model
     inline bool TargetNodesHasBeenSet() const { return m_targetNodesHasBeenSet; }
 
     /**
-     * <p>The range of nodes, using node index values, with which to override. A range
+     * <p>The range of nodes, using node index values, that's used to override. A range
      * of <code>0:3</code> indicates nodes with index values of <code>0</code> through
      * <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted
@@ -70,7 +70,7 @@ namespace Model
     inline void SetTargetNodes(const Aws::String& value) { m_targetNodesHasBeenSet = true; m_targetNodes = value; }
 
     /**
-     * <p>The range of nodes, using node index values, with which to override. A range
+     * <p>The range of nodes, using node index values, that's used to override. A range
      * of <code>0:3</code> indicates nodes with index values of <code>0</code> through
      * <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted
@@ -80,7 +80,7 @@ namespace Model
     inline void SetTargetNodes(Aws::String&& value) { m_targetNodesHasBeenSet = true; m_targetNodes = std::move(value); }
 
     /**
-     * <p>The range of nodes, using node index values, with which to override. A range
+     * <p>The range of nodes, using node index values, that's used to override. A range
      * of <code>0:3</code> indicates nodes with index values of <code>0</code> through
      * <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted
@@ -90,7 +90,7 @@ namespace Model
     inline void SetTargetNodes(const char* value) { m_targetNodesHasBeenSet = true; m_targetNodes.assign(value); }
 
     /**
-     * <p>The range of nodes, using node index values, with which to override. A range
+     * <p>The range of nodes, using node index values, that's used to override. A range
      * of <code>0:3</code> indicates nodes with index values of <code>0</code> through
      * <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted
@@ -100,7 +100,7 @@ namespace Model
     inline NodePropertyOverride& WithTargetNodes(const Aws::String& value) { SetTargetNodes(value); return *this;}
 
     /**
-     * <p>The range of nodes, using node index values, with which to override. A range
+     * <p>The range of nodes, using node index values, that's used to override. A range
      * of <code>0:3</code> indicates nodes with index values of <code>0</code> through
      * <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted
@@ -110,7 +110,7 @@ namespace Model
     inline NodePropertyOverride& WithTargetNodes(Aws::String&& value) { SetTargetNodes(std::move(value)); return *this;}
 
     /**
-     * <p>The range of nodes, using node index values, with which to override. A range
+     * <p>The range of nodes, using node index values, that's used to override. A range
      * of <code>0:3</code> indicates nodes with index values of <code>0</code> through
      * <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
      * <code>0</code> is used to start the range. If the ending range value is omitted

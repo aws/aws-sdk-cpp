@@ -16,7 +16,9 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
-    GPU
+    GPU,
+    VCPU,
+    MEMORY
   };
 
 namespace ResourceTypeMapper

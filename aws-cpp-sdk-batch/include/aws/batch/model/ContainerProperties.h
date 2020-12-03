@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/LinuxParameters.h>
 #include <aws/batch/model/LogConfiguration.h>
+#include <aws/batch/model/NetworkConfiguration.h>
+#include <aws/batch/model/FargatePlatformConfiguration.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
@@ -59,9 +61,12 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>Docker image architecture must match the processor architecture of the
+     * compute resources that they're scheduled on. For example, ARM-based Docker
+     * images can only run on ARM-based compute resources.</p>  <ul> <li>
+     * <p>Images in Amazon ECR repositories use the full registry and repository URI
+     * (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -84,9 +89,12 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>Docker image architecture must match the processor architecture of the
+     * compute resources that they're scheduled on. For example, ARM-based Docker
+     * images can only run on ARM-based compute resources.</p>  <ul> <li>
+     * <p>Images in Amazon ECR repositories use the full registry and repository URI
+     * (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -109,9 +117,12 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>Docker image architecture must match the processor architecture of the
+     * compute resources that they're scheduled on. For example, ARM-based Docker
+     * images can only run on ARM-based compute resources.</p>  <ul> <li>
+     * <p>Images in Amazon ECR repositories use the full registry and repository URI
+     * (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -134,9 +145,12 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>Docker image architecture must match the processor architecture of the
+     * compute resources that they're scheduled on. For example, ARM-based Docker
+     * images can only run on ARM-based compute resources.</p>  <ul> <li>
+     * <p>Images in Amazon ECR repositories use the full registry and repository URI
+     * (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -159,9 +173,12 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>Docker image architecture must match the processor architecture of the
+     * compute resources that they're scheduled on. For example, ARM-based Docker
+     * images can only run on ARM-based compute resources.</p>  <ul> <li>
+     * <p>Images in Amazon ECR repositories use the full registry and repository URI
+     * (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -184,9 +201,12 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>Docker image architecture must match the processor architecture of the
+     * compute resources that they're scheduled on. For example, ARM-based Docker
+     * images can only run on ARM-based compute resources.</p>  <ul> <li>
+     * <p>Images in Amazon ECR repositories use the full registry and repository URI
+     * (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -209,9 +229,12 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>Docker image architecture must match the processor architecture of the
+     * compute resources that they're scheduled on. For example, ARM-based Docker
+     * images can only run on ARM-based compute resources.</p>  <ul> <li>
+     * <p>Images in Amazon ECR repositories use the full registry and repository URI
+     * (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -234,9 +257,12 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>Docker image architecture must match the processor architecture of the
+     * compute resources that they're scheduled on. For example, ARM-based Docker
+     * images can only run on ARM-based compute resources.</p>  <ul> <li>
+     * <p>Images in Amazon ECR repositories use the full registry and repository URI
+     * (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -246,140 +272,6 @@ namespace Model
      * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerProperties& WithImage(const char* value) { SetImage(value); return *this;}
-
-
-    /**
-     * <p>The number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>--cpu-shares</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
-     * required but can be specified in several places for multi-node parallel (MNP)
-     * jobs; it must be specified for each node at least once.</p>
-     */
-    inline int GetVcpus() const{ return m_vcpus; }
-
-    /**
-     * <p>The number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>--cpu-shares</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
-     * required but can be specified in several places for multi-node parallel (MNP)
-     * jobs; it must be specified for each node at least once.</p>
-     */
-    inline bool VcpusHasBeenSet() const { return m_vcpusHasBeenSet; }
-
-    /**
-     * <p>The number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>--cpu-shares</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
-     * required but can be specified in several places for multi-node parallel (MNP)
-     * jobs; it must be specified for each node at least once.</p>
-     */
-    inline void SetVcpus(int value) { m_vcpusHasBeenSet = true; m_vcpus = value; }
-
-    /**
-     * <p>The number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>--cpu-shares</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
-     * required but can be specified in several places for multi-node parallel (MNP)
-     * jobs; it must be specified for each node at least once.</p>
-     */
-    inline ContainerProperties& WithVcpus(int value) { SetVcpus(value); return *this;}
-
-
-    /**
-     * <p>The hard limit (in MiB) of memory to present to the container. If your
-     * container attempts to exceed the memory specified here, the container is killed.
-     * This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job. This is required but can be
-     * specified in several places for multi-node parallel (MNP) jobs; it must be
-     * specified for each node at least once.</p>  <p>If you are trying to
-     * maximize your resource utilization by providing your jobs as much memory as
-     * possible for a particular instance type, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p> 
-     */
-    inline int GetMemory() const{ return m_memory; }
-
-    /**
-     * <p>The hard limit (in MiB) of memory to present to the container. If your
-     * container attempts to exceed the memory specified here, the container is killed.
-     * This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job. This is required but can be
-     * specified in several places for multi-node parallel (MNP) jobs; it must be
-     * specified for each node at least once.</p>  <p>If you are trying to
-     * maximize your resource utilization by providing your jobs as much memory as
-     * possible for a particular instance type, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p> 
-     */
-    inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
-
-    /**
-     * <p>The hard limit (in MiB) of memory to present to the container. If your
-     * container attempts to exceed the memory specified here, the container is killed.
-     * This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job. This is required but can be
-     * specified in several places for multi-node parallel (MNP) jobs; it must be
-     * specified for each node at least once.</p>  <p>If you are trying to
-     * maximize your resource utilization by providing your jobs as much memory as
-     * possible for a particular instance type, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p> 
-     */
-    inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
-
-    /**
-     * <p>The hard limit (in MiB) of memory to present to the container. If your
-     * container attempts to exceed the memory specified here, the container is killed.
-     * This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     * <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job. This is required but can be
-     * specified in several places for multi-node parallel (MNP) jobs; it must be
-     * specified for each node at least once.</p>  <p>If you are trying to
-     * maximize your resource utilization by providing your jobs as much memory as
-     * possible for a particular instance type, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p> 
-     */
-    inline ContainerProperties& WithMemory(int value) { SetMemory(value); return *this;}
 
 
     /**
@@ -502,114 +394,146 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
-     * for AWS permissions.</p>
+     * for AWS permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetJobRoleArn() const{ return m_jobRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
-     * for AWS permissions.</p>
+     * for AWS permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool JobRoleArnHasBeenSet() const { return m_jobRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
-     * for AWS permissions.</p>
+     * for AWS permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetJobRoleArn(const Aws::String& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
-     * for AWS permissions.</p>
+     * for AWS permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetJobRoleArn(Aws::String&& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
-     * for AWS permissions.</p>
+     * for AWS permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetJobRoleArn(const char* value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
-     * for AWS permissions.</p>
+     * for AWS permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerProperties& WithJobRoleArn(const Aws::String& value) { SetJobRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
-     * for AWS permissions.</p>
+     * for AWS permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerProperties& WithJobRoleArn(Aws::String&& value) { SetJobRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
-     * for AWS permissions.</p>
+     * for AWS permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerProperties& WithJobRoleArn(const char* value) { SetJobRoleArn(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. For more information, see <a
+     * assume. Jobs running on Fargate resources must provide an execution role. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-     * Batch execution IAM role</a>.</p>
+     * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. For more information, see <a
+     * assume. Jobs running on Fargate resources must provide an execution role. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-     * Batch execution IAM role</a>.</p>
+     * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. For more information, see <a
+     * assume. Jobs running on Fargate resources must provide an execution role. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-     * Batch execution IAM role</a>.</p>
+     * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. For more information, see <a
+     * assume. Jobs running on Fargate resources must provide an execution role. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-     * Batch execution IAM role</a>.</p>
+     * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. For more information, see <a
+     * assume. Jobs running on Fargate resources must provide an execution role. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-     * Batch execution IAM role</a>.</p>
+     * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. For more information, see <a
+     * assume. Jobs running on Fargate resources must provide an execution role. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-     * Batch execution IAM role</a>.</p>
+     * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ContainerProperties& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. For more information, see <a
+     * assume. Jobs running on Fargate resources must provide an execution role. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-     * Batch execution IAM role</a>.</p>
+     * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ContainerProperties& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. For more information, see <a
+     * assume. Jobs running on Fargate resources must provide an execution role. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-     * Batch execution IAM role</a>.</p>
+     * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ContainerProperties& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
@@ -663,7 +587,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *  <p>We do not recommend using plaintext environment variables for
+     *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -679,7 +603,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *  <p>We do not recommend using plaintext environment variables for
+     *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -695,7 +619,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *  <p>We do not recommend using plaintext environment variables for
+     *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -711,7 +635,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *  <p>We do not recommend using plaintext environment variables for
+     *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -727,7 +651,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *  <p>We do not recommend using plaintext environment variables for
+     *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -743,7 +667,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *  <p>We do not recommend using plaintext environment variables for
+     *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -759,7 +683,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *  <p>We do not recommend using plaintext environment variables for
+     *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -775,7 +699,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *  <p>We do not recommend using plaintext environment variables for
+     *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
@@ -915,50 +839,58 @@ namespace Model
 
 
     /**
-     * <p>When this parameter is true, the container is given elevated privileges on
+     * <p>When this parameter is true, the container is given elevated permissions on
      * the host container instance (similar to the <code>root</code> user). This
      * parameter maps to <code>Privileged</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--privileged</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default
+     * value is false.</p>  <p>This parameter isn't applicable to jobs running on
+     * Fargate resources and shouldn't be provided, or specified as false.</p> 
      */
     inline bool GetPrivileged() const{ return m_privileged; }
 
     /**
-     * <p>When this parameter is true, the container is given elevated privileges on
+     * <p>When this parameter is true, the container is given elevated permissions on
      * the host container instance (similar to the <code>root</code> user). This
      * parameter maps to <code>Privileged</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--privileged</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default
+     * value is false.</p>  <p>This parameter isn't applicable to jobs running on
+     * Fargate resources and shouldn't be provided, or specified as false.</p> 
      */
     inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
 
     /**
-     * <p>When this parameter is true, the container is given elevated privileges on
+     * <p>When this parameter is true, the container is given elevated permissions on
      * the host container instance (similar to the <code>root</code> user). This
      * parameter maps to <code>Privileged</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--privileged</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default
+     * value is false.</p>  <p>This parameter isn't applicable to jobs running on
+     * Fargate resources and shouldn't be provided, or specified as false.</p> 
      */
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
 
     /**
-     * <p>When this parameter is true, the container is given elevated privileges on
+     * <p>When this parameter is true, the container is given elevated permissions on
      * the host container instance (similar to the <code>root</code> user). This
      * parameter maps to <code>Privileged</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--privileged</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default
+     * value is false.</p>  <p>This parameter isn't applicable to jobs running on
+     * Fargate resources and shouldn't be provided, or specified as false.</p> 
      */
     inline ContainerProperties& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
 
@@ -970,7 +902,9 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources and
+     * shouldn't be provided.</p> 
      */
     inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
 
@@ -981,7 +915,9 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources and
+     * shouldn't be provided.</p> 
      */
     inline bool UlimitsHasBeenSet() const { return m_ulimitsHasBeenSet; }
 
@@ -992,7 +928,9 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources and
+     * shouldn't be provided.</p> 
      */
     inline void SetUlimits(const Aws::Vector<Ulimit>& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
 
@@ -1003,7 +941,9 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources and
+     * shouldn't be provided.</p> 
      */
     inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
 
@@ -1014,7 +954,9 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources and
+     * shouldn't be provided.</p> 
      */
     inline ContainerProperties& WithUlimits(const Aws::Vector<Ulimit>& value) { SetUlimits(value); return *this;}
 
@@ -1025,7 +967,9 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources and
+     * shouldn't be provided.</p> 
      */
     inline ContainerProperties& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
 
@@ -1036,7 +980,9 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources and
+     * shouldn't be provided.</p> 
      */
     inline ContainerProperties& AddUlimits(const Ulimit& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
 
@@ -1047,7 +993,9 @@ namespace Model
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources and
+     * shouldn't be provided.</p> 
      */
     inline ContainerProperties& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
 
@@ -1142,107 +1090,123 @@ namespace Model
 
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. Currently all node
-     * groups in a multi-node parallel job must use the same instance type. This
-     * parameter is not valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job. All node groups in a
+     * multi-node parallel job must use the same instance type.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. Currently all node
-     * groups in a multi-node parallel job must use the same instance type. This
-     * parameter is not valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job. All node groups in a
+     * multi-node parallel job must use the same instance type.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. Currently all node
-     * groups in a multi-node parallel job must use the same instance type. This
-     * parameter is not valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job. All node groups in a
+     * multi-node parallel job must use the same instance type.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. Currently all node
-     * groups in a multi-node parallel job must use the same instance type. This
-     * parameter is not valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job. All node groups in a
+     * multi-node parallel job must use the same instance type.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. Currently all node
-     * groups in a multi-node parallel job must use the same instance type. This
-     * parameter is not valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job. All node groups in a
+     * multi-node parallel job must use the same instance type.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. Currently all node
-     * groups in a multi-node parallel job must use the same instance type. This
-     * parameter is not valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job. All node groups in a
+     * multi-node parallel job must use the same instance type.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline ContainerProperties& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. Currently all node
-     * groups in a multi-node parallel job must use the same instance type. This
-     * parameter is not valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job. All node groups in a
+     * multi-node parallel job must use the same instance type.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline ContainerProperties& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type to use for a multi-node parallel job. Currently all node
-     * groups in a multi-node parallel job must use the same instance type. This
-     * parameter is not valid for single-node container jobs.</p>
+     * <p>The instance type to use for a multi-node parallel job. All node groups in a
+     * multi-node parallel job must use the same instance type.</p>  <p>This
+     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * Fargate resources and shouldn't be provided.</p> 
      */
     inline ContainerProperties& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
 
     /**
-     * <p>The type and amount of a resource to assign to a container. Currently, the
-     * only supported resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. The supported
+     * resources include <code>GPU</code>, <code>MEMORY</code>, and
+     * <code>VCPU</code>.</p>
      */
     inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. Currently, the
-     * only supported resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. The supported
+     * resources include <code>GPU</code>, <code>MEMORY</code>, and
+     * <code>VCPU</code>.</p>
      */
     inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. Currently, the
-     * only supported resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. The supported
+     * resources include <code>GPU</code>, <code>MEMORY</code>, and
+     * <code>VCPU</code>.</p>
      */
     inline void SetResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. Currently, the
-     * only supported resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. The supported
+     * resources include <code>GPU</code>, <code>MEMORY</code>, and
+     * <code>VCPU</code>.</p>
      */
     inline void SetResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. Currently, the
-     * only supported resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. The supported
+     * resources include <code>GPU</code>, <code>MEMORY</code>, and
+     * <code>VCPU</code>.</p>
      */
     inline ContainerProperties& WithResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
 
     /**
-     * <p>The type and amount of a resource to assign to a container. Currently, the
-     * only supported resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. The supported
+     * resources include <code>GPU</code>, <code>MEMORY</code>, and
+     * <code>VCPU</code>.</p>
      */
     inline ContainerProperties& WithResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
 
     /**
-     * <p>The type and amount of a resource to assign to a container. Currently, the
-     * only supported resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. The supported
+     * resources include <code>GPU</code>, <code>MEMORY</code>, and
+     * <code>VCPU</code>.</p>
      */
     inline ContainerProperties& AddResourceRequirements(const ResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
 
     /**
-     * <p>The type and amount of a resource to assign to a container. Currently, the
-     * only supported resource is <code>GPU</code>.</p>
+     * <p>The type and amount of resources to assign to a container. The supported
+     * resources include <code>GPU</code>, <code>MEMORY</code>, and
+     * <code>VCPU</code>.</p>
      */
     inline ContainerProperties& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
 
@@ -1293,7 +1257,7 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses. However the
-     * container may use a different logging driver than the Docker daemon by
+     * container might use a different logging driver than the Docker daemon by
      * specifying a log driver with this parameter in the container definition. To use
      * a different logging driver for a container, the log system must be configured
      * properly on the container instance (or on a different log server for remote
@@ -1327,7 +1291,7 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses. However the
-     * container may use a different logging driver than the Docker daemon by
+     * container might use a different logging driver than the Docker daemon by
      * specifying a log driver with this parameter in the container definition. To use
      * a different logging driver for a container, the log system must be configured
      * properly on the container instance (or on a different log server for remote
@@ -1361,7 +1325,7 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses. However the
-     * container may use a different logging driver than the Docker daemon by
+     * container might use a different logging driver than the Docker daemon by
      * specifying a log driver with this parameter in the container definition. To use
      * a different logging driver for a container, the log system must be configured
      * properly on the container instance (or on a different log server for remote
@@ -1395,7 +1359,7 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses. However the
-     * container may use a different logging driver than the Docker daemon by
+     * container might use a different logging driver than the Docker daemon by
      * specifying a log driver with this parameter in the container definition. To use
      * a different logging driver for a container, the log system must be configured
      * properly on the container instance (or on a different log server for remote
@@ -1429,7 +1393,7 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses. However the
-     * container may use a different logging driver than the Docker daemon by
+     * container might use a different logging driver than the Docker daemon by
      * specifying a log driver with this parameter in the container definition. To use
      * a different logging driver for a container, the log system must be configured
      * properly on the container instance (or on a different log server for remote
@@ -1463,7 +1427,7 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses. However the
-     * container may use a different logging driver than the Docker daemon by
+     * container might use a different logging driver than the Docker daemon by
      * specifying a log driver with this parameter in the container definition. To use
      * a different logging driver for a container, the log system must be configured
      * properly on the container instance (or on a different log server for remote
@@ -1491,78 +1455,138 @@ namespace Model
 
     /**
      * <p>The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * sensitive data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const Aws::Vector<Secret>& GetSecrets() const{ return m_secrets; }
 
     /**
      * <p>The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * sensitive data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool SecretsHasBeenSet() const { return m_secretsHasBeenSet; }
 
     /**
      * <p>The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * sensitive data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetSecrets(const Aws::Vector<Secret>& value) { m_secretsHasBeenSet = true; m_secrets = value; }
 
     /**
      * <p>The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * sensitive data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetSecrets(Aws::Vector<Secret>&& value) { m_secretsHasBeenSet = true; m_secrets = std::move(value); }
 
     /**
      * <p>The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * sensitive data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ContainerProperties& WithSecrets(const Aws::Vector<Secret>& value) { SetSecrets(value); return *this;}
 
     /**
      * <p>The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * sensitive data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ContainerProperties& WithSecrets(Aws::Vector<Secret>&& value) { SetSecrets(std::move(value)); return *this;}
 
     /**
      * <p>The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * sensitive data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ContainerProperties& AddSecrets(const Secret& value) { m_secretsHasBeenSet = true; m_secrets.push_back(value); return *this; }
 
     /**
      * <p>The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     * sensitive data</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ContainerProperties& AddSecrets(Secret&& value) { m_secretsHasBeenSet = true; m_secrets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The network configuration for jobs running on Fargate resources. Jobs running
+     * on EC2 resources must not specify this parameter.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>The network configuration for jobs running on Fargate resources. Jobs running
+     * on EC2 resources must not specify this parameter.</p>
+     */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+
+    /**
+     * <p>The network configuration for jobs running on Fargate resources. Jobs running
+     * on EC2 resources must not specify this parameter.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>The network configuration for jobs running on Fargate resources. Jobs running
+     * on EC2 resources must not specify this parameter.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>The network configuration for jobs running on Fargate resources. Jobs running
+     * on EC2 resources must not specify this parameter.</p>
+     */
+    inline ContainerProperties& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>The network configuration for jobs running on Fargate resources. Jobs running
+     * on EC2 resources must not specify this parameter.</p>
+     */
+    inline ContainerProperties& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The platform configuration for jobs running on Fargate resources. Jobs
+     * running on EC2 resources must not specify this parameter.</p>
+     */
+    inline const FargatePlatformConfiguration& GetFargatePlatformConfiguration() const{ return m_fargatePlatformConfiguration; }
+
+    /**
+     * <p>The platform configuration for jobs running on Fargate resources. Jobs
+     * running on EC2 resources must not specify this parameter.</p>
+     */
+    inline bool FargatePlatformConfigurationHasBeenSet() const { return m_fargatePlatformConfigurationHasBeenSet; }
+
+    /**
+     * <p>The platform configuration for jobs running on Fargate resources. Jobs
+     * running on EC2 resources must not specify this parameter.</p>
+     */
+    inline void SetFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = value; }
+
+    /**
+     * <p>The platform configuration for jobs running on Fargate resources. Jobs
+     * running on EC2 resources must not specify this parameter.</p>
+     */
+    inline void SetFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = std::move(value); }
+
+    /**
+     * <p>The platform configuration for jobs running on Fargate resources. Jobs
+     * running on EC2 resources must not specify this parameter.</p>
+     */
+    inline ContainerProperties& WithFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { SetFargatePlatformConfiguration(value); return *this;}
+
+    /**
+     * <p>The platform configuration for jobs running on Fargate resources. Jobs
+     * running on EC2 resources must not specify this parameter.</p>
+     */
+    inline ContainerProperties& WithFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { SetFargatePlatformConfiguration(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_image;
     bool m_imageHasBeenSet;
-
-    int m_vcpus;
-    bool m_vcpusHasBeenSet;
-
-    int m_memory;
-    bool m_memoryHasBeenSet;
 
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet;
@@ -1608,6 +1632,12 @@ namespace Model
 
     Aws::Vector<Secret> m_secrets;
     bool m_secretsHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
+
+    FargatePlatformConfiguration m_fargatePlatformConfiguration;
+    bool m_fargatePlatformConfigurationHasBeenSet;
   };
 
 } // namespace Model

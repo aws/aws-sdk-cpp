@@ -34,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline ListJobsRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline ListJobsRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline ListJobsRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
@@ -189,38 +189,38 @@ namespace Model
 
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline ListJobsRequest& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline ListJobsRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
@@ -232,7 +232,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListJobs</code> request with the
      * returned <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
+     * this parameter isn't used, then <code>ListJobs</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -244,7 +244,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListJobs</code> request with the
      * returned <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
+     * this parameter isn't used, then <code>ListJobs</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -256,7 +256,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListJobs</code> request with the
      * returned <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
+     * this parameter isn't used, then <code>ListJobs</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -268,7 +268,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListJobs</code> request with the
      * returned <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
+     * this parameter isn't used, then <code>ListJobs</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
     inline ListJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

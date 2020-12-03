@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes authorization configurations for the auth resources, configures as
+   * <p>Describes authorization configurations for the auth resources, configured as
    * a part of your Amplify project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthIdentityPoolConfig">AWS
    * API Reference</a></p>

@@ -20,8 +20,11 @@ RegisterJobDefinitionRequest::RegisterJobDefinitionRequest() :
     m_containerPropertiesHasBeenSet(false),
     m_nodePropertiesHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
+    m_propagateTags(false),
+    m_propagateTagsHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_platformCapabilitiesHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,12 @@ Aws::String RegisterJobDefinitionRequest::SerializePayload() const
 
   }
 
+  if(m_propagateTagsHasBeenSet)
+  {
+   payload.WithBool("propagateTags", m_propagateTags);
+
+  }
+
   if(m_timeoutHasBeenSet)
   {
    payload.WithObject("timeout", m_timeout.Jsonize());
@@ -83,6 +92,17 @@ Aws::String RegisterJobDefinitionRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_platformCapabilitiesHasBeenSet)
+  {
+   Array<JsonValue> platformCapabilitiesJsonList(m_platformCapabilities.size());
+   for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
+   {
+     platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString(PlatformCapabilityMapper::GetNameForPlatformCapability(m_platformCapabilities[platformCapabilitiesIndex]));
+   }
+   payload.WithArray("platformCapabilities", std::move(platformCapabilitiesJsonList));
 
   }
 

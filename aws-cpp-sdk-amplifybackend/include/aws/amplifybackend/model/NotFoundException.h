@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>An error message to inform that the request has failed.</p>
+     * <p>An error message to inform that the request failed.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>An error message to inform that the request has failed.</p>
+     * <p>An error message to inform that the request failed.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>An error message to inform that the request has failed.</p>
+     * <p>An error message to inform that the request failed.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>An error message to inform that the request has failed.</p>
+     * <p>An error message to inform that the request failed.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>An error message to inform that the request has failed.</p>
+     * <p>An error message to inform that the request failed.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>An error message to inform that the request has failed.</p>
+     * <p>An error message to inform that the request failed.</p>
      */
     inline NotFoundException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>An error message to inform that the request has failed.</p>
+     * <p>An error message to inform that the request failed.</p>
      */
     inline NotFoundException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>An error message to inform that the request has failed.</p>
+     * <p>An error message to inform that the request failed.</p>
      */
     inline NotFoundException& WithMessage(const char* value) { SetMessage(value); return *this;}
 

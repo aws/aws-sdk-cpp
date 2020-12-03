@@ -144,11 +144,12 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>resourceArn</code> - The ARN of the license
      * configuration resource. Logical operators are <code>EQUALS</code> |
      * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceType</code> - The
-     * resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceAccount</code> - The
-     * ID of the account that owns the resource. Logical operators are
-     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -157,11 +158,12 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>resourceArn</code> - The ARN of the license
      * configuration resource. Logical operators are <code>EQUALS</code> |
      * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceType</code> - The
-     * resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceAccount</code> - The
-     * ID of the account that owns the resource. Logical operators are
-     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -170,11 +172,12 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>resourceArn</code> - The ARN of the license
      * configuration resource. Logical operators are <code>EQUALS</code> |
      * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceType</code> - The
-     * resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceAccount</code> - The
-     * ID of the account that owns the resource. Logical operators are
-     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -183,11 +186,12 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>resourceArn</code> - The ARN of the license
      * configuration resource. Logical operators are <code>EQUALS</code> |
      * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceType</code> - The
-     * resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceAccount</code> - The
-     * ID of the account that owns the resource. Logical operators are
-     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -196,11 +200,12 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>resourceArn</code> - The ARN of the license
      * configuration resource. Logical operators are <code>EQUALS</code> |
      * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceType</code> - The
-     * resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceAccount</code> - The
-     * ID of the account that owns the resource. Logical operators are
-     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline ListUsageForLicenseConfigurationRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -209,11 +214,12 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>resourceArn</code> - The ARN of the license
      * configuration resource. Logical operators are <code>EQUALS</code> |
      * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceType</code> - The
-     * resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceAccount</code> - The
-     * ID of the account that owns the resource. Logical operators are
-     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline ListUsageForLicenseConfigurationRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -222,11 +228,12 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>resourceArn</code> - The ARN of the license
      * configuration resource. Logical operators are <code>EQUALS</code> |
      * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceType</code> - The
-     * resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceAccount</code> - The
-     * ID of the account that owns the resource. Logical operators are
-     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline ListUsageForLicenseConfigurationRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -235,11 +242,12 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>resourceArn</code> - The ARN of the license
      * configuration resource. Logical operators are <code>EQUALS</code> |
      * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceType</code> - The
-     * resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceAccount</code> - The
-     * ID of the account that owns the resource. Logical operators are
-     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline ListUsageForLicenseConfigurationRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
