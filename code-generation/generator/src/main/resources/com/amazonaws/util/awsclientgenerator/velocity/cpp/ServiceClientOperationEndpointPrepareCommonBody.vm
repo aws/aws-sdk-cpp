@@ -120,3 +120,11 @@
     }
   }
 #end
+#if($operation.hasPreSignedUrl)
+  ${operation.request.shape.name} newRequest = request;
+  if (request.SourceRegionHasBeenSet() && !request.PreSignedUrlHasBeenSet())
+  {
+    Aws::Http::URI sourceUri(m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(request.GetSourceRegion(), m_useDualStack));
+    newRequest.SetPreSignedUrl(GeneratePresignedUrl(request, sourceUri, Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), {{ "DestinationRegion", m_region }}, 3600));
+  }
+#end

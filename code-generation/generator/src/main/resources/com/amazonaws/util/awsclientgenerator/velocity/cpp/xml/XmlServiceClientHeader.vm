@@ -117,6 +117,9 @@ namespace Model
         bool m_enableEndpointDiscovery;
 #end
         Aws::String m_configScheme;
+#if($metadata.hasPreSignedUrl)
+        bool m_useDualStack;
+#end
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

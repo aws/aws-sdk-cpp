@@ -56,7 +56,8 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_replicaMode(ReplicaMode::NOT_SET),
     m_replicaModeHasBeenSet(false),
     m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false)
+    m_maxAllocatedStorageHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false)
 {
 }
 

@@ -52,7 +52,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_domainHasBeenSet(false),
     m_domainIAMRoleNameHasBeenSet(false),
     m_enableGlobalWriteForwarding(false),
-    m_enableGlobalWriteForwardingHasBeenSet(false)
+    m_enableGlobalWriteForwardingHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false)
 {
 }
 

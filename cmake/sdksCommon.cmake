@@ -133,6 +133,7 @@ list(APPEND SDK_TEST_PROJECT_LIST "kinesis:aws-cpp-sdk-kinesis-integration-tests
 list(APPEND SDK_TEST_PROJECT_LIST "lambda:aws-cpp-sdk-lambda-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "logs:aws-cpp-sdk-logs-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "mediastore-data:aws-cpp-sdk-mediastore-data-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "rds:aws-cpp-sdk-rds-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "redshift:aws-cpp-sdk-redshift-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3:aws-cpp-sdk-s3-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3-encryption:aws-cpp-sdk-s3-encryption-tests,aws-cpp-sdk-s3-encryption-integration-tests")

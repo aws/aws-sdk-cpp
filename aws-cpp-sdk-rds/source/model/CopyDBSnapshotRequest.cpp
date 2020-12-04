@@ -19,7 +19,8 @@ CopyDBSnapshotRequest::CopyDBSnapshotRequest() :
     m_copyTagsHasBeenSet(false),
     m_preSignedUrlHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
-    m_targetCustomAvailabilityZoneHasBeenSet(false)
+    m_targetCustomAvailabilityZoneHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false)
 {
 }
 

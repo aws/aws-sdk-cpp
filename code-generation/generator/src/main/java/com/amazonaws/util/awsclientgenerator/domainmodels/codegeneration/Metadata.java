@@ -37,4 +37,7 @@ public class Metadata {
     // For Cellular Request Routing
     private boolean hasEndpointDiscoveryTrait;
     private String endpointOperationName;
+
+    // For Pre-signed URL Generation
+    private boolean hasPreSignedUrl;
 }

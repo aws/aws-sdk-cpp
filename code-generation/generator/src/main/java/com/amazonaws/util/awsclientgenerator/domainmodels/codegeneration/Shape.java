@@ -46,6 +46,7 @@ public class Shape {
     private boolean isOutgoingEventStream;
     private boolean exception;
     private boolean sensitive;
+    private boolean hasPreSignedUrl;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());

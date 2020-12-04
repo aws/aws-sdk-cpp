@@ -49,6 +49,9 @@ public class Operation {
     private boolean hasEndpointDiscoveryTrait;
     private boolean requireEndpointDiscovery;
 
+    // For pre-signed URL generation
+    private boolean hasPreSignedUrl;
+
     public boolean hasEndpointDiscoveryTrait() {
         return hasEndpointDiscoveryTrait;
     }

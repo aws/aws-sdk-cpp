@@ -6353,6 +6353,7 @@ namespace Aws
 
         Aws::String m_uri;
         Aws::String m_configScheme;
+        bool m_useDualStack;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
     };
 

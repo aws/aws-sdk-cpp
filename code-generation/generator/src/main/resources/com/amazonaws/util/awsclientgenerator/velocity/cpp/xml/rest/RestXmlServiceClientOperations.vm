@@ -71,15 +71,20 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #else
   uri.SetQueryString(ss.str());
 #end
+#if($operation.hasPreSignedUrl)
+#set($requestText = "newRequest")
+#else
+#set($requestText = "request")
+#end
 #if($operation.result && $operation.result.shape.hasEventStreamMembers())
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
-  return ${operation.name}Outcome(MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+  return ${operation.name}Outcome(MakeRequestWithEventStream(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #elseif($operation.result && $operation.result.shape.hasStreamMembers())
-  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #else
-  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+  return ${operation.name}Outcome(MakeRequest(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #end
 }
 
