@@ -24,7 +24,8 @@ namespace Model
     SUSE,
     CENTOS,
     ORACLE_LINUX,
-    DEBIAN
+    DEBIAN,
+    MACOS
   };
 
 namespace OperatingSystemMapper

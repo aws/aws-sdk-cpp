@@ -30,6 +30,8 @@ LicenseConfiguration::LicenseConfiguration() :
     m_licenseCountHasBeenSet(false),
     m_licenseCountHardLimit(false),
     m_licenseCountHardLimitHasBeenSet(false),
+    m_disassociateWhenNotFound(false),
+    m_disassociateWhenNotFoundHasBeenSet(false),
     m_consumedLicenses(0),
     m_consumedLicensesHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -53,6 +55,8 @@ LicenseConfiguration::LicenseConfiguration(JsonView jsonValue) :
     m_licenseCountHasBeenSet(false),
     m_licenseCountHardLimit(false),
     m_licenseCountHardLimitHasBeenSet(false),
+    m_disassociateWhenNotFound(false),
+    m_disassociateWhenNotFoundHasBeenSet(false),
     m_consumedLicenses(0),
     m_consumedLicensesHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -124,6 +128,13 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
     m_licenseCountHardLimit = jsonValue.GetBool("LicenseCountHardLimit");
 
     m_licenseCountHardLimitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisassociateWhenNotFound"))
+  {
+    m_disassociateWhenNotFound = jsonValue.GetBool("DisassociateWhenNotFound");
+
+    m_disassociateWhenNotFoundHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ConsumedLicenses"))
@@ -240,6 +251,12 @@ JsonValue LicenseConfiguration::Jsonize() const
   if(m_licenseCountHardLimitHasBeenSet)
   {
    payload.WithBool("LicenseCountHardLimit", m_licenseCountHardLimit);
+
+  }
+
+  if(m_disassociateWhenNotFoundHasBeenSet)
+  {
+   payload.WithBool("DisassociateWhenNotFound", m_disassociateWhenNotFound);
 
   }
 

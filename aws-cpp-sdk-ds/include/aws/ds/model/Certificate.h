@@ -258,69 +258,81 @@ namespace Model
 
 
     /**
-     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline const CertificateType& GetType() const{ return m_type; }
 
     /**
-     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline Certificate& WithType(const CertificateType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Select <code>ClientCertAuth</code> for smart card integration.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline Certificate& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides information about the client certificate authentication settings.
-     * The default value is <code>ClientLDAPS</code>.</p>
+     * <p>A <code>ClientCertAuthSettings</code> object that contains client certificate
+     * authentication settings.</p>
      */
     inline const ClientCertAuthSettings& GetClientCertAuthSettings() const{ return m_clientCertAuthSettings; }
 
     /**
-     * <p>Provides information about the client certificate authentication settings.
-     * The default value is <code>ClientLDAPS</code>.</p>
+     * <p>A <code>ClientCertAuthSettings</code> object that contains client certificate
+     * authentication settings.</p>
      */
     inline bool ClientCertAuthSettingsHasBeenSet() const { return m_clientCertAuthSettingsHasBeenSet; }
 
     /**
-     * <p>Provides information about the client certificate authentication settings.
-     * The default value is <code>ClientLDAPS</code>.</p>
+     * <p>A <code>ClientCertAuthSettings</code> object that contains client certificate
+     * authentication settings.</p>
      */
     inline void SetClientCertAuthSettings(const ClientCertAuthSettings& value) { m_clientCertAuthSettingsHasBeenSet = true; m_clientCertAuthSettings = value; }
 
     /**
-     * <p>Provides information about the client certificate authentication settings.
-     * The default value is <code>ClientLDAPS</code>.</p>
+     * <p>A <code>ClientCertAuthSettings</code> object that contains client certificate
+     * authentication settings.</p>
      */
     inline void SetClientCertAuthSettings(ClientCertAuthSettings&& value) { m_clientCertAuthSettingsHasBeenSet = true; m_clientCertAuthSettings = std::move(value); }
 
     /**
-     * <p>Provides information about the client certificate authentication settings.
-     * The default value is <code>ClientLDAPS</code>.</p>
+     * <p>A <code>ClientCertAuthSettings</code> object that contains client certificate
+     * authentication settings.</p>
      */
     inline Certificate& WithClientCertAuthSettings(const ClientCertAuthSettings& value) { SetClientCertAuthSettings(value); return *this;}
 
     /**
-     * <p>Provides information about the client certificate authentication settings.
-     * The default value is <code>ClientLDAPS</code>.</p>
+     * <p>A <code>ClientCertAuthSettings</code> object that contains client certificate
+     * authentication settings.</p>
      */
     inline Certificate& WithClientCertAuthSettings(ClientCertAuthSettings&& value) { SetClientCertAuthSettings(std::move(value)); return *this;}
 

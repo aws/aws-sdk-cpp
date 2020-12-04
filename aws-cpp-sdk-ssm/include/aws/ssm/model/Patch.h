@@ -746,55 +746,55 @@ namespace Model
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCVEIds() const{ return m_cVEIds; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
      */
     inline bool CVEIdsHasBeenSet() const { return m_cVEIdsHasBeenSet; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
      */
     inline void SetCVEIds(const Aws::Vector<Aws::String>& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = value; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
      */
     inline void SetCVEIds(Aws::Vector<Aws::String>&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = std::move(value); }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
      */
     inline Patch& WithCVEIds(const Aws::Vector<Aws::String>& value) { SetCVEIds(value); return *this;}
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
      */
     inline Patch& WithCVEIds(Aws::Vector<Aws::String>&& value) { SetCVEIds(std::move(value)); return *this;}
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
      */
     inline Patch& AddCVEIds(const Aws::String& value) { m_cVEIdsHasBeenSet = true; m_cVEIds.push_back(value); return *this; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
      */
     inline Patch& AddCVEIds(Aws::String&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
-     * <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>
+     * <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>
      */
     inline Patch& AddCVEIds(const char* value) { m_cVEIdsHasBeenSet = true; m_cVEIds.push_back(value); return *this; }
 

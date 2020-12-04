@@ -186,32 +186,44 @@ namespace Model
 
 
     /**
-     * <p>Displays the type of certificate.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline const CertificateType& GetType() const{ return m_type; }
 
     /**
-     * <p>Displays the type of certificate.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Displays the type of certificate.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Displays the type of certificate.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Displays the type of certificate.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline CertificateInfo& WithType(const CertificateType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Displays the type of certificate.</p>
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
      */
     inline CertificateInfo& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
 

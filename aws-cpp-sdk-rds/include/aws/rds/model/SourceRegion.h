@@ -162,6 +162,31 @@ namespace Model
      */
     inline SourceRegion& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
+    /**
+     * <p>Whether the source AWS Region supports replicating automated backups to the
+     * current AWS Region.</p>
+     */
+    inline bool GetSupportsDBInstanceAutomatedBackupsReplication() const{ return m_supportsDBInstanceAutomatedBackupsReplication; }
+
+    /**
+     * <p>Whether the source AWS Region supports replicating automated backups to the
+     * current AWS Region.</p>
+     */
+    inline bool SupportsDBInstanceAutomatedBackupsReplicationHasBeenSet() const { return m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet; }
+
+    /**
+     * <p>Whether the source AWS Region supports replicating automated backups to the
+     * current AWS Region.</p>
+     */
+    inline void SetSupportsDBInstanceAutomatedBackupsReplication(bool value) { m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = true; m_supportsDBInstanceAutomatedBackupsReplication = value; }
+
+    /**
+     * <p>Whether the source AWS Region supports replicating automated backups to the
+     * current AWS Region.</p>
+     */
+    inline SourceRegion& WithSupportsDBInstanceAutomatedBackupsReplication(bool value) { SetSupportsDBInstanceAutomatedBackupsReplication(value); return *this;}
+
   private:
 
     Aws::String m_regionName;
@@ -172,6 +197,9 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
+    bool m_supportsDBInstanceAutomatedBackupsReplication;
+    bool m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet;
   };
 
 } // namespace Model

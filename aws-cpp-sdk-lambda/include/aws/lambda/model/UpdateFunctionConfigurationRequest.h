@@ -318,30 +318,30 @@ namespace Model
 
 
     /**
-     * <p>The amount of memory that your function has access to. Increasing the
+     * <p>The amount of memory available to the function at runtime. Increasing the
      * function's memory also increases its CPU allocation. The default value is 128
-     * MB. The value must be a multiple of 64 MB.</p>
+     * MB. The value can be any multiple of 1 MB.</p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * <p>The amount of memory that your function has access to. Increasing the
+     * <p>The amount of memory available to the function at runtime. Increasing the
      * function's memory also increases its CPU allocation. The default value is 128
-     * MB. The value must be a multiple of 64 MB.</p>
+     * MB. The value can be any multiple of 1 MB.</p>
      */
     inline bool MemorySizeHasBeenSet() const { return m_memorySizeHasBeenSet; }
 
     /**
-     * <p>The amount of memory that your function has access to. Increasing the
+     * <p>The amount of memory available to the function at runtime. Increasing the
      * function's memory also increases its CPU allocation. The default value is 128
-     * MB. The value must be a multiple of 64 MB.</p>
+     * MB. The value can be any multiple of 1 MB.</p>
      */
     inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
-     * <p>The amount of memory that your function has access to. Increasing the
+     * <p>The amount of memory available to the function at runtime. Increasing the
      * function's memory also increases its CPU allocation. The default value is 128
-     * MB. The value must be a multiple of 64 MB.</p>
+     * MB. The value can be any multiple of 1 MB.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 

@@ -18,7 +18,8 @@ CreateImageRequest::CreateImageRequest() :
     m_instanceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_noReboot(false),
-    m_noRebootHasBeenSet(false)
+    m_noRebootHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,16 @@ Aws::String CreateImageRequest::SerializePayload() const
   if(m_noRebootHasBeenSet)
   {
     ss << "NoReboot=" << std::boolalpha << m_noReboot << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

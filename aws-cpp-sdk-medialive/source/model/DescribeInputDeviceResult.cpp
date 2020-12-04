@@ -102,6 +102,12 @@ DescribeInputDeviceResult& DescribeInputDeviceResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("uhdDeviceSettings"))
+  {
+    m_uhdDeviceSettings = jsonValue.GetObject("uhdDeviceSettings");
+
+  }
+
 
 
   return *this;

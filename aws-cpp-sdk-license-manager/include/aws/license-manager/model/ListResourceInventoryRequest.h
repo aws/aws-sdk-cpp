@@ -112,7 +112,10 @@ namespace Model
      * - The platform of the resource. Logical operators are <code>EQUALS</code> |
      * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
      * of the resource. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
+     * key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code> (cross account).</p> </li> </ul>
      */
     inline const Aws::Vector<InventoryFilter>& GetFilters() const{ return m_filters; }
 
@@ -130,7 +133,10 @@ namespace Model
      * - The platform of the resource. Logical operators are <code>EQUALS</code> |
      * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
      * of the resource. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
+     * key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code> (cross account).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -148,7 +154,10 @@ namespace Model
      * - The platform of the resource. Logical operators are <code>EQUALS</code> |
      * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
      * of the resource. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
+     * key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code> (cross account).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<InventoryFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -166,7 +175,10 @@ namespace Model
      * - The platform of the resource. Logical operators are <code>EQUALS</code> |
      * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
      * of the resource. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
+     * key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code> (cross account).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<InventoryFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -184,7 +196,10 @@ namespace Model
      * - The platform of the resource. Logical operators are <code>EQUALS</code> |
      * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
      * of the resource. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
+     * key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code> (cross account).</p> </li> </ul>
      */
     inline ListResourceInventoryRequest& WithFilters(const Aws::Vector<InventoryFilter>& value) { SetFilters(value); return *this;}
 
@@ -202,7 +217,10 @@ namespace Model
      * - The platform of the resource. Logical operators are <code>EQUALS</code> |
      * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
      * of the resource. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
+     * key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code> (cross account).</p> </li> </ul>
      */
     inline ListResourceInventoryRequest& WithFilters(Aws::Vector<InventoryFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -220,7 +238,10 @@ namespace Model
      * - The platform of the resource. Logical operators are <code>EQUALS</code> |
      * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
      * of the resource. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
+     * key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code> (cross account).</p> </li> </ul>
      */
     inline ListResourceInventoryRequest& AddFilters(const InventoryFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -238,7 +259,10 @@ namespace Model
      * - The platform of the resource. Logical operators are <code>EQUALS</code> |
      * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
      * of the resource. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
+     * key/value combination of a tag assigned to the resource. Logical operators are
+     * <code>EQUALS</code> (single account) or <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code> (cross account).</p> </li> </ul>
      */
     inline ListResourceInventoryRequest& AddFilters(InventoryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

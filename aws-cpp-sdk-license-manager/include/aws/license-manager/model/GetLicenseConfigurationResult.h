@@ -539,6 +539,22 @@ namespace Model
      */
     inline GetLicenseConfigurationResult& WithAutomatedDiscoveryInformation(AutomatedDiscoveryInformation&& value) { SetAutomatedDiscoveryInformation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool GetDisassociateWhenNotFound() const{ return m_disassociateWhenNotFound; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline void SetDisassociateWhenNotFound(bool value) { m_disassociateWhenNotFound = value; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline GetLicenseConfigurationResult& WithDisassociateWhenNotFound(bool value) { SetDisassociateWhenNotFound(value); return *this;}
+
   private:
 
     Aws::String m_licenseConfigurationId;
@@ -572,6 +588,8 @@ namespace Model
     Aws::Vector<ProductInformation> m_productInformationList;
 
     AutomatedDiscoveryInformation m_automatedDiscoveryInformation;
+
+    bool m_disassociateWhenNotFound;
   };
 
 } // namespace Model

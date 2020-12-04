@@ -456,6 +456,27 @@ namespace Model
 
 
     /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool GetDisassociateWhenNotFound() const{ return m_disassociateWhenNotFound; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool DisassociateWhenNotFoundHasBeenSet() const { return m_disassociateWhenNotFoundHasBeenSet; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline void SetDisassociateWhenNotFound(bool value) { m_disassociateWhenNotFoundHasBeenSet = true; m_disassociateWhenNotFound = value; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline CreateLicenseConfigurationRequest& WithDisassociateWhenNotFound(bool value) { SetDisassociateWhenNotFound(value); return *this;}
+
+
+    /**
      * <p>Product information.</p>
      */
     inline const Aws::Vector<ProductInformation>& GetProductInformationList() const{ return m_productInformationList; }
@@ -517,6 +538,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_disassociateWhenNotFound;
+    bool m_disassociateWhenNotFoundHasBeenSet;
 
     Aws::Vector<ProductInformation> m_productInformationList;
     bool m_productInformationListHasBeenSet;

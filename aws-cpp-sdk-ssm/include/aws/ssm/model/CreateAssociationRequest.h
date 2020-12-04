@@ -987,7 +987,8 @@ namespace Model
      * <p>By default, when you create a new associations, the system runs it
      * immediately after it is created and then according to the schedule you
      * specified. Specify this option if you don't want an association to run
-     * immediately after you create it.</p>
+     * immediately after you create it. This parameter is not supported for rate
+     * expressions.</p>
      */
     inline bool GetApplyOnlyAtCronInterval() const{ return m_applyOnlyAtCronInterval; }
 
@@ -995,7 +996,8 @@ namespace Model
      * <p>By default, when you create a new associations, the system runs it
      * immediately after it is created and then according to the schedule you
      * specified. Specify this option if you don't want an association to run
-     * immediately after you create it.</p>
+     * immediately after you create it. This parameter is not supported for rate
+     * expressions.</p>
      */
     inline bool ApplyOnlyAtCronIntervalHasBeenSet() const { return m_applyOnlyAtCronIntervalHasBeenSet; }
 
@@ -1003,7 +1005,8 @@ namespace Model
      * <p>By default, when you create a new associations, the system runs it
      * immediately after it is created and then according to the schedule you
      * specified. Specify this option if you don't want an association to run
-     * immediately after you create it.</p>
+     * immediately after you create it. This parameter is not supported for rate
+     * expressions.</p>
      */
     inline void SetApplyOnlyAtCronInterval(bool value) { m_applyOnlyAtCronIntervalHasBeenSet = true; m_applyOnlyAtCronInterval = value; }
 
@@ -1011,7 +1014,8 @@ namespace Model
      * <p>By default, when you create a new associations, the system runs it
      * immediately after it is created and then according to the schedule you
      * specified. Specify this option if you don't want an association to run
-     * immediately after you create it.</p>
+     * immediately after you create it. This parameter is not supported for rate
+     * expressions.</p>
      */
     inline CreateAssociationRequest& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
 

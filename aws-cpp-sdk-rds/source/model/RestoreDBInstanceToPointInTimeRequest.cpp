@@ -53,7 +53,8 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_deletionProtectionHasBeenSet(false),
     m_sourceDbiResourceIdHasBeenSet(false),
     m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false)
+    m_maxAllocatedStorageHasBeenSet(false),
+    m_sourceDBInstanceAutomatedBackupsArnHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,11 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   if(m_maxAllocatedStorageHasBeenSet)
   {
     ss << "MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
+  }
+
+  if(m_sourceDBInstanceAutomatedBackupsArnHasBeenSet)
+  {
+    ss << "SourceDBInstanceAutomatedBackupsArn=" << StringUtils::URLEncode(m_sourceDBInstanceAutomatedBackupsArn.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

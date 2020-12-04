@@ -20,7 +20,8 @@ GetLicenseConfigurationResult::GetLicenseConfigurationResult() :
     m_licenseCountingType(LicenseCountingType::NOT_SET),
     m_licenseCount(0),
     m_licenseCountHardLimit(false),
-    m_consumedLicenses(0)
+    m_consumedLicenses(0),
+    m_disassociateWhenNotFound(false)
 {
 }
 
@@ -28,7 +29,8 @@ GetLicenseConfigurationResult::GetLicenseConfigurationResult(const Aws::AmazonWe
     m_licenseCountingType(LicenseCountingType::NOT_SET),
     m_licenseCount(0),
     m_licenseCountHardLimit(false),
-    m_consumedLicenses(0)
+    m_consumedLicenses(0),
+    m_disassociateWhenNotFound(false)
 {
   *this = result;
 }
@@ -144,6 +146,12 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
   if(jsonValue.ValueExists("AutomatedDiscoveryInformation"))
   {
     m_automatedDiscoveryInformation = jsonValue.GetObject("AutomatedDiscoveryInformation");
+
+  }
+
+  if(jsonValue.ValueExists("DisassociateWhenNotFound"))
+  {
+    m_disassociateWhenNotFound = jsonValue.GetBool("DisassociateWhenNotFound");
 
   }
 

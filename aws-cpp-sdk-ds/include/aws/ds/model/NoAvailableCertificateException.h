@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The LDAP activities could not be performed because at least one valid
-   * certificate must be registered with the system.</p><p><h3>See Also:</h3>   <a
+   * <p>Client authentication setup could not be completed because at least one valid
+   * certificate must be registered in the system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/NoAvailableCertificateException">AWS
    * API Reference</a></p>
    */

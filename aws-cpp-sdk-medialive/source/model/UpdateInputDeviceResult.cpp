@@ -102,6 +102,12 @@ UpdateInputDeviceResult& UpdateInputDeviceResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("uhdDeviceSettings"))
+  {
+    m_uhdDeviceSettings = jsonValue.GetObject("uhdDeviceSettings");
+
+  }
+
 
 
   return *this;

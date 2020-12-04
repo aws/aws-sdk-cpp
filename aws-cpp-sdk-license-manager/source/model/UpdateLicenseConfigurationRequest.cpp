@@ -23,7 +23,9 @@ UpdateLicenseConfigurationRequest::UpdateLicenseConfigurationRequest() :
     m_licenseCountHardLimitHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_productInformationListHasBeenSet(false)
+    m_productInformationListHasBeenSet(false),
+    m_disassociateWhenNotFound(false),
+    m_disassociateWhenNotFoundHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,12 @@ Aws::String UpdateLicenseConfigurationRequest::SerializePayload() const
      productInformationListJsonList[productInformationListIndex].AsObject(m_productInformationList[productInformationListIndex].Jsonize());
    }
    payload.WithArray("ProductInformationList", std::move(productInformationListJsonList));
+
+  }
+
+  if(m_disassociateWhenNotFoundHasBeenSet)
+  {
+   payload.WithBool("DisassociateWhenNotFound", m_disassociateWhenNotFound);
 
   }
 

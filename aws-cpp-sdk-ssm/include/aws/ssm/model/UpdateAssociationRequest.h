@@ -972,11 +972,12 @@ namespace Model
      * <p>By default, when you update an association, the system runs it immediately
      * after it is updated and then according to the schedule you specified. Specify
      * this option if you don't want an association to run immediately after you update
-     * it.</p> <p>Also, if you specified this option when you created the association,
-     * you can reset it. To do so, specify the
-     * <code>no-apply-only-at-cron-interval</code> parameter when you update the
-     * association from the command line. This parameter forces the association to run
-     * immediately after updating it and according to the interval specified.</p>
+     * it. This parameter is not supported for rate expressions.</p> <p>Also, if you
+     * specified this option when you created the association, you can reset it. To do
+     * so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you
+     * update the association from the command line. This parameter forces the
+     * association to run immediately after updating it and according to the interval
+     * specified.</p>
      */
     inline bool GetApplyOnlyAtCronInterval() const{ return m_applyOnlyAtCronInterval; }
 
@@ -984,11 +985,12 @@ namespace Model
      * <p>By default, when you update an association, the system runs it immediately
      * after it is updated and then according to the schedule you specified. Specify
      * this option if you don't want an association to run immediately after you update
-     * it.</p> <p>Also, if you specified this option when you created the association,
-     * you can reset it. To do so, specify the
-     * <code>no-apply-only-at-cron-interval</code> parameter when you update the
-     * association from the command line. This parameter forces the association to run
-     * immediately after updating it and according to the interval specified.</p>
+     * it. This parameter is not supported for rate expressions.</p> <p>Also, if you
+     * specified this option when you created the association, you can reset it. To do
+     * so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you
+     * update the association from the command line. This parameter forces the
+     * association to run immediately after updating it and according to the interval
+     * specified.</p>
      */
     inline bool ApplyOnlyAtCronIntervalHasBeenSet() const { return m_applyOnlyAtCronIntervalHasBeenSet; }
 
@@ -996,11 +998,12 @@ namespace Model
      * <p>By default, when you update an association, the system runs it immediately
      * after it is updated and then according to the schedule you specified. Specify
      * this option if you don't want an association to run immediately after you update
-     * it.</p> <p>Also, if you specified this option when you created the association,
-     * you can reset it. To do so, specify the
-     * <code>no-apply-only-at-cron-interval</code> parameter when you update the
-     * association from the command line. This parameter forces the association to run
-     * immediately after updating it and according to the interval specified.</p>
+     * it. This parameter is not supported for rate expressions.</p> <p>Also, if you
+     * specified this option when you created the association, you can reset it. To do
+     * so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you
+     * update the association from the command line. This parameter forces the
+     * association to run immediately after updating it and according to the interval
+     * specified.</p>
      */
     inline void SetApplyOnlyAtCronInterval(bool value) { m_applyOnlyAtCronIntervalHasBeenSet = true; m_applyOnlyAtCronInterval = value; }
 
@@ -1008,11 +1011,12 @@ namespace Model
      * <p>By default, when you update an association, the system runs it immediately
      * after it is updated and then according to the schedule you specified. Specify
      * this option if you don't want an association to run immediately after you update
-     * it.</p> <p>Also, if you specified this option when you created the association,
-     * you can reset it. To do so, specify the
-     * <code>no-apply-only-at-cron-interval</code> parameter when you update the
-     * association from the command line. This parameter forces the association to run
-     * immediately after updating it and according to the interval specified.</p>
+     * it. This parameter is not supported for rate expressions.</p> <p>Also, if you
+     * specified this option when you created the association, you can reset it. To do
+     * so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you
+     * update the association from the command line. This parameter forces the
+     * association to run immediately after updating it and according to the interval
+     * specified.</p>
      */
     inline UpdateAssociationRequest& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
 

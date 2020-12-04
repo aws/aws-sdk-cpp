@@ -36,73 +36,91 @@ namespace Model
 
 
     /**
-     * <p>Enable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the specified directory. </p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>Enable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the specified directory. </p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>Enable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the specified directory. </p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>Enable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the specified directory. </p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>Enable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the specified directory. </p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>Enable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the specified directory. </p>
      */
     inline EnableClientAuthenticationRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>Enable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the specified directory. </p>
      */
     inline EnableClientAuthenticationRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>Enable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the specified directory. </p>
      */
     inline EnableClientAuthenticationRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
 
     /**
-     * <p>Enable the type of client authentication request. </p>
+     * <p>The type of client authentication to enable. Currently only the value
+     * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
+     * requires that you enable Kerberos Constrained Delegation for the Service User to
+     * the LDAP service in the on-premises AD. </p>
      */
     inline const ClientAuthenticationType& GetType() const{ return m_type; }
 
     /**
-     * <p>Enable the type of client authentication request. </p>
+     * <p>The type of client authentication to enable. Currently only the value
+     * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
+     * requires that you enable Kerberos Constrained Delegation for the Service User to
+     * the LDAP service in the on-premises AD. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Enable the type of client authentication request. </p>
+     * <p>The type of client authentication to enable. Currently only the value
+     * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
+     * requires that you enable Kerberos Constrained Delegation for the Service User to
+     * the LDAP service in the on-premises AD. </p>
      */
     inline void SetType(const ClientAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Enable the type of client authentication request. </p>
+     * <p>The type of client authentication to enable. Currently only the value
+     * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
+     * requires that you enable Kerberos Constrained Delegation for the Service User to
+     * the LDAP service in the on-premises AD. </p>
      */
     inline void SetType(ClientAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Enable the type of client authentication request. </p>
+     * <p>The type of client authentication to enable. Currently only the value
+     * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
+     * requires that you enable Kerberos Constrained Delegation for the Service User to
+     * the LDAP service in the on-premises AD. </p>
      */
     inline EnableClientAuthenticationRequest& WithType(const ClientAuthenticationType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Enable the type of client authentication request. </p>
+     * <p>The type of client authentication to enable. Currently only the value
+     * <code>SmartCard</code> is supported. Smart card authentication in AD Connector
+     * requires that you enable Kerberos Constrained Delegation for the Service User to
+     * the LDAP service in the on-premises AD. </p>
      */
     inline EnableClientAuthenticationRequest& WithType(ClientAuthenticationType&& value) { SetType(std::move(value)); return *this;}
 

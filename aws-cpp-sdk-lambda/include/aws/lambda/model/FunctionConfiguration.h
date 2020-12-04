@@ -334,22 +334,22 @@ namespace Model
 
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline bool MemorySizeHasBeenSet() const { return m_memorySizeHasBeenSet; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline FunctionConfiguration& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
@@ -1072,37 +1072,37 @@ namespace Model
 
     /**
      * <p>The type of deployment package. Set to <code>Image</code> for container image
-     * and set <code>Zip</code> for ZIP archive.</p>
+     * and set <code>Zip</code> for .zip file archive.</p>
      */
     inline const PackageType& GetPackageType() const{ return m_packageType; }
 
     /**
      * <p>The type of deployment package. Set to <code>Image</code> for container image
-     * and set <code>Zip</code> for ZIP archive.</p>
+     * and set <code>Zip</code> for .zip file archive.</p>
      */
     inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
 
     /**
      * <p>The type of deployment package. Set to <code>Image</code> for container image
-     * and set <code>Zip</code> for ZIP archive.</p>
+     * and set <code>Zip</code> for .zip file archive.</p>
      */
     inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
 
     /**
      * <p>The type of deployment package. Set to <code>Image</code> for container image
-     * and set <code>Zip</code> for ZIP archive.</p>
+     * and set <code>Zip</code> for .zip file archive.</p>
      */
     inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
 
     /**
      * <p>The type of deployment package. Set to <code>Image</code> for container image
-     * and set <code>Zip</code> for ZIP archive.</p>
+     * and set <code>Zip</code> for .zip file archive.</p>
      */
     inline FunctionConfiguration& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
 
     /**
      * <p>The type of deployment package. Set to <code>Image</code> for container image
-     * and set <code>Zip</code> for ZIP archive.</p>
+     * and set <code>Zip</code> for .zip file archive.</p>
      */
     inline FunctionConfiguration& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
 

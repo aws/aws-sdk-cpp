@@ -32,6 +32,7 @@ namespace Aws
         static const int InvalidSecurityGroup_HASH = HashingUtils::HashString("InvalidSecurityGroup");
         static const int ImageDeleted_HASH = HashingUtils::HashString("ImageDeleted");
         static const int ImageAccessDenied_HASH = HashingUtils::HashString("ImageAccessDenied");
+        static const int InvalidImage_HASH = HashingUtils::HashString("InvalidImage");
 
 
         StateReasonCode GetStateReasonCodeForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return StateReasonCode::ImageAccessDenied;
           }
+          else if (hashCode == InvalidImage_HASH)
+          {
+            return StateReasonCode::InvalidImage;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +128,8 @@ namespace Aws
             return "ImageDeleted";
           case StateReasonCode::ImageAccessDenied:
             return "ImageAccessDenied";
+          case StateReasonCode::InvalidImage:
+            return "InvalidImage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

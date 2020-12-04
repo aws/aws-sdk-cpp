@@ -20,6 +20,7 @@ namespace Model
     CREATING,
     DELETING,
     FAILED,
+    HEALING,
     MAINTENANCE,
     REBOOTING_BROKER,
     UPDATING

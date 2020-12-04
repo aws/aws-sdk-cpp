@@ -36,73 +36,79 @@ namespace Model
 
 
     /**
-     * <p>Disable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the directory </p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>Disable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the directory </p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>Disable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the directory </p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>Disable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the directory </p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>Disable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the directory </p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>Disable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the directory </p>
      */
     inline DisableClientAuthenticationRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>Disable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the directory </p>
      */
     inline DisableClientAuthenticationRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>Disable client authentication in a specified directory for smart cards. </p>
+     * <p>The identifier of the directory </p>
      */
     inline DisableClientAuthenticationRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
 
     /**
-     * <p>Disable the type of client authentication request. </p>
+     * <p>The type of client authentication to disable. Currently, only the parameter,
+     * <code>SmartCard</code> is supported.</p>
      */
     inline const ClientAuthenticationType& GetType() const{ return m_type; }
 
     /**
-     * <p>Disable the type of client authentication request. </p>
+     * <p>The type of client authentication to disable. Currently, only the parameter,
+     * <code>SmartCard</code> is supported.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Disable the type of client authentication request. </p>
+     * <p>The type of client authentication to disable. Currently, only the parameter,
+     * <code>SmartCard</code> is supported.</p>
      */
     inline void SetType(const ClientAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Disable the type of client authentication request. </p>
+     * <p>The type of client authentication to disable. Currently, only the parameter,
+     * <code>SmartCard</code> is supported.</p>
      */
     inline void SetType(ClientAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Disable the type of client authentication request. </p>
+     * <p>The type of client authentication to disable. Currently, only the parameter,
+     * <code>SmartCard</code> is supported.</p>
      */
     inline DisableClientAuthenticationRequest& WithType(const ClientAuthenticationType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Disable the type of client authentication request. </p>
+     * <p>The type of client authentication to disable. Currently, only the parameter,
+     * <code>SmartCard</code> is supported.</p>
      */
     inline DisableClientAuthenticationRequest& WithType(ClientAuthenticationType&& value) { SetType(std::move(value)); return *this;}
 

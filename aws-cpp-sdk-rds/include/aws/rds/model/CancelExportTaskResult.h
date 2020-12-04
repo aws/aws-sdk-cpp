@@ -435,65 +435,65 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the AWS KMS customer master key (CMK) that is used to
+     * encrypt the snapshot when it's exported to Amazon S3. The AWS KMS CMK identifier
+     * is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the
+     * snapshot export must have encryption and decryption permissions to use this AWS
+     * KMS CMK. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the AWS KMS customer master key (CMK) that is used to
+     * encrypt the snapshot when it's exported to Amazon S3. The AWS KMS CMK identifier
+     * is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the
+     * snapshot export must have encryption and decryption permissions to use this AWS
+     * KMS CMK. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the AWS KMS customer master key (CMK) that is used to
+     * encrypt the snapshot when it's exported to Amazon S3. The AWS KMS CMK identifier
+     * is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the
+     * snapshot export must have encryption and decryption permissions to use this AWS
+     * KMS CMK. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the AWS KMS customer master key (CMK) that is used to
+     * encrypt the snapshot when it's exported to Amazon S3. The AWS KMS CMK identifier
+     * is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the
+     * snapshot export must have encryption and decryption permissions to use this AWS
+     * KMS CMK. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the AWS KMS customer master key (CMK) that is used to
+     * encrypt the snapshot when it's exported to Amazon S3. The AWS KMS CMK identifier
+     * is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the
+     * snapshot export must have encryption and decryption permissions to use this AWS
+     * KMS CMK. </p>
      */
     inline CancelExportTaskResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the AWS KMS customer master key (CMK) that is used to
+     * encrypt the snapshot when it's exported to Amazon S3. The AWS KMS CMK identifier
+     * is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the
+     * snapshot export must have encryption and decryption permissions to use this AWS
+     * KMS CMK. </p>
      */
     inline CancelExportTaskResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the AWS KMS customer master key (CMK) that is used to
+     * encrypt the snapshot when it's exported to Amazon S3. The AWS KMS CMK identifier
+     * is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the
+     * snapshot export must have encryption and decryption permissions to use this AWS
+     * KMS CMK. </p>
      */
     inline CancelExportTaskResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

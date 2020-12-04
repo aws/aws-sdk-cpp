@@ -328,6 +328,27 @@ namespace Model
      */
     inline UpdateLicenseConfigurationRequest& AddProductInformationList(ProductInformation&& value) { m_productInformationListHasBeenSet = true; m_productInformationList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool GetDisassociateWhenNotFound() const{ return m_disassociateWhenNotFound; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool DisassociateWhenNotFoundHasBeenSet() const { return m_disassociateWhenNotFoundHasBeenSet; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline void SetDisassociateWhenNotFound(bool value) { m_disassociateWhenNotFoundHasBeenSet = true; m_disassociateWhenNotFound = value; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline UpdateLicenseConfigurationRequest& WithDisassociateWhenNotFound(bool value) { SetDisassociateWhenNotFound(value); return *this;}
+
   private:
 
     Aws::String m_licenseConfigurationArn;
@@ -353,6 +374,9 @@ namespace Model
 
     Aws::Vector<ProductInformation> m_productInformationList;
     bool m_productInformationListHasBeenSet;
+
+    bool m_disassociateWhenNotFound;
+    bool m_disassociateWhenNotFoundHasBeenSet;
   };
 
 } // namespace Model

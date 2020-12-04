@@ -23,6 +23,7 @@ namespace Aws
         static const int BYOL_REGULAR_HASH = HashingUtils::HashString("BYOL_REGULAR");
         static const int BYOL_GRAPHICS_HASH = HashingUtils::HashString("BYOL_GRAPHICS");
         static const int BYOL_GRAPHICSPRO_HASH = HashingUtils::HashString("BYOL_GRAPHICSPRO");
+        static const int BYOL_REGULAR_WSP_HASH = HashingUtils::HashString("BYOL_REGULAR_WSP");
 
 
         WorkspaceImageIngestionProcess GetWorkspaceImageIngestionProcessForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == BYOL_GRAPHICSPRO_HASH)
           {
             return WorkspaceImageIngestionProcess::BYOL_GRAPHICSPRO;
+          }
+          else if (hashCode == BYOL_REGULAR_WSP_HASH)
+          {
+            return WorkspaceImageIngestionProcess::BYOL_REGULAR_WSP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "BYOL_GRAPHICS";
           case WorkspaceImageIngestionProcess::BYOL_GRAPHICSPRO:
             return "BYOL_GRAPHICSPRO";
+          case WorkspaceImageIngestionProcess::BYOL_REGULAR_WSP:
+            return "BYOL_REGULAR_WSP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

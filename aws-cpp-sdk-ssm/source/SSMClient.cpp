@@ -29,6 +29,7 @@
 #include <aws/ssm/model/CreateDocumentRequest.h>
 #include <aws/ssm/model/CreateMaintenanceWindowRequest.h>
 #include <aws/ssm/model/CreateOpsItemRequest.h>
+#include <aws/ssm/model/CreateOpsMetadataRequest.h>
 #include <aws/ssm/model/CreatePatchBaselineRequest.h>
 #include <aws/ssm/model/CreateResourceDataSyncRequest.h>
 #include <aws/ssm/model/DeleteActivationRequest.h>
@@ -36,6 +37,7 @@
 #include <aws/ssm/model/DeleteDocumentRequest.h>
 #include <aws/ssm/model/DeleteInventoryRequest.h>
 #include <aws/ssm/model/DeleteMaintenanceWindowRequest.h>
+#include <aws/ssm/model/DeleteOpsMetadataRequest.h>
 #include <aws/ssm/model/DeleteParameterRequest.h>
 #include <aws/ssm/model/DeleteParametersRequest.h>
 #include <aws/ssm/model/DeletePatchBaselineRequest.h>
@@ -91,6 +93,7 @@
 #include <aws/ssm/model/GetMaintenanceWindowExecutionTaskInvocationRequest.h>
 #include <aws/ssm/model/GetMaintenanceWindowTaskRequest.h>
 #include <aws/ssm/model/GetOpsItemRequest.h>
+#include <aws/ssm/model/GetOpsMetadataRequest.h>
 #include <aws/ssm/model/GetOpsSummaryRequest.h>
 #include <aws/ssm/model/GetParameterRequest.h>
 #include <aws/ssm/model/GetParameterHistoryRequest.h>
@@ -109,6 +112,7 @@
 #include <aws/ssm/model/ListDocumentVersionsRequest.h>
 #include <aws/ssm/model/ListDocumentsRequest.h>
 #include <aws/ssm/model/ListInventoryEntriesRequest.h>
+#include <aws/ssm/model/ListOpsMetadataRequest.h>
 #include <aws/ssm/model/ListResourceComplianceSummariesRequest.h>
 #include <aws/ssm/model/ListResourceDataSyncRequest.h>
 #include <aws/ssm/model/ListTagsForResourceRequest.h>
@@ -139,6 +143,7 @@
 #include <aws/ssm/model/UpdateMaintenanceWindowTaskRequest.h>
 #include <aws/ssm/model/UpdateManagedInstanceRoleRequest.h>
 #include <aws/ssm/model/UpdateOpsItemRequest.h>
+#include <aws/ssm/model/UpdateOpsMetadataRequest.h>
 #include <aws/ssm/model/UpdatePatchBaselineRequest.h>
 #include <aws/ssm/model/UpdateResourceDataSyncRequest.h>
 #include <aws/ssm/model/UpdateServiceSettingRequest.h>
@@ -459,6 +464,33 @@ void SSMClient::CreateOpsItemAsyncHelper(const CreateOpsItemRequest& request, co
   handler(this, request, CreateOpsItem(request), context);
 }
 
+CreateOpsMetadataOutcome SSMClient::CreateOpsMetadata(const CreateOpsMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateOpsMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateOpsMetadataOutcomeCallable SSMClient::CreateOpsMetadataCallable(const CreateOpsMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateOpsMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOpsMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::CreateOpsMetadataAsync(const CreateOpsMetadataRequest& request, const CreateOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateOpsMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::CreateOpsMetadataAsyncHelper(const CreateOpsMetadataRequest& request, const CreateOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateOpsMetadata(request), context);
+}
+
 CreatePatchBaselineOutcome SSMClient::CreatePatchBaseline(const CreatePatchBaselineRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -646,6 +678,33 @@ void SSMClient::DeleteMaintenanceWindowAsync(const DeleteMaintenanceWindowReques
 void SSMClient::DeleteMaintenanceWindowAsyncHelper(const DeleteMaintenanceWindowRequest& request, const DeleteMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteMaintenanceWindow(request), context);
+}
+
+DeleteOpsMetadataOutcome SSMClient::DeleteOpsMetadata(const DeleteOpsMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteOpsMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteOpsMetadataOutcomeCallable SSMClient::DeleteOpsMetadataCallable(const DeleteOpsMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteOpsMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOpsMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DeleteOpsMetadataAsync(const DeleteOpsMetadataRequest& request, const DeleteOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteOpsMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DeleteOpsMetadataAsyncHelper(const DeleteOpsMetadataRequest& request, const DeleteOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteOpsMetadata(request), context);
 }
 
 DeleteParameterOutcome SSMClient::DeleteParameter(const DeleteParameterRequest& request) const
@@ -2133,6 +2192,33 @@ void SSMClient::GetOpsItemAsyncHelper(const GetOpsItemRequest& request, const Ge
   handler(this, request, GetOpsItem(request), context);
 }
 
+GetOpsMetadataOutcome SSMClient::GetOpsMetadata(const GetOpsMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetOpsMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetOpsMetadataOutcomeCallable SSMClient::GetOpsMetadataCallable(const GetOpsMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetOpsMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOpsMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::GetOpsMetadataAsync(const GetOpsMetadataRequest& request, const GetOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetOpsMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::GetOpsMetadataAsyncHelper(const GetOpsMetadataRequest& request, const GetOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetOpsMetadata(request), context);
+}
+
 GetOpsSummaryOutcome SSMClient::GetOpsSummary(const GetOpsSummaryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2617,6 +2703,33 @@ void SSMClient::ListInventoryEntriesAsync(const ListInventoryEntriesRequest& req
 void SSMClient::ListInventoryEntriesAsyncHelper(const ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListInventoryEntries(request), context);
+}
+
+ListOpsMetadataOutcome SSMClient::ListOpsMetadata(const ListOpsMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListOpsMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListOpsMetadataOutcomeCallable SSMClient::ListOpsMetadataCallable(const ListOpsMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOpsMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOpsMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ListOpsMetadataAsync(const ListOpsMetadataRequest& request, const ListOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOpsMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ListOpsMetadataAsyncHelper(const ListOpsMetadataRequest& request, const ListOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOpsMetadata(request), context);
 }
 
 ListResourceComplianceSummariesOutcome SSMClient::ListResourceComplianceSummaries(const ListResourceComplianceSummariesRequest& request) const
@@ -3427,6 +3540,33 @@ void SSMClient::UpdateOpsItemAsync(const UpdateOpsItemRequest& request, const Up
 void SSMClient::UpdateOpsItemAsyncHelper(const UpdateOpsItemRequest& request, const UpdateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateOpsItem(request), context);
+}
+
+UpdateOpsMetadataOutcome SSMClient::UpdateOpsMetadata(const UpdateOpsMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateOpsMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateOpsMetadataOutcomeCallable SSMClient::UpdateOpsMetadataCallable(const UpdateOpsMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateOpsMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOpsMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::UpdateOpsMetadataAsync(const UpdateOpsMetadataRequest& request, const UpdateOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateOpsMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::UpdateOpsMetadataAsyncHelper(const UpdateOpsMetadataRequest& request, const UpdateOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateOpsMetadata(request), context);
 }
 
 UpdatePatchBaselineOutcome SSMClient::UpdatePatchBaseline(const UpdatePatchBaselineRequest& request) const

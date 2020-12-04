@@ -37,32 +37,32 @@ namespace Model
 
 
     /**
-     * The settings that you want to apply to the input device.
+     * The settings that you want to apply to the HD input device.
      */
     inline const InputDeviceConfigurableSettings& GetHdDeviceSettings() const{ return m_hdDeviceSettings; }
 
     /**
-     * The settings that you want to apply to the input device.
+     * The settings that you want to apply to the HD input device.
      */
     inline bool HdDeviceSettingsHasBeenSet() const { return m_hdDeviceSettingsHasBeenSet; }
 
     /**
-     * The settings that you want to apply to the input device.
+     * The settings that you want to apply to the HD input device.
      */
     inline void SetHdDeviceSettings(const InputDeviceConfigurableSettings& value) { m_hdDeviceSettingsHasBeenSet = true; m_hdDeviceSettings = value; }
 
     /**
-     * The settings that you want to apply to the input device.
+     * The settings that you want to apply to the HD input device.
      */
     inline void SetHdDeviceSettings(InputDeviceConfigurableSettings&& value) { m_hdDeviceSettingsHasBeenSet = true; m_hdDeviceSettings = std::move(value); }
 
     /**
-     * The settings that you want to apply to the input device.
+     * The settings that you want to apply to the HD input device.
      */
     inline UpdateInputDeviceRequest& WithHdDeviceSettings(const InputDeviceConfigurableSettings& value) { SetHdDeviceSettings(value); return *this;}
 
     /**
-     * The settings that you want to apply to the input device.
+     * The settings that you want to apply to the HD input device.
      */
     inline UpdateInputDeviceRequest& WithHdDeviceSettings(InputDeviceConfigurableSettings&& value) { SetHdDeviceSettings(std::move(value)); return *this;}
 
@@ -148,6 +148,37 @@ namespace Model
      */
     inline UpdateInputDeviceRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * The settings that you want to apply to the UHD input device.
+     */
+    inline const InputDeviceConfigurableSettings& GetUhdDeviceSettings() const{ return m_uhdDeviceSettings; }
+
+    /**
+     * The settings that you want to apply to the UHD input device.
+     */
+    inline bool UhdDeviceSettingsHasBeenSet() const { return m_uhdDeviceSettingsHasBeenSet; }
+
+    /**
+     * The settings that you want to apply to the UHD input device.
+     */
+    inline void SetUhdDeviceSettings(const InputDeviceConfigurableSettings& value) { m_uhdDeviceSettingsHasBeenSet = true; m_uhdDeviceSettings = value; }
+
+    /**
+     * The settings that you want to apply to the UHD input device.
+     */
+    inline void SetUhdDeviceSettings(InputDeviceConfigurableSettings&& value) { m_uhdDeviceSettingsHasBeenSet = true; m_uhdDeviceSettings = std::move(value); }
+
+    /**
+     * The settings that you want to apply to the UHD input device.
+     */
+    inline UpdateInputDeviceRequest& WithUhdDeviceSettings(const InputDeviceConfigurableSettings& value) { SetUhdDeviceSettings(value); return *this;}
+
+    /**
+     * The settings that you want to apply to the UHD input device.
+     */
+    inline UpdateInputDeviceRequest& WithUhdDeviceSettings(InputDeviceConfigurableSettings&& value) { SetUhdDeviceSettings(std::move(value)); return *this;}
+
   private:
 
     InputDeviceConfigurableSettings m_hdDeviceSettings;
@@ -158,6 +189,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    InputDeviceConfigurableSettings m_uhdDeviceSettings;
+    bool m_uhdDeviceSettingsHasBeenSet;
   };
 
 } // namespace Model

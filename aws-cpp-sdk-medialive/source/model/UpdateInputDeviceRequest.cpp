@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateInputDeviceRequest::UpdateInputDeviceRequest() : 
     m_hdDeviceSettingsHasBeenSet(false),
     m_inputDeviceIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_uhdDeviceSettingsHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String UpdateInputDeviceRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_uhdDeviceSettingsHasBeenSet)
+  {
+   payload.WithObject("uhdDeviceSettings", m_uhdDeviceSettings.Jsonize());
 
   }
 

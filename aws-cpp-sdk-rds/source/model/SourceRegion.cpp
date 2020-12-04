@@ -23,14 +23,18 @@ namespace Model
 SourceRegion::SourceRegion() : 
     m_regionNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_supportsDBInstanceAutomatedBackupsReplication(false),
+    m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet(false)
 {
 }
 
 SourceRegion::SourceRegion(const XmlNode& xmlNode) : 
     m_regionNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_supportsDBInstanceAutomatedBackupsReplication(false),
+    m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -59,6 +63,12 @@ SourceRegion& SourceRegion::operator =(const XmlNode& xmlNode)
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
+    XmlNode supportsDBInstanceAutomatedBackupsReplicationNode = resultNode.FirstChild("SupportsDBInstanceAutomatedBackupsReplication");
+    if(!supportsDBInstanceAutomatedBackupsReplicationNode.IsNull())
+    {
+      m_supportsDBInstanceAutomatedBackupsReplication = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDBInstanceAutomatedBackupsReplicationNode.GetText()).c_str()).c_str());
+      m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -81,6 +91,11 @@ void SourceRegion::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
+  if(m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsDBInstanceAutomatedBackupsReplication=" << std::boolalpha << m_supportsDBInstanceAutomatedBackupsReplication << "&";
+  }
+
 }
 
 void SourceRegion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -96,6 +111,10 @@ void SourceRegion::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if(m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet)
+  {
+      oStream << location << ".SupportsDBInstanceAutomatedBackupsReplication=" << std::boolalpha << m_supportsDBInstanceAutomatedBackupsReplication << "&";
   }
 }
 

@@ -24,7 +24,8 @@ namespace Model
     InvalidSubnet,
     InvalidSecurityGroup,
     ImageDeleted,
-    ImageAccessDenied
+    ImageAccessDenied,
+    InvalidImage
   };
 
 namespace LastUpdateStatusReasonCodeMapper

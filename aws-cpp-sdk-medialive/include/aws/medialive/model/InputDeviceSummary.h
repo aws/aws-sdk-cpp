@@ -12,6 +12,7 @@
 #include <aws/medialive/model/InputDeviceHdSettings.h>
 #include <aws/medialive/model/InputDeviceNetworkSettings.h>
 #include <aws/medialive/model/InputDeviceType.h>
+#include <aws/medialive/model/InputDeviceUhdSettings.h>
 #include <utility>
 
 namespace Aws
@@ -457,6 +458,37 @@ namespace Model
      */
     inline InputDeviceSummary& WithType(InputDeviceType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * Settings that describe an input device that is type UHD.
+     */
+    inline const InputDeviceUhdSettings& GetUhdDeviceSettings() const{ return m_uhdDeviceSettings; }
+
+    /**
+     * Settings that describe an input device that is type UHD.
+     */
+    inline bool UhdDeviceSettingsHasBeenSet() const { return m_uhdDeviceSettingsHasBeenSet; }
+
+    /**
+     * Settings that describe an input device that is type UHD.
+     */
+    inline void SetUhdDeviceSettings(const InputDeviceUhdSettings& value) { m_uhdDeviceSettingsHasBeenSet = true; m_uhdDeviceSettings = value; }
+
+    /**
+     * Settings that describe an input device that is type UHD.
+     */
+    inline void SetUhdDeviceSettings(InputDeviceUhdSettings&& value) { m_uhdDeviceSettingsHasBeenSet = true; m_uhdDeviceSettings = std::move(value); }
+
+    /**
+     * Settings that describe an input device that is type UHD.
+     */
+    inline InputDeviceSummary& WithUhdDeviceSettings(const InputDeviceUhdSettings& value) { SetUhdDeviceSettings(value); return *this;}
+
+    /**
+     * Settings that describe an input device that is type UHD.
+     */
+    inline InputDeviceSummary& WithUhdDeviceSettings(InputDeviceUhdSettings&& value) { SetUhdDeviceSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -491,6 +523,9 @@ namespace Model
 
     InputDeviceType m_type;
     bool m_typeHasBeenSet;
+
+    InputDeviceUhdSettings m_uhdDeviceSettings;
+    bool m_uhdDeviceSettingsHasBeenSet;
   };
 
 } // namespace Model

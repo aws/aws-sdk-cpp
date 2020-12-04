@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The client authorization was invalid.</p><p><h3>See Also:</h3>   <a
+   * <p>Client authentication is already enabled.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/InvalidClientAuthStatusException">AWS
    * API Reference</a></p>
    */

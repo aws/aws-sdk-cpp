@@ -48,7 +48,11 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup() :
     m_kmsKeyIdHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_backupRetentionPeriod(0),
+    m_backupRetentionPeriodHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsArnHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false)
 {
 }
 
@@ -80,7 +84,11 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup(const XmlNode& xmlNode) :
     m_kmsKeyIdHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_backupRetentionPeriod(0),
+    m_backupRetentionPeriodHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsArnHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -229,6 +237,30 @@ DBInstanceAutomatedBackup& DBInstanceAutomatedBackup::operator =(const XmlNode& 
       m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMDatabaseAuthenticationEnabledNode.GetText()).c_str()).c_str());
       m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
     }
+    XmlNode backupRetentionPeriodNode = resultNode.FirstChild("BackupRetentionPeriod");
+    if(!backupRetentionPeriodNode.IsNull())
+    {
+      m_backupRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backupRetentionPeriodNode.GetText()).c_str()).c_str());
+      m_backupRetentionPeriodHasBeenSet = true;
+    }
+    XmlNode dBInstanceAutomatedBackupsArnNode = resultNode.FirstChild("DBInstanceAutomatedBackupsArn");
+    if(!dBInstanceAutomatedBackupsArnNode.IsNull())
+    {
+      m_dBInstanceAutomatedBackupsArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceAutomatedBackupsArnNode.GetText());
+      m_dBInstanceAutomatedBackupsArnHasBeenSet = true;
+    }
+    XmlNode dBInstanceAutomatedBackupsReplicationsNode = resultNode.FirstChild("DBInstanceAutomatedBackupsReplications");
+    if(!dBInstanceAutomatedBackupsReplicationsNode.IsNull())
+    {
+      XmlNode dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsNode.FirstChild("DBInstanceAutomatedBackupsReplication");
+      while(!dBInstanceAutomatedBackupsReplicationsMember.IsNull())
+      {
+        m_dBInstanceAutomatedBackupsReplications.push_back(dBInstanceAutomatedBackupsReplicationsMember);
+        dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsMember.NextNode("DBInstanceAutomatedBackupsReplication");
+      }
+
+      m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -353,6 +385,27 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 
+  if(m_backupRetentionPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+
+  if(m_dBInstanceAutomatedBackupsArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBInstanceAutomatedBackupsArn=" << StringUtils::URLEncode(m_dBInstanceAutomatedBackupsArn.c_str()) << "&";
+  }
+
+  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
+  {
+      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
+      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
+      {
+        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
+        dBInstanceAutomatedBackupsReplicationsSs << location << index << locationValue << ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
+      }
+  }
+
 }
 
 void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -450,6 +503,24 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
   if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
       oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+  if(m_backupRetentionPeriodHasBeenSet)
+  {
+      oStream << location << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+  if(m_dBInstanceAutomatedBackupsArnHasBeenSet)
+  {
+      oStream << location << ".DBInstanceAutomatedBackupsArn=" << StringUtils::URLEncode(m_dBInstanceAutomatedBackupsArn.c_str()) << "&";
+  }
+  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
+  {
+      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
+      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
+      {
+        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
+        dBInstanceAutomatedBackupsReplicationsSs << location <<  ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
+      }
   }
 }
 

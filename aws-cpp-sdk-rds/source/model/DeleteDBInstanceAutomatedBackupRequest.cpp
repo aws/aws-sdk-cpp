@@ -11,7 +11,8 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 DeleteDBInstanceAutomatedBackupRequest::DeleteDBInstanceAutomatedBackupRequest() : 
-    m_dbiResourceIdHasBeenSet(false)
+    m_dbiResourceIdHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsArnHasBeenSet(false)
 {
 }
 
@@ -22,6 +23,11 @@ Aws::String DeleteDBInstanceAutomatedBackupRequest::SerializePayload() const
   if(m_dbiResourceIdHasBeenSet)
   {
     ss << "DbiResourceId=" << StringUtils::URLEncode(m_dbiResourceId.c_str()) << "&";
+  }
+
+  if(m_dBInstanceAutomatedBackupsArnHasBeenSet)
+  {
+    ss << "DBInstanceAutomatedBackupsArn=" << StringUtils::URLEncode(m_dBInstanceAutomatedBackupsArn.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -127,10 +127,12 @@
 #include <aws/rds/model/StartActivityStreamResult.h>
 #include <aws/rds/model/StartDBClusterResult.h>
 #include <aws/rds/model/StartDBInstanceResult.h>
+#include <aws/rds/model/StartDBInstanceAutomatedBackupsReplicationResult.h>
 #include <aws/rds/model/StartExportTaskResult.h>
 #include <aws/rds/model/StopActivityStreamResult.h>
 #include <aws/rds/model/StopDBClusterResult.h>
 #include <aws/rds/model/StopDBInstanceResult.h>
+#include <aws/rds/model/StopDBInstanceAutomatedBackupsReplicationResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -301,10 +303,12 @@ namespace Aws
         class StartActivityStreamRequest;
         class StartDBClusterRequest;
         class StartDBInstanceRequest;
+        class StartDBInstanceAutomatedBackupsReplicationRequest;
         class StartExportTaskRequest;
         class StopActivityStreamRequest;
         class StopDBClusterRequest;
         class StopDBInstanceRequest;
+        class StopDBInstanceAutomatedBackupsReplicationRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> AddRoleToDBClusterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> AddRoleToDBInstanceOutcome;
@@ -432,10 +436,12 @@ namespace Aws
         typedef Aws::Utils::Outcome<StartActivityStreamResult, RDSError> StartActivityStreamOutcome;
         typedef Aws::Utils::Outcome<StartDBClusterResult, RDSError> StartDBClusterOutcome;
         typedef Aws::Utils::Outcome<StartDBInstanceResult, RDSError> StartDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<StartDBInstanceAutomatedBackupsReplicationResult, RDSError> StartDBInstanceAutomatedBackupsReplicationOutcome;
         typedef Aws::Utils::Outcome<StartExportTaskResult, RDSError> StartExportTaskOutcome;
         typedef Aws::Utils::Outcome<StopActivityStreamResult, RDSError> StopActivityStreamOutcome;
         typedef Aws::Utils::Outcome<StopDBClusterResult, RDSError> StopDBClusterOutcome;
         typedef Aws::Utils::Outcome<StopDBInstanceResult, RDSError> StopDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<StopDBInstanceAutomatedBackupsReplicationResult, RDSError> StopDBInstanceAutomatedBackupsReplicationOutcome;
 
         typedef std::future<AddRoleToDBClusterOutcome> AddRoleToDBClusterOutcomeCallable;
         typedef std::future<AddRoleToDBInstanceOutcome> AddRoleToDBInstanceOutcomeCallable;
@@ -563,10 +569,12 @@ namespace Aws
         typedef std::future<StartActivityStreamOutcome> StartActivityStreamOutcomeCallable;
         typedef std::future<StartDBClusterOutcome> StartDBClusterOutcomeCallable;
         typedef std::future<StartDBInstanceOutcome> StartDBInstanceOutcomeCallable;
+        typedef std::future<StartDBInstanceAutomatedBackupsReplicationOutcome> StartDBInstanceAutomatedBackupsReplicationOutcomeCallable;
         typedef std::future<StartExportTaskOutcome> StartExportTaskOutcomeCallable;
         typedef std::future<StopActivityStreamOutcome> StopActivityStreamOutcomeCallable;
         typedef std::future<StopDBClusterOutcome> StopDBClusterOutcomeCallable;
         typedef std::future<StopDBInstanceOutcome> StopDBInstanceOutcomeCallable;
+        typedef std::future<StopDBInstanceAutomatedBackupsReplicationOutcome> StopDBInstanceAutomatedBackupsReplicationOutcomeCallable;
     } // namespace Model
 
         class RDSClient;
@@ -697,10 +705,12 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::StartActivityStreamRequest&, const Model::StartActivityStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartActivityStreamResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StartDBClusterRequest&, const Model::StartDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StartDBInstanceRequest&, const Model::StartDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDBInstanceResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::StartDBInstanceAutomatedBackupsReplicationRequest&, const Model::StartDBInstanceAutomatedBackupsReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDBInstanceAutomatedBackupsReplicationResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StartExportTaskRequest&, const Model::StartExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExportTaskResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopActivityStreamRequest&, const Model::StopActivityStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopActivityStreamResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopDBClusterRequest&, const Model::StopDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopDBInstanceRequest&, const Model::StopDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBInstanceResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::StopDBInstanceAutomatedBackupsReplicationRequest&, const Model::StopDBInstanceAutomatedBackupsReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBInstanceAutomatedBackupsReplicationResponseReceivedHandler;
 
         /**
      * <fullname>Amazon Relational Database Service</fullname> <p> </p> <p>Amazon
@@ -1125,12 +1135,12 @@ namespace Aws
          * action that can be executed in the source AWS Region that contains the encrypted
          * DB cluster snapshot to be copied.</p> <p>The pre-signed URL request must contain
          * the following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The
-         * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-         * snapshot in the destination AWS Region. This is the same identifier for both the
-         * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-         * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-         * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-         * snapshot is to be created in.</p> </li> <li> <p>
+         * AWS KMS key identifier for the customer master key (CMK) to use to encrypt the
+         * copy of the DB cluster snapshot in the destination AWS Region. This is the same
+         * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+         * in the destination AWS Region, and the action contained in the pre-signed
+         * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+         * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
          * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -1192,12 +1202,12 @@ namespace Aws
          * action that can be executed in the source AWS Region that contains the encrypted
          * DB cluster snapshot to be copied.</p> <p>The pre-signed URL request must contain
          * the following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The
-         * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-         * snapshot in the destination AWS Region. This is the same identifier for both the
-         * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-         * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-         * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-         * snapshot is to be created in.</p> </li> <li> <p>
+         * AWS KMS key identifier for the customer master key (CMK) to use to encrypt the
+         * copy of the DB cluster snapshot in the destination AWS Region. This is the same
+         * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+         * in the destination AWS Region, and the action contained in the pre-signed
+         * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+         * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
          * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -1261,12 +1271,12 @@ namespace Aws
          * action that can be executed in the source AWS Region that contains the encrypted
          * DB cluster snapshot to be copied.</p> <p>The pre-signed URL request must contain
          * the following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The
-         * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-         * snapshot in the destination AWS Region. This is the same identifier for both the
-         * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-         * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-         * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-         * snapshot is to be created in.</p> </li> <li> <p>
+         * AWS KMS key identifier for the customer master key (CMK) to use to encrypt the
+         * copy of the DB cluster snapshot in the destination AWS Region. This is the same
+         * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+         * in the destination AWS Region, and the action contained in the pre-signed
+         * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+         * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
          * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -1893,7 +1903,7 @@ namespace Aws
 
         /**
          * <p>Creates a snapshot of a DB instance. The source DB instance must be in the
-         * <code>available</code> or <code>storage-optimization</code>state.</p><p><h3>See
+         * <code>available</code> or <code>storage-optimization</code> state.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">AWS
          * API Reference</a></p>
@@ -1902,7 +1912,7 @@ namespace Aws
 
         /**
          * <p>Creates a snapshot of a DB instance. The source DB instance must be in the
-         * <code>available</code> or <code>storage-optimization</code>state.</p><p><h3>See
+         * <code>available</code> or <code>storage-optimization</code> state.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">AWS
          * API Reference</a></p>
@@ -1913,7 +1923,7 @@ namespace Aws
 
         /**
          * <p>Creates a snapshot of a DB instance. The source DB instance must be in the
-         * <code>available</code> or <code>storage-optimization</code>state.</p><p><h3>See
+         * <code>available</code> or <code>storage-optimization</code> state.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">AWS
          * API Reference</a></p>
@@ -2404,18 +2414,18 @@ namespace Aws
         virtual void DeleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes automated backups based on the source instance's
-         * <code>DbiResourceId</code> value or the restorable instance's resource
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes automated backups using the <code>DbiResourceId</code> value of the
+         * source DB instance or the Amazon Resource Name (ARN) of the automated
+         * backups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDBInstanceAutomatedBackupOutcome DeleteDBInstanceAutomatedBackup(const Model::DeleteDBInstanceAutomatedBackupRequest& request) const;
 
         /**
-         * <p>Deletes automated backups based on the source instance's
-         * <code>DbiResourceId</code> value or the restorable instance's resource
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes automated backups using the <code>DbiResourceId</code> value of the
+         * source DB instance or the Amazon Resource Name (ARN) of the automated
+         * backups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup">AWS
          * API Reference</a></p>
          *
@@ -2424,9 +2434,9 @@ namespace Aws
         virtual Model::DeleteDBInstanceAutomatedBackupOutcomeCallable DeleteDBInstanceAutomatedBackupCallable(const Model::DeleteDBInstanceAutomatedBackupRequest& request) const;
 
         /**
-         * <p>Deletes automated backups based on the source instance's
-         * <code>DbiResourceId</code> value or the restorable instance's resource
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes automated backups using the <code>DbiResourceId</code> value of the
+         * source DB instance or the Amazon Resource Name (ARN) of the automated
+         * backups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup">AWS
          * API Reference</a></p>
          *
@@ -5706,18 +5716,18 @@ namespace Aws
 
         /**
          * <p>Creates a new DB instance from a DB snapshot. The target database is created
-         * from the source database restore point with the most of original configuration
-         * with the default security group and the default DB parameter group. By default,
-         * the new DB instance is created as a single-AZ deployment except when the
-         * instance is a SQL Server instance that has an option group that is associated
-         * with mirroring; in this case, the instance becomes a mirrored AZ deployment and
-         * not a single-AZ deployment.</p> <p>If your intent is to replace your original DB
-         * instance with the new, restored DB instance, then rename your original DB
-         * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't
-         * allow two DB instances with the same name. Once you have renamed your original
-         * DB instance with a different identifier, then you can pass the original name of
-         * the DB instance as the DBInstanceIdentifier in the call to the
-         * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the
+         * from the source database restore point with most of the source's original
+         * configuration, including the default security group and DB parameter group. By
+         * default, the new DB instance is created as a Single-AZ deployment, except when
+         * the instance is a SQL Server instance that has an option group associated with
+         * mirroring. In this case, the instance becomes a Multi-AZ deployment, not a
+         * Single-AZ deployment.</p> <p>If you want to replace your original DB instance
+         * with the new, restored DB instance, then rename your original DB instance before
+         * you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
+         * instances with the same name. After you have renamed your original DB instance
+         * with a different identifier, then you can pass the original name of the DB
+         * instance as the DBInstanceIdentifier in the call to the
+         * RestoreDBInstanceFromDBSnapshot action. The result is that you replace the
          * original DB instance with the DB instance created from the snapshot.</p> <p>If
          * you are restoring from a shared manual DB snapshot, the
          * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
@@ -5731,18 +5741,18 @@ namespace Aws
 
         /**
          * <p>Creates a new DB instance from a DB snapshot. The target database is created
-         * from the source database restore point with the most of original configuration
-         * with the default security group and the default DB parameter group. By default,
-         * the new DB instance is created as a single-AZ deployment except when the
-         * instance is a SQL Server instance that has an option group that is associated
-         * with mirroring; in this case, the instance becomes a mirrored AZ deployment and
-         * not a single-AZ deployment.</p> <p>If your intent is to replace your original DB
-         * instance with the new, restored DB instance, then rename your original DB
-         * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't
-         * allow two DB instances with the same name. Once you have renamed your original
-         * DB instance with a different identifier, then you can pass the original name of
-         * the DB instance as the DBInstanceIdentifier in the call to the
-         * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the
+         * from the source database restore point with most of the source's original
+         * configuration, including the default security group and DB parameter group. By
+         * default, the new DB instance is created as a Single-AZ deployment, except when
+         * the instance is a SQL Server instance that has an option group associated with
+         * mirroring. In this case, the instance becomes a Multi-AZ deployment, not a
+         * Single-AZ deployment.</p> <p>If you want to replace your original DB instance
+         * with the new, restored DB instance, then rename your original DB instance before
+         * you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
+         * instances with the same name. After you have renamed your original DB instance
+         * with a different identifier, then you can pass the original name of the DB
+         * instance as the DBInstanceIdentifier in the call to the
+         * RestoreDBInstanceFromDBSnapshot action. The result is that you replace the
          * original DB instance with the DB instance created from the snapshot.</p> <p>If
          * you are restoring from a shared manual DB snapshot, the
          * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
@@ -5758,18 +5768,18 @@ namespace Aws
 
         /**
          * <p>Creates a new DB instance from a DB snapshot. The target database is created
-         * from the source database restore point with the most of original configuration
-         * with the default security group and the default DB parameter group. By default,
-         * the new DB instance is created as a single-AZ deployment except when the
-         * instance is a SQL Server instance that has an option group that is associated
-         * with mirroring; in this case, the instance becomes a mirrored AZ deployment and
-         * not a single-AZ deployment.</p> <p>If your intent is to replace your original DB
-         * instance with the new, restored DB instance, then rename your original DB
-         * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't
-         * allow two DB instances with the same name. Once you have renamed your original
-         * DB instance with a different identifier, then you can pass the original name of
-         * the DB instance as the DBInstanceIdentifier in the call to the
-         * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the
+         * from the source database restore point with most of the source's original
+         * configuration, including the default security group and DB parameter group. By
+         * default, the new DB instance is created as a Single-AZ deployment, except when
+         * the instance is a SQL Server instance that has an option group associated with
+         * mirroring. In this case, the instance becomes a Multi-AZ deployment, not a
+         * Single-AZ deployment.</p> <p>If you want to replace your original DB instance
+         * with the new, restored DB instance, then rename your original DB instance before
+         * you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
+         * instances with the same name. After you have renamed your original DB instance
+         * with a different identifier, then you can pass the original name of the DB
+         * instance as the DBInstanceIdentifier in the call to the
+         * RestoreDBInstanceFromDBSnapshot action. The result is that you replace the
          * original DB instance with the DB instance created from the snapshot.</p> <p>If
          * you are restoring from a shared manual DB snapshot, the
          * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
@@ -6051,6 +6061,43 @@ namespace Aws
         virtual void StartDBInstanceAsync(const Model::StartDBInstanceRequest& request, const StartDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables replication of automated backups to a different AWS Region.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
+         * Replicating Automated Backups to Another AWS Region</a> in the <i>Amazon RDS
+         * User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDBInstanceAutomatedBackupsReplicationOutcome StartDBInstanceAutomatedBackupsReplication(const Model::StartDBInstanceAutomatedBackupsReplicationRequest& request) const;
+
+        /**
+         * <p>Enables replication of automated backups to a different AWS Region.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
+         * Replicating Automated Backups to Another AWS Region</a> in the <i>Amazon RDS
+         * User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartDBInstanceAutomatedBackupsReplicationOutcomeCallable StartDBInstanceAutomatedBackupsReplicationCallable(const Model::StartDBInstanceAutomatedBackupsReplicationRequest& request) const;
+
+        /**
+         * <p>Enables replication of automated backups to a different AWS Region.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
+         * Replicating Automated Backups to Another AWS Region</a> in the <i>Amazon RDS
+         * User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartDBInstanceAutomatedBackupsReplicationAsync(const Model::StartDBInstanceAutomatedBackupsReplicationRequest& request, const StartDBInstanceAutomatedBackupsReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts an export of a snapshot to Amazon S3. The provided IAM role must have
          * access to the S3 bucket. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">AWS
@@ -6216,6 +6263,43 @@ namespace Aws
          */
         virtual void StopDBInstanceAsync(const Model::StopDBInstanceRequest& request, const StopDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Stops automated backup replication for a DB instance.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
+         * Replicating Automated Backups to Another AWS Region</a> in the <i>Amazon RDS
+         * User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstanceAutomatedBackupsReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopDBInstanceAutomatedBackupsReplicationOutcome StopDBInstanceAutomatedBackupsReplication(const Model::StopDBInstanceAutomatedBackupsReplicationRequest& request) const;
+
+        /**
+         * <p>Stops automated backup replication for a DB instance.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
+         * Replicating Automated Backups to Another AWS Region</a> in the <i>Amazon RDS
+         * User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstanceAutomatedBackupsReplication">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopDBInstanceAutomatedBackupsReplicationOutcomeCallable StopDBInstanceAutomatedBackupsReplicationCallable(const Model::StopDBInstanceAutomatedBackupsReplicationRequest& request) const;
+
+        /**
+         * <p>Stops automated backup replication for a DB instance.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
+         * Replicating Automated Backups to Another AWS Region</a> in the <i>Amazon RDS
+         * User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstanceAutomatedBackupsReplication">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopDBInstanceAutomatedBackupsReplicationAsync(const Model::StopDBInstanceAutomatedBackupsReplicationRequest& request, const StopDBInstanceAutomatedBackupsReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
         void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -6346,10 +6430,12 @@ namespace Aws
         void StartActivityStreamAsyncHelper(const Model::StartActivityStreamRequest& request, const StartActivityStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDBClusterAsyncHelper(const Model::StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDBInstanceAsyncHelper(const Model::StartDBInstanceRequest& request, const StartDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartDBInstanceAutomatedBackupsReplicationAsyncHelper(const Model::StartDBInstanceAutomatedBackupsReplicationRequest& request, const StartDBInstanceAutomatedBackupsReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartExportTaskAsyncHelper(const Model::StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopActivityStreamAsyncHelper(const Model::StopActivityStreamRequest& request, const StopActivityStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDBClusterAsyncHelper(const Model::StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDBInstanceAsyncHelper(const Model::StopDBInstanceRequest& request, const StopDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopDBInstanceAutomatedBackupsReplicationAsyncHelper(const Model::StopDBInstanceAutomatedBackupsReplicationRequest& request, const StopDBInstanceAutomatedBackupsReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
         Aws::String m_uri;
         Aws::String m_configScheme;

@@ -33,7 +33,8 @@ InputDeviceSummary::InputDeviceSummary() :
     m_networkSettingsHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_type(InputDeviceType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_uhdDeviceSettingsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ InputDeviceSummary::InputDeviceSummary(JsonView jsonValue) :
     m_networkSettingsHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_type(InputDeviceType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_uhdDeviceSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -136,6 +138,13 @@ InputDeviceSummary& InputDeviceSummary::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("uhdDeviceSettings"))
+  {
+    m_uhdDeviceSettings = jsonValue.GetObject("uhdDeviceSettings");
+
+    m_uhdDeviceSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -203,6 +212,12 @@ JsonValue InputDeviceSummary::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", InputDeviceTypeMapper::GetNameForInputDeviceType(m_type));
+  }
+
+  if(m_uhdDeviceSettingsHasBeenSet)
+  {
+   payload.WithObject("uhdDeviceSettings", m_uhdDeviceSettings.Jsonize());
+
   }
 
   return payload;

@@ -80,44 +80,68 @@ namespace Model
 
 
     /**
-     * <p>The ingestion process to be used when importing the image. For
-     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-     * <code>BYOL_REGULAR</code>.</p>
+     * <p>The ingestion process to be used when importing the image, depending on which
+     * protocol you want to use for your BYOL Workspace image, either PCoIP or
+     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
+     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
      */
     inline const WorkspaceImageIngestionProcess& GetIngestionProcess() const{ return m_ingestionProcess; }
 
     /**
-     * <p>The ingestion process to be used when importing the image. For
-     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-     * <code>BYOL_REGULAR</code>.</p>
+     * <p>The ingestion process to be used when importing the image, depending on which
+     * protocol you want to use for your BYOL Workspace image, either PCoIP or
+     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
+     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
      */
     inline bool IngestionProcessHasBeenSet() const { return m_ingestionProcessHasBeenSet; }
 
     /**
-     * <p>The ingestion process to be used when importing the image. For
-     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-     * <code>BYOL_REGULAR</code>.</p>
+     * <p>The ingestion process to be used when importing the image, depending on which
+     * protocol you want to use for your BYOL Workspace image, either PCoIP or
+     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
+     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
      */
     inline void SetIngestionProcess(const WorkspaceImageIngestionProcess& value) { m_ingestionProcessHasBeenSet = true; m_ingestionProcess = value; }
 
     /**
-     * <p>The ingestion process to be used when importing the image. For
-     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-     * <code>BYOL_REGULAR</code>.</p>
+     * <p>The ingestion process to be used when importing the image, depending on which
+     * protocol you want to use for your BYOL Workspace image, either PCoIP or
+     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
+     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
      */
     inline void SetIngestionProcess(WorkspaceImageIngestionProcess&& value) { m_ingestionProcessHasBeenSet = true; m_ingestionProcess = std::move(value); }
 
     /**
-     * <p>The ingestion process to be used when importing the image. For
-     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-     * <code>BYOL_REGULAR</code>.</p>
+     * <p>The ingestion process to be used when importing the image, depending on which
+     * protocol you want to use for your BYOL Workspace image, either PCoIP or
+     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
+     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
      */
     inline ImportWorkspaceImageRequest& WithIngestionProcess(const WorkspaceImageIngestionProcess& value) { SetIngestionProcess(value); return *this;}
 
     /**
-     * <p>The ingestion process to be used when importing the image. For
-     * non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-     * <code>BYOL_REGULAR</code>.</p>
+     * <p>The ingestion process to be used when importing the image, depending on which
+     * protocol you want to use for your BYOL Workspace image, either PCoIP or
+     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
+     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
      */
     inline ImportWorkspaceImageRequest& WithIngestionProcess(WorkspaceImageIngestionProcess&& value) { SetIngestionProcess(std::move(value)); return *this;}
 

@@ -244,160 +244,160 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
-     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
-     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key identifier for an encrypted DB cluster snapshot. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK).</p> <p>If you copy an encrypted DB cluster snapshot
+     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new AWS KMS CMK. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
-     * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
-     * encrypted DB cluster snapshot that is shared from another AWS account, then you
-     * must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
-     * cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
-     * the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
-     * the destination AWS Region. KMS encryption keys are specific to the AWS Region
-     * that they are created in, and you can't use encryption keys from one AWS Region
-     * in another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
+     * with the same AWS KMS key as the source DB cluster snapshot. </p> <p>If you copy
+     * an encrypted DB cluster snapshot that is shared from another AWS account, then
+     * you must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted
+     * DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
+     * the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster
+     * snapshot in the destination AWS Region. AWS KMS CMKs are specific to the AWS
+     * Region that they are created in, and you can't use CMKs from one AWS Region in
+     * another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
      * specify a value for the <code>KmsKeyId</code> parameter, an error is
      * returned.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
-     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
-     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key identifier for an encrypted DB cluster snapshot. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK).</p> <p>If you copy an encrypted DB cluster snapshot
+     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new AWS KMS CMK. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
-     * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
-     * encrypted DB cluster snapshot that is shared from another AWS account, then you
-     * must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
-     * cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
-     * the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
-     * the destination AWS Region. KMS encryption keys are specific to the AWS Region
-     * that they are created in, and you can't use encryption keys from one AWS Region
-     * in another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
+     * with the same AWS KMS key as the source DB cluster snapshot. </p> <p>If you copy
+     * an encrypted DB cluster snapshot that is shared from another AWS account, then
+     * you must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted
+     * DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
+     * the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster
+     * snapshot in the destination AWS Region. AWS KMS CMKs are specific to the AWS
+     * Region that they are created in, and you can't use CMKs from one AWS Region in
+     * another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
      * specify a value for the <code>KmsKeyId</code> parameter, an error is
      * returned.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
-     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
-     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key identifier for an encrypted DB cluster snapshot. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK).</p> <p>If you copy an encrypted DB cluster snapshot
+     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new AWS KMS CMK. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
-     * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
-     * encrypted DB cluster snapshot that is shared from another AWS account, then you
-     * must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
-     * cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
-     * the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
-     * the destination AWS Region. KMS encryption keys are specific to the AWS Region
-     * that they are created in, and you can't use encryption keys from one AWS Region
-     * in another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
+     * with the same AWS KMS key as the source DB cluster snapshot. </p> <p>If you copy
+     * an encrypted DB cluster snapshot that is shared from another AWS account, then
+     * you must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted
+     * DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
+     * the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster
+     * snapshot in the destination AWS Region. AWS KMS CMKs are specific to the AWS
+     * Region that they are created in, and you can't use CMKs from one AWS Region in
+     * another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
      * specify a value for the <code>KmsKeyId</code> parameter, an error is
      * returned.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
-     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
-     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key identifier for an encrypted DB cluster snapshot. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK).</p> <p>If you copy an encrypted DB cluster snapshot
+     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new AWS KMS CMK. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
-     * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
-     * encrypted DB cluster snapshot that is shared from another AWS account, then you
-     * must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
-     * cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
-     * the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
-     * the destination AWS Region. KMS encryption keys are specific to the AWS Region
-     * that they are created in, and you can't use encryption keys from one AWS Region
-     * in another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
+     * with the same AWS KMS key as the source DB cluster snapshot. </p> <p>If you copy
+     * an encrypted DB cluster snapshot that is shared from another AWS account, then
+     * you must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted
+     * DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
+     * the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster
+     * snapshot in the destination AWS Region. AWS KMS CMKs are specific to the AWS
+     * Region that they are created in, and you can't use CMKs from one AWS Region in
+     * another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
      * specify a value for the <code>KmsKeyId</code> parameter, an error is
      * returned.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
-     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
-     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key identifier for an encrypted DB cluster snapshot. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK).</p> <p>If you copy an encrypted DB cluster snapshot
+     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new AWS KMS CMK. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
-     * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
-     * encrypted DB cluster snapshot that is shared from another AWS account, then you
-     * must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
-     * cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
-     * the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
-     * the destination AWS Region. KMS encryption keys are specific to the AWS Region
-     * that they are created in, and you can't use encryption keys from one AWS Region
-     * in another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
+     * with the same AWS KMS key as the source DB cluster snapshot. </p> <p>If you copy
+     * an encrypted DB cluster snapshot that is shared from another AWS account, then
+     * you must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted
+     * DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
+     * the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster
+     * snapshot in the destination AWS Region. AWS KMS CMKs are specific to the AWS
+     * Region that they are created in, and you can't use CMKs from one AWS Region in
+     * another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
      * specify a value for the <code>KmsKeyId</code> parameter, an error is
      * returned.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
-     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
-     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key identifier for an encrypted DB cluster snapshot. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK).</p> <p>If you copy an encrypted DB cluster snapshot
+     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new AWS KMS CMK. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
-     * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
-     * encrypted DB cluster snapshot that is shared from another AWS account, then you
-     * must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
-     * cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
-     * the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
-     * the destination AWS Region. KMS encryption keys are specific to the AWS Region
-     * that they are created in, and you can't use encryption keys from one AWS Region
-     * in another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
+     * with the same AWS KMS key as the source DB cluster snapshot. </p> <p>If you copy
+     * an encrypted DB cluster snapshot that is shared from another AWS account, then
+     * you must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted
+     * DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
+     * the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster
+     * snapshot in the destination AWS Region. AWS KMS CMKs are specific to the AWS
+     * Region that they are created in, and you can't use CMKs from one AWS Region in
+     * another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
      * specify a value for the <code>KmsKeyId</code> parameter, an error is
      * returned.</p>
      */
     inline CopyDBClusterSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
-     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
-     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key identifier for an encrypted DB cluster snapshot. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK).</p> <p>If you copy an encrypted DB cluster snapshot
+     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new AWS KMS CMK. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
-     * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
-     * encrypted DB cluster snapshot that is shared from another AWS account, then you
-     * must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
-     * cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
-     * the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
-     * the destination AWS Region. KMS encryption keys are specific to the AWS Region
-     * that they are created in, and you can't use encryption keys from one AWS Region
-     * in another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
+     * with the same AWS KMS key as the source DB cluster snapshot. </p> <p>If you copy
+     * an encrypted DB cluster snapshot that is shared from another AWS account, then
+     * you must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted
+     * DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
+     * the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster
+     * snapshot in the destination AWS Region. AWS KMS CMKs are specific to the AWS
+     * Region that they are created in, and you can't use CMKs from one AWS Region in
+     * another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
      * specify a value for the <code>KmsKeyId</code> parameter, an error is
      * returned.</p>
      */
     inline CopyDBClusterSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
-     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
-     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
-     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
-     * the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key identifier for an encrypted DB cluster snapshot. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK).</p> <p>If you copy an encrypted DB cluster snapshot
+     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new AWS KMS CMK. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
-     * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
-     * encrypted DB cluster snapshot that is shared from another AWS account, then you
-     * must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
-     * cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
-     * the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
-     * the destination AWS Region. KMS encryption keys are specific to the AWS Region
-     * that they are created in, and you can't use encryption keys from one AWS Region
-     * in another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
+     * with the same AWS KMS key as the source DB cluster snapshot. </p> <p>If you copy
+     * an encrypted DB cluster snapshot that is shared from another AWS account, then
+     * you must specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted
+     * DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to
+     * the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster
+     * snapshot in the destination AWS Region. AWS KMS CMKs are specific to the AWS
+     * Region that they are created in, and you can't use CMKs from one AWS Region in
+     * another AWS Region.</p> <p>If you copy an unencrypted DB cluster snapshot and
      * specify a value for the <code>KmsKeyId</code> parameter, an error is
      * returned.</p>
      */
@@ -415,12 +415,12 @@ namespace Model
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
-     * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     * snapshot in the destination AWS Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-     * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot is to be created in.</p> </li> <li> <p>
+     * KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same
+     * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+     * in the destination AWS Region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+     * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -454,12 +454,12 @@ namespace Model
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
-     * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     * snapshot in the destination AWS Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-     * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot is to be created in.</p> </li> <li> <p>
+     * KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same
+     * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+     * in the destination AWS Region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+     * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -493,12 +493,12 @@ namespace Model
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
-     * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     * snapshot in the destination AWS Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-     * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot is to be created in.</p> </li> <li> <p>
+     * KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same
+     * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+     * in the destination AWS Region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+     * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -532,12 +532,12 @@ namespace Model
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
-     * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     * snapshot in the destination AWS Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-     * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot is to be created in.</p> </li> <li> <p>
+     * KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same
+     * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+     * in the destination AWS Region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+     * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -571,12 +571,12 @@ namespace Model
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
-     * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     * snapshot in the destination AWS Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-     * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot is to be created in.</p> </li> <li> <p>
+     * KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same
+     * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+     * in the destination AWS Region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+     * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -610,12 +610,12 @@ namespace Model
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
-     * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     * snapshot in the destination AWS Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-     * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot is to be created in.</p> </li> <li> <p>
+     * KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same
+     * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+     * in the destination AWS Region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+     * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -649,12 +649,12 @@ namespace Model
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
-     * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     * snapshot in the destination AWS Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-     * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot is to be created in.</p> </li> <li> <p>
+     * KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same
+     * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+     * in the destination AWS Region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+     * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -688,12 +688,12 @@ namespace Model
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
-     * KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     * snapshot in the destination AWS Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
-     * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot is to be created in.</p> </li> <li> <p>
+     * KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same
+     * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called
+     * in the destination AWS Region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS
+     * Region that the DB cluster snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For

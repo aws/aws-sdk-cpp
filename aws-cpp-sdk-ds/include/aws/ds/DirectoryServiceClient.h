@@ -1101,16 +1101,16 @@ namespace Model
         virtual void DeleteTrustAsync(const Model::DeleteTrustRequest& request, const DeleteTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes from the system the certificate that was registered for a secured
-         * LDAP connection.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes from the system the certificate that was registered for secure LDAP
+         * or client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterCertificateOutcome DeregisterCertificate(const Model::DeregisterCertificateRequest& request) const;
 
         /**
-         * <p>Deletes from the system the certificate that was registered for a secured
-         * LDAP connection.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes from the system the certificate that was registered for secure LDAP
+         * or client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate">AWS
          * API Reference</a></p>
          *
@@ -1119,8 +1119,8 @@ namespace Model
         virtual Model::DeregisterCertificateOutcomeCallable DeregisterCertificateCallable(const Model::DeregisterCertificateRequest& request) const;
 
         /**
-         * <p>Deletes from the system the certificate that was registered for a secured
-         * LDAP connection.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes from the system the certificate that was registered for secure LDAP
+         * or client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate">AWS
          * API Reference</a></p>
          *
@@ -1157,16 +1157,16 @@ namespace Model
         virtual void DeregisterEventTopicAsync(const Model::DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Displays information about the certificate registered for a secured LDAP
-         * connection.</p><p><h3>See Also:</h3>   <a
+         * <p>Displays information about the certificate registered for secure LDAP or
+         * client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Displays information about the certificate registered for a secured LDAP
-         * connection.</p><p><h3>See Also:</h3>   <a
+         * <p>Displays information about the certificate registered for secure LDAP or
+         * client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate">AWS
          * API Reference</a></p>
          *
@@ -1175,8 +1175,8 @@ namespace Model
         virtual Model::DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Displays information about the certificate registered for a secured LDAP
-         * connection.</p><p><h3>See Also:</h3>   <a
+         * <p>Displays information about the certificate registered for secure LDAP or
+         * client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate">AWS
          * API Reference</a></p>
          *
@@ -1494,14 +1494,16 @@ namespace Model
         virtual void DescribeTrustsAsync(const Model::DescribeTrustsRequest& request, const DescribeTrustsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disable client authentication for smart cards.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables alternative client authentication methods for the specified
+         * directory. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableClientAuthenticationOutcome DisableClientAuthentication(const Model::DisableClientAuthenticationRequest& request) const;
 
         /**
-         * <p>Disable client authentication for smart cards.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables alternative client authentication methods for the specified
+         * directory. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">AWS
          * API Reference</a></p>
          *
@@ -1510,7 +1512,8 @@ namespace Model
         virtual Model::DisableClientAuthenticationOutcomeCallable DisableClientAuthenticationCallable(const Model::DisableClientAuthenticationRequest& request) const;
 
         /**
-         * <p>Disable client authentication for smart cards.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables alternative client authentication methods for the specified
+         * directory. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">AWS
          * API Reference</a></p>
          *
@@ -1603,14 +1606,16 @@ namespace Model
         virtual void DisableSsoAsync(const Model::DisableSsoRequest& request, const DisableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enable client authentication for smardtcards.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables alternative client authentication methods for the specified
+         * directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableClientAuthenticationOutcome EnableClientAuthentication(const Model::EnableClientAuthenticationRequest& request) const;
 
         /**
-         * <p>Enable client authentication for smardtcards.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables alternative client authentication methods for the specified
+         * directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">AWS
          * API Reference</a></p>
          *
@@ -1619,7 +1624,8 @@ namespace Model
         virtual Model::EnableClientAuthenticationOutcomeCallable EnableClientAuthenticationCallable(const Model::EnableClientAuthenticationRequest& request) const;
 
         /**
-         * <p>Enable client authentication for smardtcards.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables alternative client authentication methods for the specified
+         * directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">AWS
          * API Reference</a></p>
          *
@@ -1775,7 +1781,7 @@ namespace Model
 
         /**
          * <p>For the specified directory, lists all the certificates registered for a
-         * secured LDAP connection.</p><p><h3>See Also:</h3>   <a
+         * secure LDAP or client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates">AWS
          * API Reference</a></p>
          */
@@ -1783,7 +1789,7 @@ namespace Model
 
         /**
          * <p>For the specified directory, lists all the certificates registered for a
-         * secured LDAP connection.</p><p><h3>See Also:</h3>   <a
+         * secure LDAP or client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates">AWS
          * API Reference</a></p>
          *
@@ -1793,7 +1799,7 @@ namespace Model
 
         /**
          * <p>For the specified directory, lists all the certificates registered for a
-         * secured LDAP connection.</p><p><h3>See Also:</h3>   <a
+         * secure LDAP or client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates">AWS
          * API Reference</a></p>
          *
@@ -1911,16 +1917,16 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a certificate for secured LDAP connection.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Registers a certificate for a secure LDAP or client certificate
+         * authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterCertificateOutcome RegisterCertificate(const Model::RegisterCertificateRequest& request) const;
 
         /**
-         * <p>Registers a certificate for secured LDAP connection.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Registers a certificate for a secure LDAP or client certificate
+         * authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate">AWS
          * API Reference</a></p>
          *
@@ -1929,8 +1935,8 @@ namespace Model
         virtual Model::RegisterCertificateOutcomeCallable RegisterCertificateCallable(const Model::RegisterCertificateRequest& request) const;
 
         /**
-         * <p>Registers a certificate for secured LDAP connection.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Registers a certificate for a secure LDAP or client certificate
+         * authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate">AWS
          * API Reference</a></p>
          *

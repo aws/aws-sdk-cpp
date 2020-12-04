@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>The code for the Lambda function. You can specify either an object in Amazon
-   * S3, upload a ZIP archive deployment package directly, or specify the URI of a
-   * container image.</p><p><h3>See Also:</h3>   <a
+   * S3, upload a .zip file archive deployment package directly, or specify the URI
+   * of a container image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode">AWS
    * API Reference</a></p>
    */

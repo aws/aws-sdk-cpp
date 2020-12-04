@@ -16,7 +16,8 @@ DescribeDBInstanceAutomatedBackupsRequest::DescribeDBInstanceAutomatedBackupsReq
     m_filtersHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
+    m_markerHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsArnHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,11 @@ Aws::String DescribeDBInstanceAutomatedBackupsRequest::SerializePayload() const
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
+  }
+
+  if(m_dBInstanceAutomatedBackupsArnHasBeenSet)
+  {
+    ss << "DBInstanceAutomatedBackupsArn=" << StringUtils::URLEncode(m_dBInstanceAutomatedBackupsArn.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

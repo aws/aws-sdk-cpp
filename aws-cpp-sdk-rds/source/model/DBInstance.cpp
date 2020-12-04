@@ -98,7 +98,8 @@ DBInstance::DBInstance() :
     m_listenerEndpointHasBeenSet(false),
     m_maxAllocatedStorage(0),
     m_maxAllocatedStorageHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false)
 {
 }
 
@@ -180,7 +181,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_listenerEndpointHasBeenSet(false),
     m_maxAllocatedStorage(0),
     m_maxAllocatedStorageHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -629,6 +631,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
 
       m_tagListHasBeenSet = true;
     }
+    XmlNode dBInstanceAutomatedBackupsReplicationsNode = resultNode.FirstChild("DBInstanceAutomatedBackupsReplications");
+    if(!dBInstanceAutomatedBackupsReplicationsNode.IsNull())
+    {
+      XmlNode dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsNode.FirstChild("DBInstanceAutomatedBackupsReplication");
+      while(!dBInstanceAutomatedBackupsReplicationsMember.IsNull())
+      {
+        m_dBInstanceAutomatedBackupsReplications.push_back(dBInstanceAutomatedBackupsReplicationsMember);
+        dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsMember.NextNode("DBInstanceAutomatedBackupsReplication");
+      }
+
+      m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1015,6 +1029,17 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
+  {
+      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
+      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
+      {
+        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
+        dBInstanceAutomatedBackupsReplicationsSs << location << index << locationValue << ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
+      }
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1335,6 +1360,16 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
         Aws::StringStream tagListSs;
         tagListSs << location <<  ".Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
+  {
+      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
+      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
+      {
+        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
+        dBInstanceAutomatedBackupsReplicationsSs << location <<  ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
       }
   }
 }

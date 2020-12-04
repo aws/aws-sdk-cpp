@@ -332,6 +332,27 @@ namespace Model
 
 
     /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool GetDisassociateWhenNotFound() const{ return m_disassociateWhenNotFound; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool DisassociateWhenNotFoundHasBeenSet() const { return m_disassociateWhenNotFoundHasBeenSet; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline void SetDisassociateWhenNotFound(bool value) { m_disassociateWhenNotFoundHasBeenSet = true; m_disassociateWhenNotFound = value; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline LicenseConfiguration& WithDisassociateWhenNotFound(bool value) { SetDisassociateWhenNotFound(value); return *this;}
+
+
+    /**
      * <p>Number of licenses consumed. </p>
      */
     inline long long GetConsumedLicenses() const{ return m_consumedLicenses; }
@@ -612,6 +633,9 @@ namespace Model
 
     bool m_licenseCountHardLimit;
     bool m_licenseCountHardLimitHasBeenSet;
+
+    bool m_disassociateWhenNotFound;
+    bool m_disassociateWhenNotFoundHasBeenSet;
 
     long long m_consumedLicenses;
     bool m_consumedLicensesHasBeenSet;

@@ -24,6 +24,7 @@ namespace Aws
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int HEALING_HASH = HashingUtils::HashString("HEALING");
         static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
         static const int REBOOTING_BROKER_HASH = HashingUtils::HashString("REBOOTING_BROKER");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
@@ -47,6 +48,10 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return ClusterState::FAILED;
+          }
+          else if (hashCode == HEALING_HASH)
+          {
+            return ClusterState::HEALING;
           }
           else if (hashCode == MAINTENANCE_HASH)
           {
@@ -82,6 +87,8 @@ namespace Aws
             return "DELETING";
           case ClusterState::FAILED:
             return "FAILED";
+          case ClusterState::HEALING:
+            return "HEALING";
           case ClusterState::MAINTENANCE:
             return "MAINTENANCE";
           case ClusterState::REBOOTING_BROKER:
