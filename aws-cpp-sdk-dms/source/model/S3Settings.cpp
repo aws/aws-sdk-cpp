@@ -58,7 +58,13 @@ S3Settings::S3Settings() :
     m_datePartitionSequence(DatePartitionSequenceValue::NOT_SET),
     m_datePartitionSequenceHasBeenSet(false),
     m_datePartitionDelimiter(DatePartitionDelimiterValue::NOT_SET),
-    m_datePartitionDelimiterHasBeenSet(false)
+    m_datePartitionDelimiterHasBeenSet(false),
+    m_useCsvNoSupValue(false),
+    m_useCsvNoSupValueHasBeenSet(false),
+    m_csvNoSupValueHasBeenSet(false),
+    m_preserveTransactions(false),
+    m_preserveTransactionsHasBeenSet(false),
+    m_cdcPathHasBeenSet(false)
 {
 }
 
@@ -102,7 +108,13 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_datePartitionSequence(DatePartitionSequenceValue::NOT_SET),
     m_datePartitionSequenceHasBeenSet(false),
     m_datePartitionDelimiter(DatePartitionDelimiterValue::NOT_SET),
-    m_datePartitionDelimiterHasBeenSet(false)
+    m_datePartitionDelimiterHasBeenSet(false),
+    m_useCsvNoSupValue(false),
+    m_useCsvNoSupValueHasBeenSet(false),
+    m_csvNoSupValueHasBeenSet(false),
+    m_preserveTransactions(false),
+    m_preserveTransactionsHasBeenSet(false),
+    m_cdcPathHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -277,6 +289,34 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_datePartitionDelimiterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UseCsvNoSupValue"))
+  {
+    m_useCsvNoSupValue = jsonValue.GetBool("UseCsvNoSupValue");
+
+    m_useCsvNoSupValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CsvNoSupValue"))
+  {
+    m_csvNoSupValue = jsonValue.GetString("CsvNoSupValue");
+
+    m_csvNoSupValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreserveTransactions"))
+  {
+    m_preserveTransactions = jsonValue.GetBool("PreserveTransactions");
+
+    m_preserveTransactionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CdcPath"))
+  {
+    m_cdcPath = jsonValue.GetString("CdcPath");
+
+    m_cdcPathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -419,6 +459,30 @@ JsonValue S3Settings::Jsonize() const
   if(m_datePartitionDelimiterHasBeenSet)
   {
    payload.WithString("DatePartitionDelimiter", DatePartitionDelimiterValueMapper::GetNameForDatePartitionDelimiterValue(m_datePartitionDelimiter));
+  }
+
+  if(m_useCsvNoSupValueHasBeenSet)
+  {
+   payload.WithBool("UseCsvNoSupValue", m_useCsvNoSupValue);
+
+  }
+
+  if(m_csvNoSupValueHasBeenSet)
+  {
+   payload.WithString("CsvNoSupValue", m_csvNoSupValue);
+
+  }
+
+  if(m_preserveTransactionsHasBeenSet)
+  {
+   payload.WithBool("PreserveTransactions", m_preserveTransactions);
+
+  }
+
+  if(m_cdcPathHasBeenSet)
+  {
+   payload.WithString("CdcPath", m_cdcPath);
+
   }
 
   return payload;
