@@ -10,6 +10,7 @@
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/crt/Optional.h>
 #include <memory>
 
 namespace Aws
@@ -228,11 +229,11 @@ namespace Aws
             /**
              * Enable endpoint discovery
              * For some services to dynamically set up their endpoints for different requests.
-             * Defaults to false, it's an opt-in feature.
+             * By default, service clients will decide if endpoint discovery is enabled or not.
              * If disabled, regional or overriden endpoint will be used instead.
              * If a request requires endpoint discovery but you disabled it. The request will never succeed.
              */
-            bool enableEndpointDiscovery;
+            Aws::Crt::Optional<bool> enableEndpointDiscovery;
 
             /**
              * profileName in config file that will be used by this object to reslove more configurations.

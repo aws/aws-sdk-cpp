@@ -25,6 +25,7 @@ public class C2jModelToGeneratorModelTransformer {
     boolean standalone;
     boolean hasEndpointTrait;
     boolean hasEndpointDiscoveryTrait;
+    boolean requireEndpointDiscovery;
     String endpointOperationName;
 
     public static final HashSet<String> UNSUPPORTEDHTMLTAGS = new HashSet<>();
@@ -59,6 +60,7 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.setServiceErrors(allErrors);
         serviceModel.getMetadata().setHasEndpointTrait(hasEndpointTrait);
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
+        serviceModel.getMetadata().setRequireEndpointDiscovery(requireEndpointDiscovery);
         serviceModel.getMetadata().setEndpointOperationName(endpointOperationName);
 
         return serviceModel;
@@ -395,13 +397,16 @@ public class C2jModelToGeneratorModelTransformer {
 
         operation.setEndpointOperation(c2jOperation.isEndpointoperation());
         operation.setHasEndpointDiscoveryTrait(c2jOperation.getEndpointdiscovery() == null ? false :true);
-        operation.setRequireEndpointDiscovery(operation.hasEndpointDiscoveryTrait() ? c2jOperation.getEndpointdiscovery().isRequired() : false);
+        operation.setRequireEndpointDiscovery(operation.isHasEndpointDiscoveryTrait() ? c2jOperation.getEndpointdiscovery().isRequired() : false);
 
         if (operation.isEndpointOperation()) {
             endpointOperationName = operation.getName();
         }
-        if (operation.hasEndpointDiscoveryTrait()) {
+        if (operation.isHasEndpointDiscoveryTrait()) {
             hasEndpointDiscoveryTrait = true;
+        }
+        if (operation.isRequireEndpointDiscovery()) {
+            requireEndpointDiscovery = true;
         }
 
         // Documentation

@@ -1,3 +1,16 @@
+#set($hasEventStream = false)
+#foreach($operation in $serviceModel.operations)
+#if($operation.result.shape.hasEventStreamMembers())
+    #set($hasEventStream = true)
+#end
+#end
+#if($hasEventStream)
+\#include <aws/core/utils/event/EventStream.h>
+#end
+#if($arnEndpointSupported || $metadata.hasEndpointDiscoveryTrait)
+\#include <aws/core/platform/Environment.h>
+#end
+
 \#include <aws/${metadata.projectName}/${className}.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Endpoint.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
