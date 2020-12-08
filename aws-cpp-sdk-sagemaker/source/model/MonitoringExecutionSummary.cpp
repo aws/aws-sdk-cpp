@@ -27,7 +27,10 @@ MonitoringExecutionSummary::MonitoringExecutionSummary() :
     m_monitoringExecutionStatusHasBeenSet(false),
     m_processingJobArnHasBeenSet(false),
     m_endpointNameHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_monitoringJobDefinitionNameHasBeenSet(false),
+    m_monitoringType(MonitoringType::NOT_SET),
+    m_monitoringTypeHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ MonitoringExecutionSummary::MonitoringExecutionSummary(JsonView jsonValue) :
     m_monitoringExecutionStatusHasBeenSet(false),
     m_processingJobArnHasBeenSet(false),
     m_endpointNameHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_monitoringJobDefinitionNameHasBeenSet(false),
+    m_monitoringType(MonitoringType::NOT_SET),
+    m_monitoringTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +109,20 @@ MonitoringExecutionSummary& MonitoringExecutionSummary::operator =(JsonView json
     m_failureReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MonitoringJobDefinitionName"))
+  {
+    m_monitoringJobDefinitionName = jsonValue.GetString("MonitoringJobDefinitionName");
+
+    m_monitoringJobDefinitionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MonitoringType"))
+  {
+    m_monitoringType = MonitoringTypeMapper::GetMonitoringTypeForName(jsonValue.GetString("MonitoringType"));
+
+    m_monitoringTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +172,17 @@ JsonValue MonitoringExecutionSummary::Jsonize() const
   {
    payload.WithString("FailureReason", m_failureReason);
 
+  }
+
+  if(m_monitoringJobDefinitionNameHasBeenSet)
+  {
+   payload.WithString("MonitoringJobDefinitionName", m_monitoringJobDefinitionName);
+
+  }
+
+  if(m_monitoringTypeHasBeenSet)
+  {
+   payload.WithString("MonitoringType", MonitoringTypeMapper::GetNameForMonitoringType(m_monitoringType));
   }
 
   return payload;

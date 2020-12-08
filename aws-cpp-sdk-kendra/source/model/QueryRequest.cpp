@@ -25,7 +25,8 @@ QueryRequest::QueryRequest() :
     m_pageSize(0),
     m_pageSizeHasBeenSet(false),
     m_sortingConfigurationHasBeenSet(false),
-    m_userContextHasBeenSet(false)
+    m_userContextHasBeenSet(false),
+    m_visitorIdHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,12 @@ Aws::String QueryRequest::SerializePayload() const
   if(m_userContextHasBeenSet)
   {
    payload.WithObject("UserContext", m_userContext.Jsonize());
+
+  }
+
+  if(m_visitorIdHasBeenSet)
+  {
+   payload.WithString("VisitorId", m_visitorId);
 
   }
 

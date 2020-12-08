@@ -25,7 +25,10 @@ MonitoringScheduleSummary::MonitoringScheduleSummary() :
     m_lastModifiedTimeHasBeenSet(false),
     m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
     m_monitoringScheduleStatusHasBeenSet(false),
-    m_endpointNameHasBeenSet(false)
+    m_endpointNameHasBeenSet(false),
+    m_monitoringJobDefinitionNameHasBeenSet(false),
+    m_monitoringType(MonitoringType::NOT_SET),
+    m_monitoringTypeHasBeenSet(false)
 {
 }
 
@@ -36,7 +39,10 @@ MonitoringScheduleSummary::MonitoringScheduleSummary(JsonView jsonValue) :
     m_lastModifiedTimeHasBeenSet(false),
     m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
     m_monitoringScheduleStatusHasBeenSet(false),
-    m_endpointNameHasBeenSet(false)
+    m_endpointNameHasBeenSet(false),
+    m_monitoringJobDefinitionNameHasBeenSet(false),
+    m_monitoringType(MonitoringType::NOT_SET),
+    m_monitoringTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +91,20 @@ MonitoringScheduleSummary& MonitoringScheduleSummary::operator =(JsonView jsonVa
     m_endpointNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MonitoringJobDefinitionName"))
+  {
+    m_monitoringJobDefinitionName = jsonValue.GetString("MonitoringJobDefinitionName");
+
+    m_monitoringJobDefinitionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MonitoringType"))
+  {
+    m_monitoringType = MonitoringTypeMapper::GetMonitoringTypeForName(jsonValue.GetString("MonitoringType"));
+
+    m_monitoringTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +143,17 @@ JsonValue MonitoringScheduleSummary::Jsonize() const
   {
    payload.WithString("EndpointName", m_endpointName);
 
+  }
+
+  if(m_monitoringJobDefinitionNameHasBeenSet)
+  {
+   payload.WithString("MonitoringJobDefinitionName", m_monitoringJobDefinitionName);
+
+  }
+
+  if(m_monitoringTypeHasBeenSet)
+  {
+   payload.WithString("MonitoringType", MonitoringTypeMapper::GetNameForMonitoringType(m_monitoringType));
   }
 
   return payload;

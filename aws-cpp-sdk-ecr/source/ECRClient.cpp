@@ -26,15 +26,18 @@
 #include <aws/ecr/model/CompleteLayerUploadRequest.h>
 #include <aws/ecr/model/CreateRepositoryRequest.h>
 #include <aws/ecr/model/DeleteLifecyclePolicyRequest.h>
+#include <aws/ecr/model/DeleteRegistryPolicyRequest.h>
 #include <aws/ecr/model/DeleteRepositoryRequest.h>
 #include <aws/ecr/model/DeleteRepositoryPolicyRequest.h>
 #include <aws/ecr/model/DescribeImageScanFindingsRequest.h>
 #include <aws/ecr/model/DescribeImagesRequest.h>
+#include <aws/ecr/model/DescribeRegistryRequest.h>
 #include <aws/ecr/model/DescribeRepositoriesRequest.h>
 #include <aws/ecr/model/GetAuthorizationTokenRequest.h>
 #include <aws/ecr/model/GetDownloadUrlForLayerRequest.h>
 #include <aws/ecr/model/GetLifecyclePolicyRequest.h>
 #include <aws/ecr/model/GetLifecyclePolicyPreviewRequest.h>
+#include <aws/ecr/model/GetRegistryPolicyRequest.h>
 #include <aws/ecr/model/GetRepositoryPolicyRequest.h>
 #include <aws/ecr/model/InitiateLayerUploadRequest.h>
 #include <aws/ecr/model/ListImagesRequest.h>
@@ -43,6 +46,8 @@
 #include <aws/ecr/model/PutImageScanningConfigurationRequest.h>
 #include <aws/ecr/model/PutImageTagMutabilityRequest.h>
 #include <aws/ecr/model/PutLifecyclePolicyRequest.h>
+#include <aws/ecr/model/PutRegistryPolicyRequest.h>
+#include <aws/ecr/model/PutReplicationConfigurationRequest.h>
 #include <aws/ecr/model/SetRepositoryPolicyRequest.h>
 #include <aws/ecr/model/StartImageScanRequest.h>
 #include <aws/ecr/model/StartLifecyclePolicyPreviewRequest.h>
@@ -285,6 +290,33 @@ void ECRClient::DeleteLifecyclePolicyAsyncHelper(const DeleteLifecyclePolicyRequ
   handler(this, request, DeleteLifecyclePolicy(request), context);
 }
 
+DeleteRegistryPolicyOutcome ECRClient::DeleteRegistryPolicy(const DeleteRegistryPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteRegistryPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRegistryPolicyOutcomeCallable ECRClient::DeleteRegistryPolicyCallable(const DeleteRegistryPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRegistryPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRegistryPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::DeleteRegistryPolicyAsync(const DeleteRegistryPolicyRequest& request, const DeleteRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRegistryPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::DeleteRegistryPolicyAsyncHelper(const DeleteRegistryPolicyRequest& request, const DeleteRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRegistryPolicy(request), context);
+}
+
 DeleteRepositoryOutcome ECRClient::DeleteRepository(const DeleteRepositoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -391,6 +423,33 @@ void ECRClient::DescribeImagesAsync(const DescribeImagesRequest& request, const 
 void ECRClient::DescribeImagesAsyncHelper(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeImages(request), context);
+}
+
+DescribeRegistryOutcome ECRClient::DescribeRegistry(const DescribeRegistryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeRegistryOutcomeCallable ECRClient::DescribeRegistryCallable(const DescribeRegistryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRegistryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRegistry(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::DescribeRegistryAsync(const DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRegistryAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::DescribeRegistryAsyncHelper(const DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRegistry(request), context);
 }
 
 DescribeRepositoriesOutcome ECRClient::DescribeRepositories(const DescribeRepositoriesRequest& request) const
@@ -526,6 +585,33 @@ void ECRClient::GetLifecyclePolicyPreviewAsync(const GetLifecyclePolicyPreviewRe
 void ECRClient::GetLifecyclePolicyPreviewAsyncHelper(const GetLifecyclePolicyPreviewRequest& request, const GetLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetLifecyclePolicyPreview(request), context);
+}
+
+GetRegistryPolicyOutcome ECRClient::GetRegistryPolicy(const GetRegistryPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetRegistryPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRegistryPolicyOutcomeCallable ECRClient::GetRegistryPolicyCallable(const GetRegistryPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRegistryPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRegistryPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::GetRegistryPolicyAsync(const GetRegistryPolicyRequest& request, const GetRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRegistryPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::GetRegistryPolicyAsyncHelper(const GetRegistryPolicyRequest& request, const GetRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRegistryPolicy(request), context);
 }
 
 GetRepositoryPolicyOutcome ECRClient::GetRepositoryPolicy(const GetRepositoryPolicyRequest& request) const
@@ -742,6 +828,60 @@ void ECRClient::PutLifecyclePolicyAsync(const PutLifecyclePolicyRequest& request
 void ECRClient::PutLifecyclePolicyAsyncHelper(const PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutLifecyclePolicy(request), context);
+}
+
+PutRegistryPolicyOutcome ECRClient::PutRegistryPolicy(const PutRegistryPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutRegistryPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutRegistryPolicyOutcomeCallable ECRClient::PutRegistryPolicyCallable(const PutRegistryPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRegistryPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRegistryPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::PutRegistryPolicyAsync(const PutRegistryPolicyRequest& request, const PutRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutRegistryPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::PutRegistryPolicyAsyncHelper(const PutRegistryPolicyRequest& request, const PutRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRegistryPolicy(request), context);
+}
+
+PutReplicationConfigurationOutcome ECRClient::PutReplicationConfiguration(const PutReplicationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutReplicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutReplicationConfigurationOutcomeCallable ECRClient::PutReplicationConfigurationCallable(const PutReplicationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutReplicationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECRClient::PutReplicationConfigurationAsync(const PutReplicationConfigurationRequest& request, const PutReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutReplicationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ECRClient::PutReplicationConfigurationAsyncHelper(const PutReplicationConfigurationRequest& request, const PutReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutReplicationConfiguration(request), context);
 }
 
 SetRepositoryPolicyOutcome ECRClient::SetRepositoryPolicy(const SetRepositoryPolicyRequest& request) const

@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ScheduleStatus.h>
+#include <aws/sagemaker/model/MonitoringType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/MonitoringScheduleConfig.h>
 #include <aws/sagemaker/model/MonitoringExecutionSummary.h>
@@ -132,6 +133,62 @@ namespace Model
      * <p>The status of an monitoring job.</p>
      */
     inline DescribeMonitoringScheduleResult& WithMonitoringScheduleStatus(ScheduleStatus&& value) { SetMonitoringScheduleStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of the monitoring job that this schedule runs. This is one of the
+     * following values.</p> <ul> <li> <p> <code>DATA_QUALITY</code> - The schedule is
+     * for a data quality monitoring job.</p> </li> <li> <p> <code>MODEL_QUALITY</code>
+     * - The schedule is for a model quality monitoring job.</p> </li> <li> <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+     * <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an
+     * explainability monitoring job.</p> </li> </ul>
+     */
+    inline const MonitoringType& GetMonitoringType() const{ return m_monitoringType; }
+
+    /**
+     * <p>The type of the monitoring job that this schedule runs. This is one of the
+     * following values.</p> <ul> <li> <p> <code>DATA_QUALITY</code> - The schedule is
+     * for a data quality monitoring job.</p> </li> <li> <p> <code>MODEL_QUALITY</code>
+     * - The schedule is for a model quality monitoring job.</p> </li> <li> <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+     * <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an
+     * explainability monitoring job.</p> </li> </ul>
+     */
+    inline void SetMonitoringType(const MonitoringType& value) { m_monitoringType = value; }
+
+    /**
+     * <p>The type of the monitoring job that this schedule runs. This is one of the
+     * following values.</p> <ul> <li> <p> <code>DATA_QUALITY</code> - The schedule is
+     * for a data quality monitoring job.</p> </li> <li> <p> <code>MODEL_QUALITY</code>
+     * - The schedule is for a model quality monitoring job.</p> </li> <li> <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+     * <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an
+     * explainability monitoring job.</p> </li> </ul>
+     */
+    inline void SetMonitoringType(MonitoringType&& value) { m_monitoringType = std::move(value); }
+
+    /**
+     * <p>The type of the monitoring job that this schedule runs. This is one of the
+     * following values.</p> <ul> <li> <p> <code>DATA_QUALITY</code> - The schedule is
+     * for a data quality monitoring job.</p> </li> <li> <p> <code>MODEL_QUALITY</code>
+     * - The schedule is for a model quality monitoring job.</p> </li> <li> <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+     * <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an
+     * explainability monitoring job.</p> </li> </ul>
+     */
+    inline DescribeMonitoringScheduleResult& WithMonitoringType(const MonitoringType& value) { SetMonitoringType(value); return *this;}
+
+    /**
+     * <p>The type of the monitoring job that this schedule runs. This is one of the
+     * following values.</p> <ul> <li> <p> <code>DATA_QUALITY</code> - The schedule is
+     * for a data quality monitoring job.</p> </li> <li> <p> <code>MODEL_QUALITY</code>
+     * - The schedule is for a model quality monitoring job.</p> </li> <li> <p>
+     * <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.</p> </li>
+     * <li> <p> <code>MODEL_EXPLAINABILITY</code> - The schedule is for an
+     * explainability monitoring job.</p> </li> </ul>
+     */
+    inline DescribeMonitoringScheduleResult& WithMonitoringType(MonitoringType&& value) { SetMonitoringType(std::move(value)); return *this;}
 
 
     /**
@@ -328,6 +385,8 @@ namespace Model
     Aws::String m_monitoringScheduleName;
 
     ScheduleStatus m_monitoringScheduleStatus;
+
+    MonitoringType m_monitoringType;
 
     Aws::String m_failureReason;
 

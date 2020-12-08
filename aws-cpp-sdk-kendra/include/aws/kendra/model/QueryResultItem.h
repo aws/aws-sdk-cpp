@@ -444,6 +444,79 @@ namespace Model
      */
     inline QueryResultItem& WithScoreAttributes(ScoreAttributes&& value) { SetScoreAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A token that identifies a particular result from a particular query. Use this
+     * token to provide click-through feedback for the result. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+     * Submitting feedback </a>.</p>
+     */
+    inline const Aws::String& GetFeedbackToken() const{ return m_feedbackToken; }
+
+    /**
+     * <p>A token that identifies a particular result from a particular query. Use this
+     * token to provide click-through feedback for the result. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+     * Submitting feedback </a>.</p>
+     */
+    inline bool FeedbackTokenHasBeenSet() const { return m_feedbackTokenHasBeenSet; }
+
+    /**
+     * <p>A token that identifies a particular result from a particular query. Use this
+     * token to provide click-through feedback for the result. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+     * Submitting feedback </a>.</p>
+     */
+    inline void SetFeedbackToken(const Aws::String& value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken = value; }
+
+    /**
+     * <p>A token that identifies a particular result from a particular query. Use this
+     * token to provide click-through feedback for the result. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+     * Submitting feedback </a>.</p>
+     */
+    inline void SetFeedbackToken(Aws::String&& value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken = std::move(value); }
+
+    /**
+     * <p>A token that identifies a particular result from a particular query. Use this
+     * token to provide click-through feedback for the result. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+     * Submitting feedback </a>.</p>
+     */
+    inline void SetFeedbackToken(const char* value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken.assign(value); }
+
+    /**
+     * <p>A token that identifies a particular result from a particular query. Use this
+     * token to provide click-through feedback for the result. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+     * Submitting feedback </a>.</p>
+     */
+    inline QueryResultItem& WithFeedbackToken(const Aws::String& value) { SetFeedbackToken(value); return *this;}
+
+    /**
+     * <p>A token that identifies a particular result from a particular query. Use this
+     * token to provide click-through feedback for the result. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+     * Submitting feedback </a>.</p>
+     */
+    inline QueryResultItem& WithFeedbackToken(Aws::String&& value) { SetFeedbackToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A token that identifies a particular result from a particular query. Use this
+     * token to provide click-through feedback for the result. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+     * Submitting feedback </a>.</p>
+     */
+    inline QueryResultItem& WithFeedbackToken(const char* value) { SetFeedbackToken(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -472,6 +545,9 @@ namespace Model
 
     ScoreAttributes m_scoreAttributes;
     bool m_scoreAttributesHasBeenSet;
+
+    Aws::String m_feedbackToken;
+    bool m_feedbackTokenHasBeenSet;
   };
 
 } // namespace Model

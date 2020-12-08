@@ -18,9 +18,11 @@
 #include <aws/sagemaker/model/DebugHookConfig.h>
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
 #include <aws/sagemaker/model/ExperimentConfig.h>
+#include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/DebugRuleConfiguration.h>
+#include <aws/sagemaker/model/ProfilerRuleConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -1059,42 +1061,50 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline const Aws::Vector<DebugRuleConfiguration>& GetDebugRuleConfigurations() const{ return m_debugRuleConfigurations; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline bool DebugRuleConfigurationsHasBeenSet() const { return m_debugRuleConfigurationsHasBeenSet; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline void SetDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations = value; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline void SetDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations = std::move(value); }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline CreateTrainingJobRequest& WithDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { SetDebugRuleConfigurations(value); return *this;}
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline CreateTrainingJobRequest& WithDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { SetDebugRuleConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline CreateTrainingJobRequest& AddDebugRuleConfigurations(const DebugRuleConfiguration& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline CreateTrainingJobRequest& AddDebugRuleConfigurations(DebugRuleConfiguration&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations.push_back(std::move(value)); return *this; }
 
@@ -1135,6 +1145,74 @@ namespace Model
 
     
     inline CreateTrainingJobRequest& WithExperimentConfig(ExperimentConfig&& value) { SetExperimentConfig(std::move(value)); return *this;}
+
+
+    
+    inline const ProfilerConfig& GetProfilerConfig() const{ return m_profilerConfig; }
+
+    
+    inline bool ProfilerConfigHasBeenSet() const { return m_profilerConfigHasBeenSet; }
+
+    
+    inline void SetProfilerConfig(const ProfilerConfig& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = value; }
+
+    
+    inline void SetProfilerConfig(ProfilerConfig&& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = std::move(value); }
+
+    
+    inline CreateTrainingJobRequest& WithProfilerConfig(const ProfilerConfig& value) { SetProfilerConfig(value); return *this;}
+
+    
+    inline CreateTrainingJobRequest& WithProfilerConfig(ProfilerConfig&& value) { SetProfilerConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline const Aws::Vector<ProfilerRuleConfiguration>& GetProfilerRuleConfigurations() const{ return m_profilerRuleConfigurations; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline bool ProfilerRuleConfigurationsHasBeenSet() const { return m_profilerRuleConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline void SetProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations = value; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline void SetProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations = std::move(value); }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline CreateTrainingJobRequest& WithProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { SetProfilerRuleConfigurations(value); return *this;}
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline CreateTrainingJobRequest& WithProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { SetProfilerRuleConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline CreateTrainingJobRequest& AddProfilerRuleConfigurations(const ProfilerRuleConfiguration& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline CreateTrainingJobRequest& AddProfilerRuleConfigurations(ProfilerRuleConfiguration&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1191,6 +1269,12 @@ namespace Model
 
     ExperimentConfig m_experimentConfig;
     bool m_experimentConfigHasBeenSet;
+
+    ProfilerConfig m_profilerConfig;
+    bool m_profilerConfigHasBeenSet;
+
+    Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
+    bool m_profilerRuleConfigurationsHasBeenSet;
   };
 
 } // namespace Model

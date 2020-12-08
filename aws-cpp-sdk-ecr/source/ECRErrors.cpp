@@ -43,6 +43,7 @@ static const int LAYER_PART_TOO_SMALL_HASH = HashingUtils::HashString("LayerPart
 static const int LIFECYCLE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("LifecyclePolicyNotFoundException");
 static const int LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH = HashingUtils::HashString("LifecyclePolicyPreviewNotFoundException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int REGISTRY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RegistryPolicyNotFoundException");
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
 static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("ImageNotFoundException");
 static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
@@ -106,6 +107,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_PARAMETER), false);
+  }
+  else if (hashCode == REGISTRY_POLICY_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::REGISTRY_POLICY_NOT_FOUND), false);
   }
   else if (hashCode == INVALID_TAG_PARAMETER_HASH)
   {

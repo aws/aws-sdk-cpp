@@ -12,27 +12,13 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAuthorizationTokenRequest::GetAuthorizationTokenRequest() : 
-    m_registryIdsHasBeenSet(false)
+GetAuthorizationTokenRequest::GetAuthorizationTokenRequest()
 {
 }
 
 Aws::String GetAuthorizationTokenRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_registryIdsHasBeenSet)
-  {
-   Array<JsonValue> registryIdsJsonList(m_registryIds.size());
-   for(unsigned registryIdsIndex = 0; registryIdsIndex < registryIdsJsonList.GetLength(); ++registryIdsIndex)
-   {
-     registryIdsJsonList[registryIdsIndex].AsString(m_registryIds[registryIdsIndex]);
-   }
-   payload.WithArray("registryIds", std::move(registryIdsJsonList));
-
-  }
-
-  return payload.View().WriteReadable();
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetAuthorizationTokenRequest::GetRequestSpecificHeaders() const

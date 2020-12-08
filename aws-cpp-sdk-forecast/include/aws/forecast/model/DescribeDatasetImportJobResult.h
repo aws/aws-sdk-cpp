@@ -223,6 +223,104 @@ namespace Model
 
 
     /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline void SetTimeZone(const Aws::String& value) { m_timeZone = value; }
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline void SetTimeZone(Aws::String&& value) { m_timeZone = std::move(value); }
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline void SetTimeZone(const char* value) { m_timeZone.assign(value); }
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline DescribeDatasetImportJobResult& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline DescribeDatasetImportJobResult& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline DescribeDatasetImportJobResult& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+
+
+    /**
+     * <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
+     * attribute.</p>
+     */
+    inline bool GetUseGeolocationForTimeZone() const{ return m_useGeolocationForTimeZone; }
+
+    /**
+     * <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
+     * attribute.</p>
+     */
+    inline void SetUseGeolocationForTimeZone(bool value) { m_useGeolocationForTimeZone = value; }
+
+    /**
+     * <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
+     * attribute.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithUseGeolocationForTimeZone(bool value) { SetUseGeolocationForTimeZone(value); return *this;}
+
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline const Aws::String& GetGeolocationFormat() const{ return m_geolocationFormat; }
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline void SetGeolocationFormat(const Aws::String& value) { m_geolocationFormat = value; }
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline void SetGeolocationFormat(Aws::String&& value) { m_geolocationFormat = std::move(value); }
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline void SetGeolocationFormat(const char* value) { m_geolocationFormat.assign(value); }
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithGeolocationFormat(const Aws::String& value) { SetGeolocationFormat(value); return *this;}
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithGeolocationFormat(Aws::String&& value) { SetGeolocationFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithGeolocationFormat(const char* value) { SetGeolocationFormat(value); return *this;}
+
+
+    /**
      * <p>The location of the training data to import and an AWS Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
      * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
@@ -544,6 +642,12 @@ namespace Model
     Aws::String m_datasetArn;
 
     Aws::String m_timestampFormat;
+
+    Aws::String m_timeZone;
+
+    bool m_useGeolocationForTimeZone;
+
+    Aws::String m_geolocationFormat;
 
     DataSource m_dataSource;
 

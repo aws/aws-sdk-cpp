@@ -19,7 +19,8 @@ namespace Model
     string,
     integer,
     float_,
-    timestamp
+    timestamp,
+    geolocation
   };
 
 namespace AttributeTypeMapper

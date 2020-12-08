@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ScheduleStatus.h>
+#include <aws/sagemaker/model/MonitoringType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/MonitoringScheduleConfig.h>
 #include <aws/sagemaker/model/MonitoringExecutionSummary.h>
@@ -181,6 +182,37 @@ namespace Model
      * </li> <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li> </ul>
      */
     inline MonitoringSchedule& WithMonitoringScheduleStatus(ScheduleStatus&& value) { SetMonitoringScheduleStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline const MonitoringType& GetMonitoringType() const{ return m_monitoringType; }
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline bool MonitoringTypeHasBeenSet() const { return m_monitoringTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline void SetMonitoringType(const MonitoringType& value) { m_monitoringTypeHasBeenSet = true; m_monitoringType = value; }
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline void SetMonitoringType(MonitoringType&& value) { m_monitoringTypeHasBeenSet = true; m_monitoringType = std::move(value); }
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline MonitoringSchedule& WithMonitoringType(const MonitoringType& value) { SetMonitoringType(value); return *this;}
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline MonitoringSchedule& WithMonitoringType(MonitoringType&& value) { SetMonitoringType(std::move(value)); return *this;}
 
 
     /**
@@ -439,6 +471,9 @@ namespace Model
 
     ScheduleStatus m_monitoringScheduleStatus;
     bool m_monitoringScheduleStatusHasBeenSet;
+
+    MonitoringType m_monitoringType;
+    bool m_monitoringTypeHasBeenSet;
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;

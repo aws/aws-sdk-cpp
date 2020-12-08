@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for tensor collections.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Configuration information for the Debugger output tensor
+   * collections.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CollectionConfiguration">AWS
    * API Reference</a></p>
    */

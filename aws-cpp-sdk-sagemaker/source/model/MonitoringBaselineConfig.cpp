@@ -19,12 +19,14 @@ namespace Model
 {
 
 MonitoringBaselineConfig::MonitoringBaselineConfig() : 
+    m_baseliningJobNameHasBeenSet(false),
     m_constraintsResourceHasBeenSet(false),
     m_statisticsResourceHasBeenSet(false)
 {
 }
 
 MonitoringBaselineConfig::MonitoringBaselineConfig(JsonView jsonValue) : 
+    m_baseliningJobNameHasBeenSet(false),
     m_constraintsResourceHasBeenSet(false),
     m_statisticsResourceHasBeenSet(false)
 {
@@ -33,6 +35,13 @@ MonitoringBaselineConfig::MonitoringBaselineConfig(JsonView jsonValue) :
 
 MonitoringBaselineConfig& MonitoringBaselineConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("BaseliningJobName"))
+  {
+    m_baseliningJobName = jsonValue.GetString("BaseliningJobName");
+
+    m_baseliningJobNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ConstraintsResource"))
   {
     m_constraintsResource = jsonValue.GetObject("ConstraintsResource");
@@ -53,6 +62,12 @@ MonitoringBaselineConfig& MonitoringBaselineConfig::operator =(JsonView jsonValu
 JsonValue MonitoringBaselineConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_baseliningJobNameHasBeenSet)
+  {
+   payload.WithString("BaseliningJobName", m_baseliningJobName);
+
+  }
 
   if(m_constraintsResourceHasBeenSet)
   {

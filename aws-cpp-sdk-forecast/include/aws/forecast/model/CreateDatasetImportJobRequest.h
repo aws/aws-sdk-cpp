@@ -314,6 +314,181 @@ namespace Model
 
 
     /**
+     * <p>A single time zone for every item in your dataset. This option is ideal for
+     * datasets with all timestamps within a single time zone, or if all timestamps are
+     * normalized to a single time zone. </p> <p>Refer to the <a
+     * href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a
+     * complete list of valid time zone names.</p>
+     */
+    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+
+    /**
+     * <p>A single time zone for every item in your dataset. This option is ideal for
+     * datasets with all timestamps within a single time zone, or if all timestamps are
+     * normalized to a single time zone. </p> <p>Refer to the <a
+     * href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a
+     * complete list of valid time zone names.</p>
+     */
+    inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
+
+    /**
+     * <p>A single time zone for every item in your dataset. This option is ideal for
+     * datasets with all timestamps within a single time zone, or if all timestamps are
+     * normalized to a single time zone. </p> <p>Refer to the <a
+     * href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a
+     * complete list of valid time zone names.</p>
+     */
+    inline void SetTimeZone(const Aws::String& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
+
+    /**
+     * <p>A single time zone for every item in your dataset. This option is ideal for
+     * datasets with all timestamps within a single time zone, or if all timestamps are
+     * normalized to a single time zone. </p> <p>Refer to the <a
+     * href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a
+     * complete list of valid time zone names.</p>
+     */
+    inline void SetTimeZone(Aws::String&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
+
+    /**
+     * <p>A single time zone for every item in your dataset. This option is ideal for
+     * datasets with all timestamps within a single time zone, or if all timestamps are
+     * normalized to a single time zone. </p> <p>Refer to the <a
+     * href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a
+     * complete list of valid time zone names.</p>
+     */
+    inline void SetTimeZone(const char* value) { m_timeZoneHasBeenSet = true; m_timeZone.assign(value); }
+
+    /**
+     * <p>A single time zone for every item in your dataset. This option is ideal for
+     * datasets with all timestamps within a single time zone, or if all timestamps are
+     * normalized to a single time zone. </p> <p>Refer to the <a
+     * href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a
+     * complete list of valid time zone names.</p>
+     */
+    inline CreateDatasetImportJobRequest& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
+
+    /**
+     * <p>A single time zone for every item in your dataset. This option is ideal for
+     * datasets with all timestamps within a single time zone, or if all timestamps are
+     * normalized to a single time zone. </p> <p>Refer to the <a
+     * href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a
+     * complete list of valid time zone names.</p>
+     */
+    inline CreateDatasetImportJobRequest& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
+
+    /**
+     * <p>A single time zone for every item in your dataset. This option is ideal for
+     * datasets with all timestamps within a single time zone, or if all timestamps are
+     * normalized to a single time zone. </p> <p>Refer to the <a
+     * href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a
+     * complete list of valid time zone names.</p>
+     */
+    inline CreateDatasetImportJobRequest& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+
+
+    /**
+     * <p>Automatically derive time zone information from the geolocation attribute.
+     * This option is ideal for datasets that contain timestamps in multiple time zones
+     * and those timestamps are expressed in local time.</p>
+     */
+    inline bool GetUseGeolocationForTimeZone() const{ return m_useGeolocationForTimeZone; }
+
+    /**
+     * <p>Automatically derive time zone information from the geolocation attribute.
+     * This option is ideal for datasets that contain timestamps in multiple time zones
+     * and those timestamps are expressed in local time.</p>
+     */
+    inline bool UseGeolocationForTimeZoneHasBeenSet() const { return m_useGeolocationForTimeZoneHasBeenSet; }
+
+    /**
+     * <p>Automatically derive time zone information from the geolocation attribute.
+     * This option is ideal for datasets that contain timestamps in multiple time zones
+     * and those timestamps are expressed in local time.</p>
+     */
+    inline void SetUseGeolocationForTimeZone(bool value) { m_useGeolocationForTimeZoneHasBeenSet = true; m_useGeolocationForTimeZone = value; }
+
+    /**
+     * <p>Automatically derive time zone information from the geolocation attribute.
+     * This option is ideal for datasets that contain timestamps in multiple time zones
+     * and those timestamps are expressed in local time.</p>
+     */
+    inline CreateDatasetImportJobRequest& WithUseGeolocationForTimeZone(bool value) { SetUseGeolocationForTimeZone(value); return *this;}
+
+
+    /**
+     * <p>The format of the geolocation attribute. The geolocation attribute can be
+     * formatted in one of two ways:</p> <ul> <li> <p> <code>LAT_LONG</code> - the
+     * latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+     * <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed
+     * by the 5-digit ZIP code (Example: US_98121).</p> </li> </ul>
+     */
+    inline const Aws::String& GetGeolocationFormat() const{ return m_geolocationFormat; }
+
+    /**
+     * <p>The format of the geolocation attribute. The geolocation attribute can be
+     * formatted in one of two ways:</p> <ul> <li> <p> <code>LAT_LONG</code> - the
+     * latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+     * <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed
+     * by the 5-digit ZIP code (Example: US_98121).</p> </li> </ul>
+     */
+    inline bool GeolocationFormatHasBeenSet() const { return m_geolocationFormatHasBeenSet; }
+
+    /**
+     * <p>The format of the geolocation attribute. The geolocation attribute can be
+     * formatted in one of two ways:</p> <ul> <li> <p> <code>LAT_LONG</code> - the
+     * latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+     * <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed
+     * by the 5-digit ZIP code (Example: US_98121).</p> </li> </ul>
+     */
+    inline void SetGeolocationFormat(const Aws::String& value) { m_geolocationFormatHasBeenSet = true; m_geolocationFormat = value; }
+
+    /**
+     * <p>The format of the geolocation attribute. The geolocation attribute can be
+     * formatted in one of two ways:</p> <ul> <li> <p> <code>LAT_LONG</code> - the
+     * latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+     * <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed
+     * by the 5-digit ZIP code (Example: US_98121).</p> </li> </ul>
+     */
+    inline void SetGeolocationFormat(Aws::String&& value) { m_geolocationFormatHasBeenSet = true; m_geolocationFormat = std::move(value); }
+
+    /**
+     * <p>The format of the geolocation attribute. The geolocation attribute can be
+     * formatted in one of two ways:</p> <ul> <li> <p> <code>LAT_LONG</code> - the
+     * latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+     * <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed
+     * by the 5-digit ZIP code (Example: US_98121).</p> </li> </ul>
+     */
+    inline void SetGeolocationFormat(const char* value) { m_geolocationFormatHasBeenSet = true; m_geolocationFormat.assign(value); }
+
+    /**
+     * <p>The format of the geolocation attribute. The geolocation attribute can be
+     * formatted in one of two ways:</p> <ul> <li> <p> <code>LAT_LONG</code> - the
+     * latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+     * <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed
+     * by the 5-digit ZIP code (Example: US_98121).</p> </li> </ul>
+     */
+    inline CreateDatasetImportJobRequest& WithGeolocationFormat(const Aws::String& value) { SetGeolocationFormat(value); return *this;}
+
+    /**
+     * <p>The format of the geolocation attribute. The geolocation attribute can be
+     * formatted in one of two ways:</p> <ul> <li> <p> <code>LAT_LONG</code> - the
+     * latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+     * <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed
+     * by the 5-digit ZIP code (Example: US_98121).</p> </li> </ul>
+     */
+    inline CreateDatasetImportJobRequest& WithGeolocationFormat(Aws::String&& value) { SetGeolocationFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of the geolocation attribute. The geolocation attribute can be
+     * formatted in one of two ways:</p> <ul> <li> <p> <code>LAT_LONG</code> - the
+     * latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+     * <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed
+     * by the 5-digit ZIP code (Example: US_98121).</p> </li> </ul>
+     */
+    inline CreateDatasetImportJobRequest& WithGeolocationFormat(const char* value) { SetGeolocationFormat(value); return *this;}
+
+
+    /**
      * <p>The optional metadata that you apply to the dataset import job to help you
      * categorize and organize them. Each tag consists of a key and an optional value,
      * both of which you define.</p> <p>The following basic restrictions apply to
@@ -510,6 +685,15 @@ namespace Model
 
     Aws::String m_timestampFormat;
     bool m_timestampFormatHasBeenSet;
+
+    Aws::String m_timeZone;
+    bool m_timeZoneHasBeenSet;
+
+    bool m_useGeolocationForTimeZone;
+    bool m_useGeolocationForTimeZoneHasBeenSet;
+
+    Aws::String m_geolocationFormat;
+    bool m_geolocationFormatHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

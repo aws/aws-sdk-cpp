@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/MonitoringConstraintsResource.h>
 #include <aws/sagemaker/model/MonitoringStatisticsResource.h>
 #include <utility>
@@ -39,6 +40,47 @@ namespace Model
     MonitoringBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
     MonitoringBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The name of the job that performs baselining for the monitoring job.</p>
+     */
+    inline const Aws::String& GetBaseliningJobName() const{ return m_baseliningJobName; }
+
+    /**
+     * <p>The name of the job that performs baselining for the monitoring job.</p>
+     */
+    inline bool BaseliningJobNameHasBeenSet() const { return m_baseliningJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job that performs baselining for the monitoring job.</p>
+     */
+    inline void SetBaseliningJobName(const Aws::String& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = value; }
+
+    /**
+     * <p>The name of the job that performs baselining for the monitoring job.</p>
+     */
+    inline void SetBaseliningJobName(Aws::String&& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = std::move(value); }
+
+    /**
+     * <p>The name of the job that performs baselining for the monitoring job.</p>
+     */
+    inline void SetBaseliningJobName(const char* value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName.assign(value); }
+
+    /**
+     * <p>The name of the job that performs baselining for the monitoring job.</p>
+     */
+    inline MonitoringBaselineConfig& WithBaseliningJobName(const Aws::String& value) { SetBaseliningJobName(value); return *this;}
+
+    /**
+     * <p>The name of the job that performs baselining for the monitoring job.</p>
+     */
+    inline MonitoringBaselineConfig& WithBaseliningJobName(Aws::String&& value) { SetBaseliningJobName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the job that performs baselining for the monitoring job.</p>
+     */
+    inline MonitoringBaselineConfig& WithBaseliningJobName(const char* value) { SetBaseliningJobName(value); return *this;}
 
 
     /**
@@ -115,6 +157,9 @@ namespace Model
     inline MonitoringBaselineConfig& WithStatisticsResource(MonitoringStatisticsResource&& value) { SetStatisticsResource(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_baseliningJobName;
+    bool m_baseliningJobNameHasBeenSet;
 
     MonitoringConstraintsResource m_constraintsResource;
     bool m_constraintsResourceHasBeenSet;

@@ -29,7 +29,10 @@ ListMonitoringExecutionsRequest::ListMonitoringExecutionsRequest() :
     m_lastModifiedTimeBeforeHasBeenSet(false),
     m_lastModifiedTimeAfterHasBeenSet(false),
     m_statusEquals(ExecutionStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false)
+    m_statusEqualsHasBeenSet(false),
+    m_monitoringJobDefinitionNameHasBeenSet(false),
+    m_monitoringTypeEquals(MonitoringType::NOT_SET),
+    m_monitoringTypeEqualsHasBeenSet(false)
 {
 }
 
@@ -104,6 +107,17 @@ Aws::String ListMonitoringExecutionsRequest::SerializePayload() const
   if(m_statusEqualsHasBeenSet)
   {
    payload.WithString("StatusEquals", ExecutionStatusMapper::GetNameForExecutionStatus(m_statusEquals));
+  }
+
+  if(m_monitoringJobDefinitionNameHasBeenSet)
+  {
+   payload.WithString("MonitoringJobDefinitionName", m_monitoringJobDefinitionName);
+
+  }
+
+  if(m_monitoringTypeEqualsHasBeenSet)
+  {
+   payload.WithString("MonitoringTypeEquals", MonitoringTypeMapper::GetNameForMonitoringType(m_monitoringTypeEquals));
   }
 
   return payload.View().WriteReadable();

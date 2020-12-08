@@ -147,9 +147,13 @@ namespace Model
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
      * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature
-     * is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
-     * SDK.</p>
+     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
+     * code in your model is responsible for setting or updating any custom attributes
+     * in the response. If your code does not set this value in the response, an empty
+     * value is returned. For example, if a custom attribute represents the trace ID,
+     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.</p> <p>This feature is currently supported in the AWS
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline const Aws::String& GetCustomAttributes() const{ return m_customAttributes; }
 
@@ -161,9 +165,13 @@ namespace Model
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
      * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature
-     * is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
-     * SDK.</p>
+     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
+     * code in your model is responsible for setting or updating any custom attributes
+     * in the response. If your code does not set this value in the response, an empty
+     * value is returned. For example, if a custom attribute represents the trace ID,
+     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.</p> <p>This feature is currently supported in the AWS
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
 
@@ -175,9 +183,13 @@ namespace Model
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
      * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature
-     * is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
-     * SDK.</p>
+     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
+     * code in your model is responsible for setting or updating any custom attributes
+     * in the response. If your code does not set this value in the response, an empty
+     * value is returned. For example, if a custom attribute represents the trace ID,
+     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.</p> <p>This feature is currently supported in the AWS
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline void SetCustomAttributes(const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
 
@@ -189,9 +201,13 @@ namespace Model
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
      * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature
-     * is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
-     * SDK.</p>
+     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
+     * code in your model is responsible for setting or updating any custom attributes
+     * in the response. If your code does not set this value in the response, an empty
+     * value is returned. For example, if a custom attribute represents the trace ID,
+     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.</p> <p>This feature is currently supported in the AWS
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline void SetCustomAttributes(Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
 
@@ -203,9 +219,13 @@ namespace Model
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
      * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature
-     * is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
-     * SDK.</p>
+     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
+     * code in your model is responsible for setting or updating any custom attributes
+     * in the response. If your code does not set this value in the response, an empty
+     * value is returned. For example, if a custom attribute represents the trace ID,
+     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.</p> <p>This feature is currently supported in the AWS
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline void SetCustomAttributes(const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.assign(value); }
 
@@ -217,9 +237,13 @@ namespace Model
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
      * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature
-     * is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
-     * SDK.</p>
+     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
+     * code in your model is responsible for setting or updating any custom attributes
+     * in the response. If your code does not set this value in the response, an empty
+     * value is returned. For example, if a custom attribute represents the trace ID,
+     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.</p> <p>This feature is currently supported in the AWS
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline InvokeEndpointRequest& WithCustomAttributes(const Aws::String& value) { SetCustomAttributes(value); return *this;}
 
@@ -231,9 +255,13 @@ namespace Model
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
      * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature
-     * is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
-     * SDK.</p>
+     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
+     * code in your model is responsible for setting or updating any custom attributes
+     * in the response. If your code does not set this value in the response, an empty
+     * value is returned. For example, if a custom attribute represents the trace ID,
+     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.</p> <p>This feature is currently supported in the AWS
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline InvokeEndpointRequest& WithCustomAttributes(Aws::String&& value) { SetCustomAttributes(std::move(value)); return *this;}
 
@@ -245,50 +273,54 @@ namespace Model
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
      * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature
-     * is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
-     * SDK.</p>
+     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
+     * code in your model is responsible for setting or updating any custom attributes
+     * in the response. If your code does not set this value in the response, an empty
+     * value is returned. For example, if a custom attribute represents the trace ID,
+     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.</p> <p>This feature is currently supported in the AWS
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline InvokeEndpointRequest& WithCustomAttributes(const char* value) { SetCustomAttributes(value); return *this;}
 
 
     /**
-     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint.</p>
      */
     inline const Aws::String& GetTargetModel() const{ return m_targetModel; }
 
     /**
-     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint.</p>
      */
     inline bool TargetModelHasBeenSet() const { return m_targetModelHasBeenSet; }
 
     /**
-     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint.</p>
      */
     inline void SetTargetModel(const Aws::String& value) { m_targetModelHasBeenSet = true; m_targetModel = value; }
 
     /**
-     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint.</p>
      */
     inline void SetTargetModel(Aws::String&& value) { m_targetModelHasBeenSet = true; m_targetModel = std::move(value); }
 
     /**
-     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint.</p>
      */
     inline void SetTargetModel(const char* value) { m_targetModelHasBeenSet = true; m_targetModel.assign(value); }
 
     /**
-     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint.</p>
      */
     inline InvokeEndpointRequest& WithTargetModel(const Aws::String& value) { SetTargetModel(value); return *this;}
 
     /**
-     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint.</p>
      */
     inline InvokeEndpointRequest& WithTargetModel(Aws::String&& value) { SetTargetModel(std::move(value)); return *this;}
 
     /**
-     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint.</p>
      */
     inline InvokeEndpointRequest& WithTargetModel(const char* value) { SetTargetModel(value); return *this;}
 
@@ -297,7 +329,10 @@ namespace Model
      * <p>Specify the production variant to send the inference request to when invoking
      * an endpoint that is running two or more variants. Note that this parameter
      * overrides the default behavior for the endpoint, which is to distribute the
-     * invocation traffic based on the variant weights.</p>
+     * invocation traffic based on the variant weights.</p> <p>For information about
+     * how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test
+     * models in production</a> </p>
      */
     inline const Aws::String& GetTargetVariant() const{ return m_targetVariant; }
 
@@ -305,7 +340,10 @@ namespace Model
      * <p>Specify the production variant to send the inference request to when invoking
      * an endpoint that is running two or more variants. Note that this parameter
      * overrides the default behavior for the endpoint, which is to distribute the
-     * invocation traffic based on the variant weights.</p>
+     * invocation traffic based on the variant weights.</p> <p>For information about
+     * how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test
+     * models in production</a> </p>
      */
     inline bool TargetVariantHasBeenSet() const { return m_targetVariantHasBeenSet; }
 
@@ -313,7 +351,10 @@ namespace Model
      * <p>Specify the production variant to send the inference request to when invoking
      * an endpoint that is running two or more variants. Note that this parameter
      * overrides the default behavior for the endpoint, which is to distribute the
-     * invocation traffic based on the variant weights.</p>
+     * invocation traffic based on the variant weights.</p> <p>For information about
+     * how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test
+     * models in production</a> </p>
      */
     inline void SetTargetVariant(const Aws::String& value) { m_targetVariantHasBeenSet = true; m_targetVariant = value; }
 
@@ -321,7 +362,10 @@ namespace Model
      * <p>Specify the production variant to send the inference request to when invoking
      * an endpoint that is running two or more variants. Note that this parameter
      * overrides the default behavior for the endpoint, which is to distribute the
-     * invocation traffic based on the variant weights.</p>
+     * invocation traffic based on the variant weights.</p> <p>For information about
+     * how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test
+     * models in production</a> </p>
      */
     inline void SetTargetVariant(Aws::String&& value) { m_targetVariantHasBeenSet = true; m_targetVariant = std::move(value); }
 
@@ -329,7 +373,10 @@ namespace Model
      * <p>Specify the production variant to send the inference request to when invoking
      * an endpoint that is running two or more variants. Note that this parameter
      * overrides the default behavior for the endpoint, which is to distribute the
-     * invocation traffic based on the variant weights.</p>
+     * invocation traffic based on the variant weights.</p> <p>For information about
+     * how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test
+     * models in production</a> </p>
      */
     inline void SetTargetVariant(const char* value) { m_targetVariantHasBeenSet = true; m_targetVariant.assign(value); }
 
@@ -337,7 +384,10 @@ namespace Model
      * <p>Specify the production variant to send the inference request to when invoking
      * an endpoint that is running two or more variants. Note that this parameter
      * overrides the default behavior for the endpoint, which is to distribute the
-     * invocation traffic based on the variant weights.</p>
+     * invocation traffic based on the variant weights.</p> <p>For information about
+     * how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test
+     * models in production</a> </p>
      */
     inline InvokeEndpointRequest& WithTargetVariant(const Aws::String& value) { SetTargetVariant(value); return *this;}
 
@@ -345,7 +395,10 @@ namespace Model
      * <p>Specify the production variant to send the inference request to when invoking
      * an endpoint that is running two or more variants. Note that this parameter
      * overrides the default behavior for the endpoint, which is to distribute the
-     * invocation traffic based on the variant weights.</p>
+     * invocation traffic based on the variant weights.</p> <p>For information about
+     * how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test
+     * models in production</a> </p>
      */
     inline InvokeEndpointRequest& WithTargetVariant(Aws::String&& value) { SetTargetVariant(std::move(value)); return *this;}
 
@@ -353,9 +406,77 @@ namespace Model
      * <p>Specify the production variant to send the inference request to when invoking
      * an endpoint that is running two or more variants. Note that this parameter
      * overrides the default behavior for the endpoint, which is to distribute the
-     * invocation traffic based on the variant weights.</p>
+     * invocation traffic based on the variant weights.</p> <p>For information about
+     * how to use variant targeting to perform a/b testing, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test
+     * models in production</a> </p>
      */
     inline InvokeEndpointRequest& WithTargetVariant(const char* value) { SetTargetVariant(value); return *this;}
+
+
+    /**
+     * <p>If you provide a value, it is added to the captured data when you enable data
+     * capture on the endpoint. For information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+     * Data</a>.</p>
+     */
+    inline const Aws::String& GetInferenceId() const{ return m_inferenceId; }
+
+    /**
+     * <p>If you provide a value, it is added to the captured data when you enable data
+     * capture on the endpoint. For information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+     * Data</a>.</p>
+     */
+    inline bool InferenceIdHasBeenSet() const { return m_inferenceIdHasBeenSet; }
+
+    /**
+     * <p>If you provide a value, it is added to the captured data when you enable data
+     * capture on the endpoint. For information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+     * Data</a>.</p>
+     */
+    inline void SetInferenceId(const Aws::String& value) { m_inferenceIdHasBeenSet = true; m_inferenceId = value; }
+
+    /**
+     * <p>If you provide a value, it is added to the captured data when you enable data
+     * capture on the endpoint. For information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+     * Data</a>.</p>
+     */
+    inline void SetInferenceId(Aws::String&& value) { m_inferenceIdHasBeenSet = true; m_inferenceId = std::move(value); }
+
+    /**
+     * <p>If you provide a value, it is added to the captured data when you enable data
+     * capture on the endpoint. For information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+     * Data</a>.</p>
+     */
+    inline void SetInferenceId(const char* value) { m_inferenceIdHasBeenSet = true; m_inferenceId.assign(value); }
+
+    /**
+     * <p>If you provide a value, it is added to the captured data when you enable data
+     * capture on the endpoint. For information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+     * Data</a>.</p>
+     */
+    inline InvokeEndpointRequest& WithInferenceId(const Aws::String& value) { SetInferenceId(value); return *this;}
+
+    /**
+     * <p>If you provide a value, it is added to the captured data when you enable data
+     * capture on the endpoint. For information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+     * Data</a>.</p>
+     */
+    inline InvokeEndpointRequest& WithInferenceId(Aws::String&& value) { SetInferenceId(std::move(value)); return *this;}
+
+    /**
+     * <p>If you provide a value, it is added to the captured data when you enable data
+     * capture on the endpoint. For information about data capture, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+     * Data</a>.</p>
+     */
+    inline InvokeEndpointRequest& WithInferenceId(const char* value) { SetInferenceId(value); return *this;}
 
   private:
 
@@ -374,6 +495,9 @@ namespace Model
 
     Aws::String m_targetVariant;
     bool m_targetVariantHasBeenSet;
+
+    Aws::String m_inferenceId;
+    bool m_inferenceIdHasBeenSet;
   };
 
 } // namespace Model

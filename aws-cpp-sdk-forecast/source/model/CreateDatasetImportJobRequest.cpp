@@ -17,6 +17,10 @@ CreateDatasetImportJobRequest::CreateDatasetImportJobRequest() :
     m_datasetArnHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_timestampFormatHasBeenSet(false),
+    m_timeZoneHasBeenSet(false),
+    m_useGeolocationForTimeZone(false),
+    m_useGeolocationForTimeZoneHasBeenSet(false),
+    m_geolocationFormatHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -46,6 +50,24 @@ Aws::String CreateDatasetImportJobRequest::SerializePayload() const
   if(m_timestampFormatHasBeenSet)
   {
    payload.WithString("TimestampFormat", m_timestampFormat);
+
+  }
+
+  if(m_timeZoneHasBeenSet)
+  {
+   payload.WithString("TimeZone", m_timeZone);
+
+  }
+
+  if(m_useGeolocationForTimeZoneHasBeenSet)
+  {
+   payload.WithBool("UseGeolocationForTimeZone", m_useGeolocationForTimeZone);
+
+  }
+
+  if(m_geolocationFormatHasBeenSet)
+  {
+   payload.WithString("GeolocationFormat", m_geolocationFormat);
 
   }
 

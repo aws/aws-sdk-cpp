@@ -434,7 +434,7 @@ namespace Model
     /**
      * <p>A list of one or more dashboard ids that you want to add to a session that
      * includes anonymous authorizations. <code>IdentityType</code> must be set to
-     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * ANONYMOUS for this to work, because other identity types authenticate as
      * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
      * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
      * can access all three dashboards. </p>
@@ -444,7 +444,7 @@ namespace Model
     /**
      * <p>A list of one or more dashboard ids that you want to add to a session that
      * includes anonymous authorizations. <code>IdentityType</code> must be set to
-     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * ANONYMOUS for this to work, because other identity types authenticate as
      * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
      * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
      * can access all three dashboards. </p>
@@ -454,7 +454,7 @@ namespace Model
     /**
      * <p>A list of one or more dashboard ids that you want to add to a session that
      * includes anonymous authorizations. <code>IdentityType</code> must be set to
-     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * ANONYMOUS for this to work, because other identity types authenticate as
      * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
      * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
      * can access all three dashboards. </p>
@@ -464,7 +464,7 @@ namespace Model
     /**
      * <p>A list of one or more dashboard ids that you want to add to a session that
      * includes anonymous authorizations. <code>IdentityType</code> must be set to
-     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * ANONYMOUS for this to work, because other identity types authenticate as
      * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
      * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
      * can access all three dashboards. </p>
@@ -474,7 +474,7 @@ namespace Model
     /**
      * <p>A list of one or more dashboard ids that you want to add to a session that
      * includes anonymous authorizations. <code>IdentityType</code> must be set to
-     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * ANONYMOUS for this to work, because other identity types authenticate as
      * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
      * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
      * can access all three dashboards. </p>
@@ -484,7 +484,7 @@ namespace Model
     /**
      * <p>A list of one or more dashboard ids that you want to add to a session that
      * includes anonymous authorizations. <code>IdentityType</code> must be set to
-     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * ANONYMOUS for this to work, because other identity types authenticate as
      * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
      * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
      * can access all three dashboards. </p>
@@ -494,7 +494,7 @@ namespace Model
     /**
      * <p>A list of one or more dashboard ids that you want to add to a session that
      * includes anonymous authorizations. <code>IdentityType</code> must be set to
-     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * ANONYMOUS for this to work, because other identity types authenticate as
      * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
      * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
      * can access all three dashboards. </p>
@@ -504,7 +504,7 @@ namespace Model
     /**
      * <p>A list of one or more dashboard ids that you want to add to a session that
      * includes anonymous authorizations. <code>IdentityType</code> must be set to
-     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * ANONYMOUS for this to work, because other identity types authenticate as
      * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
      * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
      * can access all three dashboards. </p>
@@ -514,7 +514,7 @@ namespace Model
     /**
      * <p>A list of one or more dashboard ids that you want to add to a session that
      * includes anonymous authorizations. <code>IdentityType</code> must be set to
-     * ANONYMOUS for this to work, because other other identity types authenticate as
+     * ANONYMOUS for this to work, because other identity types authenticate as
      * QuickSight users. For example, if you set "<code>--dashboard-id dash_id1
      * --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
      * can access all three dashboards. </p>

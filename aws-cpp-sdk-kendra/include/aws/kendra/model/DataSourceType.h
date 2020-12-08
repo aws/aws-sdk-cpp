@@ -23,7 +23,8 @@ namespace Model
     ONEDRIVE,
     SERVICENOW,
     CUSTOM,
-    CONFLUENCE
+    CONFLUENCE,
+    GOOGLEDRIVE
   };
 
 namespace DataSourceTypeMapper

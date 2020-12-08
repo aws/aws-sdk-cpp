@@ -23,7 +23,8 @@ DescribeTrainingJobResult::DescribeTrainingJobResult() :
     m_enableInterContainerTrafficEncryption(false),
     m_enableManagedSpotTraining(false),
     m_trainingTimeInSeconds(0),
-    m_billableTimeInSeconds(0)
+    m_billableTimeInSeconds(0),
+    m_profilingStatus(ProfilingStatus::NOT_SET)
 {
 }
 
@@ -34,7 +35,8 @@ DescribeTrainingJobResult::DescribeTrainingJobResult(const Aws::AmazonWebService
     m_enableInterContainerTrafficEncryption(false),
     m_enableManagedSpotTraining(false),
     m_trainingTimeInSeconds(0),
-    m_billableTimeInSeconds(0)
+    m_billableTimeInSeconds(0),
+    m_profilingStatus(ProfilingStatus::NOT_SET)
 {
   *this = result;
 }
@@ -262,6 +264,36 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
     {
       m_debugRuleEvaluationStatuses.push_back(debugRuleEvaluationStatusesJsonList[debugRuleEvaluationStatusesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("ProfilerConfig"))
+  {
+    m_profilerConfig = jsonValue.GetObject("ProfilerConfig");
+
+  }
+
+  if(jsonValue.ValueExists("ProfilerRuleConfigurations"))
+  {
+    Array<JsonView> profilerRuleConfigurationsJsonList = jsonValue.GetArray("ProfilerRuleConfigurations");
+    for(unsigned profilerRuleConfigurationsIndex = 0; profilerRuleConfigurationsIndex < profilerRuleConfigurationsJsonList.GetLength(); ++profilerRuleConfigurationsIndex)
+    {
+      m_profilerRuleConfigurations.push_back(profilerRuleConfigurationsJsonList[profilerRuleConfigurationsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("ProfilerRuleEvaluationStatuses"))
+  {
+    Array<JsonView> profilerRuleEvaluationStatusesJsonList = jsonValue.GetArray("ProfilerRuleEvaluationStatuses");
+    for(unsigned profilerRuleEvaluationStatusesIndex = 0; profilerRuleEvaluationStatusesIndex < profilerRuleEvaluationStatusesJsonList.GetLength(); ++profilerRuleEvaluationStatusesIndex)
+    {
+      m_profilerRuleEvaluationStatuses.push_back(profilerRuleEvaluationStatusesJsonList[profilerRuleEvaluationStatusesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("ProfilingStatus"))
+  {
+    m_profilingStatus = ProfilingStatusMapper::GetProfilingStatusForName(jsonValue.GetString("ProfilingStatus"));
+
   }
 
 

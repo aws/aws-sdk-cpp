@@ -28,7 +28,8 @@ QueryResultItem::QueryResultItem() :
     m_documentExcerptHasBeenSet(false),
     m_documentURIHasBeenSet(false),
     m_documentAttributesHasBeenSet(false),
-    m_scoreAttributesHasBeenSet(false)
+    m_scoreAttributesHasBeenSet(false),
+    m_feedbackTokenHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ QueryResultItem::QueryResultItem(JsonView jsonValue) :
     m_documentExcerptHasBeenSet(false),
     m_documentURIHasBeenSet(false),
     m_documentAttributesHasBeenSet(false),
-    m_scoreAttributesHasBeenSet(false)
+    m_scoreAttributesHasBeenSet(false),
+    m_feedbackTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +120,13 @@ QueryResultItem& QueryResultItem::operator =(JsonView jsonValue)
     m_scoreAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FeedbackToken"))
+  {
+    m_feedbackToken = jsonValue.GetString("FeedbackToken");
+
+    m_feedbackTokenHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +194,12 @@ JsonValue QueryResultItem::Jsonize() const
   if(m_scoreAttributesHasBeenSet)
   {
    payload.WithObject("ScoreAttributes", m_scoreAttributes.Jsonize());
+
+  }
+
+  if(m_feedbackTokenHasBeenSet)
+  {
+   payload.WithString("FeedbackToken", m_feedbackToken);
 
   }
 

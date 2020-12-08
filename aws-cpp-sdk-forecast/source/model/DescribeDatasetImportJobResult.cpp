@@ -17,11 +17,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeDatasetImportJobResult::DescribeDatasetImportJobResult() : 
+    m_useGeolocationForTimeZone(false),
     m_dataSize(0.0)
 {
 }
 
 DescribeDatasetImportJobResult::DescribeDatasetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_useGeolocationForTimeZone(false),
     m_dataSize(0.0)
 {
   *this = result;
@@ -51,6 +53,24 @@ DescribeDatasetImportJobResult& DescribeDatasetImportJobResult::operator =(const
   if(jsonValue.ValueExists("TimestampFormat"))
   {
     m_timestampFormat = jsonValue.GetString("TimestampFormat");
+
+  }
+
+  if(jsonValue.ValueExists("TimeZone"))
+  {
+    m_timeZone = jsonValue.GetString("TimeZone");
+
+  }
+
+  if(jsonValue.ValueExists("UseGeolocationForTimeZone"))
+  {
+    m_useGeolocationForTimeZone = jsonValue.GetBool("UseGeolocationForTimeZone");
+
+  }
+
+  if(jsonValue.ValueExists("GeolocationFormat"))
+  {
+    m_geolocationFormat = jsonValue.GetString("GeolocationFormat");
 
   }
 

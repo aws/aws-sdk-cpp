@@ -23,6 +23,8 @@ MonitoringSchedule::MonitoringSchedule() :
     m_monitoringScheduleNameHasBeenSet(false),
     m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
     m_monitoringScheduleStatusHasBeenSet(false),
+    m_monitoringType(MonitoringType::NOT_SET),
+    m_monitoringTypeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
@@ -38,6 +40,8 @@ MonitoringSchedule::MonitoringSchedule(JsonView jsonValue) :
     m_monitoringScheduleNameHasBeenSet(false),
     m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
     m_monitoringScheduleStatusHasBeenSet(false),
+    m_monitoringType(MonitoringType::NOT_SET),
+    m_monitoringTypeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
@@ -70,6 +74,13 @@ MonitoringSchedule& MonitoringSchedule::operator =(JsonView jsonValue)
     m_monitoringScheduleStatus = ScheduleStatusMapper::GetScheduleStatusForName(jsonValue.GetString("MonitoringScheduleStatus"));
 
     m_monitoringScheduleStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MonitoringType"))
+  {
+    m_monitoringType = MonitoringTypeMapper::GetMonitoringTypeForName(jsonValue.GetString("MonitoringType"));
+
+    m_monitoringTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FailureReason"))
@@ -146,6 +157,11 @@ JsonValue MonitoringSchedule::Jsonize() const
   if(m_monitoringScheduleStatusHasBeenSet)
   {
    payload.WithString("MonitoringScheduleStatus", ScheduleStatusMapper::GetNameForScheduleStatus(m_monitoringScheduleStatus));
+  }
+
+  if(m_monitoringTypeHasBeenSet)
+  {
+   payload.WithString("MonitoringType", MonitoringTypeMapper::GetNameForMonitoringType(m_monitoringType));
   }
 
   if(m_failureReasonHasBeenSet)

@@ -331,37 +331,49 @@ namespace Model
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline const AccessControlListConfiguration& GetAccessControlListConfiguration() const{ return m_accessControlListConfiguration; }
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline bool AccessControlListConfigurationHasBeenSet() const { return m_accessControlListConfigurationHasBeenSet; }
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline void SetAccessControlListConfiguration(const AccessControlListConfiguration& value) { m_accessControlListConfigurationHasBeenSet = true; m_accessControlListConfiguration = value; }
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline void SetAccessControlListConfiguration(AccessControlListConfiguration&& value) { m_accessControlListConfigurationHasBeenSet = true; m_accessControlListConfiguration = std::move(value); }
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline S3DataSourceConfiguration& WithAccessControlListConfiguration(const AccessControlListConfiguration& value) { SetAccessControlListConfiguration(value); return *this;}
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline S3DataSourceConfiguration& WithAccessControlListConfiguration(AccessControlListConfiguration&& value) { SetAccessControlListConfiguration(std::move(value)); return *this;}
 

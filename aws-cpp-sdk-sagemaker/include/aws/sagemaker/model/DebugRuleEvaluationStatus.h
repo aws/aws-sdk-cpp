@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline const Aws::String& GetRuleConfigurationName() const{ return m_ruleConfigurationName; }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline bool RuleConfigurationNameHasBeenSet() const { return m_ruleConfigurationNameHasBeenSet; }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline void SetRuleConfigurationName(const Aws::String& value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName = value; }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline void SetRuleConfigurationName(Aws::String&& value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline void SetRuleConfigurationName(const char* value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline DebugRuleEvaluationStatus& WithRuleConfigurationName(const Aws::String& value) { SetRuleConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline DebugRuleEvaluationStatus& WithRuleConfigurationName(Aws::String&& value) { SetRuleConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline DebugRuleEvaluationStatus& WithRuleConfigurationName(const char* value) { SetRuleConfigurationName(value); return *this;}
 

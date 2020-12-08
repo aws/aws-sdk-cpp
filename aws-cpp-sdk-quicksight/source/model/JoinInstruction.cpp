@@ -21,6 +21,8 @@ namespace Model
 JoinInstruction::JoinInstruction() : 
     m_leftOperandHasBeenSet(false),
     m_rightOperandHasBeenSet(false),
+    m_leftJoinKeyPropertiesHasBeenSet(false),
+    m_rightJoinKeyPropertiesHasBeenSet(false),
     m_type(JoinType::NOT_SET),
     m_typeHasBeenSet(false),
     m_onClauseHasBeenSet(false)
@@ -30,6 +32,8 @@ JoinInstruction::JoinInstruction() :
 JoinInstruction::JoinInstruction(JsonView jsonValue) : 
     m_leftOperandHasBeenSet(false),
     m_rightOperandHasBeenSet(false),
+    m_leftJoinKeyPropertiesHasBeenSet(false),
+    m_rightJoinKeyPropertiesHasBeenSet(false),
     m_type(JoinType::NOT_SET),
     m_typeHasBeenSet(false),
     m_onClauseHasBeenSet(false)
@@ -51,6 +55,20 @@ JoinInstruction& JoinInstruction::operator =(JsonView jsonValue)
     m_rightOperand = jsonValue.GetString("RightOperand");
 
     m_rightOperandHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LeftJoinKeyProperties"))
+  {
+    m_leftJoinKeyProperties = jsonValue.GetObject("LeftJoinKeyProperties");
+
+    m_leftJoinKeyPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RightJoinKeyProperties"))
+  {
+    m_rightJoinKeyProperties = jsonValue.GetObject("RightJoinKeyProperties");
+
+    m_rightJoinKeyPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -83,6 +101,18 @@ JsonValue JoinInstruction::Jsonize() const
   if(m_rightOperandHasBeenSet)
   {
    payload.WithString("RightOperand", m_rightOperand);
+
+  }
+
+  if(m_leftJoinKeyPropertiesHasBeenSet)
+  {
+   payload.WithObject("LeftJoinKeyProperties", m_leftJoinKeyProperties.Jsonize());
+
+  }
+
+  if(m_rightJoinKeyPropertiesHasBeenSet)
+  {
+   payload.WithObject("RightJoinKeyProperties", m_rightJoinKeyProperties.Jsonize());
 
   }
 

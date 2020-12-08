@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>Tha Azure Active Directory domain of the organization. </p>
+     * <p>The Azure Active Directory domain of the organization. </p>
      */
     inline const Aws::String& GetTenantDomain() const{ return m_tenantDomain; }
 
     /**
-     * <p>Tha Azure Active Directory domain of the organization. </p>
+     * <p>The Azure Active Directory domain of the organization. </p>
      */
     inline bool TenantDomainHasBeenSet() const { return m_tenantDomainHasBeenSet; }
 
     /**
-     * <p>Tha Azure Active Directory domain of the organization. </p>
+     * <p>The Azure Active Directory domain of the organization. </p>
      */
     inline void SetTenantDomain(const Aws::String& value) { m_tenantDomainHasBeenSet = true; m_tenantDomain = value; }
 
     /**
-     * <p>Tha Azure Active Directory domain of the organization. </p>
+     * <p>The Azure Active Directory domain of the organization. </p>
      */
     inline void SetTenantDomain(Aws::String&& value) { m_tenantDomainHasBeenSet = true; m_tenantDomain = std::move(value); }
 
     /**
-     * <p>Tha Azure Active Directory domain of the organization. </p>
+     * <p>The Azure Active Directory domain of the organization. </p>
      */
     inline void SetTenantDomain(const char* value) { m_tenantDomainHasBeenSet = true; m_tenantDomain.assign(value); }
 
     /**
-     * <p>Tha Azure Active Directory domain of the organization. </p>
+     * <p>The Azure Active Directory domain of the organization. </p>
      */
     inline OneDriveConfiguration& WithTenantDomain(const Aws::String& value) { SetTenantDomain(value); return *this;}
 
     /**
-     * <p>Tha Azure Active Directory domain of the organization. </p>
+     * <p>The Azure Active Directory domain of the organization. </p>
      */
     inline OneDriveConfiguration& WithTenantDomain(Aws::String&& value) { SetTenantDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Tha Azure Active Directory domain of the organization. </p>
+     * <p>The Azure Active Directory domain of the organization. </p>
      */
     inline OneDriveConfiguration& WithTenantDomain(const char* value) { SetTenantDomain(value); return *this;}
 

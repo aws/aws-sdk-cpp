@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/CreateCodeRepositoryResult.h>
 #include <aws/sagemaker/model/CreateCompilationJobResult.h>
 #include <aws/sagemaker/model/CreateContextResult.h>
+#include <aws/sagemaker/model/CreateDataQualityJobDefinitionResult.h>
 #include <aws/sagemaker/model/CreateDomainResult.h>
 #include <aws/sagemaker/model/CreateEndpointResult.h>
 #include <aws/sagemaker/model/CreateEndpointConfigResult.h>
@@ -35,8 +36,11 @@
 #include <aws/sagemaker/model/CreateImageVersionResult.h>
 #include <aws/sagemaker/model/CreateLabelingJobResult.h>
 #include <aws/sagemaker/model/CreateModelResult.h>
+#include <aws/sagemaker/model/CreateModelBiasJobDefinitionResult.h>
+#include <aws/sagemaker/model/CreateModelExplainabilityJobDefinitionResult.h>
 #include <aws/sagemaker/model/CreateModelPackageResult.h>
 #include <aws/sagemaker/model/CreateModelPackageGroupResult.h>
+#include <aws/sagemaker/model/CreateModelQualityJobDefinitionResult.h>
 #include <aws/sagemaker/model/CreateMonitoringScheduleResult.h>
 #include <aws/sagemaker/model/CreateNotebookInstanceResult.h>
 #include <aws/sagemaker/model/CreateNotebookInstanceLifecycleConfigResult.h>
@@ -76,7 +80,11 @@
 #include <aws/sagemaker/model/DescribeCodeRepositoryResult.h>
 #include <aws/sagemaker/model/DescribeCompilationJobResult.h>
 #include <aws/sagemaker/model/DescribeContextResult.h>
+#include <aws/sagemaker/model/DescribeDataQualityJobDefinitionResult.h>
+#include <aws/sagemaker/model/DescribeDeviceResult.h>
+#include <aws/sagemaker/model/DescribeDeviceFleetResult.h>
 #include <aws/sagemaker/model/DescribeDomainResult.h>
+#include <aws/sagemaker/model/DescribeEdgePackagingJobResult.h>
 #include <aws/sagemaker/model/DescribeEndpointResult.h>
 #include <aws/sagemaker/model/DescribeEndpointConfigResult.h>
 #include <aws/sagemaker/model/DescribeExperimentResult.h>
@@ -88,8 +96,11 @@
 #include <aws/sagemaker/model/DescribeImageVersionResult.h>
 #include <aws/sagemaker/model/DescribeLabelingJobResult.h>
 #include <aws/sagemaker/model/DescribeModelResult.h>
+#include <aws/sagemaker/model/DescribeModelBiasJobDefinitionResult.h>
+#include <aws/sagemaker/model/DescribeModelExplainabilityJobDefinitionResult.h>
 #include <aws/sagemaker/model/DescribeModelPackageResult.h>
 #include <aws/sagemaker/model/DescribeModelPackageGroupResult.h>
+#include <aws/sagemaker/model/DescribeModelQualityJobDefinitionResult.h>
 #include <aws/sagemaker/model/DescribeMonitoringScheduleResult.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceResult.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceLifecycleConfigResult.h>
@@ -109,6 +120,7 @@
 #include <aws/sagemaker/model/DisableSagemakerServicecatalogPortfolioResult.h>
 #include <aws/sagemaker/model/DisassociateTrialComponentResult.h>
 #include <aws/sagemaker/model/EnableSagemakerServicecatalogPortfolioResult.h>
+#include <aws/sagemaker/model/GetDeviceFleetReportResult.h>
 #include <aws/sagemaker/model/GetModelPackageGroupPolicyResult.h>
 #include <aws/sagemaker/model/GetSagemakerServicecatalogPortfolioStatusResult.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsResult.h>
@@ -123,7 +135,11 @@
 #include <aws/sagemaker/model/ListCodeRepositoriesResult.h>
 #include <aws/sagemaker/model/ListCompilationJobsResult.h>
 #include <aws/sagemaker/model/ListContextsResult.h>
+#include <aws/sagemaker/model/ListDataQualityJobDefinitionsResult.h>
+#include <aws/sagemaker/model/ListDeviceFleetsResult.h>
+#include <aws/sagemaker/model/ListDevicesResult.h>
 #include <aws/sagemaker/model/ListDomainsResult.h>
+#include <aws/sagemaker/model/ListEdgePackagingJobsResult.h>
 #include <aws/sagemaker/model/ListEndpointConfigsResult.h>
 #include <aws/sagemaker/model/ListEndpointsResult.h>
 #include <aws/sagemaker/model/ListExperimentsResult.h>
@@ -135,8 +151,11 @@
 #include <aws/sagemaker/model/ListImagesResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamResult.h>
+#include <aws/sagemaker/model/ListModelBiasJobDefinitionsResult.h>
+#include <aws/sagemaker/model/ListModelExplainabilityJobDefinitionsResult.h>
 #include <aws/sagemaker/model/ListModelPackageGroupsResult.h>
 #include <aws/sagemaker/model/ListModelPackagesResult.h>
+#include <aws/sagemaker/model/ListModelQualityJobDefinitionsResult.h>
 #include <aws/sagemaker/model/ListModelsResult.h>
 #include <aws/sagemaker/model/ListMonitoringExecutionsResult.h>
 #include <aws/sagemaker/model/ListMonitoringSchedulesResult.h>
@@ -179,6 +198,7 @@
 #include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigResult.h>
 #include <aws/sagemaker/model/UpdatePipelineResult.h>
 #include <aws/sagemaker/model/UpdatePipelineExecutionResult.h>
+#include <aws/sagemaker/model/UpdateTrainingJobResult.h>
 #include <aws/sagemaker/model/UpdateTrialResult.h>
 #include <aws/sagemaker/model/UpdateTrialComponentResult.h>
 #include <aws/sagemaker/model/UpdateUserProfileResult.h>
@@ -236,7 +256,10 @@ namespace Model
         class CreateCodeRepositoryRequest;
         class CreateCompilationJobRequest;
         class CreateContextRequest;
+        class CreateDataQualityJobDefinitionRequest;
+        class CreateDeviceFleetRequest;
         class CreateDomainRequest;
+        class CreateEdgePackagingJobRequest;
         class CreateEndpointRequest;
         class CreateEndpointConfigRequest;
         class CreateExperimentRequest;
@@ -248,8 +271,11 @@ namespace Model
         class CreateImageVersionRequest;
         class CreateLabelingJobRequest;
         class CreateModelRequest;
+        class CreateModelBiasJobDefinitionRequest;
+        class CreateModelExplainabilityJobDefinitionRequest;
         class CreateModelPackageRequest;
         class CreateModelPackageGroupRequest;
+        class CreateModelQualityJobDefinitionRequest;
         class CreateMonitoringScheduleRequest;
         class CreateNotebookInstanceRequest;
         class CreateNotebookInstanceLifecycleConfigRequest;
@@ -273,6 +299,8 @@ namespace Model
         class DeleteAssociationRequest;
         class DeleteCodeRepositoryRequest;
         class DeleteContextRequest;
+        class DeleteDataQualityJobDefinitionRequest;
+        class DeleteDeviceFleetRequest;
         class DeleteDomainRequest;
         class DeleteEndpointRequest;
         class DeleteEndpointConfigRequest;
@@ -283,9 +311,12 @@ namespace Model
         class DeleteImageRequest;
         class DeleteImageVersionRequest;
         class DeleteModelRequest;
+        class DeleteModelBiasJobDefinitionRequest;
+        class DeleteModelExplainabilityJobDefinitionRequest;
         class DeleteModelPackageRequest;
         class DeleteModelPackageGroupRequest;
         class DeleteModelPackageGroupPolicyRequest;
+        class DeleteModelQualityJobDefinitionRequest;
         class DeleteMonitoringScheduleRequest;
         class DeleteNotebookInstanceRequest;
         class DeleteNotebookInstanceLifecycleConfigRequest;
@@ -297,6 +328,7 @@ namespace Model
         class DeleteUserProfileRequest;
         class DeleteWorkforceRequest;
         class DeleteWorkteamRequest;
+        class DeregisterDevicesRequest;
         class DescribeActionRequest;
         class DescribeAlgorithmRequest;
         class DescribeAppRequest;
@@ -306,7 +338,11 @@ namespace Model
         class DescribeCodeRepositoryRequest;
         class DescribeCompilationJobRequest;
         class DescribeContextRequest;
+        class DescribeDataQualityJobDefinitionRequest;
+        class DescribeDeviceRequest;
+        class DescribeDeviceFleetRequest;
         class DescribeDomainRequest;
+        class DescribeEdgePackagingJobRequest;
         class DescribeEndpointRequest;
         class DescribeEndpointConfigRequest;
         class DescribeExperimentRequest;
@@ -318,8 +354,11 @@ namespace Model
         class DescribeImageVersionRequest;
         class DescribeLabelingJobRequest;
         class DescribeModelRequest;
+        class DescribeModelBiasJobDefinitionRequest;
+        class DescribeModelExplainabilityJobDefinitionRequest;
         class DescribeModelPackageRequest;
         class DescribeModelPackageGroupRequest;
+        class DescribeModelQualityJobDefinitionRequest;
         class DescribeMonitoringScheduleRequest;
         class DescribeNotebookInstanceRequest;
         class DescribeNotebookInstanceLifecycleConfigRequest;
@@ -339,6 +378,7 @@ namespace Model
         class DisableSagemakerServicecatalogPortfolioRequest;
         class DisassociateTrialComponentRequest;
         class EnableSagemakerServicecatalogPortfolioRequest;
+        class GetDeviceFleetReportRequest;
         class GetModelPackageGroupPolicyRequest;
         class GetSagemakerServicecatalogPortfolioStatusRequest;
         class GetSearchSuggestionsRequest;
@@ -353,7 +393,11 @@ namespace Model
         class ListCodeRepositoriesRequest;
         class ListCompilationJobsRequest;
         class ListContextsRequest;
+        class ListDataQualityJobDefinitionsRequest;
+        class ListDeviceFleetsRequest;
+        class ListDevicesRequest;
         class ListDomainsRequest;
+        class ListEdgePackagingJobsRequest;
         class ListEndpointConfigsRequest;
         class ListEndpointsRequest;
         class ListExperimentsRequest;
@@ -365,8 +409,11 @@ namespace Model
         class ListImagesRequest;
         class ListLabelingJobsRequest;
         class ListLabelingJobsForWorkteamRequest;
+        class ListModelBiasJobDefinitionsRequest;
+        class ListModelExplainabilityJobDefinitionsRequest;
         class ListModelPackageGroupsRequest;
         class ListModelPackagesRequest;
+        class ListModelQualityJobDefinitionsRequest;
         class ListModelsRequest;
         class ListMonitoringExecutionsRequest;
         class ListMonitoringSchedulesRequest;
@@ -389,6 +436,7 @@ namespace Model
         class ListWorkforcesRequest;
         class ListWorkteamsRequest;
         class PutModelPackageGroupPolicyRequest;
+        class RegisterDevicesRequest;
         class RenderUiTemplateRequest;
         class SearchRequest;
         class StartMonitoringScheduleRequest;
@@ -396,6 +444,7 @@ namespace Model
         class StartPipelineExecutionRequest;
         class StopAutoMLJobRequest;
         class StopCompilationJobRequest;
+        class StopEdgePackagingJobRequest;
         class StopHyperParameterTuningJobRequest;
         class StopLabelingJobRequest;
         class StopMonitoringScheduleRequest;
@@ -409,6 +458,8 @@ namespace Model
         class UpdateArtifactRequest;
         class UpdateCodeRepositoryRequest;
         class UpdateContextRequest;
+        class UpdateDeviceFleetRequest;
+        class UpdateDevicesRequest;
         class UpdateDomainRequest;
         class UpdateEndpointRequest;
         class UpdateEndpointWeightsAndCapacitiesRequest;
@@ -420,6 +471,7 @@ namespace Model
         class UpdateNotebookInstanceLifecycleConfigRequest;
         class UpdatePipelineRequest;
         class UpdatePipelineExecutionRequest;
+        class UpdateTrainingJobRequest;
         class UpdateTrialRequest;
         class UpdateTrialComponentRequest;
         class UpdateUserProfileRequest;
@@ -438,7 +490,10 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateCodeRepositoryResult, SageMakerError> CreateCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<CreateCompilationJobResult, SageMakerError> CreateCompilationJobOutcome;
         typedef Aws::Utils::Outcome<CreateContextResult, SageMakerError> CreateContextOutcome;
+        typedef Aws::Utils::Outcome<CreateDataQualityJobDefinitionResult, SageMakerError> CreateDataQualityJobDefinitionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> CreateDeviceFleetOutcome;
         typedef Aws::Utils::Outcome<CreateDomainResult, SageMakerError> CreateDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> CreateEdgePackagingJobOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointResult, SageMakerError> CreateEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointConfigResult, SageMakerError> CreateEndpointConfigOutcome;
         typedef Aws::Utils::Outcome<CreateExperimentResult, SageMakerError> CreateExperimentOutcome;
@@ -450,8 +505,11 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateImageVersionResult, SageMakerError> CreateImageVersionOutcome;
         typedef Aws::Utils::Outcome<CreateLabelingJobResult, SageMakerError> CreateLabelingJobOutcome;
         typedef Aws::Utils::Outcome<CreateModelResult, SageMakerError> CreateModelOutcome;
+        typedef Aws::Utils::Outcome<CreateModelBiasJobDefinitionResult, SageMakerError> CreateModelBiasJobDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateModelExplainabilityJobDefinitionResult, SageMakerError> CreateModelExplainabilityJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<CreateModelPackageResult, SageMakerError> CreateModelPackageOutcome;
         typedef Aws::Utils::Outcome<CreateModelPackageGroupResult, SageMakerError> CreateModelPackageGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateModelQualityJobDefinitionResult, SageMakerError> CreateModelQualityJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<CreateMonitoringScheduleResult, SageMakerError> CreateMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<CreateNotebookInstanceResult, SageMakerError> CreateNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateNotebookInstanceLifecycleConfigResult, SageMakerError> CreateNotebookInstanceLifecycleConfigOutcome;
@@ -475,6 +533,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteAssociationResult, SageMakerError> DeleteAssociationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<DeleteContextResult, SageMakerError> DeleteContextOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteDataQualityJobDefinitionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteDeviceFleetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteDomainOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteEndpointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteEndpointConfigOutcome;
@@ -485,9 +545,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteImageResult, SageMakerError> DeleteImageOutcome;
         typedef Aws::Utils::Outcome<DeleteImageVersionResult, SageMakerError> DeleteImageVersionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelBiasJobDefinitionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelExplainabilityJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelPackageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelPackageGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelPackageGroupPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelQualityJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteNotebookInstanceLifecycleConfigOutcome;
@@ -499,6 +562,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteUserProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteWorkforceResult, SageMakerError> DeleteWorkforceOutcome;
         typedef Aws::Utils::Outcome<DeleteWorkteamResult, SageMakerError> DeleteWorkteamOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeregisterDevicesOutcome;
         typedef Aws::Utils::Outcome<DescribeActionResult, SageMakerError> DescribeActionOutcome;
         typedef Aws::Utils::Outcome<DescribeAlgorithmResult, SageMakerError> DescribeAlgorithmOutcome;
         typedef Aws::Utils::Outcome<DescribeAppResult, SageMakerError> DescribeAppOutcome;
@@ -508,7 +572,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeCodeRepositoryResult, SageMakerError> DescribeCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<DescribeCompilationJobResult, SageMakerError> DescribeCompilationJobOutcome;
         typedef Aws::Utils::Outcome<DescribeContextResult, SageMakerError> DescribeContextOutcome;
+        typedef Aws::Utils::Outcome<DescribeDataQualityJobDefinitionResult, SageMakerError> DescribeDataQualityJobDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeviceResult, SageMakerError> DescribeDeviceOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeviceFleetResult, SageMakerError> DescribeDeviceFleetOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainResult, SageMakerError> DescribeDomainOutcome;
+        typedef Aws::Utils::Outcome<DescribeEdgePackagingJobResult, SageMakerError> DescribeEdgePackagingJobOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointResult, SageMakerError> DescribeEndpointOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointConfigResult, SageMakerError> DescribeEndpointConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeExperimentResult, SageMakerError> DescribeExperimentOutcome;
@@ -520,8 +588,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeImageVersionResult, SageMakerError> DescribeImageVersionOutcome;
         typedef Aws::Utils::Outcome<DescribeLabelingJobResult, SageMakerError> DescribeLabelingJobOutcome;
         typedef Aws::Utils::Outcome<DescribeModelResult, SageMakerError> DescribeModelOutcome;
+        typedef Aws::Utils::Outcome<DescribeModelBiasJobDefinitionResult, SageMakerError> DescribeModelBiasJobDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DescribeModelExplainabilityJobDefinitionResult, SageMakerError> DescribeModelExplainabilityJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<DescribeModelPackageResult, SageMakerError> DescribeModelPackageOutcome;
         typedef Aws::Utils::Outcome<DescribeModelPackageGroupResult, SageMakerError> DescribeModelPackageGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeModelQualityJobDefinitionResult, SageMakerError> DescribeModelQualityJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<DescribeMonitoringScheduleResult, SageMakerError> DescribeMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<DescribeNotebookInstanceResult, SageMakerError> DescribeNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<DescribeNotebookInstanceLifecycleConfigResult, SageMakerError> DescribeNotebookInstanceLifecycleConfigOutcome;
@@ -541,6 +612,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisableSagemakerServicecatalogPortfolioResult, SageMakerError> DisableSagemakerServicecatalogPortfolioOutcome;
         typedef Aws::Utils::Outcome<DisassociateTrialComponentResult, SageMakerError> DisassociateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<EnableSagemakerServicecatalogPortfolioResult, SageMakerError> EnableSagemakerServicecatalogPortfolioOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceFleetReportResult, SageMakerError> GetDeviceFleetReportOutcome;
         typedef Aws::Utils::Outcome<GetModelPackageGroupPolicyResult, SageMakerError> GetModelPackageGroupPolicyOutcome;
         typedef Aws::Utils::Outcome<GetSagemakerServicecatalogPortfolioStatusResult, SageMakerError> GetSagemakerServicecatalogPortfolioStatusOutcome;
         typedef Aws::Utils::Outcome<GetSearchSuggestionsResult, SageMakerError> GetSearchSuggestionsOutcome;
@@ -555,7 +627,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListCodeRepositoriesResult, SageMakerError> ListCodeRepositoriesOutcome;
         typedef Aws::Utils::Outcome<ListCompilationJobsResult, SageMakerError> ListCompilationJobsOutcome;
         typedef Aws::Utils::Outcome<ListContextsResult, SageMakerError> ListContextsOutcome;
+        typedef Aws::Utils::Outcome<ListDataQualityJobDefinitionsResult, SageMakerError> ListDataQualityJobDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListDeviceFleetsResult, SageMakerError> ListDeviceFleetsOutcome;
+        typedef Aws::Utils::Outcome<ListDevicesResult, SageMakerError> ListDevicesOutcome;
         typedef Aws::Utils::Outcome<ListDomainsResult, SageMakerError> ListDomainsOutcome;
+        typedef Aws::Utils::Outcome<ListEdgePackagingJobsResult, SageMakerError> ListEdgePackagingJobsOutcome;
         typedef Aws::Utils::Outcome<ListEndpointConfigsResult, SageMakerError> ListEndpointConfigsOutcome;
         typedef Aws::Utils::Outcome<ListEndpointsResult, SageMakerError> ListEndpointsOutcome;
         typedef Aws::Utils::Outcome<ListExperimentsResult, SageMakerError> ListExperimentsOutcome;
@@ -567,8 +643,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListImagesResult, SageMakerError> ListImagesOutcome;
         typedef Aws::Utils::Outcome<ListLabelingJobsResult, SageMakerError> ListLabelingJobsOutcome;
         typedef Aws::Utils::Outcome<ListLabelingJobsForWorkteamResult, SageMakerError> ListLabelingJobsForWorkteamOutcome;
+        typedef Aws::Utils::Outcome<ListModelBiasJobDefinitionsResult, SageMakerError> ListModelBiasJobDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListModelExplainabilityJobDefinitionsResult, SageMakerError> ListModelExplainabilityJobDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListModelPackageGroupsResult, SageMakerError> ListModelPackageGroupsOutcome;
         typedef Aws::Utils::Outcome<ListModelPackagesResult, SageMakerError> ListModelPackagesOutcome;
+        typedef Aws::Utils::Outcome<ListModelQualityJobDefinitionsResult, SageMakerError> ListModelQualityJobDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListModelsResult, SageMakerError> ListModelsOutcome;
         typedef Aws::Utils::Outcome<ListMonitoringExecutionsResult, SageMakerError> ListMonitoringExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListMonitoringSchedulesResult, SageMakerError> ListMonitoringSchedulesOutcome;
@@ -591,6 +670,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListWorkforcesResult, SageMakerError> ListWorkforcesOutcome;
         typedef Aws::Utils::Outcome<ListWorkteamsResult, SageMakerError> ListWorkteamsOutcome;
         typedef Aws::Utils::Outcome<PutModelPackageGroupPolicyResult, SageMakerError> PutModelPackageGroupPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> RegisterDevicesOutcome;
         typedef Aws::Utils::Outcome<RenderUiTemplateResult, SageMakerError> RenderUiTemplateOutcome;
         typedef Aws::Utils::Outcome<SearchResult, SageMakerError> SearchOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartMonitoringScheduleOutcome;
@@ -598,6 +678,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartPipelineExecutionResult, SageMakerError> StartPipelineExecutionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopAutoMLJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopCompilationJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopEdgePackagingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopHyperParameterTuningJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopLabelingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopMonitoringScheduleOutcome;
@@ -611,6 +692,8 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateArtifactResult, SageMakerError> UpdateArtifactOutcome;
         typedef Aws::Utils::Outcome<UpdateCodeRepositoryResult, SageMakerError> UpdateCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<UpdateContextResult, SageMakerError> UpdateContextOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> UpdateDeviceFleetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> UpdateDevicesOutcome;
         typedef Aws::Utils::Outcome<UpdateDomainResult, SageMakerError> UpdateDomainOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointResult, SageMakerError> UpdateEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointWeightsAndCapacitiesResult, SageMakerError> UpdateEndpointWeightsAndCapacitiesOutcome;
@@ -622,6 +705,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateNotebookInstanceLifecycleConfigResult, SageMakerError> UpdateNotebookInstanceLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<UpdatePipelineResult, SageMakerError> UpdatePipelineOutcome;
         typedef Aws::Utils::Outcome<UpdatePipelineExecutionResult, SageMakerError> UpdatePipelineExecutionOutcome;
+        typedef Aws::Utils::Outcome<UpdateTrainingJobResult, SageMakerError> UpdateTrainingJobOutcome;
         typedef Aws::Utils::Outcome<UpdateTrialResult, SageMakerError> UpdateTrialOutcome;
         typedef Aws::Utils::Outcome<UpdateTrialComponentResult, SageMakerError> UpdateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<UpdateUserProfileResult, SageMakerError> UpdateUserProfileOutcome;
@@ -640,7 +724,10 @@ namespace Model
         typedef std::future<CreateCodeRepositoryOutcome> CreateCodeRepositoryOutcomeCallable;
         typedef std::future<CreateCompilationJobOutcome> CreateCompilationJobOutcomeCallable;
         typedef std::future<CreateContextOutcome> CreateContextOutcomeCallable;
+        typedef std::future<CreateDataQualityJobDefinitionOutcome> CreateDataQualityJobDefinitionOutcomeCallable;
+        typedef std::future<CreateDeviceFleetOutcome> CreateDeviceFleetOutcomeCallable;
         typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
+        typedef std::future<CreateEdgePackagingJobOutcome> CreateEdgePackagingJobOutcomeCallable;
         typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
         typedef std::future<CreateEndpointConfigOutcome> CreateEndpointConfigOutcomeCallable;
         typedef std::future<CreateExperimentOutcome> CreateExperimentOutcomeCallable;
@@ -652,8 +739,11 @@ namespace Model
         typedef std::future<CreateImageVersionOutcome> CreateImageVersionOutcomeCallable;
         typedef std::future<CreateLabelingJobOutcome> CreateLabelingJobOutcomeCallable;
         typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
+        typedef std::future<CreateModelBiasJobDefinitionOutcome> CreateModelBiasJobDefinitionOutcomeCallable;
+        typedef std::future<CreateModelExplainabilityJobDefinitionOutcome> CreateModelExplainabilityJobDefinitionOutcomeCallable;
         typedef std::future<CreateModelPackageOutcome> CreateModelPackageOutcomeCallable;
         typedef std::future<CreateModelPackageGroupOutcome> CreateModelPackageGroupOutcomeCallable;
+        typedef std::future<CreateModelQualityJobDefinitionOutcome> CreateModelQualityJobDefinitionOutcomeCallable;
         typedef std::future<CreateMonitoringScheduleOutcome> CreateMonitoringScheduleOutcomeCallable;
         typedef std::future<CreateNotebookInstanceOutcome> CreateNotebookInstanceOutcomeCallable;
         typedef std::future<CreateNotebookInstanceLifecycleConfigOutcome> CreateNotebookInstanceLifecycleConfigOutcomeCallable;
@@ -677,6 +767,8 @@ namespace Model
         typedef std::future<DeleteAssociationOutcome> DeleteAssociationOutcomeCallable;
         typedef std::future<DeleteCodeRepositoryOutcome> DeleteCodeRepositoryOutcomeCallable;
         typedef std::future<DeleteContextOutcome> DeleteContextOutcomeCallable;
+        typedef std::future<DeleteDataQualityJobDefinitionOutcome> DeleteDataQualityJobDefinitionOutcomeCallable;
+        typedef std::future<DeleteDeviceFleetOutcome> DeleteDeviceFleetOutcomeCallable;
         typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
         typedef std::future<DeleteEndpointConfigOutcome> DeleteEndpointConfigOutcomeCallable;
@@ -687,9 +779,12 @@ namespace Model
         typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
         typedef std::future<DeleteImageVersionOutcome> DeleteImageVersionOutcomeCallable;
         typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
+        typedef std::future<DeleteModelBiasJobDefinitionOutcome> DeleteModelBiasJobDefinitionOutcomeCallable;
+        typedef std::future<DeleteModelExplainabilityJobDefinitionOutcome> DeleteModelExplainabilityJobDefinitionOutcomeCallable;
         typedef std::future<DeleteModelPackageOutcome> DeleteModelPackageOutcomeCallable;
         typedef std::future<DeleteModelPackageGroupOutcome> DeleteModelPackageGroupOutcomeCallable;
         typedef std::future<DeleteModelPackageGroupPolicyOutcome> DeleteModelPackageGroupPolicyOutcomeCallable;
+        typedef std::future<DeleteModelQualityJobDefinitionOutcome> DeleteModelQualityJobDefinitionOutcomeCallable;
         typedef std::future<DeleteMonitoringScheduleOutcome> DeleteMonitoringScheduleOutcomeCallable;
         typedef std::future<DeleteNotebookInstanceOutcome> DeleteNotebookInstanceOutcomeCallable;
         typedef std::future<DeleteNotebookInstanceLifecycleConfigOutcome> DeleteNotebookInstanceLifecycleConfigOutcomeCallable;
@@ -701,6 +796,7 @@ namespace Model
         typedef std::future<DeleteUserProfileOutcome> DeleteUserProfileOutcomeCallable;
         typedef std::future<DeleteWorkforceOutcome> DeleteWorkforceOutcomeCallable;
         typedef std::future<DeleteWorkteamOutcome> DeleteWorkteamOutcomeCallable;
+        typedef std::future<DeregisterDevicesOutcome> DeregisterDevicesOutcomeCallable;
         typedef std::future<DescribeActionOutcome> DescribeActionOutcomeCallable;
         typedef std::future<DescribeAlgorithmOutcome> DescribeAlgorithmOutcomeCallable;
         typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
@@ -710,7 +806,11 @@ namespace Model
         typedef std::future<DescribeCodeRepositoryOutcome> DescribeCodeRepositoryOutcomeCallable;
         typedef std::future<DescribeCompilationJobOutcome> DescribeCompilationJobOutcomeCallable;
         typedef std::future<DescribeContextOutcome> DescribeContextOutcomeCallable;
+        typedef std::future<DescribeDataQualityJobDefinitionOutcome> DescribeDataQualityJobDefinitionOutcomeCallable;
+        typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
+        typedef std::future<DescribeDeviceFleetOutcome> DescribeDeviceFleetOutcomeCallable;
         typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
+        typedef std::future<DescribeEdgePackagingJobOutcome> DescribeEdgePackagingJobOutcomeCallable;
         typedef std::future<DescribeEndpointOutcome> DescribeEndpointOutcomeCallable;
         typedef std::future<DescribeEndpointConfigOutcome> DescribeEndpointConfigOutcomeCallable;
         typedef std::future<DescribeExperimentOutcome> DescribeExperimentOutcomeCallable;
@@ -722,8 +822,11 @@ namespace Model
         typedef std::future<DescribeImageVersionOutcome> DescribeImageVersionOutcomeCallable;
         typedef std::future<DescribeLabelingJobOutcome> DescribeLabelingJobOutcomeCallable;
         typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
+        typedef std::future<DescribeModelBiasJobDefinitionOutcome> DescribeModelBiasJobDefinitionOutcomeCallable;
+        typedef std::future<DescribeModelExplainabilityJobDefinitionOutcome> DescribeModelExplainabilityJobDefinitionOutcomeCallable;
         typedef std::future<DescribeModelPackageOutcome> DescribeModelPackageOutcomeCallable;
         typedef std::future<DescribeModelPackageGroupOutcome> DescribeModelPackageGroupOutcomeCallable;
+        typedef std::future<DescribeModelQualityJobDefinitionOutcome> DescribeModelQualityJobDefinitionOutcomeCallable;
         typedef std::future<DescribeMonitoringScheduleOutcome> DescribeMonitoringScheduleOutcomeCallable;
         typedef std::future<DescribeNotebookInstanceOutcome> DescribeNotebookInstanceOutcomeCallable;
         typedef std::future<DescribeNotebookInstanceLifecycleConfigOutcome> DescribeNotebookInstanceLifecycleConfigOutcomeCallable;
@@ -743,6 +846,7 @@ namespace Model
         typedef std::future<DisableSagemakerServicecatalogPortfolioOutcome> DisableSagemakerServicecatalogPortfolioOutcomeCallable;
         typedef std::future<DisassociateTrialComponentOutcome> DisassociateTrialComponentOutcomeCallable;
         typedef std::future<EnableSagemakerServicecatalogPortfolioOutcome> EnableSagemakerServicecatalogPortfolioOutcomeCallable;
+        typedef std::future<GetDeviceFleetReportOutcome> GetDeviceFleetReportOutcomeCallable;
         typedef std::future<GetModelPackageGroupPolicyOutcome> GetModelPackageGroupPolicyOutcomeCallable;
         typedef std::future<GetSagemakerServicecatalogPortfolioStatusOutcome> GetSagemakerServicecatalogPortfolioStatusOutcomeCallable;
         typedef std::future<GetSearchSuggestionsOutcome> GetSearchSuggestionsOutcomeCallable;
@@ -757,7 +861,11 @@ namespace Model
         typedef std::future<ListCodeRepositoriesOutcome> ListCodeRepositoriesOutcomeCallable;
         typedef std::future<ListCompilationJobsOutcome> ListCompilationJobsOutcomeCallable;
         typedef std::future<ListContextsOutcome> ListContextsOutcomeCallable;
+        typedef std::future<ListDataQualityJobDefinitionsOutcome> ListDataQualityJobDefinitionsOutcomeCallable;
+        typedef std::future<ListDeviceFleetsOutcome> ListDeviceFleetsOutcomeCallable;
+        typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
         typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
+        typedef std::future<ListEdgePackagingJobsOutcome> ListEdgePackagingJobsOutcomeCallable;
         typedef std::future<ListEndpointConfigsOutcome> ListEndpointConfigsOutcomeCallable;
         typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
         typedef std::future<ListExperimentsOutcome> ListExperimentsOutcomeCallable;
@@ -769,8 +877,11 @@ namespace Model
         typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
         typedef std::future<ListLabelingJobsOutcome> ListLabelingJobsOutcomeCallable;
         typedef std::future<ListLabelingJobsForWorkteamOutcome> ListLabelingJobsForWorkteamOutcomeCallable;
+        typedef std::future<ListModelBiasJobDefinitionsOutcome> ListModelBiasJobDefinitionsOutcomeCallable;
+        typedef std::future<ListModelExplainabilityJobDefinitionsOutcome> ListModelExplainabilityJobDefinitionsOutcomeCallable;
         typedef std::future<ListModelPackageGroupsOutcome> ListModelPackageGroupsOutcomeCallable;
         typedef std::future<ListModelPackagesOutcome> ListModelPackagesOutcomeCallable;
+        typedef std::future<ListModelQualityJobDefinitionsOutcome> ListModelQualityJobDefinitionsOutcomeCallable;
         typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
         typedef std::future<ListMonitoringExecutionsOutcome> ListMonitoringExecutionsOutcomeCallable;
         typedef std::future<ListMonitoringSchedulesOutcome> ListMonitoringSchedulesOutcomeCallable;
@@ -793,6 +904,7 @@ namespace Model
         typedef std::future<ListWorkforcesOutcome> ListWorkforcesOutcomeCallable;
         typedef std::future<ListWorkteamsOutcome> ListWorkteamsOutcomeCallable;
         typedef std::future<PutModelPackageGroupPolicyOutcome> PutModelPackageGroupPolicyOutcomeCallable;
+        typedef std::future<RegisterDevicesOutcome> RegisterDevicesOutcomeCallable;
         typedef std::future<RenderUiTemplateOutcome> RenderUiTemplateOutcomeCallable;
         typedef std::future<SearchOutcome> SearchOutcomeCallable;
         typedef std::future<StartMonitoringScheduleOutcome> StartMonitoringScheduleOutcomeCallable;
@@ -800,6 +912,7 @@ namespace Model
         typedef std::future<StartPipelineExecutionOutcome> StartPipelineExecutionOutcomeCallable;
         typedef std::future<StopAutoMLJobOutcome> StopAutoMLJobOutcomeCallable;
         typedef std::future<StopCompilationJobOutcome> StopCompilationJobOutcomeCallable;
+        typedef std::future<StopEdgePackagingJobOutcome> StopEdgePackagingJobOutcomeCallable;
         typedef std::future<StopHyperParameterTuningJobOutcome> StopHyperParameterTuningJobOutcomeCallable;
         typedef std::future<StopLabelingJobOutcome> StopLabelingJobOutcomeCallable;
         typedef std::future<StopMonitoringScheduleOutcome> StopMonitoringScheduleOutcomeCallable;
@@ -813,6 +926,8 @@ namespace Model
         typedef std::future<UpdateArtifactOutcome> UpdateArtifactOutcomeCallable;
         typedef std::future<UpdateCodeRepositoryOutcome> UpdateCodeRepositoryOutcomeCallable;
         typedef std::future<UpdateContextOutcome> UpdateContextOutcomeCallable;
+        typedef std::future<UpdateDeviceFleetOutcome> UpdateDeviceFleetOutcomeCallable;
+        typedef std::future<UpdateDevicesOutcome> UpdateDevicesOutcomeCallable;
         typedef std::future<UpdateDomainOutcome> UpdateDomainOutcomeCallable;
         typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
         typedef std::future<UpdateEndpointWeightsAndCapacitiesOutcome> UpdateEndpointWeightsAndCapacitiesOutcomeCallable;
@@ -824,6 +939,7 @@ namespace Model
         typedef std::future<UpdateNotebookInstanceLifecycleConfigOutcome> UpdateNotebookInstanceLifecycleConfigOutcomeCallable;
         typedef std::future<UpdatePipelineOutcome> UpdatePipelineOutcomeCallable;
         typedef std::future<UpdatePipelineExecutionOutcome> UpdatePipelineExecutionOutcomeCallable;
+        typedef std::future<UpdateTrainingJobOutcome> UpdateTrainingJobOutcomeCallable;
         typedef std::future<UpdateTrialOutcome> UpdateTrialOutcomeCallable;
         typedef std::future<UpdateTrialComponentOutcome> UpdateTrialComponentOutcomeCallable;
         typedef std::future<UpdateUserProfileOutcome> UpdateUserProfileOutcomeCallable;
@@ -845,7 +961,10 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::CreateCodeRepositoryRequest&, const Model::CreateCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateCompilationJobRequest&, const Model::CreateCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCompilationJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateContextRequest&, const Model::CreateContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContextResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateDataQualityJobDefinitionRequest&, const Model::CreateDataQualityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataQualityJobDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateDeviceFleetRequest&, const Model::CreateDeviceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeviceFleetResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateEdgePackagingJobRequest&, const Model::CreateEdgePackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEdgePackagingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateEndpointConfigRequest&, const Model::CreateEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateExperimentRequest&, const Model::CreateExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExperimentResponseReceivedHandler;
@@ -857,8 +976,11 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::CreateImageVersionRequest&, const Model::CreateImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateLabelingJobRequest&, const Model::CreateLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateModelBiasJobDefinitionRequest&, const Model::CreateModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelBiasJobDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateModelExplainabilityJobDefinitionRequest&, const Model::CreateModelExplainabilityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelExplainabilityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelPackageRequest&, const Model::CreateModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelPackageGroupRequest&, const Model::CreateModelPackageGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelPackageGroupResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateModelQualityJobDefinitionRequest&, const Model::CreateModelQualityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelQualityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateMonitoringScheduleRequest&, const Model::CreateMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateNotebookInstanceRequest&, const Model::CreateNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateNotebookInstanceLifecycleConfigRequest&, const Model::CreateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNotebookInstanceLifecycleConfigResponseReceivedHandler;
@@ -882,6 +1004,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DeleteAssociationRequest&, const Model::DeleteAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssociationResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteCodeRepositoryRequest&, const Model::DeleteCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteContextRequest&, const Model::DeleteContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContextResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteDataQualityJobDefinitionRequest&, const Model::DeleteDataQualityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataQualityJobDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteDeviceFleetRequest&, const Model::DeleteDeviceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceFleetResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointConfigRequest&, const Model::DeleteEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointConfigResponseReceivedHandler;
@@ -892,9 +1016,12 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DeleteImageRequest&, const Model::DeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteImageVersionRequest&, const Model::DeleteImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteModelBiasJobDefinitionRequest&, const Model::DeleteModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelBiasJobDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteModelExplainabilityJobDefinitionRequest&, const Model::DeleteModelExplainabilityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelExplainabilityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelPackageRequest&, const Model::DeleteModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelPackageGroupRequest&, const Model::DeleteModelPackageGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelPackageGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelPackageGroupPolicyRequest&, const Model::DeleteModelPackageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelPackageGroupPolicyResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteModelQualityJobDefinitionRequest&, const Model::DeleteModelQualityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelQualityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteMonitoringScheduleRequest&, const Model::DeleteMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteNotebookInstanceRequest&, const Model::DeleteNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteNotebookInstanceLifecycleConfigRequest&, const Model::DeleteNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler;
@@ -906,6 +1033,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DeleteUserProfileRequest&, const Model::DeleteUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserProfileResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteWorkforceRequest&, const Model::DeleteWorkforceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkforceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteWorkteamRequest&, const Model::DeleteWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkteamResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeregisterDevicesRequest&, const Model::DeregisterDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeActionRequest&, const Model::DescribeActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAlgorithmRequest&, const Model::DescribeAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlgorithmResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAppRequest&, const Model::DescribeAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppResponseReceivedHandler;
@@ -915,7 +1043,11 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DescribeCodeRepositoryRequest&, const Model::DescribeCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeCompilationJobRequest&, const Model::DescribeCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCompilationJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeContextRequest&, const Model::DescribeContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContextResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeDataQualityJobDefinitionRequest&, const Model::DescribeDataQualityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataQualityJobDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeDeviceRequest&, const Model::DescribeDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeviceResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeDeviceFleetRequest&, const Model::DescribeDeviceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeviceFleetResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeEdgePackagingJobRequest&, const Model::DescribeEdgePackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEdgePackagingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEndpointRequest&, const Model::DescribeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEndpointConfigRequest&, const Model::DescribeEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeExperimentRequest&, const Model::DescribeExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExperimentResponseReceivedHandler;
@@ -927,8 +1059,11 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DescribeImageVersionRequest&, const Model::DescribeImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeLabelingJobRequest&, const Model::DescribeLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeModelBiasJobDefinitionRequest&, const Model::DescribeModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelBiasJobDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeModelExplainabilityJobDefinitionRequest&, const Model::DescribeModelExplainabilityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelExplainabilityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelPackageRequest&, const Model::DescribeModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelPackageGroupRequest&, const Model::DescribeModelPackageGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelPackageGroupResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeModelQualityJobDefinitionRequest&, const Model::DescribeModelQualityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelQualityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeMonitoringScheduleRequest&, const Model::DescribeMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeNotebookInstanceRequest&, const Model::DescribeNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeNotebookInstanceLifecycleConfigRequest&, const Model::DescribeNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler;
@@ -948,6 +1083,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DisableSagemakerServicecatalogPortfolioRequest&, const Model::DisableSagemakerServicecatalogPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSagemakerServicecatalogPortfolioResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DisassociateTrialComponentRequest&, const Model::DisassociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::EnableSagemakerServicecatalogPortfolioRequest&, const Model::EnableSagemakerServicecatalogPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSagemakerServicecatalogPortfolioResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::GetDeviceFleetReportRequest&, const Model::GetDeviceFleetReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceFleetReportResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetModelPackageGroupPolicyRequest&, const Model::GetModelPackageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelPackageGroupPolicyResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSagemakerServicecatalogPortfolioStatusRequest&, const Model::GetSagemakerServicecatalogPortfolioStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSearchSuggestionsRequest&, const Model::GetSearchSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSearchSuggestionsResponseReceivedHandler;
@@ -962,7 +1098,11 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListCodeRepositoriesRequest&, const Model::ListCodeRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCodeRepositoriesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListCompilationJobsRequest&, const Model::ListCompilationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCompilationJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListContextsRequest&, const Model::ListContextsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContextsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListDataQualityJobDefinitionsRequest&, const Model::ListDataQualityJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataQualityJobDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListDeviceFleetsRequest&, const Model::ListDeviceFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeviceFleetsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListEdgePackagingJobsRequest&, const Model::ListEdgePackagingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEdgePackagingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListEndpointConfigsRequest&, const Model::ListEndpointConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListEndpointsRequest&, const Model::ListEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListExperimentsRequest&, const Model::ListExperimentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperimentsResponseReceivedHandler;
@@ -974,8 +1114,11 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsRequest&, const Model::ListLabelingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsForWorkteamRequest&, const Model::ListLabelingJobsForWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsForWorkteamResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListModelBiasJobDefinitionsRequest&, const Model::ListModelBiasJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelBiasJobDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListModelExplainabilityJobDefinitionsRequest&, const Model::ListModelExplainabilityJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelExplainabilityJobDefinitionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelPackageGroupsRequest&, const Model::ListModelPackageGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelPackageGroupsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelPackagesRequest&, const Model::ListModelPackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelPackagesResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListModelQualityJobDefinitionsRequest&, const Model::ListModelQualityJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelQualityJobDefinitionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelsRequest&, const Model::ListModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListMonitoringExecutionsRequest&, const Model::ListMonitoringExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitoringExecutionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListMonitoringSchedulesRequest&, const Model::ListMonitoringSchedulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitoringSchedulesResponseReceivedHandler;
@@ -998,6 +1141,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListWorkforcesRequest&, const Model::ListWorkforcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkforcesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListWorkteamsRequest&, const Model::ListWorkteamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkteamsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::PutModelPackageGroupPolicyRequest&, const Model::PutModelPackageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutModelPackageGroupPolicyResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::RegisterDevicesRequest&, const Model::RegisterDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::RenderUiTemplateRequest&, const Model::RenderUiTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenderUiTemplateResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SearchRequest&, const Model::SearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartMonitoringScheduleRequest&, const Model::StartMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringScheduleResponseReceivedHandler;
@@ -1005,6 +1149,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::StartPipelineExecutionRequest&, const Model::StartPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopAutoMLJobRequest&, const Model::StopAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopCompilationJobRequest&, const Model::StopCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCompilationJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StopEdgePackagingJobRequest&, const Model::StopEdgePackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEdgePackagingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopHyperParameterTuningJobRequest&, const Model::StopHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopLabelingJobRequest&, const Model::StopLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopMonitoringScheduleRequest&, const Model::StopMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMonitoringScheduleResponseReceivedHandler;
@@ -1018,6 +1163,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::UpdateArtifactRequest&, const Model::UpdateArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArtifactResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateCodeRepositoryRequest&, const Model::UpdateCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateContextRequest&, const Model::UpdateContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContextResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateDeviceFleetRequest&, const Model::UpdateDeviceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceFleetResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateDevicesRequest&, const Model::UpdateDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateDomainRequest&, const Model::UpdateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointWeightsAndCapacitiesRequest&, const Model::UpdateEndpointWeightsAndCapacitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler;
@@ -1029,6 +1176,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceLifecycleConfigRequest&, const Model::UpdateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdatePipelineExecutionRequest&, const Model::UpdatePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineExecutionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateTrainingJobRequest&, const Model::UpdateTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialRequest&, const Model::UpdateTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialComponentRequest&, const Model::UpdateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateUserProfileRequest&, const Model::UpdateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserProfileResponseReceivedHandler;
@@ -1599,6 +1747,65 @@ namespace Model
         virtual void CreateContextAsync(const Model::CreateContextRequest& request, const CreateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a definition for a job that monitors data quality and drift. For
+         * information about model monitor, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
+         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataQualityJobDefinitionOutcome CreateDataQualityJobDefinition(const Model::CreateDataQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates a definition for a job that monitors data quality and drift. For
+         * information about model monitor, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
+         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDataQualityJobDefinitionOutcomeCallable CreateDataQualityJobDefinitionCallable(const Model::CreateDataQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates a definition for a job that monitors data quality and drift. For
+         * information about model monitor, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
+         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDataQualityJobDefinitionAsync(const Model::CreateDataQualityJobDefinitionRequest& request, const CreateDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a device fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDeviceFleetOutcome CreateDeviceFleet(const Model::CreateDeviceFleetRequest& request) const;
+
+        /**
+         * <p>Creates a device fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDeviceFleetOutcomeCallable CreateDeviceFleetCallable(const Model::CreateDeviceFleetRequest& request) const;
+
+        /**
+         * <p>Creates a device fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDeviceFleetAsync(const Model::CreateDeviceFleetRequest& request, const CreateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain
          * consists of an associated Amazon Elastic File System (EFS) volume, a list of
          * authorized users, and a variety of security, application, policy, and Amazon
@@ -1712,6 +1919,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts a SageMaker Edge Manager model packaging job. Edge Manager will use
+         * the model artifacts from the Amazon Simple Storage Service bucket that you
+         * specify. After the model has been packaged, Amazon SageMaker saves the resulting
+         * artifacts to an S3 bucket that you specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEdgePackagingJobOutcome CreateEdgePackagingJob(const Model::CreateEdgePackagingJobRequest& request) const;
+
+        /**
+         * <p>Starts a SageMaker Edge Manager model packaging job. Edge Manager will use
+         * the model artifacts from the Amazon Simple Storage Service bucket that you
+         * specify. After the model has been packaged, Amazon SageMaker saves the resulting
+         * artifacts to an S3 bucket that you specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEdgePackagingJobOutcomeCallable CreateEdgePackagingJobCallable(const Model::CreateEdgePackagingJobRequest& request) const;
+
+        /**
+         * <p>Starts a SageMaker Edge Manager model packaging job. Edge Manager will use
+         * the model artifacts from the Amazon Simple Storage Service bucket that you
+         * specify. After the model has been packaged, Amazon SageMaker saves the resulting
+         * artifacts to an S3 bucket that you specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEdgePackagingJobAsync(const Model::CreateEdgePackagingJobRequest& request, const CreateEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an endpoint using the endpoint configuration specified in the
@@ -2511,6 +2752,59 @@ namespace Model
         virtual void CreateModelAsync(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates the definition for a model bias job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateModelBiasJobDefinitionOutcome CreateModelBiasJobDefinition(const Model::CreateModelBiasJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates the definition for a model bias job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateModelBiasJobDefinitionOutcomeCallable CreateModelBiasJobDefinitionCallable(const Model::CreateModelBiasJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates the definition for a model bias job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateModelBiasJobDefinitionAsync(const Model::CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates the definition for a model explainability job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateModelExplainabilityJobDefinitionOutcome CreateModelExplainabilityJobDefinition(const Model::CreateModelExplainabilityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates the definition for a model explainability job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateModelExplainabilityJobDefinitionOutcomeCallable CreateModelExplainabilityJobDefinitionCallable(const Model::CreateModelExplainabilityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates the definition for a model explainability job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateModelExplainabilityJobDefinitionAsync(const Model::CreateModelExplainabilityJobDefinitionRequest& request, const CreateModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a model package that you can use to create Amazon SageMaker models or
          * list on AWS Marketplace, or a versioned model that is part of a model group.
          * Buyers can subscribe to model packages listed on AWS Marketplace to create
@@ -2598,6 +2892,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateModelPackageGroupAsync(const Model::CreateModelPackageGroupRequest& request, const CreateModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a definition for a job that monitors model quality and drift. For
+         * information about model monitor, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
+         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateModelQualityJobDefinitionOutcome CreateModelQualityJobDefinition(const Model::CreateModelQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates a definition for a job that monitors model quality and drift. For
+         * information about model monitor, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
+         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateModelQualityJobDefinitionOutcomeCallable CreateModelQualityJobDefinitionCallable(const Model::CreateModelQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates a definition for a job that monitors model quality and drift. For
+         * information about model monitor, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
+         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateModelQualityJobDefinitionAsync(const Model::CreateModelQualityJobDefinitionRequest& request, const CreateModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to
@@ -3697,6 +4025,59 @@ namespace Model
         virtual void DeleteContextAsync(const Model::DeleteContextRequest& request, const DeleteContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a data quality monitoring job definition.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataQualityJobDefinitionOutcome DeleteDataQualityJobDefinition(const Model::DeleteDataQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes a data quality monitoring job definition.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDataQualityJobDefinitionOutcomeCallable DeleteDataQualityJobDefinitionCallable(const Model::DeleteDataQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes a data quality monitoring job definition.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDataQualityJobDefinitionAsync(const Model::DeleteDataQualityJobDefinitionRequest& request, const DeleteDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDeviceFleetOutcome DeleteDeviceFleet(const Model::DeleteDeviceFleetRequest& request) const;
+
+        /**
+         * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDeviceFleetOutcomeCallable DeleteDeviceFleetCallable(const Model::DeleteDeviceFleetRequest& request) const;
+
+        /**
+         * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDeviceFleetAsync(const Model::DeleteDeviceFleetRequest& request, const DeleteDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Used to delete a domain. If you onboarded with IAM mode, you will need to
          * delete your domain to onboard again using SSO. Use with caution. All of the
          * members of the domain will lose access to their EFS volume, including data,
@@ -4049,6 +4430,62 @@ namespace Model
         virtual void DeleteModelAsync(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an Amazon SageMaker model bias job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteModelBiasJobDefinitionOutcome DeleteModelBiasJobDefinition(const Model::DeleteModelBiasJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon SageMaker model bias job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteModelBiasJobDefinitionOutcomeCallable DeleteModelBiasJobDefinitionCallable(const Model::DeleteModelBiasJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon SageMaker model bias job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteModelBiasJobDefinitionAsync(const Model::DeleteModelBiasJobDefinitionRequest& request, const DeleteModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an Amazon SageMaker model explainability job
+         * definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteModelExplainabilityJobDefinitionOutcome DeleteModelExplainabilityJobDefinition(const Model::DeleteModelExplainabilityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon SageMaker model explainability job
+         * definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteModelExplainabilityJobDefinitionOutcomeCallable DeleteModelExplainabilityJobDefinitionCallable(const Model::DeleteModelExplainabilityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon SageMaker model explainability job
+         * definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteModelExplainabilityJobDefinitionAsync(const Model::DeleteModelExplainabilityJobDefinitionRequest& request, const DeleteModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a model package.</p> <p>A model package is used to create Amazon
          * SageMaker models or list on AWS Marketplace. Buyers can subscribe to model
          * packages listed on AWS Marketplace to create models in Amazon
@@ -4131,6 +4568,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteModelPackageGroupPolicyAsync(const Model::DeleteModelPackageGroupPolicyRequest& request, const DeleteModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the secified model quality monitoring job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteModelQualityJobDefinitionOutcome DeleteModelQualityJobDefinition(const Model::DeleteModelQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes the secified model quality monitoring job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteModelQualityJobDefinitionOutcomeCallable DeleteModelQualityJobDefinitionCallable(const Model::DeleteModelQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes the secified model quality monitoring job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteModelQualityJobDefinitionAsync(const Model::DeleteModelQualityJobDefinitionRequest& request, const DeleteModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a monitoring schedule. Also stops the schedule had not already been
@@ -4232,14 +4697,16 @@ namespace Model
         virtual void DeleteNotebookInstanceLifecycleConfigAsync(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a pipeline if there are no in-progress executions.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
         /**
-         * <p>Deletes a pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a pipeline if there are no in-progress executions.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">AWS
          * API Reference</a></p>
          *
@@ -4248,7 +4715,8 @@ namespace Model
         virtual Model::DeletePipelineOutcomeCallable DeletePipelineCallable(const Model::DeletePipelineRequest& request) const;
 
         /**
-         * <p>Deletes a pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a pipeline if there are no in-progress executions.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">AWS
          * API Reference</a></p>
          *
@@ -4487,6 +4955,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteWorkteamAsync(const Model::DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deregisters the specified devices. After you deregister a device, you will
+         * need to re-register the devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeregisterDevices">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterDevicesOutcome DeregisterDevices(const Model::DeregisterDevicesRequest& request) const;
+
+        /**
+         * <p>Deregisters the specified devices. After you deregister a device, you will
+         * need to re-register the devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeregisterDevices">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterDevicesOutcomeCallable DeregisterDevicesCallable(const Model::DeregisterDevicesRequest& request) const;
+
+        /**
+         * <p>Deregisters the specified devices. After you deregister a device, you will
+         * need to re-register the devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeregisterDevices">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterDevicesAsync(const Model::DeregisterDevicesRequest& request, const DeregisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an action.</p><p><h3>See Also:</h3>   <a
@@ -4732,6 +5228,87 @@ namespace Model
         virtual void DescribeContextAsync(const Model::DescribeContextRequest& request, const DescribeContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the details of a data quality monitoring job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataQualityJobDefinitionOutcome DescribeDataQualityJobDefinition(const Model::DescribeDataQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Gets the details of a data quality monitoring job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDataQualityJobDefinitionOutcomeCallable DescribeDataQualityJobDefinitionCallable(const Model::DescribeDataQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Gets the details of a data quality monitoring job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDataQualityJobDefinitionAsync(const Model::DescribeDataQualityJobDefinitionRequest& request, const DescribeDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest& request) const;
+
+        /**
+         * <p>Describes the device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request) const;
+
+        /**
+         * <p>Describes the device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A description of the fleet the device belongs to.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDeviceFleetOutcome DescribeDeviceFleet(const Model::DescribeDeviceFleetRequest& request) const;
+
+        /**
+         * <p>A description of the fleet the device belongs to.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDeviceFleetOutcomeCallable DescribeDeviceFleetCallable(const Model::DescribeDeviceFleetRequest& request) const;
+
+        /**
+         * <p>A description of the fleet the device belongs to.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDeviceFleetAsync(const Model::DescribeDeviceFleetRequest& request, const DescribeDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The description of the domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">AWS
          * API Reference</a></p>
@@ -4755,6 +5332,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A description of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEdgePackagingJobOutcome DescribeEdgePackagingJob(const Model::DescribeEdgePackagingJobRequest& request) const;
+
+        /**
+         * <p>A description of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEdgePackagingJobOutcomeCallable DescribeEdgePackagingJobCallable(const Model::DescribeEdgePackagingJobRequest& request) const;
+
+        /**
+         * <p>A description of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEdgePackagingJobAsync(const Model::DescribeEdgePackagingJobRequest& request, const DescribeEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of an endpoint.</p><p><h3>See Also:</h3>   <a
@@ -5056,6 +5658,62 @@ namespace Model
         virtual void DescribeModelAsync(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a description of a model bias job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeModelBiasJobDefinitionOutcome DescribeModelBiasJobDefinition(const Model::DescribeModelBiasJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Returns a description of a model bias job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeModelBiasJobDefinitionOutcomeCallable DescribeModelBiasJobDefinitionCallable(const Model::DescribeModelBiasJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Returns a description of a model bias job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeModelBiasJobDefinitionAsync(const Model::DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a description of a model explainability job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeModelExplainabilityJobDefinitionOutcome DescribeModelExplainabilityJobDefinition(const Model::DescribeModelExplainabilityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Returns a description of a model explainability job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeModelExplainabilityJobDefinitionOutcomeCallable DescribeModelExplainabilityJobDefinitionCallable(const Model::DescribeModelExplainabilityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Returns a description of a model explainability job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeModelExplainabilityJobDefinitionAsync(const Model::DescribeModelExplainabilityJobDefinitionRequest& request, const DescribeModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a description of the specified model package, which is used to create
          * Amazon SageMaker models or list them on AWS Marketplace.</p> <p>To create models
          * in Amazon SageMaker, buyers can subscribe to model packages listed on AWS
@@ -5116,6 +5774,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeModelPackageGroupAsync(const Model::DescribeModelPackageGroupRequest& request, const DescribeModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a description of a model quality job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeModelQualityJobDefinitionOutcome DescribeModelQualityJobDefinition(const Model::DescribeModelQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Returns a description of a model quality job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeModelQualityJobDefinitionOutcomeCallable DescribeModelQualityJobDefinitionCallable(const Model::DescribeModelQualityJobDefinitionRequest& request) const;
+
+        /**
+         * <p>Returns a description of a model quality job definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeModelQualityJobDefinitionAsync(const Model::DescribeModelQualityJobDefinitionRequest& request, const DescribeModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the schedule for a monitoring job.</p><p><h3>See Also:</h3>   <a
@@ -5668,6 +6354,31 @@ namespace Model
         virtual void EnableSagemakerServicecatalogPortfolioAsync(const Model::EnableSagemakerServicecatalogPortfolioRequest& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetDeviceFleetReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeviceFleetReportOutcome GetDeviceFleetReport(const Model::GetDeviceFleetReportRequest& request) const;
+
+        /**
+         * <p>Describes a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetDeviceFleetReport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDeviceFleetReportOutcomeCallable GetDeviceFleetReportCallable(const Model::GetDeviceFleetReportRequest& request) const;
+
+        /**
+         * <p>Describes a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetDeviceFleetReport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDeviceFleetReportAsync(const Model::GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a resource policy that manages access for a model group. For information
          * about resource policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
@@ -6078,6 +6789,84 @@ namespace Model
         virtual void ListContextsAsync(const Model::ListContextsRequest& request, const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the data quality job definitions in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDataQualityJobDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataQualityJobDefinitionsOutcome ListDataQualityJobDefinitions(const Model::ListDataQualityJobDefinitionsRequest& request) const;
+
+        /**
+         * <p>Lists the data quality job definitions in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDataQualityJobDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDataQualityJobDefinitionsOutcomeCallable ListDataQualityJobDefinitionsCallable(const Model::ListDataQualityJobDefinitionsRequest& request) const;
+
+        /**
+         * <p>Lists the data quality job definitions in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDataQualityJobDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDataQualityJobDefinitionsAsync(const Model::ListDataQualityJobDefinitionsRequest& request, const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of devices in the fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDeviceFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDeviceFleetsOutcome ListDeviceFleets(const Model::ListDeviceFleetsRequest& request) const;
+
+        /**
+         * <p>Returns a list of devices in the fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDeviceFleets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDeviceFleetsOutcomeCallable ListDeviceFleetsCallable(const Model::ListDeviceFleetsRequest& request) const;
+
+        /**
+         * <p>Returns a list of devices in the fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDeviceFleets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDeviceFleetsAsync(const Model::ListDeviceFleetsRequest& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A list of devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDevices">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
+
+        /**
+         * <p>A list of devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDevices">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request) const;
+
+        /**
+         * <p>A list of devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDevices">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDomains">AWS
          * API Reference</a></p>
@@ -6101,6 +6890,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEdgePackagingJobsOutcome ListEdgePackagingJobs(const Model::ListEdgePackagingJobsRequest& request) const;
+
+        /**
+         * <p>Returns a list of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEdgePackagingJobsOutcomeCallable ListEdgePackagingJobsCallable(const Model::ListEdgePackagingJobsRequest& request) const;
+
+        /**
+         * <p>Returns a list of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEdgePackagingJobsAsync(const Model::ListEdgePackagingJobsRequest& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists endpoint configurations.</p><p><h3>See Also:</h3>   <a
@@ -6411,6 +7225,62 @@ namespace Model
         virtual void ListLabelingJobsForWorkteamAsync(const Model::ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists model bias jobs definitions that satisfy various filters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelBiasJobDefinitionsOutcome ListModelBiasJobDefinitions(const Model::ListModelBiasJobDefinitionsRequest& request) const;
+
+        /**
+         * <p>Lists model bias jobs definitions that satisfy various filters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListModelBiasJobDefinitionsOutcomeCallable ListModelBiasJobDefinitionsCallable(const Model::ListModelBiasJobDefinitionsRequest& request) const;
+
+        /**
+         * <p>Lists model bias jobs definitions that satisfy various filters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListModelBiasJobDefinitionsAsync(const Model::ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists model explainability job definitions that satisfy various
+         * filters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelExplainabilityJobDefinitionsOutcome ListModelExplainabilityJobDefinitions(const Model::ListModelExplainabilityJobDefinitionsRequest& request) const;
+
+        /**
+         * <p>Lists model explainability job definitions that satisfy various
+         * filters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListModelExplainabilityJobDefinitionsOutcomeCallable ListModelExplainabilityJobDefinitionsCallable(const Model::ListModelExplainabilityJobDefinitionsRequest& request) const;
+
+        /**
+         * <p>Lists model explainability job definitions that satisfy various
+         * filters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListModelExplainabilityJobDefinitionsAsync(const Model::ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of the model groups in your AWS account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackageGroups">AWS
@@ -6465,6 +7335,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListModelPackagesAsync(const Model::ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of model quality monitoring job definitions in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelQualityJobDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelQualityJobDefinitionsOutcome ListModelQualityJobDefinitions(const Model::ListModelQualityJobDefinitionsRequest& request) const;
+
+        /**
+         * <p>Gets a list of model quality monitoring job definitions in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelQualityJobDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListModelQualityJobDefinitionsOutcomeCallable ListModelQualityJobDefinitionsCallable(const Model::ListModelQualityJobDefinitionsRequest& request) const;
+
+        /**
+         * <p>Gets a list of model quality monitoring job definitions in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelQualityJobDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListModelQualityJobDefinitionsAsync(const Model::ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists models created with the <a>CreateModel</a> API.</p><p><h3>See
@@ -7104,6 +8002,31 @@ namespace Model
         virtual void PutModelPackageGroupPolicyAsync(const Model::PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Register devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterDevicesOutcome RegisterDevices(const Model::RegisterDevicesRequest& request) const;
+
+        /**
+         * <p>Register devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterDevicesOutcomeCallable RegisterDevicesCallable(const Model::RegisterDevicesRequest& request) const;
+
+        /**
+         * <p>Register devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterDevicesAsync(const Model::RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Renders the UI template so that you can preview the worker's experience.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderUiTemplate">AWS
@@ -7169,18 +8092,18 @@ namespace Model
         virtual void SearchAsync(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a previously stopped monitoring schedule.</p>  <p>New monitoring
-         * schedules are immediately started after creation.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts a previously stopped monitoring schedule.</p>  <p>By default,
+         * when you successfully create a new schedule, the status of a monitoring schedule
+         * is <code>scheduled</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">AWS
          * API Reference</a></p>
          */
         virtual Model::StartMonitoringScheduleOutcome StartMonitoringSchedule(const Model::StartMonitoringScheduleRequest& request) const;
 
         /**
-         * <p>Starts a previously stopped monitoring schedule.</p>  <p>New monitoring
-         * schedules are immediately started after creation.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts a previously stopped monitoring schedule.</p>  <p>By default,
+         * when you successfully create a new schedule, the status of a monitoring schedule
+         * is <code>scheduled</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">AWS
          * API Reference</a></p>
          *
@@ -7189,9 +8112,9 @@ namespace Model
         virtual Model::StartMonitoringScheduleOutcomeCallable StartMonitoringScheduleCallable(const Model::StartMonitoringScheduleRequest& request) const;
 
         /**
-         * <p>Starts a previously stopped monitoring schedule.</p>  <p>New monitoring
-         * schedules are immediately started after creation.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts a previously stopped monitoring schedule.</p>  <p>By default,
+         * when you successfully create a new schedule, the status of a monitoring schedule
+         * is <code>scheduled</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">AWS
          * API Reference</a></p>
          *
@@ -7334,6 +8257,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopCompilationJobAsync(const Model::StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Request to stop an edge packaging job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgePackagingJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopEdgePackagingJobOutcome StopEdgePackagingJob(const Model::StopEdgePackagingJobRequest& request) const;
+
+        /**
+         * <p>Request to stop an edge packaging job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgePackagingJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopEdgePackagingJobOutcomeCallable StopEdgePackagingJobCallable(const Model::StopEdgePackagingJobRequest& request) const;
+
+        /**
+         * <p>Request to stop an edge packaging job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgePackagingJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopEdgePackagingJobAsync(const Model::StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a running hyperparameter tuning job and all running training jobs that
@@ -7739,6 +8687,56 @@ namespace Model
         virtual void UpdateContextAsync(const Model::UpdateContextRequest& request, const UpdateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a fleet of devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDeviceFleetOutcome UpdateDeviceFleet(const Model::UpdateDeviceFleetRequest& request) const;
+
+        /**
+         * <p>Updates a fleet of devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDeviceFleetOutcomeCallable UpdateDeviceFleetCallable(const Model::UpdateDeviceFleetRequest& request) const;
+
+        /**
+         * <p>Updates a fleet of devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDeviceFleetAsync(const Model::UpdateDeviceFleetRequest& request, const UpdateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates one or more devices in a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDevices">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDevicesOutcome UpdateDevices(const Model::UpdateDevicesRequest& request) const;
+
+        /**
+         * <p>Updates one or more devices in a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDevices">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDevicesOutcomeCallable UpdateDevicesCallable(const Model::UpdateDevicesRequest& request) const;
+
+        /**
+         * <p>Updates one or more devices in a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDevices">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDevicesAsync(const Model::UpdateDevicesRequest& request, const UpdateDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the default settings for new user profiles in the
          * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain">AWS
@@ -8089,6 +9087,34 @@ namespace Model
         virtual void UpdatePipelineExecutionAsync(const Model::UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update a model training job to request a new Debugger profiling
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTrainingJobOutcome UpdateTrainingJob(const Model::UpdateTrainingJobRequest& request) const;
+
+        /**
+         * <p>Update a model training job to request a new Debugger profiling
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTrainingJobOutcomeCallable UpdateTrainingJobCallable(const Model::UpdateTrainingJobRequest& request) const;
+
+        /**
+         * <p>Update a model training job to request a new Debugger profiling
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTrainingJobAsync(const Model::UpdateTrainingJobRequest& request, const UpdateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the display name of a trial.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrial">AWS
          * API Reference</a></p>
@@ -8289,7 +9315,10 @@ namespace Model
         void CreateCodeRepositoryAsyncHelper(const Model::CreateCodeRepositoryRequest& request, const CreateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCompilationJobAsyncHelper(const Model::CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateContextAsyncHelper(const Model::CreateContextRequest& request, const CreateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDataQualityJobDefinitionAsyncHelper(const Model::CreateDataQualityJobDefinitionRequest& request, const CreateDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDeviceFleetAsyncHelper(const Model::CreateDeviceFleetRequest& request, const CreateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateEdgePackagingJobAsyncHelper(const Model::CreateEdgePackagingJobRequest& request, const CreateEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEndpointAsyncHelper(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEndpointConfigAsyncHelper(const Model::CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateExperimentAsyncHelper(const Model::CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8301,8 +9330,11 @@ namespace Model
         void CreateImageVersionAsyncHelper(const Model::CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLabelingJobAsyncHelper(const Model::CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateModelBiasJobDefinitionAsyncHelper(const Model::CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateModelExplainabilityJobDefinitionAsyncHelper(const Model::CreateModelExplainabilityJobDefinitionRequest& request, const CreateModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelPackageAsyncHelper(const Model::CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelPackageGroupAsyncHelper(const Model::CreateModelPackageGroupRequest& request, const CreateModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateModelQualityJobDefinitionAsyncHelper(const Model::CreateModelQualityJobDefinitionRequest& request, const CreateModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMonitoringScheduleAsyncHelper(const Model::CreateMonitoringScheduleRequest& request, const CreateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNotebookInstanceAsyncHelper(const Model::CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNotebookInstanceLifecycleConfigAsyncHelper(const Model::CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8326,6 +9358,8 @@ namespace Model
         void DeleteAssociationAsyncHelper(const Model::DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCodeRepositoryAsyncHelper(const Model::DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteContextAsyncHelper(const Model::DeleteContextRequest& request, const DeleteContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDataQualityJobDefinitionAsyncHelper(const Model::DeleteDataQualityJobDefinitionRequest& request, const DeleteDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDeviceFleetAsyncHelper(const Model::DeleteDeviceFleetRequest& request, const DeleteDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointConfigAsyncHelper(const Model::DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8336,9 +9370,12 @@ namespace Model
         void DeleteImageAsyncHelper(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteImageVersionAsyncHelper(const Model::DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteModelBiasJobDefinitionAsyncHelper(const Model::DeleteModelBiasJobDefinitionRequest& request, const DeleteModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteModelExplainabilityJobDefinitionAsyncHelper(const Model::DeleteModelExplainabilityJobDefinitionRequest& request, const DeleteModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelPackageAsyncHelper(const Model::DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelPackageGroupAsyncHelper(const Model::DeleteModelPackageGroupRequest& request, const DeleteModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelPackageGroupPolicyAsyncHelper(const Model::DeleteModelPackageGroupPolicyRequest& request, const DeleteModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteModelQualityJobDefinitionAsyncHelper(const Model::DeleteModelQualityJobDefinitionRequest& request, const DeleteModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMonitoringScheduleAsyncHelper(const Model::DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNotebookInstanceAsyncHelper(const Model::DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNotebookInstanceLifecycleConfigAsyncHelper(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8350,6 +9387,7 @@ namespace Model
         void DeleteUserProfileAsyncHelper(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWorkforceAsyncHelper(const Model::DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWorkteamAsyncHelper(const Model::DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeregisterDevicesAsyncHelper(const Model::DeregisterDevicesRequest& request, const DeregisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeActionAsyncHelper(const Model::DescribeActionRequest& request, const DescribeActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlgorithmAsyncHelper(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAppAsyncHelper(const Model::DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8359,7 +9397,11 @@ namespace Model
         void DescribeCodeRepositoryAsyncHelper(const Model::DescribeCodeRepositoryRequest& request, const DescribeCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCompilationJobAsyncHelper(const Model::DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContextAsyncHelper(const Model::DescribeContextRequest& request, const DescribeContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDataQualityJobDefinitionAsyncHelper(const Model::DescribeDataQualityJobDefinitionRequest& request, const DescribeDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDeviceAsyncHelper(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDeviceFleetAsyncHelper(const Model::DescribeDeviceFleetRequest& request, const DescribeDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEdgePackagingJobAsyncHelper(const Model::DescribeEdgePackagingJobRequest& request, const DescribeEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointAsyncHelper(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointConfigAsyncHelper(const Model::DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExperimentAsyncHelper(const Model::DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8371,8 +9413,11 @@ namespace Model
         void DescribeImageVersionAsyncHelper(const Model::DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLabelingJobAsyncHelper(const Model::DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelAsyncHelper(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeModelBiasJobDefinitionAsyncHelper(const Model::DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeModelExplainabilityJobDefinitionAsyncHelper(const Model::DescribeModelExplainabilityJobDefinitionRequest& request, const DescribeModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelPackageAsyncHelper(const Model::DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelPackageGroupAsyncHelper(const Model::DescribeModelPackageGroupRequest& request, const DescribeModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeModelQualityJobDefinitionAsyncHelper(const Model::DescribeModelQualityJobDefinitionRequest& request, const DescribeModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMonitoringScheduleAsyncHelper(const Model::DescribeMonitoringScheduleRequest& request, const DescribeMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNotebookInstanceAsyncHelper(const Model::DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNotebookInstanceLifecycleConfigAsyncHelper(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8392,6 +9437,7 @@ namespace Model
         void DisableSagemakerServicecatalogPortfolioAsyncHelper(const Model::DisableSagemakerServicecatalogPortfolioRequest& request, const DisableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateTrialComponentAsyncHelper(const Model::DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableSagemakerServicecatalogPortfolioAsyncHelper(const Model::EnableSagemakerServicecatalogPortfolioRequest& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDeviceFleetReportAsyncHelper(const Model::GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetModelPackageGroupPolicyAsyncHelper(const Model::GetModelPackageGroupPolicyRequest& request, const GetModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSagemakerServicecatalogPortfolioStatusAsyncHelper(const Model::GetSagemakerServicecatalogPortfolioStatusRequest& request, const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSearchSuggestionsAsyncHelper(const Model::GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8406,7 +9452,11 @@ namespace Model
         void ListCodeRepositoriesAsyncHelper(const Model::ListCodeRepositoriesRequest& request, const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCompilationJobsAsyncHelper(const Model::ListCompilationJobsRequest& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContextsAsyncHelper(const Model::ListContextsRequest& request, const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDataQualityJobDefinitionsAsyncHelper(const Model::ListDataQualityJobDefinitionsRequest& request, const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDeviceFleetsAsyncHelper(const Model::ListDeviceFleetsRequest& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListEdgePackagingJobsAsyncHelper(const Model::ListEdgePackagingJobsRequest& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointConfigsAsyncHelper(const Model::ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointsAsyncHelper(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListExperimentsAsyncHelper(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8418,8 +9468,11 @@ namespace Model
         void ListImagesAsyncHelper(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLabelingJobsAsyncHelper(const Model::ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLabelingJobsForWorkteamAsyncHelper(const Model::ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListModelBiasJobDefinitionsAsyncHelper(const Model::ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListModelExplainabilityJobDefinitionsAsyncHelper(const Model::ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelPackageGroupsAsyncHelper(const Model::ListModelPackageGroupsRequest& request, const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelPackagesAsyncHelper(const Model::ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListModelQualityJobDefinitionsAsyncHelper(const Model::ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelsAsyncHelper(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMonitoringExecutionsAsyncHelper(const Model::ListMonitoringExecutionsRequest& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMonitoringSchedulesAsyncHelper(const Model::ListMonitoringSchedulesRequest& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8442,6 +9495,7 @@ namespace Model
         void ListWorkforcesAsyncHelper(const Model::ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWorkteamsAsyncHelper(const Model::ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutModelPackageGroupPolicyAsyncHelper(const Model::PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterDevicesAsyncHelper(const Model::RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenderUiTemplateAsyncHelper(const Model::RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAsyncHelper(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMonitoringScheduleAsyncHelper(const Model::StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8449,6 +9503,7 @@ namespace Model
         void StartPipelineExecutionAsyncHelper(const Model::StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopAutoMLJobAsyncHelper(const Model::StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopCompilationJobAsyncHelper(const Model::StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopEdgePackagingJobAsyncHelper(const Model::StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopHyperParameterTuningJobAsyncHelper(const Model::StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopLabelingJobAsyncHelper(const Model::StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopMonitoringScheduleAsyncHelper(const Model::StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8462,6 +9517,8 @@ namespace Model
         void UpdateArtifactAsyncHelper(const Model::UpdateArtifactRequest& request, const UpdateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCodeRepositoryAsyncHelper(const Model::UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContextAsyncHelper(const Model::UpdateContextRequest& request, const UpdateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDeviceFleetAsyncHelper(const Model::UpdateDeviceFleetRequest& request, const UpdateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDevicesAsyncHelper(const Model::UpdateDevicesRequest& request, const UpdateDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainAsyncHelper(const Model::UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointAsyncHelper(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointWeightsAndCapacitiesAsyncHelper(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8473,6 +9530,7 @@ namespace Model
         void UpdateNotebookInstanceLifecycleConfigAsyncHelper(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePipelineAsyncHelper(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePipelineExecutionAsyncHelper(const Model::UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTrainingJobAsyncHelper(const Model::UpdateTrainingJobRequest& request, const UpdateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTrialAsyncHelper(const Model::UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTrialComponentAsyncHelper(const Model::UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserProfileAsyncHelper(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

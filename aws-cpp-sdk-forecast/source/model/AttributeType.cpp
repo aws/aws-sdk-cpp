@@ -24,6 +24,7 @@ namespace Aws
         static const int integer_HASH = HashingUtils::HashString("integer");
         static const int float__HASH = HashingUtils::HashString("float");
         static const int timestamp_HASH = HashingUtils::HashString("timestamp");
+        static const int geolocation_HASH = HashingUtils::HashString("geolocation");
 
 
         AttributeType GetAttributeTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == timestamp_HASH)
           {
             return AttributeType::timestamp;
+          }
+          else if (hashCode == geolocation_HASH)
+          {
+            return AttributeType::geolocation;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "float";
           case AttributeType::timestamp:
             return "timestamp";
+          case AttributeType::geolocation:
+            return "geolocation";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

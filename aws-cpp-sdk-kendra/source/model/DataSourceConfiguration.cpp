@@ -25,7 +25,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_salesforceConfigurationHasBeenSet(false),
     m_oneDriveConfigurationHasBeenSet(false),
     m_serviceNowConfigurationHasBeenSet(false),
-    m_confluenceConfigurationHasBeenSet(false)
+    m_confluenceConfigurationHasBeenSet(false),
+    m_googleDriveConfigurationHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_salesforceConfigurationHasBeenSet(false),
     m_oneDriveConfigurationHasBeenSet(false),
     m_serviceNowConfigurationHasBeenSet(false),
-    m_confluenceConfigurationHasBeenSet(false)
+    m_confluenceConfigurationHasBeenSet(false),
+    m_googleDriveConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_confluenceConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GoogleDriveConfiguration"))
+  {
+    m_googleDriveConfiguration = jsonValue.GetObject("GoogleDriveConfiguration");
+
+    m_googleDriveConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_confluenceConfigurationHasBeenSet)
   {
    payload.WithObject("ConfluenceConfiguration", m_confluenceConfiguration.Jsonize());
+
+  }
+
+  if(m_googleDriveConfigurationHasBeenSet)
+  {
+   payload.WithObject("GoogleDriveConfiguration", m_googleDriveConfiguration.Jsonize());
 
   }
 

@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/SortOrder.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ScheduleStatus.h>
+#include <aws/sagemaker/model/MonitoringType.h>
 #include <utility>
 
 namespace Aws
@@ -452,6 +453,92 @@ namespace Model
      */
     inline ListMonitoringSchedulesRequest& WithStatusEquals(ScheduleStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Gets a list of the monitoring schedules for the specified monitoring job
+     * definition.</p>
+     */
+    inline const Aws::String& GetMonitoringJobDefinitionName() const{ return m_monitoringJobDefinitionName; }
+
+    /**
+     * <p>Gets a list of the monitoring schedules for the specified monitoring job
+     * definition.</p>
+     */
+    inline bool MonitoringJobDefinitionNameHasBeenSet() const { return m_monitoringJobDefinitionNameHasBeenSet; }
+
+    /**
+     * <p>Gets a list of the monitoring schedules for the specified monitoring job
+     * definition.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(const Aws::String& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = value; }
+
+    /**
+     * <p>Gets a list of the monitoring schedules for the specified monitoring job
+     * definition.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(Aws::String&& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = std::move(value); }
+
+    /**
+     * <p>Gets a list of the monitoring schedules for the specified monitoring job
+     * definition.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(const char* value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName.assign(value); }
+
+    /**
+     * <p>Gets a list of the monitoring schedules for the specified monitoring job
+     * definition.</p>
+     */
+    inline ListMonitoringSchedulesRequest& WithMonitoringJobDefinitionName(const Aws::String& value) { SetMonitoringJobDefinitionName(value); return *this;}
+
+    /**
+     * <p>Gets a list of the monitoring schedules for the specified monitoring job
+     * definition.</p>
+     */
+    inline ListMonitoringSchedulesRequest& WithMonitoringJobDefinitionName(Aws::String&& value) { SetMonitoringJobDefinitionName(std::move(value)); return *this;}
+
+    /**
+     * <p>Gets a list of the monitoring schedules for the specified monitoring job
+     * definition.</p>
+     */
+    inline ListMonitoringSchedulesRequest& WithMonitoringJobDefinitionName(const char* value) { SetMonitoringJobDefinitionName(value); return *this;}
+
+
+    /**
+     * <p>A filter that returns only the monitoring schedules for the specified
+     * monitoring type.</p>
+     */
+    inline const MonitoringType& GetMonitoringTypeEquals() const{ return m_monitoringTypeEquals; }
+
+    /**
+     * <p>A filter that returns only the monitoring schedules for the specified
+     * monitoring type.</p>
+     */
+    inline bool MonitoringTypeEqualsHasBeenSet() const { return m_monitoringTypeEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only the monitoring schedules for the specified
+     * monitoring type.</p>
+     */
+    inline void SetMonitoringTypeEquals(const MonitoringType& value) { m_monitoringTypeEqualsHasBeenSet = true; m_monitoringTypeEquals = value; }
+
+    /**
+     * <p>A filter that returns only the monitoring schedules for the specified
+     * monitoring type.</p>
+     */
+    inline void SetMonitoringTypeEquals(MonitoringType&& value) { m_monitoringTypeEqualsHasBeenSet = true; m_monitoringTypeEquals = std::move(value); }
+
+    /**
+     * <p>A filter that returns only the monitoring schedules for the specified
+     * monitoring type.</p>
+     */
+    inline ListMonitoringSchedulesRequest& WithMonitoringTypeEquals(const MonitoringType& value) { SetMonitoringTypeEquals(value); return *this;}
+
+    /**
+     * <p>A filter that returns only the monitoring schedules for the specified
+     * monitoring type.</p>
+     */
+    inline ListMonitoringSchedulesRequest& WithMonitoringTypeEquals(MonitoringType&& value) { SetMonitoringTypeEquals(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -486,6 +573,12 @@ namespace Model
 
     ScheduleStatus m_statusEquals;
     bool m_statusEqualsHasBeenSet;
+
+    Aws::String m_monitoringJobDefinitionName;
+    bool m_monitoringJobDefinitionNameHasBeenSet;
+
+    MonitoringType m_monitoringTypeEquals;
+    bool m_monitoringTypeEqualsHasBeenSet;
   };
 
 } // namespace Model

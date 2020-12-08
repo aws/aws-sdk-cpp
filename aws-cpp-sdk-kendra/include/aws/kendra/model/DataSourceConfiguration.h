@@ -12,6 +12,7 @@
 #include <aws/kendra/model/OneDriveConfiguration.h>
 #include <aws/kendra/model/ServiceNowConfiguration.h>
 #include <aws/kendra/model/ConfluenceConfiguration.h>
+#include <aws/kendra/model/GoogleDriveConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -193,37 +194,37 @@ namespace Model
 
 
     /**
-     * <p>Provided configuration for data sources that connect to Microsoft
+     * <p>Provides configuration for data sources that connect to Microsoft
      * OneDrive.</p>
      */
     inline const OneDriveConfiguration& GetOneDriveConfiguration() const{ return m_oneDriveConfiguration; }
 
     /**
-     * <p>Provided configuration for data sources that connect to Microsoft
+     * <p>Provides configuration for data sources that connect to Microsoft
      * OneDrive.</p>
      */
     inline bool OneDriveConfigurationHasBeenSet() const { return m_oneDriveConfigurationHasBeenSet; }
 
     /**
-     * <p>Provided configuration for data sources that connect to Microsoft
+     * <p>Provides configuration for data sources that connect to Microsoft
      * OneDrive.</p>
      */
     inline void SetOneDriveConfiguration(const OneDriveConfiguration& value) { m_oneDriveConfigurationHasBeenSet = true; m_oneDriveConfiguration = value; }
 
     /**
-     * <p>Provided configuration for data sources that connect to Microsoft
+     * <p>Provides configuration for data sources that connect to Microsoft
      * OneDrive.</p>
      */
     inline void SetOneDriveConfiguration(OneDriveConfiguration&& value) { m_oneDriveConfigurationHasBeenSet = true; m_oneDriveConfiguration = std::move(value); }
 
     /**
-     * <p>Provided configuration for data sources that connect to Microsoft
+     * <p>Provides configuration for data sources that connect to Microsoft
      * OneDrive.</p>
      */
     inline DataSourceConfiguration& WithOneDriveConfiguration(const OneDriveConfiguration& value) { SetOneDriveConfiguration(value); return *this;}
 
     /**
-     * <p>Provided configuration for data sources that connect to Microsoft
+     * <p>Provides configuration for data sources that connect to Microsoft
      * OneDrive.</p>
      */
     inline DataSourceConfiguration& WithOneDriveConfiguration(OneDriveConfiguration&& value) { SetOneDriveConfiguration(std::move(value)); return *this;}
@@ -302,6 +303,37 @@ namespace Model
      */
     inline DataSourceConfiguration& WithConfluenceConfiguration(ConfluenceConfiguration&& value) { SetConfluenceConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides configuration for data sources that connect to Google Drive. </p>
+     */
+    inline const GoogleDriveConfiguration& GetGoogleDriveConfiguration() const{ return m_googleDriveConfiguration; }
+
+    /**
+     * <p>Provides configuration for data sources that connect to Google Drive. </p>
+     */
+    inline bool GoogleDriveConfigurationHasBeenSet() const { return m_googleDriveConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides configuration for data sources that connect to Google Drive. </p>
+     */
+    inline void SetGoogleDriveConfiguration(const GoogleDriveConfiguration& value) { m_googleDriveConfigurationHasBeenSet = true; m_googleDriveConfiguration = value; }
+
+    /**
+     * <p>Provides configuration for data sources that connect to Google Drive. </p>
+     */
+    inline void SetGoogleDriveConfiguration(GoogleDriveConfiguration&& value) { m_googleDriveConfigurationHasBeenSet = true; m_googleDriveConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides configuration for data sources that connect to Google Drive. </p>
+     */
+    inline DataSourceConfiguration& WithGoogleDriveConfiguration(const GoogleDriveConfiguration& value) { SetGoogleDriveConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides configuration for data sources that connect to Google Drive. </p>
+     */
+    inline DataSourceConfiguration& WithGoogleDriveConfiguration(GoogleDriveConfiguration&& value) { SetGoogleDriveConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -324,6 +356,9 @@ namespace Model
 
     ConfluenceConfiguration m_confluenceConfiguration;
     bool m_confluenceConfigurationHasBeenSet;
+
+    GoogleDriveConfiguration m_googleDriveConfiguration;
+    bool m_googleDriveConfigurationHasBeenSet;
   };
 
 } // namespace Model

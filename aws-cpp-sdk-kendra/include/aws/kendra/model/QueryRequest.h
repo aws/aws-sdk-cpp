@@ -498,6 +498,71 @@ namespace Model
      */
     inline QueryRequest& WithUserContext(UserContext&& value) { SetUserContext(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline const Aws::String& GetVisitorId() const{ return m_visitorId; }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline bool VisitorIdHasBeenSet() const { return m_visitorIdHasBeenSet; }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline void SetVisitorId(const Aws::String& value) { m_visitorIdHasBeenSet = true; m_visitorId = value; }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline void SetVisitorId(Aws::String&& value) { m_visitorIdHasBeenSet = true; m_visitorId = std::move(value); }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline void SetVisitorId(const char* value) { m_visitorIdHasBeenSet = true; m_visitorId.assign(value); }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline QueryRequest& WithVisitorId(const Aws::String& value) { SetVisitorId(value); return *this;}
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline QueryRequest& WithVisitorId(Aws::String&& value) { SetVisitorId(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline QueryRequest& WithVisitorId(const char* value) { SetVisitorId(value); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -529,6 +594,9 @@ namespace Model
 
     UserContext m_userContext;
     bool m_userContextHasBeenSet;
+
+    Aws::String m_visitorId;
+    bool m_visitorIdHasBeenSet;
   };
 
 } // namespace Model

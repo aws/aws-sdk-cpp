@@ -20,13 +20,19 @@ namespace Model
 
 MonitoringScheduleConfig::MonitoringScheduleConfig() : 
     m_scheduleConfigHasBeenSet(false),
-    m_monitoringJobDefinitionHasBeenSet(false)
+    m_monitoringJobDefinitionHasBeenSet(false),
+    m_monitoringJobDefinitionNameHasBeenSet(false),
+    m_monitoringType(MonitoringType::NOT_SET),
+    m_monitoringTypeHasBeenSet(false)
 {
 }
 
 MonitoringScheduleConfig::MonitoringScheduleConfig(JsonView jsonValue) : 
     m_scheduleConfigHasBeenSet(false),
-    m_monitoringJobDefinitionHasBeenSet(false)
+    m_monitoringJobDefinitionHasBeenSet(false),
+    m_monitoringJobDefinitionNameHasBeenSet(false),
+    m_monitoringType(MonitoringType::NOT_SET),
+    m_monitoringTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +53,20 @@ MonitoringScheduleConfig& MonitoringScheduleConfig::operator =(JsonView jsonValu
     m_monitoringJobDefinitionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MonitoringJobDefinitionName"))
+  {
+    m_monitoringJobDefinitionName = jsonValue.GetString("MonitoringJobDefinitionName");
+
+    m_monitoringJobDefinitionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MonitoringType"))
+  {
+    m_monitoringType = MonitoringTypeMapper::GetMonitoringTypeForName(jsonValue.GetString("MonitoringType"));
+
+    m_monitoringTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +84,17 @@ JsonValue MonitoringScheduleConfig::Jsonize() const
   {
    payload.WithObject("MonitoringJobDefinition", m_monitoringJobDefinition.Jsonize());
 
+  }
+
+  if(m_monitoringJobDefinitionNameHasBeenSet)
+  {
+   payload.WithString("MonitoringJobDefinitionName", m_monitoringJobDefinitionName);
+
+  }
+
+  if(m_monitoringTypeHasBeenSet)
+  {
+   payload.WithString("MonitoringType", MonitoringTypeMapper::GetNameForMonitoringType(m_monitoringType));
   }
 
   return payload;

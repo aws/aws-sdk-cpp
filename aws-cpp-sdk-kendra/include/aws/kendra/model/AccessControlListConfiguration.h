@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Access Control List files for the documents in a data source.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Access Control List files for the documents in a data source. For the format
+   * of the file, see <a
+   * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+   * for S3 data sources</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AccessControlListConfiguration">AWS
    * API Reference</a></p>
    */

@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeMonitoringScheduleResult::DescribeMonitoringScheduleResult() : 
-    m_monitoringScheduleStatus(ScheduleStatus::NOT_SET)
+    m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
+    m_monitoringType(MonitoringType::NOT_SET)
 {
 }
 
 DescribeMonitoringScheduleResult::DescribeMonitoringScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monitoringScheduleStatus(ScheduleStatus::NOT_SET)
+    m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
+    m_monitoringType(MonitoringType::NOT_SET)
 {
   *this = result;
 }
@@ -45,6 +47,12 @@ DescribeMonitoringScheduleResult& DescribeMonitoringScheduleResult::operator =(c
   if(jsonValue.ValueExists("MonitoringScheduleStatus"))
   {
     m_monitoringScheduleStatus = ScheduleStatusMapper::GetScheduleStatusForName(jsonValue.GetString("MonitoringScheduleStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("MonitoringType"))
+  {
+    m_monitoringType = MonitoringTypeMapper::GetMonitoringTypeForName(jsonValue.GetString("MonitoringType"));
 
   }
 

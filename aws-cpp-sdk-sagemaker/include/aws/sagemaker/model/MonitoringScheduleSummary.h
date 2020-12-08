@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ScheduleStatus.h>
+#include <aws/sagemaker/model/MonitoringType.h>
 #include <utility>
 
 namespace Aws
@@ -254,6 +255,78 @@ namespace Model
      */
     inline MonitoringScheduleSummary& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
+
+    /**
+     * <p>The name of the monitoring job definition that the schedule is for.</p>
+     */
+    inline const Aws::String& GetMonitoringJobDefinitionName() const{ return m_monitoringJobDefinitionName; }
+
+    /**
+     * <p>The name of the monitoring job definition that the schedule is for.</p>
+     */
+    inline bool MonitoringJobDefinitionNameHasBeenSet() const { return m_monitoringJobDefinitionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the monitoring job definition that the schedule is for.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(const Aws::String& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = value; }
+
+    /**
+     * <p>The name of the monitoring job definition that the schedule is for.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(Aws::String&& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = std::move(value); }
+
+    /**
+     * <p>The name of the monitoring job definition that the schedule is for.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(const char* value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName.assign(value); }
+
+    /**
+     * <p>The name of the monitoring job definition that the schedule is for.</p>
+     */
+    inline MonitoringScheduleSummary& WithMonitoringJobDefinitionName(const Aws::String& value) { SetMonitoringJobDefinitionName(value); return *this;}
+
+    /**
+     * <p>The name of the monitoring job definition that the schedule is for.</p>
+     */
+    inline MonitoringScheduleSummary& WithMonitoringJobDefinitionName(Aws::String&& value) { SetMonitoringJobDefinitionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the monitoring job definition that the schedule is for.</p>
+     */
+    inline MonitoringScheduleSummary& WithMonitoringJobDefinitionName(const char* value) { SetMonitoringJobDefinitionName(value); return *this;}
+
+
+    /**
+     * <p>The type of the monitoring job definition that the schedule is for.</p>
+     */
+    inline const MonitoringType& GetMonitoringType() const{ return m_monitoringType; }
+
+    /**
+     * <p>The type of the monitoring job definition that the schedule is for.</p>
+     */
+    inline bool MonitoringTypeHasBeenSet() const { return m_monitoringTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the monitoring job definition that the schedule is for.</p>
+     */
+    inline void SetMonitoringType(const MonitoringType& value) { m_monitoringTypeHasBeenSet = true; m_monitoringType = value; }
+
+    /**
+     * <p>The type of the monitoring job definition that the schedule is for.</p>
+     */
+    inline void SetMonitoringType(MonitoringType&& value) { m_monitoringTypeHasBeenSet = true; m_monitoringType = std::move(value); }
+
+    /**
+     * <p>The type of the monitoring job definition that the schedule is for.</p>
+     */
+    inline MonitoringScheduleSummary& WithMonitoringType(const MonitoringType& value) { SetMonitoringType(value); return *this;}
+
+    /**
+     * <p>The type of the monitoring job definition that the schedule is for.</p>
+     */
+    inline MonitoringScheduleSummary& WithMonitoringType(MonitoringType&& value) { SetMonitoringType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_monitoringScheduleName;
@@ -273,6 +346,12 @@ namespace Model
 
     Aws::String m_endpointName;
     bool m_endpointNameHasBeenSet;
+
+    Aws::String m_monitoringJobDefinitionName;
+    bool m_monitoringJobDefinitionNameHasBeenSet;
+
+    MonitoringType m_monitoringType;
+    bool m_monitoringTypeHasBeenSet;
   };
 
 } // namespace Model
