@@ -349,7 +349,7 @@ namespace Aws
 
             const CreateDownloadStreamCallback& GetCreateDownloadStreamFunction() const { return m_createDownloadStreamFn; }
 
-            void WritePartToDownloadStream(Aws::IOStream* partStream, std::size_t writeOffset);
+            void WritePartToDownloadStream(Aws::IOStream* partStream, uint64_t writeOffset);
 
             void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
 

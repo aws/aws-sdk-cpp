@@ -29,7 +29,7 @@ namespace Aws
                  * @param lengthToRead length in bytes to actually use in the buffer (e.g. you have a 1kb buffer, but only want the stream
                  * to see 500 b of it.
                  */
-                PreallocatedStreamBuf(unsigned char* buffer, std::size_t lengthToRead);
+                PreallocatedStreamBuf(unsigned char* buffer, uint64_t lengthToRead);
 
                 PreallocatedStreamBuf(const PreallocatedStreamBuf&) = delete;
                 PreallocatedStreamBuf& operator=(const PreallocatedStreamBuf&) = delete;
@@ -49,7 +49,7 @@ namespace Aws
 
             private:
                 unsigned char* m_underlyingBuffer;
-                const std::size_t m_lengthToRead;
+                const uint64_t m_lengthToRead;
             };
         }
     }

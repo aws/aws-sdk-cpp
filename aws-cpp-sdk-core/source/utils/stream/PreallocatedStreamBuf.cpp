@@ -13,7 +13,7 @@ namespace Aws
     {
         namespace Stream
         {
-            PreallocatedStreamBuf::PreallocatedStreamBuf(unsigned char* buffer, std::size_t lengthToRead) :
+            PreallocatedStreamBuf::PreallocatedStreamBuf(unsigned char* buffer, uint64_t lengthToRead) :
                 m_underlyingBuffer(buffer), m_lengthToRead(lengthToRead)
             {
                 char* end = reinterpret_cast<char*>(m_underlyingBuffer + m_lengthToRead);
