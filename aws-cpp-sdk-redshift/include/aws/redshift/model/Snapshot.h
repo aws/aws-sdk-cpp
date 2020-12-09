@@ -427,6 +427,55 @@ namespace Model
 
 
     /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline const Aws::String& GetEngineFullVersion() const{ return m_engineFullVersion; }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline bool EngineFullVersionHasBeenSet() const { return m_engineFullVersionHasBeenSet; }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline void SetEngineFullVersion(const Aws::String& value) { m_engineFullVersionHasBeenSet = true; m_engineFullVersion = value; }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline void SetEngineFullVersion(Aws::String&& value) { m_engineFullVersionHasBeenSet = true; m_engineFullVersion = std::move(value); }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline void SetEngineFullVersion(const char* value) { m_engineFullVersionHasBeenSet = true; m_engineFullVersion.assign(value); }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline Snapshot& WithEngineFullVersion(const Aws::String& value) { SetEngineFullVersion(value); return *this;}
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline Snapshot& WithEngineFullVersion(Aws::String&& value) { SetEngineFullVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline Snapshot& WithEngineFullVersion(const char* value) { SetEngineFullVersion(value); return *this;}
+
+
+    /**
      * <p>The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and
      * <a>CopyClusterSnapshot</a> are of type "manual". </p>
      */
@@ -1327,6 +1376,9 @@ namespace Model
 
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
+    Aws::String m_engineFullVersion;
+    bool m_engineFullVersionHasBeenSet;
 
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;

@@ -7,6 +7,8 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/model/SpartaProxyVpcEndpoint.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +102,47 @@ namespace Model
      */
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 
+
+    /**
+     * <p>Describes a connection endpoint.</p>
+     */
+    inline const Aws::Vector<SpartaProxyVpcEndpoint>& GetVpcEndpoints() const{ return m_vpcEndpoints; }
+
+    /**
+     * <p>Describes a connection endpoint.</p>
+     */
+    inline bool VpcEndpointsHasBeenSet() const { return m_vpcEndpointsHasBeenSet; }
+
+    /**
+     * <p>Describes a connection endpoint.</p>
+     */
+    inline void SetVpcEndpoints(const Aws::Vector<SpartaProxyVpcEndpoint>& value) { m_vpcEndpointsHasBeenSet = true; m_vpcEndpoints = value; }
+
+    /**
+     * <p>Describes a connection endpoint.</p>
+     */
+    inline void SetVpcEndpoints(Aws::Vector<SpartaProxyVpcEndpoint>&& value) { m_vpcEndpointsHasBeenSet = true; m_vpcEndpoints = std::move(value); }
+
+    /**
+     * <p>Describes a connection endpoint.</p>
+     */
+    inline Endpoint& WithVpcEndpoints(const Aws::Vector<SpartaProxyVpcEndpoint>& value) { SetVpcEndpoints(value); return *this;}
+
+    /**
+     * <p>Describes a connection endpoint.</p>
+     */
+    inline Endpoint& WithVpcEndpoints(Aws::Vector<SpartaProxyVpcEndpoint>&& value) { SetVpcEndpoints(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes a connection endpoint.</p>
+     */
+    inline Endpoint& AddVpcEndpoints(const SpartaProxyVpcEndpoint& value) { m_vpcEndpointsHasBeenSet = true; m_vpcEndpoints.push_back(value); return *this; }
+
+    /**
+     * <p>Describes a connection endpoint.</p>
+     */
+    inline Endpoint& AddVpcEndpoints(SpartaProxyVpcEndpoint&& value) { m_vpcEndpointsHasBeenSet = true; m_vpcEndpoints.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_address;
@@ -107,6 +150,9 @@ namespace Model
 
     int m_port;
     bool m_portHasBeenSet;
+
+    Aws::Vector<SpartaProxyVpcEndpoint> m_vpcEndpoints;
+    bool m_vpcEndpointsHasBeenSet;
   };
 
 } // namespace Model

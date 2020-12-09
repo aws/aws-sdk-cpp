@@ -48,7 +48,9 @@ CreateClusterRequest::CreateClusterRequest() :
     m_additionalInfoHasBeenSet(false),
     m_iamRolesHasBeenSet(false),
     m_maintenanceTrackNameHasBeenSet(false),
-    m_snapshotScheduleIdentifierHasBeenSet(false)
+    m_snapshotScheduleIdentifierHasBeenSet(false),
+    m_availabilityZoneRelocation(false),
+    m_availabilityZoneRelocationHasBeenSet(false)
 {
 }
 
@@ -227,6 +229,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_snapshotScheduleIdentifierHasBeenSet)
   {
     ss << "SnapshotScheduleIdentifier=" << StringUtils::URLEncode(m_snapshotScheduleIdentifier.c_str()) << "&";
+  }
+
+  if(m_availabilityZoneRelocationHasBeenSet)
+  {
+    ss << "AvailabilityZoneRelocation=" << std::boolalpha << m_availabilityZoneRelocation << "&";
   }
 
   ss << "Version=2012-12-01";

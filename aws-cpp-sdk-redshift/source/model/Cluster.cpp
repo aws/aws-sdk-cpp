@@ -75,6 +75,7 @@ Cluster::Cluster() :
     m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
     m_nextMaintenanceWindowStartTimeHasBeenSet(false),
     m_resizeInfoHasBeenSet(false),
+    m_availabilityZoneRelocationStatusHasBeenSet(false),
     m_clusterNamespaceArnHasBeenSet(false)
 {
 }
@@ -134,6 +135,7 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
     m_nextMaintenanceWindowStartTimeHasBeenSet(false),
     m_resizeInfoHasBeenSet(false),
+    m_availabilityZoneRelocationStatusHasBeenSet(false),
     m_clusterNamespaceArnHasBeenSet(false)
 {
   *this = xmlNode;
@@ -469,6 +471,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_resizeInfo = resizeInfoNode;
       m_resizeInfoHasBeenSet = true;
     }
+    XmlNode availabilityZoneRelocationStatusNode = resultNode.FirstChild("AvailabilityZoneRelocationStatus");
+    if(!availabilityZoneRelocationStatusNode.IsNull())
+    {
+      m_availabilityZoneRelocationStatus = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneRelocationStatusNode.GetText());
+      m_availabilityZoneRelocationStatusHasBeenSet = true;
+    }
     XmlNode clusterNamespaceArnNode = resultNode.FirstChild("ClusterNamespaceArn");
     if(!clusterNamespaceArnNode.IsNull())
     {
@@ -774,6 +782,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       m_resizeInfo.OutputToStream(oStream, resizeInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_availabilityZoneRelocationStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneRelocationStatus=" << StringUtils::URLEncode(m_availabilityZoneRelocationStatus.c_str()) << "&";
+  }
+
   if(m_clusterNamespaceArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterNamespaceArn=" << StringUtils::URLEncode(m_clusterNamespaceArn.c_str()) << "&";
@@ -1028,6 +1041,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String resizeInfoLocationAndMember(location);
       resizeInfoLocationAndMember += ".ResizeInfo";
       m_resizeInfo.OutputToStream(oStream, resizeInfoLocationAndMember.c_str());
+  }
+  if(m_availabilityZoneRelocationStatusHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneRelocationStatus=" << StringUtils::URLEncode(m_availabilityZoneRelocationStatus.c_str()) << "&";
   }
   if(m_clusterNamespaceArnHasBeenSet)
   {

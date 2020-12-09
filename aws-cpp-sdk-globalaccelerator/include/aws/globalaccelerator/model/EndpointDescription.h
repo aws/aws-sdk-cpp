@@ -43,8 +43,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
+     * </p> <p>An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
 
@@ -52,8 +53,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
+     * </p> <p>An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
 
@@ -61,8 +63,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
+     * </p> <p>An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
 
@@ -70,8 +73,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
+     * </p> <p>An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
 
@@ -79,8 +83,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
+     * </p> <p>An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
 
@@ -88,8 +93,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
+     * </p> <p>An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline EndpointDescription& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
 
@@ -97,8 +103,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
+     * </p> <p>An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline EndpointDescription& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
 
@@ -106,8 +113,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.
+     * </p> <p>An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline EndpointDescription& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
 
@@ -193,130 +201,42 @@ namespace Model
 
 
     /**
-     * <p>The reason code associated with why the endpoint is not healthy. If the
-     * endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint
-     * state is <b>unhealthy</b>, the reason code can be one of the following
-     * values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the
-     * endpoint are timing out before returning a status.</p> </li> <li> <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint
-     * response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is
-     * <b>initial</b>, the reason code can be one of the following values:</p> <ul>
-     * <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being
-     * provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator
-     * is still setting up the minimum number of health checks for the endpoint that
-     * are required to determine its health status.</p> </li> </ul>
+     * <p>Returns a null result.</p>
      */
     inline const Aws::String& GetHealthReason() const{ return m_healthReason; }
 
     /**
-     * <p>The reason code associated with why the endpoint is not healthy. If the
-     * endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint
-     * state is <b>unhealthy</b>, the reason code can be one of the following
-     * values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the
-     * endpoint are timing out before returning a status.</p> </li> <li> <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint
-     * response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is
-     * <b>initial</b>, the reason code can be one of the following values:</p> <ul>
-     * <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being
-     * provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator
-     * is still setting up the minimum number of health checks for the endpoint that
-     * are required to determine its health status.</p> </li> </ul>
+     * <p>Returns a null result.</p>
      */
     inline bool HealthReasonHasBeenSet() const { return m_healthReasonHasBeenSet; }
 
     /**
-     * <p>The reason code associated with why the endpoint is not healthy. If the
-     * endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint
-     * state is <b>unhealthy</b>, the reason code can be one of the following
-     * values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the
-     * endpoint are timing out before returning a status.</p> </li> <li> <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint
-     * response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is
-     * <b>initial</b>, the reason code can be one of the following values:</p> <ul>
-     * <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being
-     * provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator
-     * is still setting up the minimum number of health checks for the endpoint that
-     * are required to determine its health status.</p> </li> </ul>
+     * <p>Returns a null result.</p>
      */
     inline void SetHealthReason(const Aws::String& value) { m_healthReasonHasBeenSet = true; m_healthReason = value; }
 
     /**
-     * <p>The reason code associated with why the endpoint is not healthy. If the
-     * endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint
-     * state is <b>unhealthy</b>, the reason code can be one of the following
-     * values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the
-     * endpoint are timing out before returning a status.</p> </li> <li> <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint
-     * response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is
-     * <b>initial</b>, the reason code can be one of the following values:</p> <ul>
-     * <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being
-     * provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator
-     * is still setting up the minimum number of health checks for the endpoint that
-     * are required to determine its health status.</p> </li> </ul>
+     * <p>Returns a null result.</p>
      */
     inline void SetHealthReason(Aws::String&& value) { m_healthReasonHasBeenSet = true; m_healthReason = std::move(value); }
 
     /**
-     * <p>The reason code associated with why the endpoint is not healthy. If the
-     * endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint
-     * state is <b>unhealthy</b>, the reason code can be one of the following
-     * values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the
-     * endpoint are timing out before returning a status.</p> </li> <li> <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint
-     * response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is
-     * <b>initial</b>, the reason code can be one of the following values:</p> <ul>
-     * <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being
-     * provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator
-     * is still setting up the minimum number of health checks for the endpoint that
-     * are required to determine its health status.</p> </li> </ul>
+     * <p>Returns a null result.</p>
      */
     inline void SetHealthReason(const char* value) { m_healthReasonHasBeenSet = true; m_healthReason.assign(value); }
 
     /**
-     * <p>The reason code associated with why the endpoint is not healthy. If the
-     * endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint
-     * state is <b>unhealthy</b>, the reason code can be one of the following
-     * values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the
-     * endpoint are timing out before returning a status.</p> </li> <li> <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint
-     * response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is
-     * <b>initial</b>, the reason code can be one of the following values:</p> <ul>
-     * <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being
-     * provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator
-     * is still setting up the minimum number of health checks for the endpoint that
-     * are required to determine its health status.</p> </li> </ul>
+     * <p>Returns a null result.</p>
      */
     inline EndpointDescription& WithHealthReason(const Aws::String& value) { SetHealthReason(value); return *this;}
 
     /**
-     * <p>The reason code associated with why the endpoint is not healthy. If the
-     * endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint
-     * state is <b>unhealthy</b>, the reason code can be one of the following
-     * values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the
-     * endpoint are timing out before returning a status.</p> </li> <li> <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint
-     * response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is
-     * <b>initial</b>, the reason code can be one of the following values:</p> <ul>
-     * <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being
-     * provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator
-     * is still setting up the minimum number of health checks for the endpoint that
-     * are required to determine its health status.</p> </li> </ul>
+     * <p>Returns a null result.</p>
      */
     inline EndpointDescription& WithHealthReason(Aws::String&& value) { SetHealthReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason code associated with why the endpoint is not healthy. If the
-     * endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint
-     * state is <b>unhealthy</b>, the reason code can be one of the following
-     * values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the
-     * endpoint are timing out before returning a status.</p> </li> <li> <p>
-     * <b>Failed</b>: The health check failed, for example because the endpoint
-     * response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is
-     * <b>initial</b>, the reason code can be one of the following values:</p> <ul>
-     * <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being
-     * provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator
-     * is still setting up the minimum number of health checks for the endpoint that
-     * are required to determine its health status.</p> </li> </ul>
+     * <p>Returns a null result.</p>
      */
     inline EndpointDescription& WithHealthReason(const char* value) { SetHealthReason(value); return *this;}
 

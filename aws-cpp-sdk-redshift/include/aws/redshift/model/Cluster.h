@@ -2133,6 +2133,47 @@ namespace Model
 
 
     /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneRelocationStatus() const{ return m_availabilityZoneRelocationStatus; }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline bool AvailabilityZoneRelocationStatusHasBeenSet() const { return m_availabilityZoneRelocationStatusHasBeenSet; }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline void SetAvailabilityZoneRelocationStatus(const Aws::String& value) { m_availabilityZoneRelocationStatusHasBeenSet = true; m_availabilityZoneRelocationStatus = value; }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline void SetAvailabilityZoneRelocationStatus(Aws::String&& value) { m_availabilityZoneRelocationStatusHasBeenSet = true; m_availabilityZoneRelocationStatus = std::move(value); }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline void SetAvailabilityZoneRelocationStatus(const char* value) { m_availabilityZoneRelocationStatusHasBeenSet = true; m_availabilityZoneRelocationStatus.assign(value); }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline Cluster& WithAvailabilityZoneRelocationStatus(const Aws::String& value) { SetAvailabilityZoneRelocationStatus(value); return *this;}
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline Cluster& WithAvailabilityZoneRelocationStatus(Aws::String&& value) { SetAvailabilityZoneRelocationStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline Cluster& WithAvailabilityZoneRelocationStatus(const char* value) { SetAvailabilityZoneRelocationStatus(value); return *this;}
+
+
+    /**
      * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
      */
     inline const Aws::String& GetClusterNamespaceArn() const{ return m_clusterNamespaceArn; }
@@ -2311,6 +2352,9 @@ namespace Model
 
     ResizeInfo m_resizeInfo;
     bool m_resizeInfoHasBeenSet;
+
+    Aws::String m_availabilityZoneRelocationStatus;
+    bool m_availabilityZoneRelocationStatusHasBeenSet;
 
     Aws::String m_clusterNamespaceArn;
     bool m_clusterNamespaceArnHasBeenSet;

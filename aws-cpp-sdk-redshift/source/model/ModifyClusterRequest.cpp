@@ -39,7 +39,12 @@ ModifyClusterRequest::ModifyClusterRequest() :
     m_maintenanceTrackNameHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_availabilityZoneRelocation(false),
+    m_availabilityZoneRelocationHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -167,6 +172,21 @@ Aws::String ModifyClusterRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_availabilityZoneRelocationHasBeenSet)
+  {
+    ss << "AvailabilityZoneRelocation=" << std::boolalpha << m_availabilityZoneRelocation << "&";
+  }
+
+  if(m_availabilityZoneHasBeenSet)
+  {
+    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_portHasBeenSet)
+  {
+    ss << "Port=" << m_port << "&";
   }
 
   ss << "Version=2012-12-01";

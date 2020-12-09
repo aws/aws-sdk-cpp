@@ -23,14 +23,16 @@ namespace Model
 Endpoint::Endpoint() : 
     m_addressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_vpcEndpointsHasBeenSet(false)
 {
 }
 
 Endpoint::Endpoint(const XmlNode& xmlNode) : 
     m_addressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_vpcEndpointsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +55,18 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
     }
+    XmlNode vpcEndpointsNode = resultNode.FirstChild("VpcEndpoints");
+    if(!vpcEndpointsNode.IsNull())
+    {
+      XmlNode vpcEndpointsMember = vpcEndpointsNode.FirstChild("SpartaProxyVpcEndpoint");
+      while(!vpcEndpointsMember.IsNull())
+      {
+        m_vpcEndpoints.push_back(vpcEndpointsMember);
+        vpcEndpointsMember = vpcEndpointsMember.NextNode("SpartaProxyVpcEndpoint");
+      }
+
+      m_vpcEndpointsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -70,6 +84,17 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
 
+  if(m_vpcEndpointsHasBeenSet)
+  {
+      unsigned vpcEndpointsIdx = 1;
+      for(auto& item : m_vpcEndpoints)
+      {
+        Aws::StringStream vpcEndpointsSs;
+        vpcEndpointsSs << location << index << locationValue << ".SpartaProxyVpcEndpoint." << vpcEndpointsIdx++;
+        item.OutputToStream(oStream, vpcEndpointsSs.str().c_str());
+      }
+  }
+
 }
 
 void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -81,6 +106,16 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_portHasBeenSet)
   {
       oStream << location << ".Port=" << m_port << "&";
+  }
+  if(m_vpcEndpointsHasBeenSet)
+  {
+      unsigned vpcEndpointsIdx = 1;
+      for(auto& item : m_vpcEndpoints)
+      {
+        Aws::StringStream vpcEndpointsSs;
+        vpcEndpointsSs << location <<  ".SpartaProxyVpcEndpoint." << vpcEndpointsIdx++;
+        item.OutputToStream(oStream, vpcEndpointsSs.str().c_str());
+      }
   }
 }
 

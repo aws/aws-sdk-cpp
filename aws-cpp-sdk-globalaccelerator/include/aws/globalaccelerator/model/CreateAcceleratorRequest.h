@@ -96,32 +96,32 @@ namespace Model
 
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The value for the address type must be IPv4.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The value for the address type must be IPv4.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The value for the address type must be IPv4.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The value for the address type must be IPv4.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The value for the address type must be IPv4.</p>
      */
     inline CreateAcceleratorRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The value for the address type must be IPv4.</p>
      */
     inline CreateAcceleratorRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

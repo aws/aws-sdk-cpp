@@ -43,7 +43,9 @@ RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() :
     m_maintenanceTrackNameHasBeenSet(false),
     m_snapshotScheduleIdentifierHasBeenSet(false),
     m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false)
+    m_numberOfNodesHasBeenSet(false),
+    m_availabilityZoneRelocation(false),
+    m_availabilityZoneRelocationHasBeenSet(false)
 {
 }
 
@@ -197,6 +199,11 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
   if(m_numberOfNodesHasBeenSet)
   {
     ss << "NumberOfNodes=" << m_numberOfNodes << "&";
+  }
+
+  if(m_availabilityZoneRelocationHasBeenSet)
+  {
+    ss << "AvailabilityZoneRelocation=" << std::boolalpha << m_availabilityZoneRelocation << "&";
   }
 
   ss << "Version=2012-12-01";

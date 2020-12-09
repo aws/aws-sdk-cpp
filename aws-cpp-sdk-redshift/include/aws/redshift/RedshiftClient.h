@@ -3993,10 +3993,10 @@ namespace Model
          * resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your
          * cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a
          * VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li>
-         * <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p>
-         * </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that
-         * you add must match the node type for the cluster.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p>
+         * </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li>
+         * <li> <p>The type of nodes that you add must match the node type for the
+         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          */
@@ -4011,10 +4011,10 @@ namespace Model
          * resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your
          * cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a
          * VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li>
-         * <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p>
-         * </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that
-         * you add must match the node type for the cluster.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p>
+         * </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li>
+         * <li> <p>The type of nodes that you add must match the node type for the
+         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          *
@@ -4031,10 +4031,10 @@ namespace Model
          * resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your
          * cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a
          * VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li>
-         * <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p>
-         * </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that
-         * you add must match the node type for the cluster.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p>
+         * </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li>
+         * <li> <p>The type of nodes that you add must match the node type for the
+         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          *

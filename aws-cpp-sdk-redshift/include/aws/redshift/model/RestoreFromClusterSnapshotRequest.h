@@ -1516,6 +1516,31 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline bool GetAvailabilityZoneRelocation() const{ return m_availabilityZoneRelocation; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline bool AvailabilityZoneRelocationHasBeenSet() const { return m_availabilityZoneRelocationHasBeenSet; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline void SetAvailabilityZoneRelocation(bool value) { m_availabilityZoneRelocationHasBeenSet = true; m_availabilityZoneRelocation = value; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithAvailabilityZoneRelocation(bool value) { SetAvailabilityZoneRelocation(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1595,6 +1620,9 @@ namespace Model
 
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
+    bool m_availabilityZoneRelocation;
+    bool m_availabilityZoneRelocationHasBeenSet;
   };
 
 } // namespace Model

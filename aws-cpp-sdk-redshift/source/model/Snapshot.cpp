@@ -31,6 +31,7 @@ Snapshot::Snapshot() :
     m_clusterCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
+    m_engineFullVersionHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_numberOfNodes(0),
@@ -81,6 +82,7 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_clusterCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
+    m_engineFullVersionHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_numberOfNodes(0),
@@ -180,6 +182,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     {
       m_clusterVersion = Aws::Utils::Xml::DecodeEscapedXmlText(clusterVersionNode.GetText());
       m_clusterVersionHasBeenSet = true;
+    }
+    XmlNode engineFullVersionNode = resultNode.FirstChild("EngineFullVersion");
+    if(!engineFullVersionNode.IsNull())
+    {
+      m_engineFullVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineFullVersionNode.GetText());
+      m_engineFullVersionHasBeenSet = true;
     }
     XmlNode snapshotTypeNode = resultNode.FirstChild("SnapshotType");
     if(!snapshotTypeNode.IsNull())
@@ -395,6 +403,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
 
+  if(m_engineFullVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EngineFullVersion=" << StringUtils::URLEncode(m_engineFullVersion.c_str()) << "&";
+  }
+
   if(m_snapshotTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotType=" << StringUtils::URLEncode(m_snapshotType.c_str()) << "&";
@@ -570,6 +583,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_clusterVersionHasBeenSet)
   {
       oStream << location << ".ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
+  }
+  if(m_engineFullVersionHasBeenSet)
+  {
+      oStream << location << ".EngineFullVersion=" << StringUtils::URLEncode(m_engineFullVersion.c_str()) << "&";
   }
   if(m_snapshotTypeHasBeenSet)
   {

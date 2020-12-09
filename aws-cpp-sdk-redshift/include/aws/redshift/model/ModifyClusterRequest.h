@@ -186,8 +186,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
@@ -199,8 +199,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
@@ -212,8 +212,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
@@ -225,8 +225,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
@@ -238,8 +238,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
@@ -251,8 +251,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline ModifyClusterRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
@@ -264,8 +264,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline ModifyClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
@@ -277,8 +277,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline ModifyClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
@@ -1498,6 +1498,101 @@ namespace Model
      */
     inline ModifyClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster modification is complete.</p>
+     */
+    inline bool GetAvailabilityZoneRelocation() const{ return m_availabilityZoneRelocation; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster modification is complete.</p>
+     */
+    inline bool AvailabilityZoneRelocationHasBeenSet() const { return m_availabilityZoneRelocationHasBeenSet; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster modification is complete.</p>
+     */
+    inline void SetAvailabilityZoneRelocation(bool value) { m_availabilityZoneRelocationHasBeenSet = true; m_availabilityZoneRelocation = value; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster modification is complete.</p>
+     */
+    inline ModifyClusterRequest& WithAvailabilityZoneRelocation(bool value) { SetAvailabilityZoneRelocation(value); return *this;}
+
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline ModifyClusterRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline ModifyClusterRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline ModifyClusterRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
+
+    /**
+     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     */
+    inline ModifyClusterRequest& WithPort(int value) { SetPort(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1565,6 +1660,15 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    bool m_availabilityZoneRelocation;
+    bool m_availabilityZoneRelocationHasBeenSet;
+
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
+
+    int m_port;
+    bool m_portHasBeenSet;
   };
 
 } // namespace Model

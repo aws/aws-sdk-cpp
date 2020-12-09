@@ -174,7 +174,7 @@ namespace Model
      * a given client to always be routed to the same endpoint, set client affinity to
      * <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
      * Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP
-     * address and destination IP address��to select the hash value.</p> <p>The default
+     * address and destination IP address—to select the hash value.</p> <p>The default
      * value is <code>NONE</code>.</p>
      */
     inline const ClientAffinity& GetClientAffinity() const{ return m_clientAffinity; }
@@ -194,7 +194,7 @@ namespace Model
      * a given client to always be routed to the same endpoint, set client affinity to
      * <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
      * Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP
-     * address and destination IP address��to select the hash value.</p> <p>The default
+     * address and destination IP address—to select the hash value.</p> <p>The default
      * value is <code>NONE</code>.</p>
      */
     inline bool ClientAffinityHasBeenSet() const { return m_clientAffinityHasBeenSet; }
@@ -214,7 +214,7 @@ namespace Model
      * a given client to always be routed to the same endpoint, set client affinity to
      * <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
      * Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP
-     * address and destination IP address��to select the hash value.</p> <p>The default
+     * address and destination IP address—to select the hash value.</p> <p>The default
      * value is <code>NONE</code>.</p>
      */
     inline void SetClientAffinity(const ClientAffinity& value) { m_clientAffinityHasBeenSet = true; m_clientAffinity = value; }
@@ -234,7 +234,7 @@ namespace Model
      * a given client to always be routed to the same endpoint, set client affinity to
      * <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
      * Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP
-     * address and destination IP address��to select the hash value.</p> <p>The default
+     * address and destination IP address—to select the hash value.</p> <p>The default
      * value is <code>NONE</code>.</p>
      */
     inline void SetClientAffinity(ClientAffinity&& value) { m_clientAffinityHasBeenSet = true; m_clientAffinity = std::move(value); }
@@ -254,7 +254,7 @@ namespace Model
      * a given client to always be routed to the same endpoint, set client affinity to
      * <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
      * Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP
-     * address and destination IP address��to select the hash value.</p> <p>The default
+     * address and destination IP address—to select the hash value.</p> <p>The default
      * value is <code>NONE</code>.</p>
      */
     inline UpdateListenerRequest& WithClientAffinity(const ClientAffinity& value) { SetClientAffinity(value); return *this;}
@@ -274,7 +274,7 @@ namespace Model
      * a given client to always be routed to the same endpoint, set client affinity to
      * <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
      * Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP
-     * address and destination IP address��to select the hash value.</p> <p>The default
+     * address and destination IP address—to select the hash value.</p> <p>The default
      * value is <code>NONE</code>.</p>
      */
     inline UpdateListenerRequest& WithClientAffinity(ClientAffinity&& value) { SetClientAffinity(std::move(value)); return *this;}
