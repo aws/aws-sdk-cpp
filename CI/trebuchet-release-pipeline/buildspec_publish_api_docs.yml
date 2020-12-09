@@ -1,5 +1,17 @@
 version: 0.2
 phases:
+  pre_build:
+    commands:
+      - apt-get update
+      - apt-get -y dist-upgrade
+      - apt-get install -y flex bison
+      - apt-get -y clean
+      - git clone -b Release_1_8_19 --depth 1 https://github.com/doxygen/doxygen.git
+      - cd doxygen
+      - mkdir build
+      - cd build
+      - cmake .. -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr
+      - make -j8 install
   build:
     commands:
       - echo $CODEBUILD_SOURCE_VERSION
