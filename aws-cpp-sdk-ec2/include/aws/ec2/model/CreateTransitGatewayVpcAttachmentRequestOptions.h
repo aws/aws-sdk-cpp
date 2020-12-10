@@ -73,32 +73,32 @@ namespace Model
 
 
     /**
-     * <p>Enable or disable IPv6 support.</p>
+     * <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
      */
     inline const Ipv6SupportValue& GetIpv6Support() const{ return m_ipv6Support; }
 
     /**
-     * <p>Enable or disable IPv6 support.</p>
+     * <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
      */
     inline bool Ipv6SupportHasBeenSet() const { return m_ipv6SupportHasBeenSet; }
 
     /**
-     * <p>Enable or disable IPv6 support.</p>
+     * <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
      */
     inline void SetIpv6Support(const Ipv6SupportValue& value) { m_ipv6SupportHasBeenSet = true; m_ipv6Support = value; }
 
     /**
-     * <p>Enable or disable IPv6 support.</p>
+     * <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
      */
     inline void SetIpv6Support(Ipv6SupportValue&& value) { m_ipv6SupportHasBeenSet = true; m_ipv6Support = std::move(value); }
 
     /**
-     * <p>Enable or disable IPv6 support.</p>
+     * <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
      */
     inline CreateTransitGatewayVpcAttachmentRequestOptions& WithIpv6Support(const Ipv6SupportValue& value) { SetIpv6Support(value); return *this;}
 
     /**
-     * <p>Enable or disable IPv6 support.</p>
+     * <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
      */
     inline CreateTransitGatewayVpcAttachmentRequestOptions& WithIpv6Support(Ipv6SupportValue&& value) { SetIpv6Support(std::move(value)); return *this;}
 

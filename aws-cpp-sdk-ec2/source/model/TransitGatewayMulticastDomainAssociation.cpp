@@ -25,6 +25,7 @@ TransitGatewayMulticastDomainAssociation::TransitGatewayMulticastDomainAssociati
     m_resourceIdHasBeenSet(false),
     m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_resourceOwnerIdHasBeenSet(false),
     m_subnetHasBeenSet(false)
 {
 }
@@ -34,6 +35,7 @@ TransitGatewayMulticastDomainAssociation::TransitGatewayMulticastDomainAssociati
     m_resourceIdHasBeenSet(false),
     m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_resourceOwnerIdHasBeenSet(false),
     m_subnetHasBeenSet(false)
 {
   *this = xmlNode;
@@ -63,6 +65,12 @@ TransitGatewayMulticastDomainAssociation& TransitGatewayMulticastDomainAssociati
       m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
       m_resourceTypeHasBeenSet = true;
     }
+    XmlNode resourceOwnerIdNode = resultNode.FirstChild("resourceOwnerId");
+    if(!resourceOwnerIdNode.IsNull())
+    {
+      m_resourceOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceOwnerIdNode.GetText());
+      m_resourceOwnerIdHasBeenSet = true;
+    }
     XmlNode subnetNode = resultNode.FirstChild("subnet");
     if(!subnetNode.IsNull())
     {
@@ -91,6 +99,11 @@ void TransitGatewayMulticastDomainAssociation::OutputToStream(Aws::OStream& oStr
       oStream << location << index << locationValue << ".ResourceType=" << TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType) << "&";
   }
 
+  if(m_resourceOwnerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResourceOwnerId=" << StringUtils::URLEncode(m_resourceOwnerId.c_str()) << "&";
+  }
+
   if(m_subnetHasBeenSet)
   {
       Aws::StringStream subnetLocationAndMemberSs;
@@ -113,6 +126,10 @@ void TransitGatewayMulticastDomainAssociation::OutputToStream(Aws::OStream& oStr
   if(m_resourceTypeHasBeenSet)
   {
       oStream << location << ".ResourceType=" << TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType) << "&";
+  }
+  if(m_resourceOwnerIdHasBeenSet)
+  {
+      oStream << location << ".ResourceOwnerId=" << StringUtils::URLEncode(m_resourceOwnerId.c_str()) << "&";
   }
   if(m_subnetHasBeenSet)
   {

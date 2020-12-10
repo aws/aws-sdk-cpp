@@ -12,6 +12,8 @@
 #include <aws/ec2/model/VpnEcmpSupportValue.h>
 #include <aws/ec2/model/DnsSupportValue.h>
 #include <aws/ec2/model/MulticastSupportValue.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -282,6 +284,70 @@ namespace Model
      */
     inline TransitGatewayRequestOptions& WithMulticastSupport(MulticastSupportValue&& value) { SetMulticastSupport(std::move(value)); return *this;}
 
+
+    /**
+     * <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size
+     * /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for
+     * IPv6.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTransitGatewayCidrBlocks() const{ return m_transitGatewayCidrBlocks; }
+
+    /**
+     * <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size
+     * /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for
+     * IPv6.</p>
+     */
+    inline bool TransitGatewayCidrBlocksHasBeenSet() const { return m_transitGatewayCidrBlocksHasBeenSet; }
+
+    /**
+     * <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size
+     * /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for
+     * IPv6.</p>
+     */
+    inline void SetTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks = value; }
+
+    /**
+     * <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size
+     * /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for
+     * IPv6.</p>
+     */
+    inline void SetTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks = std::move(value); }
+
+    /**
+     * <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size
+     * /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for
+     * IPv6.</p>
+     */
+    inline TransitGatewayRequestOptions& WithTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { SetTransitGatewayCidrBlocks(value); return *this;}
+
+    /**
+     * <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size
+     * /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for
+     * IPv6.</p>
+     */
+    inline TransitGatewayRequestOptions& WithTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { SetTransitGatewayCidrBlocks(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size
+     * /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for
+     * IPv6.</p>
+     */
+    inline TransitGatewayRequestOptions& AddTransitGatewayCidrBlocks(const Aws::String& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size
+     * /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for
+     * IPv6.</p>
+     */
+    inline TransitGatewayRequestOptions& AddTransitGatewayCidrBlocks(Aws::String&& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size
+     * /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for
+     * IPv6.</p>
+     */
+    inline TransitGatewayRequestOptions& AddTransitGatewayCidrBlocks(const char* value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.push_back(value); return *this; }
+
   private:
 
     long long m_amazonSideAsn;
@@ -304,6 +370,9 @@ namespace Model
 
     MulticastSupportValue m_multicastSupport;
     bool m_multicastSupportHasBeenSet;
+
+    Aws::Vector<Aws::String> m_transitGatewayCidrBlocks;
+    bool m_transitGatewayCidrBlocksHasBeenSet;
   };
 
 } // namespace Model

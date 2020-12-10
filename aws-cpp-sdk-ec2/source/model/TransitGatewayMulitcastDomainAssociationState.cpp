@@ -20,16 +20,23 @@ namespace Aws
       namespace TransitGatewayMulitcastDomainAssociationStateMapper
       {
 
+        static const int pendingAcceptance_HASH = HashingUtils::HashString("pendingAcceptance");
         static const int associating_HASH = HashingUtils::HashString("associating");
         static const int associated_HASH = HashingUtils::HashString("associated");
         static const int disassociating_HASH = HashingUtils::HashString("disassociating");
         static const int disassociated_HASH = HashingUtils::HashString("disassociated");
+        static const int rejected_HASH = HashingUtils::HashString("rejected");
+        static const int failed_HASH = HashingUtils::HashString("failed");
 
 
         TransitGatewayMulitcastDomainAssociationState GetTransitGatewayMulitcastDomainAssociationStateForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == associating_HASH)
+          if (hashCode == pendingAcceptance_HASH)
+          {
+            return TransitGatewayMulitcastDomainAssociationState::pendingAcceptance;
+          }
+          else if (hashCode == associating_HASH)
           {
             return TransitGatewayMulitcastDomainAssociationState::associating;
           }
@@ -45,6 +52,14 @@ namespace Aws
           {
             return TransitGatewayMulitcastDomainAssociationState::disassociated;
           }
+          else if (hashCode == rejected_HASH)
+          {
+            return TransitGatewayMulitcastDomainAssociationState::rejected;
+          }
+          else if (hashCode == failed_HASH)
+          {
+            return TransitGatewayMulitcastDomainAssociationState::failed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayMulitcastDomainAssociationState::pendingAcceptance:
+            return "pendingAcceptance";
           case TransitGatewayMulitcastDomainAssociationState::associating:
             return "associating";
           case TransitGatewayMulitcastDomainAssociationState::associated:
@@ -67,6 +84,10 @@ namespace Aws
             return "disassociating";
           case TransitGatewayMulitcastDomainAssociationState::disassociated:
             return "disassociated";
+          case TransitGatewayMulitcastDomainAssociationState::rejected:
+            return "rejected";
+          case TransitGatewayMulitcastDomainAssociationState::failed:
+            return "failed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

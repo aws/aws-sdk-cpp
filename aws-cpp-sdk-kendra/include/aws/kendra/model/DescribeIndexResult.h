@@ -79,37 +79,37 @@ namespace Model
 
 
     /**
-     * <p>the name of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>the name of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>the name of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>the name of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>the name of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline DescribeIndexResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>the name of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline DescribeIndexResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>the name of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline DescribeIndexResult& WithId(const char* value) { SetId(value); return *this;}
 

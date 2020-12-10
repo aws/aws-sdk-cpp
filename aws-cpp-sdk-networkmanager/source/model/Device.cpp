@@ -22,6 +22,7 @@ Device::Device() :
     m_deviceIdHasBeenSet(false),
     m_deviceArnHasBeenSet(false),
     m_globalNetworkIdHasBeenSet(false),
+    m_aWSLocationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_vendorHasBeenSet(false),
@@ -40,6 +41,7 @@ Device::Device(JsonView jsonValue) :
     m_deviceIdHasBeenSet(false),
     m_deviceArnHasBeenSet(false),
     m_globalNetworkIdHasBeenSet(false),
+    m_aWSLocationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_vendorHasBeenSet(false),
@@ -76,6 +78,13 @@ Device& Device::operator =(JsonView jsonValue)
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
 
     m_globalNetworkIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AWSLocation"))
+  {
+    m_aWSLocation = jsonValue.GetObject("AWSLocation");
+
+    m_aWSLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -173,6 +182,12 @@ JsonValue Device::Jsonize() const
   if(m_globalNetworkIdHasBeenSet)
   {
    payload.WithString("GlobalNetworkId", m_globalNetworkId);
+
+  }
+
+  if(m_aWSLocationHasBeenSet)
+  {
+   payload.WithObject("AWSLocation", m_aWSLocation.Jsonize());
 
   }
 

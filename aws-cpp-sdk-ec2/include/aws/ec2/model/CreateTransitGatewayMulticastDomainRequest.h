@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/CreateTransitGatewayMulticastDomainRequestOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -77,6 +78,37 @@ namespace Model
      * <p>The ID of the transit gateway.</p>
      */
     inline CreateTransitGatewayMulticastDomainRequest& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
+
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline const CreateTransitGatewayMulticastDomainRequestOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline void SetOptions(const CreateTransitGatewayMulticastDomainRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline void SetOptions(CreateTransitGatewayMulticastDomainRequestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline CreateTransitGatewayMulticastDomainRequest& WithOptions(const CreateTransitGatewayMulticastDomainRequestOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline CreateTransitGatewayMulticastDomainRequest& WithOptions(CreateTransitGatewayMulticastDomainRequestOptions&& value) { SetOptions(std::move(value)); return *this;}
 
 
     /**
@@ -156,6 +188,9 @@ namespace Model
 
     Aws::String m_transitGatewayId;
     bool m_transitGatewayIdHasBeenSet;
+
+    CreateTransitGatewayMulticastDomainRequestOptions m_options;
+    bool m_optionsHasBeenSet;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;

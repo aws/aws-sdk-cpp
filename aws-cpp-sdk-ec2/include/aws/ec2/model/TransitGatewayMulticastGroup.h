@@ -238,6 +238,55 @@ namespace Model
 
 
     /**
+     * <p> The ID of the AWS account that owns the transit gateway multicast domain
+     * group resource.</p>
+     */
+    inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
+
+    /**
+     * <p> The ID of the AWS account that owns the transit gateway multicast domain
+     * group resource.</p>
+     */
+    inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the AWS account that owns the transit gateway multicast domain
+     * group resource.</p>
+     */
+    inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
+
+    /**
+     * <p> The ID of the AWS account that owns the transit gateway multicast domain
+     * group resource.</p>
+     */
+    inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
+
+    /**
+     * <p> The ID of the AWS account that owns the transit gateway multicast domain
+     * group resource.</p>
+     */
+    inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
+
+    /**
+     * <p> The ID of the AWS account that owns the transit gateway multicast domain
+     * group resource.</p>
+     */
+    inline TransitGatewayMulticastGroup& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
+
+    /**
+     * <p> The ID of the AWS account that owns the transit gateway multicast domain
+     * group resource.</p>
+     */
+    inline TransitGatewayMulticastGroup& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p> The ID of the AWS account that owns the transit gateway multicast domain
+     * group resource.</p>
+     */
+    inline TransitGatewayMulticastGroup& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
+
+
+    /**
      * <p>The ID of the transit gateway attachment.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -397,6 +446,9 @@ namespace Model
 
     TransitGatewayAttachmentResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::String m_resourceOwnerId;
+    bool m_resourceOwnerIdHasBeenSet;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;

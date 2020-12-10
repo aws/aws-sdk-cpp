@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateDeviceRequest::CreateDeviceRequest() : 
     m_globalNetworkIdHasBeenSet(false),
+    m_aWSLocationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_vendorHasBeenSet(false),
@@ -28,6 +29,12 @@ CreateDeviceRequest::CreateDeviceRequest() :
 Aws::String CreateDeviceRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_aWSLocationHasBeenSet)
+  {
+   payload.WithObject("AWSLocation", m_aWSLocation.Jsonize());
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

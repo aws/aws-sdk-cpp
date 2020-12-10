@@ -7,6 +7,7 @@
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/networkmanager/NetworkManagerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/model/AWSLocation.h>
 #include <aws/networkmanager/model/Location.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/model/Tag.h>
@@ -74,6 +75,37 @@ namespace Model
      * <p>The ID of the global network.</p>
      */
     inline CreateDeviceRequest& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+
+
+    /**
+     * <p>The AWS location of the device.</p>
+     */
+    inline const AWSLocation& GetAWSLocation() const{ return m_aWSLocation; }
+
+    /**
+     * <p>The AWS location of the device.</p>
+     */
+    inline bool AWSLocationHasBeenSet() const { return m_aWSLocationHasBeenSet; }
+
+    /**
+     * <p>The AWS location of the device.</p>
+     */
+    inline void SetAWSLocation(const AWSLocation& value) { m_aWSLocationHasBeenSet = true; m_aWSLocation = value; }
+
+    /**
+     * <p>The AWS location of the device.</p>
+     */
+    inline void SetAWSLocation(AWSLocation&& value) { m_aWSLocationHasBeenSet = true; m_aWSLocation = std::move(value); }
+
+    /**
+     * <p>The AWS location of the device.</p>
+     */
+    inline CreateDeviceRequest& WithAWSLocation(const AWSLocation& value) { SetAWSLocation(value); return *this;}
+
+    /**
+     * <p>The AWS location of the device.</p>
+     */
+    inline CreateDeviceRequest& WithAWSLocation(AWSLocation&& value) { SetAWSLocation(std::move(value)); return *this;}
 
 
     /**
@@ -429,6 +461,9 @@ namespace Model
 
     Aws::String m_globalNetworkId;
     bool m_globalNetworkIdHasBeenSet;
+
+    AWSLocation m_aWSLocation;
+    bool m_aWSLocationHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

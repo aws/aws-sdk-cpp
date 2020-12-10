@@ -24,7 +24,9 @@ Highlight::Highlight() :
     m_endOffset(0),
     m_endOffsetHasBeenSet(false),
     m_topAnswer(false),
-    m_topAnswerHasBeenSet(false)
+    m_topAnswerHasBeenSet(false),
+    m_type(HighlightType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ Highlight::Highlight(JsonView jsonValue) :
     m_endOffset(0),
     m_endOffsetHasBeenSet(false),
     m_topAnswer(false),
-    m_topAnswerHasBeenSet(false)
+    m_topAnswerHasBeenSet(false),
+    m_type(HighlightType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +66,13 @@ Highlight& Highlight::operator =(JsonView jsonValue)
     m_topAnswerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = HighlightTypeMapper::GetHighlightTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -85,6 +96,11 @@ JsonValue Highlight::Jsonize() const
   {
    payload.WithBool("TopAnswer", m_topAnswer);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", HighlightTypeMapper::GetNameForHighlightType(m_type));
   }
 
   return payload;

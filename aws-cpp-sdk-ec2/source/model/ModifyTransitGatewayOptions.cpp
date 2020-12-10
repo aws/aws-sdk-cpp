@@ -21,6 +21,8 @@ namespace Model
 {
 
 ModifyTransitGatewayOptions::ModifyTransitGatewayOptions() : 
+    m_addTransitGatewayCidrBlocksHasBeenSet(false),
+    m_removeTransitGatewayCidrBlocksHasBeenSet(false),
     m_vpnEcmpSupport(VpnEcmpSupportValue::NOT_SET),
     m_vpnEcmpSupportHasBeenSet(false),
     m_dnsSupport(DnsSupportValue::NOT_SET),
@@ -37,6 +39,8 @@ ModifyTransitGatewayOptions::ModifyTransitGatewayOptions() :
 }
 
 ModifyTransitGatewayOptions::ModifyTransitGatewayOptions(const XmlNode& xmlNode) : 
+    m_addTransitGatewayCidrBlocksHasBeenSet(false),
+    m_removeTransitGatewayCidrBlocksHasBeenSet(false),
     m_vpnEcmpSupport(VpnEcmpSupportValue::NOT_SET),
     m_vpnEcmpSupportHasBeenSet(false),
     m_dnsSupport(DnsSupportValue::NOT_SET),
@@ -59,6 +63,30 @@ ModifyTransitGatewayOptions& ModifyTransitGatewayOptions::operator =(const XmlNo
 
   if(!resultNode.IsNull())
   {
+    XmlNode addTransitGatewayCidrBlocksNode = resultNode.FirstChild("AddTransitGatewayCidrBlocks");
+    if(!addTransitGatewayCidrBlocksNode.IsNull())
+    {
+      XmlNode addTransitGatewayCidrBlocksMember = addTransitGatewayCidrBlocksNode.FirstChild("item");
+      while(!addTransitGatewayCidrBlocksMember.IsNull())
+      {
+        m_addTransitGatewayCidrBlocks.push_back(addTransitGatewayCidrBlocksMember.GetText());
+        addTransitGatewayCidrBlocksMember = addTransitGatewayCidrBlocksMember.NextNode("item");
+      }
+
+      m_addTransitGatewayCidrBlocksHasBeenSet = true;
+    }
+    XmlNode removeTransitGatewayCidrBlocksNode = resultNode.FirstChild("RemoveTransitGatewayCidrBlocks");
+    if(!removeTransitGatewayCidrBlocksNode.IsNull())
+    {
+      XmlNode removeTransitGatewayCidrBlocksMember = removeTransitGatewayCidrBlocksNode.FirstChild("item");
+      while(!removeTransitGatewayCidrBlocksMember.IsNull())
+      {
+        m_removeTransitGatewayCidrBlocks.push_back(removeTransitGatewayCidrBlocksMember.GetText());
+        removeTransitGatewayCidrBlocksMember = removeTransitGatewayCidrBlocksMember.NextNode("item");
+      }
+
+      m_removeTransitGatewayCidrBlocksHasBeenSet = true;
+    }
     XmlNode vpnEcmpSupportNode = resultNode.FirstChild("VpnEcmpSupport");
     if(!vpnEcmpSupportNode.IsNull())
     {
@@ -108,6 +136,24 @@ ModifyTransitGatewayOptions& ModifyTransitGatewayOptions::operator =(const XmlNo
 
 void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_addTransitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned addTransitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_addTransitGatewayCidrBlocks)
+      {
+        oStream << location << index << locationValue << ".AddTransitGatewayCidrBlocks." << addTransitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_removeTransitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned removeTransitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_removeTransitGatewayCidrBlocks)
+      {
+        oStream << location << index << locationValue << ".RemoveTransitGatewayCidrBlocks." << removeTransitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_vpnEcmpSupportHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpnEcmpSupport=" << VpnEcmpSupportValueMapper::GetNameForVpnEcmpSupportValue(m_vpnEcmpSupport) << "&";
@@ -147,6 +193,22 @@ void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const ch
 
 void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_addTransitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned addTransitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_addTransitGatewayCidrBlocks)
+      {
+        oStream << location << ".Item." << addTransitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_removeTransitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned removeTransitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_removeTransitGatewayCidrBlocks)
+      {
+        oStream << location << ".Item." << removeTransitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
   if(m_vpnEcmpSupportHasBeenSet)
   {
       oStream << location << ".VpnEcmpSupport=" << VpnEcmpSupportValueMapper::GetNameForVpnEcmpSupportValue(m_vpnEcmpSupport) << "&";

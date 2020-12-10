@@ -16,10 +16,13 @@ namespace Model
   enum class TransitGatewayMulitcastDomainAssociationState
   {
     NOT_SET,
+    pendingAcceptance,
     associating,
     associated,
     disassociating,
-    disassociated
+    disassociated,
+    rejected,
+    failed
   };
 
 namespace TransitGatewayMulitcastDomainAssociationStateMapper

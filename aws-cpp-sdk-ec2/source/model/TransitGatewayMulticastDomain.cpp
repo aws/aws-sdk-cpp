@@ -23,6 +23,9 @@ namespace Model
 TransitGatewayMulticastDomain::TransitGatewayMulticastDomain() : 
     m_transitGatewayMulticastDomainIdHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
+    m_transitGatewayMulticastDomainArnHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_optionsHasBeenSet(false),
     m_state(TransitGatewayMulticastDomainState::NOT_SET),
     m_stateHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -33,6 +36,9 @@ TransitGatewayMulticastDomain::TransitGatewayMulticastDomain() :
 TransitGatewayMulticastDomain::TransitGatewayMulticastDomain(const XmlNode& xmlNode) : 
     m_transitGatewayMulticastDomainIdHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
+    m_transitGatewayMulticastDomainArnHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_optionsHasBeenSet(false),
     m_state(TransitGatewayMulticastDomainState::NOT_SET),
     m_stateHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -58,6 +64,24 @@ TransitGatewayMulticastDomain& TransitGatewayMulticastDomain::operator =(const X
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+    }
+    XmlNode transitGatewayMulticastDomainArnNode = resultNode.FirstChild("transitGatewayMulticastDomainArn");
+    if(!transitGatewayMulticastDomainArnNode.IsNull())
+    {
+      m_transitGatewayMulticastDomainArn = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayMulticastDomainArnNode.GetText());
+      m_transitGatewayMulticastDomainArnHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+      m_ownerIdHasBeenSet = true;
+    }
+    XmlNode optionsNode = resultNode.FirstChild("options");
+    if(!optionsNode.IsNull())
+    {
+      m_options = optionsNode;
+      m_optionsHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
@@ -100,6 +124,23 @@ void TransitGatewayMulticastDomain::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << index << locationValue << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
+  if(m_transitGatewayMulticastDomainArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransitGatewayMulticastDomainArn=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainArn.c_str()) << "&";
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+      Aws::StringStream optionsLocationAndMemberSs;
+      optionsLocationAndMemberSs << location << index << locationValue << ".Options";
+      m_options.OutputToStream(oStream, optionsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << TransitGatewayMulticastDomainStateMapper::GetNameForTransitGatewayMulticastDomainState(m_state) << "&";
@@ -132,6 +173,20 @@ void TransitGatewayMulticastDomain::OutputToStream(Aws::OStream& oStream, const 
   if(m_transitGatewayIdHasBeenSet)
   {
       oStream << location << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+  if(m_transitGatewayMulticastDomainArnHasBeenSet)
+  {
+      oStream << location << ".TransitGatewayMulticastDomainArn=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainArn.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if(m_optionsHasBeenSet)
+  {
+      Aws::String optionsLocationAndMember(location);
+      optionsLocationAndMember += ".Options";
+      m_options.OutputToStream(oStream, optionsLocationAndMember.c_str());
   }
   if(m_stateHasBeenSet)
   {

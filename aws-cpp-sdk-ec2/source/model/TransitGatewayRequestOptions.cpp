@@ -34,7 +34,8 @@ TransitGatewayRequestOptions::TransitGatewayRequestOptions() :
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
     m_multicastSupport(MulticastSupportValue::NOT_SET),
-    m_multicastSupportHasBeenSet(false)
+    m_multicastSupportHasBeenSet(false),
+    m_transitGatewayCidrBlocksHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ TransitGatewayRequestOptions::TransitGatewayRequestOptions(const XmlNode& xmlNod
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
     m_multicastSupport(MulticastSupportValue::NOT_SET),
-    m_multicastSupportHasBeenSet(false)
+    m_multicastSupportHasBeenSet(false),
+    m_transitGatewayCidrBlocksHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +107,18 @@ TransitGatewayRequestOptions& TransitGatewayRequestOptions::operator =(const Xml
       m_multicastSupport = MulticastSupportValueMapper::GetMulticastSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multicastSupportNode.GetText()).c_str()).c_str());
       m_multicastSupportHasBeenSet = true;
     }
+    XmlNode transitGatewayCidrBlocksNode = resultNode.FirstChild("TransitGatewayCidrBlocks");
+    if(!transitGatewayCidrBlocksNode.IsNull())
+    {
+      XmlNode transitGatewayCidrBlocksMember = transitGatewayCidrBlocksNode.FirstChild("item");
+      while(!transitGatewayCidrBlocksMember.IsNull())
+      {
+        m_transitGatewayCidrBlocks.push_back(transitGatewayCidrBlocksMember.GetText());
+        transitGatewayCidrBlocksMember = transitGatewayCidrBlocksMember.NextNode("item");
+      }
+
+      m_transitGatewayCidrBlocksHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -147,6 +161,15 @@ void TransitGatewayRequestOptions::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".MulticastSupport=" << MulticastSupportValueMapper::GetNameForMulticastSupportValue(m_multicastSupport) << "&";
   }
 
+  if(m_transitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned transitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_transitGatewayCidrBlocks)
+      {
+        oStream << location << index << locationValue << ".TransitGatewayCidrBlocks." << transitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void TransitGatewayRequestOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -178,6 +201,14 @@ void TransitGatewayRequestOptions::OutputToStream(Aws::OStream& oStream, const c
   if(m_multicastSupportHasBeenSet)
   {
       oStream << location << ".MulticastSupport=" << MulticastSupportValueMapper::GetNameForMulticastSupportValue(m_multicastSupport) << "&";
+  }
+  if(m_transitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned transitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_transitGatewayCidrBlocks)
+      {
+        oStream << location << ".Item." << transitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

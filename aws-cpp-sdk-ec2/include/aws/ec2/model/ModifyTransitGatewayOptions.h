@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpnEcmpSupportValue.h>
 #include <aws/ec2/model/DnsSupportValue.h>
 #include <aws/ec2/model/AutoAcceptSharedAttachmentsValue.h>
@@ -42,6 +43,107 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24
+     * CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddTransitGatewayCidrBlocks() const{ return m_addTransitGatewayCidrBlocks; }
+
+    /**
+     * <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24
+     * CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+     */
+    inline bool AddTransitGatewayCidrBlocksHasBeenSet() const { return m_addTransitGatewayCidrBlocksHasBeenSet; }
+
+    /**
+     * <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24
+     * CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+     */
+    inline void SetAddTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { m_addTransitGatewayCidrBlocksHasBeenSet = true; m_addTransitGatewayCidrBlocks = value; }
+
+    /**
+     * <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24
+     * CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+     */
+    inline void SetAddTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { m_addTransitGatewayCidrBlocksHasBeenSet = true; m_addTransitGatewayCidrBlocks = std::move(value); }
+
+    /**
+     * <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24
+     * CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+     */
+    inline ModifyTransitGatewayOptions& WithAddTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { SetAddTransitGatewayCidrBlocks(value); return *this;}
+
+    /**
+     * <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24
+     * CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+     */
+    inline ModifyTransitGatewayOptions& WithAddTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { SetAddTransitGatewayCidrBlocks(std::move(value)); return *this;}
+
+    /**
+     * <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24
+     * CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+     */
+    inline ModifyTransitGatewayOptions& AddAddTransitGatewayCidrBlocks(const Aws::String& value) { m_addTransitGatewayCidrBlocksHasBeenSet = true; m_addTransitGatewayCidrBlocks.push_back(value); return *this; }
+
+    /**
+     * <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24
+     * CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+     */
+    inline ModifyTransitGatewayOptions& AddAddTransitGatewayCidrBlocks(Aws::String&& value) { m_addTransitGatewayCidrBlocksHasBeenSet = true; m_addTransitGatewayCidrBlocks.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24
+     * CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
+     */
+    inline ModifyTransitGatewayOptions& AddAddTransitGatewayCidrBlocks(const char* value) { m_addTransitGatewayCidrBlocksHasBeenSet = true; m_addTransitGatewayCidrBlocks.push_back(value); return *this; }
+
+
+    /**
+     * <p>Removes CIDR blocks for the transit gateway.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRemoveTransitGatewayCidrBlocks() const{ return m_removeTransitGatewayCidrBlocks; }
+
+    /**
+     * <p>Removes CIDR blocks for the transit gateway.</p>
+     */
+    inline bool RemoveTransitGatewayCidrBlocksHasBeenSet() const { return m_removeTransitGatewayCidrBlocksHasBeenSet; }
+
+    /**
+     * <p>Removes CIDR blocks for the transit gateway.</p>
+     */
+    inline void SetRemoveTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { m_removeTransitGatewayCidrBlocksHasBeenSet = true; m_removeTransitGatewayCidrBlocks = value; }
+
+    /**
+     * <p>Removes CIDR blocks for the transit gateway.</p>
+     */
+    inline void SetRemoveTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { m_removeTransitGatewayCidrBlocksHasBeenSet = true; m_removeTransitGatewayCidrBlocks = std::move(value); }
+
+    /**
+     * <p>Removes CIDR blocks for the transit gateway.</p>
+     */
+    inline ModifyTransitGatewayOptions& WithRemoveTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { SetRemoveTransitGatewayCidrBlocks(value); return *this;}
+
+    /**
+     * <p>Removes CIDR blocks for the transit gateway.</p>
+     */
+    inline ModifyTransitGatewayOptions& WithRemoveTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { SetRemoveTransitGatewayCidrBlocks(std::move(value)); return *this;}
+
+    /**
+     * <p>Removes CIDR blocks for the transit gateway.</p>
+     */
+    inline ModifyTransitGatewayOptions& AddRemoveTransitGatewayCidrBlocks(const Aws::String& value) { m_removeTransitGatewayCidrBlocksHasBeenSet = true; m_removeTransitGatewayCidrBlocks.push_back(value); return *this; }
+
+    /**
+     * <p>Removes CIDR blocks for the transit gateway.</p>
+     */
+    inline ModifyTransitGatewayOptions& AddRemoveTransitGatewayCidrBlocks(Aws::String&& value) { m_removeTransitGatewayCidrBlocksHasBeenSet = true; m_removeTransitGatewayCidrBlocks.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Removes CIDR blocks for the transit gateway.</p>
+     */
+    inline ModifyTransitGatewayOptions& AddRemoveTransitGatewayCidrBlocks(const char* value) { m_removeTransitGatewayCidrBlocksHasBeenSet = true; m_removeTransitGatewayCidrBlocks.push_back(value); return *this; }
 
 
     /**
@@ -293,6 +395,12 @@ namespace Model
     inline ModifyTransitGatewayOptions& WithPropagationDefaultRouteTableId(const char* value) { SetPropagationDefaultRouteTableId(value); return *this;}
 
   private:
+
+    Aws::Vector<Aws::String> m_addTransitGatewayCidrBlocks;
+    bool m_addTransitGatewayCidrBlocksHasBeenSet;
+
+    Aws::Vector<Aws::String> m_removeTransitGatewayCidrBlocks;
+    bool m_removeTransitGatewayCidrBlocksHasBeenSet;
 
     VpnEcmpSupportValue m_vpnEcmpSupport;
     bool m_vpnEcmpSupportHasBeenSet;

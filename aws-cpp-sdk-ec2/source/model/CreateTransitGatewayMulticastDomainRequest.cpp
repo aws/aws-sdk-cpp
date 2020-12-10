@@ -12,6 +12,7 @@ using namespace Aws::Utils;
 
 CreateTransitGatewayMulticastDomainRequest::CreateTransitGatewayMulticastDomainRequest() : 
     m_transitGatewayIdHasBeenSet(false),
+    m_optionsHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
@@ -25,6 +26,11 @@ Aws::String CreateTransitGatewayMulticastDomainRequest::SerializePayload() const
   if(m_transitGatewayIdHasBeenSet)
   {
     ss << "TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+    m_options.OutputToStream(ss, "Options");
   }
 
   if(m_tagSpecificationsHasBeenSet)

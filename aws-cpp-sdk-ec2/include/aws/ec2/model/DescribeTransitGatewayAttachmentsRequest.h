@@ -95,16 +95,16 @@ namespace Model
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
-     * <code>initiatingRequest</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
-     * that owns the transit gateway.</p> </li> </ul>
+     * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
+     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -119,16 +119,16 @@ namespace Model
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
-     * <code>initiatingRequest</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
-     * that owns the transit gateway.</p> </li> </ul>
+     * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
+     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -143,16 +143,16 @@ namespace Model
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
-     * <code>initiatingRequest</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
-     * that owns the transit gateway.</p> </li> </ul>
+     * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
+     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -167,16 +167,16 @@ namespace Model
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
-     * <code>initiatingRequest</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
-     * that owns the transit gateway.</p> </li> </ul>
+     * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
+     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -191,16 +191,16 @@ namespace Model
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
-     * <code>initiatingRequest</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
-     * that owns the transit gateway.</p> </li> </ul>
+     * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
+     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewayAttachmentsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -215,16 +215,16 @@ namespace Model
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
-     * <code>initiatingRequest</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
-     * that owns the transit gateway.</p> </li> </ul>
+     * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
+     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewayAttachmentsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -239,16 +239,16 @@ namespace Model
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
-     * <code>initiatingRequest</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
-     * that owns the transit gateway.</p> </li> </ul>
+     * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
+     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewayAttachmentsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -263,16 +263,16 @@ namespace Model
      * of the AWS account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
-     * <code>peering</code>.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment. Valid values are <code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>failing</code> |
-     * <code>initiatingRequest</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>.</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>transit-gateway-owner-id</code> - The ID of the AWS account
-     * that owns the transit gateway.</p> </li> </ul>
+     * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
+     * <code>state</code> - The state of the attachment. Valid values are
+     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
+     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
+     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewayAttachmentsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

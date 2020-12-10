@@ -19,6 +19,7 @@ namespace Model
     vpc,
     vpn,
     direct_connect_gateway,
+    connect,
     peering,
     tgw_peering
   };

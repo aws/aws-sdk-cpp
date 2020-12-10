@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 UpdateDeviceRequest::UpdateDeviceRequest() : 
     m_globalNetworkIdHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
+    m_aWSLocationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_vendorHasBeenSet(false),
@@ -28,6 +29,12 @@ UpdateDeviceRequest::UpdateDeviceRequest() :
 Aws::String UpdateDeviceRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_aWSLocationHasBeenSet)
+  {
+   payload.WithObject("AWSLocation", m_aWSLocation.Jsonize());
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

@@ -23,6 +23,7 @@ namespace Model
 TransitGatewayOptions::TransitGatewayOptions() : 
     m_amazonSideAsn(0),
     m_amazonSideAsnHasBeenSet(false),
+    m_transitGatewayCidrBlocksHasBeenSet(false),
     m_autoAcceptSharedAttachments(AutoAcceptSharedAttachmentsValue::NOT_SET),
     m_autoAcceptSharedAttachmentsHasBeenSet(false),
     m_defaultRouteTableAssociation(DefaultRouteTableAssociationValue::NOT_SET),
@@ -43,6 +44,7 @@ TransitGatewayOptions::TransitGatewayOptions() :
 TransitGatewayOptions::TransitGatewayOptions(const XmlNode& xmlNode) : 
     m_amazonSideAsn(0),
     m_amazonSideAsnHasBeenSet(false),
+    m_transitGatewayCidrBlocksHasBeenSet(false),
     m_autoAcceptSharedAttachments(AutoAcceptSharedAttachmentsValue::NOT_SET),
     m_autoAcceptSharedAttachmentsHasBeenSet(false),
     m_defaultRouteTableAssociation(DefaultRouteTableAssociationValue::NOT_SET),
@@ -72,6 +74,18 @@ TransitGatewayOptions& TransitGatewayOptions::operator =(const XmlNode& xmlNode)
     {
       m_amazonSideAsn = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amazonSideAsnNode.GetText()).c_str()).c_str());
       m_amazonSideAsnHasBeenSet = true;
+    }
+    XmlNode transitGatewayCidrBlocksNode = resultNode.FirstChild("transitGatewayCidrBlocks");
+    if(!transitGatewayCidrBlocksNode.IsNull())
+    {
+      XmlNode transitGatewayCidrBlocksMember = transitGatewayCidrBlocksNode.FirstChild("item");
+      while(!transitGatewayCidrBlocksMember.IsNull())
+      {
+        m_transitGatewayCidrBlocks.push_back(transitGatewayCidrBlocksMember.GetText());
+        transitGatewayCidrBlocksMember = transitGatewayCidrBlocksMember.NextNode("item");
+      }
+
+      m_transitGatewayCidrBlocksHasBeenSet = true;
     }
     XmlNode autoAcceptSharedAttachmentsNode = resultNode.FirstChild("autoAcceptSharedAttachments");
     if(!autoAcceptSharedAttachmentsNode.IsNull())
@@ -133,6 +147,15 @@ void TransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
   }
 
+  if(m_transitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned transitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_transitGatewayCidrBlocks)
+      {
+        oStream << location << index << locationValue << ".TransitGatewayCidrBlocks." << transitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_autoAcceptSharedAttachmentsHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoAcceptSharedAttachments=" << AutoAcceptSharedAttachmentsValueMapper::GetNameForAutoAcceptSharedAttachmentsValue(m_autoAcceptSharedAttachments) << "&";
@@ -180,6 +203,14 @@ void TransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_amazonSideAsnHasBeenSet)
   {
       oStream << location << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
+  }
+  if(m_transitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned transitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_transitGatewayCidrBlocks)
+      {
+        oStream << location << ".TransitGatewayCidrBlocks." << transitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_autoAcceptSharedAttachmentsHasBeenSet)
   {

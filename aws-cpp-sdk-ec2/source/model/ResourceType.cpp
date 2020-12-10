@@ -43,6 +43,8 @@ namespace Aws
         static const int natgateway_HASH = HashingUtils::HashString("natgateway");
         static const int network_acl_HASH = HashingUtils::HashString("network-acl");
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
+        static const int network_insights_analysis_HASH = HashingUtils::HashString("network-insights-analysis");
+        static const int network_insights_path_HASH = HashingUtils::HashString("network-insights-path");
         static const int placement_group_HASH = HashingUtils::HashString("placement-group");
         static const int reserved_instances_HASH = HashingUtils::HashString("reserved-instances");
         static const int route_table_HASH = HashingUtils::HashString("route-table");
@@ -56,6 +58,7 @@ namespace Aws
         static const int traffic_mirror_target_HASH = HashingUtils::HashString("traffic-mirror-target");
         static const int transit_gateway_HASH = HashingUtils::HashString("transit-gateway");
         static const int transit_gateway_attachment_HASH = HashingUtils::HashString("transit-gateway-attachment");
+        static const int transit_gateway_connect_peer_HASH = HashingUtils::HashString("transit-gateway-connect-peer");
         static const int transit_gateway_multicast_domain_HASH = HashingUtils::HashString("transit-gateway-multicast-domain");
         static const int transit_gateway_route_table_HASH = HashingUtils::HashString("transit-gateway-route-table");
         static const int volume_HASH = HashingUtils::HashString("volume");
@@ -161,6 +164,14 @@ namespace Aws
           {
             return ResourceType::network_interface;
           }
+          else if (hashCode == network_insights_analysis_HASH)
+          {
+            return ResourceType::network_insights_analysis;
+          }
+          else if (hashCode == network_insights_path_HASH)
+          {
+            return ResourceType::network_insights_path;
+          }
           else if (hashCode == placement_group_HASH)
           {
             return ResourceType::placement_group;
@@ -212,6 +223,10 @@ namespace Aws
           else if (hashCode == transit_gateway_attachment_HASH)
           {
             return ResourceType::transit_gateway_attachment;
+          }
+          else if (hashCode == transit_gateway_connect_peer_HASH)
+          {
+            return ResourceType::transit_gateway_connect_peer;
           }
           else if (hashCode == transit_gateway_multicast_domain_HASH)
           {
@@ -305,6 +320,10 @@ namespace Aws
             return "network-acl";
           case ResourceType::network_interface:
             return "network-interface";
+          case ResourceType::network_insights_analysis:
+            return "network-insights-analysis";
+          case ResourceType::network_insights_path:
+            return "network-insights-path";
           case ResourceType::placement_group:
             return "placement-group";
           case ResourceType::reserved_instances:
@@ -331,6 +350,8 @@ namespace Aws
             return "transit-gateway";
           case ResourceType::transit_gateway_attachment:
             return "transit-gateway-attachment";
+          case ResourceType::transit_gateway_connect_peer:
+            return "transit-gateway-connect-peer";
           case ResourceType::transit_gateway_multicast_domain:
             return "transit-gateway-multicast-domain";
           case ResourceType::transit_gateway_route_table:
