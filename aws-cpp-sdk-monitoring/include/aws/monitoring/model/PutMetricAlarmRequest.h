@@ -341,6 +341,8 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
@@ -361,6 +363,8 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
@@ -381,6 +385,8 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
@@ -401,6 +407,8 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
@@ -421,6 +429,8 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
@@ -441,6 +451,8 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
@@ -461,6 +473,8 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
@@ -481,6 +495,8 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
@@ -501,6 +517,8 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
@@ -1721,6 +1739,12 @@ namespace Model
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1729,6 +1753,12 @@ namespace Model
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1737,6 +1767,12 @@ namespace Model
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1745,6 +1781,12 @@ namespace Model
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1753,6 +1795,12 @@ namespace Model
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricAlarmRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -1761,6 +1809,12 @@ namespace Model
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricAlarmRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1769,6 +1823,12 @@ namespace Model
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricAlarmRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -1777,6 +1837,12 @@ namespace Model
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricAlarmRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

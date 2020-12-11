@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iotsitewise/model/AssetModelPropertyDefinition.h>
 #include <aws/iotsitewise/model/AssetModelHierarchyDefinition.h>
+#include <aws/iotsitewise/model/AssetModelCompositeModelDefinition.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -298,6 +299,71 @@ namespace Model
 
 
     /**
+     * <p>The composite asset models that are part of this asset model. Composite asset
+     * models are asset models that contain specific properties. Each composite model
+     * has a type that defines the properties that the composite model supports. Use
+     * composite asset models to define alarms on this asset model.</p>
+     */
+    inline const Aws::Vector<AssetModelCompositeModelDefinition>& GetAssetModelCompositeModels() const{ return m_assetModelCompositeModels; }
+
+    /**
+     * <p>The composite asset models that are part of this asset model. Composite asset
+     * models are asset models that contain specific properties. Each composite model
+     * has a type that defines the properties that the composite model supports. Use
+     * composite asset models to define alarms on this asset model.</p>
+     */
+    inline bool AssetModelCompositeModelsHasBeenSet() const { return m_assetModelCompositeModelsHasBeenSet; }
+
+    /**
+     * <p>The composite asset models that are part of this asset model. Composite asset
+     * models are asset models that contain specific properties. Each composite model
+     * has a type that defines the properties that the composite model supports. Use
+     * composite asset models to define alarms on this asset model.</p>
+     */
+    inline void SetAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModelDefinition>& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels = value; }
+
+    /**
+     * <p>The composite asset models that are part of this asset model. Composite asset
+     * models are asset models that contain specific properties. Each composite model
+     * has a type that defines the properties that the composite model supports. Use
+     * composite asset models to define alarms on this asset model.</p>
+     */
+    inline void SetAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModelDefinition>&& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels = std::move(value); }
+
+    /**
+     * <p>The composite asset models that are part of this asset model. Composite asset
+     * models are asset models that contain specific properties. Each composite model
+     * has a type that defines the properties that the composite model supports. Use
+     * composite asset models to define alarms on this asset model.</p>
+     */
+    inline CreateAssetModelRequest& WithAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModelDefinition>& value) { SetAssetModelCompositeModels(value); return *this;}
+
+    /**
+     * <p>The composite asset models that are part of this asset model. Composite asset
+     * models are asset models that contain specific properties. Each composite model
+     * has a type that defines the properties that the composite model supports. Use
+     * composite asset models to define alarms on this asset model.</p>
+     */
+    inline CreateAssetModelRequest& WithAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModelDefinition>&& value) { SetAssetModelCompositeModels(std::move(value)); return *this;}
+
+    /**
+     * <p>The composite asset models that are part of this asset model. Composite asset
+     * models are asset models that contain specific properties. Each composite model
+     * has a type that defines the properties that the composite model supports. Use
+     * composite asset models to define alarms on this asset model.</p>
+     */
+    inline CreateAssetModelRequest& AddAssetModelCompositeModels(const AssetModelCompositeModelDefinition& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels.push_back(value); return *this; }
+
+    /**
+     * <p>The composite asset models that are part of this asset model. Composite asset
+     * models are asset models that contain specific properties. Each composite model
+     * has a type that defines the properties that the composite model supports. Use
+     * composite asset models to define alarms on this asset model.</p>
+     */
+    inline CreateAssetModelRequest& AddAssetModelCompositeModels(AssetModelCompositeModelDefinition&& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A unique case-sensitive identifier that you can provide to ensure the
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
@@ -484,6 +550,9 @@ namespace Model
 
     Aws::Vector<AssetModelHierarchyDefinition> m_assetModelHierarchies;
     bool m_assetModelHierarchiesHasBeenSet;
+
+    Aws::Vector<AssetModelCompositeModelDefinition> m_assetModelCompositeModels;
+    bool m_assetModelCompositeModelsHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

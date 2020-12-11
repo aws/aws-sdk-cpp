@@ -19,7 +19,8 @@ namespace Model
     STRING,
     INTEGER,
     DOUBLE,
-    BOOLEAN
+    BOOLEAN,
+    STRUCT
   };
 
 namespace PropertyDataTypeMapper

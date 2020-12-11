@@ -394,7 +394,7 @@ namespace Model
 
 
         /**
-         * <p>Accepts the invitation to be monitored by a master GuardDuty
+         * <p>Accepts the invitation to be monitored by a GuardDuty administrator
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">AWS
          * API Reference</a></p>
@@ -402,7 +402,7 @@ namespace Model
         virtual Model::AcceptInvitationOutcome AcceptInvitation(const Model::AcceptInvitationRequest& request) const;
 
         /**
-         * <p>Accepts the invitation to be monitored by a master GuardDuty
+         * <p>Accepts the invitation to be monitored by a GuardDuty administrator
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">AWS
          * API Reference</a></p>
@@ -412,7 +412,7 @@ namespace Model
         virtual Model::AcceptInvitationOutcomeCallable AcceptInvitationCallable(const Model::AcceptInvitationRequest& request) const;
 
         /**
-         * <p>Accepts the invitation to be monitored by a master GuardDuty
+         * <p>Accepts the invitation to be monitored by a GuardDuty administrator
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">AWS
          * API Reference</a></p>
@@ -423,8 +423,8 @@ namespace Model
 
         /**
          * <p>Archives GuardDuty findings that are specified by the list of finding
-         * IDs.</p>  <p>Only the master account can archive findings. Member accounts
-         * don't have permission to archive findings from their accounts.</p>
+         * IDs.</p>  <p>Only the administrator account can archive findings. Member
+         * accounts don't have permission to archive findings from their accounts.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">AWS
          * API Reference</a></p>
@@ -433,8 +433,8 @@ namespace Model
 
         /**
          * <p>Archives GuardDuty findings that are specified by the list of finding
-         * IDs.</p>  <p>Only the master account can archive findings. Member accounts
-         * don't have permission to archive findings from their accounts.</p>
+         * IDs.</p>  <p>Only the administrator account can archive findings. Member
+         * accounts don't have permission to archive findings from their accounts.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">AWS
          * API Reference</a></p>
@@ -445,8 +445,8 @@ namespace Model
 
         /**
          * <p>Archives GuardDuty findings that are specified by the list of finding
-         * IDs.</p>  <p>Only the master account can archive findings. Member accounts
-         * don't have permission to archive findings from their accounts.</p>
+         * IDs.</p>  <p>Only the administrator account can archive findings. Member
+         * accounts don't have permission to archive findings from their accounts.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">AWS
          * API Reference</a></p>
@@ -525,7 +525,7 @@ namespace Model
          * interface. An IPSet is a list of IP addresses that are trusted for secure
          * communication with AWS infrastructure and applications. GuardDuty doesn't
          * generate findings for IP addresses that are included in IPSets. Only users from
-         * the master account can use this operation.</p><p><h3>See Also:</h3>   <a
+         * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">AWS
          * API Reference</a></p>
          */
@@ -536,7 +536,7 @@ namespace Model
          * interface. An IPSet is a list of IP addresses that are trusted for secure
          * communication with AWS infrastructure and applications. GuardDuty doesn't
          * generate findings for IP addresses that are included in IPSets. Only users from
-         * the master account can use this operation.</p><p><h3>See Also:</h3>   <a
+         * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">AWS
          * API Reference</a></p>
          *
@@ -549,7 +549,7 @@ namespace Model
          * interface. An IPSet is a list of IP addresses that are trusted for secure
          * communication with AWS infrastructure and applications. GuardDuty doesn't
          * generate findings for IP addresses that are included in IPSets. Only users from
-         * the master account can use this operation.</p><p><h3>See Also:</h3>   <a
+         * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">AWS
          * API Reference</a></p>
          *
@@ -563,10 +563,10 @@ namespace Model
          * accounts either by invitation or through an organization.</p> <p>When using
          * <code>Create Members</code> as an organizations delegated administrator this
          * action will enable GuardDuty in the added member accounts, with the exception of
-         * the organization master account, which must enable GuardDuty prior to being
-         * added as a member.</p> <p>If you are adding accounts by invitation use this
-         * action after GuardDuty has been enabled in potential member accounts and before
-         * using <a
+         * the organization delegated administrator account, which must enable GuardDuty
+         * prior to being added as a member.</p> <p>If you are adding accounts by
+         * invitation use this action after GuardDuty has been enabled in potential member
+         * accounts and before using <a
          * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
          * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
@@ -580,10 +580,10 @@ namespace Model
          * accounts either by invitation or through an organization.</p> <p>When using
          * <code>Create Members</code> as an organizations delegated administrator this
          * action will enable GuardDuty in the added member accounts, with the exception of
-         * the organization master account, which must enable GuardDuty prior to being
-         * added as a member.</p> <p>If you are adding accounts by invitation use this
-         * action after GuardDuty has been enabled in potential member accounts and before
-         * using <a
+         * the organization delegated administrator account, which must enable GuardDuty
+         * prior to being added as a member.</p> <p>If you are adding accounts by
+         * invitation use this action after GuardDuty has been enabled in potential member
+         * accounts and before using <a
          * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
          * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
@@ -599,10 +599,10 @@ namespace Model
          * accounts either by invitation or through an organization.</p> <p>When using
          * <code>Create Members</code> as an organizations delegated administrator this
          * action will enable GuardDuty in the added member accounts, with the exception of
-         * the organization master account, which must enable GuardDuty prior to being
-         * added as a member.</p> <p>If you are adding accounts by invitation use this
-         * action after GuardDuty has been enabled in potential member accounts and before
-         * using <a
+         * the organization delegated administrator account, which must enable GuardDuty
+         * prior to being added as a member.</p> <p>If you are adding accounts by
+         * invitation use this action after GuardDuty has been enabled in potential member
+         * accounts and before using <a
          * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
          * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
@@ -677,7 +677,7 @@ namespace Model
         /**
          * <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP
          * addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of
-         * the master account can use this operation.</p><p><h3>See Also:</h3>   <a
+         * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">AWS
          * API Reference</a></p>
          */
@@ -686,7 +686,7 @@ namespace Model
         /**
          * <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP
          * addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of
-         * the master account can use this operation.</p><p><h3>See Also:</h3>   <a
+         * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">AWS
          * API Reference</a></p>
          *
@@ -697,7 +697,7 @@ namespace Model
         /**
          * <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP
          * addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of
-         * the master account can use this operation.</p><p><h3>See Also:</h3>   <a
+         * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">AWS
          * API Reference</a></p>
          *
@@ -846,16 +846,16 @@ namespace Model
         virtual void DeleteInvitationsAsync(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes GuardDuty member accounts (to the current GuardDuty master account)
-         * specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator
+         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteMembersOutcome DeleteMembers(const Model::DeleteMembersRequest& request) const;
 
         /**
-         * <p>Deletes GuardDuty member accounts (to the current GuardDuty master account)
-         * specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator
+         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers">AWS
          * API Reference</a></p>
          *
@@ -864,8 +864,8 @@ namespace Model
         virtual Model::DeleteMembersOutcomeCallable DeleteMembersCallable(const Model::DeleteMembersRequest& request) const;
 
         /**
-         * <p>Deletes GuardDuty member accounts (to the current GuardDuty master account)
-         * specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator
+         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers">AWS
          * API Reference</a></p>
          *
@@ -1014,7 +1014,7 @@ namespace Model
         virtual void DisableOrganizationAdminAccountAsync(const Model::DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the current GuardDuty member account from its master
+         * <p>Disassociates the current GuardDuty member account from its administrator
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
@@ -1022,7 +1022,7 @@ namespace Model
         virtual Model::DisassociateFromMasterAccountOutcome DisassociateFromMasterAccount(const Model::DisassociateFromMasterAccountRequest& request) const;
 
         /**
-         * <p>Disassociates the current GuardDuty member account from its master
+         * <p>Disassociates the current GuardDuty member account from its administrator
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
@@ -1032,7 +1032,7 @@ namespace Model
         virtual Model::DisassociateFromMasterAccountOutcomeCallable DisassociateFromMasterAccountCallable(const Model::DisassociateFromMasterAccountRequest& request) const;
 
         /**
-         * <p>Disassociates the current GuardDuty member account from its master
+         * <p>Disassociates the current GuardDuty member account from its administrator
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
@@ -1042,16 +1042,18 @@ namespace Model
         virtual void DisassociateFromMasterAccountAsync(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates GuardDuty member accounts (to the current GuardDuty master
-         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates GuardDuty member accounts (to the current GuardDuty
+         * administrator account) specified by the account IDs.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateMembersOutcome DisassociateMembers(const Model::DisassociateMembersRequest& request) const;
 
         /**
-         * <p>Disassociates GuardDuty member accounts (to the current GuardDuty master
-         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates GuardDuty member accounts (to the current GuardDuty
+         * administrator account) specified by the account IDs.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
          *
@@ -1060,8 +1062,9 @@ namespace Model
         virtual Model::DisassociateMembersOutcomeCallable DisassociateMembersCallable(const Model::DisassociateMembersRequest& request) const;
 
         /**
-         * <p>Disassociates GuardDuty member accounts (to the current GuardDuty master
-         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates GuardDuty member accounts (to the current GuardDuty
+         * administrator account) specified by the account IDs.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
          *
@@ -1269,16 +1272,16 @@ namespace Model
         virtual void GetInvitationsCountAsync(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides the details for the GuardDuty master account associated with the
-         * current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the details for the GuardDuty administrator account associated with
+         * the current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMasterAccountOutcome GetMasterAccount(const Model::GetMasterAccountRequest& request) const;
 
         /**
-         * <p>Provides the details for the GuardDuty master account associated with the
-         * current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the details for the GuardDuty administrator account associated with
+         * the current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -1287,8 +1290,8 @@ namespace Model
         virtual Model::GetMasterAccountOutcomeCallable GetMasterAccountCallable(const Model::GetMasterAccountRequest& request) const;
 
         /**
-         * <p>Provides the details for the GuardDuty master account associated with the
-         * current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the details for the GuardDuty administrator account associated with
+         * the current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -1325,16 +1328,16 @@ namespace Model
         virtual void GetMemberDetectorsAsync(const Model::GetMemberDetectorsRequest& request, const GetMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves GuardDuty member accounts (to the current GuardDuty master account)
-         * specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves GuardDuty member accounts (of the current GuardDuty administrator
+         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMembersOutcome GetMembers(const Model::GetMembersRequest& request) const;
 
         /**
-         * <p>Retrieves GuardDuty member accounts (to the current GuardDuty master account)
-         * specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves GuardDuty member accounts (of the current GuardDuty administrator
+         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembers">AWS
          * API Reference</a></p>
          *
@@ -1343,8 +1346,8 @@ namespace Model
         virtual Model::GetMembersOutcomeCallable GetMembersCallable(const Model::GetMembersRequest& request) const;
 
         /**
-         * <p>Retrieves GuardDuty member accounts (to the current GuardDuty master account)
-         * specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves GuardDuty member accounts (of the current GuardDuty administrator
+         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembers">AWS
          * API Reference</a></p>
          *
@@ -1426,8 +1429,8 @@ namespace Model
         /**
          * <p>Invites other AWS accounts (created as members of the current AWS account by
          * CreateMembers) to enable GuardDuty, and allow the current AWS account to view
-         * and manage these accounts' GuardDuty findings on their behalf as the master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * and manage these accounts' findings on their behalf as the GuardDuty
+         * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">AWS
          * API Reference</a></p>
          */
@@ -1436,8 +1439,8 @@ namespace Model
         /**
          * <p>Invites other AWS accounts (created as members of the current AWS account by
          * CreateMembers) to enable GuardDuty, and allow the current AWS account to view
-         * and manage these accounts' GuardDuty findings on their behalf as the master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * and manage these accounts' findings on their behalf as the GuardDuty
+         * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">AWS
          * API Reference</a></p>
          *
@@ -1448,8 +1451,8 @@ namespace Model
         /**
          * <p>Invites other AWS accounts (created as members of the current AWS account by
          * CreateMembers) to enable GuardDuty, and allow the current AWS account to view
-         * and manage these accounts' GuardDuty findings on their behalf as the master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * and manage these accounts' findings on their behalf as the GuardDuty
+         * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">AWS
          * API Reference</a></p>
          *
@@ -1544,7 +1547,7 @@ namespace Model
         /**
          * <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If
          * you use this operation from a member account, the IPSets returned are the IPSets
-         * from the associated master account.</p><p><h3>See Also:</h3>   <a
+         * from the associated administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">AWS
          * API Reference</a></p>
          */
@@ -1553,7 +1556,7 @@ namespace Model
         /**
          * <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If
          * you use this operation from a member account, the IPSets returned are the IPSets
-         * from the associated master account.</p><p><h3>See Also:</h3>   <a
+         * from the associated administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">AWS
          * API Reference</a></p>
          *
@@ -1564,7 +1567,7 @@ namespace Model
         /**
          * <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If
          * you use this operation from a member account, the IPSets returned are the IPSets
-         * from the associated master account.</p><p><h3>See Also:</h3>   <a
+         * from the associated administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">AWS
          * API Reference</a></p>
          *
@@ -1601,16 +1604,16 @@ namespace Model
         virtual void ListInvitationsAsync(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists details about all member accounts for the current GuardDuty master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists details about all member accounts for the current GuardDuty
+         * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request) const;
 
         /**
-         * <p>Lists details about all member accounts for the current GuardDuty master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists details about all member accounts for the current GuardDuty
+         * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -1619,8 +1622,8 @@ namespace Model
         virtual Model::ListMembersOutcomeCallable ListMembersCallable(const Model::ListMembersRequest& request) const;
 
         /**
-         * <p>Lists details about all member accounts for the current GuardDuty master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists details about all member accounts for the current GuardDuty
+         * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -1721,7 +1724,8 @@ namespace Model
         /**
          * <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector
          * ID. If you use this operation from a member account, the ThreatIntelSets
-         * associated with the master account are returned.</p><p><h3>See Also:</h3>   <a
+         * associated with the administrator account are returned.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">AWS
          * API Reference</a></p>
          */
@@ -1730,7 +1734,8 @@ namespace Model
         /**
          * <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector
          * ID. If you use this operation from a member account, the ThreatIntelSets
-         * associated with the master account are returned.</p><p><h3>See Also:</h3>   <a
+         * associated with the administrator account are returned.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">AWS
          * API Reference</a></p>
          *
@@ -1741,7 +1746,8 @@ namespace Model
         /**
          * <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector
          * ID. If you use this operation from a member account, the ThreatIntelSets
-         * associated with the master account are returned.</p><p><h3>See Also:</h3>   <a
+         * associated with the administrator account are returned.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">AWS
          * API Reference</a></p>
          *

@@ -83,34 +83,119 @@ namespace Model
 
 
     /**
-     * <p>The data type of the property definition.</p>
+     * <p>The data type of the property definition.</p> <p>If you specify
+     * <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify
+     * the type of the structure for this property.</p>
      */
     inline const PropertyDataType& GetDataType() const{ return m_dataType; }
 
     /**
-     * <p>The data type of the property definition.</p>
+     * <p>The data type of the property definition.</p> <p>If you specify
+     * <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify
+     * the type of the structure for this property.</p>
      */
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
     /**
-     * <p>The data type of the property definition.</p>
+     * <p>The data type of the property definition.</p> <p>If you specify
+     * <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify
+     * the type of the structure for this property.</p>
      */
     inline void SetDataType(const PropertyDataType& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /**
-     * <p>The data type of the property definition.</p>
+     * <p>The data type of the property definition.</p> <p>If you specify
+     * <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify
+     * the type of the structure for this property.</p>
      */
     inline void SetDataType(PropertyDataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
     /**
-     * <p>The data type of the property definition.</p>
+     * <p>The data type of the property definition.</p> <p>If you specify
+     * <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify
+     * the type of the structure for this property.</p>
      */
     inline AssetModelPropertyDefinition& WithDataType(const PropertyDataType& value) { SetDataType(value); return *this;}
 
     /**
-     * <p>The data type of the property definition.</p>
+     * <p>The data type of the property definition.</p> <p>If you specify
+     * <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify
+     * the type of the structure for this property.</p>
      */
     inline AssetModelPropertyDefinition& WithDataType(PropertyDataType&& value) { SetDataType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The data type of the structure for this property. This parameter is required
+     * on properties that have the <code>STRUCT</code> data type.</p> <p>The options
+     * for this parameter depend on the type of the composite model in which you define
+     * this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
+     * composite models.</p>
+     */
+    inline const Aws::String& GetDataTypeSpec() const{ return m_dataTypeSpec; }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter is required
+     * on properties that have the <code>STRUCT</code> data type.</p> <p>The options
+     * for this parameter depend on the type of the composite model in which you define
+     * this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
+     * composite models.</p>
+     */
+    inline bool DataTypeSpecHasBeenSet() const { return m_dataTypeSpecHasBeenSet; }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter is required
+     * on properties that have the <code>STRUCT</code> data type.</p> <p>The options
+     * for this parameter depend on the type of the composite model in which you define
+     * this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
+     * composite models.</p>
+     */
+    inline void SetDataTypeSpec(const Aws::String& value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec = value; }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter is required
+     * on properties that have the <code>STRUCT</code> data type.</p> <p>The options
+     * for this parameter depend on the type of the composite model in which you define
+     * this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
+     * composite models.</p>
+     */
+    inline void SetDataTypeSpec(Aws::String&& value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec = std::move(value); }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter is required
+     * on properties that have the <code>STRUCT</code> data type.</p> <p>The options
+     * for this parameter depend on the type of the composite model in which you define
+     * this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
+     * composite models.</p>
+     */
+    inline void SetDataTypeSpec(const char* value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec.assign(value); }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter is required
+     * on properties that have the <code>STRUCT</code> data type.</p> <p>The options
+     * for this parameter depend on the type of the composite model in which you define
+     * this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
+     * composite models.</p>
+     */
+    inline AssetModelPropertyDefinition& WithDataTypeSpec(const Aws::String& value) { SetDataTypeSpec(value); return *this;}
+
+    /**
+     * <p>The data type of the structure for this property. This parameter is required
+     * on properties that have the <code>STRUCT</code> data type.</p> <p>The options
+     * for this parameter depend on the type of the composite model in which you define
+     * this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
+     * composite models.</p>
+     */
+    inline AssetModelPropertyDefinition& WithDataTypeSpec(Aws::String&& value) { SetDataTypeSpec(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type of the structure for this property. This parameter is required
+     * on properties that have the <code>STRUCT</code> data type.</p> <p>The options
+     * for this parameter depend on the type of the composite model in which you define
+     * this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
+     * composite models.</p>
+     */
+    inline AssetModelPropertyDefinition& WithDataTypeSpec(const char* value) { SetDataTypeSpec(value); return *this;}
 
 
     /**
@@ -205,6 +290,9 @@ namespace Model
 
     PropertyDataType m_dataType;
     bool m_dataTypeHasBeenSet;
+
+    Aws::String m_dataTypeSpec;
+    bool m_dataTypeSpecHasBeenSet;
 
     Aws::String m_unit;
     bool m_unitHasBeenSet;

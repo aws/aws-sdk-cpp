@@ -41,6 +41,7 @@ namespace IoTSiteWiseErrorMapper
 {
 
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
+static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int CONFLICTING_OPERATION_HASH = HashingUtils::HashString("ConflictingOperationException");
@@ -54,6 +55,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTSiteWiseErrors::RESOURCE_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == UNAUTHORIZED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTSiteWiseErrors::UNAUTHORIZED), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

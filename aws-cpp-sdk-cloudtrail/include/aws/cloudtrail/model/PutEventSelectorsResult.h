@@ -121,25 +121,39 @@ namespace Model
     inline PutEventSelectorsResult& AddEventSelectors(EventSelector&& value) { m_eventSelectors.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>Specifies the advanced event selectors configured for your trail.</p>
+     */
     inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
 
-    
+    /**
+     * <p>Specifies the advanced event selectors configured for your trail.</p>
+     */
     inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectors = value; }
 
-    
+    /**
+     * <p>Specifies the advanced event selectors configured for your trail.</p>
+     */
     inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectors = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the advanced event selectors configured for your trail.</p>
+     */
     inline PutEventSelectorsResult& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the advanced event selectors configured for your trail.</p>
+     */
     inline PutEventSelectorsResult& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Specifies the advanced event selectors configured for your trail.</p>
+     */
     inline PutEventSelectorsResult& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectors.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Specifies the advanced event selectors configured for your trail.</p>
+     */
     inline PutEventSelectorsResult& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectors.push_back(std::move(value)); return *this; }
 
   private:

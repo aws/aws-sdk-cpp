@@ -285,6 +285,55 @@ namespace Model
 
 
     /**
+     * <p>The data type of the structure for this property. This parameter exists on
+     * properties that have the <code>STRUCT</code> data type.</p>
+     */
+    inline const Aws::String& GetDataTypeSpec() const{ return m_dataTypeSpec; }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter exists on
+     * properties that have the <code>STRUCT</code> data type.</p>
+     */
+    inline bool DataTypeSpecHasBeenSet() const { return m_dataTypeSpecHasBeenSet; }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter exists on
+     * properties that have the <code>STRUCT</code> data type.</p>
+     */
+    inline void SetDataTypeSpec(const Aws::String& value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec = value; }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter exists on
+     * properties that have the <code>STRUCT</code> data type.</p>
+     */
+    inline void SetDataTypeSpec(Aws::String&& value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec = std::move(value); }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter exists on
+     * properties that have the <code>STRUCT</code> data type.</p>
+     */
+    inline void SetDataTypeSpec(const char* value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec.assign(value); }
+
+    /**
+     * <p>The data type of the structure for this property. This parameter exists on
+     * properties that have the <code>STRUCT</code> data type.</p>
+     */
+    inline AssetProperty& WithDataTypeSpec(const Aws::String& value) { SetDataTypeSpec(value); return *this;}
+
+    /**
+     * <p>The data type of the structure for this property. This parameter exists on
+     * properties that have the <code>STRUCT</code> data type.</p>
+     */
+    inline AssetProperty& WithDataTypeSpec(Aws::String&& value) { SetDataTypeSpec(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type of the structure for this property. This parameter exists on
+     * properties that have the <code>STRUCT</code> data type.</p>
+     */
+    inline AssetProperty& WithDataTypeSpec(const char* value) { SetDataTypeSpec(value); return *this;}
+
+
+    /**
      * <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset
      * property.</p>
      */
@@ -348,6 +397,9 @@ namespace Model
 
     PropertyDataType m_dataType;
     bool m_dataTypeHasBeenSet;
+
+    Aws::String m_dataTypeSpec;
+    bool m_dataTypeSpecHasBeenSet;
 
     Aws::String m_unit;
     bool m_unitHasBeenSet;

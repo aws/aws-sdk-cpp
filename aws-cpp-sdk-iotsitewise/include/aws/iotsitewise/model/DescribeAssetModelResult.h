@@ -11,6 +11,7 @@
 #include <aws/iotsitewise/model/AssetModelStatus.h>
 #include <aws/iotsitewise/model/AssetModelProperty.h>
 #include <aws/iotsitewise/model/AssetModelHierarchy.h>
+#include <aws/iotsitewise/model/AssetModelCompositeModel.h>
 #include <utility>
 
 namespace Aws
@@ -210,37 +211,51 @@ namespace Model
 
 
     /**
-     * <p>The list of asset properties for the asset model.</p>
+     * <p>The list of asset properties for the asset model.</p> <p>This object doesn't
+     * include properties that you define in composite models. You can find composite
+     * model properties in the <code>assetModelCompositeModels</code> object.</p>
      */
     inline const Aws::Vector<AssetModelProperty>& GetAssetModelProperties() const{ return m_assetModelProperties; }
 
     /**
-     * <p>The list of asset properties for the asset model.</p>
+     * <p>The list of asset properties for the asset model.</p> <p>This object doesn't
+     * include properties that you define in composite models. You can find composite
+     * model properties in the <code>assetModelCompositeModels</code> object.</p>
      */
     inline void SetAssetModelProperties(const Aws::Vector<AssetModelProperty>& value) { m_assetModelProperties = value; }
 
     /**
-     * <p>The list of asset properties for the asset model.</p>
+     * <p>The list of asset properties for the asset model.</p> <p>This object doesn't
+     * include properties that you define in composite models. You can find composite
+     * model properties in the <code>assetModelCompositeModels</code> object.</p>
      */
     inline void SetAssetModelProperties(Aws::Vector<AssetModelProperty>&& value) { m_assetModelProperties = std::move(value); }
 
     /**
-     * <p>The list of asset properties for the asset model.</p>
+     * <p>The list of asset properties for the asset model.</p> <p>This object doesn't
+     * include properties that you define in composite models. You can find composite
+     * model properties in the <code>assetModelCompositeModels</code> object.</p>
      */
     inline DescribeAssetModelResult& WithAssetModelProperties(const Aws::Vector<AssetModelProperty>& value) { SetAssetModelProperties(value); return *this;}
 
     /**
-     * <p>The list of asset properties for the asset model.</p>
+     * <p>The list of asset properties for the asset model.</p> <p>This object doesn't
+     * include properties that you define in composite models. You can find composite
+     * model properties in the <code>assetModelCompositeModels</code> object.</p>
      */
     inline DescribeAssetModelResult& WithAssetModelProperties(Aws::Vector<AssetModelProperty>&& value) { SetAssetModelProperties(std::move(value)); return *this;}
 
     /**
-     * <p>The list of asset properties for the asset model.</p>
+     * <p>The list of asset properties for the asset model.</p> <p>This object doesn't
+     * include properties that you define in composite models. You can find composite
+     * model properties in the <code>assetModelCompositeModels</code> object.</p>
      */
     inline DescribeAssetModelResult& AddAssetModelProperties(const AssetModelProperty& value) { m_assetModelProperties.push_back(value); return *this; }
 
     /**
-     * <p>The list of asset properties for the asset model.</p>
+     * <p>The list of asset properties for the asset model.</p> <p>This object doesn't
+     * include properties that you define in composite models. You can find composite
+     * model properties in the <code>assetModelCompositeModels</code> object.</p>
      */
     inline DescribeAssetModelResult& AddAssetModelProperties(AssetModelProperty&& value) { m_assetModelProperties.push_back(std::move(value)); return *this; }
 
@@ -300,6 +315,42 @@ namespace Model
      * for an asset model.</p>
      */
     inline DescribeAssetModelResult& AddAssetModelHierarchies(AssetModelHierarchy&& value) { m_assetModelHierarchies.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The list of composite asset models for the asset model.</p>
+     */
+    inline const Aws::Vector<AssetModelCompositeModel>& GetAssetModelCompositeModels() const{ return m_assetModelCompositeModels; }
+
+    /**
+     * <p>The list of composite asset models for the asset model.</p>
+     */
+    inline void SetAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModel>& value) { m_assetModelCompositeModels = value; }
+
+    /**
+     * <p>The list of composite asset models for the asset model.</p>
+     */
+    inline void SetAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModel>&& value) { m_assetModelCompositeModels = std::move(value); }
+
+    /**
+     * <p>The list of composite asset models for the asset model.</p>
+     */
+    inline DescribeAssetModelResult& WithAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModel>& value) { SetAssetModelCompositeModels(value); return *this;}
+
+    /**
+     * <p>The list of composite asset models for the asset model.</p>
+     */
+    inline DescribeAssetModelResult& WithAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModel>&& value) { SetAssetModelCompositeModels(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of composite asset models for the asset model.</p>
+     */
+    inline DescribeAssetModelResult& AddAssetModelCompositeModels(const AssetModelCompositeModel& value) { m_assetModelCompositeModels.push_back(value); return *this; }
+
+    /**
+     * <p>The list of composite asset models for the asset model.</p>
+     */
+    inline DescribeAssetModelResult& AddAssetModelCompositeModels(AssetModelCompositeModel&& value) { m_assetModelCompositeModels.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -397,6 +448,8 @@ namespace Model
     Aws::Vector<AssetModelProperty> m_assetModelProperties;
 
     Aws::Vector<AssetModelHierarchy> m_assetModelHierarchies;
+
+    Aws::Vector<AssetModelCompositeModel> m_assetModelCompositeModels;
 
     Aws::Utils::DateTime m_assetModelCreationDate;
 

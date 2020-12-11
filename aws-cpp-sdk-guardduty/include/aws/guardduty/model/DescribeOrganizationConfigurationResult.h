@@ -53,50 +53,50 @@ namespace Model
 
     /**
      * <p>Indicates whether the maximum number of allowed member accounts are already
-     * associated with the delegated administrator master account.</p>
+     * associated with the delegated administrator account for your organization.</p>
      */
     inline bool GetMemberAccountLimitReached() const{ return m_memberAccountLimitReached; }
 
     /**
      * <p>Indicates whether the maximum number of allowed member accounts are already
-     * associated with the delegated administrator master account.</p>
+     * associated with the delegated administrator account for your organization.</p>
      */
     inline void SetMemberAccountLimitReached(bool value) { m_memberAccountLimitReached = value; }
 
     /**
      * <p>Indicates whether the maximum number of allowed member accounts are already
-     * associated with the delegated administrator master account.</p>
+     * associated with the delegated administrator account for your organization.</p>
      */
     inline DescribeOrganizationConfigurationResult& WithMemberAccountLimitReached(bool value) { SetMemberAccountLimitReached(value); return *this;}
 
 
     /**
-     * <p>An object that describes which data sources are enabled automatically for
-     * member accounts.</p>
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
      */
     inline const OrganizationDataSourceConfigurationsResult& GetDataSources() const{ return m_dataSources; }
 
     /**
-     * <p>An object that describes which data sources are enabled automatically for
-     * member accounts.</p>
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
      */
     inline void SetDataSources(const OrganizationDataSourceConfigurationsResult& value) { m_dataSources = value; }
 
     /**
-     * <p>An object that describes which data sources are enabled automatically for
-     * member accounts.</p>
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
      */
     inline void SetDataSources(OrganizationDataSourceConfigurationsResult&& value) { m_dataSources = std::move(value); }
 
     /**
-     * <p>An object that describes which data sources are enabled automatically for
-     * member accounts.</p>
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
      */
     inline DescribeOrganizationConfigurationResult& WithDataSources(const OrganizationDataSourceConfigurationsResult& value) { SetDataSources(value); return *this;}
 
     /**
-     * <p>An object that describes which data sources are enabled automatically for
-     * member accounts.</p>
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
      */
     inline DescribeOrganizationConfigurationResult& WithDataSources(OrganizationDataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
 

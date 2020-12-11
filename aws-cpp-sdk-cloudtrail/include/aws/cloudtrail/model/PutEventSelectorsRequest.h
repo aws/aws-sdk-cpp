@@ -152,75 +152,179 @@ namespace Model
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline const Aws::Vector<EventSelector>& GetEventSelectors() const{ return m_eventSelectors; }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline bool EventSelectorsHasBeenSet() const { return m_eventSelectorsHasBeenSet; }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline void SetEventSelectors(const Aws::Vector<EventSelector>& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = value; }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = std::move(value); }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline PutEventSelectorsRequest& WithEventSelectors(const Aws::Vector<EventSelector>& value) { SetEventSelectors(value); return *this;}
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline PutEventSelectorsRequest& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline PutEventSelectorsRequest& AddEventSelectors(const EventSelector& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.push_back(value); return *this; }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline PutEventSelectorsRequest& AddEventSelectors(EventSelector&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     */
     inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
 
-    
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     */
     inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
 
-    
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     */
     inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
 
-    
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     */
     inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
 
-    
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     */
     inline PutEventSelectorsRequest& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
 
-    
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     */
     inline PutEventSelectorsRequest& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     */
     inline PutEventSelectorsRequest& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
 
-    
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>. </p>
+     */
     inline PutEventSelectorsRequest& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }
 
   private:

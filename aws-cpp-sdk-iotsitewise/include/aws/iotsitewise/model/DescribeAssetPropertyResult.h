@@ -7,6 +7,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/Property.h>
+#include <aws/iotsitewise/model/CompositeModelProperty.h>
 #include <utility>
 
 namespace Aws
@@ -142,29 +143,75 @@ namespace Model
 
 
     /**
-     * <p>The asset property's definition, alias, and notification state.</p>
+     * <p>The asset property's definition, alias, and notification state.</p> <p>This
+     * response includes this object for normal asset properties. If you describe an
+     * asset property in a composite model, this response includes the asset property
+     * information in <code>compositeModel</code>.</p>
      */
     inline const Property& GetAssetProperty() const{ return m_assetProperty; }
 
     /**
-     * <p>The asset property's definition, alias, and notification state.</p>
+     * <p>The asset property's definition, alias, and notification state.</p> <p>This
+     * response includes this object for normal asset properties. If you describe an
+     * asset property in a composite model, this response includes the asset property
+     * information in <code>compositeModel</code>.</p>
      */
     inline void SetAssetProperty(const Property& value) { m_assetProperty = value; }
 
     /**
-     * <p>The asset property's definition, alias, and notification state.</p>
+     * <p>The asset property's definition, alias, and notification state.</p> <p>This
+     * response includes this object for normal asset properties. If you describe an
+     * asset property in a composite model, this response includes the asset property
+     * information in <code>compositeModel</code>.</p>
      */
     inline void SetAssetProperty(Property&& value) { m_assetProperty = std::move(value); }
 
     /**
-     * <p>The asset property's definition, alias, and notification state.</p>
+     * <p>The asset property's definition, alias, and notification state.</p> <p>This
+     * response includes this object for normal asset properties. If you describe an
+     * asset property in a composite model, this response includes the asset property
+     * information in <code>compositeModel</code>.</p>
      */
     inline DescribeAssetPropertyResult& WithAssetProperty(const Property& value) { SetAssetProperty(value); return *this;}
 
     /**
-     * <p>The asset property's definition, alias, and notification state.</p>
+     * <p>The asset property's definition, alias, and notification state.</p> <p>This
+     * response includes this object for normal asset properties. If you describe an
+     * asset property in a composite model, this response includes the asset property
+     * information in <code>compositeModel</code>.</p>
      */
     inline DescribeAssetPropertyResult& WithAssetProperty(Property&& value) { SetAssetProperty(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The composite asset model that declares this asset property, if this asset
+     * property exists in a composite model.</p>
+     */
+    inline const CompositeModelProperty& GetCompositeModel() const{ return m_compositeModel; }
+
+    /**
+     * <p>The composite asset model that declares this asset property, if this asset
+     * property exists in a composite model.</p>
+     */
+    inline void SetCompositeModel(const CompositeModelProperty& value) { m_compositeModel = value; }
+
+    /**
+     * <p>The composite asset model that declares this asset property, if this asset
+     * property exists in a composite model.</p>
+     */
+    inline void SetCompositeModel(CompositeModelProperty&& value) { m_compositeModel = std::move(value); }
+
+    /**
+     * <p>The composite asset model that declares this asset property, if this asset
+     * property exists in a composite model.</p>
+     */
+    inline DescribeAssetPropertyResult& WithCompositeModel(const CompositeModelProperty& value) { SetCompositeModel(value); return *this;}
+
+    /**
+     * <p>The composite asset model that declares this asset property, if this asset
+     * property exists in a composite model.</p>
+     */
+    inline DescribeAssetPropertyResult& WithCompositeModel(CompositeModelProperty&& value) { SetCompositeModel(std::move(value)); return *this;}
 
   private:
 
@@ -175,6 +222,8 @@ namespace Model
     Aws::String m_assetModelId;
 
     Property m_assetProperty;
+
+    CompositeModelProperty m_compositeModel;
   };
 
 } // namespace Model

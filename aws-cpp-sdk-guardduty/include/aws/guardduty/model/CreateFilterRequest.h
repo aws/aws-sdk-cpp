@@ -37,91 +37,107 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
      * create a filter for.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
      * create a filter for.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
      * create a filter for.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
      * create a filter for.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
      * create a filter for.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
      * create a filter for.</p>
      */
     inline CreateFilterRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
      * create a filter for.</p>
      */
     inline CreateFilterRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
      * create a filter for.</p>
      */
     inline CreateFilterRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline CreateFilterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline CreateFilterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline CreateFilterRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -254,6 +270,7 @@ namespace Model
      * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
      * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
      * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
@@ -313,6 +330,7 @@ namespace Model
      * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
      * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
      * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
@@ -372,6 +390,7 @@ namespace Model
      * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
      * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
      * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
@@ -431,6 +450,7 @@ namespace Model
      * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
      * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
      * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
@@ -490,6 +510,7 @@ namespace Model
      * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
      * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
      * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
@@ -549,6 +570,7 @@ namespace Model
      * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
      * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
      * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>

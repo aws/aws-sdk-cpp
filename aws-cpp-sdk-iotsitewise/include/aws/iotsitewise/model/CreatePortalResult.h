@@ -136,70 +136,56 @@ namespace Model
     /**
      * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
      * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
-     * SiteWise API
-     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
-     * operation to create a URL that you can use to access the portal.</p>
+     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
+     * can use to access the portal.</p>
      */
     inline const Aws::String& GetPortalStartUrl() const{ return m_portalStartUrl; }
 
     /**
      * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
      * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
-     * SiteWise API
-     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
-     * operation to create a URL that you can use to access the portal.</p>
+     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
+     * can use to access the portal.</p>
      */
     inline void SetPortalStartUrl(const Aws::String& value) { m_portalStartUrl = value; }
 
     /**
      * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
      * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
-     * SiteWise API
-     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
-     * operation to create a URL that you can use to access the portal.</p>
+     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
+     * can use to access the portal.</p>
      */
     inline void SetPortalStartUrl(Aws::String&& value) { m_portalStartUrl = std::move(value); }
 
     /**
      * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
      * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
-     * SiteWise API
-     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
-     * operation to create a URL that you can use to access the portal.</p>
+     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
+     * can use to access the portal.</p>
      */
     inline void SetPortalStartUrl(const char* value) { m_portalStartUrl.assign(value); }
 
     /**
      * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
      * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
-     * SiteWise API
-     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
-     * operation to create a URL that you can use to access the portal.</p>
+     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
+     * can use to access the portal.</p>
      */
     inline CreatePortalResult& WithPortalStartUrl(const Aws::String& value) { SetPortalStartUrl(value); return *this;}
 
     /**
      * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
      * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
-     * SiteWise API
-     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
-     * operation to create a URL that you can use to access the portal.</p>
+     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
+     * can use to access the portal.</p>
      */
     inline CreatePortalResult& WithPortalStartUrl(Aws::String&& value) { SetPortalStartUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to
      * access portals that use AWS SSO for authentication. For portals that use IAM for
-     * authentication, you must use the <a href="https://docs.aws.amazon.com/AWS IoT
-     * SiteWise API
-     * ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
-     * operation to create a URL that you can use to access the portal.</p>
+     * authentication, you must use the AWS IoT SiteWise console to get a URL that you
+     * can use to access the portal.</p>
      */
     inline CreatePortalResult& WithPortalStartUrl(const char* value) { SetPortalStartUrl(value); return *this;}
 

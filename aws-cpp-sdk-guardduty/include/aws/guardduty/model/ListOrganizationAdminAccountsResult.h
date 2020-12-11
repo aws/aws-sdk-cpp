@@ -35,44 +35,37 @@ namespace Model
 
 
     /**
-     * <p>An AdminAccounts object that includes a list of accounts configured as
-     * GuardDuty delegated administrators.</p>
+     * <p>A list of accounts configured as GuardDuty delegated administrators.</p>
      */
     inline const Aws::Vector<AdminAccount>& GetAdminAccounts() const{ return m_adminAccounts; }
 
     /**
-     * <p>An AdminAccounts object that includes a list of accounts configured as
-     * GuardDuty delegated administrators.</p>
+     * <p>A list of accounts configured as GuardDuty delegated administrators.</p>
      */
     inline void SetAdminAccounts(const Aws::Vector<AdminAccount>& value) { m_adminAccounts = value; }
 
     /**
-     * <p>An AdminAccounts object that includes a list of accounts configured as
-     * GuardDuty delegated administrators.</p>
+     * <p>A list of accounts configured as GuardDuty delegated administrators.</p>
      */
     inline void SetAdminAccounts(Aws::Vector<AdminAccount>&& value) { m_adminAccounts = std::move(value); }
 
     /**
-     * <p>An AdminAccounts object that includes a list of accounts configured as
-     * GuardDuty delegated administrators.</p>
+     * <p>A list of accounts configured as GuardDuty delegated administrators.</p>
      */
     inline ListOrganizationAdminAccountsResult& WithAdminAccounts(const Aws::Vector<AdminAccount>& value) { SetAdminAccounts(value); return *this;}
 
     /**
-     * <p>An AdminAccounts object that includes a list of accounts configured as
-     * GuardDuty delegated administrators.</p>
+     * <p>A list of accounts configured as GuardDuty delegated administrators.</p>
      */
     inline ListOrganizationAdminAccountsResult& WithAdminAccounts(Aws::Vector<AdminAccount>&& value) { SetAdminAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>An AdminAccounts object that includes a list of accounts configured as
-     * GuardDuty delegated administrators.</p>
+     * <p>A list of accounts configured as GuardDuty delegated administrators.</p>
      */
     inline ListOrganizationAdminAccountsResult& AddAdminAccounts(const AdminAccount& value) { m_adminAccounts.push_back(value); return *this; }
 
     /**
-     * <p>An AdminAccounts object that includes a list of accounts configured as
-     * GuardDuty delegated administrators.</p>
+     * <p>A list of accounts configured as GuardDuty delegated administrators.</p>
      */
     inline ListOrganizationAdminAccountsResult& AddAdminAccounts(AdminAccount&& value) { m_adminAccounts.push_back(std::move(value)); return *this; }
 

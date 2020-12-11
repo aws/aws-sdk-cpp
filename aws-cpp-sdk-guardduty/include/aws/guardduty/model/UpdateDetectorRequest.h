@@ -134,32 +134,32 @@ namespace Model
 
 
     /**
-     * <p>An object that describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
 
     /**
-     * <p>An object that describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
 
     /**
-     * <p>An object that describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
 
     /**
-     * <p>An object that describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
 
     /**
-     * <p>An object that describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline UpdateDetectorRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
 
     /**
-     * <p>An object that describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline UpdateDetectorRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
 

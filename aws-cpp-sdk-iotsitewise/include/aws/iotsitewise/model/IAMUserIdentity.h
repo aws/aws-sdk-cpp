@@ -39,9 +39,7 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM user. IAM users must have the
-     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
-     * portal. For more information, see <a
+     * <p>The ARN of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * ARNs</a> in the <i>IAM User Guide</i>.</p>  <p>If you delete the IAM user,
      * access policies that contain this identity include an empty <code>arn</code>.
@@ -51,9 +49,7 @@ namespace Model
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the IAM user. IAM users must have the
-     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
-     * portal. For more information, see <a
+     * <p>The ARN of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * ARNs</a> in the <i>IAM User Guide</i>.</p>  <p>If you delete the IAM user,
      * access policies that contain this identity include an empty <code>arn</code>.
@@ -63,9 +59,7 @@ namespace Model
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM user. IAM users must have the
-     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
-     * portal. For more information, see <a
+     * <p>The ARN of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * ARNs</a> in the <i>IAM User Guide</i>.</p>  <p>If you delete the IAM user,
      * access policies that contain this identity include an empty <code>arn</code>.
@@ -75,9 +69,7 @@ namespace Model
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the IAM user. IAM users must have the
-     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
-     * portal. For more information, see <a
+     * <p>The ARN of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * ARNs</a> in the <i>IAM User Guide</i>.</p>  <p>If you delete the IAM user,
      * access policies that contain this identity include an empty <code>arn</code>.
@@ -87,9 +79,7 @@ namespace Model
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM user. IAM users must have the
-     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
-     * portal. For more information, see <a
+     * <p>The ARN of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * ARNs</a> in the <i>IAM User Guide</i>.</p>  <p>If you delete the IAM user,
      * access policies that contain this identity include an empty <code>arn</code>.
@@ -99,9 +89,7 @@ namespace Model
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM user. IAM users must have the
-     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
-     * portal. For more information, see <a
+     * <p>The ARN of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * ARNs</a> in the <i>IAM User Guide</i>.</p>  <p>If you delete the IAM user,
      * access policies that contain this identity include an empty <code>arn</code>.
@@ -111,9 +99,7 @@ namespace Model
     inline IAMUserIdentity& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM user. IAM users must have the
-     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
-     * portal. For more information, see <a
+     * <p>The ARN of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * ARNs</a> in the <i>IAM User Guide</i>.</p>  <p>If you delete the IAM user,
      * access policies that contain this identity include an empty <code>arn</code>.
@@ -123,9 +109,7 @@ namespace Model
     inline IAMUserIdentity& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM user. IAM users must have the
-     * <code>iotsitewise:CreatePresignedPortalUrl</code> permission to sign in to the
-     * portal. For more information, see <a
+     * <p>The ARN of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * ARNs</a> in the <i>IAM User Guide</i>.</p>  <p>If you delete the IAM user,
      * access policies that contain this identity include an empty <code>arn</code>.

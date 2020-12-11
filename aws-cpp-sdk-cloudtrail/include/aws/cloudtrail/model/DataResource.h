@@ -31,7 +31,9 @@ namespace Model
    * are also known as data plane operations. You can specify up to 250 data
    * resources for a trail.</p>  <p>The total number of allowed data resources
    * is 250. This number can be distributed between 1 and 5 event selectors, but the
-   * total cannot exceed 250 across all selectors.</p>  <p>The following
+   * total cannot exceed 250 across all selectors.</p> <p>If you are using advanced
+   * event selectors, the maximum total number of values for all conditions, across
+   * all advanced event selectors for the trail, is 500.</p>  <p>The following
    * example demonstrates how logging works when you configure logging of all data
    * events for an S3 bucket named <code>bucket-1</code>. In this example, the
    * CloudTrail user specified an empty prefix, and the option to log both

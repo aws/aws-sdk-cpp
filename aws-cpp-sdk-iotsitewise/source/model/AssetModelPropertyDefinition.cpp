@@ -22,6 +22,7 @@ AssetModelPropertyDefinition::AssetModelPropertyDefinition() :
     m_nameHasBeenSet(false),
     m_dataType(PropertyDataType::NOT_SET),
     m_dataTypeHasBeenSet(false),
+    m_dataTypeSpecHasBeenSet(false),
     m_unitHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ AssetModelPropertyDefinition::AssetModelPropertyDefinition(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_dataType(PropertyDataType::NOT_SET),
     m_dataTypeHasBeenSet(false),
+    m_dataTypeSpecHasBeenSet(false),
     m_unitHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
@@ -51,6 +53,13 @@ AssetModelPropertyDefinition& AssetModelPropertyDefinition::operator =(JsonView 
     m_dataType = PropertyDataTypeMapper::GetPropertyDataTypeForName(jsonValue.GetString("dataType"));
 
     m_dataTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataTypeSpec"))
+  {
+    m_dataTypeSpec = jsonValue.GetString("dataTypeSpec");
+
+    m_dataTypeSpecHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("unit"))
@@ -83,6 +92,12 @@ JsonValue AssetModelPropertyDefinition::Jsonize() const
   if(m_dataTypeHasBeenSet)
   {
    payload.WithString("dataType", PropertyDataTypeMapper::GetNameForPropertyDataType(m_dataType));
+  }
+
+  if(m_dataTypeSpecHasBeenSet)
+  {
+   payload.WithString("dataTypeSpec", m_dataTypeSpec);
+
   }
 
   if(m_unitHasBeenSet)

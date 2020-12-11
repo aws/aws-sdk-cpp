@@ -99,75 +99,63 @@ namespace Model
 
 
     /**
-     * <p>An enum value that specifies how frequently updated findings are
-     * exported.</p>
+     * <p>A value that specifies how frequently updated findings are exported.</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
-     * <p>An enum value that specifies how frequently updated findings are
-     * exported.</p>
+     * <p>A value that specifies how frequently updated findings are exported.</p>
      */
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
 
     /**
-     * <p>An enum value that specifies how frequently updated findings are
-     * exported.</p>
+     * <p>A value that specifies how frequently updated findings are exported.</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
 
     /**
-     * <p>An enum value that specifies how frequently updated findings are
-     * exported.</p>
+     * <p>A value that specifies how frequently updated findings are exported.</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
 
     /**
-     * <p>An enum value that specifies how frequently updated findings are
-     * exported.</p>
+     * <p>A value that specifies how frequently updated findings are exported.</p>
      */
     inline CreateDetectorRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
-     * <p>An enum value that specifies how frequently updated findings are
-     * exported.</p>
+     * <p>A value that specifies how frequently updated findings are exported.</p>
      */
     inline CreateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object that describes which data sources will be enabled for the
-     * detector.</p>
+     * <p>Describes which data sources will be enabled for the detector.</p>
      */
     inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
 
     /**
-     * <p>An object that describes which data sources will be enabled for the
-     * detector.</p>
+     * <p>Describes which data sources will be enabled for the detector.</p>
      */
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
 
     /**
-     * <p>An object that describes which data sources will be enabled for the
-     * detector.</p>
+     * <p>Describes which data sources will be enabled for the detector.</p>
      */
     inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
 
     /**
-     * <p>An object that describes which data sources will be enabled for the
-     * detector.</p>
+     * <p>Describes which data sources will be enabled for the detector.</p>
      */
     inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
 
     /**
-     * <p>An object that describes which data sources will be enabled for the
-     * detector.</p>
+     * <p>Describes which data sources will be enabled for the detector.</p>
      */
     inline CreateDetectorRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
 
     /**
-     * <p>An object that describes which data sources will be enabled for the
-     * detector.</p>
+     * <p>Describes which data sources will be enabled for the detector.</p>
      */
     inline CreateDetectorRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
 

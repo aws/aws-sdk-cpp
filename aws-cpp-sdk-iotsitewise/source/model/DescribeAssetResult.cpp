@@ -70,6 +70,15 @@ DescribeAssetResult& DescribeAssetResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("assetCompositeModels"))
+  {
+    Array<JsonView> assetCompositeModelsJsonList = jsonValue.GetArray("assetCompositeModels");
+    for(unsigned assetCompositeModelsIndex = 0; assetCompositeModelsIndex < assetCompositeModelsJsonList.GetLength(); ++assetCompositeModelsIndex)
+    {
+      m_assetCompositeModels.push_back(assetCompositeModelsJsonList[assetCompositeModelsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("assetCreationDate"))
   {
     m_assetCreationDate = jsonValue.GetDouble("assetCreationDate");

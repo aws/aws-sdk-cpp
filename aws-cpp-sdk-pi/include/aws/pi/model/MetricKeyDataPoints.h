@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A time-ordered series of data points, correpsonding to a dimension of a
+   * <p>A time-ordered series of data points, corresponding to a dimension of a
    * Performance Insights metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricKeyDataPoints">AWS
    * API Reference</a></p>

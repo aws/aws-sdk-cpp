@@ -41,6 +41,7 @@ static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTime
 static const int INVALID_EVENT_SELECTORS_HASH = HashingUtils::HashString("InvalidEventSelectorsException");
 static const int INSUFFICIENT_ENCRYPTION_POLICY_HASH = HashingUtils::HashString("InsufficientEncryptionPolicyException");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
+static const int CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID_HASH = HashingUtils::HashString("CloudTrailInvalidClientTokenIdException");
 static const int INVALID_INSIGHT_SELECTORS_HASH = HashingUtils::HashString("InvalidInsightSelectorsException");
 static const int TRAIL_NOT_PROVIDED_HASH = HashingUtils::HashString("TrailNotProvidedException");
 static const int INSUFFICIENT_S3_BUCKET_POLICY_HASH = HashingUtils::HashString("InsufficientS3BucketPolicyException");
@@ -155,6 +156,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::OPERATION_NOT_PERMITTED), false);
+  }
+  else if (hashCode == CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID), false);
   }
   else if (hashCode == INVALID_INSIGHT_SELECTORS_HASH)
   {

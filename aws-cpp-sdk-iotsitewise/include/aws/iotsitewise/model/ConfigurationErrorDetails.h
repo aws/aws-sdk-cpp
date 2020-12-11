@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an AWS IoT SiteWise configuration
+   * error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ConfigurationErrorDetails">AWS
    * API Reference</a></p>
    */
@@ -39,73 +40,73 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The error code.</p>
      */
     inline const ErrorCode& GetCode() const{ return m_code; }
 
     /**
-     * <p/>
+     * <p>The error code.</p>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The error code.</p>
      */
     inline void SetCode(const ErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p/>
+     * <p>The error code.</p>
      */
     inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The error code.</p>
      */
     inline ConfigurationErrorDetails& WithCode(const ErrorCode& value) { SetCode(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The error code.</p>
      */
     inline ConfigurationErrorDetails& WithCode(ErrorCode&& value) { SetCode(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The error message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p/>
+     * <p>The error message.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The error message.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p/>
+     * <p>The error message.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The error message.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p/>
+     * <p>The error message.</p>
      */
     inline ConfigurationErrorDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The error message.</p>
      */
     inline ConfigurationErrorDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The error message.</p>
      */
     inline ConfigurationErrorDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
 

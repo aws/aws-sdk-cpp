@@ -100,32 +100,32 @@ namespace Model
 
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline const OrganizationDataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline void SetDataSources(const OrganizationDataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline void SetDataSources(OrganizationDataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline UpdateOrganizationConfigurationRequest& WithDataSources(const OrganizationDataSourceConfigurations& value) { SetDataSources(value); return *this;}
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline UpdateOrganizationConfigurationRequest& WithDataSources(OrganizationDataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
 

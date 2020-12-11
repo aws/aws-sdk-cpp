@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The master account details.</p>
+     * <p>The administrator account details.</p>
      */
     inline const Master& GetMaster() const{ return m_master; }
 
     /**
-     * <p>The master account details.</p>
+     * <p>The administrator account details.</p>
      */
     inline void SetMaster(const Master& value) { m_master = value; }
 
     /**
-     * <p>The master account details.</p>
+     * <p>The administrator account details.</p>
      */
     inline void SetMaster(Master&& value) { m_master = std::move(value); }
 
     /**
-     * <p>The master account details.</p>
+     * <p>The administrator account details.</p>
      */
     inline GetMasterAccountResult& WithMaster(const Master& value) { SetMaster(value); return *this;}
 
     /**
-     * <p>The master account details.</p>
+     * <p>The administrator account details.</p>
      */
     inline GetMasterAccountResult& WithMaster(Master&& value) { SetMaster(std::move(value)); return *this;}
 

@@ -34,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty master account associated with
-     * the member accounts to monitor.</p>
+     * <p>The unique ID of the detector of the GuardDuty administrator account
+     * associated with the member accounts to monitor.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty master account associated with
-     * the member accounts to monitor.</p>
+     * <p>The unique ID of the detector of the GuardDuty administrator account
+     * associated with the member accounts to monitor.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty master account associated with
-     * the member accounts to monitor.</p>
+     * <p>The unique ID of the detector of the GuardDuty administrator account
+     * associated with the member accounts to monitor.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty master account associated with
-     * the member accounts to monitor.</p>
+     * <p>The unique ID of the detector of the GuardDuty administrator account
+     * associated with the member accounts to monitor.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty master account associated with
-     * the member accounts to monitor.</p>
+     * <p>The unique ID of the detector of the GuardDuty administrator account
+     * associated with the member accounts to monitor.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty master account associated with
-     * the member accounts to monitor.</p>
+     * <p>The unique ID of the detector of the GuardDuty administrator account
+     * associated with the member accounts to monitor.</p>
      */
     inline StartMonitoringMembersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty master account associated with
-     * the member accounts to monitor.</p>
+     * <p>The unique ID of the detector of the GuardDuty administrator account
+     * associated with the member accounts to monitor.</p>
      */
     inline StartMonitoringMembersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty master account associated with
-     * the member accounts to monitor.</p>
+     * <p>The unique ID of the detector of the GuardDuty administrator account
+     * associated with the member accounts to monitor.</p>
      */
     inline StartMonitoringMembersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 

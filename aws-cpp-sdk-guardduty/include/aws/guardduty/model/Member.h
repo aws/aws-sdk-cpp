@@ -120,42 +120,42 @@ namespace Model
 
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline const Aws::String& GetMasterId() const{ return m_masterId; }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline Member& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline Member& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline Member& WithMasterId(const char* value) { SetMasterId(value); return *this;}
 
@@ -202,42 +202,42 @@ namespace Model
 
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline const Aws::String& GetRelationshipStatus() const{ return m_relationshipStatus; }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline void SetRelationshipStatus(const Aws::String& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline void SetRelationshipStatus(Aws::String&& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = std::move(value); }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline void SetRelationshipStatus(const char* value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus.assign(value); }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline Member& WithRelationshipStatus(const Aws::String& value) { SetRelationshipStatus(value); return *this;}
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline Member& WithRelationshipStatus(Aws::String&& value) { SetRelationshipStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline Member& WithRelationshipStatus(const char* value) { SetRelationshipStatus(value); return *this;}
 

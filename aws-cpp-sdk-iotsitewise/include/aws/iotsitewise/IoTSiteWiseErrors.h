@@ -51,7 +51,8 @@ enum class IoTSiteWiseErrors
   INVALID_REQUEST,
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS,
-  TOO_MANY_TAGS
+  TOO_MANY_TAGS,
+  UNAUTHORIZED
 };
 
 class AWS_IOTSITEWISE_API IoTSiteWiseError : public Aws::Client::AWSError<IoTSiteWiseErrors>

@@ -24,6 +24,7 @@ namespace Aws
         static const int INTEGER_HASH = HashingUtils::HashString("INTEGER");
         static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
         static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
+        static const int STRUCT_HASH = HashingUtils::HashString("STRUCT");
 
 
         PropertyDataType GetPropertyDataTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == BOOLEAN_HASH)
           {
             return PropertyDataType::BOOLEAN;
+          }
+          else if (hashCode == STRUCT_HASH)
+          {
+            return PropertyDataType::STRUCT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "DOUBLE";
           case PropertyDataType::BOOLEAN:
             return "BOOLEAN";
+          case PropertyDataType::STRUCT:
+            return "STRUCT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

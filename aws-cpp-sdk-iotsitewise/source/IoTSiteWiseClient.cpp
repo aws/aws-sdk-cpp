@@ -30,7 +30,6 @@
 #include <aws/iotsitewise/model/CreateDashboardRequest.h>
 #include <aws/iotsitewise/model/CreateGatewayRequest.h>
 #include <aws/iotsitewise/model/CreatePortalRequest.h>
-#include <aws/iotsitewise/model/CreatePresignedPortalUrlRequest.h>
 #include <aws/iotsitewise/model/CreateProjectRequest.h>
 #include <aws/iotsitewise/model/DeleteAccessPolicyRequest.h>
 #include <aws/iotsitewise/model/DeleteAssetRequest.h>
@@ -56,6 +55,7 @@
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryRequest.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesRequest.h>
 #include <aws/iotsitewise/model/ListAssetModelsRequest.h>
+#include <aws/iotsitewise/model/ListAssetRelationshipsRequest.h>
 #include <aws/iotsitewise/model/ListAssetsRequest.h>
 #include <aws/iotsitewise/model/ListAssociatedAssetsRequest.h>
 #include <aws/iotsitewise/model/ListDashboardsRequest.h>
@@ -539,49 +539,6 @@ void IoTSiteWiseClient::CreatePortalAsync(const CreatePortalRequest& request, co
 void IoTSiteWiseClient::CreatePortalAsyncHelper(const CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreatePortal(request), context);
-}
-
-CreatePresignedPortalUrlOutcome IoTSiteWiseClient::CreatePresignedPortalUrl(const CreatePresignedPortalUrlRequest& request) const
-{
-  if (!request.PortalIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreatePresignedPortalUrl", "Required field: PortalId, is not set");
-    return CreatePresignedPortalUrlOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalId]", false));
-  }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreatePresignedPortalUrl", "Invalid DNS host: " << uri.GetAuthority());
-      return CreatePresignedPortalUrlOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  Aws::StringStream ss;
-  ss << "/portals/";
-  ss << request.GetPortalId();
-  ss << "/presigned-url";
-  uri.SetPath(uri.GetPath() + ss.str());
-  return CreatePresignedPortalUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-}
-
-CreatePresignedPortalUrlOutcomeCallable IoTSiteWiseClient::CreatePresignedPortalUrlCallable(const CreatePresignedPortalUrlRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< CreatePresignedPortalUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePresignedPortalUrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTSiteWiseClient::CreatePresignedPortalUrlAsync(const CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePresignedPortalUrlAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreatePresignedPortalUrlAsyncHelper(const CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePresignedPortalUrl(request), context);
 }
 
 CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest& request) const
@@ -1610,6 +1567,54 @@ void IoTSiteWiseClient::ListAssetModelsAsync(const ListAssetModelsRequest& reque
 void IoTSiteWiseClient::ListAssetModelsAsyncHelper(const ListAssetModelsRequest& request, const ListAssetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAssetModels(request), context);
+}
+
+ListAssetRelationshipsOutcome IoTSiteWiseClient::ListAssetRelationships(const ListAssetRelationshipsRequest& request) const
+{
+  if (!request.AssetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssetRelationships", "Required field: AssetId, is not set");
+    return ListAssetRelationshipsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
+  }
+  if (!request.TraversalTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssetRelationships", "Required field: TraversalType, is not set");
+    return ListAssetRelationshipsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TraversalType]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("model." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListAssetRelationships", "Invalid DNS host: " << uri.GetAuthority());
+      return ListAssetRelationshipsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/assets/";
+  ss << request.GetAssetId();
+  ss << "/assetRelationships";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAssetRelationshipsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAssetRelationshipsOutcomeCallable IoTSiteWiseClient::ListAssetRelationshipsCallable(const ListAssetRelationshipsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAssetRelationshipsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssetRelationships(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::ListAssetRelationshipsAsync(const ListAssetRelationshipsRequest& request, const ListAssetRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssetRelationshipsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::ListAssetRelationshipsAsyncHelper(const ListAssetRelationshipsRequest& request, const ListAssetRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAssetRelationships(request), context);
 }
 
 ListAssetsOutcome IoTSiteWiseClient::ListAssets(const ListAssetsRequest& request) const

@@ -18,6 +18,7 @@ UpdateAssetModelRequest::UpdateAssetModelRequest() :
     m_assetModelDescriptionHasBeenSet(false),
     m_assetModelPropertiesHasBeenSet(false),
     m_assetModelHierarchiesHasBeenSet(false),
+    m_assetModelCompositeModelsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
@@ -58,6 +59,17 @@ Aws::String UpdateAssetModelRequest::SerializePayload() const
      assetModelHierarchiesJsonList[assetModelHierarchiesIndex].AsObject(m_assetModelHierarchies[assetModelHierarchiesIndex].Jsonize());
    }
    payload.WithArray("assetModelHierarchies", std::move(assetModelHierarchiesJsonList));
+
+  }
+
+  if(m_assetModelCompositeModelsHasBeenSet)
+  {
+   Array<JsonValue> assetModelCompositeModelsJsonList(m_assetModelCompositeModels.size());
+   for(unsigned assetModelCompositeModelsIndex = 0; assetModelCompositeModelsIndex < assetModelCompositeModelsJsonList.GetLength(); ++assetModelCompositeModelsIndex)
+   {
+     assetModelCompositeModelsJsonList[assetModelCompositeModelsIndex].AsObject(m_assetModelCompositeModels[assetModelCompositeModelsIndex].Jsonize());
+   }
+   payload.WithArray("assetModelCompositeModels", std::move(assetModelCompositeModelsJsonList));
 
   }
 

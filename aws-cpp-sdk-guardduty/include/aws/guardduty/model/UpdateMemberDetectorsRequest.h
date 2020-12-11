@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The detector ID of the master account.</p>
+     * <p>The detector ID of the administrator account.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The detector ID of the master account.</p>
+     * <p>The detector ID of the administrator account.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The detector ID of the master account.</p>
+     * <p>The detector ID of the administrator account.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The detector ID of the master account.</p>
+     * <p>The detector ID of the administrator account.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The detector ID of the master account.</p>
+     * <p>The detector ID of the administrator account.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The detector ID of the master account.</p>
+     * <p>The detector ID of the administrator account.</p>
      */
     inline UpdateMemberDetectorsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The detector ID of the master account.</p>
+     * <p>The detector ID of the administrator account.</p>
      */
     inline UpdateMemberDetectorsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The detector ID of the master account.</p>
+     * <p>The detector ID of the administrator account.</p>
      */
     inline UpdateMemberDetectorsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
@@ -122,32 +122,32 @@ namespace Model
 
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline UpdateMemberDetectorsRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
 
     /**
-     * <p>An object describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p>
      */
     inline UpdateMemberDetectorsRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
 

@@ -52,6 +52,12 @@ DescribeAssetPropertyResult& DescribeAssetPropertyResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("compositeModel"))
+  {
+    m_compositeModel = jsonValue.GetObject("compositeModel");
+
+  }
+
 
 
   return *this;

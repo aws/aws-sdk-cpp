@@ -197,27 +197,27 @@ namespace Model
 
 
     /**
-     * <p>An object that describes which data sources are enabled for the detector.</p>
+     * <p>Describes which data sources are enabled for the detector.</p>
      */
     inline const DataSourceConfigurationsResult& GetDataSources() const{ return m_dataSources; }
 
     /**
-     * <p>An object that describes which data sources are enabled for the detector.</p>
+     * <p>Describes which data sources are enabled for the detector.</p>
      */
     inline void SetDataSources(const DataSourceConfigurationsResult& value) { m_dataSources = value; }
 
     /**
-     * <p>An object that describes which data sources are enabled for the detector.</p>
+     * <p>Describes which data sources are enabled for the detector.</p>
      */
     inline void SetDataSources(DataSourceConfigurationsResult&& value) { m_dataSources = std::move(value); }
 
     /**
-     * <p>An object that describes which data sources are enabled for the detector.</p>
+     * <p>Describes which data sources are enabled for the detector.</p>
      */
     inline GetDetectorResult& WithDataSources(const DataSourceConfigurationsResult& value) { SetDataSources(value); return *this;}
 
     /**
-     * <p>An object that describes which data sources are enabled for the detector.</p>
+     * <p>Describes which data sources are enabled for the detector.</p>
      */
     inline GetDetectorResult& WithDataSources(DataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
 

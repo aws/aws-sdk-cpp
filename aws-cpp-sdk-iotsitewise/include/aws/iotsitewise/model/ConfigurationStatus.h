@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Contains current status information for the configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ConfigurationStatus">AWS
    * API Reference</a></p>
    */
@@ -39,63 +40,63 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The current state of the configuration.</p>
      */
     inline const ConfigurationState& GetState() const{ return m_state; }
 
     /**
-     * <p/>
+     * <p>The current state of the configuration.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The current state of the configuration.</p>
      */
     inline void SetState(const ConfigurationState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p/>
+     * <p>The current state of the configuration.</p>
      */
     inline void SetState(ConfigurationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The current state of the configuration.</p>
      */
     inline ConfigurationStatus& WithState(const ConfigurationState& value) { SetState(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The current state of the configuration.</p>
      */
     inline ConfigurationStatus& WithState(ConfigurationState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Contains associated error information, if any.</p>
      */
     inline const ConfigurationErrorDetails& GetError() const{ return m_error; }
 
     /**
-     * <p/>
+     * <p>Contains associated error information, if any.</p>
      */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Contains associated error information, if any.</p>
      */
     inline void SetError(const ConfigurationErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
-     * <p/>
+     * <p>Contains associated error information, if any.</p>
      */
     inline void SetError(ConfigurationErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Contains associated error information, if any.</p>
      */
     inline ConfigurationStatus& WithError(const ConfigurationErrorDetails& value) { SetError(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Contains associated error information, if any.</p>
      */
     inline ConfigurationStatus& WithError(ConfigurationErrorDetails&& value) { SetError(std::move(value)); return *this;}
 

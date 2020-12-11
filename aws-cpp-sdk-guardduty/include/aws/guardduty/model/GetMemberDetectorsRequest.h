@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The detector ID for the master account.</p>
+     * <p>The detector ID for the administrator account.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The detector ID for the master account.</p>
+     * <p>The detector ID for the administrator account.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The detector ID for the master account.</p>
+     * <p>The detector ID for the administrator account.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The detector ID for the master account.</p>
+     * <p>The detector ID for the administrator account.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The detector ID for the master account.</p>
+     * <p>The detector ID for the administrator account.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The detector ID for the master account.</p>
+     * <p>The detector ID for the administrator account.</p>
      */
     inline GetMemberDetectorsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The detector ID for the master account.</p>
+     * <p>The detector ID for the administrator account.</p>
      */
     inline GetMemberDetectorsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The detector ID for the master account.</p>
+     * <p>The detector ID for the administrator account.</p>
      */
     inline GetMemberDetectorsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 

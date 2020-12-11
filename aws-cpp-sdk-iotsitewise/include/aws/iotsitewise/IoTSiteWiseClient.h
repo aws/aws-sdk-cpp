@@ -20,7 +20,6 @@
 #include <aws/iotsitewise/model/CreateDashboardResult.h>
 #include <aws/iotsitewise/model/CreateGatewayResult.h>
 #include <aws/iotsitewise/model/CreatePortalResult.h>
-#include <aws/iotsitewise/model/CreatePresignedPortalUrlResult.h>
 #include <aws/iotsitewise/model/CreateProjectResult.h>
 #include <aws/iotsitewise/model/DeleteAccessPolicyResult.h>
 #include <aws/iotsitewise/model/DeleteAssetResult.h>
@@ -44,6 +43,7 @@
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryResult.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesResult.h>
 #include <aws/iotsitewise/model/ListAssetModelsResult.h>
+#include <aws/iotsitewise/model/ListAssetRelationshipsResult.h>
 #include <aws/iotsitewise/model/ListAssetsResult.h>
 #include <aws/iotsitewise/model/ListAssociatedAssetsResult.h>
 #include <aws/iotsitewise/model/ListDashboardsResult.h>
@@ -113,7 +113,6 @@ namespace Model
         class CreateDashboardRequest;
         class CreateGatewayRequest;
         class CreatePortalRequest;
-        class CreatePresignedPortalUrlRequest;
         class CreateProjectRequest;
         class DeleteAccessPolicyRequest;
         class DeleteAssetRequest;
@@ -139,6 +138,7 @@ namespace Model
         class GetAssetPropertyValueHistoryRequest;
         class ListAccessPoliciesRequest;
         class ListAssetModelsRequest;
+        class ListAssetRelationshipsRequest;
         class ListAssetsRequest;
         class ListAssociatedAssetsRequest;
         class ListDashboardsRequest;
@@ -171,7 +171,6 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDashboardResult, IoTSiteWiseError> CreateDashboardOutcome;
         typedef Aws::Utils::Outcome<CreateGatewayResult, IoTSiteWiseError> CreateGatewayOutcome;
         typedef Aws::Utils::Outcome<CreatePortalResult, IoTSiteWiseError> CreatePortalOutcome;
-        typedef Aws::Utils::Outcome<CreatePresignedPortalUrlResult, IoTSiteWiseError> CreatePresignedPortalUrlOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, IoTSiteWiseError> CreateProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteAccessPolicyResult, IoTSiteWiseError> DeleteAccessPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteAssetResult, IoTSiteWiseError> DeleteAssetOutcome;
@@ -197,6 +196,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetAssetPropertyValueHistoryResult, IoTSiteWiseError> GetAssetPropertyValueHistoryOutcome;
         typedef Aws::Utils::Outcome<ListAccessPoliciesResult, IoTSiteWiseError> ListAccessPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListAssetModelsResult, IoTSiteWiseError> ListAssetModelsOutcome;
+        typedef Aws::Utils::Outcome<ListAssetRelationshipsResult, IoTSiteWiseError> ListAssetRelationshipsOutcome;
         typedef Aws::Utils::Outcome<ListAssetsResult, IoTSiteWiseError> ListAssetsOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedAssetsResult, IoTSiteWiseError> ListAssociatedAssetsOutcome;
         typedef Aws::Utils::Outcome<ListDashboardsResult, IoTSiteWiseError> ListDashboardsOutcome;
@@ -229,7 +229,6 @@ namespace Model
         typedef std::future<CreateDashboardOutcome> CreateDashboardOutcomeCallable;
         typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
         typedef std::future<CreatePortalOutcome> CreatePortalOutcomeCallable;
-        typedef std::future<CreatePresignedPortalUrlOutcome> CreatePresignedPortalUrlOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<DeleteAccessPolicyOutcome> DeleteAccessPolicyOutcomeCallable;
         typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
@@ -255,6 +254,7 @@ namespace Model
         typedef std::future<GetAssetPropertyValueHistoryOutcome> GetAssetPropertyValueHistoryOutcomeCallable;
         typedef std::future<ListAccessPoliciesOutcome> ListAccessPoliciesOutcomeCallable;
         typedef std::future<ListAssetModelsOutcome> ListAssetModelsOutcomeCallable;
+        typedef std::future<ListAssetRelationshipsOutcome> ListAssetRelationshipsOutcomeCallable;
         typedef std::future<ListAssetsOutcome> ListAssetsOutcomeCallable;
         typedef std::future<ListAssociatedAssetsOutcome> ListAssociatedAssetsOutcomeCallable;
         typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
@@ -290,7 +290,6 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateDashboardRequest&, const Model::CreateDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDashboardResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateGatewayRequest&, const Model::CreateGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGatewayResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreatePortalRequest&, const Model::CreatePortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePortalResponseReceivedHandler;
-    typedef std::function<void(const IoTSiteWiseClient*, const Model::CreatePresignedPortalUrlRequest&, const Model::CreatePresignedPortalUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedPortalUrlResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAccessPolicyRequest&, const Model::DeleteAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetResponseReceivedHandler;
@@ -316,6 +315,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyValueHistoryRequest&, const Model::GetAssetPropertyValueHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyValueHistoryResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAccessPoliciesRequest&, const Model::ListAccessPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPoliciesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetModelsRequest&, const Model::ListAssetModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetModelsResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetRelationshipsRequest&, const Model::ListAssetRelationshipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetRelationshipsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetsRequest&, const Model::ListAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssociatedAssetsRequest&, const Model::ListAssociatedAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
@@ -481,9 +481,9 @@ namespace Model
          * define an asset property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul>  <p>With respect to Unix epoch time, AWS IoT SiteWise
-         * accepts only TQVs that have a timestamp of no more than 15 minutes in the past
-         * and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps
-         * outside of the inclusive range of [-15, +5] minutes and returns a
+         * accepts only TQVs that have a timestamp of no more than 7 days in the past and
+         * no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps
+         * outside of the inclusive range of [-7 days, +5 minutes] and returns a
          * <code>TimestampOutOfRangeException</code> error.</p> <p>For each asset property,
          * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
          * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
@@ -511,9 +511,9 @@ namespace Model
          * define an asset property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul>  <p>With respect to Unix epoch time, AWS IoT SiteWise
-         * accepts only TQVs that have a timestamp of no more than 15 minutes in the past
-         * and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps
-         * outside of the inclusive range of [-15, +5] minutes and returns a
+         * accepts only TQVs that have a timestamp of no more than 7 days in the past and
+         * no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps
+         * outside of the inclusive range of [-7 days, +5 minutes] and returns a
          * <code>TimestampOutOfRangeException</code> error.</p> <p>For each asset property,
          * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
          * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
@@ -543,9 +543,9 @@ namespace Model
          * define an asset property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul>  <p>With respect to Unix epoch time, AWS IoT SiteWise
-         * accepts only TQVs that have a timestamp of no more than 15 minutes in the past
-         * and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps
-         * outside of the inclusive range of [-15, +5] minutes and returns a
+         * accepts only TQVs that have a timestamp of no more than 7 days in the past and
+         * no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps
+         * outside of the inclusive range of [-7 days, +5 minutes] and returns a
          * <code>TimestampOutOfRangeException</code> error.</p> <p>For each asset property,
          * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
          * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
@@ -784,43 +784,6 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePortalAsync(const Model::CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
-         * portals that use AWS Identity and Access Management (IAM) to authenticate users.
-         * An IAM user with access to a portal can call this API to get a URL to that
-         * portal. The URL contains an authentication token that lets the IAM user access
-         * the portal.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::CreatePresignedPortalUrlOutcome CreatePresignedPortalUrl(const Model::CreatePresignedPortalUrlRequest& request) const;
-
-        /**
-         * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
-         * portals that use AWS Identity and Access Management (IAM) to authenticate users.
-         * An IAM user with access to a portal can call this API to get a URL to that
-         * portal. The URL contains an authentication token that lets the IAM user access
-         * the portal.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePresignedPortalUrlOutcomeCallable CreatePresignedPortalUrlCallable(const Model::CreatePresignedPortalUrlRequest& request) const;
-
-        /**
-         * <p>Creates a pre-signed URL to a portal. Use this operation to create URLs to
-         * portals that use AWS Identity and Access Management (IAM) to authenticate users.
-         * An IAM user with access to a portal can call this API to get a URL to that
-         * portal. The URL contains an authentication token that lets the IAM user access
-         * the portal.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePresignedPortalUrlAsync(const Model::CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a project in the specified portal.</p><p><h3>See Also:</h3>   <a
@@ -1661,6 +1624,37 @@ namespace Model
         virtual void ListAssetModelsAsync(const Model::ListAssetModelsRequest& request, const ListAssetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a paginated list of asset relationships for an asset. You can use
+         * this operation to identify an asset's root asset and all associated assets
+         * between that asset and its root.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssetRelationshipsOutcome ListAssetRelationships(const Model::ListAssetRelationshipsRequest& request) const;
+
+        /**
+         * <p>Retrieves a paginated list of asset relationships for an asset. You can use
+         * this operation to identify an asset's root asset and all associated assets
+         * between that asset and its root.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAssetRelationshipsOutcomeCallable ListAssetRelationshipsCallable(const Model::ListAssetRelationshipsRequest& request) const;
+
+        /**
+         * <p>Retrieves a paginated list of asset relationships for an asset. You can use
+         * this operation to identify an asset's root asset and all associated assets
+         * between that asset and its root.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAssetRelationshipsAsync(const Model::ListAssetRelationshipsRequest& request, const ListAssetRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a paginated list of asset summaries.</p> <p>You can use this
          * operation to do the following:</p> <ul> <li> <p>List assets based on a specific
          * asset model.</p> </li> <li> <p>List top-level assets.</p> </li> </ul> <p>You
@@ -2358,7 +2352,6 @@ namespace Model
         void CreateDashboardAsyncHelper(const Model::CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGatewayAsyncHelper(const Model::CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePortalAsyncHelper(const Model::CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePresignedPortalUrlAsyncHelper(const Model::CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessPolicyAsyncHelper(const Model::DeleteAccessPolicyRequest& request, const DeleteAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAssetAsyncHelper(const Model::DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2384,6 +2377,7 @@ namespace Model
         void GetAssetPropertyValueHistoryAsyncHelper(const Model::GetAssetPropertyValueHistoryRequest& request, const GetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccessPoliciesAsyncHelper(const Model::ListAccessPoliciesRequest& request, const ListAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssetModelsAsyncHelper(const Model::ListAssetModelsRequest& request, const ListAssetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAssetRelationshipsAsyncHelper(const Model::ListAssetRelationshipsRequest& request, const ListAssetRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssetsAsyncHelper(const Model::ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedAssetsAsyncHelper(const Model::ListAssociatedAssetsRequest& request, const ListAssociatedAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDashboardsAsyncHelper(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
