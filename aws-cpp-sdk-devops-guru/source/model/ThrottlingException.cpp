@@ -5,6 +5,7 @@
 
 #include <aws/devops-guru/model/ThrottlingException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -21,14 +22,18 @@ namespace Model
 ThrottlingException::ThrottlingException() : 
     m_messageHasBeenSet(false),
     m_quotaCodeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+    m_serviceCodeHasBeenSet(false),
+    m_retryAfterSeconds(0),
+    m_retryAfterSecondsHasBeenSet(false)
 {
 }
 
 ThrottlingException::ThrottlingException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
     m_quotaCodeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+    m_serviceCodeHasBeenSet(false),
+    m_retryAfterSeconds(0),
+    m_retryAfterSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }

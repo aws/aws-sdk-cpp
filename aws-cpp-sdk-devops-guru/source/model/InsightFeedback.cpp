@@ -19,34 +19,34 @@ namespace Model
 {
 
 InsightFeedback::InsightFeedback() : 
+    m_idHasBeenSet(false),
     m_feedback(InsightFeedbackOption::NOT_SET),
-    m_feedbackHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_feedbackHasBeenSet(false)
 {
 }
 
 InsightFeedback::InsightFeedback(JsonView jsonValue) : 
+    m_idHasBeenSet(false),
     m_feedback(InsightFeedbackOption::NOT_SET),
-    m_feedbackHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_feedbackHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 InsightFeedback& InsightFeedback::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Feedback"))
-  {
-    m_feedback = InsightFeedbackOptionMapper::GetInsightFeedbackOptionForName(jsonValue.GetString("Feedback"));
-
-    m_feedbackHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Feedback"))
+  {
+    m_feedback = InsightFeedbackOptionMapper::GetInsightFeedbackOptionForName(jsonValue.GetString("Feedback"));
+
+    m_feedbackHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue InsightFeedback::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_feedbackHasBeenSet)
-  {
-   payload.WithString("Feedback", InsightFeedbackOptionMapper::GetNameForInsightFeedbackOption(m_feedback));
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
 
+  }
+
+  if(m_feedbackHasBeenSet)
+  {
+   payload.WithString("Feedback", InsightFeedbackOptionMapper::GetNameForInsightFeedbackOption(m_feedback));
   }
 
   return payload;

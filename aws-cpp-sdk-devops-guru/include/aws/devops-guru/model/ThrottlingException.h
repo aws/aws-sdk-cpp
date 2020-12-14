@@ -23,6 +23,12 @@ namespace DevOpsGuru
 namespace Model
 {
 
+  /**
+   * <p>The request was denied due to a request throttling.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ThrottlingException">AWS
+   * API Reference</a></p>
+   */
   class AWS_DEVOPSGURU_API ThrottlingException
   {
   public:
@@ -57,54 +63,119 @@ namespace Model
     inline ThrottlingException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
-    
+    /**
+     * <p> The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
 
-    
+    /**
+     * <p> The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
 
-    
+    /**
+     * <p> The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
 
-    
+    /**
+     * <p> The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
 
-    
+    /**
+     * <p> The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
 
-    
+    /**
+     * <p> The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     */
     inline ThrottlingException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
 
-    
+    /**
+     * <p> The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     */
     inline ThrottlingException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The code of the quota that was exceeded, causing the throttling exception.
+     * </p>
+     */
     inline ThrottlingException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
 
 
-    
+    /**
+     * <p> The code of the service that caused the throttling exception. </p>
+     */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
-    
+    /**
+     * <p> The code of the service that caused the throttling exception. </p>
+     */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
-    
+    /**
+     * <p> The code of the service that caused the throttling exception. </p>
+     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
-    
+    /**
+     * <p> The code of the service that caused the throttling exception. </p>
+     */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
-    
+    /**
+     * <p> The code of the service that caused the throttling exception. </p>
+     */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
-    
+    /**
+     * <p> The code of the service that caused the throttling exception. </p>
+     */
     inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
-    
+    /**
+     * <p> The code of the service that caused the throttling exception. </p>
+     */
     inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The code of the service that caused the throttling exception. </p>
+     */
     inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+
+
+    /**
+     * <p> The number of seconds after which the action that caused the throttling
+     * exception can be retried. </p>
+     */
+    inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
+
+    /**
+     * <p> The number of seconds after which the action that caused the throttling
+     * exception can be retried. </p>
+     */
+    inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
+
+    /**
+     * <p> The number of seconds after which the action that caused the throttling
+     * exception can be retried. </p>
+     */
+    inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
+
+    /**
+     * <p> The number of seconds after which the action that caused the throttling
+     * exception can be retried. </p>
+     */
+    inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
 
   private:
 
@@ -116,6 +187,9 @@ namespace Model
 
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet;
+
+    int m_retryAfterSeconds;
+    bool m_retryAfterSecondsHasBeenSet;
   };
 
 } // namespace Model

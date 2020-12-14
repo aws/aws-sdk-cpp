@@ -216,6 +216,7 @@ namespace Model
     c5n_4xlarge,
     c5n_9xlarge,
     c5n_18xlarge,
+    c5n_metal,
     c6g_metal,
     c6g_medium,
     c6g_large,

@@ -20,29 +20,29 @@ namespace Model
 
 ProactiveInsight::ProactiveInsight() : 
     m_idHasBeenSet(false),
-    m_insightTimeRangeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_predictionTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
     m_severity(InsightSeverity::NOT_SET),
     m_severityHasBeenSet(false),
-    m_ssmOpsItemIdHasBeenSet(false),
     m_status(InsightStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_insightTimeRangeHasBeenSet(false),
+    m_predictionTimeRangeHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false),
+    m_ssmOpsItemIdHasBeenSet(false)
 {
 }
 
 ProactiveInsight::ProactiveInsight(JsonView jsonValue) : 
     m_idHasBeenSet(false),
-    m_insightTimeRangeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_predictionTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
     m_severity(InsightSeverity::NOT_SET),
     m_severityHasBeenSet(false),
-    m_ssmOpsItemIdHasBeenSet(false),
     m_status(InsightStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_insightTimeRangeHasBeenSet(false),
+    m_predictionTimeRangeHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false),
+    m_ssmOpsItemIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,18 +56,32 @@ ProactiveInsight& ProactiveInsight::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("InsightTimeRange"))
-  {
-    m_insightTimeRange = jsonValue.GetObject("InsightTimeRange");
-
-    m_insightTimeRangeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Severity"))
+  {
+    m_severity = InsightSeverityMapper::GetInsightSeverityForName(jsonValue.GetString("Severity"));
+
+    m_severityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = InsightStatusMapper::GetInsightStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InsightTimeRange"))
+  {
+    m_insightTimeRange = jsonValue.GetObject("InsightTimeRange");
+
+    m_insightTimeRangeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PredictionTimeRange"))
@@ -84,25 +98,11 @@ ProactiveInsight& ProactiveInsight::operator =(JsonView jsonValue)
     m_resourceCollectionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Severity"))
-  {
-    m_severity = InsightSeverityMapper::GetInsightSeverityForName(jsonValue.GetString("Severity"));
-
-    m_severityHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("SsmOpsItemId"))
   {
     m_ssmOpsItemId = jsonValue.GetString("SsmOpsItemId");
 
     m_ssmOpsItemIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Status"))
-  {
-    m_status = InsightStatusMapper::GetInsightStatusForName(jsonValue.GetString("Status"));
-
-    m_statusHasBeenSet = true;
   }
 
   return *this;
@@ -118,15 +118,25 @@ JsonValue ProactiveInsight::Jsonize() const
 
   }
 
-  if(m_insightTimeRangeHasBeenSet)
-  {
-   payload.WithObject("InsightTimeRange", m_insightTimeRange.Jsonize());
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("Severity", InsightSeverityMapper::GetNameForInsightSeverity(m_severity));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", InsightStatusMapper::GetNameForInsightStatus(m_status));
+  }
+
+  if(m_insightTimeRangeHasBeenSet)
+  {
+   payload.WithObject("InsightTimeRange", m_insightTimeRange.Jsonize());
 
   }
 
@@ -142,20 +152,10 @@ JsonValue ProactiveInsight::Jsonize() const
 
   }
 
-  if(m_severityHasBeenSet)
-  {
-   payload.WithString("Severity", InsightSeverityMapper::GetNameForInsightSeverity(m_severity));
-  }
-
   if(m_ssmOpsItemIdHasBeenSet)
   {
    payload.WithString("SsmOpsItemId", m_ssmOpsItemId);
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", InsightStatusMapper::GetNameForInsightStatus(m_status));
   }
 
   return payload;

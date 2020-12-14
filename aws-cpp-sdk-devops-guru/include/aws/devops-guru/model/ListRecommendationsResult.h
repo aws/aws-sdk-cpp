@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-guru/model/Recommendation.h>
 #include <utility>
 
@@ -34,54 +34,89 @@ namespace Model
     ListRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    
-    inline ListRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
-    inline ListRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
-    inline ListRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
-
-    
+    /**
+     * <p> An array of the requested recommendations. </p>
+     */
     inline const Aws::Vector<Recommendation>& GetRecommendations() const{ return m_recommendations; }
 
-    
+    /**
+     * <p> An array of the requested recommendations. </p>
+     */
     inline void SetRecommendations(const Aws::Vector<Recommendation>& value) { m_recommendations = value; }
 
-    
+    /**
+     * <p> An array of the requested recommendations. </p>
+     */
     inline void SetRecommendations(Aws::Vector<Recommendation>&& value) { m_recommendations = std::move(value); }
 
-    
+    /**
+     * <p> An array of the requested recommendations. </p>
+     */
     inline ListRecommendationsResult& WithRecommendations(const Aws::Vector<Recommendation>& value) { SetRecommendations(value); return *this;}
 
-    
+    /**
+     * <p> An array of the requested recommendations. </p>
+     */
     inline ListRecommendationsResult& WithRecommendations(Aws::Vector<Recommendation>&& value) { SetRecommendations(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> An array of the requested recommendations. </p>
+     */
     inline ListRecommendationsResult& AddRecommendations(const Recommendation& value) { m_recommendations.push_back(value); return *this; }
 
-    
+    /**
+     * <p> An array of the requested recommendations. </p>
+     */
     inline ListRecommendationsResult& AddRecommendations(Recommendation&& value) { m_recommendations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
+     */
+    inline ListRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
+     */
+    inline ListRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
+     */
+    inline ListRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<Recommendation> m_recommendations;
+
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

@@ -23,6 +23,12 @@ namespace DevOpsGuru
 namespace Model
 {
 
+  /**
+   * <p> Information about updating the integration status of an AWS service, such as
+   * AWS Systems Manager, with DevOps Guru. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateServiceIntegrationConfig">AWS
+   * API Reference</a></p>
+   */
   class AWS_DEVOPSGURU_API UpdateServiceIntegrationConfig
   {
   public:

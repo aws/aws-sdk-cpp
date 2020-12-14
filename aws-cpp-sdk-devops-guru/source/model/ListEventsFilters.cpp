@@ -19,25 +19,25 @@ namespace Model
 {
 
 ListEventsFilters::ListEventsFilters() : 
-    m_dataSource(EventDataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
+    m_insightIdHasBeenSet(false),
+    m_eventTimeRangeHasBeenSet(false),
     m_eventClass(EventClass::NOT_SET),
     m_eventClassHasBeenSet(false),
     m_eventSourceHasBeenSet(false),
-    m_eventTimeRangeHasBeenSet(false),
-    m_insightIdHasBeenSet(false),
+    m_dataSource(EventDataSource::NOT_SET),
+    m_dataSourceHasBeenSet(false),
     m_resourceCollectionHasBeenSet(false)
 {
 }
 
 ListEventsFilters::ListEventsFilters(JsonView jsonValue) : 
-    m_dataSource(EventDataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
+    m_insightIdHasBeenSet(false),
+    m_eventTimeRangeHasBeenSet(false),
     m_eventClass(EventClass::NOT_SET),
     m_eventClassHasBeenSet(false),
     m_eventSourceHasBeenSet(false),
-    m_eventTimeRangeHasBeenSet(false),
-    m_insightIdHasBeenSet(false),
+    m_dataSource(EventDataSource::NOT_SET),
+    m_dataSourceHasBeenSet(false),
     m_resourceCollectionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -45,11 +45,18 @@ ListEventsFilters::ListEventsFilters(JsonView jsonValue) :
 
 ListEventsFilters& ListEventsFilters::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("DataSource"))
+  if(jsonValue.ValueExists("InsightId"))
   {
-    m_dataSource = EventDataSourceMapper::GetEventDataSourceForName(jsonValue.GetString("DataSource"));
+    m_insightId = jsonValue.GetString("InsightId");
 
-    m_dataSourceHasBeenSet = true;
+    m_insightIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventTimeRange"))
+  {
+    m_eventTimeRange = jsonValue.GetObject("EventTimeRange");
+
+    m_eventTimeRangeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EventClass"))
@@ -66,18 +73,11 @@ ListEventsFilters& ListEventsFilters::operator =(JsonView jsonValue)
     m_eventSourceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("EventTimeRange"))
+  if(jsonValue.ValueExists("DataSource"))
   {
-    m_eventTimeRange = jsonValue.GetObject("EventTimeRange");
+    m_dataSource = EventDataSourceMapper::GetEventDataSourceForName(jsonValue.GetString("DataSource"));
 
-    m_eventTimeRangeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("InsightId"))
-  {
-    m_insightId = jsonValue.GetString("InsightId");
-
-    m_insightIdHasBeenSet = true;
+    m_dataSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceCollection"))
@@ -94,9 +94,16 @@ JsonValue ListEventsFilters::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataSourceHasBeenSet)
+  if(m_insightIdHasBeenSet)
   {
-   payload.WithString("DataSource", EventDataSourceMapper::GetNameForEventDataSource(m_dataSource));
+   payload.WithString("InsightId", m_insightId);
+
+  }
+
+  if(m_eventTimeRangeHasBeenSet)
+  {
+   payload.WithObject("EventTimeRange", m_eventTimeRange.Jsonize());
+
   }
 
   if(m_eventClassHasBeenSet)
@@ -110,16 +117,9 @@ JsonValue ListEventsFilters::Jsonize() const
 
   }
 
-  if(m_eventTimeRangeHasBeenSet)
+  if(m_dataSourceHasBeenSet)
   {
-   payload.WithObject("EventTimeRange", m_eventTimeRange.Jsonize());
-
-  }
-
-  if(m_insightIdHasBeenSet)
-  {
-   payload.WithString("InsightId", m_insightId);
-
+   payload.WithString("DataSource", EventDataSourceMapper::GetNameForEventDataSource(m_dataSource));
   }
 
   if(m_resourceCollectionHasBeenSet)

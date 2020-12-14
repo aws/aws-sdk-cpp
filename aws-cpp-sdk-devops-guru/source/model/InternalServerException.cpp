@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devops-guru/model/ValidationExceptionField.h>
+#include <aws/devops-guru/model/InternalServerException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -18,28 +19,23 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ValidationExceptionField::ValidationExceptionField() : 
-    m_nameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InternalServerException::InternalServerException() : 
+    m_messageHasBeenSet(false),
+    m_retryAfterSeconds(0),
+    m_retryAfterSecondsHasBeenSet(false)
 {
 }
 
-ValidationExceptionField::ValidationExceptionField(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InternalServerException::InternalServerException(JsonView jsonValue) : 
+    m_messageHasBeenSet(false),
+    m_retryAfterSeconds(0),
+    m_retryAfterSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValue)
+InternalServerException& InternalServerException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-
-    m_nameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
@@ -50,15 +46,9 @@ ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValu
   return *this;
 }
 
-JsonValue ValidationExceptionField::Jsonize() const
+JsonValue InternalServerException::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
 
   if(m_messageHasBeenSet)
   {

@@ -8,6 +8,7 @@
 #include <aws/devops-guru/DevOpsGuruErrors.h>
 #include <aws/devops-guru/model/ConflictException.h>
 #include <aws/devops-guru/model/ThrottlingException.h>
+#include <aws/devops-guru/model/InternalServerException.h>
 #include <aws/devops-guru/model/ResourceNotFoundException.h>
 #include <aws/devops-guru/model/ValidationException.h>
 
@@ -30,6 +31,12 @@ template<> AWS_DEVOPSGURU_API ThrottlingException DevOpsGuruError::GetModeledErr
 {
   assert(this->GetErrorType() == DevOpsGuruErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DEVOPSGURU_API InternalServerException DevOpsGuruError::GetModeledError()
+{
+  assert(this->GetErrorType() == DevOpsGuruErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
 }
 
 template<> AWS_DEVOPSGURU_API ResourceNotFoundException DevOpsGuruError::GetModeledError()

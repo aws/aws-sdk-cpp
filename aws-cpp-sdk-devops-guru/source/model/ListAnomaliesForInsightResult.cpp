@@ -28,12 +28,6 @@ ListAnomaliesForInsightResult::ListAnomaliesForInsightResult(const Aws::AmazonWe
 ListAnomaliesForInsightResult& ListAnomaliesForInsightResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
-  }
-
   if(jsonValue.ValueExists("ProactiveAnomalies"))
   {
     Array<JsonView> proactiveAnomaliesJsonList = jsonValue.GetArray("ProactiveAnomalies");
@@ -50,6 +44,12 @@ ListAnomaliesForInsightResult& ListAnomaliesForInsightResult::operator =(const A
     {
       m_reactiveAnomalies.push_back(reactiveAnomaliesJsonList[reactiveAnomaliesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
   }
 
 

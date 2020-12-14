@@ -23,8 +23,8 @@ Recommendation::Recommendation() :
     m_linkHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_relatedAnomaliesHasBeenSet(false),
-    m_relatedEventsHasBeenSet(false)
+    m_relatedEventsHasBeenSet(false),
+    m_relatedAnomaliesHasBeenSet(false)
 {
 }
 
@@ -33,8 +33,8 @@ Recommendation::Recommendation(JsonView jsonValue) :
     m_linkHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_relatedAnomaliesHasBeenSet(false),
-    m_relatedEventsHasBeenSet(false)
+    m_relatedEventsHasBeenSet(false),
+    m_relatedAnomaliesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,16 +69,6 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
     m_reasonHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("RelatedAnomalies"))
-  {
-    Array<JsonView> relatedAnomaliesJsonList = jsonValue.GetArray("RelatedAnomalies");
-    for(unsigned relatedAnomaliesIndex = 0; relatedAnomaliesIndex < relatedAnomaliesJsonList.GetLength(); ++relatedAnomaliesIndex)
-    {
-      m_relatedAnomalies.push_back(relatedAnomaliesJsonList[relatedAnomaliesIndex].AsObject());
-    }
-    m_relatedAnomaliesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("RelatedEvents"))
   {
     Array<JsonView> relatedEventsJsonList = jsonValue.GetArray("RelatedEvents");
@@ -87,6 +77,16 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
       m_relatedEvents.push_back(relatedEventsJsonList[relatedEventsIndex].AsObject());
     }
     m_relatedEventsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RelatedAnomalies"))
+  {
+    Array<JsonView> relatedAnomaliesJsonList = jsonValue.GetArray("RelatedAnomalies");
+    for(unsigned relatedAnomaliesIndex = 0; relatedAnomaliesIndex < relatedAnomaliesJsonList.GetLength(); ++relatedAnomaliesIndex)
+    {
+      m_relatedAnomalies.push_back(relatedAnomaliesJsonList[relatedAnomaliesIndex].AsObject());
+    }
+    m_relatedAnomaliesHasBeenSet = true;
   }
 
   return *this;
@@ -120,17 +120,6 @@ JsonValue Recommendation::Jsonize() const
 
   }
 
-  if(m_relatedAnomaliesHasBeenSet)
-  {
-   Array<JsonValue> relatedAnomaliesJsonList(m_relatedAnomalies.size());
-   for(unsigned relatedAnomaliesIndex = 0; relatedAnomaliesIndex < relatedAnomaliesJsonList.GetLength(); ++relatedAnomaliesIndex)
-   {
-     relatedAnomaliesJsonList[relatedAnomaliesIndex].AsObject(m_relatedAnomalies[relatedAnomaliesIndex].Jsonize());
-   }
-   payload.WithArray("RelatedAnomalies", std::move(relatedAnomaliesJsonList));
-
-  }
-
   if(m_relatedEventsHasBeenSet)
   {
    Array<JsonValue> relatedEventsJsonList(m_relatedEvents.size());
@@ -139,6 +128,17 @@ JsonValue Recommendation::Jsonize() const
      relatedEventsJsonList[relatedEventsIndex].AsObject(m_relatedEvents[relatedEventsIndex].Jsonize());
    }
    payload.WithArray("RelatedEvents", std::move(relatedEventsJsonList));
+
+  }
+
+  if(m_relatedAnomaliesHasBeenSet)
+  {
+   Array<JsonValue> relatedAnomaliesJsonList(m_relatedAnomalies.size());
+   for(unsigned relatedAnomaliesIndex = 0; relatedAnomaliesIndex < relatedAnomaliesJsonList.GetLength(); ++relatedAnomaliesIndex)
+   {
+     relatedAnomaliesJsonList[relatedAnomaliesIndex].AsObject(m_relatedAnomalies[relatedAnomaliesIndex].Jsonize());
+   }
+   payload.WithArray("RelatedAnomalies", std::move(relatedAnomaliesJsonList));
 
   }
 

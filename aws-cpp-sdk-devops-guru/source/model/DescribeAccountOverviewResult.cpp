@@ -17,16 +17,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeAccountOverviewResult::DescribeAccountOverviewResult() : 
-    m_meanTimeToRecoverInMilliseconds(0),
+    m_reactiveInsights(0),
     m_proactiveInsights(0),
-    m_reactiveInsights(0)
+    m_meanTimeToRecoverInMilliseconds(0)
 {
 }
 
 DescribeAccountOverviewResult::DescribeAccountOverviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_meanTimeToRecoverInMilliseconds(0),
+    m_reactiveInsights(0),
     m_proactiveInsights(0),
-    m_reactiveInsights(0)
+    m_meanTimeToRecoverInMilliseconds(0)
 {
   *this = result;
 }
@@ -34,9 +34,9 @@ DescribeAccountOverviewResult::DescribeAccountOverviewResult(const Aws::AmazonWe
 DescribeAccountOverviewResult& DescribeAccountOverviewResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("MeanTimeToRecoverInMilliseconds"))
+  if(jsonValue.ValueExists("ReactiveInsights"))
   {
-    m_meanTimeToRecoverInMilliseconds = jsonValue.GetInt64("MeanTimeToRecoverInMilliseconds");
+    m_reactiveInsights = jsonValue.GetInteger("ReactiveInsights");
 
   }
 
@@ -46,9 +46,9 @@ DescribeAccountOverviewResult& DescribeAccountOverviewResult::operator =(const A
 
   }
 
-  if(jsonValue.ValueExists("ReactiveInsights"))
+  if(jsonValue.ValueExists("MeanTimeToRecoverInMilliseconds"))
   {
-    m_reactiveInsights = jsonValue.GetInteger("ReactiveInsights");
+    m_meanTimeToRecoverInMilliseconds = jsonValue.GetInt64("MeanTimeToRecoverInMilliseconds");
 
   }
 

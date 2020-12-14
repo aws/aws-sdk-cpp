@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
-#include <aws/devops-guru/model/ResourceCollection.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devops-guru/model/ResourceCollection.h>
 #include <aws/devops-guru/model/InsightSeverity.h>
 #include <aws/devops-guru/model/InsightStatus.h>
 #include <utility>
@@ -26,6 +26,12 @@ namespace DevOpsGuru
 namespace Model
 {
 
+  /**
+   * <p> Specifies one or more severity values and one or more status values that are
+   * used to search for insights. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchInsightsFilters">AWS
+   * API Reference</a></p>
+   */
   class AWS_DEVOPSGURU_API SearchInsightsFilters
   {
   public:
@@ -33,6 +39,88 @@ namespace Model
     SearchInsightsFilters(Aws::Utils::Json::JsonView jsonValue);
     SearchInsightsFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p> An array of severity values used to search for insights. </p>
+     */
+    inline const Aws::Vector<InsightSeverity>& GetSeverities() const{ return m_severities; }
+
+    /**
+     * <p> An array of severity values used to search for insights. </p>
+     */
+    inline bool SeveritiesHasBeenSet() const { return m_severitiesHasBeenSet; }
+
+    /**
+     * <p> An array of severity values used to search for insights. </p>
+     */
+    inline void SetSeverities(const Aws::Vector<InsightSeverity>& value) { m_severitiesHasBeenSet = true; m_severities = value; }
+
+    /**
+     * <p> An array of severity values used to search for insights. </p>
+     */
+    inline void SetSeverities(Aws::Vector<InsightSeverity>&& value) { m_severitiesHasBeenSet = true; m_severities = std::move(value); }
+
+    /**
+     * <p> An array of severity values used to search for insights. </p>
+     */
+    inline SearchInsightsFilters& WithSeverities(const Aws::Vector<InsightSeverity>& value) { SetSeverities(value); return *this;}
+
+    /**
+     * <p> An array of severity values used to search for insights. </p>
+     */
+    inline SearchInsightsFilters& WithSeverities(Aws::Vector<InsightSeverity>&& value) { SetSeverities(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of severity values used to search for insights. </p>
+     */
+    inline SearchInsightsFilters& AddSeverities(const InsightSeverity& value) { m_severitiesHasBeenSet = true; m_severities.push_back(value); return *this; }
+
+    /**
+     * <p> An array of severity values used to search for insights. </p>
+     */
+    inline SearchInsightsFilters& AddSeverities(InsightSeverity&& value) { m_severitiesHasBeenSet = true; m_severities.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> An array of status values used to search for insights. </p>
+     */
+    inline const Aws::Vector<InsightStatus>& GetStatuses() const{ return m_statuses; }
+
+    /**
+     * <p> An array of status values used to search for insights. </p>
+     */
+    inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
+
+    /**
+     * <p> An array of status values used to search for insights. </p>
+     */
+    inline void SetStatuses(const Aws::Vector<InsightStatus>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
+
+    /**
+     * <p> An array of status values used to search for insights. </p>
+     */
+    inline void SetStatuses(Aws::Vector<InsightStatus>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
+
+    /**
+     * <p> An array of status values used to search for insights. </p>
+     */
+    inline SearchInsightsFilters& WithStatuses(const Aws::Vector<InsightStatus>& value) { SetStatuses(value); return *this;}
+
+    /**
+     * <p> An array of status values used to search for insights. </p>
+     */
+    inline SearchInsightsFilters& WithStatuses(Aws::Vector<InsightStatus>&& value) { SetStatuses(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of status values used to search for insights. </p>
+     */
+    inline SearchInsightsFilters& AddStatuses(const InsightStatus& value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
+
+    /**
+     * <p> An array of status values used to search for insights. </p>
+     */
+    inline SearchInsightsFilters& AddStatuses(InsightStatus&& value) { m_statusesHasBeenSet = true; m_statuses.push_back(std::move(value)); return *this; }
 
 
     
@@ -53,66 +141,16 @@ namespace Model
     
     inline SearchInsightsFilters& WithResourceCollection(ResourceCollection&& value) { SetResourceCollection(std::move(value)); return *this;}
 
-
-    
-    inline const Aws::Vector<InsightSeverity>& GetSeverities() const{ return m_severities; }
-
-    
-    inline bool SeveritiesHasBeenSet() const { return m_severitiesHasBeenSet; }
-
-    
-    inline void SetSeverities(const Aws::Vector<InsightSeverity>& value) { m_severitiesHasBeenSet = true; m_severities = value; }
-
-    
-    inline void SetSeverities(Aws::Vector<InsightSeverity>&& value) { m_severitiesHasBeenSet = true; m_severities = std::move(value); }
-
-    
-    inline SearchInsightsFilters& WithSeverities(const Aws::Vector<InsightSeverity>& value) { SetSeverities(value); return *this;}
-
-    
-    inline SearchInsightsFilters& WithSeverities(Aws::Vector<InsightSeverity>&& value) { SetSeverities(std::move(value)); return *this;}
-
-    
-    inline SearchInsightsFilters& AddSeverities(const InsightSeverity& value) { m_severitiesHasBeenSet = true; m_severities.push_back(value); return *this; }
-
-    
-    inline SearchInsightsFilters& AddSeverities(InsightSeverity&& value) { m_severitiesHasBeenSet = true; m_severities.push_back(std::move(value)); return *this; }
-
-
-    
-    inline const Aws::Vector<InsightStatus>& GetStatuses() const{ return m_statuses; }
-
-    
-    inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
-
-    
-    inline void SetStatuses(const Aws::Vector<InsightStatus>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
-
-    
-    inline void SetStatuses(Aws::Vector<InsightStatus>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
-
-    
-    inline SearchInsightsFilters& WithStatuses(const Aws::Vector<InsightStatus>& value) { SetStatuses(value); return *this;}
-
-    
-    inline SearchInsightsFilters& WithStatuses(Aws::Vector<InsightStatus>&& value) { SetStatuses(std::move(value)); return *this;}
-
-    
-    inline SearchInsightsFilters& AddStatuses(const InsightStatus& value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
-
-    
-    inline SearchInsightsFilters& AddStatuses(InsightStatus&& value) { m_statusesHasBeenSet = true; m_statuses.push_back(std::move(value)); return *this; }
-
   private:
-
-    ResourceCollection m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
 
     Aws::Vector<InsightSeverity> m_severities;
     bool m_severitiesHasBeenSet;
 
     Aws::Vector<InsightStatus> m_statuses;
     bool m_statusesHasBeenSet;
+
+    ResourceCollection m_resourceCollection;
+    bool m_resourceCollectionHasBeenSet;
   };
 
 } // namespace Model

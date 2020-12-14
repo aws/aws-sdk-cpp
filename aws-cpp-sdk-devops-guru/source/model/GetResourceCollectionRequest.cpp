@@ -16,8 +16,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 GetResourceCollectionRequest::GetResourceCollectionRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_resourceCollectionTypeHasBeenSet(false)
+    m_resourceCollectionType(ResourceCollectionType::NOT_SET),
+    m_resourceCollectionTypeHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 

@@ -28,12 +28,6 @@ ListInsightsResult::ListInsightsResult(const Aws::AmazonWebServiceResult<JsonVal
 ListInsightsResult& ListInsightsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
-  }
-
   if(jsonValue.ValueExists("ProactiveInsights"))
   {
     Array<JsonView> proactiveInsightsJsonList = jsonValue.GetArray("ProactiveInsights");
@@ -50,6 +44,12 @@ ListInsightsResult& ListInsightsResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_reactiveInsights.push_back(reactiveInsightsJsonList[reactiveInsightsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
   }
 
 

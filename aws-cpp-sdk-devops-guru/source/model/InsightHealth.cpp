@@ -19,35 +19,28 @@ namespace Model
 {
 
 InsightHealth::InsightHealth() : 
-    m_meanTimeToRecoverInMilliseconds(0),
-    m_meanTimeToRecoverInMillisecondsHasBeenSet(false),
     m_openProactiveInsights(0),
     m_openProactiveInsightsHasBeenSet(false),
     m_openReactiveInsights(0),
-    m_openReactiveInsightsHasBeenSet(false)
+    m_openReactiveInsightsHasBeenSet(false),
+    m_meanTimeToRecoverInMilliseconds(0),
+    m_meanTimeToRecoverInMillisecondsHasBeenSet(false)
 {
 }
 
 InsightHealth::InsightHealth(JsonView jsonValue) : 
-    m_meanTimeToRecoverInMilliseconds(0),
-    m_meanTimeToRecoverInMillisecondsHasBeenSet(false),
     m_openProactiveInsights(0),
     m_openProactiveInsightsHasBeenSet(false),
     m_openReactiveInsights(0),
-    m_openReactiveInsightsHasBeenSet(false)
+    m_openReactiveInsightsHasBeenSet(false),
+    m_meanTimeToRecoverInMilliseconds(0),
+    m_meanTimeToRecoverInMillisecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 InsightHealth& InsightHealth::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("MeanTimeToRecoverInMilliseconds"))
-  {
-    m_meanTimeToRecoverInMilliseconds = jsonValue.GetInt64("MeanTimeToRecoverInMilliseconds");
-
-    m_meanTimeToRecoverInMillisecondsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("OpenProactiveInsights"))
   {
     m_openProactiveInsights = jsonValue.GetInteger("OpenProactiveInsights");
@@ -62,18 +55,19 @@ InsightHealth& InsightHealth::operator =(JsonView jsonValue)
     m_openReactiveInsightsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MeanTimeToRecoverInMilliseconds"))
+  {
+    m_meanTimeToRecoverInMilliseconds = jsonValue.GetInt64("MeanTimeToRecoverInMilliseconds");
+
+    m_meanTimeToRecoverInMillisecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue InsightHealth::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_meanTimeToRecoverInMillisecondsHasBeenSet)
-  {
-   payload.WithInt64("MeanTimeToRecoverInMilliseconds", m_meanTimeToRecoverInMilliseconds);
-
-  }
 
   if(m_openProactiveInsightsHasBeenSet)
   {
@@ -84,6 +78,12 @@ JsonValue InsightHealth::Jsonize() const
   if(m_openReactiveInsightsHasBeenSet)
   {
    payload.WithInteger("OpenReactiveInsights", m_openReactiveInsights);
+
+  }
+
+  if(m_meanTimeToRecoverInMillisecondsHasBeenSet)
+  {
+   payload.WithInt64("MeanTimeToRecoverInMilliseconds", m_meanTimeToRecoverInMilliseconds);
 
   }
 

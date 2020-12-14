@@ -33,22 +33,40 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p> Specifies if the resource collection in the request is added or deleted to
+     * the resource collection. </p>
+     */
     inline const UpdateResourceCollectionAction& GetAction() const{ return m_action; }
 
-    
+    /**
+     * <p> Specifies if the resource collection in the request is added or deleted to
+     * the resource collection. </p>
+     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
-    
+    /**
+     * <p> Specifies if the resource collection in the request is added or deleted to
+     * the resource collection. </p>
+     */
     inline void SetAction(const UpdateResourceCollectionAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
-    
+    /**
+     * <p> Specifies if the resource collection in the request is added or deleted to
+     * the resource collection. </p>
+     */
     inline void SetAction(UpdateResourceCollectionAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
-    
+    /**
+     * <p> Specifies if the resource collection in the request is added or deleted to
+     * the resource collection. </p>
+     */
     inline UpdateResourceCollectionRequest& WithAction(const UpdateResourceCollectionAction& value) { SetAction(value); return *this;}
 
-    
+    /**
+     * <p> Specifies if the resource collection in the request is added or deleted to
+     * the resource collection. </p>
+     */
     inline UpdateResourceCollectionRequest& WithAction(UpdateResourceCollectionAction&& value) { SetAction(std::move(value)); return *this;}
 
 

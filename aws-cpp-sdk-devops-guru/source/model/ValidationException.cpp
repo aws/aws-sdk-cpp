@@ -19,34 +19,24 @@ namespace Model
 {
 
 ValidationException::ValidationException() : 
-    m_fieldsHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_reason(ValidationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_fieldsHasBeenSet(false)
 {
 }
 
 ValidationException::ValidationException(JsonView jsonValue) : 
-    m_fieldsHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_reason(ValidationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_fieldsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ValidationException& ValidationException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Fields"))
-  {
-    Array<JsonView> fieldsJsonList = jsonValue.GetArray("Fields");
-    for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
-    {
-      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
-    }
-    m_fieldsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
@@ -61,23 +51,22 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
     m_reasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Fields"))
+  {
+    Array<JsonView> fieldsJsonList = jsonValue.GetArray("Fields");
+    for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
+    {
+      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
+    }
+    m_fieldsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ValidationException::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_fieldsHasBeenSet)
-  {
-   Array<JsonValue> fieldsJsonList(m_fields.size());
-   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
-   {
-     fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
-   }
-   payload.WithArray("Fields", std::move(fieldsJsonList));
-
-  }
 
   if(m_messageHasBeenSet)
   {
@@ -88,6 +77,17 @@ JsonValue ValidationException::Jsonize() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("Reason", ValidationExceptionReasonMapper::GetNameForValidationExceptionReason(m_reason));
+  }
+
+  if(m_fieldsHasBeenSet)
+  {
+   Array<JsonValue> fieldsJsonList(m_fields.size());
+   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
+   {
+     fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+   }
+   payload.WithArray("Fields", std::move(fieldsJsonList));
+
   }
 
   return payload;

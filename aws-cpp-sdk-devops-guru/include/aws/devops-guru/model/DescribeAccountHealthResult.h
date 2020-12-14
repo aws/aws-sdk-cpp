@@ -30,42 +30,69 @@ namespace Model
     DescribeAccountHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
-    inline int GetMetricsAnalyzed() const{ return m_metricsAnalyzed; }
+    /**
+     * <p> An integer that specifies the number of open reactive insights in your AWS
+     * account. </p>
+     */
+    inline int GetOpenReactiveInsights() const{ return m_openReactiveInsights; }
 
-    
-    inline void SetMetricsAnalyzed(int value) { m_metricsAnalyzed = value; }
+    /**
+     * <p> An integer that specifies the number of open reactive insights in your AWS
+     * account. </p>
+     */
+    inline void SetOpenReactiveInsights(int value) { m_openReactiveInsights = value; }
 
-    
-    inline DescribeAccountHealthResult& WithMetricsAnalyzed(int value) { SetMetricsAnalyzed(value); return *this;}
+    /**
+     * <p> An integer that specifies the number of open reactive insights in your AWS
+     * account. </p>
+     */
+    inline DescribeAccountHealthResult& WithOpenReactiveInsights(int value) { SetOpenReactiveInsights(value); return *this;}
 
 
-    
+    /**
+     * <p> An integer that specifies the number of open proactive insights in your AWS
+     * account. </p>
+     */
     inline int GetOpenProactiveInsights() const{ return m_openProactiveInsights; }
 
-    
+    /**
+     * <p> An integer that specifies the number of open proactive insights in your AWS
+     * account. </p>
+     */
     inline void SetOpenProactiveInsights(int value) { m_openProactiveInsights = value; }
 
-    
+    /**
+     * <p> An integer that specifies the number of open proactive insights in your AWS
+     * account. </p>
+     */
     inline DescribeAccountHealthResult& WithOpenProactiveInsights(int value) { SetOpenProactiveInsights(value); return *this;}
 
 
-    
-    inline int GetOpenReactiveInsights() const{ return m_openReactiveInsights; }
+    /**
+     * <p> An integer that specifies the number of metrics that have been analyzed in
+     * your AWS account. </p>
+     */
+    inline int GetMetricsAnalyzed() const{ return m_metricsAnalyzed; }
 
-    
-    inline void SetOpenReactiveInsights(int value) { m_openReactiveInsights = value; }
+    /**
+     * <p> An integer that specifies the number of metrics that have been analyzed in
+     * your AWS account. </p>
+     */
+    inline void SetMetricsAnalyzed(int value) { m_metricsAnalyzed = value; }
 
-    
-    inline DescribeAccountHealthResult& WithOpenReactiveInsights(int value) { SetOpenReactiveInsights(value); return *this;}
+    /**
+     * <p> An integer that specifies the number of metrics that have been analyzed in
+     * your AWS account. </p>
+     */
+    inline DescribeAccountHealthResult& WithMetricsAnalyzed(int value) { SetMetricsAnalyzed(value); return *this;}
 
   private:
 
-    int m_metricsAnalyzed;
+    int m_openReactiveInsights;
 
     int m_openProactiveInsights;
 
-    int m_openReactiveInsights;
+    int m_metricsAnalyzed;
   };
 
 } // namespace Model

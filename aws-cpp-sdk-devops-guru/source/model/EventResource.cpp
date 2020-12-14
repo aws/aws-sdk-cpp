@@ -19,27 +19,27 @@ namespace Model
 {
 
 EventResource::EventResource() : 
-    m_arnHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
 }
 
 EventResource::EventResource(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 EventResource& EventResource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Arn"))
+  if(jsonValue.ValueExists("Type"))
   {
-    m_arn = jsonValue.GetString("Arn");
+    m_type = jsonValue.GetString("Type");
 
-    m_arnHasBeenSet = true;
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -49,11 +49,11 @@ EventResource& EventResource::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Type"))
+  if(jsonValue.ValueExists("Arn"))
   {
-    m_type = jsonValue.GetString("Type");
+    m_arn = jsonValue.GetString("Arn");
 
-    m_typeHasBeenSet = true;
+    m_arnHasBeenSet = true;
   }
 
   return *this;
@@ -63,9 +63,9 @@ JsonValue EventResource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("Arn", m_arn);
+   payload.WithString("Type", m_type);
 
   }
 
@@ -75,9 +75,9 @@ JsonValue EventResource::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("Type", m_type);
+   payload.WithString("Arn", m_arn);
 
   }
 

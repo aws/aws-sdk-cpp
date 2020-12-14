@@ -20,25 +20,25 @@ namespace Model
 
 ReactiveInsightSummary::ReactiveInsightSummary() : 
     m_idHasBeenSet(false),
-    m_insightTimeRangeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
     m_severity(InsightSeverity::NOT_SET),
     m_severityHasBeenSet(false),
     m_status(InsightStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_insightTimeRangeHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false)
 {
 }
 
 ReactiveInsightSummary::ReactiveInsightSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
-    m_insightTimeRangeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
     m_severity(InsightSeverity::NOT_SET),
     m_severityHasBeenSet(false),
     m_status(InsightStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_insightTimeRangeHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,25 +52,11 @@ ReactiveInsightSummary& ReactiveInsightSummary::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("InsightTimeRange"))
-  {
-    m_insightTimeRange = jsonValue.GetObject("InsightTimeRange");
-
-    m_insightTimeRangeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("ResourceCollection"))
-  {
-    m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
-    m_resourceCollectionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Severity"))
@@ -87,6 +73,20 @@ ReactiveInsightSummary& ReactiveInsightSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InsightTimeRange"))
+  {
+    m_insightTimeRange = jsonValue.GetObject("InsightTimeRange");
+
+    m_insightTimeRangeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceCollection"))
+  {
+    m_resourceCollection = jsonValue.GetObject("ResourceCollection");
+
+    m_resourceCollectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -100,21 +100,9 @@ JsonValue ReactiveInsightSummary::Jsonize() const
 
   }
 
-  if(m_insightTimeRangeHasBeenSet)
-  {
-   payload.WithObject("InsightTimeRange", m_insightTimeRange.Jsonize());
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
-
-  }
-
-  if(m_resourceCollectionHasBeenSet)
-  {
-   payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
 
   }
 
@@ -126,6 +114,18 @@ JsonValue ReactiveInsightSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", InsightStatusMapper::GetNameForInsightStatus(m_status));
+  }
+
+  if(m_insightTimeRangeHasBeenSet)
+  {
+   payload.WithObject("InsightTimeRange", m_insightTimeRange.Jsonize());
+
+  }
+
+  if(m_resourceCollectionHasBeenSet)
+  {
+   payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
+
   }
 
   return payload;

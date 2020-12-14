@@ -13,16 +13,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListInsightsRequest::ListInsightsRequest() : 
+    m_statusFilterHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_statusFilterHasBeenSet(false)
+    m_nextTokenHasBeenSet(false)
 {
 }
 
 Aws::String ListInsightsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_statusFilterHasBeenSet)
+  {
+   payload.WithObject("StatusFilter", m_statusFilter.Jsonize());
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {
@@ -33,12 +39,6 @@ Aws::String ListInsightsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
-
-  }
-
-  if(m_statusFilterHasBeenSet)
-  {
-   payload.WithObject("StatusFilter", m_statusFilter.Jsonize());
 
   }
 

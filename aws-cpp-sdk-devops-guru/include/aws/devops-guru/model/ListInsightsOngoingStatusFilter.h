@@ -23,6 +23,12 @@ namespace DevOpsGuru
 namespace Model
 {
 
+  /**
+   * <p> Used to filter for insights that have the status <code>ONGOING</code>.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsightsOngoingStatusFilter">AWS
+   * API Reference</a></p>
+   */
   class AWS_DEVOPSGURU_API ListInsightsOngoingStatusFilter
   {
   public:
@@ -32,22 +38,40 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
+     * insights. </p>
+     */
     inline const InsightType& GetType() const{ return m_type; }
 
-    
+    /**
+     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
+     * insights. </p>
+     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
-    
+    /**
+     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
+     * insights. </p>
+     */
     inline void SetType(const InsightType& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    
+    /**
+     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
+     * insights. </p>
+     */
     inline void SetType(InsightType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
-    
+    /**
+     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
+     * insights. </p>
+     */
     inline ListInsightsOngoingStatusFilter& WithType(const InsightType& value) { SetType(value); return *this;}
 
-    
+    /**
+     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
+     * insights. </p>
+     */
     inline ListInsightsOngoingStatusFilter& WithType(InsightType&& value) { SetType(std::move(value)); return *this;}
 
   private:

@@ -19,29 +19,22 @@ namespace Model
 {
 
 SearchInsightsFilters::SearchInsightsFilters() : 
-    m_resourceCollectionHasBeenSet(false),
     m_severitiesHasBeenSet(false),
-    m_statusesHasBeenSet(false)
+    m_statusesHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false)
 {
 }
 
 SearchInsightsFilters::SearchInsightsFilters(JsonView jsonValue) : 
-    m_resourceCollectionHasBeenSet(false),
     m_severitiesHasBeenSet(false),
-    m_statusesHasBeenSet(false)
+    m_statusesHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SearchInsightsFilters& SearchInsightsFilters::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ResourceCollection"))
-  {
-    m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
-    m_resourceCollectionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Severities"))
   {
     Array<JsonView> severitiesJsonList = jsonValue.GetArray("Severities");
@@ -62,18 +55,19 @@ SearchInsightsFilters& SearchInsightsFilters::operator =(JsonView jsonValue)
     m_statusesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceCollection"))
+  {
+    m_resourceCollection = jsonValue.GetObject("ResourceCollection");
+
+    m_resourceCollectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue SearchInsightsFilters::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_resourceCollectionHasBeenSet)
-  {
-   payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
-
-  }
 
   if(m_severitiesHasBeenSet)
   {
@@ -94,6 +88,12 @@ JsonValue SearchInsightsFilters::Jsonize() const
      statusesJsonList[statusesIndex].AsString(InsightStatusMapper::GetNameForInsightStatus(m_statuses[statusesIndex]));
    }
    payload.WithArray("Statuses", std::move(statusesJsonList));
+
+  }
+
+  if(m_resourceCollectionHasBeenSet)
+  {
+   payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
 
   }
 

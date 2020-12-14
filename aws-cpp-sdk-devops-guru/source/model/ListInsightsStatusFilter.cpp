@@ -19,27 +19,27 @@ namespace Model
 {
 
 ListInsightsStatusFilter::ListInsightsStatusFilter() : 
-    m_anyHasBeenSet(false),
+    m_ongoingHasBeenSet(false),
     m_closedHasBeenSet(false),
-    m_ongoingHasBeenSet(false)
+    m_anyHasBeenSet(false)
 {
 }
 
 ListInsightsStatusFilter::ListInsightsStatusFilter(JsonView jsonValue) : 
-    m_anyHasBeenSet(false),
+    m_ongoingHasBeenSet(false),
     m_closedHasBeenSet(false),
-    m_ongoingHasBeenSet(false)
+    m_anyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ListInsightsStatusFilter& ListInsightsStatusFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Any"))
+  if(jsonValue.ValueExists("Ongoing"))
   {
-    m_any = jsonValue.GetObject("Any");
+    m_ongoing = jsonValue.GetObject("Ongoing");
 
-    m_anyHasBeenSet = true;
+    m_ongoingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Closed"))
@@ -49,11 +49,11 @@ ListInsightsStatusFilter& ListInsightsStatusFilter::operator =(JsonView jsonValu
     m_closedHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Ongoing"))
+  if(jsonValue.ValueExists("Any"))
   {
-    m_ongoing = jsonValue.GetObject("Ongoing");
+    m_any = jsonValue.GetObject("Any");
 
-    m_ongoingHasBeenSet = true;
+    m_anyHasBeenSet = true;
   }
 
   return *this;
@@ -63,9 +63,9 @@ JsonValue ListInsightsStatusFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_anyHasBeenSet)
+  if(m_ongoingHasBeenSet)
   {
-   payload.WithObject("Any", m_any.Jsonize());
+   payload.WithObject("Ongoing", m_ongoing.Jsonize());
 
   }
 
@@ -75,9 +75,9 @@ JsonValue ListInsightsStatusFilter::Jsonize() const
 
   }
 
-  if(m_ongoingHasBeenSet)
+  if(m_anyHasBeenSet)
   {
-   payload.WithObject("Ongoing", m_ongoing.Jsonize());
+   payload.WithObject("Any", m_any.Jsonize());
 
   }
 

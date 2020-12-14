@@ -269,7 +269,7 @@ DescribeResourceCollectionHealthOutcome DevOpsGuruClient::DescribeResourceCollec
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/health/resource-collection/";
-  ss << request.GetResourceCollectionType();
+  ss << ResourceCollectionTypeMapper::GetNameForResourceCollectionType(request.GetResourceCollectionType());
   uri.SetPath(uri.GetPath() + ss.str());
   return DescribeResourceCollectionHealthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -329,7 +329,7 @@ GetResourceCollectionOutcome DevOpsGuruClient::GetResourceCollection(const GetRe
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/resource-collections/";
-  ss << request.GetResourceCollectionType();
+  ss << ResourceCollectionTypeMapper::GetNameForResourceCollectionType(request.GetResourceCollectionType());
   uri.SetPath(uri.GetPath() + ss.str());
   return GetResourceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }

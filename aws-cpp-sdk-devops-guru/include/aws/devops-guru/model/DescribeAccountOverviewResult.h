@@ -30,42 +30,69 @@ namespace Model
     DescribeAccountOverviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
-    inline long long GetMeanTimeToRecoverInMilliseconds() const{ return m_meanTimeToRecoverInMilliseconds; }
+    /**
+     * <p> An integer that specifies the number of open reactive insights in your AWS
+     * account that were created during the time range passed in. </p>
+     */
+    inline int GetReactiveInsights() const{ return m_reactiveInsights; }
 
-    
-    inline void SetMeanTimeToRecoverInMilliseconds(long long value) { m_meanTimeToRecoverInMilliseconds = value; }
+    /**
+     * <p> An integer that specifies the number of open reactive insights in your AWS
+     * account that were created during the time range passed in. </p>
+     */
+    inline void SetReactiveInsights(int value) { m_reactiveInsights = value; }
 
-    
-    inline DescribeAccountOverviewResult& WithMeanTimeToRecoverInMilliseconds(long long value) { SetMeanTimeToRecoverInMilliseconds(value); return *this;}
+    /**
+     * <p> An integer that specifies the number of open reactive insights in your AWS
+     * account that were created during the time range passed in. </p>
+     */
+    inline DescribeAccountOverviewResult& WithReactiveInsights(int value) { SetReactiveInsights(value); return *this;}
 
 
-    
+    /**
+     * <p> An integer that specifies the number of open proactive insights in your AWS
+     * account that were created during the time range passed in. </p>
+     */
     inline int GetProactiveInsights() const{ return m_proactiveInsights; }
 
-    
+    /**
+     * <p> An integer that specifies the number of open proactive insights in your AWS
+     * account that were created during the time range passed in. </p>
+     */
     inline void SetProactiveInsights(int value) { m_proactiveInsights = value; }
 
-    
+    /**
+     * <p> An integer that specifies the number of open proactive insights in your AWS
+     * account that were created during the time range passed in. </p>
+     */
     inline DescribeAccountOverviewResult& WithProactiveInsights(int value) { SetProactiveInsights(value); return *this;}
 
 
-    
-    inline int GetReactiveInsights() const{ return m_reactiveInsights; }
+    /**
+     * <p> The Mean Time to Recover (MTTR) for all closed insights that were created
+     * during the time range passed in. </p>
+     */
+    inline long long GetMeanTimeToRecoverInMilliseconds() const{ return m_meanTimeToRecoverInMilliseconds; }
 
-    
-    inline void SetReactiveInsights(int value) { m_reactiveInsights = value; }
+    /**
+     * <p> The Mean Time to Recover (MTTR) for all closed insights that were created
+     * during the time range passed in. </p>
+     */
+    inline void SetMeanTimeToRecoverInMilliseconds(long long value) { m_meanTimeToRecoverInMilliseconds = value; }
 
-    
-    inline DescribeAccountOverviewResult& WithReactiveInsights(int value) { SetReactiveInsights(value); return *this;}
+    /**
+     * <p> The Mean Time to Recover (MTTR) for all closed insights that were created
+     * during the time range passed in. </p>
+     */
+    inline DescribeAccountOverviewResult& WithMeanTimeToRecoverInMilliseconds(long long value) { SetMeanTimeToRecoverInMilliseconds(value); return *this;}
 
   private:
 
-    long long m_meanTimeToRecoverInMilliseconds;
+    int m_reactiveInsights;
 
     int m_proactiveInsights;
 
-    int m_reactiveInsights;
+    long long m_meanTimeToRecoverInMilliseconds;
   };
 
 } // namespace Model

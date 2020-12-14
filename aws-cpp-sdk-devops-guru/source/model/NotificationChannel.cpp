@@ -19,32 +19,32 @@ namespace Model
 {
 
 NotificationChannel::NotificationChannel() : 
-    m_configHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
 NotificationChannel::NotificationChannel(JsonView jsonValue) : 
-    m_configHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 NotificationChannel& NotificationChannel::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Config"))
-  {
-    m_config = jsonValue.GetObject("Config");
-
-    m_configHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Config"))
+  {
+    m_config = jsonValue.GetObject("Config");
+
+    m_configHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue NotificationChannel::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_configHasBeenSet)
-  {
-   payload.WithObject("Config", m_config.Jsonize());
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
+
+  }
+
+  if(m_configHasBeenSet)
+  {
+   payload.WithObject("Config", m_config.Jsonize());
 
   }
 

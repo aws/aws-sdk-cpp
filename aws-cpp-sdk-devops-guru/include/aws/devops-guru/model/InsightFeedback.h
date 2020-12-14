@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
-#include <aws/devops-guru/model/InsightFeedbackOption.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devops-guru/model/InsightFeedbackOption.h>
 #include <utility>
 
 namespace Aws
@@ -24,6 +24,12 @@ namespace DevOpsGuru
 namespace Model
 {
 
+  /**
+   * <p> Information about insight feedback received from a customer. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/InsightFeedback">AWS
+   * API Reference</a></p>
+   */
   class AWS_DEVOPSGURU_API InsightFeedback
   {
   public:
@@ -33,56 +39,84 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
-    inline const InsightFeedbackOption& GetFeedback() const{ return m_feedback; }
-
-    
-    inline bool FeedbackHasBeenSet() const { return m_feedbackHasBeenSet; }
-
-    
-    inline void SetFeedback(const InsightFeedbackOption& value) { m_feedbackHasBeenSet = true; m_feedback = value; }
-
-    
-    inline void SetFeedback(InsightFeedbackOption&& value) { m_feedbackHasBeenSet = true; m_feedback = std::move(value); }
-
-    
-    inline InsightFeedback& WithFeedback(const InsightFeedbackOption& value) { SetFeedback(value); return *this;}
-
-    
-    inline InsightFeedback& WithFeedback(InsightFeedbackOption&& value) { SetFeedback(std::move(value)); return *this;}
-
-
-    
+    /**
+     * <p> The insight feedback ID. </p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    
+    /**
+     * <p> The insight feedback ID. </p>
+     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
-    
+    /**
+     * <p> The insight feedback ID. </p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    
+    /**
+     * <p> The insight feedback ID. </p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
-    
+    /**
+     * <p> The insight feedback ID. </p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    
+    /**
+     * <p> The insight feedback ID. </p>
+     */
     inline InsightFeedback& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    
+    /**
+     * <p> The insight feedback ID. </p>
+     */
     inline InsightFeedback& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The insight feedback ID. </p>
+     */
     inline InsightFeedback& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p> The feedback provided by the customer. </p>
+     */
+    inline const InsightFeedbackOption& GetFeedback() const{ return m_feedback; }
+
+    /**
+     * <p> The feedback provided by the customer. </p>
+     */
+    inline bool FeedbackHasBeenSet() const { return m_feedbackHasBeenSet; }
+
+    /**
+     * <p> The feedback provided by the customer. </p>
+     */
+    inline void SetFeedback(const InsightFeedbackOption& value) { m_feedbackHasBeenSet = true; m_feedback = value; }
+
+    /**
+     * <p> The feedback provided by the customer. </p>
+     */
+    inline void SetFeedback(InsightFeedbackOption&& value) { m_feedbackHasBeenSet = true; m_feedback = std::move(value); }
+
+    /**
+     * <p> The feedback provided by the customer. </p>
+     */
+    inline InsightFeedback& WithFeedback(const InsightFeedbackOption& value) { SetFeedback(value); return *this;}
+
+    /**
+     * <p> The feedback provided by the customer. </p>
+     */
+    inline InsightFeedback& WithFeedback(InsightFeedbackOption&& value) { SetFeedback(std::move(value)); return *this;}
 
   private:
 
-    InsightFeedbackOption m_feedback;
-    bool m_feedbackHasBeenSet;
-
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    InsightFeedbackOption m_feedback;
+    bool m_feedbackHasBeenSet;
   };
 
 } // namespace Model

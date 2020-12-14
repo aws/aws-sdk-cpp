@@ -14,16 +14,22 @@ using namespace Aws::Utils;
 
 ListAnomaliesForInsightRequest::ListAnomaliesForInsightRequest() : 
     m_insightIdHasBeenSet(false),
+    m_startTimeRangeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startTimeRangeHasBeenSet(false)
+    m_nextTokenHasBeenSet(false)
 {
 }
 
 Aws::String ListAnomaliesForInsightRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_startTimeRangeHasBeenSet)
+  {
+   payload.WithObject("StartTimeRange", m_startTimeRange.Jsonize());
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {
@@ -34,12 +40,6 @@ Aws::String ListAnomaliesForInsightRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
-
-  }
-
-  if(m_startTimeRangeHasBeenSet)
-  {
-   payload.WithObject("StartTimeRange", m_startTimeRange.Jsonize());
 
   }
 

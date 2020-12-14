@@ -28,12 +28,6 @@ ListRecommendationsResult::ListRecommendationsResult(const Aws::AmazonWebService
 ListRecommendationsResult& ListRecommendationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
-  }
-
   if(jsonValue.ValueExists("Recommendations"))
   {
     Array<JsonView> recommendationsJsonList = jsonValue.GetArray("Recommendations");
@@ -41,6 +35,12 @@ ListRecommendationsResult& ListRecommendationsResult::operator =(const Aws::Amaz
     {
       m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
   }
 
 

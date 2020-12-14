@@ -19,42 +19,32 @@ namespace Model
 {
 
 CloudWatchMetricsDetail::CloudWatchMetricsDetail() : 
-    m_dimensionsHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
+    m_dimensionsHasBeenSet(false),
     m_stat(CloudWatchMetricsStat::NOT_SET),
     m_statHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_period(0),
+    m_periodHasBeenSet(false)
 {
 }
 
 CloudWatchMetricsDetail::CloudWatchMetricsDetail(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
+    m_dimensionsHasBeenSet(false),
     m_stat(CloudWatchMetricsStat::NOT_SET),
     m_statHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_period(0),
+    m_periodHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 CloudWatchMetricsDetail& CloudWatchMetricsDetail::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Dimensions"))
-  {
-    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
-    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
-    {
-      m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
-    }
-    m_dimensionsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
@@ -69,11 +59,14 @@ CloudWatchMetricsDetail& CloudWatchMetricsDetail::operator =(JsonView jsonValue)
     m_namespaceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Period"))
+  if(jsonValue.ValueExists("Dimensions"))
   {
-    m_period = jsonValue.GetInteger("Period");
-
-    m_periodHasBeenSet = true;
+    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
+    {
+      m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
+    }
+    m_dimensionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Stat"))
@@ -90,23 +83,19 @@ CloudWatchMetricsDetail& CloudWatchMetricsDetail::operator =(JsonView jsonValue)
     m_unitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Period"))
+  {
+    m_period = jsonValue.GetInteger("Period");
+
+    m_periodHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue CloudWatchMetricsDetail::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_dimensionsHasBeenSet)
-  {
-   Array<JsonValue> dimensionsJsonList(m_dimensions.size());
-   for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
-   {
-     dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
-   }
-   payload.WithArray("Dimensions", std::move(dimensionsJsonList));
-
-  }
 
   if(m_metricNameHasBeenSet)
   {
@@ -120,9 +109,14 @@ JsonValue CloudWatchMetricsDetail::Jsonize() const
 
   }
 
-  if(m_periodHasBeenSet)
+  if(m_dimensionsHasBeenSet)
   {
-   payload.WithInteger("Period", m_period);
+   Array<JsonValue> dimensionsJsonList(m_dimensions.size());
+   for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
+   {
+     dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
+   }
+   payload.WithArray("Dimensions", std::move(dimensionsJsonList));
 
   }
 
@@ -134,6 +128,12 @@ JsonValue CloudWatchMetricsDetail::Jsonize() const
   if(m_unitHasBeenSet)
   {
    payload.WithString("Unit", m_unit);
+
+  }
+
+  if(m_periodHasBeenSet)
+  {
+   payload.WithInteger("Period", m_period);
 
   }
 

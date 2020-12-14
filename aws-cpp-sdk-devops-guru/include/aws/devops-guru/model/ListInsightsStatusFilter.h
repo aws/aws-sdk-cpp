@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
-#include <aws/devops-guru/model/ListInsightsAnyStatusFilter.h>
-#include <aws/devops-guru/model/ListInsightsClosedStatusFilter.h>
 #include <aws/devops-guru/model/ListInsightsOngoingStatusFilter.h>
+#include <aws/devops-guru/model/ListInsightsClosedStatusFilter.h>
+#include <aws/devops-guru/model/ListInsightsAnyStatusFilter.h>
 #include <utility>
 
 namespace Aws
@@ -25,6 +25,12 @@ namespace DevOpsGuru
 namespace Model
 {
 
+  /**
+   * <p> A filter used by <code>ListInsights</code> to specify which insights to
+   * return. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsightsStatusFilter">AWS
+   * API Reference</a></p>
+   */
   class AWS_DEVOPSGURU_API ListInsightsStatusFilter
   {
   public:
@@ -34,72 +40,126 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
-    inline const ListInsightsAnyStatusFilter& GetAny() const{ return m_any; }
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline const ListInsightsOngoingStatusFilter& GetOngoing() const{ return m_ongoing; }
 
-    
-    inline bool AnyHasBeenSet() const { return m_anyHasBeenSet; }
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline bool OngoingHasBeenSet() const { return m_ongoingHasBeenSet; }
 
-    
-    inline void SetAny(const ListInsightsAnyStatusFilter& value) { m_anyHasBeenSet = true; m_any = value; }
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline void SetOngoing(const ListInsightsOngoingStatusFilter& value) { m_ongoingHasBeenSet = true; m_ongoing = value; }
 
-    
-    inline void SetAny(ListInsightsAnyStatusFilter&& value) { m_anyHasBeenSet = true; m_any = std::move(value); }
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline void SetOngoing(ListInsightsOngoingStatusFilter&& value) { m_ongoingHasBeenSet = true; m_ongoing = std::move(value); }
 
-    
-    inline ListInsightsStatusFilter& WithAny(const ListInsightsAnyStatusFilter& value) { SetAny(value); return *this;}
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline ListInsightsStatusFilter& WithOngoing(const ListInsightsOngoingStatusFilter& value) { SetOngoing(value); return *this;}
 
-    
-    inline ListInsightsStatusFilter& WithAny(ListInsightsAnyStatusFilter&& value) { SetAny(std::move(value)); return *this;}
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline ListInsightsStatusFilter& WithOngoing(ListInsightsOngoingStatusFilter&& value) { SetOngoing(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
     inline const ListInsightsClosedStatusFilter& GetClosed() const{ return m_closed; }
 
-    
+    /**
+     * <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
     inline bool ClosedHasBeenSet() const { return m_closedHasBeenSet; }
 
-    
+    /**
+     * <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
     inline void SetClosed(const ListInsightsClosedStatusFilter& value) { m_closedHasBeenSet = true; m_closed = value; }
 
-    
+    /**
+     * <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
     inline void SetClosed(ListInsightsClosedStatusFilter&& value) { m_closedHasBeenSet = true; m_closed = std::move(value); }
 
-    
+    /**
+     * <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
     inline ListInsightsStatusFilter& WithClosed(const ListInsightsClosedStatusFilter& value) { SetClosed(value); return *this;}
 
-    
+    /**
+     * <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights
+     * that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
     inline ListInsightsStatusFilter& WithClosed(ListInsightsClosedStatusFilter&& value) { SetClosed(std::move(value)); return *this;}
 
 
-    
-    inline const ListInsightsOngoingStatusFilter& GetOngoing() const{ return m_ongoing; }
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any
+     * status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline const ListInsightsAnyStatusFilter& GetAny() const{ return m_any; }
 
-    
-    inline bool OngoingHasBeenSet() const { return m_ongoingHasBeenSet; }
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any
+     * status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline bool AnyHasBeenSet() const { return m_anyHasBeenSet; }
 
-    
-    inline void SetOngoing(const ListInsightsOngoingStatusFilter& value) { m_ongoingHasBeenSet = true; m_ongoing = value; }
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any
+     * status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline void SetAny(const ListInsightsAnyStatusFilter& value) { m_anyHasBeenSet = true; m_any = value; }
 
-    
-    inline void SetOngoing(ListInsightsOngoingStatusFilter&& value) { m_ongoingHasBeenSet = true; m_ongoing = std::move(value); }
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any
+     * status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline void SetAny(ListInsightsAnyStatusFilter&& value) { m_anyHasBeenSet = true; m_any = std::move(value); }
 
-    
-    inline ListInsightsStatusFilter& WithOngoing(const ListInsightsOngoingStatusFilter& value) { SetOngoing(value); return *this;}
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any
+     * status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline ListInsightsStatusFilter& WithAny(const ListInsightsAnyStatusFilter& value) { SetAny(value); return *this;}
 
-    
-    inline ListInsightsStatusFilter& WithOngoing(ListInsightsOngoingStatusFilter&& value) { SetOngoing(std::move(value)); return *this;}
+    /**
+     * <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any
+     * status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
+     */
+    inline ListInsightsStatusFilter& WithAny(ListInsightsAnyStatusFilter&& value) { SetAny(std::move(value)); return *this;}
 
   private:
 
-    ListInsightsAnyStatusFilter m_any;
-    bool m_anyHasBeenSet;
+    ListInsightsOngoingStatusFilter m_ongoing;
+    bool m_ongoingHasBeenSet;
 
     ListInsightsClosedStatusFilter m_closed;
     bool m_closedHasBeenSet;
 
-    ListInsightsOngoingStatusFilter m_ongoing;
-    bool m_ongoingHasBeenSet;
+    ListInsightsAnyStatusFilter m_any;
+    bool m_anyHasBeenSet;
   };
 
 } // namespace Model

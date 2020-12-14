@@ -19,60 +19,39 @@ namespace Model
 {
 
 ReactiveAnomalySummary::ReactiveAnomalySummary() : 
-    m_anomalyTimeRangeHasBeenSet(false),
-    m_associatedInsightIdHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
     m_severity(AnomalySeverity::NOT_SET),
     m_severityHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false),
     m_status(AnomalyStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_anomalyTimeRangeHasBeenSet(false),
+    m_sourceDetailsHasBeenSet(false),
+    m_associatedInsightIdHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false)
 {
 }
 
 ReactiveAnomalySummary::ReactiveAnomalySummary(JsonView jsonValue) : 
-    m_anomalyTimeRangeHasBeenSet(false),
-    m_associatedInsightIdHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
     m_severity(AnomalySeverity::NOT_SET),
     m_severityHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false),
     m_status(AnomalyStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_anomalyTimeRangeHasBeenSet(false),
+    m_sourceDetailsHasBeenSet(false),
+    m_associatedInsightIdHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ReactiveAnomalySummary& ReactiveAnomalySummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("AnomalyTimeRange"))
-  {
-    m_anomalyTimeRange = jsonValue.GetObject("AnomalyTimeRange");
-
-    m_anomalyTimeRangeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("AssociatedInsightId"))
-  {
-    m_associatedInsightId = jsonValue.GetString("AssociatedInsightId");
-
-    m_associatedInsightIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
 
     m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("ResourceCollection"))
-  {
-    m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
-    m_resourceCollectionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Severity"))
@@ -82,6 +61,20 @@ ReactiveAnomalySummary& ReactiveAnomalySummary::operator =(JsonView jsonValue)
     m_severityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = AnomalyStatusMapper::GetAnomalyStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AnomalyTimeRange"))
+  {
+    m_anomalyTimeRange = jsonValue.GetObject("AnomalyTimeRange");
+
+    m_anomalyTimeRangeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SourceDetails"))
   {
     m_sourceDetails = jsonValue.GetObject("SourceDetails");
@@ -89,11 +82,18 @@ ReactiveAnomalySummary& ReactiveAnomalySummary::operator =(JsonView jsonValue)
     m_sourceDetailsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("AssociatedInsightId"))
   {
-    m_status = AnomalyStatusMapper::GetAnomalyStatusForName(jsonValue.GetString("Status"));
+    m_associatedInsightId = jsonValue.GetString("AssociatedInsightId");
 
-    m_statusHasBeenSet = true;
+    m_associatedInsightIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceCollection"))
+  {
+    m_resourceCollection = jsonValue.GetObject("ResourceCollection");
+
+    m_resourceCollectionHasBeenSet = true;
   }
 
   return *this;
@@ -103,9 +103,31 @@ JsonValue ReactiveAnomalySummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("Id", m_id);
+
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("Severity", AnomalySeverityMapper::GetNameForAnomalySeverity(m_severity));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", AnomalyStatusMapper::GetNameForAnomalyStatus(m_status));
+  }
+
   if(m_anomalyTimeRangeHasBeenSet)
   {
    payload.WithObject("AnomalyTimeRange", m_anomalyTimeRange.Jsonize());
+
+  }
+
+  if(m_sourceDetailsHasBeenSet)
+  {
+   payload.WithObject("SourceDetails", m_sourceDetails.Jsonize());
 
   }
 
@@ -115,32 +137,10 @@ JsonValue ReactiveAnomalySummary::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
-  }
-
   if(m_resourceCollectionHasBeenSet)
   {
    payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
 
-  }
-
-  if(m_severityHasBeenSet)
-  {
-   payload.WithString("Severity", AnomalySeverityMapper::GetNameForAnomalySeverity(m_severity));
-  }
-
-  if(m_sourceDetailsHasBeenSet)
-  {
-   payload.WithObject("SourceDetails", m_sourceDetails.Jsonize());
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", AnomalyStatusMapper::GetNameForAnomalyStatus(m_status));
   }
 
   return payload;

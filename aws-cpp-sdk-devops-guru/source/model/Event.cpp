@@ -19,36 +19,71 @@ namespace Model
 {
 
 Event::Event() : 
+    m_resourceCollectionHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_timeHasBeenSet(false),
+    m_eventSourceHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_dataSource(EventDataSource::NOT_SET),
     m_dataSourceHasBeenSet(false),
     m_eventClass(EventClass::NOT_SET),
     m_eventClassHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_timeHasBeenSet(false)
+    m_resourcesHasBeenSet(false)
 {
 }
 
 Event::Event(JsonView jsonValue) : 
+    m_resourceCollectionHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_timeHasBeenSet(false),
+    m_eventSourceHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_dataSource(EventDataSource::NOT_SET),
     m_dataSourceHasBeenSet(false),
     m_eventClass(EventClass::NOT_SET),
     m_eventClassHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_timeHasBeenSet(false)
+    m_resourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Event& Event::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ResourceCollection"))
+  {
+    m_resourceCollection = jsonValue.GetObject("ResourceCollection");
+
+    m_resourceCollectionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Id"))
+  {
+    m_id = jsonValue.GetString("Id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Time"))
+  {
+    m_time = jsonValue.GetDouble("Time");
+
+    m_timeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventSource"))
+  {
+    m_eventSource = jsonValue.GetString("EventSource");
+
+    m_eventSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = EventDataSourceMapper::GetEventDataSourceForName(jsonValue.GetString("DataSource"));
@@ -63,34 +98,6 @@ Event& Event::operator =(JsonView jsonValue)
     m_eventClassHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("EventSource"))
-  {
-    m_eventSource = jsonValue.GetString("EventSource");
-
-    m_eventSourceHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Id"))
-  {
-    m_id = jsonValue.GetString("Id");
-
-    m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("ResourceCollection"))
-  {
-    m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
-    m_resourceCollectionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -101,19 +108,41 @@ Event& Event::operator =(JsonView jsonValue)
     m_resourcesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Time"))
-  {
-    m_time = jsonValue.GetDouble("Time");
-
-    m_timeHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue Event::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_resourceCollectionHasBeenSet)
+  {
+   payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
+
+  }
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("Id", m_id);
+
+  }
+
+  if(m_timeHasBeenSet)
+  {
+   payload.WithDouble("Time", m_time.SecondsWithMSPrecision());
+  }
+
+  if(m_eventSourceHasBeenSet)
+  {
+   payload.WithString("EventSource", m_eventSource);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
 
   if(m_dataSourceHasBeenSet)
   {
@@ -125,30 +154,6 @@ JsonValue Event::Jsonize() const
    payload.WithString("EventClass", EventClassMapper::GetNameForEventClass(m_eventClass));
   }
 
-  if(m_eventSourceHasBeenSet)
-  {
-   payload.WithString("EventSource", m_eventSource);
-
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
-
-  if(m_resourceCollectionHasBeenSet)
-  {
-   payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
-
-  }
-
   if(m_resourcesHasBeenSet)
   {
    Array<JsonValue> resourcesJsonList(m_resources.size());
@@ -158,11 +163,6 @@ JsonValue Event::Jsonize() const
    }
    payload.WithArray("Resources", std::move(resourcesJsonList));
 
-  }
-
-  if(m_timeHasBeenSet)
-  {
-   payload.WithDouble("Time", m_time.SecondsWithMSPrecision());
   }
 
   return payload;

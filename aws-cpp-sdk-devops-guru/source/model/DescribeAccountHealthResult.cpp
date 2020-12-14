@@ -17,16 +17,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeAccountHealthResult::DescribeAccountHealthResult() : 
-    m_metricsAnalyzed(0),
+    m_openReactiveInsights(0),
     m_openProactiveInsights(0),
-    m_openReactiveInsights(0)
+    m_metricsAnalyzed(0)
 {
 }
 
 DescribeAccountHealthResult::DescribeAccountHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_metricsAnalyzed(0),
+    m_openReactiveInsights(0),
     m_openProactiveInsights(0),
-    m_openReactiveInsights(0)
+    m_metricsAnalyzed(0)
 {
   *this = result;
 }
@@ -34,9 +34,9 @@ DescribeAccountHealthResult::DescribeAccountHealthResult(const Aws::AmazonWebSer
 DescribeAccountHealthResult& DescribeAccountHealthResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("MetricsAnalyzed"))
+  if(jsonValue.ValueExists("OpenReactiveInsights"))
   {
-    m_metricsAnalyzed = jsonValue.GetInteger("MetricsAnalyzed");
+    m_openReactiveInsights = jsonValue.GetInteger("OpenReactiveInsights");
 
   }
 
@@ -46,9 +46,9 @@ DescribeAccountHealthResult& DescribeAccountHealthResult::operator =(const Aws::
 
   }
 
-  if(jsonValue.ValueExists("OpenReactiveInsights"))
+  if(jsonValue.ValueExists("MetricsAnalyzed"))
   {
-    m_openReactiveInsights = jsonValue.GetInteger("OpenReactiveInsights");
+    m_metricsAnalyzed = jsonValue.GetInteger("MetricsAnalyzed");
 
   }
 

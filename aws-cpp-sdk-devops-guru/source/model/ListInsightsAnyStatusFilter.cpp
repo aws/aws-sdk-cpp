@@ -19,34 +19,34 @@ namespace Model
 {
 
 ListInsightsAnyStatusFilter::ListInsightsAnyStatusFilter() : 
-    m_startTimeRangeHasBeenSet(false),
     m_type(InsightType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_startTimeRangeHasBeenSet(false)
 {
 }
 
 ListInsightsAnyStatusFilter::ListInsightsAnyStatusFilter(JsonView jsonValue) : 
-    m_startTimeRangeHasBeenSet(false),
     m_type(InsightType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_startTimeRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ListInsightsAnyStatusFilter& ListInsightsAnyStatusFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("StartTimeRange"))
-  {
-    m_startTimeRange = jsonValue.GetObject("StartTimeRange");
-
-    m_startTimeRangeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = InsightTypeMapper::GetInsightTypeForName(jsonValue.GetString("Type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartTimeRange"))
+  {
+    m_startTimeRange = jsonValue.GetObject("StartTimeRange");
+
+    m_startTimeRangeHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue ListInsightsAnyStatusFilter::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", InsightTypeMapper::GetNameForInsightType(m_type));
+  }
+
   if(m_startTimeRangeHasBeenSet)
   {
    payload.WithObject("StartTimeRange", m_startTimeRange.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", InsightTypeMapper::GetNameForInsightType(m_type));
   }
 
   return payload;
