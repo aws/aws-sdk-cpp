@@ -29,7 +29,9 @@ DocumentVersionInfo::DocumentVersionInfo() :
     m_documentFormatHasBeenSet(false),
     m_status(DocumentStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusInformationHasBeenSet(false)
+    m_statusInformationHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ DocumentVersionInfo::DocumentVersionInfo(JsonView jsonValue) :
     m_documentFormatHasBeenSet(false),
     m_status(DocumentStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusInformationHasBeenSet(false)
+    m_statusInformationHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +111,13 @@ DocumentVersionInfo& DocumentVersionInfo::operator =(JsonView jsonValue)
     m_statusInformationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReviewStatus"))
+  {
+    m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
+
+    m_reviewStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -157,6 +168,11 @@ JsonValue DocumentVersionInfo::Jsonize() const
   {
    payload.WithString("StatusInformation", m_statusInformation);
 
+  }
+
+  if(m_reviewStatusHasBeenSet)
+  {
+   payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
   }
 
   return payload;

@@ -25,7 +25,9 @@ namespace Model
     StartTimeAfter,
     AutomationType,
     TagKey,
-    TargetResourceGroup
+    TargetResourceGroup,
+    AutomationSubtype,
+    OpsItemId
   };
 
 namespace AutomationExecutionFilterKeyMapper

@@ -231,43 +231,43 @@ namespace Model
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline const PublishFindingToSnsParams& GetPublishFindingToSnsParams() const{ return m_publishFindingToSnsParams; }
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline bool PublishFindingToSnsParamsHasBeenSet() const { return m_publishFindingToSnsParamsHasBeenSet; }
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline void SetPublishFindingToSnsParams(const PublishFindingToSnsParams& value) { m_publishFindingToSnsParamsHasBeenSet = true; m_publishFindingToSnsParams = value; }
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline void SetPublishFindingToSnsParams(PublishFindingToSnsParams&& value) { m_publishFindingToSnsParamsHasBeenSet = true; m_publishFindingToSnsParams = std::move(value); }
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline MitigationActionParams& WithPublishFindingToSnsParams(const PublishFindingToSnsParams& value) { SetPublishFindingToSnsParams(value); return *this;}
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline MitigationActionParams& WithPublishFindingToSnsParams(PublishFindingToSnsParams&& value) { SetPublishFindingToSnsParams(std::move(value)); return *this;}
 

@@ -31,7 +31,10 @@ DocumentIdentifier::DocumentIdentifier() :
     m_documentFormatHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_requiresHasBeenSet(false)
+    m_requiresHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false),
+    m_authorHasBeenSet(false)
 {
 }
 
@@ -48,7 +51,10 @@ DocumentIdentifier::DocumentIdentifier(JsonView jsonValue) :
     m_documentFormatHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_requiresHasBeenSet(false)
+    m_requiresHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false),
+    m_authorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -141,6 +147,20 @@ DocumentIdentifier& DocumentIdentifier::operator =(JsonView jsonValue)
     m_requiresHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReviewStatus"))
+  {
+    m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
+
+    m_reviewStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Author"))
+  {
+    m_author = jsonValue.GetString("Author");
+
+    m_authorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -224,6 +244,17 @@ JsonValue DocumentIdentifier::Jsonize() const
      requiresJsonList[requiresIndex].AsObject(m_requires[requiresIndex].Jsonize());
    }
    payload.WithArray("Requires", std::move(requiresJsonList));
+
+  }
+
+  if(m_reviewStatusHasBeenSet)
+  {
+   payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
+  }
+
+  if(m_authorHasBeenSet)
+  {
+   payload.WithString("Author", m_author);
 
   }
 

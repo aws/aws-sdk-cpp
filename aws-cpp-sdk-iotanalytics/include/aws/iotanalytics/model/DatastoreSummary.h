@@ -9,6 +9,7 @@
 #include <aws/iotanalytics/model/DatastoreStorageSummary.h>
 #include <aws/iotanalytics/model/DatastoreStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iotanalytics/model/FileFormatType.h>
 #include <utility>
 
 namespace Aws
@@ -259,6 +260,37 @@ namespace Model
      */
     inline DatastoreSummary& WithLastMessageArrivalTime(Aws::Utils::DateTime&& value) { SetLastMessageArrivalTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline const FileFormatType& GetFileFormatType() const{ return m_fileFormatType; }
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline bool FileFormatTypeHasBeenSet() const { return m_fileFormatTypeHasBeenSet; }
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline void SetFileFormatType(const FileFormatType& value) { m_fileFormatTypeHasBeenSet = true; m_fileFormatType = value; }
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline void SetFileFormatType(FileFormatType&& value) { m_fileFormatTypeHasBeenSet = true; m_fileFormatType = std::move(value); }
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline DatastoreSummary& WithFileFormatType(const FileFormatType& value) { SetFileFormatType(value); return *this;}
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline DatastoreSummary& WithFileFormatType(FileFormatType&& value) { SetFileFormatType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datastoreName;
@@ -278,6 +310,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastMessageArrivalTime;
     bool m_lastMessageArrivalTimeHasBeenSet;
+
+    FileFormatType m_fileFormatType;
+    bool m_fileFormatTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/HttpUrlDestinationConfiguration.h>
+#include <aws/iot/model/VpcDestinationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -67,10 +68,44 @@ namespace Model
      */
     inline TopicRuleDestinationConfiguration& WithHttpUrlConfiguration(HttpUrlDestinationConfiguration&& value) { SetHttpUrlConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline const VpcDestinationConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline void SetVpcConfiguration(const VpcDestinationConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline void SetVpcConfiguration(VpcDestinationConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline TopicRuleDestinationConfiguration& WithVpcConfiguration(const VpcDestinationConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline TopicRuleDestinationConfiguration& WithVpcConfiguration(VpcDestinationConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+
   private:
 
     HttpUrlDestinationConfiguration m_httpUrlConfiguration;
     bool m_httpUrlConfigurationHasBeenSet;
+
+    VpcDestinationConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -38,7 +38,8 @@ Action::Action() :
     m_iotSiteWiseHasBeenSet(false),
     m_stepFunctionsHasBeenSet(false),
     m_timestreamHasBeenSet(false),
-    m_httpHasBeenSet(false)
+    m_httpHasBeenSet(false),
+    m_kafkaHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ Action::Action(JsonView jsonValue) :
     m_iotSiteWiseHasBeenSet(false),
     m_stepFunctionsHasBeenSet(false),
     m_timestreamHasBeenSet(false),
-    m_httpHasBeenSet(false)
+    m_httpHasBeenSet(false),
+    m_kafkaHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -209,6 +211,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_httpHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kafka"))
+  {
+    m_kafka = jsonValue.GetObject("kafka");
+
+    m_kafkaHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -333,6 +342,12 @@ JsonValue Action::Jsonize() const
   if(m_httpHasBeenSet)
   {
    payload.WithObject("http", m_http.Jsonize());
+
+  }
+
+  if(m_kafkaHasBeenSet)
+  {
+   payload.WithObject("kafka", m_kafka.Jsonize());
 
   }
 

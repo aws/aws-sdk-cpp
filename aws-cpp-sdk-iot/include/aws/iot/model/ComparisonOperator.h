@@ -23,7 +23,9 @@ namespace Model
     in_cidr_set,
     not_in_cidr_set,
     in_port_set,
-    not_in_port_set
+    not_in_port_set,
+    in_set,
+    not_in_set
   };
 
 namespace ComparisonOperatorMapper

@@ -72,37 +72,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN (Amazon resource name) for the dimension.</p>
+     * <p>The Amazon Resource Name (ARN) for the dimension.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN (Amazon resource name) for the dimension.</p>
+     * <p>The Amazon Resource Name (ARN) for the dimension.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN (Amazon resource name) for the dimension.</p>
+     * <p>The Amazon Resource Name (ARN) for the dimension.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN (Amazon resource name) for the dimension.</p>
+     * <p>The Amazon Resource Name (ARN) for the dimension.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN (Amazon resource name) for the dimension.</p>
+     * <p>The Amazon Resource Name (ARN) for the dimension.</p>
      */
     inline DescribeDimensionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN (Amazon resource name) for the dimension.</p>
+     * <p>The Amazon Resource Name (ARN) for the dimension.</p>
      */
     inline DescribeDimensionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN (Amazon resource name) for the dimension.</p>
+     * <p>The Amazon Resource Name (ARN) for the dimension.</p>
      */
     inline DescribeDimensionResult& WithArn(const char* value) { SetArn(value); return *this;}
 

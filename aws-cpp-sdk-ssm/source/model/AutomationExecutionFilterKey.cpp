@@ -30,6 +30,8 @@ namespace Aws
         static const int AutomationType_HASH = HashingUtils::HashString("AutomationType");
         static const int TagKey_HASH = HashingUtils::HashString("TagKey");
         static const int TargetResourceGroup_HASH = HashingUtils::HashString("TargetResourceGroup");
+        static const int AutomationSubtype_HASH = HashingUtils::HashString("AutomationSubtype");
+        static const int OpsItemId_HASH = HashingUtils::HashString("OpsItemId");
 
 
         AutomationExecutionFilterKey GetAutomationExecutionFilterKeyForName(const Aws::String& name)
@@ -75,6 +77,14 @@ namespace Aws
           {
             return AutomationExecutionFilterKey::TargetResourceGroup;
           }
+          else if (hashCode == AutomationSubtype_HASH)
+          {
+            return AutomationExecutionFilterKey::AutomationSubtype;
+          }
+          else if (hashCode == OpsItemId_HASH)
+          {
+            return AutomationExecutionFilterKey::OpsItemId;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +119,10 @@ namespace Aws
             return "TagKey";
           case AutomationExecutionFilterKey::TargetResourceGroup:
             return "TargetResourceGroup";
+          case AutomationExecutionFilterKey::AutomationSubtype:
+            return "AutomationSubtype";
+          case AutomationExecutionFilterKey::OpsItemId:
+            return "OpsItemId";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

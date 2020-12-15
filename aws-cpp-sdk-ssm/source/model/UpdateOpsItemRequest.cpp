@@ -25,7 +25,11 @@ UpdateOpsItemRequest::UpdateOpsItemRequest() :
     m_opsItemIdHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_categoryHasBeenSet(false),
-    m_severityHasBeenSet(false)
+    m_severityHasBeenSet(false),
+    m_actualStartTimeHasBeenSet(false),
+    m_actualEndTimeHasBeenSet(false),
+    m_plannedStartTimeHasBeenSet(false),
+    m_plannedEndTimeHasBeenSet(false)
 {
 }
 
@@ -116,6 +120,26 @@ Aws::String UpdateOpsItemRequest::SerializePayload() const
   {
    payload.WithString("Severity", m_severity);
 
+  }
+
+  if(m_actualStartTimeHasBeenSet)
+  {
+   payload.WithDouble("ActualStartTime", m_actualStartTime.SecondsWithMSPrecision());
+  }
+
+  if(m_actualEndTimeHasBeenSet)
+  {
+   payload.WithDouble("ActualEndTime", m_actualEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_plannedStartTimeHasBeenSet)
+  {
+   payload.WithDouble("PlannedStartTime", m_plannedStartTime.SecondsWithMSPrecision());
+  }
+
+  if(m_plannedEndTimeHasBeenSet)
+  {
+   payload.WithDouble("PlannedEndTime", m_plannedEndTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();

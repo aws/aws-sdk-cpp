@@ -28,6 +28,10 @@ namespace Aws
         static const int OpsItemId_HASH = HashingUtils::HashString("OpsItemId");
         static const int CreatedTime_HASH = HashingUtils::HashString("CreatedTime");
         static const int LastModifiedTime_HASH = HashingUtils::HashString("LastModifiedTime");
+        static const int ActualStartTime_HASH = HashingUtils::HashString("ActualStartTime");
+        static const int ActualEndTime_HASH = HashingUtils::HashString("ActualEndTime");
+        static const int PlannedStartTime_HASH = HashingUtils::HashString("PlannedStartTime");
+        static const int PlannedEndTime_HASH = HashingUtils::HashString("PlannedEndTime");
         static const int OperationalData_HASH = HashingUtils::HashString("OperationalData");
         static const int OperationalDataKey_HASH = HashingUtils::HashString("OperationalDataKey");
         static const int OperationalDataValue_HASH = HashingUtils::HashString("OperationalDataValue");
@@ -35,6 +39,13 @@ namespace Aws
         static const int AutomationId_HASH = HashingUtils::HashString("AutomationId");
         static const int Category_HASH = HashingUtils::HashString("Category");
         static const int Severity_HASH = HashingUtils::HashString("Severity");
+        static const int OpsItemType_HASH = HashingUtils::HashString("OpsItemType");
+        static const int ChangeRequestByRequesterArn_HASH = HashingUtils::HashString("ChangeRequestByRequesterArn");
+        static const int ChangeRequestByRequesterName_HASH = HashingUtils::HashString("ChangeRequestByRequesterName");
+        static const int ChangeRequestByApproverArn_HASH = HashingUtils::HashString("ChangeRequestByApproverArn");
+        static const int ChangeRequestByApproverName_HASH = HashingUtils::HashString("ChangeRequestByApproverName");
+        static const int ChangeRequestByTemplate_HASH = HashingUtils::HashString("ChangeRequestByTemplate");
+        static const int ChangeRequestByTargetsResourceGroup_HASH = HashingUtils::HashString("ChangeRequestByTargetsResourceGroup");
 
 
         OpsItemFilterKey GetOpsItemFilterKeyForName(const Aws::String& name)
@@ -72,6 +83,22 @@ namespace Aws
           {
             return OpsItemFilterKey::LastModifiedTime;
           }
+          else if (hashCode == ActualStartTime_HASH)
+          {
+            return OpsItemFilterKey::ActualStartTime;
+          }
+          else if (hashCode == ActualEndTime_HASH)
+          {
+            return OpsItemFilterKey::ActualEndTime;
+          }
+          else if (hashCode == PlannedStartTime_HASH)
+          {
+            return OpsItemFilterKey::PlannedStartTime;
+          }
+          else if (hashCode == PlannedEndTime_HASH)
+          {
+            return OpsItemFilterKey::PlannedEndTime;
+          }
           else if (hashCode == OperationalData_HASH)
           {
             return OpsItemFilterKey::OperationalData;
@@ -99,6 +126,34 @@ namespace Aws
           else if (hashCode == Severity_HASH)
           {
             return OpsItemFilterKey::Severity;
+          }
+          else if (hashCode == OpsItemType_HASH)
+          {
+            return OpsItemFilterKey::OpsItemType;
+          }
+          else if (hashCode == ChangeRequestByRequesterArn_HASH)
+          {
+            return OpsItemFilterKey::ChangeRequestByRequesterArn;
+          }
+          else if (hashCode == ChangeRequestByRequesterName_HASH)
+          {
+            return OpsItemFilterKey::ChangeRequestByRequesterName;
+          }
+          else if (hashCode == ChangeRequestByApproverArn_HASH)
+          {
+            return OpsItemFilterKey::ChangeRequestByApproverArn;
+          }
+          else if (hashCode == ChangeRequestByApproverName_HASH)
+          {
+            return OpsItemFilterKey::ChangeRequestByApproverName;
+          }
+          else if (hashCode == ChangeRequestByTemplate_HASH)
+          {
+            return OpsItemFilterKey::ChangeRequestByTemplate;
+          }
+          else if (hashCode == ChangeRequestByTargetsResourceGroup_HASH)
+          {
+            return OpsItemFilterKey::ChangeRequestByTargetsResourceGroup;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -130,6 +185,14 @@ namespace Aws
             return "CreatedTime";
           case OpsItemFilterKey::LastModifiedTime:
             return "LastModifiedTime";
+          case OpsItemFilterKey::ActualStartTime:
+            return "ActualStartTime";
+          case OpsItemFilterKey::ActualEndTime:
+            return "ActualEndTime";
+          case OpsItemFilterKey::PlannedStartTime:
+            return "PlannedStartTime";
+          case OpsItemFilterKey::PlannedEndTime:
+            return "PlannedEndTime";
           case OpsItemFilterKey::OperationalData:
             return "OperationalData";
           case OpsItemFilterKey::OperationalDataKey:
@@ -144,6 +207,20 @@ namespace Aws
             return "Category";
           case OpsItemFilterKey::Severity:
             return "Severity";
+          case OpsItemFilterKey::OpsItemType:
+            return "OpsItemType";
+          case OpsItemFilterKey::ChangeRequestByRequesterArn:
+            return "ChangeRequestByRequesterArn";
+          case OpsItemFilterKey::ChangeRequestByRequesterName:
+            return "ChangeRequestByRequesterName";
+          case OpsItemFilterKey::ChangeRequestByApproverArn:
+            return "ChangeRequestByApproverArn";
+          case OpsItemFilterKey::ChangeRequestByApproverName:
+            return "ChangeRequestByApproverName";
+          case OpsItemFilterKey::ChangeRequestByTemplate:
+            return "ChangeRequestByTemplate";
+          case OpsItemFilterKey::ChangeRequestByTargetsResourceGroup:
+            return "ChangeRequestByTargetsResourceGroup";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

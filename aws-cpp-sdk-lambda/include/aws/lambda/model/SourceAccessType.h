@@ -16,7 +16,11 @@ namespace Model
   enum class SourceAccessType
   {
     NOT_SET,
-    BASIC_AUTH
+    BASIC_AUTH,
+    VPC_SUBNET,
+    VPC_SECURITY_GROUP,
+    SASL_SCRAM_512_AUTH,
+    SASL_SCRAM_256_AUTH
   };
 
 namespace SourceAccessTypeMapper

@@ -33,9 +33,13 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_bisectBatchOnFunctionErrorHasBeenSet(false),
     m_maximumRetryAttempts(0),
     m_maximumRetryAttemptsHasBeenSet(false),
+    m_tumblingWindowInSeconds(0),
+    m_tumblingWindowInSecondsHasBeenSet(false),
     m_topicsHasBeenSet(false),
     m_queuesHasBeenSet(false),
-    m_sourceAccessConfigurationsHasBeenSet(false)
+    m_sourceAccessConfigurationsHasBeenSet(false),
+    m_selfManagedEventSourceHasBeenSet(false),
+    m_functionResponseTypesHasBeenSet(false)
 {
 }
 
@@ -113,6 +117,12 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
 
   }
 
+  if(m_tumblingWindowInSecondsHasBeenSet)
+  {
+   payload.WithInteger("TumblingWindowInSeconds", m_tumblingWindowInSeconds);
+
+  }
+
   if(m_topicsHasBeenSet)
   {
    Array<JsonValue> topicsJsonList(m_topics.size());
@@ -143,6 +153,23 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
      sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject(m_sourceAccessConfigurations[sourceAccessConfigurationsIndex].Jsonize());
    }
    payload.WithArray("SourceAccessConfigurations", std::move(sourceAccessConfigurationsJsonList));
+
+  }
+
+  if(m_selfManagedEventSourceHasBeenSet)
+  {
+   payload.WithObject("SelfManagedEventSource", m_selfManagedEventSource.Jsonize());
+
+  }
+
+  if(m_functionResponseTypesHasBeenSet)
+  {
+   Array<JsonValue> functionResponseTypesJsonList(m_functionResponseTypes.size());
+   for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
+   {
+     functionResponseTypesJsonList[functionResponseTypesIndex].AsString(FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
+   }
+   payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
 
   }
 

@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateDatastoreRequest::UpdateDatastoreRequest() : 
     m_datastoreNameHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
-    m_datastoreStorageHasBeenSet(false)
+    m_datastoreStorageHasBeenSet(false),
+    m_fileFormatConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String UpdateDatastoreRequest::SerializePayload() const
   if(m_datastoreStorageHasBeenSet)
   {
    payload.WithObject("datastoreStorage", m_datastoreStorage.Jsonize());
+
+  }
+
+  if(m_fileFormatConfigurationHasBeenSet)
+  {
+   payload.WithObject("fileFormatConfiguration", m_fileFormatConfiguration.Jsonize());
 
   }
 

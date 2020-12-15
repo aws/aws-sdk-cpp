@@ -574,10 +574,12 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS
          * Lambda with Amazon MQ</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
-         * Lambda with Amazon MSK</a> </p> </li> </ul> <p>The following error handling
-         * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
-         * <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an
-         * error, split the batch in two and retry.</p> </li> <li> <p>
+         * Lambda with Amazon MSK</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
+         * Lambda with Self-Managed Apache Kafka</a> </p> </li> </ul> <p>The following
+         * error handling options are only available for stream sources (DynamoDB and
+         * Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
+         * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
          * Discard records older than the specified age. The default value is infinite
@@ -605,10 +607,12 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS
          * Lambda with Amazon MQ</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
-         * Lambda with Amazon MSK</a> </p> </li> </ul> <p>The following error handling
-         * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
-         * <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an
-         * error, split the batch in two and retry.</p> </li> <li> <p>
+         * Lambda with Amazon MSK</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
+         * Lambda with Self-Managed Apache Kafka</a> </p> </li> </ul> <p>The following
+         * error handling options are only available for stream sources (DynamoDB and
+         * Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
+         * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
          * Discard records older than the specified age. The default value is infinite
@@ -638,10 +642,12 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS
          * Lambda with Amazon MQ</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
-         * Lambda with Amazon MSK</a> </p> </li> </ul> <p>The following error handling
-         * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
-         * <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an
-         * error, split the batch in two and retry.</p> </li> <li> <p>
+         * Lambda with Amazon MSK</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
+         * Lambda with Self-Managed Apache Kafka</a> </p> </li> </ul> <p>The following
+         * error handling options are only available for stream sources (DynamoDB and
+         * Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
+         * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
          * Discard records older than the specified age. The default value is infinite

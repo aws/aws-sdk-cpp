@@ -10,6 +10,7 @@
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
+#include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
 
 namespace Aws
@@ -218,9 +219,10 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
-     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-     * </ul>
+     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
+     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
@@ -228,9 +230,10 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
-     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-     * </ul>
+     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
+     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
@@ -238,9 +241,10 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
-     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-     * </ul>
+     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
+     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
@@ -248,34 +252,35 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> <li> <p> <b>Amazon
-     * Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-     * </ul>
+     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
+     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
      */
     inline UpdateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds.</p>
      */
     inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
@@ -418,100 +423,126 @@ namespace Model
 
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline const Aws::Vector<SourceAccessConfiguration>& GetSourceAccessConfigurations() const{ return m_sourceAccessConfigurations; }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline bool SourceAccessConfigurationsHasBeenSet() const { return m_sourceAccessConfigurationsHasBeenSet; }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline void SetSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = value; }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline void SetSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = std::move(value); }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline UpdateEventSourceMappingRequest& WithSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { SetSourceAccessConfigurations(value); return *this;}
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline UpdateEventSourceMappingRequest& WithSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { SetSourceAccessConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline UpdateEventSourceMappingRequest& AddSourceAccessConfigurations(const SourceAccessConfiguration& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(value); return *this; }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline UpdateEventSourceMappingRequest& AddSourceAccessConfigurations(SourceAccessConfiguration&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSecondsHasBeenSet = true; m_tumblingWindowInSeconds = value; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
+
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -547,6 +578,12 @@ namespace Model
 
     Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
     bool m_sourceAccessConfigurationsHasBeenSet;
+
+    int m_tumblingWindowInSeconds;
+    bool m_tumblingWindowInSecondsHasBeenSet;
+
+    Aws::Vector<FunctionResponseType> m_functionResponseTypes;
+    bool m_functionResponseTypesHasBeenSet;
   };
 
 } // namespace Model

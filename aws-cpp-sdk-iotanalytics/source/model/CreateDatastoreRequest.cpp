@@ -16,7 +16,8 @@ CreateDatastoreRequest::CreateDatastoreRequest() :
     m_datastoreNameHasBeenSet(false),
     m_datastoreStorageHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_fileFormatConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String CreateDatastoreRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_fileFormatConfigurationHasBeenSet)
+  {
+   payload.WithObject("fileFormatConfiguration", m_fileFormatConfiguration.Jsonize());
 
   }
 

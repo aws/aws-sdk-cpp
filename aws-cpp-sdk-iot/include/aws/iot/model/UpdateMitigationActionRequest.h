@@ -34,58 +34,58 @@ namespace Model
 
 
     /**
-     * <p>The friendly name for the mitigation action. You can't change the name by
-     * using <code>UpdateMitigationAction</code>. Instead, you must delete and
-     * re-create the mitigation action with the new name.</p>
+     * <p>The friendly name for the mitigation action. You cannot change the name by
+     * using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate
+     * the mitigation action with the new name.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
 
     /**
-     * <p>The friendly name for the mitigation action. You can't change the name by
-     * using <code>UpdateMitigationAction</code>. Instead, you must delete and
-     * re-create the mitigation action with the new name.</p>
+     * <p>The friendly name for the mitigation action. You cannot change the name by
+     * using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate
+     * the mitigation action with the new name.</p>
      */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
 
     /**
-     * <p>The friendly name for the mitigation action. You can't change the name by
-     * using <code>UpdateMitigationAction</code>. Instead, you must delete and
-     * re-create the mitigation action with the new name.</p>
+     * <p>The friendly name for the mitigation action. You cannot change the name by
+     * using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate
+     * the mitigation action with the new name.</p>
      */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
-     * <p>The friendly name for the mitigation action. You can't change the name by
-     * using <code>UpdateMitigationAction</code>. Instead, you must delete and
-     * re-create the mitigation action with the new name.</p>
+     * <p>The friendly name for the mitigation action. You cannot change the name by
+     * using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate
+     * the mitigation action with the new name.</p>
      */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
 
     /**
-     * <p>The friendly name for the mitigation action. You can't change the name by
-     * using <code>UpdateMitigationAction</code>. Instead, you must delete and
-     * re-create the mitigation action with the new name.</p>
+     * <p>The friendly name for the mitigation action. You cannot change the name by
+     * using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate
+     * the mitigation action with the new name.</p>
      */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
 
     /**
-     * <p>The friendly name for the mitigation action. You can't change the name by
-     * using <code>UpdateMitigationAction</code>. Instead, you must delete and
-     * re-create the mitigation action with the new name.</p>
+     * <p>The friendly name for the mitigation action. You cannot change the name by
+     * using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate
+     * the mitigation action with the new name.</p>
      */
     inline UpdateMitigationActionRequest& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
 
     /**
-     * <p>The friendly name for the mitigation action. You can't change the name by
-     * using <code>UpdateMitigationAction</code>. Instead, you must delete and
-     * re-create the mitigation action with the new name.</p>
+     * <p>The friendly name for the mitigation action. You cannot change the name by
+     * using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate
+     * the mitigation action with the new name.</p>
      */
     inline UpdateMitigationActionRequest& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name for the mitigation action. You can't change the name by
-     * using <code>UpdateMitigationAction</code>. Instead, you must delete and
-     * re-create the mitigation action with the new name.</p>
+     * <p>The friendly name for the mitigation action. You cannot change the name by
+     * using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate
+     * the mitigation action with the new name.</p>
      */
     inline UpdateMitigationActionRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
 

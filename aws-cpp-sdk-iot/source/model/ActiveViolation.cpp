@@ -24,6 +24,7 @@ ActiveViolation::ActiveViolation() :
     m_securityProfileNameHasBeenSet(false),
     m_behaviorHasBeenSet(false),
     m_lastViolationValueHasBeenSet(false),
+    m_violationEventAdditionalInfoHasBeenSet(false),
     m_lastViolationTimeHasBeenSet(false),
     m_violationStartTimeHasBeenSet(false)
 {
@@ -35,6 +36,7 @@ ActiveViolation::ActiveViolation(JsonView jsonValue) :
     m_securityProfileNameHasBeenSet(false),
     m_behaviorHasBeenSet(false),
     m_lastViolationValueHasBeenSet(false),
+    m_violationEventAdditionalInfoHasBeenSet(false),
     m_lastViolationTimeHasBeenSet(false),
     m_violationStartTimeHasBeenSet(false)
 {
@@ -76,6 +78,13 @@ ActiveViolation& ActiveViolation::operator =(JsonView jsonValue)
     m_lastViolationValue = jsonValue.GetObject("lastViolationValue");
 
     m_lastViolationValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("violationEventAdditionalInfo"))
+  {
+    m_violationEventAdditionalInfo = jsonValue.GetObject("violationEventAdditionalInfo");
+
+    m_violationEventAdditionalInfoHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastViolationTime"))
@@ -126,6 +135,12 @@ JsonValue ActiveViolation::Jsonize() const
   if(m_lastViolationValueHasBeenSet)
   {
    payload.WithObject("lastViolationValue", m_lastViolationValue.Jsonize());
+
+  }
+
+  if(m_violationEventAdditionalInfoHasBeenSet)
+  {
+   payload.WithObject("violationEventAdditionalInfo", m_violationEventAdditionalInfo.Jsonize());
 
   }
 

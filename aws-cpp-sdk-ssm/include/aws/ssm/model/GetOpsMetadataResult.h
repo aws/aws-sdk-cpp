@@ -35,93 +35,93 @@ namespace Model
 
 
     /**
-     * <p>The resource ID of the AppManager application.</p>
+     * <p>The resource ID of the Application Manager application.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The resource ID of the AppManager application.</p>
+     * <p>The resource ID of the Application Manager application.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
 
     /**
-     * <p>The resource ID of the AppManager application.</p>
+     * <p>The resource ID of the Application Manager application.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
 
     /**
-     * <p>The resource ID of the AppManager application.</p>
+     * <p>The resource ID of the Application Manager application.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
 
     /**
-     * <p>The resource ID of the AppManager application.</p>
+     * <p>The resource ID of the Application Manager application.</p>
      */
     inline GetOpsMetadataResult& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The resource ID of the AppManager application.</p>
+     * <p>The resource ID of the Application Manager application.</p>
      */
     inline GetOpsMetadataResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The resource ID of the AppManager application.</p>
+     * <p>The resource ID of the Application Manager application.</p>
      */
     inline GetOpsMetadataResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline const Aws::Map<Aws::String, MetadataValue>& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, MetadataValue>& value) { m_metadata = value; }
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline void SetMetadata(Aws::Map<Aws::String, MetadataValue>&& value) { m_metadata = std::move(value); }
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline GetOpsMetadataResult& WithMetadata(const Aws::Map<Aws::String, MetadataValue>& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline GetOpsMetadataResult& WithMetadata(Aws::Map<Aws::String, MetadataValue>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline GetOpsMetadataResult& AddMetadata(const Aws::String& key, const MetadataValue& value) { m_metadata.emplace(key, value); return *this; }
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline GetOpsMetadataResult& AddMetadata(Aws::String&& key, const MetadataValue& value) { m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline GetOpsMetadataResult& AddMetadata(const Aws::String& key, MetadataValue&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline GetOpsMetadataResult& AddMetadata(Aws::String&& key, MetadataValue&& value) { m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline GetOpsMetadataResult& AddMetadata(const char* key, MetadataValue&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>OpsMetadata for an AppManager application.</p>
+     * <p>OpsMetadata for an Application Manager application.</p>
      */
     inline GetOpsMetadataResult& AddMetadata(const char* key, const MetadataValue& value) { m_metadata.emplace(key, value); return *this; }
 

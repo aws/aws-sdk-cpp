@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
+#include <aws/ssm/model/ReviewStatus.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/Tag.h>
 #include <aws/ssm/model/DocumentRequires.h>
@@ -538,6 +539,78 @@ namespace Model
      */
     inline DocumentIdentifier& AddRequires(DocumentRequires&& value) { m_requiresHasBeenSet = true; m_requires.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = std::move(value); }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline DocumentIdentifier& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline DocumentIdentifier& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline const Aws::String& GetAuthor() const{ return m_author; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentIdentifier& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentIdentifier& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentIdentifier& WithAuthor(const char* value) { SetAuthor(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -572,6 +645,12 @@ namespace Model
 
     Aws::Vector<DocumentRequires> m_requires;
     bool m_requiresHasBeenSet;
+
+    ReviewStatus m_reviewStatus;
+    bool m_reviewStatusHasBeenSet;
+
+    Aws::String m_author;
+    bool m_authorHasBeenSet;
   };
 
 } // namespace Model

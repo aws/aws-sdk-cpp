@@ -19,14 +19,16 @@ using namespace Aws;
 GetDocumentResult::GetDocumentResult() : 
     m_status(DocumentStatus::NOT_SET),
     m_documentType(DocumentType::NOT_SET),
-    m_documentFormat(DocumentFormat::NOT_SET)
+    m_documentFormat(DocumentFormat::NOT_SET),
+    m_reviewStatus(ReviewStatus::NOT_SET)
 {
 }
 
 GetDocumentResult::GetDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(DocumentStatus::NOT_SET),
     m_documentType(DocumentType::NOT_SET),
-    m_documentFormat(DocumentFormat::NOT_SET)
+    m_documentFormat(DocumentFormat::NOT_SET),
+    m_reviewStatus(ReviewStatus::NOT_SET)
 {
   *this = result;
 }
@@ -98,6 +100,12 @@ GetDocumentResult& GetDocumentResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_attachmentsContent.push_back(attachmentsContentJsonList[attachmentsContentIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("ReviewStatus"))
+  {
+    m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
+
   }
 
 

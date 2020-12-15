@@ -22,7 +22,9 @@ Behavior::Behavior() :
     m_nameHasBeenSet(false),
     m_metricHasBeenSet(false),
     m_metricDimensionHasBeenSet(false),
-    m_criteriaHasBeenSet(false)
+    m_criteriaHasBeenSet(false),
+    m_suppressAlerts(false),
+    m_suppressAlertsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ Behavior::Behavior(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_metricHasBeenSet(false),
     m_metricDimensionHasBeenSet(false),
-    m_criteriaHasBeenSet(false)
+    m_criteriaHasBeenSet(false),
+    m_suppressAlerts(false),
+    m_suppressAlertsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,13 @@ Behavior& Behavior::operator =(JsonView jsonValue)
     m_criteriaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("suppressAlerts"))
+  {
+    m_suppressAlerts = jsonValue.GetBool("suppressAlerts");
+
+    m_suppressAlertsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +104,12 @@ JsonValue Behavior::Jsonize() const
   if(m_criteriaHasBeenSet)
   {
    payload.WithObject("criteria", m_criteria.Jsonize());
+
+  }
+
+  if(m_suppressAlertsHasBeenSet)
+  {
+   payload.WithBool("suppressAlerts", m_suppressAlerts);
 
   }
 

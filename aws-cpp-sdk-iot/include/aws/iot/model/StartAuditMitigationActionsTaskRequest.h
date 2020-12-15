@@ -88,42 +88,42 @@ namespace Model
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline const AuditMitigationActionsTaskTarget& GetTarget() const{ return m_target; }
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline void SetTarget(const AuditMitigationActionsTaskTarget& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline void SetTarget(AuditMitigationActionsTaskTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& WithTarget(const AuditMitigationActionsTaskTarget& value) { SetTarget(value); return *this;}
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& WithTarget(AuditMitigationActionsTaskTarget&& value) { SetTarget(std::move(value)); return *this;}
 

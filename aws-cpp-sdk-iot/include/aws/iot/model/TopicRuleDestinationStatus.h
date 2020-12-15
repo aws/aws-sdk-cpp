@@ -19,7 +19,8 @@ namespace Model
     ENABLED,
     IN_PROGRESS,
     DISABLED,
-    ERROR_
+    ERROR_,
+    DELETING
   };
 
 namespace TopicRuleDestinationStatusMapper

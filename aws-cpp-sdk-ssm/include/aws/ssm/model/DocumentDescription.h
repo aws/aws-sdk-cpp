@@ -12,11 +12,13 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
+#include <aws/ssm/model/ReviewStatus.h>
 #include <aws/ssm/model/DocumentParameter.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/Tag.h>
 #include <aws/ssm/model/AttachmentInformation.h>
 #include <aws/ssm/model/DocumentRequires.h>
+#include <aws/ssm/model/ReviewInformation.h>
 #include <utility>
 
 namespace Aws
@@ -993,6 +995,209 @@ namespace Model
      */
     inline DocumentDescription& AddRequires(DocumentRequires&& value) { m_requiresHasBeenSet = true; m_requires.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline const Aws::String& GetAuthor() const{ return m_author; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentDescription& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentDescription& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentDescription& WithAuthor(const char* value) { SetAuthor(value); return *this;}
+
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline const Aws::Vector<ReviewInformation>& GetReviewInformation() const{ return m_reviewInformation; }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline bool ReviewInformationHasBeenSet() const { return m_reviewInformationHasBeenSet; }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline void SetReviewInformation(const Aws::Vector<ReviewInformation>& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation = value; }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline void SetReviewInformation(Aws::Vector<ReviewInformation>&& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation = std::move(value); }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline DocumentDescription& WithReviewInformation(const Aws::Vector<ReviewInformation>& value) { SetReviewInformation(value); return *this;}
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline DocumentDescription& WithReviewInformation(Aws::Vector<ReviewInformation>&& value) { SetReviewInformation(std::move(value)); return *this;}
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline DocumentDescription& AddReviewInformation(const ReviewInformation& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation.push_back(value); return *this; }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline DocumentDescription& AddReviewInformation(ReviewInformation&& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline const Aws::String& GetApprovedVersion() const{ return m_approvedVersion; }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline bool ApprovedVersionHasBeenSet() const { return m_approvedVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline void SetApprovedVersion(const Aws::String& value) { m_approvedVersionHasBeenSet = true; m_approvedVersion = value; }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline void SetApprovedVersion(Aws::String&& value) { m_approvedVersionHasBeenSet = true; m_approvedVersion = std::move(value); }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline void SetApprovedVersion(const char* value) { m_approvedVersionHasBeenSet = true; m_approvedVersion.assign(value); }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline DocumentDescription& WithApprovedVersion(const Aws::String& value) { SetApprovedVersion(value); return *this;}
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline DocumentDescription& WithApprovedVersion(Aws::String&& value) { SetApprovedVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline DocumentDescription& WithApprovedVersion(const char* value) { SetApprovedVersion(value); return *this;}
+
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline const Aws::String& GetPendingReviewVersion() const{ return m_pendingReviewVersion; }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline bool PendingReviewVersionHasBeenSet() const { return m_pendingReviewVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline void SetPendingReviewVersion(const Aws::String& value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion = value; }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline void SetPendingReviewVersion(Aws::String&& value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion = std::move(value); }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline void SetPendingReviewVersion(const char* value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion.assign(value); }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline DocumentDescription& WithPendingReviewVersion(const Aws::String& value) { SetPendingReviewVersion(value); return *this;}
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline DocumentDescription& WithPendingReviewVersion(Aws::String&& value) { SetPendingReviewVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline DocumentDescription& WithPendingReviewVersion(const char* value) { SetPendingReviewVersion(value); return *this;}
+
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = std::move(value); }
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline DocumentDescription& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline DocumentDescription& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_sha1;
@@ -1060,6 +1265,21 @@ namespace Model
 
     Aws::Vector<DocumentRequires> m_requires;
     bool m_requiresHasBeenSet;
+
+    Aws::String m_author;
+    bool m_authorHasBeenSet;
+
+    Aws::Vector<ReviewInformation> m_reviewInformation;
+    bool m_reviewInformationHasBeenSet;
+
+    Aws::String m_approvedVersion;
+    bool m_approvedVersionHasBeenSet;
+
+    Aws::String m_pendingReviewVersion;
+    bool m_pendingReviewVersionHasBeenSet;
+
+    ReviewStatus m_reviewStatus;
+    bool m_reviewStatusHasBeenSet;
   };
 
 } // namespace Model

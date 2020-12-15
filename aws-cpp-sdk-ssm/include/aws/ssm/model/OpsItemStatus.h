@@ -18,7 +18,22 @@ namespace Model
     NOT_SET,
     Open,
     InProgress,
-    Resolved
+    Resolved,
+    Pending,
+    TimedOut,
+    Cancelling,
+    Cancelled,
+    Failed,
+    CompletedWithSuccess,
+    CompletedWithFailure,
+    Scheduled,
+    RunbookInProgress,
+    PendingChangeCalendarOverride,
+    ChangeCalendarOverrideApproved,
+    ChangeCalendarOverrideRejected,
+    PendingApproval,
+    Approved,
+    Rejected
   };
 
 namespace OpsItemStatusMapper

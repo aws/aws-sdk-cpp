@@ -28,6 +28,8 @@ namespace Aws
         static const int not_in_cidr_set_HASH = HashingUtils::HashString("not-in-cidr-set");
         static const int in_port_set_HASH = HashingUtils::HashString("in-port-set");
         static const int not_in_port_set_HASH = HashingUtils::HashString("not-in-port-set");
+        static const int in_set_HASH = HashingUtils::HashString("in-set");
+        static const int not_in_set_HASH = HashingUtils::HashString("not-in-set");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return ComparisonOperator::not_in_port_set;
           }
+          else if (hashCode == in_set_HASH)
+          {
+            return ComparisonOperator::in_set;
+          }
+          else if (hashCode == not_in_set_HASH)
+          {
+            return ComparisonOperator::not_in_set;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +105,10 @@ namespace Aws
             return "in-port-set";
           case ComparisonOperator::not_in_port_set:
             return "not-in-port-set";
+          case ComparisonOperator::in_set:
+            return "in-set";
+          case ComparisonOperator::not_in_set:
+            return "not-in-set";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

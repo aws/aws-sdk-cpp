@@ -43,7 +43,14 @@ AutomationExecutionMetadata::AutomationExecutionMetadata() :
     m_maxErrorsHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_automationType(AutomationType::NOT_SET),
-    m_automationTypeHasBeenSet(false)
+    m_automationTypeHasBeenSet(false),
+    m_automationSubtype(AutomationSubtype::NOT_SET),
+    m_automationSubtypeHasBeenSet(false),
+    m_scheduledTimeHasBeenSet(false),
+    m_runbooksHasBeenSet(false),
+    m_opsItemIdHasBeenSet(false),
+    m_associationIdHasBeenSet(false),
+    m_changeRequestNameHasBeenSet(false)
 {
 }
 
@@ -72,7 +79,14 @@ AutomationExecutionMetadata::AutomationExecutionMetadata(JsonView jsonValue) :
     m_maxErrorsHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_automationType(AutomationType::NOT_SET),
-    m_automationTypeHasBeenSet(false)
+    m_automationTypeHasBeenSet(false),
+    m_automationSubtype(AutomationSubtype::NOT_SET),
+    m_automationSubtypeHasBeenSet(false),
+    m_scheduledTimeHasBeenSet(false),
+    m_runbooksHasBeenSet(false),
+    m_opsItemIdHasBeenSet(false),
+    m_associationIdHasBeenSet(false),
+    m_changeRequestNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -262,6 +276,51 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(JsonView js
     m_automationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutomationSubtype"))
+  {
+    m_automationSubtype = AutomationSubtypeMapper::GetAutomationSubtypeForName(jsonValue.GetString("AutomationSubtype"));
+
+    m_automationSubtypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScheduledTime"))
+  {
+    m_scheduledTime = jsonValue.GetDouble("ScheduledTime");
+
+    m_scheduledTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Runbooks"))
+  {
+    Array<JsonView> runbooksJsonList = jsonValue.GetArray("Runbooks");
+    for(unsigned runbooksIndex = 0; runbooksIndex < runbooksJsonList.GetLength(); ++runbooksIndex)
+    {
+      m_runbooks.push_back(runbooksJsonList[runbooksIndex].AsObject());
+    }
+    m_runbooksHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OpsItemId"))
+  {
+    m_opsItemId = jsonValue.GetString("OpsItemId");
+
+    m_opsItemIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AssociationId"))
+  {
+    m_associationId = jsonValue.GetString("AssociationId");
+
+    m_associationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ChangeRequestName"))
+  {
+    m_changeRequestName = jsonValue.GetString("ChangeRequestName");
+
+    m_changeRequestNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -424,6 +483,45 @@ JsonValue AutomationExecutionMetadata::Jsonize() const
   if(m_automationTypeHasBeenSet)
   {
    payload.WithString("AutomationType", AutomationTypeMapper::GetNameForAutomationType(m_automationType));
+  }
+
+  if(m_automationSubtypeHasBeenSet)
+  {
+   payload.WithString("AutomationSubtype", AutomationSubtypeMapper::GetNameForAutomationSubtype(m_automationSubtype));
+  }
+
+  if(m_scheduledTimeHasBeenSet)
+  {
+   payload.WithDouble("ScheduledTime", m_scheduledTime.SecondsWithMSPrecision());
+  }
+
+  if(m_runbooksHasBeenSet)
+  {
+   Array<JsonValue> runbooksJsonList(m_runbooks.size());
+   for(unsigned runbooksIndex = 0; runbooksIndex < runbooksJsonList.GetLength(); ++runbooksIndex)
+   {
+     runbooksJsonList[runbooksIndex].AsObject(m_runbooks[runbooksIndex].Jsonize());
+   }
+   payload.WithArray("Runbooks", std::move(runbooksJsonList));
+
+  }
+
+  if(m_opsItemIdHasBeenSet)
+  {
+   payload.WithString("OpsItemId", m_opsItemId);
+
+  }
+
+  if(m_associationIdHasBeenSet)
+  {
+   payload.WithString("AssociationId", m_associationId);
+
+  }
+
+  if(m_changeRequestNameHasBeenSet)
+  {
+   payload.WithString("ChangeRequestName", m_changeRequestName);
+
   }
 
   return payload;

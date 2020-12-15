@@ -24,7 +24,8 @@ namespace Model
     ApplicationConfiguration,
     ApplicationConfigurationSchema,
     DeploymentStrategy,
-    ChangeCalendar
+    ChangeCalendar,
+    Automation_ChangeTemplate
   };
 
 namespace DocumentTypeMapper

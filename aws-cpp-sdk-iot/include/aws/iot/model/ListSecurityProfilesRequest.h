@@ -102,51 +102,100 @@ namespace Model
 
     /**
      * <p>A filter to limit results to the security profiles that use the defined
-     * dimension.</p>
+     * dimension. Cannot be used with <code>metricName</code> </p>
      */
     inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
 
     /**
      * <p>A filter to limit results to the security profiles that use the defined
-     * dimension.</p>
+     * dimension. Cannot be used with <code>metricName</code> </p>
      */
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
 
     /**
      * <p>A filter to limit results to the security profiles that use the defined
-     * dimension.</p>
+     * dimension. Cannot be used with <code>metricName</code> </p>
      */
     inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
 
     /**
      * <p>A filter to limit results to the security profiles that use the defined
-     * dimension.</p>
+     * dimension. Cannot be used with <code>metricName</code> </p>
      */
     inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
 
     /**
      * <p>A filter to limit results to the security profiles that use the defined
-     * dimension.</p>
+     * dimension. Cannot be used with <code>metricName</code> </p>
      */
     inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
 
     /**
      * <p>A filter to limit results to the security profiles that use the defined
-     * dimension.</p>
+     * dimension. Cannot be used with <code>metricName</code> </p>
      */
     inline ListSecurityProfilesRequest& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
 
     /**
      * <p>A filter to limit results to the security profiles that use the defined
-     * dimension.</p>
+     * dimension. Cannot be used with <code>metricName</code> </p>
      */
     inline ListSecurityProfilesRequest& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
 
     /**
      * <p>A filter to limit results to the security profiles that use the defined
-     * dimension.</p>
+     * dimension. Cannot be used with <code>metricName</code> </p>
      */
     inline ListSecurityProfilesRequest& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
+
+
+    /**
+     * <p> The name of the custom metric. Cannot be used with
+     * <code>dimensionName</code>. </p>
+     */
+    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p> The name of the custom metric. Cannot be used with
+     * <code>dimensionName</code>. </p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+
+    /**
+     * <p> The name of the custom metric. Cannot be used with
+     * <code>dimensionName</code>. </p>
+     */
+    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+
+    /**
+     * <p> The name of the custom metric. Cannot be used with
+     * <code>dimensionName</code>. </p>
+     */
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
+
+    /**
+     * <p> The name of the custom metric. Cannot be used with
+     * <code>dimensionName</code>. </p>
+     */
+    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
+
+    /**
+     * <p> The name of the custom metric. Cannot be used with
+     * <code>dimensionName</code>. </p>
+     */
+    inline ListSecurityProfilesRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
+
+    /**
+     * <p> The name of the custom metric. Cannot be used with
+     * <code>dimensionName</code>. </p>
+     */
+    inline ListSecurityProfilesRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the custom metric. Cannot be used with
+     * <code>dimensionName</code>. </p>
+     */
+    inline ListSecurityProfilesRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
   private:
 
@@ -158,6 +207,9 @@ namespace Model
 
     Aws::String m_dimensionName;
     bool m_dimensionNameHasBeenSet;
+
+    Aws::String m_metricName;
+    bool m_metricNameHasBeenSet;
   };
 
 } // namespace Model

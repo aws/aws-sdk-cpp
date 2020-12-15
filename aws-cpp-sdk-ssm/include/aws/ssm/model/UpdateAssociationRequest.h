@@ -13,6 +13,7 @@
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
 #include <aws/ssm/model/AssociationSyncCompliance.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/ssm/model/TargetLocation.h>
 #include <utility>
 
 namespace Aws
@@ -1020,6 +1021,63 @@ namespace Model
      */
     inline UpdateAssociationRequest& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
 
+
+    /**
+     * <p>A location is a combination of AWS Regions and AWS accounts where you want to
+     * run the association. Use this action to update an association in multiple
+     * Regions and multiple accounts.</p>
+     */
+    inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
+
+    /**
+     * <p>A location is a combination of AWS Regions and AWS accounts where you want to
+     * run the association. Use this action to update an association in multiple
+     * Regions and multiple accounts.</p>
+     */
+    inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
+
+    /**
+     * <p>A location is a combination of AWS Regions and AWS accounts where you want to
+     * run the association. Use this action to update an association in multiple
+     * Regions and multiple accounts.</p>
+     */
+    inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
+
+    /**
+     * <p>A location is a combination of AWS Regions and AWS accounts where you want to
+     * run the association. Use this action to update an association in multiple
+     * Regions and multiple accounts.</p>
+     */
+    inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
+
+    /**
+     * <p>A location is a combination of AWS Regions and AWS accounts where you want to
+     * run the association. Use this action to update an association in multiple
+     * Regions and multiple accounts.</p>
+     */
+    inline UpdateAssociationRequest& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
+
+    /**
+     * <p>A location is a combination of AWS Regions and AWS accounts where you want to
+     * run the association. Use this action to update an association in multiple
+     * Regions and multiple accounts.</p>
+     */
+    inline UpdateAssociationRequest& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
+
+    /**
+     * <p>A location is a combination of AWS Regions and AWS accounts where you want to
+     * run the association. Use this action to update an association in multiple
+     * Regions and multiple accounts.</p>
+     */
+    inline UpdateAssociationRequest& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
+
+    /**
+     * <p>A location is a combination of AWS Regions and AWS accounts where you want to
+     * run the association. Use this action to update an association in multiple
+     * Regions and multiple accounts.</p>
+     */
+    inline UpdateAssociationRequest& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_associationId;
@@ -1066,6 +1124,9 @@ namespace Model
 
     bool m_applyOnlyAtCronInterval;
     bool m_applyOnlyAtCronIntervalHasBeenSet;
+
+    Aws::Vector<TargetLocation> m_targetLocations;
+    bool m_targetLocationsHasBeenSet;
   };
 
 } // namespace Model

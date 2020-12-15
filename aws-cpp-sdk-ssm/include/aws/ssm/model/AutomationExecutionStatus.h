@@ -23,7 +23,17 @@ namespace Model
     TimedOut,
     Cancelling,
     Cancelled,
-    Failed
+    Failed,
+    PendingApproval,
+    Approved,
+    Rejected,
+    Scheduled,
+    RunbookInProgress,
+    PendingChangeCalendarOverride,
+    ChangeCalendarOverrideApproved,
+    ChangeCalendarOverrideRejected,
+    CompletedWithSuccess,
+    CompletedWithFailure
   };
 
 namespace AutomationExecutionStatusMapper

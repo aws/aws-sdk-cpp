@@ -19,7 +19,8 @@ ListSecurityProfilesRequest::ListSecurityProfilesRequest() :
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_dimensionNameHasBeenSet(false)
+    m_dimensionNameHasBeenSet(false),
+    m_metricNameHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,13 @@ void ListSecurityProfilesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_dimensionName;
       uri.AddQueryStringParameter("dimensionName", ss.str());
+      ss.str("");
+    }
+
+    if(m_metricNameHasBeenSet)
+    {
+      ss << m_metricName;
+      uri.AddQueryStringParameter("metricName", ss.str());
       ss.str("");
     }
 

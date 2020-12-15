@@ -36,7 +36,8 @@ AssociationVersionInfo::AssociationVersionInfo() :
     m_syncCompliance(AssociationSyncCompliance::NOT_SET),
     m_syncComplianceHasBeenSet(false),
     m_applyOnlyAtCronInterval(false),
-    m_applyOnlyAtCronIntervalHasBeenSet(false)
+    m_applyOnlyAtCronIntervalHasBeenSet(false),
+    m_targetLocationsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ AssociationVersionInfo::AssociationVersionInfo(JsonView jsonValue) :
     m_syncCompliance(AssociationSyncCompliance::NOT_SET),
     m_syncComplianceHasBeenSet(false),
     m_applyOnlyAtCronInterval(false),
-    m_applyOnlyAtCronIntervalHasBeenSet(false)
+    m_applyOnlyAtCronIntervalHasBeenSet(false),
+    m_targetLocationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -183,6 +185,16 @@ AssociationVersionInfo& AssociationVersionInfo::operator =(JsonView jsonValue)
     m_applyOnlyAtCronIntervalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetLocations"))
+  {
+    Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
+    for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
+    {
+      m_targetLocations.push_back(targetLocationsJsonList[targetLocationsIndex].AsObject());
+    }
+    m_targetLocationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -289,6 +301,17 @@ JsonValue AssociationVersionInfo::Jsonize() const
   if(m_applyOnlyAtCronIntervalHasBeenSet)
   {
    payload.WithBool("ApplyOnlyAtCronInterval", m_applyOnlyAtCronInterval);
+
+  }
+
+  if(m_targetLocationsHasBeenSet)
+  {
+   Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
+   for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
+   {
+     targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
+   }
+   payload.WithArray("TargetLocations", std::move(targetLocationsJsonList));
 
   }
 

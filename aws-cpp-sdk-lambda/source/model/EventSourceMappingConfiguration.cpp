@@ -39,12 +39,16 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_topicsHasBeenSet(false),
     m_queuesHasBeenSet(false),
     m_sourceAccessConfigurationsHasBeenSet(false),
+    m_selfManagedEventSourceHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_bisectBatchOnFunctionError(false),
     m_bisectBatchOnFunctionErrorHasBeenSet(false),
     m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false)
+    m_maximumRetryAttemptsHasBeenSet(false),
+    m_tumblingWindowInSeconds(0),
+    m_tumblingWindowInSecondsHasBeenSet(false),
+    m_functionResponseTypesHasBeenSet(false)
 {
 }
 
@@ -69,12 +73,16 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_topicsHasBeenSet(false),
     m_queuesHasBeenSet(false),
     m_sourceAccessConfigurationsHasBeenSet(false),
+    m_selfManagedEventSourceHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_bisectBatchOnFunctionError(false),
     m_bisectBatchOnFunctionErrorHasBeenSet(false),
     m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false)
+    m_maximumRetryAttemptsHasBeenSet(false),
+    m_tumblingWindowInSeconds(0),
+    m_tumblingWindowInSecondsHasBeenSet(false),
+    m_functionResponseTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -202,6 +210,13 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_sourceAccessConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SelfManagedEventSource"))
+  {
+    m_selfManagedEventSource = jsonValue.GetObject("SelfManagedEventSource");
+
+    m_selfManagedEventSourceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
   {
     m_maximumRecordAgeInSeconds = jsonValue.GetInteger("MaximumRecordAgeInSeconds");
@@ -221,6 +236,23 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_maximumRetryAttempts = jsonValue.GetInteger("MaximumRetryAttempts");
 
     m_maximumRetryAttemptsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TumblingWindowInSeconds"))
+  {
+    m_tumblingWindowInSeconds = jsonValue.GetInteger("TumblingWindowInSeconds");
+
+    m_tumblingWindowInSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FunctionResponseTypes"))
+  {
+    Array<JsonView> functionResponseTypesJsonList = jsonValue.GetArray("FunctionResponseTypes");
+    for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
+    {
+      m_functionResponseTypes.push_back(FunctionResponseTypeMapper::GetFunctionResponseTypeForName(functionResponseTypesJsonList[functionResponseTypesIndex].AsString()));
+    }
+    m_functionResponseTypesHasBeenSet = true;
   }
 
   return *this;
@@ -338,6 +370,12 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
 
   }
 
+  if(m_selfManagedEventSourceHasBeenSet)
+  {
+   payload.WithObject("SelfManagedEventSource", m_selfManagedEventSource.Jsonize());
+
+  }
+
   if(m_maximumRecordAgeInSecondsHasBeenSet)
   {
    payload.WithInteger("MaximumRecordAgeInSeconds", m_maximumRecordAgeInSeconds);
@@ -353,6 +391,23 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_maximumRetryAttemptsHasBeenSet)
   {
    payload.WithInteger("MaximumRetryAttempts", m_maximumRetryAttempts);
+
+  }
+
+  if(m_tumblingWindowInSecondsHasBeenSet)
+  {
+   payload.WithInteger("TumblingWindowInSeconds", m_tumblingWindowInSeconds);
+
+  }
+
+  if(m_functionResponseTypesHasBeenSet)
+  {
+   Array<JsonValue> functionResponseTypesJsonList(m_functionResponseTypes.size());
+   for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
+   {
+     functionResponseTypesJsonList[functionResponseTypesIndex].AsString(FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
+   }
+   payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
 
   }
 

@@ -286,8 +286,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline const Aws::String& GetScheduleTimezone() const{ return m_scheduleTimezone; }
@@ -295,8 +295,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline void SetScheduleTimezone(const Aws::String& value) { m_scheduleTimezone = value; }
@@ -304,8 +304,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline void SetScheduleTimezone(Aws::String&& value) { m_scheduleTimezone = std::move(value); }
@@ -313,8 +313,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline void SetScheduleTimezone(const char* value) { m_scheduleTimezone.assign(value); }
@@ -322,8 +322,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline UpdateMaintenanceWindowResult& WithScheduleTimezone(const Aws::String& value) { SetScheduleTimezone(value); return *this;}
@@ -331,8 +331,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline UpdateMaintenanceWindowResult& WithScheduleTimezone(Aws::String&& value) { SetScheduleTimezone(std::move(value)); return *this;}
@@ -340,8 +340,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline UpdateMaintenanceWindowResult& WithScheduleTimezone(const char* value) { SetScheduleTimezone(value); return *this;}

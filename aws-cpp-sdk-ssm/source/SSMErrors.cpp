@@ -115,6 +115,7 @@ static const int FEATURE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FeatureN
 static const int INVALID_PLUGIN_NAME_HASH = HashingUtils::HashString("InvalidPluginName");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
 static const int INVALID_AUTOMATION_SIGNAL_HASH = HashingUtils::HashString("InvalidAutomationSignalException");
+static const int AUTOMATION_DEFINITION_NOT_APPROVED_HASH = HashingUtils::HashString("AutomationDefinitionNotApprovedException");
 static const int AUTOMATION_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationExecutionNotFoundException");
 static const int INVALID_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("InvalidInventoryItemContextException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
@@ -337,6 +338,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_AUTOMATION_SIGNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_SIGNAL), false);
+  }
+  else if (hashCode == AUTOMATION_DEFINITION_NOT_APPROVED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_APPROVED), false);
   }
   else if (hashCode == AUTOMATION_EXECUTION_NOT_FOUND_HASH)
   {

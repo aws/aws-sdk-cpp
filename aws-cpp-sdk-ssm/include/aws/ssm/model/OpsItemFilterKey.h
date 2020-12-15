@@ -24,13 +24,24 @@ namespace Model
     OpsItemId,
     CreatedTime,
     LastModifiedTime,
+    ActualStartTime,
+    ActualEndTime,
+    PlannedStartTime,
+    PlannedEndTime,
     OperationalData,
     OperationalDataKey,
     OperationalDataValue,
     ResourceId,
     AutomationId,
     Category,
-    Severity
+    Severity,
+    OpsItemType,
+    ChangeRequestByRequesterArn,
+    ChangeRequestByRequesterName,
+    ChangeRequestByApproverArn,
+    ChangeRequestByApproverName,
+    ChangeRequestByTemplate,
+    ChangeRequestByTargetsResourceGroup
   };
 
 namespace OpsItemFilterKeyMapper

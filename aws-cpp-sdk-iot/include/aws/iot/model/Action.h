@@ -25,6 +25,7 @@
 #include <aws/iot/model/StepFunctionsAction.h>
 #include <aws/iot/model/TimestreamAction.h>
 #include <aws/iot/model/HttpAction.h>
+#include <aws/iot/model/KafkaAction.h>
 #include <utility>
 
 namespace Aws
@@ -711,6 +712,43 @@ namespace Model
      */
     inline Action& WithHttp(HttpAction&& value) { SetHttp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline const KafkaAction& GetKafka() const{ return m_kafka; }
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline bool KafkaHasBeenSet() const { return m_kafkaHasBeenSet; }
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline void SetKafka(const KafkaAction& value) { m_kafkaHasBeenSet = true; m_kafka = value; }
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline void SetKafka(KafkaAction&& value) { m_kafkaHasBeenSet = true; m_kafka = std::move(value); }
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline Action& WithKafka(const KafkaAction& value) { SetKafka(value); return *this;}
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline Action& WithKafka(KafkaAction&& value) { SetKafka(std::move(value)); return *this;}
+
   private:
 
     DynamoDBAction m_dynamoDB;
@@ -772,6 +810,9 @@ namespace Model
 
     HttpAction m_http;
     bool m_httpHasBeenSet;
+
+    KafkaAction m_kafka;
+    bool m_kafkaHasBeenSet;
   };
 
 } // namespace Model

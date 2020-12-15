@@ -24,6 +24,7 @@ namespace Aws
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 
 
         TopicRuleDestinationStatus GetTopicRuleDestinationStatusForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ERROR__HASH)
           {
             return TopicRuleDestinationStatus::ERROR_;
+          }
+          else if (hashCode == DELETING_HASH)
+          {
+            return TopicRuleDestinationStatus::DELETING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "DISABLED";
           case TopicRuleDestinationStatus::ERROR_:
             return "ERROR";
+          case TopicRuleDestinationStatus::DELETING:
+            return "DELETING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

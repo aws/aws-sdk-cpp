@@ -30,7 +30,10 @@ UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() :
     m_maximumRetryAttemptsHasBeenSet(false),
     m_parallelizationFactor(0),
     m_parallelizationFactorHasBeenSet(false),
-    m_sourceAccessConfigurationsHasBeenSet(false)
+    m_sourceAccessConfigurationsHasBeenSet(false),
+    m_tumblingWindowInSeconds(0),
+    m_tumblingWindowInSecondsHasBeenSet(false),
+    m_functionResponseTypesHasBeenSet(false)
 {
 }
 
@@ -100,6 +103,23 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
      sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject(m_sourceAccessConfigurations[sourceAccessConfigurationsIndex].Jsonize());
    }
    payload.WithArray("SourceAccessConfigurations", std::move(sourceAccessConfigurationsJsonList));
+
+  }
+
+  if(m_tumblingWindowInSecondsHasBeenSet)
+  {
+   payload.WithInteger("TumblingWindowInSeconds", m_tumblingWindowInSeconds);
+
+  }
+
+  if(m_functionResponseTypesHasBeenSet)
+  {
+   Array<JsonValue> functionResponseTypesJsonList(m_functionResponseTypes.size());
+   for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
+   {
+     functionResponseTypesJsonList[functionResponseTypesIndex].AsString(FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
+   }
+   payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
 
   }
 

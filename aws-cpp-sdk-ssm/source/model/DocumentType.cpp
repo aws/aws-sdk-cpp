@@ -29,6 +29,7 @@ namespace Aws
         static const int ApplicationConfigurationSchema_HASH = HashingUtils::HashString("ApplicationConfigurationSchema");
         static const int DeploymentStrategy_HASH = HashingUtils::HashString("DeploymentStrategy");
         static const int ChangeCalendar_HASH = HashingUtils::HashString("ChangeCalendar");
+        static const int Automation_ChangeTemplate_HASH = HashingUtils::HashString("Automation.ChangeTemplate");
 
 
         DocumentType GetDocumentTypeForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return DocumentType::ChangeCalendar;
           }
+          else if (hashCode == Automation_ChangeTemplate_HASH)
+          {
+            return DocumentType::Automation_ChangeTemplate;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "DeploymentStrategy";
           case DocumentType::ChangeCalendar:
             return "ChangeCalendar";
+          case DocumentType::Automation_ChangeTemplate:
+            return "Automation.ChangeTemplate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

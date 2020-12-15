@@ -44,7 +44,13 @@ DocumentDescription::DocumentDescription() :
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_attachmentsInformationHasBeenSet(false),
-    m_requiresHasBeenSet(false)
+    m_requiresHasBeenSet(false),
+    m_authorHasBeenSet(false),
+    m_reviewInformationHasBeenSet(false),
+    m_approvedVersionHasBeenSet(false),
+    m_pendingReviewVersionHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false)
 {
 }
 
@@ -74,7 +80,13 @@ DocumentDescription::DocumentDescription(JsonView jsonValue) :
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_attachmentsInformationHasBeenSet(false),
-    m_requiresHasBeenSet(false)
+    m_requiresHasBeenSet(false),
+    m_authorHasBeenSet(false),
+    m_reviewInformationHasBeenSet(false),
+    m_approvedVersionHasBeenSet(false),
+    m_pendingReviewVersionHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -250,6 +262,44 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     m_requiresHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Author"))
+  {
+    m_author = jsonValue.GetString("Author");
+
+    m_authorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReviewInformation"))
+  {
+    Array<JsonView> reviewInformationJsonList = jsonValue.GetArray("ReviewInformation");
+    for(unsigned reviewInformationIndex = 0; reviewInformationIndex < reviewInformationJsonList.GetLength(); ++reviewInformationIndex)
+    {
+      m_reviewInformation.push_back(reviewInformationJsonList[reviewInformationIndex].AsObject());
+    }
+    m_reviewInformationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApprovedVersion"))
+  {
+    m_approvedVersion = jsonValue.GetString("ApprovedVersion");
+
+    m_approvedVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PendingReviewVersion"))
+  {
+    m_pendingReviewVersion = jsonValue.GetString("PendingReviewVersion");
+
+    m_pendingReviewVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReviewStatus"))
+  {
+    m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
+
+    m_reviewStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -407,6 +457,40 @@ JsonValue DocumentDescription::Jsonize() const
    }
    payload.WithArray("Requires", std::move(requiresJsonList));
 
+  }
+
+  if(m_authorHasBeenSet)
+  {
+   payload.WithString("Author", m_author);
+
+  }
+
+  if(m_reviewInformationHasBeenSet)
+  {
+   Array<JsonValue> reviewInformationJsonList(m_reviewInformation.size());
+   for(unsigned reviewInformationIndex = 0; reviewInformationIndex < reviewInformationJsonList.GetLength(); ++reviewInformationIndex)
+   {
+     reviewInformationJsonList[reviewInformationIndex].AsObject(m_reviewInformation[reviewInformationIndex].Jsonize());
+   }
+   payload.WithArray("ReviewInformation", std::move(reviewInformationJsonList));
+
+  }
+
+  if(m_approvedVersionHasBeenSet)
+  {
+   payload.WithString("ApprovedVersion", m_approvedVersion);
+
+  }
+
+  if(m_pendingReviewVersionHasBeenSet)
+  {
+   payload.WithString("PendingReviewVersion", m_pendingReviewVersion);
+
+  }
+
+  if(m_reviewStatusHasBeenSet)
+  {
+   payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
   }
 
   return payload;

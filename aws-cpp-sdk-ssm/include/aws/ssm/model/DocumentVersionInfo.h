@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/DocumentFormat.h>
 #include <aws/ssm/model/DocumentStatus.h>
+#include <aws/ssm/model/ReviewStatus.h>
 #include <utility>
 
 namespace Aws
@@ -363,6 +364,43 @@ namespace Model
      */
     inline DocumentVersionInfo& WithStatusInformation(const char* value) { SetStatusInformation(value); return *this;}
 
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = std::move(value); }
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline DocumentVersionInfo& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline DocumentVersionInfo& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -388,6 +426,9 @@ namespace Model
 
     Aws::String m_statusInformation;
     bool m_statusInformationHasBeenSet;
+
+    ReviewStatus m_reviewStatus;
+    bool m_reviewStatusHasBeenSet;
   };
 
 } // namespace Model

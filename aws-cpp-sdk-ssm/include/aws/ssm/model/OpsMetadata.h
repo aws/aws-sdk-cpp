@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Operational metadata for an application in AppManager.</p><p><h3>See
+   * <p>Operational metadata for an application in Application Manager.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsMetadata">AWS API
    * Reference</a></p>
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AppManager application.</p>
+     * <p>The ID of the Application Manager application.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The ID of the AppManager application.</p>
+     * <p>The ID of the Application Manager application.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AppManager application.</p>
+     * <p>The ID of the Application Manager application.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The ID of the AppManager application.</p>
+     * <p>The ID of the Application Manager application.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The ID of the AppManager application.</p>
+     * <p>The ID of the Application Manager application.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The ID of the AppManager application.</p>
+     * <p>The ID of the Application Manager application.</p>
      */
     inline OpsMetadata& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The ID of the AppManager application.</p>
+     * <p>The ID of the Application Manager application.</p>
      */
     inline OpsMetadata& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AppManager application.</p>
+     * <p>The ID of the Application Manager application.</p>
      */
     inline OpsMetadata& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

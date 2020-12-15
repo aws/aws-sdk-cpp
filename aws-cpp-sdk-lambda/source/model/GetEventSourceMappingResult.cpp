@@ -23,7 +23,8 @@ GetEventSourceMappingResult::GetEventSourceMappingResult() :
     m_parallelizationFactor(0),
     m_maximumRecordAgeInSeconds(0),
     m_bisectBatchOnFunctionError(false),
-    m_maximumRetryAttempts(0)
+    m_maximumRetryAttempts(0),
+    m_tumblingWindowInSeconds(0)
 {
 }
 
@@ -34,7 +35,8 @@ GetEventSourceMappingResult::GetEventSourceMappingResult(const Aws::AmazonWebSer
     m_parallelizationFactor(0),
     m_maximumRecordAgeInSeconds(0),
     m_bisectBatchOnFunctionError(false),
-    m_maximumRetryAttempts(0)
+    m_maximumRetryAttempts(0),
+    m_tumblingWindowInSeconds(0)
 {
   *this = result;
 }
@@ -147,6 +149,12 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
     }
   }
 
+  if(jsonValue.ValueExists("SelfManagedEventSource"))
+  {
+    m_selfManagedEventSource = jsonValue.GetObject("SelfManagedEventSource");
+
+  }
+
   if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
   {
     m_maximumRecordAgeInSeconds = jsonValue.GetInteger("MaximumRecordAgeInSeconds");
@@ -163,6 +171,21 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
   {
     m_maximumRetryAttempts = jsonValue.GetInteger("MaximumRetryAttempts");
 
+  }
+
+  if(jsonValue.ValueExists("TumblingWindowInSeconds"))
+  {
+    m_tumblingWindowInSeconds = jsonValue.GetInteger("TumblingWindowInSeconds");
+
+  }
+
+  if(jsonValue.ValueExists("FunctionResponseTypes"))
+  {
+    Array<JsonView> functionResponseTypesJsonList = jsonValue.GetArray("FunctionResponseTypes");
+    for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
+    {
+      m_functionResponseTypes.push_back(FunctionResponseTypeMapper::GetFunctionResponseTypeForName(functionResponseTypesJsonList[functionResponseTypesIndex].AsString()));
+    }
   }
 
 

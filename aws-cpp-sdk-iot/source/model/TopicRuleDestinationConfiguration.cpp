@@ -19,12 +19,14 @@ namespace Model
 {
 
 TopicRuleDestinationConfiguration::TopicRuleDestinationConfiguration() : 
-    m_httpUrlConfigurationHasBeenSet(false)
+    m_httpUrlConfigurationHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false)
 {
 }
 
 TopicRuleDestinationConfiguration::TopicRuleDestinationConfiguration(JsonView jsonValue) : 
-    m_httpUrlConfigurationHasBeenSet(false)
+    m_httpUrlConfigurationHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ TopicRuleDestinationConfiguration& TopicRuleDestinationConfiguration::operator =
     m_httpUrlConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConfiguration"))
+  {
+    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
+
+    m_vpcConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue TopicRuleDestinationConfiguration::Jsonize() const
   if(m_httpUrlConfigurationHasBeenSet)
   {
    payload.WithObject("httpUrlConfiguration", m_httpUrlConfiguration.Jsonize());
+
+  }
+
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
 
   }
 

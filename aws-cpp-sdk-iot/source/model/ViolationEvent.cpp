@@ -24,6 +24,7 @@ ViolationEvent::ViolationEvent() :
     m_securityProfileNameHasBeenSet(false),
     m_behaviorHasBeenSet(false),
     m_metricValueHasBeenSet(false),
+    m_violationEventAdditionalInfoHasBeenSet(false),
     m_violationEventType(ViolationEventType::NOT_SET),
     m_violationEventTypeHasBeenSet(false),
     m_violationEventTimeHasBeenSet(false)
@@ -36,6 +37,7 @@ ViolationEvent::ViolationEvent(JsonView jsonValue) :
     m_securityProfileNameHasBeenSet(false),
     m_behaviorHasBeenSet(false),
     m_metricValueHasBeenSet(false),
+    m_violationEventAdditionalInfoHasBeenSet(false),
     m_violationEventType(ViolationEventType::NOT_SET),
     m_violationEventTypeHasBeenSet(false),
     m_violationEventTimeHasBeenSet(false)
@@ -78,6 +80,13 @@ ViolationEvent& ViolationEvent::operator =(JsonView jsonValue)
     m_metricValue = jsonValue.GetObject("metricValue");
 
     m_metricValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("violationEventAdditionalInfo"))
+  {
+    m_violationEventAdditionalInfo = jsonValue.GetObject("violationEventAdditionalInfo");
+
+    m_violationEventAdditionalInfoHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("violationEventType"))
@@ -128,6 +137,12 @@ JsonValue ViolationEvent::Jsonize() const
   if(m_metricValueHasBeenSet)
   {
    payload.WithObject("metricValue", m_metricValue.Jsonize());
+
+  }
+
+  if(m_violationEventAdditionalInfoHasBeenSet)
+  {
+   payload.WithObject("violationEventAdditionalInfo", m_violationEventAdditionalInfo.Jsonize());
 
   }
 

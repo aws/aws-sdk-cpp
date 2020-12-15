@@ -109,9 +109,11 @@
 #include <aws/ssm/model/ListCommandsRequest.h>
 #include <aws/ssm/model/ListComplianceItemsRequest.h>
 #include <aws/ssm/model/ListComplianceSummariesRequest.h>
+#include <aws/ssm/model/ListDocumentMetadataHistoryRequest.h>
 #include <aws/ssm/model/ListDocumentVersionsRequest.h>
 #include <aws/ssm/model/ListDocumentsRequest.h>
 #include <aws/ssm/model/ListInventoryEntriesRequest.h>
+#include <aws/ssm/model/ListOpsItemEventsRequest.h>
 #include <aws/ssm/model/ListOpsMetadataRequest.h>
 #include <aws/ssm/model/ListResourceComplianceSummariesRequest.h>
 #include <aws/ssm/model/ListResourceDataSyncRequest.h>
@@ -131,6 +133,7 @@
 #include <aws/ssm/model/SendCommandRequest.h>
 #include <aws/ssm/model/StartAssociationsOnceRequest.h>
 #include <aws/ssm/model/StartAutomationExecutionRequest.h>
+#include <aws/ssm/model/StartChangeRequestExecutionRequest.h>
 #include <aws/ssm/model/StartSessionRequest.h>
 #include <aws/ssm/model/StopAutomationExecutionRequest.h>
 #include <aws/ssm/model/TerminateSessionRequest.h>
@@ -138,6 +141,7 @@
 #include <aws/ssm/model/UpdateAssociationStatusRequest.h>
 #include <aws/ssm/model/UpdateDocumentRequest.h>
 #include <aws/ssm/model/UpdateDocumentDefaultVersionRequest.h>
+#include <aws/ssm/model/UpdateDocumentMetadataRequest.h>
 #include <aws/ssm/model/UpdateMaintenanceWindowRequest.h>
 #include <aws/ssm/model/UpdateMaintenanceWindowTargetRequest.h>
 #include <aws/ssm/model/UpdateMaintenanceWindowTaskRequest.h>
@@ -2624,6 +2628,33 @@ void SSMClient::ListComplianceSummariesAsyncHelper(const ListComplianceSummaries
   handler(this, request, ListComplianceSummaries(request), context);
 }
 
+ListDocumentMetadataHistoryOutcome SSMClient::ListDocumentMetadataHistory(const ListDocumentMetadataHistoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListDocumentMetadataHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDocumentMetadataHistoryOutcomeCallable SSMClient::ListDocumentMetadataHistoryCallable(const ListDocumentMetadataHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDocumentMetadataHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDocumentMetadataHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ListDocumentMetadataHistoryAsync(const ListDocumentMetadataHistoryRequest& request, const ListDocumentMetadataHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDocumentMetadataHistoryAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ListDocumentMetadataHistoryAsyncHelper(const ListDocumentMetadataHistoryRequest& request, const ListDocumentMetadataHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDocumentMetadataHistory(request), context);
+}
+
 ListDocumentVersionsOutcome SSMClient::ListDocumentVersions(const ListDocumentVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2703,6 +2734,33 @@ void SSMClient::ListInventoryEntriesAsync(const ListInventoryEntriesRequest& req
 void SSMClient::ListInventoryEntriesAsyncHelper(const ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListInventoryEntries(request), context);
+}
+
+ListOpsItemEventsOutcome SSMClient::ListOpsItemEvents(const ListOpsItemEventsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListOpsItemEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListOpsItemEventsOutcomeCallable SSMClient::ListOpsItemEventsCallable(const ListOpsItemEventsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOpsItemEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOpsItemEvents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ListOpsItemEventsAsync(const ListOpsItemEventsRequest& request, const ListOpsItemEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOpsItemEventsAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ListOpsItemEventsAsyncHelper(const ListOpsItemEventsRequest& request, const ListOpsItemEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOpsItemEvents(request), context);
 }
 
 ListOpsMetadataOutcome SSMClient::ListOpsMetadata(const ListOpsMetadataRequest& request) const
@@ -3218,6 +3276,33 @@ void SSMClient::StartAutomationExecutionAsyncHelper(const StartAutomationExecuti
   handler(this, request, StartAutomationExecution(request), context);
 }
 
+StartChangeRequestExecutionOutcome SSMClient::StartChangeRequestExecution(const StartChangeRequestExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartChangeRequestExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartChangeRequestExecutionOutcomeCallable SSMClient::StartChangeRequestExecutionCallable(const StartChangeRequestExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartChangeRequestExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartChangeRequestExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::StartChangeRequestExecutionAsync(const StartChangeRequestExecutionRequest& request, const StartChangeRequestExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartChangeRequestExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::StartChangeRequestExecutionAsyncHelper(const StartChangeRequestExecutionRequest& request, const StartChangeRequestExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartChangeRequestExecution(request), context);
+}
+
 StartSessionOutcome SSMClient::StartSession(const StartSessionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3405,6 +3490,33 @@ void SSMClient::UpdateDocumentDefaultVersionAsync(const UpdateDocumentDefaultVer
 void SSMClient::UpdateDocumentDefaultVersionAsyncHelper(const UpdateDocumentDefaultVersionRequest& request, const UpdateDocumentDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDocumentDefaultVersion(request), context);
+}
+
+UpdateDocumentMetadataOutcome SSMClient::UpdateDocumentMetadata(const UpdateDocumentMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateDocumentMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDocumentMetadataOutcomeCallable SSMClient::UpdateDocumentMetadataCallable(const UpdateDocumentMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDocumentMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDocumentMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::UpdateDocumentMetadataAsync(const UpdateDocumentMetadataRequest& request, const UpdateDocumentMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDocumentMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::UpdateDocumentMetadataAsyncHelper(const UpdateDocumentMetadataRequest& request, const UpdateDocumentMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDocumentMetadata(request), context);
 }
 
 UpdateMaintenanceWindowOutcome SSMClient::UpdateMaintenanceWindow(const UpdateMaintenanceWindowRequest& request) const

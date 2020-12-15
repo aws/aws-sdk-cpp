@@ -10,6 +10,7 @@
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/ReviewStatus.h>
 #include <aws/ssm/model/DocumentRequires.h>
 #include <aws/ssm/model/AttachmentContent.h>
 #include <utility>
@@ -433,6 +434,57 @@ namespace Model
      */
     inline GetDocumentResult& AddAttachmentsContent(AttachmentContent&& value) { m_attachmentsContent.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatus = value; }
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatus = std::move(value); }
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline GetDocumentResult& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline GetDocumentResult& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -454,6 +506,8 @@ namespace Model
     Aws::Vector<DocumentRequires> m_requires;
 
     Aws::Vector<AttachmentContent> m_attachmentsContent;
+
+    ReviewStatus m_reviewStatus;
   };
 
 } // namespace Model

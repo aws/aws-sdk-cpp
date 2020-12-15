@@ -37,103 +37,103 @@ namespace Model
 
 
     /**
-     * <p>A resource ID for a new AppManager application.</p>
+     * <p>A resource ID for a new Application Manager application.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>A resource ID for a new AppManager application.</p>
+     * <p>A resource ID for a new Application Manager application.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>A resource ID for a new AppManager application.</p>
+     * <p>A resource ID for a new Application Manager application.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>A resource ID for a new AppManager application.</p>
+     * <p>A resource ID for a new Application Manager application.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>A resource ID for a new AppManager application.</p>
+     * <p>A resource ID for a new Application Manager application.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>A resource ID for a new AppManager application.</p>
+     * <p>A resource ID for a new Application Manager application.</p>
      */
     inline CreateOpsMetadataRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>A resource ID for a new AppManager application.</p>
+     * <p>A resource ID for a new Application Manager application.</p>
      */
     inline CreateOpsMetadataRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>A resource ID for a new AppManager application.</p>
+     * <p>A resource ID for a new Application Manager application.</p>
      */
     inline CreateOpsMetadataRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline const Aws::Map<Aws::String, MetadataValue>& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, MetadataValue>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline void SetMetadata(Aws::Map<Aws::String, MetadataValue>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline CreateOpsMetadataRequest& WithMetadata(const Aws::Map<Aws::String, MetadataValue>& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline CreateOpsMetadataRequest& WithMetadata(Aws::Map<Aws::String, MetadataValue>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline CreateOpsMetadataRequest& AddMetadata(const Aws::String& key, const MetadataValue& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline CreateOpsMetadataRequest& AddMetadata(Aws::String&& key, const MetadataValue& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline CreateOpsMetadataRequest& AddMetadata(const Aws::String& key, MetadataValue&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline CreateOpsMetadataRequest& AddMetadata(Aws::String&& key, MetadataValue&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline CreateOpsMetadataRequest& AddMetadata(const char* key, MetadataValue&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Metadata for a new AppManager application. </p>
+     * <p>Metadata for a new Application Manager application. </p>
      */
     inline CreateOpsMetadataRequest& AddMetadata(const char* key, const MetadataValue& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 

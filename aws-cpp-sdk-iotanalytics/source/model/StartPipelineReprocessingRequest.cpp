@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 StartPipelineReprocessingRequest::StartPipelineReprocessingRequest() : 
     m_pipelineNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_channelMessagesHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String StartPipelineReprocessingRequest::SerializePayload() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if(m_channelMessagesHasBeenSet)
+  {
+   payload.WithObject("channelMessages", m_channelMessages.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

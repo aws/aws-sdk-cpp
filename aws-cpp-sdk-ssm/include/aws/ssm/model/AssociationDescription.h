@@ -15,6 +15,7 @@
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
 #include <aws/ssm/model/AssociationSyncCompliance.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/ssm/model/TargetLocation.h>
 #include <utility>
 
 namespace Aws
@@ -1093,6 +1094,55 @@ namespace Model
      */
     inline AssociationDescription& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
 
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you want to run the
+     * association.</p>
+     */
+    inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you want to run the
+     * association.</p>
+     */
+    inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you want to run the
+     * association.</p>
+     */
+    inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you want to run the
+     * association.</p>
+     */
+    inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you want to run the
+     * association.</p>
+     */
+    inline AssociationDescription& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you want to run the
+     * association.</p>
+     */
+    inline AssociationDescription& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you want to run the
+     * association.</p>
+     */
+    inline AssociationDescription& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you want to run the
+     * association.</p>
+     */
+    inline AssociationDescription& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -1160,6 +1210,9 @@ namespace Model
 
     bool m_applyOnlyAtCronInterval;
     bool m_applyOnlyAtCronIntervalHasBeenSet;
+
+    Aws::Vector<TargetLocation> m_targetLocations;
+    bool m_targetLocationsHasBeenSet;
   };
 
 } // namespace Model

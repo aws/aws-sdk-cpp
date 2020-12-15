@@ -10,6 +10,7 @@
 #include <aws/iotanalytics/model/DatastoreStorage.h>
 #include <aws/iotanalytics/model/RetentionPeriod.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotanalytics/model/FileFormatConfiguration.h>
 #include <aws/iotanalytics/model/Tag.h>
 #include <utility>
 
@@ -209,6 +210,61 @@ namespace Model
      */
     inline CreateDatastoreRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains the configuration information of file formats. AWS IoT Analytics
+     * data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
+     * is JSON. You can specify only one format.</p> <p>You can't change the file
+     * format after you create the data store.</p>
+     */
+    inline const FileFormatConfiguration& GetFileFormatConfiguration() const{ return m_fileFormatConfiguration; }
+
+    /**
+     * <p>Contains the configuration information of file formats. AWS IoT Analytics
+     * data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
+     * is JSON. You can specify only one format.</p> <p>You can't change the file
+     * format after you create the data store.</p>
+     */
+    inline bool FileFormatConfigurationHasBeenSet() const { return m_fileFormatConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains the configuration information of file formats. AWS IoT Analytics
+     * data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
+     * is JSON. You can specify only one format.</p> <p>You can't change the file
+     * format after you create the data store.</p>
+     */
+    inline void SetFileFormatConfiguration(const FileFormatConfiguration& value) { m_fileFormatConfigurationHasBeenSet = true; m_fileFormatConfiguration = value; }
+
+    /**
+     * <p>Contains the configuration information of file formats. AWS IoT Analytics
+     * data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
+     * is JSON. You can specify only one format.</p> <p>You can't change the file
+     * format after you create the data store.</p>
+     */
+    inline void SetFileFormatConfiguration(FileFormatConfiguration&& value) { m_fileFormatConfigurationHasBeenSet = true; m_fileFormatConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains the configuration information of file formats. AWS IoT Analytics
+     * data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
+     * is JSON. You can specify only one format.</p> <p>You can't change the file
+     * format after you create the data store.</p>
+     */
+    inline CreateDatastoreRequest& WithFileFormatConfiguration(const FileFormatConfiguration& value) { SetFileFormatConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains the configuration information of file formats. AWS IoT Analytics
+     * data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
+     * is JSON. You can specify only one format.</p> <p>You can't change the file
+     * format after you create the data store.</p>
+     */
+    inline CreateDatastoreRequest& WithFileFormatConfiguration(FileFormatConfiguration&& value) { SetFileFormatConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datastoreName;
@@ -222,6 +278,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    FileFormatConfiguration m_fileFormatConfiguration;
+    bool m_fileFormatConfigurationHasBeenSet;
   };
 
 } // namespace Model

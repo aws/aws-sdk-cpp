@@ -18,6 +18,10 @@ using namespace Aws::Http;
 ListActiveViolationsRequest::ListActiveViolationsRequest() : 
     m_thingNameHasBeenSet(false),
     m_securityProfileNameHasBeenSet(false),
+    m_behaviorCriteriaType(BehaviorCriteriaType::NOT_SET),
+    m_behaviorCriteriaTypeHasBeenSet(false),
+    m_listSuppressedAlerts(false),
+    m_listSuppressedAlertsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -43,6 +47,20 @@ void ListActiveViolationsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_securityProfileName;
       uri.AddQueryStringParameter("securityProfileName", ss.str());
+      ss.str("");
+    }
+
+    if(m_behaviorCriteriaTypeHasBeenSet)
+    {
+      ss << BehaviorCriteriaTypeMapper::GetNameForBehaviorCriteriaType(m_behaviorCriteriaType);
+      uri.AddQueryStringParameter("behaviorCriteriaType", ss.str());
+      ss.str("");
+    }
+
+    if(m_listSuppressedAlertsHasBeenSet)
+    {
+      ss << m_listSuppressedAlerts;
+      uri.AddQueryStringParameter("listSuppressedAlerts", ss.str());
       ss.str("");
     }
 

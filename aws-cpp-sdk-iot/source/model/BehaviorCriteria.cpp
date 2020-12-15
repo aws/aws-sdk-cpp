@@ -28,7 +28,8 @@ BehaviorCriteria::BehaviorCriteria() :
     m_consecutiveDatapointsToAlarmHasBeenSet(false),
     m_consecutiveDatapointsToClear(0),
     m_consecutiveDatapointsToClearHasBeenSet(false),
-    m_statisticalThresholdHasBeenSet(false)
+    m_statisticalThresholdHasBeenSet(false),
+    m_mlDetectionConfigHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ BehaviorCriteria::BehaviorCriteria(JsonView jsonValue) :
     m_consecutiveDatapointsToAlarmHasBeenSet(false),
     m_consecutiveDatapointsToClear(0),
     m_consecutiveDatapointsToClearHasBeenSet(false),
-    m_statisticalThresholdHasBeenSet(false)
+    m_statisticalThresholdHasBeenSet(false),
+    m_mlDetectionConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +93,13 @@ BehaviorCriteria& BehaviorCriteria::operator =(JsonView jsonValue)
     m_statisticalThresholdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mlDetectionConfig"))
+  {
+    m_mlDetectionConfig = jsonValue.GetObject("mlDetectionConfig");
+
+    m_mlDetectionConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +139,12 @@ JsonValue BehaviorCriteria::Jsonize() const
   if(m_statisticalThresholdHasBeenSet)
   {
    payload.WithObject("statisticalThreshold", m_statisticalThreshold.Jsonize());
+
+  }
+
+  if(m_mlDetectionConfigHasBeenSet)
+  {
+   payload.WithObject("mlDetectionConfig", m_mlDetectionConfig.Jsonize());
 
   }
 

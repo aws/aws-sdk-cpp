@@ -81,32 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline const MetricDimension& GetMetricDimension() const{ return m_metricDimension; }
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline bool MetricDimensionHasBeenSet() const { return m_metricDimensionHasBeenSet; }
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline void SetMetricDimension(const MetricDimension& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = value; }
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline void SetMetricDimension(MetricDimension&& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = std::move(value); }
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline MetricToRetain& WithMetricDimension(const MetricDimension& value) { SetMetricDimension(value); return *this;}
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline MetricToRetain& WithMetricDimension(MetricDimension&& value) { SetMetricDimension(std::move(value)); return *this;}
 

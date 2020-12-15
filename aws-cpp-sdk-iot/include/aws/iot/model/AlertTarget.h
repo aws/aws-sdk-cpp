@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline const Aws::String& GetAlertTargetArn() const{ return m_alertTargetArn; }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline bool AlertTargetArnHasBeenSet() const { return m_alertTargetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline void SetAlertTargetArn(const Aws::String& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = value; }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline void SetAlertTargetArn(Aws::String&& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline void SetAlertTargetArn(const char* value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn.assign(value); }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline AlertTarget& WithAlertTargetArn(const Aws::String& value) { SetAlertTargetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline AlertTarget& WithAlertTargetArn(Aws::String&& value) { SetAlertTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline AlertTarget& WithAlertTargetArn(const char* value) { SetAlertTargetArn(value); return *this;}
 

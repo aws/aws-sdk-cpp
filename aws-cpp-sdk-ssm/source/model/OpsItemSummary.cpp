@@ -32,7 +32,12 @@ OpsItemSummary::OpsItemSummary() :
     m_titleHasBeenSet(false),
     m_operationalDataHasBeenSet(false),
     m_categoryHasBeenSet(false),
-    m_severityHasBeenSet(false)
+    m_severityHasBeenSet(false),
+    m_opsItemTypeHasBeenSet(false),
+    m_actualStartTimeHasBeenSet(false),
+    m_actualEndTimeHasBeenSet(false),
+    m_plannedStartTimeHasBeenSet(false),
+    m_plannedEndTimeHasBeenSet(false)
 {
 }
 
@@ -50,7 +55,12 @@ OpsItemSummary::OpsItemSummary(JsonView jsonValue) :
     m_titleHasBeenSet(false),
     m_operationalDataHasBeenSet(false),
     m_categoryHasBeenSet(false),
-    m_severityHasBeenSet(false)
+    m_severityHasBeenSet(false),
+    m_opsItemTypeHasBeenSet(false),
+    m_actualStartTimeHasBeenSet(false),
+    m_actualEndTimeHasBeenSet(false),
+    m_plannedStartTimeHasBeenSet(false),
+    m_plannedEndTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +154,41 @@ OpsItemSummary& OpsItemSummary::operator =(JsonView jsonValue)
     m_severityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OpsItemType"))
+  {
+    m_opsItemType = jsonValue.GetString("OpsItemType");
+
+    m_opsItemTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ActualStartTime"))
+  {
+    m_actualStartTime = jsonValue.GetDouble("ActualStartTime");
+
+    m_actualStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ActualEndTime"))
+  {
+    m_actualEndTime = jsonValue.GetDouble("ActualEndTime");
+
+    m_actualEndTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlannedStartTime"))
+  {
+    m_plannedStartTime = jsonValue.GetDouble("PlannedStartTime");
+
+    m_plannedStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlannedEndTime"))
+  {
+    m_plannedEndTime = jsonValue.GetDouble("PlannedEndTime");
+
+    m_plannedEndTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +268,32 @@ JsonValue OpsItemSummary::Jsonize() const
   {
    payload.WithString("Severity", m_severity);
 
+  }
+
+  if(m_opsItemTypeHasBeenSet)
+  {
+   payload.WithString("OpsItemType", m_opsItemType);
+
+  }
+
+  if(m_actualStartTimeHasBeenSet)
+  {
+   payload.WithDouble("ActualStartTime", m_actualStartTime.SecondsWithMSPrecision());
+  }
+
+  if(m_actualEndTimeHasBeenSet)
+  {
+   payload.WithDouble("ActualEndTime", m_actualEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_plannedStartTimeHasBeenSet)
+  {
+   payload.WithDouble("PlannedStartTime", m_plannedStartTime.SecondsWithMSPrecision());
+  }
+
+  if(m_plannedEndTimeHasBeenSet)
+  {
+   payload.WithDouble("PlannedEndTime", m_plannedEndTime.SecondsWithMSPrecision());
   }
 
   return payload;

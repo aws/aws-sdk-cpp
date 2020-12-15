@@ -25,7 +25,9 @@ DatastoreSummary::DatastoreSummary() :
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_lastMessageArrivalTimeHasBeenSet(false)
+    m_lastMessageArrivalTimeHasBeenSet(false),
+    m_fileFormatType(FileFormatType::NOT_SET),
+    m_fileFormatTypeHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ DatastoreSummary::DatastoreSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_lastMessageArrivalTimeHasBeenSet(false)
+    m_lastMessageArrivalTimeHasBeenSet(false),
+    m_fileFormatType(FileFormatType::NOT_SET),
+    m_fileFormatTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +89,13 @@ DatastoreSummary& DatastoreSummary::operator =(JsonView jsonValue)
     m_lastMessageArrivalTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fileFormatType"))
+  {
+    m_fileFormatType = FileFormatTypeMapper::GetFileFormatTypeForName(jsonValue.GetString("fileFormatType"));
+
+    m_fileFormatTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +133,11 @@ JsonValue DatastoreSummary::Jsonize() const
   if(m_lastMessageArrivalTimeHasBeenSet)
   {
    payload.WithDouble("lastMessageArrivalTime", m_lastMessageArrivalTime.SecondsWithMSPrecision());
+  }
+
+  if(m_fileFormatTypeHasBeenSet)
+  {
+   payload.WithString("fileFormatType", FileFormatTypeMapper::GetNameForFileFormatType(m_fileFormatType));
   }
 
   return payload;

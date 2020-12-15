@@ -10,7 +10,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/SelfManagedEventSource.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
+#include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
 
 namespace Aws
@@ -186,26 +188,26 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds. The default value is zero.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds. The default value is zero.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds. The default value is zero.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds. The default value is zero.</p>
      */
     inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds. The default value is zero.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds. The default value is zero.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds. The default value is zero.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds. The default value is zero.</p>
      */
     inline EventSourceMappingConfiguration& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
@@ -547,47 +549,47 @@ namespace Model
 
 
     /**
-     * <p> (MSK) The name of the Kafka topic to consume. </p>
+     * <p>The name of the Kafka topic.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTopics() const{ return m_topics; }
 
     /**
-     * <p> (MSK) The name of the Kafka topic to consume. </p>
+     * <p>The name of the Kafka topic.</p>
      */
     inline bool TopicsHasBeenSet() const { return m_topicsHasBeenSet; }
 
     /**
-     * <p> (MSK) The name of the Kafka topic to consume. </p>
+     * <p>The name of the Kafka topic.</p>
      */
     inline void SetTopics(const Aws::Vector<Aws::String>& value) { m_topicsHasBeenSet = true; m_topics = value; }
 
     /**
-     * <p> (MSK) The name of the Kafka topic to consume. </p>
+     * <p>The name of the Kafka topic.</p>
      */
     inline void SetTopics(Aws::Vector<Aws::String>&& value) { m_topicsHasBeenSet = true; m_topics = std::move(value); }
 
     /**
-     * <p> (MSK) The name of the Kafka topic to consume. </p>
+     * <p>The name of the Kafka topic.</p>
      */
     inline EventSourceMappingConfiguration& WithTopics(const Aws::Vector<Aws::String>& value) { SetTopics(value); return *this;}
 
     /**
-     * <p> (MSK) The name of the Kafka topic to consume. </p>
+     * <p>The name of the Kafka topic.</p>
      */
     inline EventSourceMappingConfiguration& WithTopics(Aws::Vector<Aws::String>&& value) { SetTopics(std::move(value)); return *this;}
 
     /**
-     * <p> (MSK) The name of the Kafka topic to consume. </p>
+     * <p>The name of the Kafka topic.</p>
      */
     inline EventSourceMappingConfiguration& AddTopics(const Aws::String& value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
 
     /**
-     * <p> (MSK) The name of the Kafka topic to consume. </p>
+     * <p>The name of the Kafka topic.</p>
      */
     inline EventSourceMappingConfiguration& AddTopics(Aws::String&& value) { m_topicsHasBeenSet = true; m_topics.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> (MSK) The name of the Kafka topic to consume. </p>
+     * <p>The name of the Kafka topic.</p>
      */
     inline EventSourceMappingConfiguration& AddTopics(const char* value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
 
@@ -639,100 +641,83 @@ namespace Model
 
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline const Aws::Vector<SourceAccessConfiguration>& GetSourceAccessConfigurations() const{ return m_sourceAccessConfigurations; }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline bool SourceAccessConfigurationsHasBeenSet() const { return m_sourceAccessConfigurationsHasBeenSet; }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline void SetSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = value; }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline void SetSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = std::move(value); }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline EventSourceMappingConfiguration& WithSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { SetSourceAccessConfigurations(value); return *this;}
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline EventSourceMappingConfiguration& WithSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { SetSourceAccessConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline EventSourceMappingConfiguration& AddSourceAccessConfigurations(const SourceAccessConfiguration& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(value); return *this; }
 
     /**
-     * <p> (MQ) The Secrets Manager secret that stores your broker credentials. To
-     * store your secret, use the following format: <code> { "username": "your
-     * username", "password": "your password" }</code> </p> <p>To reference the secret,
-     * use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" }
-     * ]</code> </p> <p>The value of <code>Type</code> is always
-     * <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or service
-     * managed keys. When using a customer managed KMS key, the Lambda execution role
-     * requires <code>kms:Decrypt</code> permissions.</p>
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
      */
     inline EventSourceMappingConfiguration& AddSourceAccessConfigurations(SourceAccessConfiguration&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline const SelfManagedEventSource& GetSelfManagedEventSource() const{ return m_selfManagedEventSource; }
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline bool SelfManagedEventSourceHasBeenSet() const { return m_selfManagedEventSourceHasBeenSet; }
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline void SetSelfManagedEventSource(const SelfManagedEventSource& value) { m_selfManagedEventSourceHasBeenSet = true; m_selfManagedEventSource = value; }
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline void SetSelfManagedEventSource(SelfManagedEventSource&& value) { m_selfManagedEventSourceHasBeenSet = true; m_selfManagedEventSource = std::move(value); }
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithSelfManagedEventSource(const SelfManagedEventSource& value) { SetSelfManagedEventSource(value); return *this;}
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithSelfManagedEventSource(SelfManagedEventSource&& value) { SetSelfManagedEventSource(std::move(value)); return *this;}
 
 
     /**
@@ -817,6 +802,80 @@ namespace Model
      */
     inline EventSourceMappingConfiguration& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSecondsHasBeenSet = true; m_tumblingWindowInSeconds = value; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline EventSourceMappingConfiguration& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
+
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline EventSourceMappingConfiguration& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline EventSourceMappingConfiguration& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline EventSourceMappingConfiguration& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline EventSourceMappingConfiguration& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_uUID;
@@ -867,6 +926,9 @@ namespace Model
     Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
     bool m_sourceAccessConfigurationsHasBeenSet;
 
+    SelfManagedEventSource m_selfManagedEventSource;
+    bool m_selfManagedEventSourceHasBeenSet;
+
     int m_maximumRecordAgeInSeconds;
     bool m_maximumRecordAgeInSecondsHasBeenSet;
 
@@ -875,6 +937,12 @@ namespace Model
 
     int m_maximumRetryAttempts;
     bool m_maximumRetryAttemptsHasBeenSet;
+
+    int m_tumblingWindowInSeconds;
+    bool m_tumblingWindowInSecondsHasBeenSet;
+
+    Aws::Vector<FunctionResponseType> m_functionResponseTypes;
+    bool m_functionResponseTypesHasBeenSet;
   };
 
 } // namespace Model

@@ -100,9 +100,11 @@
 #include <aws/ssm/model/ListCommandsResult.h>
 #include <aws/ssm/model/ListComplianceItemsResult.h>
 #include <aws/ssm/model/ListComplianceSummariesResult.h>
+#include <aws/ssm/model/ListDocumentMetadataHistoryResult.h>
 #include <aws/ssm/model/ListDocumentVersionsResult.h>
 #include <aws/ssm/model/ListDocumentsResult.h>
 #include <aws/ssm/model/ListInventoryEntriesResult.h>
+#include <aws/ssm/model/ListOpsItemEventsResult.h>
 #include <aws/ssm/model/ListOpsMetadataResult.h>
 #include <aws/ssm/model/ListResourceComplianceSummariesResult.h>
 #include <aws/ssm/model/ListResourceDataSyncResult.h>
@@ -122,6 +124,7 @@
 #include <aws/ssm/model/SendCommandResult.h>
 #include <aws/ssm/model/StartAssociationsOnceResult.h>
 #include <aws/ssm/model/StartAutomationExecutionResult.h>
+#include <aws/ssm/model/StartChangeRequestExecutionResult.h>
 #include <aws/ssm/model/StartSessionResult.h>
 #include <aws/ssm/model/StopAutomationExecutionResult.h>
 #include <aws/ssm/model/TerminateSessionResult.h>
@@ -129,6 +132,7 @@
 #include <aws/ssm/model/UpdateAssociationStatusResult.h>
 #include <aws/ssm/model/UpdateDocumentResult.h>
 #include <aws/ssm/model/UpdateDocumentDefaultVersionResult.h>
+#include <aws/ssm/model/UpdateDocumentMetadataResult.h>
 #include <aws/ssm/model/UpdateMaintenanceWindowResult.h>
 #include <aws/ssm/model/UpdateMaintenanceWindowTargetResult.h>
 #include <aws/ssm/model/UpdateMaintenanceWindowTaskResult.h>
@@ -266,9 +270,11 @@ namespace Model
         class ListCommandsRequest;
         class ListComplianceItemsRequest;
         class ListComplianceSummariesRequest;
+        class ListDocumentMetadataHistoryRequest;
         class ListDocumentVersionsRequest;
         class ListDocumentsRequest;
         class ListInventoryEntriesRequest;
+        class ListOpsItemEventsRequest;
         class ListOpsMetadataRequest;
         class ListResourceComplianceSummariesRequest;
         class ListResourceDataSyncRequest;
@@ -288,6 +294,7 @@ namespace Model
         class SendCommandRequest;
         class StartAssociationsOnceRequest;
         class StartAutomationExecutionRequest;
+        class StartChangeRequestExecutionRequest;
         class StartSessionRequest;
         class StopAutomationExecutionRequest;
         class TerminateSessionRequest;
@@ -295,6 +302,7 @@ namespace Model
         class UpdateAssociationStatusRequest;
         class UpdateDocumentRequest;
         class UpdateDocumentDefaultVersionRequest;
+        class UpdateDocumentMetadataRequest;
         class UpdateMaintenanceWindowRequest;
         class UpdateMaintenanceWindowTargetRequest;
         class UpdateMaintenanceWindowTaskRequest;
@@ -394,9 +402,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListCommandsResult, SSMError> ListCommandsOutcome;
         typedef Aws::Utils::Outcome<ListComplianceItemsResult, SSMError> ListComplianceItemsOutcome;
         typedef Aws::Utils::Outcome<ListComplianceSummariesResult, SSMError> ListComplianceSummariesOutcome;
+        typedef Aws::Utils::Outcome<ListDocumentMetadataHistoryResult, SSMError> ListDocumentMetadataHistoryOutcome;
         typedef Aws::Utils::Outcome<ListDocumentVersionsResult, SSMError> ListDocumentVersionsOutcome;
         typedef Aws::Utils::Outcome<ListDocumentsResult, SSMError> ListDocumentsOutcome;
         typedef Aws::Utils::Outcome<ListInventoryEntriesResult, SSMError> ListInventoryEntriesOutcome;
+        typedef Aws::Utils::Outcome<ListOpsItemEventsResult, SSMError> ListOpsItemEventsOutcome;
         typedef Aws::Utils::Outcome<ListOpsMetadataResult, SSMError> ListOpsMetadataOutcome;
         typedef Aws::Utils::Outcome<ListResourceComplianceSummariesResult, SSMError> ListResourceComplianceSummariesOutcome;
         typedef Aws::Utils::Outcome<ListResourceDataSyncResult, SSMError> ListResourceDataSyncOutcome;
@@ -416,6 +426,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SendCommandResult, SSMError> SendCommandOutcome;
         typedef Aws::Utils::Outcome<StartAssociationsOnceResult, SSMError> StartAssociationsOnceOutcome;
         typedef Aws::Utils::Outcome<StartAutomationExecutionResult, SSMError> StartAutomationExecutionOutcome;
+        typedef Aws::Utils::Outcome<StartChangeRequestExecutionResult, SSMError> StartChangeRequestExecutionOutcome;
         typedef Aws::Utils::Outcome<StartSessionResult, SSMError> StartSessionOutcome;
         typedef Aws::Utils::Outcome<StopAutomationExecutionResult, SSMError> StopAutomationExecutionOutcome;
         typedef Aws::Utils::Outcome<TerminateSessionResult, SSMError> TerminateSessionOutcome;
@@ -423,6 +434,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateAssociationStatusResult, SSMError> UpdateAssociationStatusOutcome;
         typedef Aws::Utils::Outcome<UpdateDocumentResult, SSMError> UpdateDocumentOutcome;
         typedef Aws::Utils::Outcome<UpdateDocumentDefaultVersionResult, SSMError> UpdateDocumentDefaultVersionOutcome;
+        typedef Aws::Utils::Outcome<UpdateDocumentMetadataResult, SSMError> UpdateDocumentMetadataOutcome;
         typedef Aws::Utils::Outcome<UpdateMaintenanceWindowResult, SSMError> UpdateMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<UpdateMaintenanceWindowTargetResult, SSMError> UpdateMaintenanceWindowTargetOutcome;
         typedef Aws::Utils::Outcome<UpdateMaintenanceWindowTaskResult, SSMError> UpdateMaintenanceWindowTaskOutcome;
@@ -522,9 +534,11 @@ namespace Model
         typedef std::future<ListCommandsOutcome> ListCommandsOutcomeCallable;
         typedef std::future<ListComplianceItemsOutcome> ListComplianceItemsOutcomeCallable;
         typedef std::future<ListComplianceSummariesOutcome> ListComplianceSummariesOutcomeCallable;
+        typedef std::future<ListDocumentMetadataHistoryOutcome> ListDocumentMetadataHistoryOutcomeCallable;
         typedef std::future<ListDocumentVersionsOutcome> ListDocumentVersionsOutcomeCallable;
         typedef std::future<ListDocumentsOutcome> ListDocumentsOutcomeCallable;
         typedef std::future<ListInventoryEntriesOutcome> ListInventoryEntriesOutcomeCallable;
+        typedef std::future<ListOpsItemEventsOutcome> ListOpsItemEventsOutcomeCallable;
         typedef std::future<ListOpsMetadataOutcome> ListOpsMetadataOutcomeCallable;
         typedef std::future<ListResourceComplianceSummariesOutcome> ListResourceComplianceSummariesOutcomeCallable;
         typedef std::future<ListResourceDataSyncOutcome> ListResourceDataSyncOutcomeCallable;
@@ -544,6 +558,7 @@ namespace Model
         typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
         typedef std::future<StartAssociationsOnceOutcome> StartAssociationsOnceOutcomeCallable;
         typedef std::future<StartAutomationExecutionOutcome> StartAutomationExecutionOutcomeCallable;
+        typedef std::future<StartChangeRequestExecutionOutcome> StartChangeRequestExecutionOutcomeCallable;
         typedef std::future<StartSessionOutcome> StartSessionOutcomeCallable;
         typedef std::future<StopAutomationExecutionOutcome> StopAutomationExecutionOutcomeCallable;
         typedef std::future<TerminateSessionOutcome> TerminateSessionOutcomeCallable;
@@ -551,6 +566,7 @@ namespace Model
         typedef std::future<UpdateAssociationStatusOutcome> UpdateAssociationStatusOutcomeCallable;
         typedef std::future<UpdateDocumentOutcome> UpdateDocumentOutcomeCallable;
         typedef std::future<UpdateDocumentDefaultVersionOutcome> UpdateDocumentDefaultVersionOutcomeCallable;
+        typedef std::future<UpdateDocumentMetadataOutcome> UpdateDocumentMetadataOutcomeCallable;
         typedef std::future<UpdateMaintenanceWindowOutcome> UpdateMaintenanceWindowOutcomeCallable;
         typedef std::future<UpdateMaintenanceWindowTargetOutcome> UpdateMaintenanceWindowTargetOutcomeCallable;
         typedef std::future<UpdateMaintenanceWindowTaskOutcome> UpdateMaintenanceWindowTaskOutcomeCallable;
@@ -653,9 +669,11 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::ListCommandsRequest&, const Model::ListCommandsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCommandsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListComplianceItemsRequest&, const Model::ListComplianceItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComplianceItemsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListComplianceSummariesRequest&, const Model::ListComplianceSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComplianceSummariesResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::ListDocumentMetadataHistoryRequest&, const Model::ListDocumentMetadataHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentMetadataHistoryResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListDocumentVersionsRequest&, const Model::ListDocumentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentVersionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListDocumentsRequest&, const Model::ListDocumentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListInventoryEntriesRequest&, const Model::ListInventoryEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInventoryEntriesResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::ListOpsItemEventsRequest&, const Model::ListOpsItemEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOpsItemEventsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListOpsMetadataRequest&, const Model::ListOpsMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOpsMetadataResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListResourceComplianceSummariesRequest&, const Model::ListResourceComplianceSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceComplianceSummariesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListResourceDataSyncRequest&, const Model::ListResourceDataSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceDataSyncResponseReceivedHandler;
@@ -675,6 +693,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::SendCommandRequest&, const Model::SendCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCommandResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StartAssociationsOnceRequest&, const Model::StartAssociationsOnceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAssociationsOnceResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StartAutomationExecutionRequest&, const Model::StartAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAutomationExecutionResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::StartChangeRequestExecutionRequest&, const Model::StartChangeRequestExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChangeRequestExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StartSessionRequest&, const Model::StartSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSessionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StopAutomationExecutionRequest&, const Model::StopAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutomationExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::TerminateSessionRequest&, const Model::TerminateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateSessionResponseReceivedHandler;
@@ -682,6 +701,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::UpdateAssociationStatusRequest&, const Model::UpdateAssociationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssociationStatusResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateDocumentRequest&, const Model::UpdateDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateDocumentDefaultVersionRequest&, const Model::UpdateDocumentDefaultVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentDefaultVersionResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::UpdateDocumentMetadataRequest&, const Model::UpdateDocumentMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentMetadataResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateMaintenanceWindowRequest&, const Model::UpdateMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateMaintenanceWindowTargetRequest&, const Model::UpdateMaintenanceWindowTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceWindowTargetResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateMaintenanceWindowTaskRequest&, const Model::UpdateMaintenanceWindowTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceWindowTaskResponseReceivedHandler;
@@ -1180,8 +1200,8 @@ namespace Model
         virtual void CreateOpsItemAsync(const Model::CreateOpsItemRequest& request, const CreateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>If you create a new application in AppManager, Systems Manager calls this API
-         * action to specify information about the new application, including the
+         * <p>If you create a new application in Application Manager, Systems Manager calls
+         * this API action to specify information about the new application, including the
          * application type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">AWS
          * API Reference</a></p>
@@ -1189,8 +1209,8 @@ namespace Model
         virtual Model::CreateOpsMetadataOutcome CreateOpsMetadata(const Model::CreateOpsMetadataRequest& request) const;
 
         /**
-         * <p>If you create a new application in AppManager, Systems Manager calls this API
-         * action to specify information about the new application, including the
+         * <p>If you create a new application in Application Manager, Systems Manager calls
+         * this API action to specify information about the new application, including the
          * application type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">AWS
          * API Reference</a></p>
@@ -1200,8 +1220,8 @@ namespace Model
         virtual Model::CreateOpsMetadataOutcomeCallable CreateOpsMetadataCallable(const Model::CreateOpsMetadataRequest& request) const;
 
         /**
-         * <p>If you create a new application in AppManager, Systems Manager calls this API
-         * action to specify information about the new application, including the
+         * <p>If you create a new application in Application Manager, Systems Manager calls
+         * this API action to specify information about the new application, including the
          * application type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">AWS
          * API Reference</a></p>
@@ -3284,16 +3304,16 @@ namespace Model
         virtual void GetOpsItemAsync(const Model::GetOpsItemRequest& request, const GetOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>View operational metadata related to an application in
-         * AppManager.</p><p><h3>See Also:</h3>   <a
+         * <p>View operational metadata related to an application in Application
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata">AWS
          * API Reference</a></p>
          */
         virtual Model::GetOpsMetadataOutcome GetOpsMetadata(const Model::GetOpsMetadataRequest& request) const;
 
         /**
-         * <p>View operational metadata related to an application in
-         * AppManager.</p><p><h3>See Also:</h3>   <a
+         * <p>View operational metadata related to an application in Application
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -3302,8 +3322,8 @@ namespace Model
         virtual Model::GetOpsMetadataOutcomeCallable GetOpsMetadataCallable(const Model::GetOpsMetadataRequest& request) const;
 
         /**
-         * <p>View operational metadata related to an application in
-         * AppManager.</p><p><h3>See Also:</h3>   <a
+         * <p>View operational metadata related to an application in Application
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -3867,6 +3887,34 @@ namespace Model
         virtual void ListComplianceSummariesAsync(const Model::ListComplianceSummariesRequest& request, const ListComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Information about approval reviews for a version of an SSM
+         * document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDocumentMetadataHistoryOutcome ListDocumentMetadataHistory(const Model::ListDocumentMetadataHistoryRequest& request) const;
+
+        /**
+         * <p>Information about approval reviews for a version of an SSM
+         * document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDocumentMetadataHistoryOutcomeCallable ListDocumentMetadataHistoryCallable(const Model::ListDocumentMetadataHistoryRequest& request) const;
+
+        /**
+         * <p>Information about approval reviews for a version of an SSM
+         * document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDocumentMetadataHistoryAsync(const Model::ListDocumentMetadataHistoryRequest& request, const ListDocumentMetadataHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List all versions for a document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">AWS
          * API Reference</a></p>
@@ -3951,7 +3999,38 @@ namespace Model
         virtual void ListInventoryEntriesAsync(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Systems Manager calls this API action when displaying all AppManager
+         * <p>Returns a list of all OpsItem events in the current AWS account and Region.
+         * You can limit the results to events associated with specific OpsItems by
+         * specifying a filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOpsItemEventsOutcome ListOpsItemEvents(const Model::ListOpsItemEventsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all OpsItem events in the current AWS account and Region.
+         * You can limit the results to events associated with specific OpsItems by
+         * specifying a filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOpsItemEventsOutcomeCallable ListOpsItemEventsCallable(const Model::ListOpsItemEventsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all OpsItem events in the current AWS account and Region.
+         * You can limit the results to events associated with specific OpsItems by
+         * specifying a filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOpsItemEventsAsync(const Model::ListOpsItemEventsRequest& request, const ListOpsItemEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Systems Manager calls this API action when displaying all Application Manager
          * OpsMetadata objects or blobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">AWS
          * API Reference</a></p>
@@ -3959,7 +4038,7 @@ namespace Model
         virtual Model::ListOpsMetadataOutcome ListOpsMetadata(const Model::ListOpsMetadataRequest& request) const;
 
         /**
-         * <p>Systems Manager calls this API action when displaying all AppManager
+         * <p>Systems Manager calls this API action when displaying all Application Manager
          * OpsMetadata objects or blobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">AWS
          * API Reference</a></p>
@@ -3969,7 +4048,7 @@ namespace Model
         virtual Model::ListOpsMetadataOutcomeCallable ListOpsMetadataCallable(const Model::ListOpsMetadataRequest& request) const;
 
         /**
-         * <p>Systems Manager calls this API action when displaying all AppManager
+         * <p>Systems Manager calls this API action when displaying all Application Manager
          * OpsMetadata objects or blobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">AWS
          * API Reference</a></p>
@@ -4627,6 +4706,37 @@ namespace Model
         virtual void StartAutomationExecutionAsync(const Model::StartAutomationExecutionRequest& request, const StartAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a change request for Change Manager. The runbooks (Automation
+         * documents) specified in the change request run only after all required approvals
+         * for the change request have been received.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartChangeRequestExecutionOutcome StartChangeRequestExecution(const Model::StartChangeRequestExecutionRequest& request) const;
+
+        /**
+         * <p>Creates a change request for Change Manager. The runbooks (Automation
+         * documents) specified in the change request run only after all required approvals
+         * for the change request have been received.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartChangeRequestExecutionOutcomeCallable StartChangeRequestExecutionCallable(const Model::StartChangeRequestExecutionRequest& request) const;
+
+        /**
+         * <p>Creates a change request for Change Manager. The runbooks (Automation
+         * documents) specified in the change request run only after all required approvals
+         * for the change request have been received.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartChangeRequestExecutionAsync(const Model::StartChangeRequestExecutionRequest& request, const StartChangeRequestExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Initiates a connection to a target (for example, an instance) for a Session
          * Manager session. Returns a URL and token that can be used to open a WebSocket
          * connection for sending input and receiving outputs.</p>  <p>AWS CLI usage:
@@ -4866,6 +4976,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDocumentDefaultVersionAsync(const Model::UpdateDocumentDefaultVersionRequest& request, const UpdateDocumentDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates information related to approval reviews for a specific version of a
+         * document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDocumentMetadataOutcome UpdateDocumentMetadata(const Model::UpdateDocumentMetadataRequest& request) const;
+
+        /**
+         * <p>Updates information related to approval reviews for a specific version of a
+         * document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDocumentMetadataOutcomeCallable UpdateDocumentMetadataCallable(const Model::UpdateDocumentMetadataRequest& request) const;
+
+        /**
+         * <p>Updates information related to approval reviews for a specific version of a
+         * document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDocumentMetadataAsync(const Model::UpdateDocumentMetadataRequest& request, const UpdateDocumentMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing maintenance window. Only specified parameters are
@@ -5132,7 +5270,7 @@ namespace Model
 
         /**
          * <p>Systems Manager calls this API action when you edit OpsMetadata in
-         * AppManager.</p><p><h3>See Also:</h3>   <a
+         * Application Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">AWS
          * API Reference</a></p>
          */
@@ -5140,7 +5278,7 @@ namespace Model
 
         /**
          * <p>Systems Manager calls this API action when you edit OpsMetadata in
-         * AppManager.</p><p><h3>See Also:</h3>   <a
+         * Application Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -5150,7 +5288,7 @@ namespace Model
 
         /**
          * <p>Systems Manager calls this API action when you edit OpsMetadata in
-         * AppManager.</p><p><h3>See Also:</h3>   <a
+         * Application Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -5398,9 +5536,11 @@ namespace Model
         void ListCommandsAsyncHelper(const Model::ListCommandsRequest& request, const ListCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComplianceItemsAsyncHelper(const Model::ListComplianceItemsRequest& request, const ListComplianceItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComplianceSummariesAsyncHelper(const Model::ListComplianceSummariesRequest& request, const ListComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDocumentMetadataHistoryAsyncHelper(const Model::ListDocumentMetadataHistoryRequest& request, const ListDocumentMetadataHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDocumentVersionsAsyncHelper(const Model::ListDocumentVersionsRequest& request, const ListDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDocumentsAsyncHelper(const Model::ListDocumentsRequest& request, const ListDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInventoryEntriesAsyncHelper(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOpsItemEventsAsyncHelper(const Model::ListOpsItemEventsRequest& request, const ListOpsItemEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOpsMetadataAsyncHelper(const Model::ListOpsMetadataRequest& request, const ListOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceComplianceSummariesAsyncHelper(const Model::ListResourceComplianceSummariesRequest& request, const ListResourceComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceDataSyncAsyncHelper(const Model::ListResourceDataSyncRequest& request, const ListResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5420,6 +5560,7 @@ namespace Model
         void SendCommandAsyncHelper(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartAssociationsOnceAsyncHelper(const Model::StartAssociationsOnceRequest& request, const StartAssociationsOnceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartAutomationExecutionAsyncHelper(const Model::StartAutomationExecutionRequest& request, const StartAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartChangeRequestExecutionAsyncHelper(const Model::StartChangeRequestExecutionRequest& request, const StartChangeRequestExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartSessionAsyncHelper(const Model::StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopAutomationExecutionAsyncHelper(const Model::StopAutomationExecutionRequest& request, const StopAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateSessionAsyncHelper(const Model::TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5427,6 +5568,7 @@ namespace Model
         void UpdateAssociationStatusAsyncHelper(const Model::UpdateAssociationStatusRequest& request, const UpdateAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDocumentAsyncHelper(const Model::UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDocumentDefaultVersionAsyncHelper(const Model::UpdateDocumentDefaultVersionRequest& request, const UpdateDocumentDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDocumentMetadataAsyncHelper(const Model::UpdateDocumentMetadataRequest& request, const UpdateDocumentMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMaintenanceWindowAsyncHelper(const Model::UpdateMaintenanceWindowRequest& request, const UpdateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMaintenanceWindowTargetAsyncHelper(const Model::UpdateMaintenanceWindowTargetRequest& request, const UpdateMaintenanceWindowTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMaintenanceWindowTaskAsyncHelper(const Model::UpdateMaintenanceWindowTaskRequest& request, const UpdateMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

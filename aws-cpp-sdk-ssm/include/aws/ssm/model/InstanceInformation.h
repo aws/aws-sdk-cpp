@@ -122,32 +122,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time when agent last pinged Systems Manager service. </p>
+     * <p>The date and time when the agent last pinged the Systems Manager service.
+     * </p>
      */
     inline const Aws::Utils::DateTime& GetLastPingDateTime() const{ return m_lastPingDateTime; }
 
     /**
-     * <p>The date and time when agent last pinged Systems Manager service. </p>
+     * <p>The date and time when the agent last pinged the Systems Manager service.
+     * </p>
      */
     inline bool LastPingDateTimeHasBeenSet() const { return m_lastPingDateTimeHasBeenSet; }
 
     /**
-     * <p>The date and time when agent last pinged Systems Manager service. </p>
+     * <p>The date and time when the agent last pinged the Systems Manager service.
+     * </p>
      */
     inline void SetLastPingDateTime(const Aws::Utils::DateTime& value) { m_lastPingDateTimeHasBeenSet = true; m_lastPingDateTime = value; }
 
     /**
-     * <p>The date and time when agent last pinged Systems Manager service. </p>
+     * <p>The date and time when the agent last pinged the Systems Manager service.
+     * </p>
      */
     inline void SetLastPingDateTime(Aws::Utils::DateTime&& value) { m_lastPingDateTimeHasBeenSet = true; m_lastPingDateTime = std::move(value); }
 
     /**
-     * <p>The date and time when agent last pinged Systems Manager service. </p>
+     * <p>The date and time when the agent last pinged the Systems Manager service.
+     * </p>
      */
     inline InstanceInformation& WithLastPingDateTime(const Aws::Utils::DateTime& value) { SetLastPingDateTime(value); return *this;}
 
     /**
-     * <p>The date and time when agent last pinged Systems Manager service. </p>
+     * <p>The date and time when the agent last pinged the Systems Manager service.
+     * </p>
      */
     inline InstanceInformation& WithLastPingDateTime(Aws::Utils::DateTime&& value) { SetLastPingDateTime(std::move(value)); return *this;}
 

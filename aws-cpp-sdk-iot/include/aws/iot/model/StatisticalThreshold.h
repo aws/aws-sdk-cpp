@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A statistical ranking (percentile) which indicates a threshold value by which
+   * <p>A statistical ranking (percentile) that indicates a threshold value by which
    * a behavior is determined to be in compliance or in violation of the
    * behavior.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StatisticalThreshold">AWS
@@ -40,7 +40,7 @@ namespace Model
 
 
     /**
-     * <p>The percentile which resolves to a threshold value by which compliance with a
+     * <p>The percentile that resolves to a threshold value by which compliance with a
      * behavior is determined. Metrics are collected over the specified period
      * (<code>durationSeconds</code>) from all reporting devices in your account and
      * statistical ranks are calculated. Then, the measurements from a device are
@@ -52,7 +52,7 @@ namespace Model
     inline const Aws::String& GetStatistic() const{ return m_statistic; }
 
     /**
-     * <p>The percentile which resolves to a threshold value by which compliance with a
+     * <p>The percentile that resolves to a threshold value by which compliance with a
      * behavior is determined. Metrics are collected over the specified period
      * (<code>durationSeconds</code>) from all reporting devices in your account and
      * statistical ranks are calculated. Then, the measurements from a device are
@@ -64,7 +64,7 @@ namespace Model
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
 
     /**
-     * <p>The percentile which resolves to a threshold value by which compliance with a
+     * <p>The percentile that resolves to a threshold value by which compliance with a
      * behavior is determined. Metrics are collected over the specified period
      * (<code>durationSeconds</code>) from all reporting devices in your account and
      * statistical ranks are calculated. Then, the measurements from a device are
@@ -76,7 +76,7 @@ namespace Model
     inline void SetStatistic(const Aws::String& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
-     * <p>The percentile which resolves to a threshold value by which compliance with a
+     * <p>The percentile that resolves to a threshold value by which compliance with a
      * behavior is determined. Metrics are collected over the specified period
      * (<code>durationSeconds</code>) from all reporting devices in your account and
      * statistical ranks are calculated. Then, the measurements from a device are
@@ -88,7 +88,7 @@ namespace Model
     inline void SetStatistic(Aws::String&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
 
     /**
-     * <p>The percentile which resolves to a threshold value by which compliance with a
+     * <p>The percentile that resolves to a threshold value by which compliance with a
      * behavior is determined. Metrics are collected over the specified period
      * (<code>durationSeconds</code>) from all reporting devices in your account and
      * statistical ranks are calculated. Then, the measurements from a device are
@@ -100,7 +100,7 @@ namespace Model
     inline void SetStatistic(const char* value) { m_statisticHasBeenSet = true; m_statistic.assign(value); }
 
     /**
-     * <p>The percentile which resolves to a threshold value by which compliance with a
+     * <p>The percentile that resolves to a threshold value by which compliance with a
      * behavior is determined. Metrics are collected over the specified period
      * (<code>durationSeconds</code>) from all reporting devices in your account and
      * statistical ranks are calculated. Then, the measurements from a device are
@@ -112,7 +112,7 @@ namespace Model
     inline StatisticalThreshold& WithStatistic(const Aws::String& value) { SetStatistic(value); return *this;}
 
     /**
-     * <p>The percentile which resolves to a threshold value by which compliance with a
+     * <p>The percentile that resolves to a threshold value by which compliance with a
      * behavior is determined. Metrics are collected over the specified period
      * (<code>durationSeconds</code>) from all reporting devices in your account and
      * statistical ranks are calculated. Then, the measurements from a device are
@@ -124,7 +124,7 @@ namespace Model
     inline StatisticalThreshold& WithStatistic(Aws::String&& value) { SetStatistic(std::move(value)); return *this;}
 
     /**
-     * <p>The percentile which resolves to a threshold value by which compliance with a
+     * <p>The percentile that resolves to a threshold value by which compliance with a
      * behavior is determined. Metrics are collected over the specified period
      * (<code>durationSeconds</code>) from all reporting devices in your account and
      * statistical ranks are calculated. Then, the measurements from a device are
