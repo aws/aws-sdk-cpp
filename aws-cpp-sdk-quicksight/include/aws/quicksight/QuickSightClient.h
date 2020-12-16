@@ -914,7 +914,7 @@ namespace Model
          * <p>Creates and starts a new SPICE ingestion on a dataset</p> <p>Any ingestions
          * operating on tagged datasets inherit the same tags automatically for use in
          * access control. For an example, see <a
-         * href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
+         * href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
          * do I create an IAM policy to control access to Amazon EC2 resources using
          * tags?</a> in the AWS Knowledge Center. Tags are visible on the tagged dataset,
          * but not on the ingestion resource.</p><p><h3>See Also:</h3>   <a
@@ -927,7 +927,7 @@ namespace Model
          * <p>Creates and starts a new SPICE ingestion on a dataset</p> <p>Any ingestions
          * operating on tagged datasets inherit the same tags automatically for use in
          * access control. For an example, see <a
-         * href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
+         * href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
          * do I create an IAM policy to control access to Amazon EC2 resources using
          * tags?</a> in the AWS Knowledge Center. Tags are visible on the tagged dataset,
          * but not on the ingestion resource.</p><p><h3>See Also:</h3>   <a
@@ -942,7 +942,7 @@ namespace Model
          * <p>Creates and starts a new SPICE ingestion on a dataset</p> <p>Any ingestions
          * operating on tagged datasets inherit the same tags automatically for use in
          * access control. For an example, see <a
-         * href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
+         * href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
          * do I create an IAM policy to control access to Amazon EC2 resources using
          * tags?</a> in the AWS Knowledge Center. Tags are visible on the tagged dataset,
          * but not on the ingestion resource.</p><p><h3>See Also:</h3>   <a
@@ -2268,8 +2268,8 @@ namespace Model
          * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
          * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-         * Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .</p><p><h3>See
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
+         * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
@@ -2287,8 +2287,8 @@ namespace Model
          * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
          * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-         * Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .</p><p><h3>See
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
+         * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
@@ -2308,8 +2308,8 @@ namespace Model
          * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
          * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-         * Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .</p><p><h3>See
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
+         * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>

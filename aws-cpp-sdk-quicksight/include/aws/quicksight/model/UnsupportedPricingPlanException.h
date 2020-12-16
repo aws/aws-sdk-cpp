@@ -26,11 +26,11 @@ namespace Model
   /**
    * <p>This error indicates that you are calling an embedding operation in Amazon
    * QuickSight without the required pricing plan on your AWS account. Before you can
-   * use anonymous embedding, a QuickSight administrator needs to add capacity
-   * pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page.
-   * </p> <p>After capacity pricing is added, you can enable anonymous embedding by
-   * using the <code> <a>GetDashboardEmbedUrl</a> </code> API operation with the
-   * <code>--identity-type ANONYMOUS</code> option.</p><p><h3>See Also:</h3>   <a
+   * use embedding for anonymous users, a QuickSight administrator needs to add
+   * capacity pricing to QuickSight. You can do this on the <b>Manage QuickSight</b>
+   * page. </p> <p>After capacity pricing is added, you can use the
+   * <a>GetDashboardEmbedUrl</a> API operation with the <code>--identity-type
+   * ANONYMOUS</code> option.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UnsupportedPricingPlanException">AWS
    * API Reference</a></p>
    */

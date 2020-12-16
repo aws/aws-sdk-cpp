@@ -428,32 +428,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline const DataSetImportMode& GetImportMode() const{ return m_importMode; }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline void SetImportMode(const DataSetImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline void SetImportMode(DataSetImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline DataSet& WithImportMode(const DataSetImportMode& value) { SetImportMode(value); return *this;}
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline DataSet& WithImportMode(DataSetImportMode&& value) { SetImportMode(std::move(value)); return *this;}
 

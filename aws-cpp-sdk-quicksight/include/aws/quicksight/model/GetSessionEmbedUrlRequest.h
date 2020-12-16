@@ -215,10 +215,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>IAM users and IAM role-based sessions authenticated through Federated
-     * Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li> </ol>
-     * <p>Omit this parameter for users in the third group – IAM users and IAM
-     * role-based sessions.</p>
+     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
+     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
+     * the third group, IAM users and IAM role-based sessions.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
 
@@ -228,10 +228,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>IAM users and IAM role-based sessions authenticated through Federated
-     * Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li> </ol>
-     * <p>Omit this parameter for users in the third group – IAM users and IAM
-     * role-based sessions.</p>
+     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
+     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
+     * the third group, IAM users and IAM role-based sessions.</p>
      */
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
 
@@ -241,10 +241,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>IAM users and IAM role-based sessions authenticated through Federated
-     * Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li> </ol>
-     * <p>Omit this parameter for users in the third group – IAM users and IAM
-     * role-based sessions.</p>
+     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
+     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
+     * the third group, IAM users and IAM role-based sessions.</p>
      */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
@@ -254,10 +254,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>IAM users and IAM role-based sessions authenticated through Federated
-     * Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li> </ol>
-     * <p>Omit this parameter for users in the third group – IAM users and IAM
-     * role-based sessions.</p>
+     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
+     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
+     * the third group, IAM users and IAM role-based sessions.</p>
      */
     inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
 
@@ -267,10 +267,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>IAM users and IAM role-based sessions authenticated through Federated
-     * Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li> </ol>
-     * <p>Omit this parameter for users in the third group – IAM users and IAM
-     * role-based sessions.</p>
+     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
+     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
+     * the third group, IAM users and IAM role-based sessions.</p>
      */
     inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
 
@@ -280,10 +280,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>IAM users and IAM role-based sessions authenticated through Federated
-     * Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li> </ol>
-     * <p>Omit this parameter for users in the third group – IAM users and IAM
-     * role-based sessions.</p>
+     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
+     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
+     * the third group, IAM users and IAM role-based sessions.</p>
      */
     inline GetSessionEmbedUrlRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
 
@@ -293,10 +293,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>IAM users and IAM role-based sessions authenticated through Federated
-     * Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li> </ol>
-     * <p>Omit this parameter for users in the third group – IAM users and IAM
-     * role-based sessions.</p>
+     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
+     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
+     * the third group, IAM users and IAM role-based sessions.</p>
      */
     inline GetSessionEmbedUrlRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
 
@@ -306,10 +306,10 @@ namespace Model
      * QuickSight users in your account (readers, authors, or admins). They need to be
      * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
      * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
-     * <li> <p>IAM users and IAM role-based sessions authenticated through Federated
-     * Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li> </ol>
-     * <p>Omit this parameter for users in the third group – IAM users and IAM
-     * role-based sessions.</p>
+     * <li> <p>AWS Identity and Access Management (IAM) users and IAM role-based
+     * sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     * Connect, or IAM federation</p> </li> </ol> <p>Omit this parameter for users in
+     * the third group, IAM users and IAM role-based sessions.</p>
      */
     inline GetSessionEmbedUrlRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 

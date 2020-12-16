@@ -20,6 +20,7 @@ namespace Model
 
 RelationalTable::RelationalTable() : 
     m_dataSourceArnHasBeenSet(false),
+    m_catalogHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_inputColumnsHasBeenSet(false)
@@ -28,6 +29,7 @@ RelationalTable::RelationalTable() :
 
 RelationalTable::RelationalTable(JsonView jsonValue) : 
     m_dataSourceArnHasBeenSet(false),
+    m_catalogHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_inputColumnsHasBeenSet(false)
@@ -42,6 +44,13 @@ RelationalTable& RelationalTable::operator =(JsonView jsonValue)
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
 
     m_dataSourceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Catalog"))
+  {
+    m_catalog = jsonValue.GetString("Catalog");
+
+    m_catalogHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Schema"))
@@ -78,6 +87,12 @@ JsonValue RelationalTable::Jsonize() const
   if(m_dataSourceArnHasBeenSet)
   {
    payload.WithString("DataSourceArn", m_dataSourceArn);
+
+  }
+
+  if(m_catalogHasBeenSet)
+  {
+   payload.WithString("Catalog", m_catalog);
 
   }
 

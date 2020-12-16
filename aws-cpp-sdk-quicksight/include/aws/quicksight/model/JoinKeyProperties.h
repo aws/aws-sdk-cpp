@@ -37,26 +37,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates that a row in a table is uniquely identified by the columns in a
-     * join key. This is used by QuickSight to optimize query performance.</p>
+     * <p>A value that indicates that a row in a table is uniquely identified by the
+     * columns in a join key. This is used by QuickSight to optimize query
+     * performance.</p>
      */
     inline bool GetUniqueKey() const{ return m_uniqueKey; }
 
     /**
-     * <p>Indicates that a row in a table is uniquely identified by the columns in a
-     * join key. This is used by QuickSight to optimize query performance.</p>
+     * <p>A value that indicates that a row in a table is uniquely identified by the
+     * columns in a join key. This is used by QuickSight to optimize query
+     * performance.</p>
      */
     inline bool UniqueKeyHasBeenSet() const { return m_uniqueKeyHasBeenSet; }
 
     /**
-     * <p>Indicates that a row in a table is uniquely identified by the columns in a
-     * join key. This is used by QuickSight to optimize query performance.</p>
+     * <p>A value that indicates that a row in a table is uniquely identified by the
+     * columns in a join key. This is used by QuickSight to optimize query
+     * performance.</p>
      */
     inline void SetUniqueKey(bool value) { m_uniqueKeyHasBeenSet = true; m_uniqueKey = value; }
 
     /**
-     * <p>Indicates that a row in a table is uniquely identified by the columns in a
-     * join key. This is used by QuickSight to optimize query performance.</p>
+     * <p>A value that indicates that a row in a table is uniquely identified by the
+     * columns in a join key. This is used by QuickSight to optimize query
+     * performance.</p>
      */
     inline JoinKeyProperties& WithUniqueKey(bool value) { SetUniqueKey(value); return *this;}
 

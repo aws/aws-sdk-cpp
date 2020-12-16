@@ -82,7 +82,7 @@ namespace Model
     typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateWorkspaceAliasRequest&, const Model::UpdateWorkspaceAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceAliasResponseReceivedHandler;
 
   /**
-   * <p>StealFire Service</p>
+   * <p>Amazon Managed Service for Prometheus</p>
    */
   class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -112,14 +112,14 @@ namespace Model
 
 
         /**
-         * <p>Creates a new StealFire workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateWorkspaceOutcome CreateWorkspace(const Model::CreateWorkspaceRequest& request) const;
 
         /**
-         * <p>Creates a new StealFire workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace">AWS
          * API Reference</a></p>
          *
@@ -128,7 +128,7 @@ namespace Model
         virtual Model::CreateWorkspaceOutcomeCallable CreateWorkspaceCallable(const Model::CreateWorkspaceRequest& request) const;
 
         /**
-         * <p>Creates a new StealFire workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace">AWS
          * API Reference</a></p>
          *
@@ -137,14 +137,14 @@ namespace Model
         virtual void CreateWorkspaceAsync(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a StealFire workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteWorkspace">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteWorkspaceOutcome DeleteWorkspace(const Model::DeleteWorkspaceRequest& request) const;
 
         /**
-         * <p>Deletes a StealFire workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteWorkspace">AWS
          * API Reference</a></p>
          *
@@ -153,7 +153,7 @@ namespace Model
         virtual Model::DeleteWorkspaceOutcomeCallable DeleteWorkspaceCallable(const Model::DeleteWorkspaceRequest& request) const;
 
         /**
-         * <p>Deletes a StealFire workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteWorkspace">AWS
          * API Reference</a></p>
          *
@@ -162,14 +162,14 @@ namespace Model
         virtual void DeleteWorkspaceAsync(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an existing StealFire workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspace">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeWorkspaceOutcome DescribeWorkspace(const Model::DescribeWorkspaceRequest& request) const;
 
         /**
-         * <p>Describes an existing StealFire workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspace">AWS
          * API Reference</a></p>
          *
@@ -178,7 +178,7 @@ namespace Model
         virtual Model::DescribeWorkspaceOutcomeCallable DescribeWorkspaceCallable(const Model::DescribeWorkspaceRequest& request) const;
 
         /**
-         * <p>Describes an existing StealFire workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing AMP workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspace">AWS
          * API Reference</a></p>
          *
@@ -187,7 +187,7 @@ namespace Model
         virtual void DescribeWorkspaceAsync(const Model::DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all StealFire workspaces, including workspaces being created or
+         * <p>Lists all AMP workspaces, including workspaces being created or
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspaces">AWS
          * API Reference</a></p>
@@ -195,7 +195,7 @@ namespace Model
         virtual Model::ListWorkspacesOutcome ListWorkspaces(const Model::ListWorkspacesRequest& request) const;
 
         /**
-         * <p>Lists all StealFire workspaces, including workspaces being created or
+         * <p>Lists all AMP workspaces, including workspaces being created or
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspaces">AWS
          * API Reference</a></p>
@@ -205,7 +205,7 @@ namespace Model
         virtual Model::ListWorkspacesOutcomeCallable ListWorkspacesCallable(const Model::ListWorkspacesRequest& request) const;
 
         /**
-         * <p>Lists all StealFire workspaces, including workspaces being created or
+         * <p>Lists all AMP workspaces, including workspaces being created or
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspaces">AWS
          * API Reference</a></p>
@@ -215,14 +215,14 @@ namespace Model
         virtual void ListWorkspacesAsync(const Model::ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a StealFire workspace alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an AMP workspace alias.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceAlias">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateWorkspaceAliasOutcome UpdateWorkspaceAlias(const Model::UpdateWorkspaceAliasRequest& request) const;
 
         /**
-         * <p>Updates a StealFire workspace alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an AMP workspace alias.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceAlias">AWS
          * API Reference</a></p>
          *
@@ -231,7 +231,7 @@ namespace Model
         virtual Model::UpdateWorkspaceAliasOutcomeCallable UpdateWorkspaceAliasCallable(const Model::UpdateWorkspaceAliasRequest& request) const;
 
         /**
-         * <p>Updates a StealFire workspace alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an AMP workspace alias.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceAlias">AWS
          * API Reference</a></p>
          *

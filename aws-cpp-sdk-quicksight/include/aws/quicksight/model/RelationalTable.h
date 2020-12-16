@@ -82,6 +82,47 @@ namespace Model
 
 
     /**
+     * <p>The catalog associated with a table.</p>
+     */
+    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+
+    /**
+     * <p>The catalog associated with a table.</p>
+     */
+    inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
+
+    /**
+     * <p>The catalog associated with a table.</p>
+     */
+    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
+
+    /**
+     * <p>The catalog associated with a table.</p>
+     */
+    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
+
+    /**
+     * <p>The catalog associated with a table.</p>
+     */
+    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
+
+    /**
+     * <p>The catalog associated with a table.</p>
+     */
+    inline RelationalTable& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
+
+    /**
+     * <p>The catalog associated with a table.</p>
+     */
+    inline RelationalTable& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
+
+    /**
+     * <p>The catalog associated with a table.</p>
+     */
+    inline RelationalTable& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+
+
+    /**
      * <p>The schema name. This name applies to certain relational database
      * engines.</p>
      */
@@ -215,6 +256,9 @@ namespace Model
 
     Aws::String m_dataSourceArn;
     bool m_dataSourceArnHasBeenSet;
+
+    Aws::String m_catalog;
+    bool m_catalogHasBeenSet;
 
     Aws::String m_schema;
     bool m_schemaHasBeenSet;
