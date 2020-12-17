@@ -24,7 +24,8 @@ DistributionConfigurationSummary::DistributionConfigurationSummary() :
     m_descriptionHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_regionsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ DistributionConfigurationSummary::DistributionConfigurationSummary(JsonView json
     m_descriptionHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_regionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,16 @@ DistributionConfigurationSummary& DistributionConfigurationSummary::operator =(J
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("regions"))
+  {
+    Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
+    for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
+    {
+      m_regions.push_back(regionsJsonList[regionsIndex].AsString());
+    }
+    m_regionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +143,17 @@ JsonValue DistributionConfigurationSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_regionsHasBeenSet)
+  {
+   Array<JsonValue> regionsJsonList(m_regions.size());
+   for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
+   {
+     regionsJsonList[regionsIndex].AsString(m_regions[regionsIndex]);
+   }
+   payload.WithArray("regions", std::move(regionsJsonList));
 
   }
 

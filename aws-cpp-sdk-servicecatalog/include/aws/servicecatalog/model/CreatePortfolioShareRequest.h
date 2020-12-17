@@ -234,6 +234,35 @@ namespace Model
      */
     inline CreatePortfolioShareRequest& WithOrganizationNode(OrganizationNode&& value) { SetOrganizationNode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables or disables <code>TagOptions </code> sharing when creating the
+     * portfolio share. If this flag is not provided, TagOptions sharing is
+     * disabled.</p>
+     */
+    inline bool GetShareTagOptions() const{ return m_shareTagOptions; }
+
+    /**
+     * <p>Enables or disables <code>TagOptions </code> sharing when creating the
+     * portfolio share. If this flag is not provided, TagOptions sharing is
+     * disabled.</p>
+     */
+    inline bool ShareTagOptionsHasBeenSet() const { return m_shareTagOptionsHasBeenSet; }
+
+    /**
+     * <p>Enables or disables <code>TagOptions </code> sharing when creating the
+     * portfolio share. If this flag is not provided, TagOptions sharing is
+     * disabled.</p>
+     */
+    inline void SetShareTagOptions(bool value) { m_shareTagOptionsHasBeenSet = true; m_shareTagOptions = value; }
+
+    /**
+     * <p>Enables or disables <code>TagOptions </code> sharing when creating the
+     * portfolio share. If this flag is not provided, TagOptions sharing is
+     * disabled.</p>
+     */
+    inline CreatePortfolioShareRequest& WithShareTagOptions(bool value) { SetShareTagOptions(value); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -247,6 +276,9 @@ namespace Model
 
     OrganizationNode m_organizationNode;
     bool m_organizationNodeHasBeenSet;
+
+    bool m_shareTagOptions;
+    bool m_shareTagOptionsHasBeenSet;
   };
 
 } // namespace Model

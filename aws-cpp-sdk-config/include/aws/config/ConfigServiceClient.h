@@ -62,6 +62,7 @@
 #include <aws/config/model/PutConfigurationAggregatorResult.h>
 #include <aws/config/model/PutConformancePackResult.h>
 #include <aws/config/model/PutEvaluationsResult.h>
+#include <aws/config/model/PutExternalEvaluationResult.h>
 #include <aws/config/model/PutOrganizationConfigRuleResult.h>
 #include <aws/config/model/PutOrganizationConformancePackResult.h>
 #include <aws/config/model/PutRemediationConfigurationsResult.h>
@@ -175,6 +176,7 @@ namespace Model
         class PutConformancePackRequest;
         class PutDeliveryChannelRequest;
         class PutEvaluationsRequest;
+        class PutExternalEvaluationRequest;
         class PutOrganizationConfigRuleRequest;
         class PutOrganizationConformancePackRequest;
         class PutRemediationConfigurationsRequest;
@@ -255,6 +257,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutConformancePackResult, ConfigServiceError> PutConformancePackOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutDeliveryChannelOutcome;
         typedef Aws::Utils::Outcome<PutEvaluationsResult, ConfigServiceError> PutEvaluationsOutcome;
+        typedef Aws::Utils::Outcome<PutExternalEvaluationResult, ConfigServiceError> PutExternalEvaluationOutcome;
         typedef Aws::Utils::Outcome<PutOrganizationConfigRuleResult, ConfigServiceError> PutOrganizationConfigRuleOutcome;
         typedef Aws::Utils::Outcome<PutOrganizationConformancePackResult, ConfigServiceError> PutOrganizationConformancePackOutcome;
         typedef Aws::Utils::Outcome<PutRemediationConfigurationsResult, ConfigServiceError> PutRemediationConfigurationsOutcome;
@@ -335,6 +338,7 @@ namespace Model
         typedef std::future<PutConformancePackOutcome> PutConformancePackOutcomeCallable;
         typedef std::future<PutDeliveryChannelOutcome> PutDeliveryChannelOutcomeCallable;
         typedef std::future<PutEvaluationsOutcome> PutEvaluationsOutcomeCallable;
+        typedef std::future<PutExternalEvaluationOutcome> PutExternalEvaluationOutcomeCallable;
         typedef std::future<PutOrganizationConfigRuleOutcome> PutOrganizationConfigRuleOutcomeCallable;
         typedef std::future<PutOrganizationConformancePackOutcome> PutOrganizationConformancePackOutcomeCallable;
         typedef std::future<PutRemediationConfigurationsOutcome> PutRemediationConfigurationsOutcomeCallable;
@@ -418,6 +422,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::PutConformancePackRequest&, const Model::PutConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConformancePackResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutDeliveryChannelRequest&, const Model::PutDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliveryChannelResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutEvaluationsRequest&, const Model::PutEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEvaluationsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::PutExternalEvaluationRequest&, const Model::PutExternalEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutExternalEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutOrganizationConfigRuleRequest&, const Model::PutOrganizationConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOrganizationConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutOrganizationConformancePackRequest&, const Model::PutOrganizationConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOrganizationConformancePackResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationConfigurationsRequest&, const Model::PutRemediationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationConfigurationsResponseReceivedHandler;
@@ -1700,9 +1705,6 @@ namespace Model
 
         /**
          * <p>Provides organization config rule deployment status for an organization.</p>
-         * <p>Only a master account and a delegated administrator account can call this
-         * API. When calling this API with a delegated administrator, you must ensure AWS
-         * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
          *  <p>The status is not considered successful until organization config rule
          * is successfully deployed in all the member accounts with an exception of
          * excluded accounts.</p> <p>When you specify the limit and the next token, you
@@ -1716,9 +1718,6 @@ namespace Model
 
         /**
          * <p>Provides organization config rule deployment status for an organization.</p>
-         * <p>Only a master account and a delegated administrator account can call this
-         * API. When calling this API with a delegated administrator, you must ensure AWS
-         * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
          *  <p>The status is not considered successful until organization config rule
          * is successfully deployed in all the member accounts with an exception of
          * excluded accounts.</p> <p>When you specify the limit and the next token, you
@@ -1734,9 +1733,6 @@ namespace Model
 
         /**
          * <p>Provides organization config rule deployment status for an organization.</p>
-         * <p>Only a master account and a delegated administrator account can call this
-         * API. When calling this API with a delegated administrator, you must ensure AWS
-         * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
          *  <p>The status is not considered successful until organization config rule
          * is successfully deployed in all the member accounts with an exception of
          * excluded accounts.</p> <p>When you specify the limit and the next token, you
@@ -1751,28 +1747,22 @@ namespace Model
         virtual void DescribeOrganizationConfigRuleStatusesAsync(const Model::DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of organization config rules. </p> <p>Only a master account
-         * and a delegated administrator account can call this API. When calling this API
-         * with a delegated administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.&#x2028;</p>
-         *  <p>When you specify the limit and the next token, you receive a paginated
-         * response. Limit and next token are not applicable if you specify organization
-         * config rule names. It is only applicable, when you request all the organization
-         * config rules.</p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of organization config rules. </p>  <p>When you specify
+         * the limit and the next token, you receive a paginated response. Limit and next
+         * token are not applicable if you specify organization config rule names. It is
+         * only applicable, when you request all the organization config rules.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConfigRulesOutcome DescribeOrganizationConfigRules(const Model::DescribeOrganizationConfigRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of organization config rules. </p> <p>Only a master account
-         * and a delegated administrator account can call this API. When calling this API
-         * with a delegated administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.&#x2028;</p>
-         *  <p>When you specify the limit and the next token, you receive a paginated
-         * response. Limit and next token are not applicable if you specify organization
-         * config rule names. It is only applicable, when you request all the organization
-         * config rules.</p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of organization config rules. </p>  <p>When you specify
+         * the limit and the next token, you receive a paginated response. Limit and next
+         * token are not applicable if you specify organization config rule names. It is
+         * only applicable, when you request all the organization config rules.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
          *
@@ -1781,14 +1771,11 @@ namespace Model
         virtual Model::DescribeOrganizationConfigRulesOutcomeCallable DescribeOrganizationConfigRulesCallable(const Model::DescribeOrganizationConfigRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of organization config rules. </p> <p>Only a master account
-         * and a delegated administrator account can call this API. When calling this API
-         * with a delegated administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.&#x2028;</p>
-         *  <p>When you specify the limit and the next token, you receive a paginated
-         * response. Limit and next token are not applicable if you specify organization
-         * config rule names. It is only applicable, when you request all the organization
-         * config rules.</p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of organization config rules. </p>  <p>When you specify
+         * the limit and the next token, you receive a paginated response. Limit and next
+         * token are not applicable if you specify organization config rule names. It is
+         * only applicable, when you request all the organization config rules.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
          *
@@ -1798,10 +1785,7 @@ namespace Model
 
         /**
          * <p>Provides organization conformance pack deployment status for an organization.
-         * </p> <p> Only a master account and a delegated administrator account can call
-         * this API. When calling this API with a delegated administrator, you must ensure
-         * AWS Organizations <code>ListDelegatedAdministrator</code> permissions are
-         * added.</p>  <p>The status is not considered successful until organization
+         * </p>  <p>The status is not considered successful until organization
          * conformance pack is successfully deployed in all the member accounts with an
          * exception of excluded accounts.</p> <p>When you specify the limit and the next
          * token, you receive a paginated response. Limit and next token are not applicable
@@ -1815,10 +1799,7 @@ namespace Model
 
         /**
          * <p>Provides organization conformance pack deployment status for an organization.
-         * </p> <p> Only a master account and a delegated administrator account can call
-         * this API. When calling this API with a delegated administrator, you must ensure
-         * AWS Organizations <code>ListDelegatedAdministrator</code> permissions are
-         * added.</p>  <p>The status is not considered successful until organization
+         * </p>  <p>The status is not considered successful until organization
          * conformance pack is successfully deployed in all the member accounts with an
          * exception of excluded accounts.</p> <p>When you specify the limit and the next
          * token, you receive a paginated response. Limit and next token are not applicable
@@ -1834,10 +1815,7 @@ namespace Model
 
         /**
          * <p>Provides organization conformance pack deployment status for an organization.
-         * </p> <p> Only a master account and a delegated administrator account can call
-         * this API. When calling this API with a delegated administrator, you must ensure
-         * AWS Organizations <code>ListDelegatedAdministrator</code> permissions are
-         * added.</p>  <p>The status is not considered successful until organization
+         * </p>  <p>The status is not considered successful until organization
          * conformance pack is successfully deployed in all the member accounts with an
          * exception of excluded accounts.</p> <p>When you specify the limit and the next
          * token, you receive a paginated response. Limit and next token are not applicable
@@ -1852,28 +1830,22 @@ namespace Model
         virtual void DescribeOrganizationConformancePackStatusesAsync(const Model::DescribeOrganizationConformancePackStatusesRequest& request, const DescribeOrganizationConformancePackStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of organization conformance packs. </p> <p>Only a master
-         * account and a delegated administrator account can call this API. When calling
-         * this API with a delegated administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.</p> 
-         * <p>When you specify the limit and the next token, you receive a paginated
-         * response. </p> <p>Limit and next token are not applicable if you specify
-         * organization conformance packs names. They are only applicable, when you request
-         * all the organization conformance packs. </p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of organization conformance packs. </p>  <p>When you
+         * specify the limit and the next token, you receive a paginated response. </p>
+         * <p>Limit and next token are not applicable if you specify organization
+         * conformance packs names. They are only applicable, when you request all the
+         * organization conformance packs. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConformancePacksOutcome DescribeOrganizationConformancePacks(const Model::DescribeOrganizationConformancePacksRequest& request) const;
 
         /**
-         * <p>Returns a list of organization conformance packs. </p> <p>Only a master
-         * account and a delegated administrator account can call this API. When calling
-         * this API with a delegated administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.</p> 
-         * <p>When you specify the limit and the next token, you receive a paginated
-         * response. </p> <p>Limit and next token are not applicable if you specify
-         * organization conformance packs names. They are only applicable, when you request
-         * all the organization conformance packs. </p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of organization conformance packs. </p>  <p>When you
+         * specify the limit and the next token, you receive a paginated response. </p>
+         * <p>Limit and next token are not applicable if you specify organization
+         * conformance packs names. They are only applicable, when you request all the
+         * organization conformance packs. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          *
@@ -1882,14 +1854,11 @@ namespace Model
         virtual Model::DescribeOrganizationConformancePacksOutcomeCallable DescribeOrganizationConformancePacksCallable(const Model::DescribeOrganizationConformancePacksRequest& request) const;
 
         /**
-         * <p>Returns a list of organization conformance packs. </p> <p>Only a master
-         * account and a delegated administrator account can call this API. When calling
-         * this API with a delegated administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.</p> 
-         * <p>When you specify the limit and the next token, you receive a paginated
-         * response. </p> <p>Limit and next token are not applicable if you specify
-         * organization conformance packs names. They are only applicable, when you request
-         * all the organization conformance packs. </p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of organization conformance packs. </p>  <p>When you
+         * specify the limit and the next token, you receive a paginated response. </p>
+         * <p>Limit and next token are not applicable if you specify organization
+         * conformance packs names. They are only applicable, when you request all the
+         * organization conformance packs. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          *
@@ -2505,11 +2474,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization config rule.</p> <p>Only a master account and a delegated
-         * administrator account can call this API. When calling this API with a delegated
-         * administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.</p><p><h3>See
-         * Also:</h3>   <a
+         * given organization config rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
          * API Reference</a></p>
          */
@@ -2517,11 +2482,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization config rule.</p> <p>Only a master account and a delegated
-         * administrator account can call this API. When calling this API with a delegated
-         * administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.</p><p><h3>See
-         * Also:</h3>   <a
+         * given organization config rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -2531,11 +2492,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization config rule.</p> <p>Only a master account and a delegated
-         * administrator account can call this API. When calling this API with a delegated
-         * administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.</p><p><h3>See
-         * Also:</h3>   <a
+         * given organization config rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -2545,11 +2502,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization conformance pack.</p> <p>Only a master account and a
-         * delegated administrator account can call this API. When calling this API with a
-         * delegated administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.</p><p><h3>See
-         * Also:</h3>   <a
+         * given organization conformance pack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">AWS
          * API Reference</a></p>
          */
@@ -2557,11 +2510,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization conformance pack.</p> <p>Only a master account and a
-         * delegated administrator account can call this API. When calling this API with a
-         * delegated administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.</p><p><h3>See
-         * Also:</h3>   <a
+         * given organization conformance pack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -2571,11 +2520,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization conformance pack.</p> <p>Only a master account and a
-         * delegated administrator account can call this API. When calling this API with a
-         * delegated administrator, you must ensure AWS Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added.</p><p><h3>See
-         * Also:</h3>   <a
+         * given organization conformance pack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -3150,6 +3095,25 @@ namespace Model
         virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::PutExternalEvaluationOutcome PutExternalEvaluation(const Model::PutExternalEvaluationRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutExternalEvaluationOutcomeCallable PutExternalEvaluationCallable(const Model::PutExternalEvaluationRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutExternalEvaluationAsync(const Model::PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or updates organization config rule for your entire organization
          * evaluating whether your AWS resources comply with your desired
          * configurations.</p> <p> Only a master account and a delegated administrator can
@@ -3356,8 +3320,11 @@ namespace Model
          * Config rule must already exist for you to add a remediation configuration. The
          * target (SSM document) must exist and have permissions to use the target. </p>
          *  <p>If you make backward incompatible changes to the SSM document, you
-         * must call this again to ensure the remediations can run.</p> <p><h3>See
-         * Also:</h3>   <a
+         * must call this again to ensure the remediations can run.</p> <p>This API does
+         * not support adding remediation configurations for service-linked AWS Config
+         * Rules such as Organization Config rules, the rules deployed by conformance
+         * packs, and rules deployed by AWS Security Hub.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">AWS
          * API Reference</a></p>
          */
@@ -3370,8 +3337,11 @@ namespace Model
          * Config rule must already exist for you to add a remediation configuration. The
          * target (SSM document) must exist and have permissions to use the target. </p>
          *  <p>If you make backward incompatible changes to the SSM document, you
-         * must call this again to ensure the remediations can run.</p> <p><h3>See
-         * Also:</h3>   <a
+         * must call this again to ensure the remediations can run.</p> <p>This API does
+         * not support adding remediation configurations for service-linked AWS Config
+         * Rules such as Organization Config rules, the rules deployed by conformance
+         * packs, and rules deployed by AWS Security Hub.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3386,8 +3356,11 @@ namespace Model
          * Config rule must already exist for you to add a remediation configuration. The
          * target (SSM document) must exist and have permissions to use the target. </p>
          *  <p>If you make backward incompatible changes to the SSM document, you
-         * must call this again to ensure the remediations can run.</p> <p><h3>See
-         * Also:</h3>   <a
+         * must call this again to ensure the remediations can run.</p> <p>This API does
+         * not support adding remediation configurations for service-linked AWS Config
+         * Rules such as Organization Config rules, the rules deployed by conformance
+         * packs, and rules deployed by AWS Security Hub.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3397,7 +3370,7 @@ namespace Model
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
-         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * for auto-remediation. This API adds a new exception or updates an existing
          * exception for a specific resource with a specific AWS Config rule. </p> 
          * <p>AWS Config generates a remediation exception when a problem occurs executing
          * a remediation action to a specific resource. Remediation exceptions blocks
@@ -3410,7 +3383,7 @@ namespace Model
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
-         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * for auto-remediation. This API adds a new exception or updates an existing
          * exception for a specific resource with a specific AWS Config rule. </p> 
          * <p>AWS Config generates a remediation exception when a problem occurs executing
          * a remediation action to a specific resource. Remediation exceptions blocks
@@ -3425,7 +3398,7 @@ namespace Model
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
-         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * for auto-remediation. This API adds a new exception or updates an existing
          * exception for a specific resource with a specific AWS Config rule. </p> 
          * <p>AWS Config generates a remediation exception when a problem occurs executing
          * a remediation action to a specific resource. Remediation exceptions blocks
@@ -3943,6 +3916,7 @@ namespace Model
         void PutConformancePackAsyncHelper(const Model::PutConformancePackRequest& request, const PutConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDeliveryChannelAsyncHelper(const Model::PutDeliveryChannelRequest& request, const PutDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEvaluationsAsyncHelper(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutExternalEvaluationAsyncHelper(const Model::PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutOrganizationConfigRuleAsyncHelper(const Model::PutOrganizationConfigRuleRequest& request, const PutOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutOrganizationConformancePackAsyncHelper(const Model::PutOrganizationConformancePackRequest& request, const PutOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRemediationConfigurationsAsyncHelper(const Model::PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

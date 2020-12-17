@@ -12,28 +12,35 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/ActivateKeySigningKeyResult.h>
 #include <aws/route53/model/AssociateVPCWithHostedZoneResult.h>
 #include <aws/route53/model/ChangeResourceRecordSetsResult.h>
 #include <aws/route53/model/ChangeTagsForResourceResult.h>
 #include <aws/route53/model/CreateHealthCheckResult.h>
 #include <aws/route53/model/CreateHostedZoneResult.h>
+#include <aws/route53/model/CreateKeySigningKeyResult.h>
 #include <aws/route53/model/CreateQueryLoggingConfigResult.h>
 #include <aws/route53/model/CreateReusableDelegationSetResult.h>
 #include <aws/route53/model/CreateTrafficPolicyResult.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/CreateTrafficPolicyVersionResult.h>
 #include <aws/route53/model/CreateVPCAssociationAuthorizationResult.h>
+#include <aws/route53/model/DeactivateKeySigningKeyResult.h>
 #include <aws/route53/model/DeleteHealthCheckResult.h>
 #include <aws/route53/model/DeleteHostedZoneResult.h>
+#include <aws/route53/model/DeleteKeySigningKeyResult.h>
 #include <aws/route53/model/DeleteQueryLoggingConfigResult.h>
 #include <aws/route53/model/DeleteReusableDelegationSetResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/DeleteVPCAssociationAuthorizationResult.h>
+#include <aws/route53/model/DisableHostedZoneDNSSECResult.h>
 #include <aws/route53/model/DisassociateVPCFromHostedZoneResult.h>
+#include <aws/route53/model/EnableHostedZoneDNSSECResult.h>
 #include <aws/route53/model/GetAccountLimitResult.h>
 #include <aws/route53/model/GetChangeResult.h>
 #include <aws/route53/model/GetCheckerIpRangesResult.h>
+#include <aws/route53/model/GetDNSSECResult.h>
 #include <aws/route53/model/GetGeoLocationResult.h>
 #include <aws/route53/model/GetHealthCheckResult.h>
 #include <aws/route53/model/GetHealthCheckCountResult.h>
@@ -114,28 +121,35 @@ namespace Route53
 
 namespace Model
 {
+        class ActivateKeySigningKeyRequest;
         class AssociateVPCWithHostedZoneRequest;
         class ChangeResourceRecordSetsRequest;
         class ChangeTagsForResourceRequest;
         class CreateHealthCheckRequest;
         class CreateHostedZoneRequest;
+        class CreateKeySigningKeyRequest;
         class CreateQueryLoggingConfigRequest;
         class CreateReusableDelegationSetRequest;
         class CreateTrafficPolicyRequest;
         class CreateTrafficPolicyInstanceRequest;
         class CreateTrafficPolicyVersionRequest;
         class CreateVPCAssociationAuthorizationRequest;
+        class DeactivateKeySigningKeyRequest;
         class DeleteHealthCheckRequest;
         class DeleteHostedZoneRequest;
+        class DeleteKeySigningKeyRequest;
         class DeleteQueryLoggingConfigRequest;
         class DeleteReusableDelegationSetRequest;
         class DeleteTrafficPolicyRequest;
         class DeleteTrafficPolicyInstanceRequest;
         class DeleteVPCAssociationAuthorizationRequest;
+        class DisableHostedZoneDNSSECRequest;
         class DisassociateVPCFromHostedZoneRequest;
+        class EnableHostedZoneDNSSECRequest;
         class GetAccountLimitRequest;
         class GetChangeRequest;
         class GetCheckerIpRangesRequest;
+        class GetDNSSECRequest;
         class GetGeoLocationRequest;
         class GetHealthCheckRequest;
         class GetHealthCheckCountRequest;
@@ -172,28 +186,35 @@ namespace Model
         class UpdateTrafficPolicyCommentRequest;
         class UpdateTrafficPolicyInstanceRequest;
 
+        typedef Aws::Utils::Outcome<ActivateKeySigningKeyResult, Route53Error> ActivateKeySigningKeyOutcome;
         typedef Aws::Utils::Outcome<AssociateVPCWithHostedZoneResult, Route53Error> AssociateVPCWithHostedZoneOutcome;
         typedef Aws::Utils::Outcome<ChangeResourceRecordSetsResult, Route53Error> ChangeResourceRecordSetsOutcome;
         typedef Aws::Utils::Outcome<ChangeTagsForResourceResult, Route53Error> ChangeTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<CreateHealthCheckResult, Route53Error> CreateHealthCheckOutcome;
         typedef Aws::Utils::Outcome<CreateHostedZoneResult, Route53Error> CreateHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<CreateKeySigningKeyResult, Route53Error> CreateKeySigningKeyOutcome;
         typedef Aws::Utils::Outcome<CreateQueryLoggingConfigResult, Route53Error> CreateQueryLoggingConfigOutcome;
         typedef Aws::Utils::Outcome<CreateReusableDelegationSetResult, Route53Error> CreateReusableDelegationSetOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficPolicyResult, Route53Error> CreateTrafficPolicyOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficPolicyInstanceResult, Route53Error> CreateTrafficPolicyInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficPolicyVersionResult, Route53Error> CreateTrafficPolicyVersionOutcome;
         typedef Aws::Utils::Outcome<CreateVPCAssociationAuthorizationResult, Route53Error> CreateVPCAssociationAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<DeactivateKeySigningKeyResult, Route53Error> DeactivateKeySigningKeyOutcome;
         typedef Aws::Utils::Outcome<DeleteHealthCheckResult, Route53Error> DeleteHealthCheckOutcome;
         typedef Aws::Utils::Outcome<DeleteHostedZoneResult, Route53Error> DeleteHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<DeleteKeySigningKeyResult, Route53Error> DeleteKeySigningKeyOutcome;
         typedef Aws::Utils::Outcome<DeleteQueryLoggingConfigResult, Route53Error> DeleteQueryLoggingConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteReusableDelegationSetResult, Route53Error> DeleteReusableDelegationSetOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficPolicyResult, Route53Error> DeleteTrafficPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficPolicyInstanceResult, Route53Error> DeleteTrafficPolicyInstanceOutcome;
         typedef Aws::Utils::Outcome<DeleteVPCAssociationAuthorizationResult, Route53Error> DeleteVPCAssociationAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<DisableHostedZoneDNSSECResult, Route53Error> DisableHostedZoneDNSSECOutcome;
         typedef Aws::Utils::Outcome<DisassociateVPCFromHostedZoneResult, Route53Error> DisassociateVPCFromHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<EnableHostedZoneDNSSECResult, Route53Error> EnableHostedZoneDNSSECOutcome;
         typedef Aws::Utils::Outcome<GetAccountLimitResult, Route53Error> GetAccountLimitOutcome;
         typedef Aws::Utils::Outcome<GetChangeResult, Route53Error> GetChangeOutcome;
         typedef Aws::Utils::Outcome<GetCheckerIpRangesResult, Route53Error> GetCheckerIpRangesOutcome;
+        typedef Aws::Utils::Outcome<GetDNSSECResult, Route53Error> GetDNSSECOutcome;
         typedef Aws::Utils::Outcome<GetGeoLocationResult, Route53Error> GetGeoLocationOutcome;
         typedef Aws::Utils::Outcome<GetHealthCheckResult, Route53Error> GetHealthCheckOutcome;
         typedef Aws::Utils::Outcome<GetHealthCheckCountResult, Route53Error> GetHealthCheckCountOutcome;
@@ -230,28 +251,35 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateTrafficPolicyCommentResult, Route53Error> UpdateTrafficPolicyCommentOutcome;
         typedef Aws::Utils::Outcome<UpdateTrafficPolicyInstanceResult, Route53Error> UpdateTrafficPolicyInstanceOutcome;
 
+        typedef std::future<ActivateKeySigningKeyOutcome> ActivateKeySigningKeyOutcomeCallable;
         typedef std::future<AssociateVPCWithHostedZoneOutcome> AssociateVPCWithHostedZoneOutcomeCallable;
         typedef std::future<ChangeResourceRecordSetsOutcome> ChangeResourceRecordSetsOutcomeCallable;
         typedef std::future<ChangeTagsForResourceOutcome> ChangeTagsForResourceOutcomeCallable;
         typedef std::future<CreateHealthCheckOutcome> CreateHealthCheckOutcomeCallable;
         typedef std::future<CreateHostedZoneOutcome> CreateHostedZoneOutcomeCallable;
+        typedef std::future<CreateKeySigningKeyOutcome> CreateKeySigningKeyOutcomeCallable;
         typedef std::future<CreateQueryLoggingConfigOutcome> CreateQueryLoggingConfigOutcomeCallable;
         typedef std::future<CreateReusableDelegationSetOutcome> CreateReusableDelegationSetOutcomeCallable;
         typedef std::future<CreateTrafficPolicyOutcome> CreateTrafficPolicyOutcomeCallable;
         typedef std::future<CreateTrafficPolicyInstanceOutcome> CreateTrafficPolicyInstanceOutcomeCallable;
         typedef std::future<CreateTrafficPolicyVersionOutcome> CreateTrafficPolicyVersionOutcomeCallable;
         typedef std::future<CreateVPCAssociationAuthorizationOutcome> CreateVPCAssociationAuthorizationOutcomeCallable;
+        typedef std::future<DeactivateKeySigningKeyOutcome> DeactivateKeySigningKeyOutcomeCallable;
         typedef std::future<DeleteHealthCheckOutcome> DeleteHealthCheckOutcomeCallable;
         typedef std::future<DeleteHostedZoneOutcome> DeleteHostedZoneOutcomeCallable;
+        typedef std::future<DeleteKeySigningKeyOutcome> DeleteKeySigningKeyOutcomeCallable;
         typedef std::future<DeleteQueryLoggingConfigOutcome> DeleteQueryLoggingConfigOutcomeCallable;
         typedef std::future<DeleteReusableDelegationSetOutcome> DeleteReusableDelegationSetOutcomeCallable;
         typedef std::future<DeleteTrafficPolicyOutcome> DeleteTrafficPolicyOutcomeCallable;
         typedef std::future<DeleteTrafficPolicyInstanceOutcome> DeleteTrafficPolicyInstanceOutcomeCallable;
         typedef std::future<DeleteVPCAssociationAuthorizationOutcome> DeleteVPCAssociationAuthorizationOutcomeCallable;
+        typedef std::future<DisableHostedZoneDNSSECOutcome> DisableHostedZoneDNSSECOutcomeCallable;
         typedef std::future<DisassociateVPCFromHostedZoneOutcome> DisassociateVPCFromHostedZoneOutcomeCallable;
+        typedef std::future<EnableHostedZoneDNSSECOutcome> EnableHostedZoneDNSSECOutcomeCallable;
         typedef std::future<GetAccountLimitOutcome> GetAccountLimitOutcomeCallable;
         typedef std::future<GetChangeOutcome> GetChangeOutcomeCallable;
         typedef std::future<GetCheckerIpRangesOutcome> GetCheckerIpRangesOutcomeCallable;
+        typedef std::future<GetDNSSECOutcome> GetDNSSECOutcomeCallable;
         typedef std::future<GetGeoLocationOutcome> GetGeoLocationOutcomeCallable;
         typedef std::future<GetHealthCheckOutcome> GetHealthCheckOutcomeCallable;
         typedef std::future<GetHealthCheckCountOutcome> GetHealthCheckCountOutcomeCallable;
@@ -291,28 +319,35 @@ namespace Model
 
   class Route53Client;
 
+    typedef std::function<void(const Route53Client*, const Model::ActivateKeySigningKeyRequest&, const Model::ActivateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateKeySigningKeyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::AssociateVPCWithHostedZoneRequest&, const Model::AssociateVPCWithHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVPCWithHostedZoneResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ChangeResourceRecordSetsRequest&, const Model::ChangeResourceRecordSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeResourceRecordSetsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ChangeTagsForResourceRequest&, const Model::ChangeTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateHealthCheckRequest&, const Model::CreateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateHostedZoneRequest&, const Model::CreateHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::CreateKeySigningKeyRequest&, const Model::CreateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeySigningKeyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateQueryLoggingConfigRequest&, const Model::CreateQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueryLoggingConfigResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateReusableDelegationSetRequest&, const Model::CreateReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReusableDelegationSetResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyRequest&, const Model::CreateTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyInstanceRequest&, const Model::CreateTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyInstanceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyVersionRequest&, const Model::CreateTrafficPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyVersionResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateVPCAssociationAuthorizationRequest&, const Model::CreateVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCAssociationAuthorizationResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::DeactivateKeySigningKeyRequest&, const Model::DeactivateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateKeySigningKeyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHealthCheckRequest&, const Model::DeleteHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHostedZoneRequest&, const Model::DeleteHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::DeleteKeySigningKeyRequest&, const Model::DeleteKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeySigningKeyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteQueryLoggingConfigRequest&, const Model::DeleteQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueryLoggingConfigResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteReusableDelegationSetRequest&, const Model::DeleteReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReusableDelegationSetResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyRequest&, const Model::DeleteTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyInstanceRequest&, const Model::DeleteTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyInstanceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteVPCAssociationAuthorizationRequest&, const Model::DeleteVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVPCAssociationAuthorizationResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::DisableHostedZoneDNSSECRequest&, const Model::DisableHostedZoneDNSSECOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableHostedZoneDNSSECResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DisassociateVPCFromHostedZoneRequest&, const Model::DisassociateVPCFromHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVPCFromHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::EnableHostedZoneDNSSECRequest&, const Model::EnableHostedZoneDNSSECOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableHostedZoneDNSSECResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetAccountLimitRequest&, const Model::GetAccountLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountLimitResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetChangeRequest&, const Model::GetChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetCheckerIpRangesRequest&, const Model::GetCheckerIpRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCheckerIpRangesResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::GetDNSSECRequest&, const Model::GetDNSSECOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDNSSECResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetGeoLocationRequest&, const Model::GetGeoLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeoLocationResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetHealthCheckRequest&, const Model::GetHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetHealthCheckCountRequest&, const Model::GetHealthCheckCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckCountResponseReceivedHandler;
@@ -379,6 +414,37 @@ namespace Model
 
         virtual ~Route53Client();
 
+
+        /**
+         * <p>Activates a key signing key (KSK) so that it can be used for signing by
+         * DNSSEC. This operation changes the KSK status to
+         * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ActivateKeySigningKeyOutcome ActivateKeySigningKey(const Model::ActivateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Activates a key signing key (KSK) so that it can be used for signing by
+         * DNSSEC. This operation changes the KSK status to
+         * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ActivateKeySigningKeyOutcomeCallable ActivateKeySigningKeyCallable(const Model::ActivateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Activates a key signing key (KSK) so that it can be used for signing by
+         * DNSSEC. This operation changes the KSK status to
+         * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ActivateKeySigningKeyAsync(const Model::ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
@@ -882,6 +948,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateHostedZoneAsync(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new key signing key (KSK) associated with a hosted zone. You can
+         * only have two KSKs per hosted zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateKeySigningKeyOutcome CreateKeySigningKey(const Model::CreateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Creates a new key signing key (KSK) associated with a hosted zone. You can
+         * only have two KSKs per hosted zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateKeySigningKeyOutcomeCallable CreateKeySigningKeyCallable(const Model::CreateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Creates a new key signing key (KSK) associated with a hosted zone. You can
+         * only have two KSKs per hosted zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateKeySigningKeyAsync(const Model::CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a configuration for DNS query logging. After you create a query
@@ -1403,6 +1497,37 @@ namespace Model
         virtual void CreateVPCAssociationAuthorizationAsync(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deactivates a key signing key (KSK) so that it will not be used for signing
+         * by DNSSEC. This operation changes the KSK status to
+         * <code>INACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeactivateKeySigningKeyOutcome DeactivateKeySigningKey(const Model::DeactivateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Deactivates a key signing key (KSK) so that it will not be used for signing
+         * by DNSSEC. This operation changes the KSK status to
+         * <code>INACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeactivateKeySigningKeyOutcomeCallable DeactivateKeySigningKeyCallable(const Model::DeactivateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Deactivates a key signing key (KSK) so that it will not be used for signing
+         * by DNSSEC. This operation changes the KSK status to
+         * <code>INACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeactivateKeySigningKeyAsync(const Model::DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
          * you from deleting a health check even if the health check is associated with one
          * or more resource record sets. If you delete a health check and you don't update
@@ -1601,6 +1726,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHostedZoneAsync(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a key signing key (KSK). Before you can delete a KSK, you must
+         * deactivate it. The KSK must be deactived before you can delete it regardless of
+         * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKeySigningKeyOutcome DeleteKeySigningKey(const Model::DeleteKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Deletes a key signing key (KSK). Before you can delete a KSK, you must
+         * deactivate it. The KSK must be deactived before you can delete it regardless of
+         * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteKeySigningKeyOutcomeCallable DeleteKeySigningKeyCallable(const Model::DeleteKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Deletes a key signing key (KSK). Before you can delete a KSK, you must
+         * deactivate it. The KSK must be deactived before you can delete it regardless of
+         * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteKeySigningKeyAsync(const Model::DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a configuration for DNS query logging. If you delete a configuration,
@@ -1827,6 +1986,37 @@ namespace Model
         virtual void DeleteVPCAssociationAuthorizationAsync(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
+         * deactivate any key signing keys (KSKs) that are active in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableHostedZoneDNSSECOutcome DisableHostedZoneDNSSEC(const Model::DisableHostedZoneDNSSECRequest& request) const;
+
+        /**
+         * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
+         * deactivate any key signing keys (KSKs) that are active in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableHostedZoneDNSSECOutcomeCallable DisableHostedZoneDNSSECCallable(const Model::DisableHostedZoneDNSSECRequest& request) const;
+
+        /**
+         * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
+         * deactivate any key signing keys (KSKs) that are active in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableHostedZoneDNSSECAsync(const Model::DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon
          * Route 53 private hosted zone. Note the following:</p> <ul> <li> <p>You can't
          * disassociate the last Amazon VPC from a private hosted zone.</p> </li> <li>
@@ -1901,6 +2091,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateVPCFromHostedZoneAsync(const Model::DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enables DNSSEC signing in a specific hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableHostedZoneDNSSECOutcome EnableHostedZoneDNSSEC(const Model::EnableHostedZoneDNSSECRequest& request) const;
+
+        /**
+         * <p>Enables DNSSEC signing in a specific hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableHostedZoneDNSSECOutcomeCallable EnableHostedZoneDNSSECCallable(const Model::EnableHostedZoneDNSSECRequest& request) const;
+
+        /**
+         * <p>Enables DNSSEC signing in a specific hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableHostedZoneDNSSECAsync(const Model::EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified limit for the current account, for example, the maximum
@@ -2039,6 +2257,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCheckerIpRangesAsync(const Model::GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about DNSSEC for a specific hosted zone, including the
+         * key signing keys (KSKs) and zone signing keys (ZSKs) in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDNSSECOutcome GetDNSSEC(const Model::GetDNSSECRequest& request) const;
+
+        /**
+         * <p>Returns information about DNSSEC for a specific hosted zone, including the
+         * key signing keys (KSKs) and zone signing keys (ZSKs) in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDNSSECOutcomeCallable GetDNSSECCallable(const Model::GetDNSSECRequest& request) const;
+
+        /**
+         * <p>Returns information about DNSSEC for a specific hosted zone, including the
+         * key signing keys (KSKs) and zone signing keys (ZSKs) in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDNSSECAsync(const Model::GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about whether a specified geographic location is supported
@@ -3582,28 +3831,35 @@ namespace Model
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void ActivateKeySigningKeyAsyncHelper(const Model::ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateVPCWithHostedZoneAsyncHelper(const Model::AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ChangeResourceRecordSetsAsyncHelper(const Model::ChangeResourceRecordSetsRequest& request, const ChangeResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ChangeTagsForResourceAsyncHelper(const Model::ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHealthCheckAsyncHelper(const Model::CreateHealthCheckRequest& request, const CreateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHostedZoneAsyncHelper(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateKeySigningKeyAsyncHelper(const Model::CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateQueryLoggingConfigAsyncHelper(const Model::CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReusableDelegationSetAsyncHelper(const Model::CreateReusableDelegationSetRequest& request, const CreateReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyAsyncHelper(const Model::CreateTrafficPolicyRequest& request, const CreateTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyInstanceAsyncHelper(const Model::CreateTrafficPolicyInstanceRequest& request, const CreateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyVersionAsyncHelper(const Model::CreateTrafficPolicyVersionRequest& request, const CreateTrafficPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVPCAssociationAuthorizationAsyncHelper(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeactivateKeySigningKeyAsyncHelper(const Model::DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHealthCheckAsyncHelper(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHostedZoneAsyncHelper(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteKeySigningKeyAsyncHelper(const Model::DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQueryLoggingConfigAsyncHelper(const Model::DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReusableDelegationSetAsyncHelper(const Model::DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficPolicyAsyncHelper(const Model::DeleteTrafficPolicyRequest& request, const DeleteTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficPolicyInstanceAsyncHelper(const Model::DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVPCAssociationAuthorizationAsyncHelper(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableHostedZoneDNSSECAsyncHelper(const Model::DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVPCFromHostedZoneAsyncHelper(const Model::DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableHostedZoneDNSSECAsyncHelper(const Model::EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountLimitAsyncHelper(const Model::GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangeAsyncHelper(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCheckerIpRangesAsyncHelper(const Model::GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDNSSECAsyncHelper(const Model::GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGeoLocationAsyncHelper(const Model::GetGeoLocationRequest& request, const GetGeoLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHealthCheckAsyncHelper(const Model::GetHealthCheckRequest& request, const GetHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHealthCheckCountAsyncHelper(const Model::GetHealthCheckCountRequest& request, const GetHealthCheckCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -180,6 +180,47 @@ namespace Model
      */
     inline TagOptionDetail& WithId(const char* value) { SetId(value); return *this;}
 
+
+    /**
+     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     */
+    inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     */
+    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    /**
+     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     */
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
+
+    /**
+     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     */
+    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
+
+    /**
+     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     */
+    inline TagOptionDetail& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
+
+    /**
+     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     */
+    inline TagOptionDetail& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     */
+    inline TagOptionDetail& WithOwner(const char* value) { SetOwner(value); return *this;}
+
   private:
 
     Aws::String m_key;
@@ -193,6 +234,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    Aws::String m_owner;
+    bool m_ownerHasBeenSet;
   };
 
 } // namespace Model

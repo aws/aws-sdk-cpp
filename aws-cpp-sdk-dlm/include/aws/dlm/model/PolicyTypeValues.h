@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     EBS_SNAPSHOT_MANAGEMENT,
-    IMAGE_MANAGEMENT
+    IMAGE_MANAGEMENT,
+    EVENT_BASED_POLICY
   };
 
 namespace PolicyTypeValuesMapper

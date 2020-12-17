@@ -75,7 +75,7 @@ namespace Model
      * are rebooted when the lifecycle policy runs. <code>true</code> indicates that
      * targeted instances are not rebooted when the policy runs. <code>false</code>
      * indicates that target instances are rebooted when the policy runs. The default
-     * is <code>true</code> (instance are not rebooted).</p>
+     * is <code>true</code> (instances are not rebooted).</p>
      */
     inline bool GetNoReboot() const{ return m_noReboot; }
 
@@ -84,7 +84,7 @@ namespace Model
      * are rebooted when the lifecycle policy runs. <code>true</code> indicates that
      * targeted instances are not rebooted when the policy runs. <code>false</code>
      * indicates that target instances are rebooted when the policy runs. The default
-     * is <code>true</code> (instance are not rebooted).</p>
+     * is <code>true</code> (instances are not rebooted).</p>
      */
     inline bool NoRebootHasBeenSet() const { return m_noRebootHasBeenSet; }
 
@@ -93,7 +93,7 @@ namespace Model
      * are rebooted when the lifecycle policy runs. <code>true</code> indicates that
      * targeted instances are not rebooted when the policy runs. <code>false</code>
      * indicates that target instances are rebooted when the policy runs. The default
-     * is <code>true</code> (instance are not rebooted).</p>
+     * is <code>true</code> (instances are not rebooted).</p>
      */
     inline void SetNoReboot(bool value) { m_noRebootHasBeenSet = true; m_noReboot = value; }
 
@@ -102,7 +102,7 @@ namespace Model
      * are rebooted when the lifecycle policy runs. <code>true</code> indicates that
      * targeted instances are not rebooted when the policy runs. <code>false</code>
      * indicates that target instances are rebooted when the policy runs. The default
-     * is <code>true</code> (instance are not rebooted).</p>
+     * is <code>true</code> (instances are not rebooted).</p>
      */
     inline Parameters& WithNoReboot(bool value) { SetNoReboot(value); return *this;}
 

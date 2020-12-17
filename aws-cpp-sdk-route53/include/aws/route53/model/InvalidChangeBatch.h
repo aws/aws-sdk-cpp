@@ -41,47 +41,47 @@ namespace Model
 
 
     /**
-     * <p>Descriptive message for the error response.</p>
+     * <p/>
      */
     inline const Aws::Vector<Aws::String>& GetMessages() const{ return m_messages; }
 
     /**
-     * <p>Descriptive message for the error response.</p>
+     * <p/>
      */
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
 
     /**
-     * <p>Descriptive message for the error response.</p>
+     * <p/>
      */
     inline void SetMessages(const Aws::Vector<Aws::String>& value) { m_messagesHasBeenSet = true; m_messages = value; }
 
     /**
-     * <p>Descriptive message for the error response.</p>
+     * <p/>
      */
     inline void SetMessages(Aws::Vector<Aws::String>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
 
     /**
-     * <p>Descriptive message for the error response.</p>
+     * <p/>
      */
     inline InvalidChangeBatch& WithMessages(const Aws::Vector<Aws::String>& value) { SetMessages(value); return *this;}
 
     /**
-     * <p>Descriptive message for the error response.</p>
+     * <p/>
      */
     inline InvalidChangeBatch& WithMessages(Aws::Vector<Aws::String>&& value) { SetMessages(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive message for the error response.</p>
+     * <p/>
      */
     inline InvalidChangeBatch& AddMessages(const Aws::String& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
 
     /**
-     * <p>Descriptive message for the error response.</p>
+     * <p/>
      */
     inline InvalidChangeBatch& AddMessages(Aws::String&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Descriptive message for the error response.</p>
+     * <p/>
      */
     inline InvalidChangeBatch& AddMessages(const char* value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
 

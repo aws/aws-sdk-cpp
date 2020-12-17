@@ -38,6 +38,8 @@ namespace Aws
         static const int ContentBasedDeduplication_HASH = HashingUtils::HashString("ContentBasedDeduplication");
         static const int KmsMasterKeyId_HASH = HashingUtils::HashString("KmsMasterKeyId");
         static const int KmsDataKeyReusePeriodSeconds_HASH = HashingUtils::HashString("KmsDataKeyReusePeriodSeconds");
+        static const int DeduplicationScope_HASH = HashingUtils::HashString("DeduplicationScope");
+        static const int FifoThroughputLimit_HASH = HashingUtils::HashString("FifoThroughputLimit");
         static const int SentTimestamp_HASH = HashingUtils::HashString("SentTimestamp");
         static const int ApproximateFirstReceiveTimestamp_HASH = HashingUtils::HashString("ApproximateFirstReceiveTimestamp");
         static const int ApproximateReceiveCount_HASH = HashingUtils::HashString("ApproximateReceiveCount");
@@ -119,6 +121,14 @@ namespace Aws
           {
             return QueueAttributeName::KmsDataKeyReusePeriodSeconds;
           }
+          else if (hashCode == DeduplicationScope_HASH)
+          {
+            return QueueAttributeName::DeduplicationScope;
+          }
+          else if (hashCode == FifoThroughputLimit_HASH)
+          {
+            return QueueAttributeName::FifoThroughputLimit;
+          }
           else if (hashCode == SentTimestamp_HASH)
           {
             return QueueAttributeName::SentTimestamp;
@@ -185,6 +195,10 @@ namespace Aws
             return "KmsMasterKeyId";
           case QueueAttributeName::KmsDataKeyReusePeriodSeconds:
             return "KmsDataKeyReusePeriodSeconds";
+          case QueueAttributeName::DeduplicationScope:
+            return "DeduplicationScope";
+          case QueueAttributeName::FifoThroughputLimit:
+            return "FifoThroughputLimit";
           case QueueAttributeName::SentTimestamp:
             return "SentTimestamp";
           case QueueAttributeName::ApproximateFirstReceiveTimestamp:

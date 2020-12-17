@@ -343,42 +343,50 @@ namespace Model
 
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline const Aws::String& GetSupportUrl() const{ return m_supportUrl; }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline bool SupportUrlHasBeenSet() const { return m_supportUrlHasBeenSet; }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline void SetSupportUrl(const Aws::String& value) { m_supportUrlHasBeenSet = true; m_supportUrl = value; }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline void SetSupportUrl(Aws::String&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = std::move(value); }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline void SetSupportUrl(const char* value) { m_supportUrlHasBeenSet = true; m_supportUrl.assign(value); }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline CreateProductRequest& WithSupportUrl(const Aws::String& value) { SetSupportUrl(value); return *this;}
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline CreateProductRequest& WithSupportUrl(Aws::String&& value) { SetSupportUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline CreateProductRequest& WithSupportUrl(const char* value) { SetSupportUrl(value); return *this;}
 
@@ -456,38 +464,32 @@ namespace Model
 
 
     /**
-     * <p>The configuration of the provisioning artifact. The <code>info</code> field
-     * accepts <code>ImportFromPhysicalID</code>.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline const ProvisioningArtifactProperties& GetProvisioningArtifactParameters() const{ return m_provisioningArtifactParameters; }
 
     /**
-     * <p>The configuration of the provisioning artifact. The <code>info</code> field
-     * accepts <code>ImportFromPhysicalID</code>.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline bool ProvisioningArtifactParametersHasBeenSet() const { return m_provisioningArtifactParametersHasBeenSet; }
 
     /**
-     * <p>The configuration of the provisioning artifact. The <code>info</code> field
-     * accepts <code>ImportFromPhysicalID</code>.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline void SetProvisioningArtifactParameters(const ProvisioningArtifactProperties& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = value; }
 
     /**
-     * <p>The configuration of the provisioning artifact. The <code>info</code> field
-     * accepts <code>ImportFromPhysicalID</code>.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline void SetProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = std::move(value); }
 
     /**
-     * <p>The configuration of the provisioning artifact. The <code>info</code> field
-     * accepts <code>ImportFromPhysicalID</code>.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline CreateProductRequest& WithProvisioningArtifactParameters(const ProvisioningArtifactProperties& value) { SetProvisioningArtifactParameters(value); return *this;}
 
     /**
-     * <p>The configuration of the provisioning artifact. The <code>info</code> field
-     * accepts <code>ImportFromPhysicalID</code>.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline CreateProductRequest& WithProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { SetProvisioningArtifactParameters(std::move(value)); return *this;}
 

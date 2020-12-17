@@ -21,14 +21,18 @@ namespace Model
 AliasListEntry::AliasListEntry() : 
     m_aliasNameHasBeenSet(false),
     m_aliasArnHasBeenSet(false),
-    m_targetKeyIdHasBeenSet(false)
+    m_targetKeyIdHasBeenSet(false),
+    m_creationDateHasBeenSet(false),
+    m_lastUpdatedDateHasBeenSet(false)
 {
 }
 
 AliasListEntry::AliasListEntry(JsonView jsonValue) : 
     m_aliasNameHasBeenSet(false),
     m_aliasArnHasBeenSet(false),
-    m_targetKeyIdHasBeenSet(false)
+    m_targetKeyIdHasBeenSet(false),
+    m_creationDateHasBeenSet(false),
+    m_lastUpdatedDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,20 @@ AliasListEntry& AliasListEntry::operator =(JsonView jsonValue)
     m_targetKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreationDate"))
+  {
+    m_creationDate = jsonValue.GetDouble("CreationDate");
+
+    m_creationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastUpdatedDate"))
+  {
+    m_lastUpdatedDate = jsonValue.GetDouble("LastUpdatedDate");
+
+    m_lastUpdatedDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +97,16 @@ JsonValue AliasListEntry::Jsonize() const
   {
    payload.WithString("TargetKeyId", m_targetKeyId);
 
+  }
+
+  if(m_creationDateHasBeenSet)
+  {
+   payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_lastUpdatedDateHasBeenSet)
+  {
+   payload.WithDouble("LastUpdatedDate", m_lastUpdatedDate.SecondsWithMSPrecision());
   }
 
   return payload;

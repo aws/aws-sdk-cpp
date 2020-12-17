@@ -84,6 +84,7 @@
 #include <aws/config/model/PutConformancePackRequest.h>
 #include <aws/config/model/PutDeliveryChannelRequest.h>
 #include <aws/config/model/PutEvaluationsRequest.h>
+#include <aws/config/model/PutExternalEvaluationRequest.h>
 #include <aws/config/model/PutOrganizationConfigRuleRequest.h>
 #include <aws/config/model/PutOrganizationConformancePackRequest.h>
 #include <aws/config/model/PutRemediationConfigurationsRequest.h>
@@ -1923,6 +1924,33 @@ void ConfigServiceClient::PutEvaluationsAsync(const PutEvaluationsRequest& reque
 void ConfigServiceClient::PutEvaluationsAsyncHelper(const PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEvaluations(request), context);
+}
+
+PutExternalEvaluationOutcome ConfigServiceClient::PutExternalEvaluation(const PutExternalEvaluationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutExternalEvaluationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutExternalEvaluationOutcomeCallable ConfigServiceClient::PutExternalEvaluationCallable(const PutExternalEvaluationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutExternalEvaluationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutExternalEvaluation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::PutExternalEvaluationAsync(const PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutExternalEvaluationAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::PutExternalEvaluationAsyncHelper(const PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutExternalEvaluation(request), context);
 }
 
 PutOrganizationConfigRuleOutcome ConfigServiceClient::PutOrganizationConfigRule(const PutOrganizationConfigRuleRequest& request) const

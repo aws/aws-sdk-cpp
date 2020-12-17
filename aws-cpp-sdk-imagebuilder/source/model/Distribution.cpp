@@ -21,6 +21,7 @@ namespace Model
 Distribution::Distribution() : 
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
+    m_containerDistributionConfigurationHasBeenSet(false),
     m_licenseConfigurationArnsHasBeenSet(false)
 {
 }
@@ -28,6 +29,7 @@ Distribution::Distribution() :
 Distribution::Distribution(JsonView jsonValue) : 
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
+    m_containerDistributionConfigurationHasBeenSet(false),
     m_licenseConfigurationArnsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +49,13 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     m_amiDistributionConfiguration = jsonValue.GetObject("amiDistributionConfiguration");
 
     m_amiDistributionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerDistributionConfiguration"))
+  {
+    m_containerDistributionConfiguration = jsonValue.GetObject("containerDistributionConfiguration");
+
+    m_containerDistributionConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("licenseConfigurationArns"))
@@ -75,6 +84,12 @@ JsonValue Distribution::Jsonize() const
   if(m_amiDistributionConfigurationHasBeenSet)
   {
    payload.WithObject("amiDistributionConfiguration", m_amiDistributionConfiguration.Jsonize());
+
+  }
+
+  if(m_containerDistributionConfigurationHasBeenSet)
+  {
+   payload.WithObject("containerDistributionConfiguration", m_containerDistributionConfiguration.Jsonize());
 
   }
 

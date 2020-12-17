@@ -61,8 +61,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -88,8 +91,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -115,8 +121,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -142,8 +151,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -169,8 +181,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -196,8 +211,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline CreateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -223,8 +241,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -250,8 +271,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline CreateKeyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -961,96 +985,120 @@ namespace Model
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline CreateKeyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline CreateKeyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline CreateKeyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline CreateKeyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

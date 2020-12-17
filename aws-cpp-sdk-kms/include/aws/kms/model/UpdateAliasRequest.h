@@ -100,12 +100,16 @@ namespace Model
 
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed CMK</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+     * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
+     * the alias. Also, the new target CMK must be the same type as the current target
+     * CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -115,12 +119,16 @@ namespace Model
     inline const Aws::String& GetTargetKeyId() const{ return m_targetKeyId; }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed CMK</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+     * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
+     * the alias. Also, the new target CMK must be the same type as the current target
+     * CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -130,12 +138,16 @@ namespace Model
     inline bool TargetKeyIdHasBeenSet() const { return m_targetKeyIdHasBeenSet; }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed CMK</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+     * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
+     * the alias. Also, the new target CMK must be the same type as the current target
+     * CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -145,12 +157,16 @@ namespace Model
     inline void SetTargetKeyId(const Aws::String& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed CMK</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+     * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
+     * the alias. Also, the new target CMK must be the same type as the current target
+     * CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -160,12 +176,16 @@ namespace Model
     inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = std::move(value); }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed CMK</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+     * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
+     * the alias. Also, the new target CMK must be the same type as the current target
+     * CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -175,12 +195,16 @@ namespace Model
     inline void SetTargetKeyId(const char* value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId.assign(value); }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed CMK</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+     * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
+     * the alias. Also, the new target CMK must be the same type as the current target
+     * CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -190,12 +214,16 @@ namespace Model
     inline UpdateAliasRequest& WithTargetKeyId(const Aws::String& value) { SetTargetKeyId(value); return *this;}
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed CMK</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+     * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
+     * the alias. Also, the new target CMK must be the same type as the current target
+     * CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -205,12 +233,16 @@ namespace Model
     inline UpdateAliasRequest& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed CMK</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+     * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
+     * the alias. Also, the new target CMK must be the same type as the current target
+     * CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>

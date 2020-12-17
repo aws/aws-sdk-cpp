@@ -20,6 +20,8 @@ namespace Model
 
 Image::Image() : 
     m_arnHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
@@ -29,6 +31,7 @@ Image::Image() :
     m_osVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_imageRecipeHasBeenSet(false),
+    m_containerRecipeHasBeenSet(false),
     m_sourcePipelineNameHasBeenSet(false),
     m_sourcePipelineArnHasBeenSet(false),
     m_infrastructureConfigurationHasBeenSet(false),
@@ -42,6 +45,8 @@ Image::Image() :
 
 Image::Image(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
@@ -51,6 +56,7 @@ Image::Image(JsonView jsonValue) :
     m_osVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_imageRecipeHasBeenSet(false),
+    m_containerRecipeHasBeenSet(false),
     m_sourcePipelineNameHasBeenSet(false),
     m_sourcePipelineArnHasBeenSet(false),
     m_infrastructureConfigurationHasBeenSet(false),
@@ -70,6 +76,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = ImageTypeMapper::GetImageTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -119,6 +132,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_imageRecipe = jsonValue.GetObject("imageRecipe");
 
     m_imageRecipeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerRecipe"))
+  {
+    m_containerRecipe = jsonValue.GetObject("containerRecipe");
+
+    m_containerRecipeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourcePipelineName"))
@@ -193,6 +213,11 @@ JsonValue Image::Jsonize() const
 
   }
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ImageTypeMapper::GetNameForImageType(m_type));
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -231,6 +256,12 @@ JsonValue Image::Jsonize() const
   if(m_imageRecipeHasBeenSet)
   {
    payload.WithObject("imageRecipe", m_imageRecipe.Jsonize());
+
+  }
+
+  if(m_containerRecipeHasBeenSet)
+  {
+   payload.WithObject("containerRecipe", m_containerRecipe.Jsonize());
 
   }
 

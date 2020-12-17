@@ -126,6 +126,27 @@ namespace Model
 
 
     /**
+     * <p>Requests a list of images with a specific recipe name.</p>
+     */
+    inline bool GetByName() const{ return m_byName; }
+
+    /**
+     * <p>Requests a list of images with a specific recipe name.</p>
+     */
+    inline bool ByNameHasBeenSet() const { return m_byNameHasBeenSet; }
+
+    /**
+     * <p>Requests a list of images with a specific recipe name.</p>
+     */
+    inline void SetByName(bool value) { m_byNameHasBeenSet = true; m_byName = value; }
+
+    /**
+     * <p>Requests a list of images with a specific recipe name.</p>
+     */
+    inline ListImagesRequest& WithByName(bool value) { SetByName(value); return *this;}
+
+
+    /**
      * <p>The maximum items to return in a request. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -194,6 +215,27 @@ namespace Model
      */
     inline ListImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Includes deprecated images in the response list.</p>
+     */
+    inline bool GetIncludeDeprecated() const{ return m_includeDeprecated; }
+
+    /**
+     * <p>Includes deprecated images in the response list.</p>
+     */
+    inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }
+
+    /**
+     * <p>Includes deprecated images in the response list.</p>
+     */
+    inline void SetIncludeDeprecated(bool value) { m_includeDeprecatedHasBeenSet = true; m_includeDeprecated = value; }
+
+    /**
+     * <p>Includes deprecated images in the response list.</p>
+     */
+    inline ListImagesRequest& WithIncludeDeprecated(bool value) { SetIncludeDeprecated(value); return *this;}
+
   private:
 
     Ownership m_owner;
@@ -202,11 +244,17 @@ namespace Model
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
 
+    bool m_byName;
+    bool m_byNameHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    bool m_includeDeprecated;
+    bool m_includeDeprecatedHasBeenSet;
   };
 
 } // namespace Model

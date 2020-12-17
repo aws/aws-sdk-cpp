@@ -20,28 +20,35 @@
 #include <aws/route53/Route53Client.h>
 #include <aws/route53/Route53Endpoint.h>
 #include <aws/route53/Route53ErrorMarshaller.h>
+#include <aws/route53/model/ActivateKeySigningKeyRequest.h>
 #include <aws/route53/model/AssociateVPCWithHostedZoneRequest.h>
 #include <aws/route53/model/ChangeResourceRecordSetsRequest.h>
 #include <aws/route53/model/ChangeTagsForResourceRequest.h>
 #include <aws/route53/model/CreateHealthCheckRequest.h>
 #include <aws/route53/model/CreateHostedZoneRequest.h>
+#include <aws/route53/model/CreateKeySigningKeyRequest.h>
 #include <aws/route53/model/CreateQueryLoggingConfigRequest.h>
 #include <aws/route53/model/CreateReusableDelegationSetRequest.h>
 #include <aws/route53/model/CreateTrafficPolicyRequest.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/CreateTrafficPolicyVersionRequest.h>
 #include <aws/route53/model/CreateVPCAssociationAuthorizationRequest.h>
+#include <aws/route53/model/DeactivateKeySigningKeyRequest.h>
 #include <aws/route53/model/DeleteHealthCheckRequest.h>
 #include <aws/route53/model/DeleteHostedZoneRequest.h>
+#include <aws/route53/model/DeleteKeySigningKeyRequest.h>
 #include <aws/route53/model/DeleteQueryLoggingConfigRequest.h>
 #include <aws/route53/model/DeleteReusableDelegationSetRequest.h>
 #include <aws/route53/model/DeleteTrafficPolicyRequest.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/DeleteVPCAssociationAuthorizationRequest.h>
+#include <aws/route53/model/DisableHostedZoneDNSSECRequest.h>
 #include <aws/route53/model/DisassociateVPCFromHostedZoneRequest.h>
+#include <aws/route53/model/EnableHostedZoneDNSSECRequest.h>
 #include <aws/route53/model/GetAccountLimitRequest.h>
 #include <aws/route53/model/GetChangeRequest.h>
 #include <aws/route53/model/GetCheckerIpRangesRequest.h>
+#include <aws/route53/model/GetDNSSECRequest.h>
 #include <aws/route53/model/GetGeoLocationRequest.h>
 #include <aws/route53/model/GetHealthCheckRequest.h>
 #include <aws/route53/model/GetHealthCheckCountRequest.h>
@@ -150,6 +157,47 @@ void Route53Client::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+ActivateKeySigningKeyOutcome Route53Client::ActivateKeySigningKey(const ActivateKeySigningKeyRequest& request) const
+{
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ActivateKeySigningKey", "Required field: HostedZoneId, is not set");
+    return ActivateKeySigningKeyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ActivateKeySigningKey", "Required field: Name, is not set");
+    return ActivateKeySigningKeyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2013-04-01/keysigningkey/";
+  ss << request.GetHostedZoneId();
+  ss << "/";
+  ss << request.GetName();
+  ss << "/activate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ActivateKeySigningKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ActivateKeySigningKeyOutcomeCallable Route53Client::ActivateKeySigningKeyCallable(const ActivateKeySigningKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ActivateKeySigningKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateKeySigningKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::ActivateKeySigningKeyAsync(const ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ActivateKeySigningKeyAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::ActivateKeySigningKeyAsyncHelper(const ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ActivateKeySigningKey(request), context);
 }
 
 AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(const AssociateVPCWithHostedZoneRequest& request) const
@@ -312,6 +360,33 @@ void Route53Client::CreateHostedZoneAsync(const CreateHostedZoneRequest& request
 void Route53Client::CreateHostedZoneAsyncHelper(const CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateHostedZone(request), context);
+}
+
+CreateKeySigningKeyOutcome Route53Client::CreateKeySigningKey(const CreateKeySigningKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2013-04-01/keysigningkey";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateKeySigningKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateKeySigningKeyOutcomeCallable Route53Client::CreateKeySigningKeyCallable(const CreateKeySigningKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateKeySigningKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateKeySigningKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::CreateKeySigningKeyAsync(const CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateKeySigningKeyAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::CreateKeySigningKeyAsyncHelper(const CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateKeySigningKey(request), context);
 }
 
 CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const CreateQueryLoggingConfigRequest& request) const
@@ -489,6 +564,47 @@ void Route53Client::CreateVPCAssociationAuthorizationAsyncHelper(const CreateVPC
   handler(this, request, CreateVPCAssociationAuthorization(request), context);
 }
 
+DeactivateKeySigningKeyOutcome Route53Client::DeactivateKeySigningKey(const DeactivateKeySigningKeyRequest& request) const
+{
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeactivateKeySigningKey", "Required field: HostedZoneId, is not set");
+    return DeactivateKeySigningKeyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeactivateKeySigningKey", "Required field: Name, is not set");
+    return DeactivateKeySigningKeyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2013-04-01/keysigningkey/";
+  ss << request.GetHostedZoneId();
+  ss << "/";
+  ss << request.GetName();
+  ss << "/deactivate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeactivateKeySigningKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeactivateKeySigningKeyOutcomeCallable Route53Client::DeactivateKeySigningKeyCallable(const DeactivateKeySigningKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeactivateKeySigningKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateKeySigningKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::DeactivateKeySigningKeyAsync(const DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeactivateKeySigningKeyAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::DeactivateKeySigningKeyAsyncHelper(const DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeactivateKeySigningKey(request), context);
+}
+
 DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthCheckRequest& request) const
 {
   if (!request.HealthCheckIdHasBeenSet())
@@ -553,6 +669,46 @@ void Route53Client::DeleteHostedZoneAsync(const DeleteHostedZoneRequest& request
 void Route53Client::DeleteHostedZoneAsyncHelper(const DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteHostedZone(request), context);
+}
+
+DeleteKeySigningKeyOutcome Route53Client::DeleteKeySigningKey(const DeleteKeySigningKeyRequest& request) const
+{
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKeySigningKey", "Required field: HostedZoneId, is not set");
+    return DeleteKeySigningKeyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKeySigningKey", "Required field: Name, is not set");
+    return DeleteKeySigningKeyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2013-04-01/keysigningkey/";
+  ss << request.GetHostedZoneId();
+  ss << "/";
+  ss << request.GetName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteKeySigningKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteKeySigningKeyOutcomeCallable Route53Client::DeleteKeySigningKeyCallable(const DeleteKeySigningKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteKeySigningKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteKeySigningKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::DeleteKeySigningKeyAsync(const DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteKeySigningKeyAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::DeleteKeySigningKeyAsyncHelper(const DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteKeySigningKey(request), context);
 }
 
 DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const DeleteQueryLoggingConfigRequest& request) const
@@ -728,6 +884,40 @@ void Route53Client::DeleteVPCAssociationAuthorizationAsyncHelper(const DeleteVPC
   handler(this, request, DeleteVPCAssociationAuthorization(request), context);
 }
 
+DisableHostedZoneDNSSECOutcome Route53Client::DisableHostedZoneDNSSEC(const DisableHostedZoneDNSSECRequest& request) const
+{
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisableHostedZoneDNSSEC", "Required field: HostedZoneId, is not set");
+    return DisableHostedZoneDNSSECOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2013-04-01/hostedzone/";
+  ss << request.GetHostedZoneId();
+  ss << "/disable-dnssec";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisableHostedZoneDNSSECOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DisableHostedZoneDNSSECOutcomeCallable Route53Client::DisableHostedZoneDNSSECCallable(const DisableHostedZoneDNSSECRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableHostedZoneDNSSECOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableHostedZoneDNSSEC(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::DisableHostedZoneDNSSECAsync(const DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableHostedZoneDNSSECAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::DisableHostedZoneDNSSECAsyncHelper(const DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableHostedZoneDNSSEC(request), context);
+}
+
 DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZone(const DisassociateVPCFromHostedZoneRequest& request) const
 {
   if (!request.HostedZoneIdHasBeenSet())
@@ -760,6 +950,40 @@ void Route53Client::DisassociateVPCFromHostedZoneAsync(const DisassociateVPCFrom
 void Route53Client::DisassociateVPCFromHostedZoneAsyncHelper(const DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateVPCFromHostedZone(request), context);
+}
+
+EnableHostedZoneDNSSECOutcome Route53Client::EnableHostedZoneDNSSEC(const EnableHostedZoneDNSSECRequest& request) const
+{
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("EnableHostedZoneDNSSEC", "Required field: HostedZoneId, is not set");
+    return EnableHostedZoneDNSSECOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2013-04-01/hostedzone/";
+  ss << request.GetHostedZoneId();
+  ss << "/enable-dnssec";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return EnableHostedZoneDNSSECOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+EnableHostedZoneDNSSECOutcomeCallable Route53Client::EnableHostedZoneDNSSECCallable(const EnableHostedZoneDNSSECRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableHostedZoneDNSSECOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableHostedZoneDNSSEC(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::EnableHostedZoneDNSSECAsync(const EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableHostedZoneDNSSECAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::EnableHostedZoneDNSSECAsyncHelper(const EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableHostedZoneDNSSEC(request), context);
 }
 
 GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitRequest& request) const
@@ -853,6 +1077,40 @@ void Route53Client::GetCheckerIpRangesAsync(const GetCheckerIpRangesRequest& req
 void Route53Client::GetCheckerIpRangesAsyncHelper(const GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCheckerIpRanges(request), context);
+}
+
+GetDNSSECOutcome Route53Client::GetDNSSEC(const GetDNSSECRequest& request) const
+{
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDNSSEC", "Required field: HostedZoneId, is not set");
+    return GetDNSSECOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2013-04-01/hostedzone/";
+  ss << request.GetHostedZoneId();
+  ss << "/dnssec";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetDNSSECOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetDNSSECOutcomeCallable Route53Client::GetDNSSECCallable(const GetDNSSECRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDNSSECOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDNSSEC(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::GetDNSSECAsync(const GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDNSSECAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::GetDNSSECAsyncHelper(const GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDNSSEC(request), context);
 }
 
 GetGeoLocationOutcome Route53Client::GetGeoLocation(const GetGeoLocationRequest& request) const

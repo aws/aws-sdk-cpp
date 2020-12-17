@@ -22,6 +22,7 @@ namespace Aws
 
         static const int EBS_SNAPSHOT_MANAGEMENT_HASH = HashingUtils::HashString("EBS_SNAPSHOT_MANAGEMENT");
         static const int IMAGE_MANAGEMENT_HASH = HashingUtils::HashString("IMAGE_MANAGEMENT");
+        static const int EVENT_BASED_POLICY_HASH = HashingUtils::HashString("EVENT_BASED_POLICY");
 
 
         PolicyTypeValues GetPolicyTypeValuesForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == IMAGE_MANAGEMENT_HASH)
           {
             return PolicyTypeValues::IMAGE_MANAGEMENT;
+          }
+          else if (hashCode == EVENT_BASED_POLICY_HASH)
+          {
+            return PolicyTypeValues::EVENT_BASED_POLICY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "EBS_SNAPSHOT_MANAGEMENT";
           case PolicyTypeValues::IMAGE_MANAGEMENT:
             return "IMAGE_MANAGEMENT";
+          case PolicyTypeValues::EVENT_BASED_POLICY:
+            return "EVENT_BASED_POLICY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

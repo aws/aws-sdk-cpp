@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 DescribeProductAsAdminRequest::DescribeProductAsAdminRequest() : 
     m_acceptLanguageHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_sourcePortfolioIdHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String DescribeProductAsAdminRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_sourcePortfolioIdHasBeenSet)
+  {
+   payload.WithString("SourcePortfolioId", m_sourcePortfolioId);
 
   }
 

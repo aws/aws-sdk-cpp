@@ -139,93 +139,197 @@ namespace Model
 
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const{ return m_info; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline bool InfoHasBeenSet() const { return m_infoHasBeenSet; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline void SetInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_infoHasBeenSet = true; m_info = value; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline void SetInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_infoHasBeenSet = true; m_info = std::move(value); }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline ProvisioningArtifactProperties& WithInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetInfo(value); return *this;}
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline ProvisioningArtifactProperties& WithInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetInfo(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const Aws::String& key, const Aws::String& value) { m_infoHasBeenSet = true; m_info.emplace(key, value); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, const Aws::String& value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const Aws::String& key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const char* key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, const char* value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
-     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
+     * template in Amazon S3. Specify the URL in JSON format as follows:</p> <p>
+     * <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
+     * contains the template. Currently only supports CloudFormation stack arn. Specify
+     * the physical id in JSON format as follows: <code>ImportFromPhysicalId:
+     * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+     * </p>
      */
     inline ProvisioningArtifactProperties& AddInfo(const char* key, const char* value) { m_infoHasBeenSet = true; m_info.emplace(key, value); return *this; }
 

@@ -384,36 +384,36 @@ namespace Model
     /**
      * <p>The maximum number of failed attempts for auto-remediation. If you do not
      * select a number, the default is 5.</p> <p>For example, if you specify
-     * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     * Config will put a RemediationException on your behalf for the failing resource
-     * after the 5th failed attempt within 50 seconds.</p>
+     * MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config
+     * will put a RemediationException on your behalf for the failing resource after
+     * the 5th failed attempt within 50 seconds.</p>
      */
     inline int GetMaximumAutomaticAttempts() const{ return m_maximumAutomaticAttempts; }
 
     /**
      * <p>The maximum number of failed attempts for auto-remediation. If you do not
      * select a number, the default is 5.</p> <p>For example, if you specify
-     * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     * Config will put a RemediationException on your behalf for the failing resource
-     * after the 5th failed attempt within 50 seconds.</p>
+     * MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config
+     * will put a RemediationException on your behalf for the failing resource after
+     * the 5th failed attempt within 50 seconds.</p>
      */
     inline bool MaximumAutomaticAttemptsHasBeenSet() const { return m_maximumAutomaticAttemptsHasBeenSet; }
 
     /**
      * <p>The maximum number of failed attempts for auto-remediation. If you do not
      * select a number, the default is 5.</p> <p>For example, if you specify
-     * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     * Config will put a RemediationException on your behalf for the failing resource
-     * after the 5th failed attempt within 50 seconds.</p>
+     * MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config
+     * will put a RemediationException on your behalf for the failing resource after
+     * the 5th failed attempt within 50 seconds.</p>
      */
     inline void SetMaximumAutomaticAttempts(int value) { m_maximumAutomaticAttemptsHasBeenSet = true; m_maximumAutomaticAttempts = value; }
 
     /**
      * <p>The maximum number of failed attempts for auto-remediation. If you do not
      * select a number, the default is 5.</p> <p>For example, if you specify
-     * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     * Config will put a RemediationException on your behalf for the failing resource
-     * after the 5th failed attempt within 50 seconds.</p>
+     * MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config
+     * will put a RemediationException on your behalf for the failing resource after
+     * the 5th failed attempt within 50 seconds.</p>
      */
     inline RemediationConfiguration& WithMaximumAutomaticAttempts(int value) { SetMaximumAutomaticAttempts(value); return *this;}
 
@@ -421,7 +421,7 @@ namespace Model
     /**
      * <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not
      * select a number, the default is 60 seconds. </p> <p>For example, if you specify
-     * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
+     * RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
      * will run auto-remediations 5 times within 50 seconds before throwing an
      * exception.</p>
      */
@@ -430,7 +430,7 @@ namespace Model
     /**
      * <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not
      * select a number, the default is 60 seconds. </p> <p>For example, if you specify
-     * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
+     * RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
      * will run auto-remediations 5 times within 50 seconds before throwing an
      * exception.</p>
      */
@@ -439,7 +439,7 @@ namespace Model
     /**
      * <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not
      * select a number, the default is 60 seconds. </p> <p>For example, if you specify
-     * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
+     * RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
      * will run auto-remediations 5 times within 50 seconds before throwing an
      * exception.</p>
      */
@@ -448,7 +448,7 @@ namespace Model
     /**
      * <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not
      * select a number, the default is 60 seconds. </p> <p>For example, if you specify
-     * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
+     * RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
      * will run auto-remediations 5 times within 50 seconds before throwing an
      * exception.</p>
      */

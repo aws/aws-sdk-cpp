@@ -33,43 +33,43 @@ namespace Model
 
 
     /**
-     * <p>Information about the Resolver rule policy that you specified in a
+     * <p>The Resolver rule policy for the rule that you specified in a
      * <code>GetResolverRulePolicy</code> request.</p>
      */
     inline const Aws::String& GetResolverRulePolicy() const{ return m_resolverRulePolicy; }
 
     /**
-     * <p>Information about the Resolver rule policy that you specified in a
+     * <p>The Resolver rule policy for the rule that you specified in a
      * <code>GetResolverRulePolicy</code> request.</p>
      */
     inline void SetResolverRulePolicy(const Aws::String& value) { m_resolverRulePolicy = value; }
 
     /**
-     * <p>Information about the Resolver rule policy that you specified in a
+     * <p>The Resolver rule policy for the rule that you specified in a
      * <code>GetResolverRulePolicy</code> request.</p>
      */
     inline void SetResolverRulePolicy(Aws::String&& value) { m_resolverRulePolicy = std::move(value); }
 
     /**
-     * <p>Information about the Resolver rule policy that you specified in a
+     * <p>The Resolver rule policy for the rule that you specified in a
      * <code>GetResolverRulePolicy</code> request.</p>
      */
     inline void SetResolverRulePolicy(const char* value) { m_resolverRulePolicy.assign(value); }
 
     /**
-     * <p>Information about the Resolver rule policy that you specified in a
+     * <p>The Resolver rule policy for the rule that you specified in a
      * <code>GetResolverRulePolicy</code> request.</p>
      */
     inline GetResolverRulePolicyResult& WithResolverRulePolicy(const Aws::String& value) { SetResolverRulePolicy(value); return *this;}
 
     /**
-     * <p>Information about the Resolver rule policy that you specified in a
+     * <p>The Resolver rule policy for the rule that you specified in a
      * <code>GetResolverRulePolicy</code> request.</p>
      */
     inline GetResolverRulePolicyResult& WithResolverRulePolicy(Aws::String&& value) { SetResolverRulePolicy(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the Resolver rule policy that you specified in a
+     * <p>The Resolver rule policy for the rule that you specified in a
      * <code>GetResolverRulePolicy</code> request.</p>
      */
     inline GetResolverRulePolicyResult& WithResolverRulePolicy(const char* value) { SetResolverRulePolicy(value); return *this;}

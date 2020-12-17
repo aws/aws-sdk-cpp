@@ -16,9 +16,13 @@ ListImagesRequest::ListImagesRequest() :
     m_owner(Ownership::NOT_SET),
     m_ownerHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_byName(false),
+    m_byNameHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_includeDeprecated(false),
+    m_includeDeprecatedHasBeenSet(false)
 {
 }
 
@@ -42,6 +46,12 @@ Aws::String ListImagesRequest::SerializePayload() const
 
   }
 
+  if(m_byNameHasBeenSet)
+  {
+   payload.WithBool("byName", m_byName);
+
+  }
+
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
@@ -51,6 +61,12 @@ Aws::String ListImagesRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_includeDeprecatedHasBeenSet)
+  {
+   payload.WithBool("includeDeprecated", m_includeDeprecated);
 
   }
 

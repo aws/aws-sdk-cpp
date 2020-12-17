@@ -36,17 +36,16 @@ namespace Model
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
    * CMK</a>. Grant constraints are not applied to operations that do not support an
    * encryption context, such as cryptographic operations with asymmetric CMKs and
-   * management operations, such as <a>DescribeKey</a> or
-   * <a>ScheduleKeyDeletion</a>.</p>  <p>In a cryptographic operation, the
-   * encryption context in the decryption operation must be an exact, case-sensitive
-   * match for the keys and values in the encryption context of the encryption
-   * operation. Only the order of the pairs can vary.</p> <p>However, in a grant
-   * constraint, the key in each key-value pair is not case sensitive, but the value
-   * is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption
-   * context pairs that differ only by case. To require a fully case-sensitive
-   * encryption context, use the <code>kms:EncryptionContext:</code> and
-   * <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For
-   * details, see <a
+   * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
+   *  <p>In a cryptographic operation, the encryption context in the
+   * decryption operation must be an exact, case-sensitive match for the keys and
+   * values in the encryption context of the encryption operation. Only the order of
+   * the pairs can vary.</p> <p>However, in a grant constraint, the key in each
+   * key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To
+   * avoid confusion, do not use multiple encryption context pairs that differ only
+   * by case. To require a fully case-sensitive encryption context, use the
+   * <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code>
+   * conditions in an IAM or key policy. For details, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a>
    * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p>
    * <p><h3>See Also:</h3>   <a

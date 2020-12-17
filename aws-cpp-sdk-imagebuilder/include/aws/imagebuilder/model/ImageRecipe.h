@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/model/ImageType.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -81,6 +82,43 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image recipe.</p>
      */
     inline ImageRecipe& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline const ImageType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline void SetType(const ImageType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline void SetType(ImageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline ImageRecipe& WithType(const ImageType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline ImageRecipe& WithType(ImageType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -552,6 +590,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    ImageType m_type;
+    bool m_typeHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

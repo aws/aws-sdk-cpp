@@ -16,6 +16,7 @@ CreateImagePipelineRequest::CreateImagePipelineRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_imageRecipeArnHasBeenSet(false),
+    m_containerRecipeArnHasBeenSet(false),
     m_infrastructureConfigurationArnHasBeenSet(false),
     m_distributionConfigurationArnHasBeenSet(false),
     m_imageTestsConfigurationHasBeenSet(false),
@@ -49,6 +50,12 @@ Aws::String CreateImagePipelineRequest::SerializePayload() const
   if(m_imageRecipeArnHasBeenSet)
   {
    payload.WithString("imageRecipeArn", m_imageRecipeArn);
+
+  }
+
+  if(m_containerRecipeArnHasBeenSet)
+  {
+   payload.WithString("containerRecipeArn", m_containerRecipeArn);
 
   }
 

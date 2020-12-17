@@ -27,6 +27,7 @@ ImagePipeline::ImagePipeline() :
     m_enhancedImageMetadataEnabled(false),
     m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_imageRecipeArnHasBeenSet(false),
+    m_containerRecipeArnHasBeenSet(false),
     m_infrastructureConfigurationArnHasBeenSet(false),
     m_distributionConfigurationArnHasBeenSet(false),
     m_imageTestsConfigurationHasBeenSet(false),
@@ -50,6 +51,7 @@ ImagePipeline::ImagePipeline(JsonView jsonValue) :
     m_enhancedImageMetadataEnabled(false),
     m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_imageRecipeArnHasBeenSet(false),
+    m_containerRecipeArnHasBeenSet(false),
     m_infrastructureConfigurationArnHasBeenSet(false),
     m_distributionConfigurationArnHasBeenSet(false),
     m_imageTestsConfigurationHasBeenSet(false),
@@ -107,6 +109,13 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
     m_imageRecipeArn = jsonValue.GetString("imageRecipeArn");
 
     m_imageRecipeArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerRecipeArn"))
+  {
+    m_containerRecipeArn = jsonValue.GetString("containerRecipeArn");
+
+    m_containerRecipeArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("infrastructureConfigurationArn"))
@@ -221,6 +230,12 @@ JsonValue ImagePipeline::Jsonize() const
   if(m_imageRecipeArnHasBeenSet)
   {
    payload.WithString("imageRecipeArn", m_imageRecipeArn);
+
+  }
+
+  if(m_containerRecipeArnHasBeenSet)
+  {
+   payload.WithString("containerRecipeArn", m_containerRecipeArn);
 
   }
 

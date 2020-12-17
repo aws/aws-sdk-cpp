@@ -32,6 +32,7 @@
 #include <aws/route53resolver/model/DisassociateResolverEndpointIpAddressRequest.h>
 #include <aws/route53resolver/model/DisassociateResolverQueryLogConfigRequest.h>
 #include <aws/route53resolver/model/DisassociateResolverRuleRequest.h>
+#include <aws/route53resolver/model/GetResolverDnssecConfigRequest.h>
 #include <aws/route53resolver/model/GetResolverEndpointRequest.h>
 #include <aws/route53resolver/model/GetResolverQueryLogConfigRequest.h>
 #include <aws/route53resolver/model/GetResolverQueryLogConfigAssociationRequest.h>
@@ -39,6 +40,7 @@
 #include <aws/route53resolver/model/GetResolverRuleRequest.h>
 #include <aws/route53resolver/model/GetResolverRuleAssociationRequest.h>
 #include <aws/route53resolver/model/GetResolverRulePolicyRequest.h>
+#include <aws/route53resolver/model/ListResolverDnssecConfigsRequest.h>
 #include <aws/route53resolver/model/ListResolverEndpointIpAddressesRequest.h>
 #include <aws/route53resolver/model/ListResolverEndpointsRequest.h>
 #include <aws/route53resolver/model/ListResolverQueryLogConfigAssociationsRequest.h>
@@ -50,6 +52,7 @@
 #include <aws/route53resolver/model/PutResolverRulePolicyRequest.h>
 #include <aws/route53resolver/model/TagResourceRequest.h>
 #include <aws/route53resolver/model/UntagResourceRequest.h>
+#include <aws/route53resolver/model/UpdateResolverDnssecConfigRequest.h>
 #include <aws/route53resolver/model/UpdateResolverEndpointRequest.h>
 #include <aws/route53resolver/model/UpdateResolverRuleRequest.h>
 
@@ -450,6 +453,33 @@ void Route53ResolverClient::DisassociateResolverRuleAsyncHelper(const Disassocia
   handler(this, request, DisassociateResolverRule(request), context);
 }
 
+GetResolverDnssecConfigOutcome Route53ResolverClient::GetResolverDnssecConfig(const GetResolverDnssecConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetResolverDnssecConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResolverDnssecConfigOutcomeCallable Route53ResolverClient::GetResolverDnssecConfigCallable(const GetResolverDnssecConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResolverDnssecConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResolverDnssecConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::GetResolverDnssecConfigAsync(const GetResolverDnssecConfigRequest& request, const GetResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResolverDnssecConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::GetResolverDnssecConfigAsyncHelper(const GetResolverDnssecConfigRequest& request, const GetResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResolverDnssecConfig(request), context);
+}
+
 GetResolverEndpointOutcome Route53ResolverClient::GetResolverEndpoint(const GetResolverEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -637,6 +667,33 @@ void Route53ResolverClient::GetResolverRulePolicyAsync(const GetResolverRulePoli
 void Route53ResolverClient::GetResolverRulePolicyAsyncHelper(const GetResolverRulePolicyRequest& request, const GetResolverRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetResolverRulePolicy(request), context);
+}
+
+ListResolverDnssecConfigsOutcome Route53ResolverClient::ListResolverDnssecConfigs(const ListResolverDnssecConfigsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListResolverDnssecConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResolverDnssecConfigsOutcomeCallable Route53ResolverClient::ListResolverDnssecConfigsCallable(const ListResolverDnssecConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResolverDnssecConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResolverDnssecConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ListResolverDnssecConfigsAsync(const ListResolverDnssecConfigsRequest& request, const ListResolverDnssecConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResolverDnssecConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ListResolverDnssecConfigsAsyncHelper(const ListResolverDnssecConfigsRequest& request, const ListResolverDnssecConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResolverDnssecConfigs(request), context);
 }
 
 ListResolverEndpointIpAddressesOutcome Route53ResolverClient::ListResolverEndpointIpAddresses(const ListResolverEndpointIpAddressesRequest& request) const
@@ -934,6 +991,33 @@ void Route53ResolverClient::UntagResourceAsync(const UntagResourceRequest& reque
 void Route53ResolverClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateResolverDnssecConfigOutcome Route53ResolverClient::UpdateResolverDnssecConfig(const UpdateResolverDnssecConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateResolverDnssecConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateResolverDnssecConfigOutcomeCallable Route53ResolverClient::UpdateResolverDnssecConfigCallable(const UpdateResolverDnssecConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResolverDnssecConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResolverDnssecConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::UpdateResolverDnssecConfigAsync(const UpdateResolverDnssecConfigRequest& request, const UpdateResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateResolverDnssecConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::UpdateResolverDnssecConfigAsyncHelper(const UpdateResolverDnssecConfigRequest& request, const UpdateResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateResolverDnssecConfig(request), context);
 }
 
 UpdateResolverEndpointOutcome Route53ResolverClient::UpdateResolverEndpoint(const UpdateResolverEndpointRequest& request) const

@@ -16,7 +16,9 @@ CreatePortfolioShareRequest::CreatePortfolioShareRequest() :
     m_acceptLanguageHasBeenSet(false),
     m_portfolioIdHasBeenSet(false),
     m_accountIdHasBeenSet(false),
-    m_organizationNodeHasBeenSet(false)
+    m_organizationNodeHasBeenSet(false),
+    m_shareTagOptions(false),
+    m_shareTagOptionsHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,12 @@ Aws::String CreatePortfolioShareRequest::SerializePayload() const
   if(m_organizationNodeHasBeenSet)
   {
    payload.WithObject("OrganizationNode", m_organizationNode.Jsonize());
+
+  }
+
+  if(m_shareTagOptionsHasBeenSet)
+  {
+   payload.WithBool("ShareTagOptions", m_shareTagOptions);
 
   }
 

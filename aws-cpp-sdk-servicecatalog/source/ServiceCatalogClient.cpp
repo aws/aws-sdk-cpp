@@ -49,6 +49,7 @@
 #include <aws/servicecatalog/model/DescribeCopyProductStatusRequest.h>
 #include <aws/servicecatalog/model/DescribePortfolioRequest.h>
 #include <aws/servicecatalog/model/DescribePortfolioShareStatusRequest.h>
+#include <aws/servicecatalog/model/DescribePortfolioSharesRequest.h>
 #include <aws/servicecatalog/model/DescribeProductRequest.h>
 #include <aws/servicecatalog/model/DescribeProductAsAdminRequest.h>
 #include <aws/servicecatalog/model/DescribeProductViewRequest.h>
@@ -99,6 +100,7 @@
 #include <aws/servicecatalog/model/TerminateProvisionedProductRequest.h>
 #include <aws/servicecatalog/model/UpdateConstraintRequest.h>
 #include <aws/servicecatalog/model/UpdatePortfolioRequest.h>
+#include <aws/servicecatalog/model/UpdatePortfolioShareRequest.h>
 #include <aws/servicecatalog/model/UpdateProductRequest.h>
 #include <aws/servicecatalog/model/UpdateProvisionedProductRequest.h>
 #include <aws/servicecatalog/model/UpdateProvisionedProductPropertiesRequest.h>
@@ -960,6 +962,33 @@ void ServiceCatalogClient::DescribePortfolioShareStatusAsync(const DescribePortf
 void ServiceCatalogClient::DescribePortfolioShareStatusAsyncHelper(const DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribePortfolioShareStatus(request), context);
+}
+
+DescribePortfolioSharesOutcome ServiceCatalogClient::DescribePortfolioShares(const DescribePortfolioSharesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribePortfolioSharesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribePortfolioSharesOutcomeCallable ServiceCatalogClient::DescribePortfolioSharesCallable(const DescribePortfolioSharesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePortfolioSharesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePortfolioShares(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DescribePortfolioSharesAsync(const DescribePortfolioSharesRequest& request, const DescribePortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePortfolioSharesAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DescribePortfolioSharesAsyncHelper(const DescribePortfolioSharesRequest& request, const DescribePortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePortfolioShares(request), context);
 }
 
 DescribeProductOutcome ServiceCatalogClient::DescribeProduct(const DescribeProductRequest& request) const
@@ -2310,6 +2339,33 @@ void ServiceCatalogClient::UpdatePortfolioAsync(const UpdatePortfolioRequest& re
 void ServiceCatalogClient::UpdatePortfolioAsyncHelper(const UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdatePortfolio(request), context);
+}
+
+UpdatePortfolioShareOutcome ServiceCatalogClient::UpdatePortfolioShare(const UpdatePortfolioShareRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdatePortfolioShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePortfolioShareOutcomeCallable ServiceCatalogClient::UpdatePortfolioShareCallable(const UpdatePortfolioShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePortfolioShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePortfolioShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::UpdatePortfolioShareAsync(const UpdatePortfolioShareRequest& request, const UpdatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePortfolioShareAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::UpdatePortfolioShareAsyncHelper(const UpdatePortfolioShareRequest& request, const UpdatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePortfolioShare(request), context);
 }
 
 UpdateProductOutcome ServiceCatalogClient::UpdateProduct(const UpdateProductRequest& request) const

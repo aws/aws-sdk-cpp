@@ -35,8 +35,8 @@ namespace Model
 
 
     /**
-     * <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric customer master key (CMK). You cannot enable or
+     * disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
@@ -52,8 +52,8 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric customer master key (CMK). You cannot enable or
+     * disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
@@ -69,8 +69,8 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric customer master key (CMK). You cannot enable or
+     * disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
@@ -86,8 +86,8 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric customer master key (CMK). You cannot enable or
+     * disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
@@ -103,8 +103,8 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric customer master key (CMK). You cannot enable or
+     * disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
@@ -120,8 +120,8 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric customer master key (CMK). You cannot enable or
+     * disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
@@ -137,8 +137,8 @@ namespace Model
     inline DisableKeyRotationRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric customer master key (CMK). You cannot enable or
+     * disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
@@ -154,8 +154,8 @@ namespace Model
     inline DisableKeyRotationRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric customer master key (CMK). You cannot enable or
+     * disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
      * CMKs</a>, CMKs with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported

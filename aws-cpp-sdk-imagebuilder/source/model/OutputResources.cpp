@@ -19,12 +19,14 @@ namespace Model
 {
 
 OutputResources::OutputResources() : 
-    m_amisHasBeenSet(false)
+    m_amisHasBeenSet(false),
+    m_containersHasBeenSet(false)
 {
 }
 
 OutputResources::OutputResources(JsonView jsonValue) : 
-    m_amisHasBeenSet(false)
+    m_amisHasBeenSet(false),
+    m_containersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ OutputResources& OutputResources::operator =(JsonView jsonValue)
       m_amis.push_back(amisJsonList[amisIndex].AsObject());
     }
     m_amisHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containers"))
+  {
+    Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
+    for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
+    {
+      m_containers.push_back(containersJsonList[containersIndex].AsObject());
+    }
+    m_containersHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue OutputResources::Jsonize() const
      amisJsonList[amisIndex].AsObject(m_amis[amisIndex].Jsonize());
    }
    payload.WithArray("amis", std::move(amisJsonList));
+
+  }
+
+  if(m_containersHasBeenSet)
+  {
+   Array<JsonValue> containersJsonList(m_containers.size());
+   for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
+   {
+     containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
+   }
+   payload.WithArray("containers", std::move(containersJsonList));
 
   }
 

@@ -34,6 +34,8 @@ namespace Model
     ContentBasedDeduplication,
     KmsMasterKeyId,
     KmsDataKeyReusePeriodSeconds,
+    DeduplicationScope,
+    FifoThroughputLimit,
     SentTimestamp,
     ApproximateFirstReceiveTimestamp,
     ApproximateReceiveCount,

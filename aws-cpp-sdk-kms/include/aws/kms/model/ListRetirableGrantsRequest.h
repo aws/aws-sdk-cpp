@@ -129,8 +129,8 @@ namespace Model
 
 
     /**
-     * <p>The retiring principal for which to list grants.</p> <p>To specify the
-     * retiring principal, use the <a
+     * <p>The retiring principal for which to list grants. Enter a principal in your
+     * AWS account.</p> <p>To specify the retiring principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
@@ -142,8 +142,8 @@ namespace Model
     inline const Aws::String& GetRetiringPrincipal() const{ return m_retiringPrincipal; }
 
     /**
-     * <p>The retiring principal for which to list grants.</p> <p>To specify the
-     * retiring principal, use the <a
+     * <p>The retiring principal for which to list grants. Enter a principal in your
+     * AWS account.</p> <p>To specify the retiring principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
@@ -155,8 +155,8 @@ namespace Model
     inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
 
     /**
-     * <p>The retiring principal for which to list grants.</p> <p>To specify the
-     * retiring principal, use the <a
+     * <p>The retiring principal for which to list grants. Enter a principal in your
+     * AWS account.</p> <p>To specify the retiring principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
@@ -168,8 +168,8 @@ namespace Model
     inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
 
     /**
-     * <p>The retiring principal for which to list grants.</p> <p>To specify the
-     * retiring principal, use the <a
+     * <p>The retiring principal for which to list grants. Enter a principal in your
+     * AWS account.</p> <p>To specify the retiring principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
@@ -181,8 +181,8 @@ namespace Model
     inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = std::move(value); }
 
     /**
-     * <p>The retiring principal for which to list grants.</p> <p>To specify the
-     * retiring principal, use the <a
+     * <p>The retiring principal for which to list grants. Enter a principal in your
+     * AWS account.</p> <p>To specify the retiring principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
@@ -194,8 +194,8 @@ namespace Model
     inline void SetRetiringPrincipal(const char* value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal.assign(value); }
 
     /**
-     * <p>The retiring principal for which to list grants.</p> <p>To specify the
-     * retiring principal, use the <a
+     * <p>The retiring principal for which to list grants. Enter a principal in your
+     * AWS account.</p> <p>To specify the retiring principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
@@ -207,8 +207,8 @@ namespace Model
     inline ListRetirableGrantsRequest& WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
 
     /**
-     * <p>The retiring principal for which to list grants.</p> <p>To specify the
-     * retiring principal, use the <a
+     * <p>The retiring principal for which to list grants. Enter a principal in your
+     * AWS account.</p> <p>To specify the retiring principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
@@ -220,8 +220,8 @@ namespace Model
     inline ListRetirableGrantsRequest& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The retiring principal for which to list grants.</p> <p>To specify the
-     * retiring principal, use the <a
+     * <p>The retiring principal for which to list grants. Enter a principal in your
+     * AWS account.</p> <p>To specify the retiring principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For

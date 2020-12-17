@@ -7,6 +7,7 @@
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/model/AmiDistributionConfiguration.h>
+#include <aws/imagebuilder/model/ContainerDistributionConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -112,6 +113,43 @@ namespace Model
 
 
     /**
+     * <p>Container distribution settings for encryption, licensing, and sharing in a
+     * specific Region.</p>
+     */
+    inline const ContainerDistributionConfiguration& GetContainerDistributionConfiguration() const{ return m_containerDistributionConfiguration; }
+
+    /**
+     * <p>Container distribution settings for encryption, licensing, and sharing in a
+     * specific Region.</p>
+     */
+    inline bool ContainerDistributionConfigurationHasBeenSet() const { return m_containerDistributionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Container distribution settings for encryption, licensing, and sharing in a
+     * specific Region.</p>
+     */
+    inline void SetContainerDistributionConfiguration(const ContainerDistributionConfiguration& value) { m_containerDistributionConfigurationHasBeenSet = true; m_containerDistributionConfiguration = value; }
+
+    /**
+     * <p>Container distribution settings for encryption, licensing, and sharing in a
+     * specific Region.</p>
+     */
+    inline void SetContainerDistributionConfiguration(ContainerDistributionConfiguration&& value) { m_containerDistributionConfigurationHasBeenSet = true; m_containerDistributionConfiguration = std::move(value); }
+
+    /**
+     * <p>Container distribution settings for encryption, licensing, and sharing in a
+     * specific Region.</p>
+     */
+    inline Distribution& WithContainerDistributionConfiguration(const ContainerDistributionConfiguration& value) { SetContainerDistributionConfiguration(value); return *this;}
+
+    /**
+     * <p>Container distribution settings for encryption, licensing, and sharing in a
+     * specific Region.</p>
+     */
+    inline Distribution& WithContainerDistributionConfiguration(ContainerDistributionConfiguration&& value) { SetContainerDistributionConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The License Manager Configuration to associate with the AMI in the specified
      * Region.</p>
      */
@@ -172,6 +210,9 @@ namespace Model
 
     AmiDistributionConfiguration m_amiDistributionConfiguration;
     bool m_amiDistributionConfigurationHasBeenSet;
+
+    ContainerDistributionConfiguration m_containerDistributionConfiguration;
+    bool m_containerDistributionConfigurationHasBeenSet;
 
     Aws::Vector<Aws::String> m_licenseConfigurationArns;
     bool m_licenseConfigurationArnsHasBeenSet;

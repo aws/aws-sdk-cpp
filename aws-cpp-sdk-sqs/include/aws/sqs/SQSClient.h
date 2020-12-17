@@ -244,7 +244,7 @@ namespace Model
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
@@ -277,7 +277,7 @@ namespace Model
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
@@ -312,7 +312,7 @@ namespace Model
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
@@ -560,7 +560,7 @@ namespace Model
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
@@ -600,7 +600,7 @@ namespace Model
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
@@ -642,7 +642,7 @@ namespace Model
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
@@ -795,7 +795,7 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
@@ -815,7 +815,7 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
@@ -837,7 +837,7 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
@@ -1001,7 +1001,7 @@ namespace Model
          * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
@@ -1016,7 +1016,7 @@ namespace Model
          * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
@@ -1033,7 +1033,7 @@ namespace Model
          * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
@@ -1057,7 +1057,7 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
@@ -1079,7 +1079,7 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
@@ -1103,7 +1103,7 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
@@ -1297,7 +1297,7 @@ namespace Model
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
@@ -1314,7 +1314,7 @@ namespace Model
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
@@ -1333,7 +1333,7 @@ namespace Model
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
@@ -1493,7 +1493,7 @@ namespace Model
          * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
@@ -1514,7 +1514,7 @@ namespace Model
          * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
@@ -1537,7 +1537,7 @@ namespace Model
          * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
@@ -1567,7 +1567,7 @@ namespace Model
          * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
@@ -1591,7 +1591,7 @@ namespace Model
          * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
@@ -1617,7 +1617,7 @@ namespace Model
          * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
@@ -1634,7 +1634,7 @@ namespace Model
          * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>
@@ -1649,7 +1649,7 @@ namespace Model
          * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>
@@ -1666,7 +1666,7 @@ namespace Model
          * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>

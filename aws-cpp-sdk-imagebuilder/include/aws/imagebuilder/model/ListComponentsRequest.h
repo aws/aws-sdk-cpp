@@ -126,6 +126,31 @@ namespace Model
 
 
     /**
+     * <p>Returns the list of component build versions for the specified semantic
+     * version.</p>
+     */
+    inline bool GetByName() const{ return m_byName; }
+
+    /**
+     * <p>Returns the list of component build versions for the specified semantic
+     * version.</p>
+     */
+    inline bool ByNameHasBeenSet() const { return m_byNameHasBeenSet; }
+
+    /**
+     * <p>Returns the list of component build versions for the specified semantic
+     * version.</p>
+     */
+    inline void SetByName(bool value) { m_byNameHasBeenSet = true; m_byName = value; }
+
+    /**
+     * <p>Returns the list of component build versions for the specified semantic
+     * version.</p>
+     */
+    inline ListComponentsRequest& WithByName(bool value) { SetByName(value); return *this;}
+
+
+    /**
      * <p>The maximum items to return in a request. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -201,6 +226,9 @@ namespace Model
 
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
+    bool m_byName;
+    bool m_byNameHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

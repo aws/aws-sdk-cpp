@@ -21,6 +21,8 @@ namespace Model
 ImageVersion::ImageVersion() : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
@@ -33,6 +35,8 @@ ImageVersion::ImageVersion() :
 ImageVersion::ImageVersion(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
@@ -57,6 +61,13 @@ ImageVersion& ImageVersion::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = ImageTypeMapper::GetImageTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("version"))
@@ -111,6 +122,11 @@ JsonValue ImageVersion::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ImageTypeMapper::GetNameForImageType(m_type));
   }
 
   if(m_versionHasBeenSet)

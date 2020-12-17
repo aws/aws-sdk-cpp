@@ -22,12 +22,14 @@
 #include <aws/imagebuilder/ImagebuilderErrorMarshaller.h>
 #include <aws/imagebuilder/model/CancelImageCreationRequest.h>
 #include <aws/imagebuilder/model/CreateComponentRequest.h>
+#include <aws/imagebuilder/model/CreateContainerRecipeRequest.h>
 #include <aws/imagebuilder/model/CreateDistributionConfigurationRequest.h>
 #include <aws/imagebuilder/model/CreateImageRequest.h>
 #include <aws/imagebuilder/model/CreateImagePipelineRequest.h>
 #include <aws/imagebuilder/model/CreateImageRecipeRequest.h>
 #include <aws/imagebuilder/model/CreateInfrastructureConfigurationRequest.h>
 #include <aws/imagebuilder/model/DeleteComponentRequest.h>
+#include <aws/imagebuilder/model/DeleteContainerRecipeRequest.h>
 #include <aws/imagebuilder/model/DeleteDistributionConfigurationRequest.h>
 #include <aws/imagebuilder/model/DeleteImageRequest.h>
 #include <aws/imagebuilder/model/DeleteImagePipelineRequest.h>
@@ -35,6 +37,8 @@
 #include <aws/imagebuilder/model/DeleteInfrastructureConfigurationRequest.h>
 #include <aws/imagebuilder/model/GetComponentRequest.h>
 #include <aws/imagebuilder/model/GetComponentPolicyRequest.h>
+#include <aws/imagebuilder/model/GetContainerRecipeRequest.h>
+#include <aws/imagebuilder/model/GetContainerRecipePolicyRequest.h>
 #include <aws/imagebuilder/model/GetDistributionConfigurationRequest.h>
 #include <aws/imagebuilder/model/GetImageRequest.h>
 #include <aws/imagebuilder/model/GetImagePipelineRequest.h>
@@ -45,6 +49,7 @@
 #include <aws/imagebuilder/model/ImportComponentRequest.h>
 #include <aws/imagebuilder/model/ListComponentBuildVersionsRequest.h>
 #include <aws/imagebuilder/model/ListComponentsRequest.h>
+#include <aws/imagebuilder/model/ListContainerRecipesRequest.h>
 #include <aws/imagebuilder/model/ListDistributionConfigurationsRequest.h>
 #include <aws/imagebuilder/model/ListImageBuildVersionsRequest.h>
 #include <aws/imagebuilder/model/ListImagePipelineImagesRequest.h>
@@ -54,6 +59,7 @@
 #include <aws/imagebuilder/model/ListInfrastructureConfigurationsRequest.h>
 #include <aws/imagebuilder/model/ListTagsForResourceRequest.h>
 #include <aws/imagebuilder/model/PutComponentPolicyRequest.h>
+#include <aws/imagebuilder/model/PutContainerRecipePolicyRequest.h>
 #include <aws/imagebuilder/model/PutImagePolicyRequest.h>
 #include <aws/imagebuilder/model/PutImageRecipePolicyRequest.h>
 #include <aws/imagebuilder/model/StartImagePipelineExecutionRequest.h>
@@ -188,6 +194,33 @@ void ImagebuilderClient::CreateComponentAsync(const CreateComponentRequest& requ
 void ImagebuilderClient::CreateComponentAsyncHelper(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateComponent(request), context);
+}
+
+CreateContainerRecipeOutcome ImagebuilderClient::CreateContainerRecipe(const CreateContainerRecipeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/CreateContainerRecipe";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateContainerRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateContainerRecipeOutcomeCallable ImagebuilderClient::CreateContainerRecipeCallable(const CreateContainerRecipeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateContainerRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContainerRecipe(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::CreateContainerRecipeAsync(const CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateContainerRecipeAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::CreateContainerRecipeAsyncHelper(const CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateContainerRecipe(request), context);
 }
 
 CreateDistributionConfigurationOutcome ImagebuilderClient::CreateDistributionConfiguration(const CreateDistributionConfigurationRequest& request) const
@@ -355,6 +388,38 @@ void ImagebuilderClient::DeleteComponentAsync(const DeleteComponentRequest& requ
 void ImagebuilderClient::DeleteComponentAsyncHelper(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteComponent(request), context);
+}
+
+DeleteContainerRecipeOutcome ImagebuilderClient::DeleteContainerRecipe(const DeleteContainerRecipeRequest& request) const
+{
+  if (!request.ContainerRecipeArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContainerRecipe", "Required field: ContainerRecipeArn, is not set");
+    return DeleteContainerRecipeOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContainerRecipeArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/DeleteContainerRecipe";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteContainerRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteContainerRecipeOutcomeCallable ImagebuilderClient::DeleteContainerRecipeCallable(const DeleteContainerRecipeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteContainerRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContainerRecipe(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::DeleteContainerRecipeAsync(const DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteContainerRecipeAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::DeleteContainerRecipeAsyncHelper(const DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteContainerRecipe(request), context);
 }
 
 DeleteDistributionConfigurationOutcome ImagebuilderClient::DeleteDistributionConfiguration(const DeleteDistributionConfigurationRequest& request) const
@@ -579,6 +644,70 @@ void ImagebuilderClient::GetComponentPolicyAsync(const GetComponentPolicyRequest
 void ImagebuilderClient::GetComponentPolicyAsyncHelper(const GetComponentPolicyRequest& request, const GetComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetComponentPolicy(request), context);
+}
+
+GetContainerRecipeOutcome ImagebuilderClient::GetContainerRecipe(const GetContainerRecipeRequest& request) const
+{
+  if (!request.ContainerRecipeArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContainerRecipe", "Required field: ContainerRecipeArn, is not set");
+    return GetContainerRecipeOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContainerRecipeArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/GetContainerRecipe";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetContainerRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetContainerRecipeOutcomeCallable ImagebuilderClient::GetContainerRecipeCallable(const GetContainerRecipeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetContainerRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContainerRecipe(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::GetContainerRecipeAsync(const GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetContainerRecipeAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::GetContainerRecipeAsyncHelper(const GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetContainerRecipe(request), context);
+}
+
+GetContainerRecipePolicyOutcome ImagebuilderClient::GetContainerRecipePolicy(const GetContainerRecipePolicyRequest& request) const
+{
+  if (!request.ContainerRecipeArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContainerRecipePolicy", "Required field: ContainerRecipeArn, is not set");
+    return GetContainerRecipePolicyOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContainerRecipeArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/GetContainerRecipePolicy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetContainerRecipePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetContainerRecipePolicyOutcomeCallable ImagebuilderClient::GetContainerRecipePolicyCallable(const GetContainerRecipePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetContainerRecipePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContainerRecipePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::GetContainerRecipePolicyAsync(const GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetContainerRecipePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::GetContainerRecipePolicyAsyncHelper(const GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetContainerRecipePolicy(request), context);
 }
 
 GetDistributionConfigurationOutcome ImagebuilderClient::GetDistributionConfiguration(const GetDistributionConfigurationRequest& request) const
@@ -886,6 +1015,33 @@ void ImagebuilderClient::ListComponentsAsyncHelper(const ListComponentsRequest& 
   handler(this, request, ListComponents(request), context);
 }
 
+ListContainerRecipesOutcome ImagebuilderClient::ListContainerRecipes(const ListContainerRecipesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ListContainerRecipes";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListContainerRecipesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListContainerRecipesOutcomeCallable ImagebuilderClient::ListContainerRecipesCallable(const ListContainerRecipesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListContainerRecipesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContainerRecipes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::ListContainerRecipesAsync(const ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListContainerRecipesAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::ListContainerRecipesAsyncHelper(const ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListContainerRecipes(request), context);
+}
+
 ListDistributionConfigurationsOutcome ImagebuilderClient::ListDistributionConfigurations(const ListDistributionConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1133,6 +1289,33 @@ void ImagebuilderClient::PutComponentPolicyAsync(const PutComponentPolicyRequest
 void ImagebuilderClient::PutComponentPolicyAsyncHelper(const PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutComponentPolicy(request), context);
+}
+
+PutContainerRecipePolicyOutcome ImagebuilderClient::PutContainerRecipePolicy(const PutContainerRecipePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/PutContainerRecipePolicy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutContainerRecipePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutContainerRecipePolicyOutcomeCallable ImagebuilderClient::PutContainerRecipePolicyCallable(const PutContainerRecipePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutContainerRecipePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutContainerRecipePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::PutContainerRecipePolicyAsync(const PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutContainerRecipePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::PutContainerRecipePolicyAsyncHelper(const PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutContainerRecipePolicy(request), context);
 }
 
 PutImagePolicyOutcome ImagebuilderClient::PutImagePolicy(const PutImagePolicyRequest& request) const

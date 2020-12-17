@@ -27,7 +27,8 @@ Schedule::Schedule() :
     m_createRuleHasBeenSet(false),
     m_retainRuleHasBeenSet(false),
     m_fastRestoreRuleHasBeenSet(false),
-    m_crossRegionCopyRulesHasBeenSet(false)
+    m_crossRegionCopyRulesHasBeenSet(false),
+    m_shareRulesHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Schedule::Schedule(JsonView jsonValue) :
     m_createRuleHasBeenSet(false),
     m_retainRuleHasBeenSet(false),
     m_fastRestoreRuleHasBeenSet(false),
-    m_crossRegionCopyRulesHasBeenSet(false)
+    m_crossRegionCopyRulesHasBeenSet(false),
+    m_shareRulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,16 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     m_crossRegionCopyRulesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ShareRules"))
+  {
+    Array<JsonView> shareRulesJsonList = jsonValue.GetArray("ShareRules");
+    for(unsigned shareRulesIndex = 0; shareRulesIndex < shareRulesJsonList.GetLength(); ++shareRulesIndex)
+    {
+      m_shareRules.push_back(shareRulesJsonList[shareRulesIndex].AsObject());
+    }
+    m_shareRulesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +191,17 @@ JsonValue Schedule::Jsonize() const
      crossRegionCopyRulesJsonList[crossRegionCopyRulesIndex].AsObject(m_crossRegionCopyRules[crossRegionCopyRulesIndex].Jsonize());
    }
    payload.WithArray("CrossRegionCopyRules", std::move(crossRegionCopyRulesJsonList));
+
+  }
+
+  if(m_shareRulesHasBeenSet)
+  {
+   Array<JsonValue> shareRulesJsonList(m_shareRules.size());
+   for(unsigned shareRulesIndex = 0; shareRulesIndex < shareRulesJsonList.GetLength(); ++shareRulesIndex)
+   {
+     shareRulesJsonList[shareRulesIndex].AsObject(m_shareRules[shareRulesIndex].Jsonize());
+   }
+   payload.WithArray("ShareRules", std::move(shareRulesJsonList));
 
   }
 

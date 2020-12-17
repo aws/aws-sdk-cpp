@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Resolver rule policy that you want to get information
-     * about.</p>
+     * <p>The ID of the Resolver rule that you want to get the Resolver rule policy
+     * for.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ID of the Resolver rule policy that you want to get information
-     * about.</p>
+     * <p>The ID of the Resolver rule that you want to get the Resolver rule policy
+     * for.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ID of the Resolver rule policy that you want to get information
-     * about.</p>
+     * <p>The ID of the Resolver rule that you want to get the Resolver rule policy
+     * for.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ID of the Resolver rule policy that you want to get information
-     * about.</p>
+     * <p>The ID of the Resolver rule that you want to get the Resolver rule policy
+     * for.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ID of the Resolver rule policy that you want to get information
-     * about.</p>
+     * <p>The ID of the Resolver rule that you want to get the Resolver rule policy
+     * for.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ID of the Resolver rule policy that you want to get information
-     * about.</p>
+     * <p>The ID of the Resolver rule that you want to get the Resolver rule policy
+     * for.</p>
      */
     inline GetResolverRulePolicyRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ID of the Resolver rule policy that you want to get information
-     * about.</p>
+     * <p>The ID of the Resolver rule that you want to get the Resolver rule policy
+     * for.</p>
      */
     inline GetResolverRulePolicyRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Resolver rule policy that you want to get information
-     * about.</p>
+     * <p>The ID of the Resolver rule that you want to get the Resolver rule policy
+     * for.</p>
      */
     inline GetResolverRulePolicyRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

@@ -16,6 +16,8 @@ ListComponentsRequest::ListComponentsRequest() :
     m_owner(Ownership::NOT_SET),
     m_ownerHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_byName(false),
+    m_byNameHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -39,6 +41,12 @@ Aws::String ListComponentsRequest::SerializePayload() const
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
    }
    payload.WithArray("filters", std::move(filtersJsonList));
+
+  }
+
+  if(m_byNameHasBeenSet)
+  {
+   payload.WithBool("byName", m_byName);
 
   }
 

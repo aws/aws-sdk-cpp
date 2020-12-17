@@ -33,8 +33,10 @@ namespace Model
    * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>,
    * <a
    * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html">ListResolverQueryLogConfigs</a>,
-   * and <a
+   * <a
    * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html">ListResolverQueryLogConfigAssociations</a>),
+   * and <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>),
    * an optional specification to return a subset of objects.</p> <p>To filter
    * objects, such as Resolver endpoints or Resolver rules, you specify
    * <code>Name</code> and <code>Values</code>. For example, to list only inbound
@@ -170,7 +172,7 @@ namespace Model
      * specify the applicable status code for <code>Values</code>:
      * <code>CREATING</code>, <code>CREATED</code>, <code>DELETING</code>, or
      * <code>FAILED</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
      * </p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -292,7 +294,7 @@ namespace Model
      * specify the applicable status code for <code>Values</code>:
      * <code>CREATING</code>, <code>CREATED</code>, <code>DELETING</code>, or
      * <code>FAILED</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
      * </p> </li> </ul>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -414,7 +416,7 @@ namespace Model
      * specify the applicable status code for <code>Values</code>:
      * <code>CREATING</code>, <code>CREATED</code>, <code>DELETING</code>, or
      * <code>FAILED</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
      * </p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
@@ -536,7 +538,7 @@ namespace Model
      * specify the applicable status code for <code>Values</code>:
      * <code>CREATING</code>, <code>CREATED</code>, <code>DELETING</code>, or
      * <code>FAILED</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
      * </p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
@@ -658,7 +660,7 @@ namespace Model
      * specify the applicable status code for <code>Values</code>:
      * <code>CREATING</code>, <code>CREATED</code>, <code>DELETING</code>, or
      * <code>FAILED</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
      * </p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
@@ -780,7 +782,7 @@ namespace Model
      * specify the applicable status code for <code>Values</code>:
      * <code>CREATING</code>, <code>CREATED</code>, <code>DELETING</code>, or
      * <code>FAILED</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
      * </p> </li> </ul>
      */
     inline Filter& WithName(const Aws::String& value) { SetName(value); return *this;}
@@ -902,7 +904,7 @@ namespace Model
      * specify the applicable status code for <code>Values</code>:
      * <code>CREATING</code>, <code>CREATED</code>, <code>DELETING</code>, or
      * <code>FAILED</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
      * </p> </li> </ul>
      */
     inline Filter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
@@ -1024,7 +1026,7 @@ namespace Model
      * specify the applicable status code for <code>Values</code>:
      * <code>CREATING</code>, <code>CREATED</code>, <code>DELETING</code>, or
      * <code>FAILED</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
      * </p> </li> </ul>
      */
     inline Filter& WithName(const char* value) { SetName(value); return *this;}

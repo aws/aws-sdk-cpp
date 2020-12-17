@@ -12,6 +12,7 @@
 #include <aws/dlm/model/FastRestoreRule.h>
 #include <aws/dlm/model/Tag.h>
 #include <aws/dlm/model/CrossRegionCopyRule.h>
+#include <aws/dlm/model/ShareRule.h>
 #include <utility>
 
 namespace Aws
@@ -30,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a backup schedule.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a backup schedule for a snapshot or AMI lifecycle
+   * policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Schedule">AWS API
    * Reference</a></p>
    */
@@ -364,6 +366,47 @@ namespace Model
      */
     inline Schedule& AddCrossRegionCopyRules(CrossRegionCopyRule&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     */
+    inline const Aws::Vector<ShareRule>& GetShareRules() const{ return m_shareRules; }
+
+    /**
+     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     */
+    inline bool ShareRulesHasBeenSet() const { return m_shareRulesHasBeenSet; }
+
+    /**
+     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     */
+    inline void SetShareRules(const Aws::Vector<ShareRule>& value) { m_shareRulesHasBeenSet = true; m_shareRules = value; }
+
+    /**
+     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     */
+    inline void SetShareRules(Aws::Vector<ShareRule>&& value) { m_shareRulesHasBeenSet = true; m_shareRules = std::move(value); }
+
+    /**
+     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     */
+    inline Schedule& WithShareRules(const Aws::Vector<ShareRule>& value) { SetShareRules(value); return *this;}
+
+    /**
+     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     */
+    inline Schedule& WithShareRules(Aws::Vector<ShareRule>&& value) { SetShareRules(std::move(value)); return *this;}
+
+    /**
+     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     */
+    inline Schedule& AddShareRules(const ShareRule& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(value); return *this; }
+
+    /**
+     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     */
+    inline Schedule& AddShareRules(ShareRule&& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -389,6 +432,9 @@ namespace Model
 
     Aws::Vector<CrossRegionCopyRule> m_crossRegionCopyRules;
     bool m_crossRegionCopyRulesHasBeenSet;
+
+    Aws::Vector<ShareRule> m_shareRules;
+    bool m_shareRulesHasBeenSet;
   };
 
 } // namespace Model

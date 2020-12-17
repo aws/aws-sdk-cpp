@@ -20,6 +20,8 @@ namespace Model
 
 ImageRecipe::ImageRecipe() : 
     m_arnHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
@@ -37,6 +39,8 @@ ImageRecipe::ImageRecipe() :
 
 ImageRecipe::ImageRecipe(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
@@ -60,6 +64,13 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = ImageTypeMapper::GetImageTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -159,6 +170,11 @@ JsonValue ImageRecipe::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ImageTypeMapper::GetNameForImageType(m_type));
   }
 
   if(m_nameHasBeenSet)

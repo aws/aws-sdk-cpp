@@ -169,6 +169,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used to
+     * configure images created by this container pipeline.</p>
+     */
+    inline const Aws::String& GetContainerRecipeArn() const{ return m_containerRecipeArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used to
+     * configure images created by this container pipeline.</p>
+     */
+    inline bool ContainerRecipeArnHasBeenSet() const { return m_containerRecipeArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used to
+     * configure images created by this container pipeline.</p>
+     */
+    inline void SetContainerRecipeArn(const Aws::String& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used to
+     * configure images created by this container pipeline.</p>
+     */
+    inline void SetContainerRecipeArn(Aws::String&& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used to
+     * configure images created by this container pipeline.</p>
+     */
+    inline void SetContainerRecipeArn(const char* value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used to
+     * configure images created by this container pipeline.</p>
+     */
+    inline CreateImagePipelineRequest& WithContainerRecipeArn(const Aws::String& value) { SetContainerRecipeArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used to
+     * configure images created by this container pipeline.</p>
+     */
+    inline CreateImagePipelineRequest& WithContainerRecipeArn(Aws::String&& value) { SetContainerRecipeArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used to
+     * configure images created by this container pipeline.</p>
+     */
+    inline CreateImagePipelineRequest& WithContainerRecipeArn(const char* value) { SetContainerRecipeArn(value); return *this;}
+
+
+    /**
      * <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will
      * be used to build images created by this image pipeline. </p>
      */
@@ -508,6 +557,9 @@ namespace Model
 
     Aws::String m_imageRecipeArn;
     bool m_imageRecipeArnHasBeenSet;
+
+    Aws::String m_containerRecipeArn;
+    bool m_containerRecipeArnHasBeenSet;
 
     Aws::String m_infrastructureConfigurationArn;
     bool m_infrastructureConfigurationArnHasBeenSet;

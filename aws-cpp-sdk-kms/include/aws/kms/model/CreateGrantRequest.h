@@ -393,7 +393,9 @@ namespace Model
      * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p>
+     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
+     * an encryption context, such as cryptographic operations with asymmetric CMKs and
+     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
 
@@ -405,7 +407,9 @@ namespace Model
      * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p>
+     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
+     * an encryption context, such as cryptographic operations with asymmetric CMKs and
+     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
 
@@ -417,7 +421,9 @@ namespace Model
      * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p>
+     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
+     * an encryption context, such as cryptographic operations with asymmetric CMKs and
+     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
@@ -429,7 +435,9 @@ namespace Model
      * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p>
+     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
+     * an encryption context, such as cryptographic operations with asymmetric CMKs and
+     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
 
@@ -441,7 +449,9 @@ namespace Model
      * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p>
+     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
+     * an encryption context, such as cryptographic operations with asymmetric CMKs and
+     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline CreateGrantRequest& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
 
@@ -453,7 +463,9 @@ namespace Model
      * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p>
+     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
+     * an encryption context, such as cryptographic operations with asymmetric CMKs and
+     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline CreateGrantRequest& WithConstraints(GrantConstraints&& value) { SetConstraints(std::move(value)); return *this;}
 
@@ -523,122 +535,130 @@ namespace Model
 
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent the
-     * unintended creation of duplicate grants when retrying this request.</p> <p>When
-     * this value is absent, all <code>CreateGrant</code> requests result in a new
-     * grant with a unique <code>GrantId</code> even if all the supplied parameters are
-     * identical. This can result in unintended duplicates when you retry the
+     * <p>A friendly name for the grant. Use this value to prevent the unintended
+     * creation of duplicate grants when retrying this request.</p> <p>When this value
+     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
+     * unique <code>GrantId</code> even if all the supplied parameters are identical.
+     * This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
      * new grant. Note that the returned grant token is unique with every
      * <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is
-     * returned. All grant tokens obtained in this way can be used interchangeably.</p>
+     * returned. All grant tokens for the same grant ID can be used
+     * interchangeably.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent the
-     * unintended creation of duplicate grants when retrying this request.</p> <p>When
-     * this value is absent, all <code>CreateGrant</code> requests result in a new
-     * grant with a unique <code>GrantId</code> even if all the supplied parameters are
-     * identical. This can result in unintended duplicates when you retry the
+     * <p>A friendly name for the grant. Use this value to prevent the unintended
+     * creation of duplicate grants when retrying this request.</p> <p>When this value
+     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
+     * unique <code>GrantId</code> even if all the supplied parameters are identical.
+     * This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
      * new grant. Note that the returned grant token is unique with every
      * <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is
-     * returned. All grant tokens obtained in this way can be used interchangeably.</p>
+     * returned. All grant tokens for the same grant ID can be used
+     * interchangeably.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent the
-     * unintended creation of duplicate grants when retrying this request.</p> <p>When
-     * this value is absent, all <code>CreateGrant</code> requests result in a new
-     * grant with a unique <code>GrantId</code> even if all the supplied parameters are
-     * identical. This can result in unintended duplicates when you retry the
+     * <p>A friendly name for the grant. Use this value to prevent the unintended
+     * creation of duplicate grants when retrying this request.</p> <p>When this value
+     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
+     * unique <code>GrantId</code> even if all the supplied parameters are identical.
+     * This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
      * new grant. Note that the returned grant token is unique with every
      * <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is
-     * returned. All grant tokens obtained in this way can be used interchangeably.</p>
+     * returned. All grant tokens for the same grant ID can be used
+     * interchangeably.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent the
-     * unintended creation of duplicate grants when retrying this request.</p> <p>When
-     * this value is absent, all <code>CreateGrant</code> requests result in a new
-     * grant with a unique <code>GrantId</code> even if all the supplied parameters are
-     * identical. This can result in unintended duplicates when you retry the
+     * <p>A friendly name for the grant. Use this value to prevent the unintended
+     * creation of duplicate grants when retrying this request.</p> <p>When this value
+     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
+     * unique <code>GrantId</code> even if all the supplied parameters are identical.
+     * This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
      * new grant. Note that the returned grant token is unique with every
      * <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is
-     * returned. All grant tokens obtained in this way can be used interchangeably.</p>
+     * returned. All grant tokens for the same grant ID can be used
+     * interchangeably.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent the
-     * unintended creation of duplicate grants when retrying this request.</p> <p>When
-     * this value is absent, all <code>CreateGrant</code> requests result in a new
-     * grant with a unique <code>GrantId</code> even if all the supplied parameters are
-     * identical. This can result in unintended duplicates when you retry the
+     * <p>A friendly name for the grant. Use this value to prevent the unintended
+     * creation of duplicate grants when retrying this request.</p> <p>When this value
+     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
+     * unique <code>GrantId</code> even if all the supplied parameters are identical.
+     * This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
      * new grant. Note that the returned grant token is unique with every
      * <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is
-     * returned. All grant tokens obtained in this way can be used interchangeably.</p>
+     * returned. All grant tokens for the same grant ID can be used
+     * interchangeably.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent the
-     * unintended creation of duplicate grants when retrying this request.</p> <p>When
-     * this value is absent, all <code>CreateGrant</code> requests result in a new
-     * grant with a unique <code>GrantId</code> even if all the supplied parameters are
-     * identical. This can result in unintended duplicates when you retry the
+     * <p>A friendly name for the grant. Use this value to prevent the unintended
+     * creation of duplicate grants when retrying this request.</p> <p>When this value
+     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
+     * unique <code>GrantId</code> even if all the supplied parameters are identical.
+     * This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
      * new grant. Note that the returned grant token is unique with every
      * <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is
-     * returned. All grant tokens obtained in this way can be used interchangeably.</p>
+     * returned. All grant tokens for the same grant ID can be used
+     * interchangeably.</p>
      */
     inline CreateGrantRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent the
-     * unintended creation of duplicate grants when retrying this request.</p> <p>When
-     * this value is absent, all <code>CreateGrant</code> requests result in a new
-     * grant with a unique <code>GrantId</code> even if all the supplied parameters are
-     * identical. This can result in unintended duplicates when you retry the
+     * <p>A friendly name for the grant. Use this value to prevent the unintended
+     * creation of duplicate grants when retrying this request.</p> <p>When this value
+     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
+     * unique <code>GrantId</code> even if all the supplied parameters are identical.
+     * This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
      * new grant. Note that the returned grant token is unique with every
      * <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is
-     * returned. All grant tokens obtained in this way can be used interchangeably.</p>
+     * returned. All grant tokens for the same grant ID can be used
+     * interchangeably.</p>
      */
     inline CreateGrantRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent the
-     * unintended creation of duplicate grants when retrying this request.</p> <p>When
-     * this value is absent, all <code>CreateGrant</code> requests result in a new
-     * grant with a unique <code>GrantId</code> even if all the supplied parameters are
-     * identical. This can result in unintended duplicates when you retry the
+     * <p>A friendly name for the grant. Use this value to prevent the unintended
+     * creation of duplicate grants when retrying this request.</p> <p>When this value
+     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
+     * unique <code>GrantId</code> even if all the supplied parameters are identical.
+     * This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
      * new grant. Note that the returned grant token is unique with every
      * <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is
-     * returned. All grant tokens obtained in this way can be used interchangeably.</p>
+     * returned. All grant tokens for the same grant ID can be used
+     * interchangeably.</p>
      */
     inline CreateGrantRequest& WithName(const char* value) { SetName(value); return *this;}
 

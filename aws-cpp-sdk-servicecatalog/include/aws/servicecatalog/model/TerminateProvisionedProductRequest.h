@@ -281,34 +281,38 @@ namespace Model
 
 
     /**
-     * <p>When this boolean parameter is set to true, the TerminateProvisionedProduct
-     * API deletes the Service Catalog provisioned product. However, it does not remove
-     * the CloudFormation stack, stack set, or the underlying resources of the deleted
-     * provisioned product. The default value is false.</p>
+     * <p>When this boolean parameter is set to true, the
+     * <code>TerminateProvisionedProduct</code> API deletes the Service Catalog
+     * provisioned product. However, it does not remove the CloudFormation stack, stack
+     * set, or the underlying resources of the deleted provisioned product. The default
+     * value is false.</p>
      */
     inline bool GetRetainPhysicalResources() const{ return m_retainPhysicalResources; }
 
     /**
-     * <p>When this boolean parameter is set to true, the TerminateProvisionedProduct
-     * API deletes the Service Catalog provisioned product. However, it does not remove
-     * the CloudFormation stack, stack set, or the underlying resources of the deleted
-     * provisioned product. The default value is false.</p>
+     * <p>When this boolean parameter is set to true, the
+     * <code>TerminateProvisionedProduct</code> API deletes the Service Catalog
+     * provisioned product. However, it does not remove the CloudFormation stack, stack
+     * set, or the underlying resources of the deleted provisioned product. The default
+     * value is false.</p>
      */
     inline bool RetainPhysicalResourcesHasBeenSet() const { return m_retainPhysicalResourcesHasBeenSet; }
 
     /**
-     * <p>When this boolean parameter is set to true, the TerminateProvisionedProduct
-     * API deletes the Service Catalog provisioned product. However, it does not remove
-     * the CloudFormation stack, stack set, or the underlying resources of the deleted
-     * provisioned product. The default value is false.</p>
+     * <p>When this boolean parameter is set to true, the
+     * <code>TerminateProvisionedProduct</code> API deletes the Service Catalog
+     * provisioned product. However, it does not remove the CloudFormation stack, stack
+     * set, or the underlying resources of the deleted provisioned product. The default
+     * value is false.</p>
      */
     inline void SetRetainPhysicalResources(bool value) { m_retainPhysicalResourcesHasBeenSet = true; m_retainPhysicalResources = value; }
 
     /**
-     * <p>When this boolean parameter is set to true, the TerminateProvisionedProduct
-     * API deletes the Service Catalog provisioned product. However, it does not remove
-     * the CloudFormation stack, stack set, or the underlying resources of the deleted
-     * provisioned product. The default value is false.</p>
+     * <p>When this boolean parameter is set to true, the
+     * <code>TerminateProvisionedProduct</code> API deletes the Service Catalog
+     * provisioned product. However, it does not remove the CloudFormation stack, stack
+     * set, or the underlying resources of the deleted provisioned product. The default
+     * value is false.</p>
      */
     inline TerminateProvisionedProductRequest& WithRetainPhysicalResources(bool value) { SetRetainPhysicalResources(value); return *this;}
 

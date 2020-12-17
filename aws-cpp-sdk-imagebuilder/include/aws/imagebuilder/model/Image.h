@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/model/ImageType.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/imagebuilder/model/ImageState.h>
 #include <aws/imagebuilder/model/ImageRecipe.h>
+#include <aws/imagebuilder/model/ContainerRecipe.h>
 #include <aws/imagebuilder/model/InfrastructureConfiguration.h>
 #include <aws/imagebuilder/model/DistributionConfiguration.h>
 #include <aws/imagebuilder/model/ImageTestsConfiguration.h>
@@ -84,6 +86,37 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image.</p>
      */
     inline Image& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline const ImageType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline void SetType(const ImageType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline void SetType(ImageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline Image& WithType(const ImageType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline Image& WithType(ImageType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -341,6 +374,37 @@ namespace Model
      * <p>The image recipe used when creating the image.</p>
      */
     inline Image& WithImageRecipe(ImageRecipe&& value) { SetImageRecipe(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The container recipe used to create the container image type.</p>
+     */
+    inline const ContainerRecipe& GetContainerRecipe() const{ return m_containerRecipe; }
+
+    /**
+     * <p>The container recipe used to create the container image type.</p>
+     */
+    inline bool ContainerRecipeHasBeenSet() const { return m_containerRecipeHasBeenSet; }
+
+    /**
+     * <p>The container recipe used to create the container image type.</p>
+     */
+    inline void SetContainerRecipe(const ContainerRecipe& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = value; }
+
+    /**
+     * <p>The container recipe used to create the container image type.</p>
+     */
+    inline void SetContainerRecipe(ContainerRecipe&& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = std::move(value); }
+
+    /**
+     * <p>The container recipe used to create the container image type.</p>
+     */
+    inline Image& WithContainerRecipe(const ContainerRecipe& value) { SetContainerRecipe(value); return *this;}
+
+    /**
+     * <p>The container recipe used to create the container image type.</p>
+     */
+    inline Image& WithContainerRecipe(ContainerRecipe&& value) { SetContainerRecipe(std::move(value)); return *this;}
 
 
     /**
@@ -668,6 +732,9 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet;
 
+    ImageType m_type;
+    bool m_typeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
@@ -688,6 +755,9 @@ namespace Model
 
     ImageRecipe m_imageRecipe;
     bool m_imageRecipeHasBeenSet;
+
+    ContainerRecipe m_containerRecipe;
+    bool m_containerRecipeHasBeenSet;
 
     Aws::String m_sourcePipelineName;
     bool m_sourcePipelineNameHasBeenSet;

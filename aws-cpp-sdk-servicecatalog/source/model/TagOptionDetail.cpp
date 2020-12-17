@@ -23,7 +23,8 @@ TagOptionDetail::TagOptionDetail() :
     m_valueHasBeenSet(false),
     m_active(false),
     m_activeHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ TagOptionDetail::TagOptionDetail(JsonView jsonValue) :
     m_valueHasBeenSet(false),
     m_active(false),
     m_activeHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ TagOptionDetail& TagOptionDetail::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Owner"))
+  {
+    m_owner = jsonValue.GetString("Owner");
+
+    m_ownerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +104,12 @@ JsonValue TagOptionDetail::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
+
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("Owner", m_owner);
 
   }
 
