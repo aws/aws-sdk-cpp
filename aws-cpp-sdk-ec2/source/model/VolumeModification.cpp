@@ -33,6 +33,8 @@ VolumeModification::VolumeModification() :
     m_targetVolumeTypeHasBeenSet(false),
     m_targetThroughput(0),
     m_targetThroughputHasBeenSet(false),
+    m_targetMultiAttachEnabled(false),
+    m_targetMultiAttachEnabledHasBeenSet(false),
     m_originalSize(0),
     m_originalSizeHasBeenSet(false),
     m_originalIops(0),
@@ -41,6 +43,8 @@ VolumeModification::VolumeModification() :
     m_originalVolumeTypeHasBeenSet(false),
     m_originalThroughput(0),
     m_originalThroughputHasBeenSet(false),
+    m_originalMultiAttachEnabled(false),
+    m_originalMultiAttachEnabledHasBeenSet(false),
     m_progress(0),
     m_progressHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -61,6 +65,8 @@ VolumeModification::VolumeModification(const XmlNode& xmlNode) :
     m_targetVolumeTypeHasBeenSet(false),
     m_targetThroughput(0),
     m_targetThroughputHasBeenSet(false),
+    m_targetMultiAttachEnabled(false),
+    m_targetMultiAttachEnabledHasBeenSet(false),
     m_originalSize(0),
     m_originalSizeHasBeenSet(false),
     m_originalIops(0),
@@ -69,6 +75,8 @@ VolumeModification::VolumeModification(const XmlNode& xmlNode) :
     m_originalVolumeTypeHasBeenSet(false),
     m_originalThroughput(0),
     m_originalThroughputHasBeenSet(false),
+    m_originalMultiAttachEnabled(false),
+    m_originalMultiAttachEnabledHasBeenSet(false),
     m_progress(0),
     m_progressHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -125,6 +133,12 @@ VolumeModification& VolumeModification::operator =(const XmlNode& xmlNode)
       m_targetThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetThroughputNode.GetText()).c_str()).c_str());
       m_targetThroughputHasBeenSet = true;
     }
+    XmlNode targetMultiAttachEnabledNode = resultNode.FirstChild("targetMultiAttachEnabled");
+    if(!targetMultiAttachEnabledNode.IsNull())
+    {
+      m_targetMultiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetMultiAttachEnabledNode.GetText()).c_str()).c_str());
+      m_targetMultiAttachEnabledHasBeenSet = true;
+    }
     XmlNode originalSizeNode = resultNode.FirstChild("originalSize");
     if(!originalSizeNode.IsNull())
     {
@@ -148,6 +162,12 @@ VolumeModification& VolumeModification::operator =(const XmlNode& xmlNode)
     {
       m_originalThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalThroughputNode.GetText()).c_str()).c_str());
       m_originalThroughputHasBeenSet = true;
+    }
+    XmlNode originalMultiAttachEnabledNode = resultNode.FirstChild("originalMultiAttachEnabled");
+    if(!originalMultiAttachEnabledNode.IsNull())
+    {
+      m_originalMultiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalMultiAttachEnabledNode.GetText()).c_str()).c_str());
+      m_originalMultiAttachEnabledHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
@@ -209,6 +229,11 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".TargetThroughput=" << m_targetThroughput << "&";
   }
 
+  if(m_targetMultiAttachEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TargetMultiAttachEnabled=" << std::boolalpha << m_targetMultiAttachEnabled << "&";
+  }
+
   if(m_originalSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".OriginalSize=" << m_originalSize << "&";
@@ -227,6 +252,11 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_originalThroughputHasBeenSet)
   {
       oStream << location << index << locationValue << ".OriginalThroughput=" << m_originalThroughput << "&";
+  }
+
+  if(m_originalMultiAttachEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OriginalMultiAttachEnabled=" << std::boolalpha << m_originalMultiAttachEnabled << "&";
   }
 
   if(m_progressHasBeenSet)
@@ -276,6 +306,10 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << ".TargetThroughput=" << m_targetThroughput << "&";
   }
+  if(m_targetMultiAttachEnabledHasBeenSet)
+  {
+      oStream << location << ".TargetMultiAttachEnabled=" << std::boolalpha << m_targetMultiAttachEnabled << "&";
+  }
   if(m_originalSizeHasBeenSet)
   {
       oStream << location << ".OriginalSize=" << m_originalSize << "&";
@@ -291,6 +325,10 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_originalThroughputHasBeenSet)
   {
       oStream << location << ".OriginalThroughput=" << m_originalThroughput << "&";
+  }
+  if(m_originalMultiAttachEnabledHasBeenSet)
+  {
+      oStream << location << ".OriginalMultiAttachEnabled=" << std::boolalpha << m_originalMultiAttachEnabled << "&";
   }
   if(m_progressHasBeenSet)
   {

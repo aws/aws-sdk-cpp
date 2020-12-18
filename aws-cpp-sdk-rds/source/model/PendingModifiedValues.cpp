@@ -40,7 +40,9 @@ PendingModifiedValues::PendingModifiedValues() :
     m_cACertificateIdentifierHasBeenSet(false),
     m_dBSubnetGroupNameHasBeenSet(false),
     m_pendingCloudwatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+    m_processorFeaturesHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_cACertificateIdentifierHasBeenSet(false),
     m_dBSubnetGroupNameHasBeenSet(false),
     m_pendingCloudwatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+    m_processorFeaturesHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -171,6 +175,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
 
       m_processorFeaturesHasBeenSet = true;
     }
+    XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
+    if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
+    {
+      m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMDatabaseAuthenticationEnabledNode.GetText()).c_str()).c_str());
+      m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -261,6 +271,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -332,6 +347,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
         processorFeaturesSs << location <<  ".ProcessorFeature." << processorFeaturesIdx++;
         item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
+  }
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 }
 

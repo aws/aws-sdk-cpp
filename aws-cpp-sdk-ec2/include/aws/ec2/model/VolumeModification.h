@@ -258,6 +258,27 @@ namespace Model
 
 
     /**
+     * <p>The target setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline bool GetTargetMultiAttachEnabled() const{ return m_targetMultiAttachEnabled; }
+
+    /**
+     * <p>The target setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline bool TargetMultiAttachEnabledHasBeenSet() const { return m_targetMultiAttachEnabledHasBeenSet; }
+
+    /**
+     * <p>The target setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline void SetTargetMultiAttachEnabled(bool value) { m_targetMultiAttachEnabledHasBeenSet = true; m_targetMultiAttachEnabled = value; }
+
+    /**
+     * <p>The target setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline VolumeModification& WithTargetMultiAttachEnabled(bool value) { SetTargetMultiAttachEnabled(value); return *this;}
+
+
+    /**
      * <p>The original size of the volume, in GiB.</p>
      */
     inline int GetOriginalSize() const{ return m_originalSize; }
@@ -349,6 +370,27 @@ namespace Model
      * <p>The original throughput of the volume, in MiB/s.</p>
      */
     inline VolumeModification& WithOriginalThroughput(int value) { SetOriginalThroughput(value); return *this;}
+
+
+    /**
+     * <p>The original setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline bool GetOriginalMultiAttachEnabled() const{ return m_originalMultiAttachEnabled; }
+
+    /**
+     * <p>The original setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline bool OriginalMultiAttachEnabledHasBeenSet() const { return m_originalMultiAttachEnabledHasBeenSet; }
+
+    /**
+     * <p>The original setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline void SetOriginalMultiAttachEnabled(bool value) { m_originalMultiAttachEnabledHasBeenSet = true; m_originalMultiAttachEnabled = value; }
+
+    /**
+     * <p>The original setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline VolumeModification& WithOriginalMultiAttachEnabled(bool value) { SetOriginalMultiAttachEnabled(value); return *this;}
 
 
     /**
@@ -456,6 +498,9 @@ namespace Model
     int m_targetThroughput;
     bool m_targetThroughputHasBeenSet;
 
+    bool m_targetMultiAttachEnabled;
+    bool m_targetMultiAttachEnabledHasBeenSet;
+
     int m_originalSize;
     bool m_originalSizeHasBeenSet;
 
@@ -467,6 +512,9 @@ namespace Model
 
     int m_originalThroughput;
     bool m_originalThroughputHasBeenSet;
+
+    bool m_originalMultiAttachEnabled;
+    bool m_originalMultiAttachEnabledHasBeenSet;
 
     long long m_progress;
     bool m_progressHasBeenSet;

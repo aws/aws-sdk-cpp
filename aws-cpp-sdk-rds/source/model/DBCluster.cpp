@@ -92,7 +92,8 @@ DBCluster::DBCluster() :
     m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
     m_globalWriteForwardingStatusHasBeenSet(false),
     m_globalWriteForwardingRequested(false),
-    m_globalWriteForwardingRequestedHasBeenSet(false)
+    m_globalWriteForwardingRequestedHasBeenSet(false),
+    m_pendingModifiedValuesHasBeenSet(false)
 {
 }
 
@@ -168,7 +169,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
     m_globalWriteForwardingStatusHasBeenSet(false),
     m_globalWriteForwardingRequested(false),
-    m_globalWriteForwardingRequestedHasBeenSet(false)
+    m_globalWriteForwardingRequestedHasBeenSet(false),
+    m_pendingModifiedValuesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -569,6 +571,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_globalWriteForwardingRequested = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingRequestedNode.GetText()).c_str()).c_str());
       m_globalWriteForwardingRequestedHasBeenSet = true;
     }
+    XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
+    if(!pendingModifiedValuesNode.IsNull())
+    {
+      m_pendingModifiedValues = pendingModifiedValuesNode;
+      m_pendingModifiedValuesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -905,6 +913,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".GlobalWriteForwardingRequested=" << std::boolalpha << m_globalWriteForwardingRequested << "&";
   }
 
+  if(m_pendingModifiedValuesHasBeenSet)
+  {
+      Aws::StringStream pendingModifiedValuesLocationAndMemberSs;
+      pendingModifiedValuesLocationAndMemberSs << location << index << locationValue << ".PendingModifiedValues";
+      m_pendingModifiedValues.OutputToStream(oStream, pendingModifiedValuesLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1182,6 +1197,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_globalWriteForwardingRequestedHasBeenSet)
   {
       oStream << location << ".GlobalWriteForwardingRequested=" << std::boolalpha << m_globalWriteForwardingRequested << "&";
+  }
+  if(m_pendingModifiedValuesHasBeenSet)
+  {
+      Aws::String pendingModifiedValuesLocationAndMember(location);
+      pendingModifiedValuesLocationAndMember += ".PendingModifiedValues";
+      m_pendingModifiedValues.OutputToStream(oStream, pendingModifiedValuesLocationAndMember.c_str());
   }
 }
 

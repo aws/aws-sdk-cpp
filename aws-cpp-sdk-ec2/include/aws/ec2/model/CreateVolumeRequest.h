@@ -652,7 +652,8 @@ namespace Model
      * Multi-Attach, you can attach the volume to up to 16 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is
-     * supported with <code>io1</code> volumes only. For more information, see <a
+     * supported with <code>io1</code> and <code>io2</code> volumes only. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
      * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
@@ -664,7 +665,8 @@ namespace Model
      * Multi-Attach, you can attach the volume to up to 16 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is
-     * supported with <code>io1</code> volumes only. For more information, see <a
+     * supported with <code>io1</code> and <code>io2</code> volumes only. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
      * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
@@ -676,7 +678,8 @@ namespace Model
      * Multi-Attach, you can attach the volume to up to 16 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is
-     * supported with <code>io1</code> volumes only. For more information, see <a
+     * supported with <code>io1</code> and <code>io2</code> volumes only. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
      * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
@@ -688,7 +691,8 @@ namespace Model
      * Multi-Attach, you can attach the volume to up to 16 <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is
-     * supported with <code>io1</code> volumes only. For more information, see <a
+     * supported with <code>io1</code> and <code>io2</code> volumes only. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
      * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>

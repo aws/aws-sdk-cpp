@@ -57,22 +57,22 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, the default "postgres" database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
-     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
-     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
-     * is used. You can't specify the string NULL, or any other reserved word, for
-     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter isn't specified, no database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul>
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
@@ -91,22 +91,22 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, the default "postgres" database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
-     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
-     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
-     * is used. You can't specify the string NULL, or any other reserved word, for
-     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter isn't specified, no database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul>
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
@@ -125,22 +125,22 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, the default "postgres" database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
-     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
-     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
-     * is used. You can't specify the string NULL, or any other reserved word, for
-     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter isn't specified, no database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul>
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
@@ -159,22 +159,22 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, the default "postgres" database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
-     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
-     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
-     * is used. You can't specify the string NULL, or any other reserved word, for
-     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter isn't specified, no database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul>
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
@@ -193,22 +193,22 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, the default "postgres" database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
-     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
-     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
-     * is used. You can't specify the string NULL, or any other reserved word, for
-     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter isn't specified, no database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul>
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
@@ -227,22 +227,22 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, the default "postgres" database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
-     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
-     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
-     * is used. You can't specify the string NULL, or any other reserved word, for
-     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter isn't specified, no database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul>
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
@@ -261,22 +261,22 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, the default "postgres" database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
-     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
-     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
-     * is used. You can't specify the string NULL, or any other reserved word, for
-     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter isn't specified, no database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul>
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
@@ -295,22 +295,22 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, the default "postgres" database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine</p> </li>
-     * </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created DB
-     * instance. If you specify <code>null</code>, the default value <code>ORCL</code>
-     * is used. You can't specify the string NULL, or any other reserved word, for
-     * <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Can't be longer than 8 characters</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>The name of the database to create when the primary instance of the DB
-     * cluster is created. If this parameter isn't specified, no database is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul>
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 

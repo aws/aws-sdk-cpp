@@ -21,7 +21,9 @@ ModifyVolumeRequest::ModifyVolumeRequest() :
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_throughput(0),
-    m_throughputHasBeenSet(false)
+    m_throughputHasBeenSet(false),
+    m_multiAttachEnabled(false),
+    m_multiAttachEnabledHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,11 @@ Aws::String ModifyVolumeRequest::SerializePayload() const
   if(m_throughputHasBeenSet)
   {
     ss << "Throughput=" << m_throughput << "&";
+  }
+
+  if(m_multiAttachEnabledHasBeenSet)
+  {
+    ss << "MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
   }
 
   ss << "Version=2016-11-15";
