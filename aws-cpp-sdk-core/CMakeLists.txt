@@ -86,23 +86,30 @@ file(GLOB UTILS_CRYPTO_FACTORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/
 include(CheckCXXSourceCompiles)
 include(CheckCSourceRuns)
 include(CheckCXXSourceRuns)
+include(CheckCSourceCompiles)
 
 # http client implementations
 if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_HEADERS "include/aws/core/http/curl/*.h")
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
     set(CMAKE_REQUIRED_LIBRARIES ${CURL_LIBRARIES})
-    check_c_source_runs("
-    #include <curl/curl.h>
+    set(CHECK_CURL_HTTP_VERSION_CODE "
+    include <curl/curl.h>
     int main() {
     CURL* handle = curl_easy_init();
-    return curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0); }" CURL_HAS_H2)
-    check_c_source_runs("
-    #include <curl/curl.h>
+    return curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0); }")
+    set(CHECK_CURL_CERT_CODE "
+    include <curl/curl.h>
     int main() {
     CURL* handle = curl_easy_init();
-    return curl_easy_setopt(handle, CURLOPT_PROXY_SSLCERT, \"client.pem\"); }" CURL_HAS_TLS_PROXY)
-    unset(CMAKE_REQUIRED_LIBRARIES)
+    return curl_easy_setopt(handle, CURLOPT_PROXY_SSLCERT, \"client.pem\"); }")
+    if (${CMAKE_CROSSCOMPILING})
+        check_c_source_compiles("${CHECK_CURL_HTTP_VERSION_CODE}" CURL_HAS_H2)
+        check_c_source_compiles("${CHECK_CURL_CERT_CODE}" CURL_HAS_TLS_PROXY)
+    else()
+        check_c_source_runs("${CHECK_CURL_HTTP_VERSION_CODE}" CURL_HAS_H2)
+        check_c_source_runs("${CHECK_CURL_CERT_CODE}" CURL_HAS_TLS_PROXY)
+    endif()
 elseif(ENABLE_WINDOWS_CLIENT)
     # NOTE: HTTP/2 is not supported when using IXML_HTTP_REQUEST_2
     if(USE_IXML_HTTP_REQUEST_2)
