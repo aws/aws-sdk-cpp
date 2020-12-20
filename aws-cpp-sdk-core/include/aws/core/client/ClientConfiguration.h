@@ -235,6 +235,12 @@ namespace Aws
             bool enableEndpointDiscovery;
 
             /**
+             * Enable http client (WinHTTP or CURL) traces.
+             * Defaults to false, it's an optional feature.
+             */
+            bool enableHttpClientTrace;
+
+            /**
              * profileName in config file that will be used by this object to reslove more configurations.
              */
             Aws::String profileName;

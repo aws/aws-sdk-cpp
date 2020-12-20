@@ -422,12 +422,17 @@ int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size,
 
     if(type == CURLINFO_SSL_DATA_IN || type == CURLINFO_SSL_DATA_OUT)
     {
-        AWS_LOGSTREAM_DEBUG("CURL", "(" << CurlInfoTypeToString(type) << ") " << size << "bytes");
+        AWS_LOGSTREAM_TRACE("CURL", "(" << CurlInfoTypeToString(type) << ") " << size << " bytes");
+    }
+    else if (type == CURLINFO_DATA_IN || type == CURLINFO_DATA_OUT)
+    {
+        //for curl data (in/out) traces, print only the data size, as it contains user private data.
+        AWS_LOGSTREAM_TRACE("CURL", "(" << CurlInfoTypeToString(type) << ") " << size << " bytes");
     }
     else
     {
         Aws::String debugString(data, size);
-        AWS_LOGSTREAM_DEBUG("CURL", "(" << CurlInfoTypeToString(type) << ") " << debugString);
+        AWS_LOGSTREAM_TRACE("CURL", "(" << CurlInfoTypeToString(type) << ") " << debugString);
     }
 
     return 0;
@@ -445,7 +450,9 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxyKeyPasswd(clientConfig.proxySSLKeyPassword),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile),
-    m_disableExpectHeader(clientConfig.disableExpectHeader)
+    m_disableExpectHeader(clientConfig.disableExpectHeader),
+    m_enableHttpClientTrace(clientConfig.enableHttpClientTrace)
+
 {
     if (clientConfig.followRedirects == FollowRedirectsPolicy::NEVER ||
        (clientConfig.followRedirects == FollowRedirectsPolicy::DEFAULT && clientConfig.region == Aws::Region::AWS_GLOBAL))
@@ -572,10 +579,13 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_FOLLOWLOCATION, 0L);
         }
 
-#ifdef ENABLE_CURL_LOGGING
-        curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
-        curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
-#endif
+        if (m_enableHttpClientTrace)
+        {
+            AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Activating CURL traces");
+            curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
+            curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
+        }
+
         if (m_isUsingProxy)
         {
             Aws::StringStream ss;

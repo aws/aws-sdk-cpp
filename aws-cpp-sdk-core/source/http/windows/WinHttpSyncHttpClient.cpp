@@ -30,6 +30,191 @@ using namespace Aws::Utils::Logging;
 
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
+static void GetDataErrorBuffer(char* moreDataBuffer,
+                               size_t moreDataBufferSize,
+                               DWORD_PTR dwResult,
+                               DWORD dwError)
+{
+    int ignoreError = 0;
+    char resultBuffer[128] = "";
+    char errorBuffer[128] = "";
+    char descriptionBuffer[256] = "";
+
+    snprintf(resultBuffer, sizeof(resultBuffer), "dwResult is %lld.", dwResult);
+
+    switch (dwResult)
+    {
+    case API_RECEIVE_RESPONSE:
+        snprintf(descriptionBuffer, sizeof(descriptionBuffer), "The error occurred during a call to WinHttpReceiveResponse.");
+        break;
+
+    case API_QUERY_DATA_AVAILABLE:
+        snprintf(descriptionBuffer, sizeof(descriptionBuffer), "The error occurred during a call to WinHttpQueryDataAvailable.");
+        break;
+
+    case API_READ_DATA:
+        snprintf(descriptionBuffer, sizeof(descriptionBuffer), "The error occurred during a call to WinHttpReadData.");
+        break;
+
+    case API_WRITE_DATA:
+        snprintf(descriptionBuffer, sizeof(descriptionBuffer), "The error occurred during a call to WinHttpWriteData");
+        break;
+
+    case API_SEND_REQUEST:
+        snprintf(descriptionBuffer, sizeof(descriptionBuffer), "The error occurred during a call to WinHttpSendRequest.");
+        break;
+
+    case API_GET_PROXY_FOR_URL:
+        snprintf(descriptionBuffer, sizeof(descriptionBuffer), "The error occurred during a call to ... API_GET_PROXY_FOR_URL.");
+        ignoreError = 1;
+        break;
+    default:
+        ignoreError = 1;
+        break;
+    }
+    if (!ignoreError)
+        snprintf(errorBuffer, sizeof(errorBuffer), "error code is %d", dwError);
+    else
+        snprintf(errorBuffer, sizeof(errorBuffer), "error code (shall be ignored?) is %d", dwError);
+    snprintf(moreDataBuffer, moreDataBufferSize, "%s%s%s", resultBuffer, descriptionBuffer, errorBuffer);
+}
+
+static void GetDataErrorForTlsError(DWORD dwFlags,
+                                    char* moreDataBuffer,
+                                    size_t moreDataBufferSize)
+{
+    char flagsBuffer[128] = "";
+    char detailedBuffer[512] = "";
+    snprintf(flagsBuffer, sizeof(flagsBuffer), "TLS error occured. dwFlags is %d.", dwFlags);
+    if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_REV_FAILED)
+        snprintf(detailedBuffer, sizeof(detailedBuffer), "Certification revocation checking has been enabled, but the revocation check failed to verify whether a certificate has been revoked. The server used to check for revocation might be unreachable.");
+    if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_INVALID_CERT)
+        snprintf(detailedBuffer, sizeof(detailedBuffer), "SSL certificate is invalid.");
+    if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_REVOKED)
+        snprintf(detailedBuffer, sizeof(detailedBuffer), "SSL certificate was revoked.");
+    if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_INVALID_CA)
+        snprintf(detailedBuffer, sizeof(detailedBuffer), "The function is unfamiliar with the Certificate Authority that generated the server's certificate.");
+    if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_CN_INVALID)
+        snprintf(detailedBuffer, sizeof(detailedBuffer), "SSL certificate common name (host name field) is incorrect, for example, if you entered www.microsoft.com and the common name on the certificate says www.msn.com.");
+    if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_DATE_INVALID)
+        snprintf(detailedBuffer, sizeof(detailedBuffer), "SSL certificate date that was received from the server is bad. The certificate is expired.");
+    if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_WRONG_USAGE)
+        snprintf(detailedBuffer, sizeof(detailedBuffer), "WINHTTP_CALLBACK_STATUS_FLAG_CERT_WRONG_USAGE");
+    if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_SECURITY_CHANNEL_ERROR)
+        snprintf(detailedBuffer, sizeof(detailedBuffer), "The application experienced an internal error loading the SSL libraries.");
+    snprintf(moreDataBuffer, moreDataBufferSize, "%s%s", flagsBuffer, detailedBuffer);
+}
+
+
+static void WinHttpSyncLogCallback(HINTERNET hInternet,
+                                   DWORD_PTR context,
+                                   DWORD dwInternetStatus,
+                                   LPVOID statusInformation,
+                                   DWORD dwStatusInformationLength)
+{
+    typedef enum
+    {
+        MORE_DATA_NULL,
+        MORE_DATA_STRING,
+        MORE_DATA_DWORD,
+        MORE_DATA_HINTERNET,
+        MORE_DATA_BUFFER,//shall use dwStatusInformationLength
+        MORE_DATA_ERROR,
+        MORE_DATA_ERROR_TLS,
+    }DATA_FLAGS;
+    struct STATUS_DATA
+    {
+        DWORD status;
+        const char* statusString;
+        DATA_FLAGS moreDataFlag;
+        const char* moreDataFormat;
+    } KNOWN_STATUSES[] = {
+        { WINHTTP_CALLBACK_STATUS_CLOSING_CONNECTION, "Closing the connection to the server.", MORE_DATA_NULL, "" },
+        { WINHTTP_CALLBACK_STATUS_CONNECTED_TO_SERVER, "Successfully connected to the server.", MORE_DATA_STRING, "IP address is %S" },
+        { WINHTTP_CALLBACK_STATUS_CONNECTING_TO_SERVER, "Connecting to the server.", MORE_DATA_STRING, "IP address is %S" },
+        { WINHTTP_CALLBACK_STATUS_CONNECTION_CLOSED, "Successfully closed the connection to the server", MORE_DATA_NULL, "" },
+        { WINHTTP_CALLBACK_STATUS_DATA_AVAILABLE, "Data is available to be retrieved with WinHttpReadData.", MORE_DATA_DWORD, "Data size is %d" },
+        { WINHTTP_CALLBACK_STATUS_HANDLE_CREATED, "An HINTERNET handle has been created.", MORE_DATA_HINTERNET, "" },
+        { WINHTTP_CALLBACK_STATUS_HANDLE_CLOSING, "An HINTERNET handle has been terminated.", MORE_DATA_HINTERNET, "" },
+        { WINHTTP_CALLBACK_STATUS_HEADERS_AVAILABLE, "The response header has been received and is available with WinHttpQueryHeaders.", MORE_DATA_NULL, "" },
+        { WINHTTP_CALLBACK_STATUS_INTERMEDIATE_RESPONSE, "Received an intermediate (100 level) status code message from the server.", MORE_DATA_DWORD, "http status is %d" },
+        { WINHTTP_CALLBACK_STATUS_NAME_RESOLVED, "Successfully found the IP address of the server.", MORE_DATA_STRING, "Name resolved is %S" },
+        { WINHTTP_CALLBACK_STATUS_READ_COMPLETE, "Data was successfully read from the server.", MORE_DATA_BUFFER, "Buffer size read is %d" },
+        { WINHTTP_CALLBACK_STATUS_RECEIVING_RESPONSE, "Waiting for the server to respond to a request.", MORE_DATA_NULL, "" },
+        { WINHTTP_CALLBACK_STATUS_REDIRECT, "An HTTP request is about to automatically redirect the request.", MORE_DATA_STRING, "Redirect target is %S" },
+        { WINHTTP_CALLBACK_STATUS_REQUEST_ERROR, "An error occurred while sending an HTTP request.", MORE_DATA_ERROR, "An error occured ... to be formatted ..." },
+        { WINHTTP_CALLBACK_STATUS_REQUEST_SENT, "Successfully sent the information request to the server.", MORE_DATA_DWORD, "Sent %d bytes" },
+        { WINHTTP_CALLBACK_STATUS_RESOLVING_NAME, "Looking up the IP address of a server name.", MORE_DATA_STRING, "Trying to resolve '%S'" },
+        { WINHTTP_CALLBACK_STATUS_RESPONSE_RECEIVED, "Successfully received a response from the server.", MORE_DATA_DWORD, "Received %d bytes" },
+        { WINHTTP_CALLBACK_STATUS_SECURE_FAILURE, "One or more errors were encountered while retrieving a Secure Sockets Layer (SSL) certificate from the server.", MORE_DATA_ERROR_TLS, "TO BE CHECKED" },
+        { WINHTTP_CALLBACK_STATUS_SENDING_REQUEST, "Sending the information request to the server.", MORE_DATA_NULL, "" },
+        { WINHTTP_CALLBACK_STATUS_SENDREQUEST_COMPLETE, "The request completed successfully.", MORE_DATA_NULL, "" },
+        { WINHTTP_CALLBACK_STATUS_WRITE_COMPLETE, "Data was successfully written to the server.", MORE_DATA_DWORD, "Written %d bytes" },
+        { WINHTTP_CALLBACK_STATUS_CLOSE_COMPLETE, "The connection was successfully closed via a call to WinHttpWebSocketClose.", MORE_DATA_NULL, "" },
+        { WINHTTP_CALLBACK_STATUS_SHUTDOWN_COMPLETE, "The connection was successfully shut down via a call to WinHttpWebSocketShutdown.", MORE_DATA_NULL, "" }
+    };
+    context;
+    hInternet;
+
+    bool found = false;
+    int i;
+    for (i = 0; i < sizeof(KNOWN_STATUSES) / sizeof(KNOWN_STATUSES[0]) && !found; i++)
+    {
+        if (dwInternetStatus == KNOWN_STATUSES[i].status)
+        {
+            struct STATUS_DATA* data = &(KNOWN_STATUSES[i]);
+            DWORD_PTR dwResult = 0;
+            DWORD dwError = 0;
+            DWORD tlsErrorFlags = 0;
+
+            char moreDataBuffer[1024] = "";
+            switch (data->moreDataFlag)
+            {
+            case MORE_DATA_NULL:
+                break;
+            case MORE_DATA_STRING:
+                snprintf(moreDataBuffer, sizeof(moreDataBuffer), data->moreDataFormat, (wchar_t*)statusInformation);
+                break;
+            case MORE_DATA_DWORD:
+                snprintf(moreDataBuffer, sizeof(moreDataBuffer), data->moreDataFormat, *((DWORD*)statusInformation));
+                break;
+            case MORE_DATA_HINTERNET:
+                break;
+            case MORE_DATA_BUFFER:
+                snprintf(moreDataBuffer, sizeof(moreDataBuffer), data->moreDataFormat, dwStatusInformationLength);
+                break;
+            case MORE_DATA_ERROR:
+                dwResult = ((WINHTTP_ASYNC_RESULT*)statusInformation)->dwResult;
+                dwError = ((WINHTTP_ASYNC_RESULT*)statusInformation)->dwError;
+                GetDataErrorBuffer(moreDataBuffer,
+                                   sizeof(moreDataBuffer),
+                                   dwResult,
+                                   dwError);
+                break;
+            case MORE_DATA_ERROR_TLS:
+                tlsErrorFlags = *(DWORD*)statusInformation;
+                GetDataErrorForTlsError(tlsErrorFlags, moreDataBuffer, sizeof(moreDataBuffer));
+                break;
+            default:
+                snprintf(moreDataBuffer,
+                         sizeof(moreDataBuffer),
+                         "unknown more data flag %d",
+                         data->moreDataFlag);
+                break;
+            }//switch more data
+            if (moreDataBuffer[0])
+            {
+                AWS_LOGSTREAM_TRACE("WinHttp", data->statusString << " " << moreDataBuffer);
+            }
+            else
+                AWS_LOGSTREAM_TRACE("WinHttp", data->statusString);
+            found = true;
+        }//found handler
+    }
+    if (!found)
+        AWS_LOGSTREAM_DEBUG("WinHttp", "got unrecognized internet status " << dwInternetStatus);
+}
+
 static void WinHttpEnableHttp2(void* handle)
 {
 #ifdef WINHTTP_HAS_H2
@@ -94,7 +279,15 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
 
     Aws::WString openString = StringUtils::ToWString(config.userAgent.c_str());
     // WinhttpOpen will create a session handle
-    SetOpenHandle(WinHttpOpen(openString.c_str(), winhttpFlags, proxyString.c_str(), nullptr, 0));
+    HINTERNET hHttpSession = WinHttpOpen(openString.c_str(), winhttpFlags, proxyString.c_str(), nullptr, 0);
+
+    if (config.enableHttpClientTrace)
+    {
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "Enabling WinHttp traces");
+        WinHttpSetStatusCallback(hHttpSession, WinHttpSyncLogCallback, WINHTTP_CALLBACK_FLAG_ALL_NOTIFICATIONS, (DWORD_PTR)NULL);
+    }
+
+    SetOpenHandle(hHttpSession);
 
     if (!WinHttpSetTimeouts(GetOpenHandle(), config.connectTimeoutMs, config.connectTimeoutMs, -1, config.requestTimeoutMs))
     {
