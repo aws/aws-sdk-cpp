@@ -94,12 +94,12 @@ if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
     set(CMAKE_REQUIRED_LIBRARIES ${CURL_LIBRARIES})
     set(CHECK_CURL_HTTP_VERSION_CODE "
-    include <curl/curl.h>
+    #include <curl/curl.h>
     int main() {
     CURL* handle = curl_easy_init();
     return curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0); }")
     set(CHECK_CURL_CERT_CODE "
-    include <curl/curl.h>
+    #include <curl/curl.h>
     int main() {
     CURL* handle = curl_easy_init();
     return curl_easy_setopt(handle, CURLOPT_PROXY_SSLCERT, \"client.pem\"); }")
