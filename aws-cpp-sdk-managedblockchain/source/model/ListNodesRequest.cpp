@@ -34,6 +34,13 @@ Aws::String ListNodesRequest::SerializePayload() const
 void ListNodesRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_memberIdHasBeenSet)
+    {
+      ss << m_memberId;
+      uri.AddQueryStringParameter("memberId", ss.str());
+      ss.str("");
+    }
+
     if(m_statusHasBeenSet)
     {
       ss << NodeStatusMapper::GetNameForNodeStatus(m_status);

@@ -17,6 +17,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for <code>CancelJob</code>.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJobRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API CancelJobRequest : public BatchRequest
   {

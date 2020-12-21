@@ -19,12 +19,14 @@ namespace Model
 {
 
 StartTransactionResult::StartTransactionResult() : 
-    m_transactionIdHasBeenSet(false)
+    m_transactionIdHasBeenSet(false),
+    m_timingInformationHasBeenSet(false)
 {
 }
 
 StartTransactionResult::StartTransactionResult(JsonView jsonValue) : 
-    m_transactionIdHasBeenSet(false)
+    m_transactionIdHasBeenSet(false),
+    m_timingInformationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ StartTransactionResult& StartTransactionResult::operator =(JsonView jsonValue)
     m_transactionIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimingInformation"))
+  {
+    m_timingInformation = jsonValue.GetObject("TimingInformation");
+
+    m_timingInformationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue StartTransactionResult::Jsonize() const
   if(m_transactionIdHasBeenSet)
   {
    payload.WithString("TransactionId", m_transactionId);
+
+  }
+
+  if(m_timingInformationHasBeenSet)
+  {
+   payload.WithObject("TimingInformation", m_timingInformation.Jsonize());
 
   }
 

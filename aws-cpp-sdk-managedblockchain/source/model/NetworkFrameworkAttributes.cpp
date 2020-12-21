@@ -19,12 +19,14 @@ namespace Model
 {
 
 NetworkFrameworkAttributes::NetworkFrameworkAttributes() : 
-    m_fabricHasBeenSet(false)
+    m_fabricHasBeenSet(false),
+    m_ethereumHasBeenSet(false)
 {
 }
 
 NetworkFrameworkAttributes::NetworkFrameworkAttributes(JsonView jsonValue) : 
-    m_fabricHasBeenSet(false)
+    m_fabricHasBeenSet(false),
+    m_ethereumHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ NetworkFrameworkAttributes& NetworkFrameworkAttributes::operator =(JsonView json
     m_fabricHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Ethereum"))
+  {
+    m_ethereum = jsonValue.GetObject("Ethereum");
+
+    m_ethereumHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue NetworkFrameworkAttributes::Jsonize() const
   if(m_fabricHasBeenSet)
   {
    payload.WithObject("Fabric", m_fabric.Jsonize());
+
+  }
+
+  if(m_ethereumHasBeenSet)
+  {
+   payload.WithObject("Ethereum", m_ethereum.Jsonize());
 
   }
 

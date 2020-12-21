@@ -26,8 +26,10 @@ static const int TEMPLATES_NOT_AVAILABLE_IN_REGION_HASH = HashingUtils::HashStri
 static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
 static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("InvalidResourceStateException");
 static const int NO_AVAILABLE_ORGANIZATION_HASH = HashingUtils::HashString("NoAvailableOrganizationException");
+static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TagPolicyViolationException");
 static const int A_W_S_SERVICE_ACCESS_NOT_ENABLED_HASH = HashingUtils::HashString("AWSServiceAccessNotEnabledException");
 static const int ILLEGAL_ARGUMENT_HASH = HashingUtils::HashString("IllegalArgumentException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int QUOTA_EXCEEDED_HASH = HashingUtils::HashString("QuotaExceededException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
@@ -70,6 +72,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::NO_AVAILABLE_ORGANIZATION), false);
   }
+  else if (hashCode == TAG_POLICY_VIOLATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TAG_POLICY_VIOLATION), false);
+  }
   else if (hashCode == A_W_S_SERVICE_ACCESS_NOT_ENABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::A_W_S_SERVICE_ACCESS_NOT_ENABLED), false);
@@ -77,6 +83,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ILLEGAL_ARGUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::ILLEGAL_ARGUMENT), false);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TOO_MANY_TAGS), false);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {

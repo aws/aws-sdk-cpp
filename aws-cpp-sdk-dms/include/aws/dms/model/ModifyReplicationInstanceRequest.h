@@ -505,7 +505,7 @@ namespace Model
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
@@ -517,7 +517,7 @@ namespace Model
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
@@ -529,7 +529,7 @@ namespace Model
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
@@ -541,7 +541,7 @@ namespace Model
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor

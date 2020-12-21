@@ -19,12 +19,16 @@ namespace Model
 {
 
 ExecuteStatementResult::ExecuteStatementResult() : 
-    m_firstPageHasBeenSet(false)
+    m_firstPageHasBeenSet(false),
+    m_timingInformationHasBeenSet(false),
+    m_consumedIOsHasBeenSet(false)
 {
 }
 
 ExecuteStatementResult::ExecuteStatementResult(JsonView jsonValue) : 
-    m_firstPageHasBeenSet(false)
+    m_firstPageHasBeenSet(false),
+    m_timingInformationHasBeenSet(false),
+    m_consumedIOsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,20 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(JsonView jsonValue)
     m_firstPageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimingInformation"))
+  {
+    m_timingInformation = jsonValue.GetObject("TimingInformation");
+
+    m_timingInformationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConsumedIOs"))
+  {
+    m_consumedIOs = jsonValue.GetObject("ConsumedIOs");
+
+    m_consumedIOsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +66,18 @@ JsonValue ExecuteStatementResult::Jsonize() const
   if(m_firstPageHasBeenSet)
   {
    payload.WithObject("FirstPage", m_firstPage.Jsonize());
+
+  }
+
+  if(m_timingInformationHasBeenSet)
+  {
+   payload.WithObject("TimingInformation", m_timingInformation.Jsonize());
+
+  }
+
+  if(m_consumedIOsHasBeenSet)
+  {
+   payload.WithObject("ConsumedIOs", m_consumedIOs.Jsonize());
 
   }
 

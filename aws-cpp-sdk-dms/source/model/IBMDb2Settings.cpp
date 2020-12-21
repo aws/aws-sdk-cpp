@@ -29,7 +29,9 @@ IBMDb2Settings::IBMDb2Settings() :
     m_currentLsnHasBeenSet(false),
     m_maxKBytesPerRead(0),
     m_maxKBytesPerReadHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ IBMDb2Settings::IBMDb2Settings(JsonView jsonValue) :
     m_currentLsnHasBeenSet(false),
     m_maxKBytesPerRead(0),
     m_maxKBytesPerReadHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +111,20 @@ IBMDb2Settings& IBMDb2Settings::operator =(JsonView jsonValue)
     m_usernameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
+  {
+    m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
+
+    m_secretsManagerAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerSecretId"))
+  {
+    m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
+
+    m_secretsManagerSecretIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -159,6 +177,18 @@ JsonValue IBMDb2Settings::Jsonize() const
   if(m_usernameHasBeenSet)
   {
    payload.WithString("Username", m_username);
+
+  }
+
+  if(m_secretsManagerAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("SecretsManagerAccessRoleArn", m_secretsManagerAccessRoleArn);
+
+  }
+
+  if(m_secretsManagerSecretIdHasBeenSet)
+  {
+   payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
 
   }
 

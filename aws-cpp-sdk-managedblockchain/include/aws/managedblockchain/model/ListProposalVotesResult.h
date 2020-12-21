@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p> The listing of votes. </p>
+     * <p> The list of votes. </p>
      */
     inline const Aws::Vector<VoteSummary>& GetProposalVotes() const{ return m_proposalVotes; }
 
     /**
-     * <p> The listing of votes. </p>
+     * <p> The list of votes. </p>
      */
     inline void SetProposalVotes(const Aws::Vector<VoteSummary>& value) { m_proposalVotes = value; }
 
     /**
-     * <p> The listing of votes. </p>
+     * <p> The list of votes. </p>
      */
     inline void SetProposalVotes(Aws::Vector<VoteSummary>&& value) { m_proposalVotes = std::move(value); }
 
     /**
-     * <p> The listing of votes. </p>
+     * <p> The list of votes. </p>
      */
     inline ListProposalVotesResult& WithProposalVotes(const Aws::Vector<VoteSummary>& value) { SetProposalVotes(value); return *this;}
 
     /**
-     * <p> The listing of votes. </p>
+     * <p> The list of votes. </p>
      */
     inline ListProposalVotesResult& WithProposalVotes(Aws::Vector<VoteSummary>&& value) { SetProposalVotes(std::move(value)); return *this;}
 
     /**
-     * <p> The listing of votes. </p>
+     * <p> The list of votes. </p>
      */
     inline ListProposalVotesResult& AddProposalVotes(const VoteSummary& value) { m_proposalVotes.push_back(value); return *this; }
 
     /**
-     * <p> The listing of votes. </p>
+     * <p> The list of votes. </p>
      */
     inline ListProposalVotesResult& AddProposalVotes(VoteSummary&& value) { m_proposalVotes.push_back(std::move(value)); return *this; }
 

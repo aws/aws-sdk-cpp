@@ -21,13 +21,17 @@ namespace Model
 
 CommitTransactionResult::CommitTransactionResult() : 
     m_transactionIdHasBeenSet(false),
-    m_commitDigestHasBeenSet(false)
+    m_commitDigestHasBeenSet(false),
+    m_timingInformationHasBeenSet(false),
+    m_consumedIOsHasBeenSet(false)
 {
 }
 
 CommitTransactionResult::CommitTransactionResult(JsonView jsonValue) : 
     m_transactionIdHasBeenSet(false),
-    m_commitDigestHasBeenSet(false)
+    m_commitDigestHasBeenSet(false),
+    m_timingInformationHasBeenSet(false),
+    m_consumedIOsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,20 @@ CommitTransactionResult& CommitTransactionResult::operator =(JsonView jsonValue)
     m_commitDigestHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimingInformation"))
+  {
+    m_timingInformation = jsonValue.GetObject("TimingInformation");
+
+    m_timingInformationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConsumedIOs"))
+  {
+    m_consumedIOs = jsonValue.GetObject("ConsumedIOs");
+
+    m_consumedIOsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +81,18 @@ JsonValue CommitTransactionResult::Jsonize() const
   if(m_commitDigestHasBeenSet)
   {
    payload.WithString("CommitDigest", HashingUtils::Base64Encode(m_commitDigest));
+  }
+
+  if(m_timingInformationHasBeenSet)
+  {
+   payload.WithObject("TimingInformation", m_timingInformation.Jsonize());
+
+  }
+
+  if(m_consumedIOsHasBeenSet)
+  {
+   payload.WithObject("ConsumedIOs", m_consumedIOs.Jsonize());
+
   }
 
   return payload;

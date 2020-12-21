@@ -222,7 +222,7 @@ namespace Model
 
 
     /**
-     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
@@ -231,7 +231,7 @@ namespace Model
     inline const JobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
@@ -240,7 +240,7 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
@@ -249,7 +249,7 @@ namespace Model
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
@@ -258,7 +258,7 @@ namespace Model
     inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
@@ -267,7 +267,7 @@ namespace Model
     inline JobDetail& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
@@ -538,42 +538,42 @@ namespace Model
 
 
     /**
-     * <p>The job definition that is used by this job.</p>
+     * <p>The job definition that's used by this job.</p>
      */
     inline const Aws::String& GetJobDefinition() const{ return m_jobDefinition; }
 
     /**
-     * <p>The job definition that is used by this job.</p>
+     * <p>The job definition that's used by this job.</p>
      */
     inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
 
     /**
-     * <p>The job definition that is used by this job.</p>
+     * <p>The job definition that's used by this job.</p>
      */
     inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
 
     /**
-     * <p>The job definition that is used by this job.</p>
+     * <p>The job definition that's used by this job.</p>
      */
     inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
 
     /**
-     * <p>The job definition that is used by this job.</p>
+     * <p>The job definition that's used by this job.</p>
      */
     inline void SetJobDefinition(const char* value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition.assign(value); }
 
     /**
-     * <p>The job definition that is used by this job.</p>
+     * <p>The job definition that's used by this job.</p>
      */
     inline JobDetail& WithJobDefinition(const Aws::String& value) { SetJobDefinition(value); return *this;}
 
     /**
-     * <p>The job definition that is used by this job.</p>
+     * <p>The job definition that's used by this job.</p>
      */
     inline JobDetail& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The job definition that is used by this job.</p>
+     * <p>The job definition that's used by this job.</p>
      */
     inline JobDetail& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
 
@@ -708,37 +708,37 @@ namespace Model
 
 
     /**
-     * <p>An object representing the details of a node that is associated with a
+     * <p>An object representing the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline const NodeDetails& GetNodeDetails() const{ return m_nodeDetails; }
 
     /**
-     * <p>An object representing the details of a node that is associated with a
+     * <p>An object representing the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline bool NodeDetailsHasBeenSet() const { return m_nodeDetailsHasBeenSet; }
 
     /**
-     * <p>An object representing the details of a node that is associated with a
+     * <p>An object representing the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline void SetNodeDetails(const NodeDetails& value) { m_nodeDetailsHasBeenSet = true; m_nodeDetails = value; }
 
     /**
-     * <p>An object representing the details of a node that is associated with a
+     * <p>An object representing the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline void SetNodeDetails(NodeDetails&& value) { m_nodeDetailsHasBeenSet = true; m_nodeDetails = std::move(value); }
 
     /**
-     * <p>An object representing the details of a node that is associated with a
+     * <p>An object representing the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline JobDetail& WithNodeDetails(const NodeDetails& value) { SetNodeDetails(value); return *this;}
 
     /**
-     * <p>An object representing the details of a node that is associated with a
+     * <p>An object representing the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline JobDetail& WithNodeDetails(NodeDetails&& value) { SetNodeDetails(std::move(value)); return *this;}

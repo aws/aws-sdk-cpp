@@ -182,17 +182,10 @@ CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& r
     AWS_LOGSTREAM_ERROR("CreateNode", "Required field: NetworkId, is not set");
     return CreateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreateNode", "Required field: MemberId, is not set");
-    return CreateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/networks/";
   ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
   ss << "/nodes";
   uri.SetPath(uri.GetPath() + ss.str());
   return CreateNodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -297,11 +290,6 @@ DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& r
     AWS_LOGSTREAM_ERROR("DeleteNode", "Required field: NetworkId, is not set");
     return DeleteNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteNode", "Required field: MemberId, is not set");
-    return DeleteNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   if (!request.NodeIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteNode", "Required field: NodeId, is not set");
@@ -311,8 +299,6 @@ DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& r
   Aws::StringStream ss;
   ss << "/networks/";
   ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
   ss << "/nodes/";
   ss << request.GetNodeId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -417,11 +403,6 @@ GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) c
     AWS_LOGSTREAM_ERROR("GetNode", "Required field: NetworkId, is not set");
     return GetNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetNode", "Required field: MemberId, is not set");
-    return GetNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   if (!request.NodeIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetNode", "Required field: NodeId, is not set");
@@ -431,8 +412,6 @@ GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) c
   Aws::StringStream ss;
   ss << "/networks/";
   ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
   ss << "/nodes/";
   ss << request.GetNodeId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -592,17 +571,10 @@ ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& requ
     AWS_LOGSTREAM_ERROR("ListNodes", "Required field: NetworkId, is not set");
     return ListNodesOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListNodes", "Required field: MemberId, is not set");
-    return ListNodesOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/networks/";
   ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
   ss << "/nodes";
   uri.SetPath(uri.GetPath() + ss.str());
   return ListNodesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -781,11 +753,6 @@ UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& r
     AWS_LOGSTREAM_ERROR("UpdateNode", "Required field: NetworkId, is not set");
     return UpdateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
   }
-  if (!request.MemberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateNode", "Required field: MemberId, is not set");
-    return UpdateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
-  }
   if (!request.NodeIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateNode", "Required field: NodeId, is not set");
@@ -795,8 +762,6 @@ UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& r
   Aws::StringStream ss;
   ss << "/networks/";
   ss << request.GetNetworkId();
-  ss << "/members/";
-  ss << request.GetMemberId();
   ss << "/nodes/";
   ss << request.GetNodeId();
   uri.SetPath(uri.GetPath() + ss.str());

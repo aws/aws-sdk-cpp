@@ -120,37 +120,37 @@ namespace Model
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline const NetworkStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline void SetStatus(const NetworkStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline void SetStatus(NetworkStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline ListNetworksRequest& WithStatus(const NetworkStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline ListNetworksRequest& WithStatus(NetworkStatus&& value) { SetStatus(std::move(value)); return *this;}
 

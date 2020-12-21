@@ -343,42 +343,42 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) associated with the resource.</p>
+     * <p>accoun</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) associated with the resource.</p>
+     * <p>accoun</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) associated with the resource.</p>
+     * <p>accoun</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) associated with the resource.</p>
+     * <p>accoun</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) associated with the resource.</p>
+     * <p>accoun</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) associated with the resource.</p>
+     * <p>accoun</p>
      */
     inline ConfigurationItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) associated with the resource.</p>
+     * <p>accoun</p>
      */
     inline ConfigurationItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) associated with the resource.</p>
+     * <p>accoun</p>
      */
     inline ConfigurationItem& WithArn(const char* value) { SetArn(value); return *this;}
 

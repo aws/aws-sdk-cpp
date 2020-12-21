@@ -33,37 +33,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the compute environment.</p>
+     * <p>The name of the compute environment. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline const Aws::String& GetComputeEnvironmentName() const{ return m_computeEnvironmentName; }
 
     /**
-     * <p>The name of the compute environment.</p>
+     * <p>The name of the compute environment. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentName = value; }
 
     /**
-     * <p>The name of the compute environment.</p>
+     * <p>The name of the compute environment. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentName = std::move(value); }
 
     /**
-     * <p>The name of the compute environment.</p>
+     * <p>The name of the compute environment. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline void SetComputeEnvironmentName(const char* value) { m_computeEnvironmentName.assign(value); }
 
     /**
-     * <p>The name of the compute environment.</p>
+     * <p>The name of the compute environment. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline UpdateComputeEnvironmentResult& WithComputeEnvironmentName(const Aws::String& value) { SetComputeEnvironmentName(value); return *this;}
 
     /**
-     * <p>The name of the compute environment.</p>
+     * <p>The name of the compute environment. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline UpdateComputeEnvironmentResult& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the compute environment.</p>
+     * <p>The name of the compute environment. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline UpdateComputeEnvironmentResult& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
 

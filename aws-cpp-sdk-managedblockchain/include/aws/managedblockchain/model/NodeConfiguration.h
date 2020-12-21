@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Configuration properties of a peer node.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration properties of a node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeConfiguration">AWS
    * API Reference</a></p>
    */
@@ -122,38 +122,38 @@ namespace Model
 
 
     /**
-     * <p>Configuration properties for logging events associated with a peer node owned
-     * by a member in a Managed Blockchain network. </p>
+     * <p>Configuration properties for logging events associated with a peer node on a
+     * Hyperledger Fabric network on Managed Blockchain. </p>
      */
     inline const NodeLogPublishingConfiguration& GetLogPublishingConfiguration() const{ return m_logPublishingConfiguration; }
 
     /**
-     * <p>Configuration properties for logging events associated with a peer node owned
-     * by a member in a Managed Blockchain network. </p>
+     * <p>Configuration properties for logging events associated with a peer node on a
+     * Hyperledger Fabric network on Managed Blockchain. </p>
      */
     inline bool LogPublishingConfigurationHasBeenSet() const { return m_logPublishingConfigurationHasBeenSet; }
 
     /**
-     * <p>Configuration properties for logging events associated with a peer node owned
-     * by a member in a Managed Blockchain network. </p>
+     * <p>Configuration properties for logging events associated with a peer node on a
+     * Hyperledger Fabric network on Managed Blockchain. </p>
      */
     inline void SetLogPublishingConfiguration(const NodeLogPublishingConfiguration& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = value; }
 
     /**
-     * <p>Configuration properties for logging events associated with a peer node owned
-     * by a member in a Managed Blockchain network. </p>
+     * <p>Configuration properties for logging events associated with a peer node on a
+     * Hyperledger Fabric network on Managed Blockchain. </p>
      */
     inline void SetLogPublishingConfiguration(NodeLogPublishingConfiguration&& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = std::move(value); }
 
     /**
-     * <p>Configuration properties for logging events associated with a peer node owned
-     * by a member in a Managed Blockchain network. </p>
+     * <p>Configuration properties for logging events associated with a peer node on a
+     * Hyperledger Fabric network on Managed Blockchain. </p>
      */
     inline NodeConfiguration& WithLogPublishingConfiguration(const NodeLogPublishingConfiguration& value) { SetLogPublishingConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration properties for logging events associated with a peer node owned
-     * by a member in a Managed Blockchain network. </p>
+     * <p>Configuration properties for logging events associated with a peer node on a
+     * Hyperledger Fabric network on Managed Blockchain. </p>
      */
     inline NodeConfiguration& WithLogPublishingConfiguration(NodeLogPublishingConfiguration&& value) { SetLogPublishingConfiguration(std::move(value)); return *this;}
 
@@ -162,7 +162,7 @@ namespace Model
      * <p>The state database that the node uses. Values are <code>LevelDB</code> or
      * <code>CouchDB</code>. When using an Amazon Managed Blockchain network with
      * Hyperledger Fabric version 1.4 or later, the default is
-     * <code>CouchDB</code>.</p>
+     * <code>CouchDB</code>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline const StateDBType& GetStateDB() const{ return m_stateDB; }
 
@@ -170,7 +170,7 @@ namespace Model
      * <p>The state database that the node uses. Values are <code>LevelDB</code> or
      * <code>CouchDB</code>. When using an Amazon Managed Blockchain network with
      * Hyperledger Fabric version 1.4 or later, the default is
-     * <code>CouchDB</code>.</p>
+     * <code>CouchDB</code>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline bool StateDBHasBeenSet() const { return m_stateDBHasBeenSet; }
 
@@ -178,7 +178,7 @@ namespace Model
      * <p>The state database that the node uses. Values are <code>LevelDB</code> or
      * <code>CouchDB</code>. When using an Amazon Managed Blockchain network with
      * Hyperledger Fabric version 1.4 or later, the default is
-     * <code>CouchDB</code>.</p>
+     * <code>CouchDB</code>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline void SetStateDB(const StateDBType& value) { m_stateDBHasBeenSet = true; m_stateDB = value; }
 
@@ -186,7 +186,7 @@ namespace Model
      * <p>The state database that the node uses. Values are <code>LevelDB</code> or
      * <code>CouchDB</code>. When using an Amazon Managed Blockchain network with
      * Hyperledger Fabric version 1.4 or later, the default is
-     * <code>CouchDB</code>.</p>
+     * <code>CouchDB</code>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline void SetStateDB(StateDBType&& value) { m_stateDBHasBeenSet = true; m_stateDB = std::move(value); }
 
@@ -194,7 +194,7 @@ namespace Model
      * <p>The state database that the node uses. Values are <code>LevelDB</code> or
      * <code>CouchDB</code>. When using an Amazon Managed Blockchain network with
      * Hyperledger Fabric version 1.4 or later, the default is
-     * <code>CouchDB</code>.</p>
+     * <code>CouchDB</code>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline NodeConfiguration& WithStateDB(const StateDBType& value) { SetStateDB(value); return *this;}
 
@@ -202,7 +202,7 @@ namespace Model
      * <p>The state database that the node uses. Values are <code>LevelDB</code> or
      * <code>CouchDB</code>. When using an Amazon Managed Blockchain network with
      * Hyperledger Fabric version 1.4 or later, the default is
-     * <code>CouchDB</code>.</p>
+     * <code>CouchDB</code>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline NodeConfiguration& WithStateDB(StateDBType&& value) { SetStateDB(std::move(value)); return *this;}
 

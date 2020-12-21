@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     CREATING,
     AVAILABLE,
+    UNHEALTHY,
     CREATE_FAILED,
     UPDATING,
     DELETING,

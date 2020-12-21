@@ -59,26 +59,30 @@ namespace Model
 
 
     /**
-     * <p>The number of requests subtracted from the given limit in the initial time
-     * period.</p>
+     * <p>The day that a time period starts. For example, with a time period of
+     * <code>WEEK</code>, an offset of <code>0</code> starts on Sunday, and an offset
+     * of <code>1</code> starts on Monday.</p>
      */
     inline int GetOffset() const{ return m_offset; }
 
     /**
-     * <p>The number of requests subtracted from the given limit in the initial time
-     * period.</p>
+     * <p>The day that a time period starts. For example, with a time period of
+     * <code>WEEK</code>, an offset of <code>0</code> starts on Sunday, and an offset
+     * of <code>1</code> starts on Monday.</p>
      */
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
 
     /**
-     * <p>The number of requests subtracted from the given limit in the initial time
-     * period.</p>
+     * <p>The day that a time period starts. For example, with a time period of
+     * <code>WEEK</code>, an offset of <code>0</code> starts on Sunday, and an offset
+     * of <code>1</code> starts on Monday.</p>
      */
     inline void SetOffset(int value) { m_offsetHasBeenSet = true; m_offset = value; }
 
     /**
-     * <p>The number of requests subtracted from the given limit in the initial time
-     * period.</p>
+     * <p>The day that a time period starts. For example, with a time period of
+     * <code>WEEK</code>, an offset of <code>0</code> starts on Sunday, and an offset
+     * of <code>1</code> starts on Monday.</p>
      */
     inline QuotaSettings& WithOffset(int value) { SetOffset(value); return *this;}
 

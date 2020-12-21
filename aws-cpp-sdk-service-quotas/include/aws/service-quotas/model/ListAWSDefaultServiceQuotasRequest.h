@@ -35,204 +35,112 @@ namespace Model
 
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline ListAWSDefaultServiceQuotasRequest& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline ListAWSDefaultServiceQuotasRequest& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline ListAWSDefaultServiceQuotasRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from. If additional items exist beyond the specified maximum,
-     * the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call
-     * to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from. If additional items exist beyond the specified maximum,
-     * the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call
-     * to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from. If additional items exist beyond the specified maximum,
-     * the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call
-     * to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from. If additional items exist beyond the specified maximum,
-     * the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call
-     * to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from. If additional items exist beyond the specified maximum,
-     * the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call
-     * to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from. If additional items exist beyond the specified maximum,
-     * the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call
-     * to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline ListAWSDefaultServiceQuotasRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from. If additional items exist beyond the specified maximum,
-     * the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call
-     * to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline ListAWSDefaultServiceQuotasRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from. If additional items exist beyond the specified maximum,
-     * the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call
-     * to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline ListAWSDefaultServiceQuotasRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, the response defaults to a value
-     * that's specific to the operation. If additional items exist beyond the specified
-     * maximum, the <code>NextToken</code> element is present and has a value (isn't
-     * null). Include that value as the <code>NextToken</code> request parameter in the
-     * call to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, if any, make another call with the token returned from this
+     * call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, the response defaults to a value
-     * that's specific to the operation. If additional items exist beyond the specified
-     * maximum, the <code>NextToken</code> element is present and has a value (isn't
-     * null). Include that value as the <code>NextToken</code> request parameter in the
-     * call to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, if any, make another call with the token returned from this
+     * call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, the response defaults to a value
-     * that's specific to the operation. If additional items exist beyond the specified
-     * maximum, the <code>NextToken</code> element is present and has a value (isn't
-     * null). Include that value as the <code>NextToken</code> request parameter in the
-     * call to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, if any, make another call with the token returned from this
+     * call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, the response defaults to a value
-     * that's specific to the operation. If additional items exist beyond the specified
-     * maximum, the <code>NextToken</code> element is present and has a value (isn't
-     * null). Include that value as the <code>NextToken</code> request parameter in the
-     * call to the operation to get the next part of the results. You should check
-     * <code>NextToken</code> after every operation to ensure that you receive all of
-     * the results.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, if any, make another call with the token returned from this
+     * call.</p>
      */
     inline ListAWSDefaultServiceQuotasRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

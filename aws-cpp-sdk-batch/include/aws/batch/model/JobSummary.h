@@ -336,37 +336,37 @@ namespace Model
 
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline const ContainerSummary& GetContainer() const{ return m_container; }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline void SetContainer(const ContainerSummary& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline void SetContainer(ContainerSummary&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline JobSummary& WithContainer(const ContainerSummary& value) { SetContainer(value); return *this;}
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline JobSummary& WithContainer(ContainerSummary&& value) { SetContainer(std::move(value)); return *this;}

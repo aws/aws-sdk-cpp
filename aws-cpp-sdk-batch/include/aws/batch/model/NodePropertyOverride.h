@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Object representing any node overrides to a job definition that is used in a
+   * <p>Object representing any node overrides to a job definition that's used in a
    * <a>SubmitJob</a> API operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertyOverride">AWS
    * API Reference</a></p>

@@ -26,6 +26,7 @@
 #include <aws/servicecatalog-appregistry/model/ListAssociatedResourcesResult.h>
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsResult.h>
 #include <aws/servicecatalog-appregistry/model/ListTagsForResourceResult.h>
+#include <aws/servicecatalog-appregistry/model/SyncResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/TagResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/UntagResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/UpdateApplicationResult.h>
@@ -84,6 +85,7 @@ namespace Model
         class ListAssociatedResourcesRequest;
         class ListAttributeGroupsRequest;
         class ListTagsForResourceRequest;
+        class SyncResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateApplicationRequest;
@@ -104,6 +106,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListAssociatedResourcesResult, AppRegistryError> ListAssociatedResourcesOutcome;
         typedef Aws::Utils::Outcome<ListAttributeGroupsResult, AppRegistryError> ListAttributeGroupsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppRegistryError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<SyncResourceResult, AppRegistryError> SyncResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, AppRegistryError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, AppRegistryError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, AppRegistryError> UpdateApplicationOutcome;
@@ -124,6 +127,7 @@ namespace Model
         typedef std::future<ListAssociatedResourcesOutcome> ListAssociatedResourcesOutcomeCallable;
         typedef std::future<ListAttributeGroupsOutcome> ListAttributeGroupsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<SyncResourceOutcome> SyncResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
@@ -147,6 +151,7 @@ namespace Model
     typedef std::function<void(const AppRegistryClient*, const Model::ListAssociatedResourcesRequest&, const Model::ListAssociatedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedResourcesResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListAttributeGroupsRequest&, const Model::ListAttributeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributeGroupsResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const AppRegistryClient*, const Model::SyncResourceRequest&, const Model::SyncResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SyncResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
@@ -642,10 +647,48 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Syncs the resource with what is currently recorded in App registry.
+         * Specifically, the resource’s App registry system tags are synced with its
+         * associated application. The resource is removed if it is not associated with the
+         * application. The caller must have permissions to read and update the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SyncResourceOutcome SyncResource(const Model::SyncResourceRequest& request) const;
+
+        /**
+         * <p>Syncs the resource with what is currently recorded in App registry.
+         * Specifically, the resource’s App registry system tags are synced with its
+         * associated application. The resource is removed if it is not associated with the
+         * application. The caller must have permissions to read and update the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SyncResourceOutcomeCallable SyncResourceCallable(const Model::SyncResourceRequest& request) const;
+
+        /**
+         * <p>Syncs the resource with what is currently recorded in App registry.
+         * Specifically, the resource’s App registry system tags are synced with its
+         * associated application. The resource is removed if it is not associated with the
+         * application. The caller must have permissions to read and update the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SyncResourceAsync(const Model::SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Assigns one or more tags (key-value pairs) to the specified resource.</p>
          * <p>Each tag consists of a key and an optional value. If a tag with the same key
-         * is already associated with the resource, this action updates its
-         * value.</p><p><h3>See Also:</h3>   <a
+         * is already associated with the resource, this action updates its value.</p>
+         * <p>This operation returns an empty response if the call was
+         * successful.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagResource">AWS
          * API Reference</a></p>
          */
@@ -654,8 +697,9 @@ namespace Model
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified resource.</p>
          * <p>Each tag consists of a key and an optional value. If a tag with the same key
-         * is already associated with the resource, this action updates its
-         * value.</p><p><h3>See Also:</h3>   <a
+         * is already associated with the resource, this action updates its value.</p>
+         * <p>This operation returns an empty response if the call was
+         * successful.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagResource">AWS
          * API Reference</a></p>
          *
@@ -666,8 +710,9 @@ namespace Model
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified resource.</p>
          * <p>Each tag consists of a key and an optional value. If a tag with the same key
-         * is already associated with the resource, this action updates its
-         * value.</p><p><h3>See Also:</h3>   <a
+         * is already associated with the resource, this action updates its value.</p>
+         * <p>This operation returns an empty response if the call was
+         * successful.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagResource">AWS
          * API Reference</a></p>
          *
@@ -676,14 +721,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes tags from a resource.</p> <p>This operation returns an empty response
+         * if the call was successful.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes tags from a resource.</p> <p>This operation returns an empty response
+         * if the call was successful.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -692,7 +739,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes tags from a resource.</p> <p>This operation returns an empty response
+         * if the call was successful.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -775,6 +823,7 @@ namespace Model
         void ListAssociatedResourcesAsyncHelper(const Model::ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttributeGroupsAsyncHelper(const Model::ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SyncResourceAsyncHelper(const Model::SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

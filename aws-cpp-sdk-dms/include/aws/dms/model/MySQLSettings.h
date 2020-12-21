@@ -239,7 +239,7 @@ namespace Model
 
 
     /**
-     * <p>Improves performance when loading data into the MySQLcompatible target
+     * <p>Improves performance when loading data into the MySQL-compatible target
      * database. Specifies how many threads to use to load the data into the
      * MySQL-compatible target database. Setting a large number of threads can have an
      * adverse effect on database performance, because a separate connection is
@@ -249,7 +249,7 @@ namespace Model
     inline int GetParallelLoadThreads() const{ return m_parallelLoadThreads; }
 
     /**
-     * <p>Improves performance when loading data into the MySQLcompatible target
+     * <p>Improves performance when loading data into the MySQL-compatible target
      * database. Specifies how many threads to use to load the data into the
      * MySQL-compatible target database. Setting a large number of threads can have an
      * adverse effect on database performance, because a separate connection is
@@ -259,7 +259,7 @@ namespace Model
     inline bool ParallelLoadThreadsHasBeenSet() const { return m_parallelLoadThreadsHasBeenSet; }
 
     /**
-     * <p>Improves performance when loading data into the MySQLcompatible target
+     * <p>Improves performance when loading data into the MySQL-compatible target
      * database. Specifies how many threads to use to load the data into the
      * MySQL-compatible target database. Setting a large number of threads can have an
      * adverse effect on database performance, because a separate connection is
@@ -269,7 +269,7 @@ namespace Model
     inline void SetParallelLoadThreads(int value) { m_parallelLoadThreadsHasBeenSet = true; m_parallelLoadThreads = value; }
 
     /**
-     * <p>Improves performance when loading data into the MySQLcompatible target
+     * <p>Improves performance when loading data into the MySQL-compatible target
      * database. Specifies how many threads to use to load the data into the
      * MySQL-compatible target database. Setting a large number of threads can have an
      * adverse effect on database performance, because a separate connection is
@@ -479,6 +479,216 @@ namespace Model
      */
     inline MySQLSettings& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
+     * the trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
+     * value of the AWS Secrets Manager secret that allows access to the MySQL
+     * endpoint.</p>  <p>You can specify one of two sets of values for these
+     * permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
+     * the trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
+     * value of the AWS Secrets Manager secret that allows access to the MySQL
+     * endpoint.</p>  <p>You can specify one of two sets of values for these
+     * permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
+     * the trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
+     * value of the AWS Secrets Manager secret that allows access to the MySQL
+     * endpoint.</p>  <p>You can specify one of two sets of values for these
+     * permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
+     * the trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
+     * value of the AWS Secrets Manager secret that allows access to the MySQL
+     * endpoint.</p>  <p>You can specify one of two sets of values for these
+     * permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
+     * the trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
+     * value of the AWS Secrets Manager secret that allows access to the MySQL
+     * endpoint.</p>  <p>You can specify one of two sets of values for these
+     * permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
+     * the trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
+     * value of the AWS Secrets Manager secret that allows access to the MySQL
+     * endpoint.</p>  <p>You can specify one of two sets of values for these
+     * permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline MySQLSettings& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
+     * the trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
+     * value of the AWS Secrets Manager secret that allows access to the MySQL
+     * endpoint.</p>  <p>You can specify one of two sets of values for these
+     * permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline MySQLSettings& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
+     * the trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
+     * value of the AWS Secrets Manager secret that allows access to the MySQL
+     * endpoint.</p>  <p>You can specify one of two sets of values for these
+     * permissions. You can specify the values for this setting and
+     * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
+     * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
+     * <code>Port</code>. You can't specify both. For more information on creating this
+     * <code>SecretsManagerSecret</code> and the
+     * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+     * required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline MySQLSettings& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection
+     * details.</p>
+     */
+    inline const Aws::String& GetSecretsManagerSecretId() const{ return m_secretsManagerSecretId; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection
+     * details.</p>
+     */
+    inline bool SecretsManagerSecretIdHasBeenSet() const { return m_secretsManagerSecretIdHasBeenSet; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection
+     * details.</p>
+     */
+    inline void SetSecretsManagerSecretId(const Aws::String& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = value; }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection
+     * details.</p>
+     */
+    inline void SetSecretsManagerSecretId(Aws::String&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::move(value); }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection
+     * details.</p>
+     */
+    inline void SetSecretsManagerSecretId(const char* value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId.assign(value); }
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection
+     * details.</p>
+     */
+    inline MySQLSettings& WithSecretsManagerSecretId(const Aws::String& value) { SetSecretsManagerSecretId(value); return *this;}
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection
+     * details.</p>
+     */
+    inline MySQLSettings& WithSecretsManagerSecretId(Aws::String&& value) { SetSecretsManagerSecretId(std::move(value)); return *this;}
+
+    /**
+     * <p>The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection
+     * details.</p>
+     */
+    inline MySQLSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
+
   private:
 
     Aws::String m_afterConnectScript;
@@ -513,6 +723,12 @@ namespace Model
 
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
+    Aws::String m_secretsManagerAccessRoleArn;
+    bool m_secretsManagerAccessRoleArnHasBeenSet;
+
+    Aws::String m_secretsManagerSecretId;
+    bool m_secretsManagerSecretIdHasBeenSet;
   };
 
 } // namespace Model

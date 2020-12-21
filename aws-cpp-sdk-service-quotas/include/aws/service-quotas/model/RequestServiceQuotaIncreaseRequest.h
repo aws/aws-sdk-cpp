@@ -35,104 +35,104 @@ namespace Model
 
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline RequestServiceQuotaIncreaseRequest& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline RequestServiceQuotaIncreaseRequest& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the service that you want to use.</p>
+     * <p>The service identifier.</p>
      */
     inline RequestServiceQuotaIncreaseRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 
 
     /**
-     * <p>Specifies the service quota that you want to use.</p>
+     * <p>The quota identifier.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
 
     /**
-     * <p>Specifies the service quota that you want to use.</p>
+     * <p>The quota identifier.</p>
      */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
 
     /**
-     * <p>Specifies the service quota that you want to use.</p>
+     * <p>The quota identifier.</p>
      */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
 
     /**
-     * <p>Specifies the service quota that you want to use.</p>
+     * <p>The quota identifier.</p>
      */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
 
     /**
-     * <p>Specifies the service quota that you want to use.</p>
+     * <p>The quota identifier.</p>
      */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
 
     /**
-     * <p>Specifies the service quota that you want to use.</p>
+     * <p>The quota identifier.</p>
      */
     inline RequestServiceQuotaIncreaseRequest& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
 
     /**
-     * <p>Specifies the service quota that you want to use.</p>
+     * <p>The quota identifier.</p>
      */
     inline RequestServiceQuotaIncreaseRequest& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the service quota that you want to use.</p>
+     * <p>The quota identifier.</p>
      */
     inline RequestServiceQuotaIncreaseRequest& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
 
 
     /**
-     * <p>Specifies the value submitted in the service quota increase request. </p>
+     * <p>The new, increased value for the quota.</p>
      */
     inline double GetDesiredValue() const{ return m_desiredValue; }
 
     /**
-     * <p>Specifies the value submitted in the service quota increase request. </p>
+     * <p>The new, increased value for the quota.</p>
      */
     inline bool DesiredValueHasBeenSet() const { return m_desiredValueHasBeenSet; }
 
     /**
-     * <p>Specifies the value submitted in the service quota increase request. </p>
+     * <p>The new, increased value for the quota.</p>
      */
     inline void SetDesiredValue(double value) { m_desiredValueHasBeenSet = true; m_desiredValue = value; }
 
     /**
-     * <p>Specifies the value submitted in the service quota increase request. </p>
+     * <p>The new, increased value for the quota.</p>
      */
     inline RequestServiceQuotaIncreaseRequest& WithDesiredValue(double value) { SetDesiredValue(value); return *this;}
 

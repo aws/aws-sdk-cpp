@@ -31,6 +31,12 @@ Aws::String CreateNodeRequest::SerializePayload() const
 
   }
 
+  if(m_memberIdHasBeenSet)
+  {
+   payload.WithString("MemberId", m_memberId);
+
+  }
+
   if(m_nodeConfigurationHasBeenSet)
   {
    payload.WithObject("NodeConfiguration", m_nodeConfiguration.Jsonize());

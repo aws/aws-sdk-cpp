@@ -120,25 +120,25 @@ namespace Model
 
 
     /**
-     * <p>The job index within the array that is associated with this job. This
+     * <p>The job index within the array that's associated with this job. This
      * parameter is returned for array job children.</p>
      */
     inline int GetIndex() const{ return m_index; }
 
     /**
-     * <p>The job index within the array that is associated with this job. This
+     * <p>The job index within the array that's associated with this job. This
      * parameter is returned for array job children.</p>
      */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
 
     /**
-     * <p>The job index within the array that is associated with this job. This
+     * <p>The job index within the array that's associated with this job. This
      * parameter is returned for array job children.</p>
      */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
-     * <p>The job index within the array that is associated with this job. This
+     * <p>The job index within the array that's associated with this job. This
      * parameter is returned for array job children.</p>
      */
     inline ArrayPropertiesDetail& WithIndex(int value) { SetIndex(value); return *this;}

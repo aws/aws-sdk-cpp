@@ -80,9 +80,9 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
-     * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
+     * custom driver that'sn't listed earlier that you want to work with the Amazon ECS
+     * container agent, you can fork the Amazon ECS container agent project that's <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
      * currently support running modified copies of this software.</p>  <p>This
@@ -131,9 +131,9 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
-     * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
+     * custom driver that'sn't listed earlier that you want to work with the Amazon ECS
+     * container agent, you can fork the Amazon ECS container agent project that's <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
      * currently support running modified copies of this software.</p>  <p>This
@@ -182,9 +182,9 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
-     * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
+     * custom driver that'sn't listed earlier that you want to work with the Amazon ECS
+     * container agent, you can fork the Amazon ECS container agent project that's <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
      * currently support running modified copies of this software.</p>  <p>This
@@ -233,9 +233,9 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
-     * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
+     * custom driver that'sn't listed earlier that you want to work with the Amazon ECS
+     * container agent, you can fork the Amazon ECS container agent project that's <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
      * currently support running modified copies of this software.</p>  <p>This
@@ -284,9 +284,9 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
-     * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
+     * custom driver that'sn't listed earlier that you want to work with the Amazon ECS
+     * container agent, you can fork the Amazon ECS container agent project that's <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
      * currently support running modified copies of this software.</p>  <p>This
@@ -335,9 +335,9 @@ namespace Model
      * and options, see <a
      * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
      * driver</a> in the Docker documentation.</p> </dd> </dl>  <p>If you have a
-     * custom driver that isn't listed earlier that you want to work with the Amazon
-     * ECS container agent, you can fork the Amazon ECS container agent project that is
-     * <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
+     * custom driver that'sn't listed earlier that you want to work with the Amazon ECS
+     * container agent, you can fork the Amazon ECS container agent project that's <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you want to have included. However, Amazon Web Services doesn't
      * currently support running modified copies of this software.</p>  <p>This

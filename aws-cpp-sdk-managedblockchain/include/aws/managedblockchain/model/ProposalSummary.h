@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Properties of a proposal.</p><p><h3>See Also:</h3>   <a
+   * <p>Properties of a proposal.</p> <p>Applies only to Hyperledger
+   * Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ProposalSummary">AWS
    * API Reference</a></p>
    */

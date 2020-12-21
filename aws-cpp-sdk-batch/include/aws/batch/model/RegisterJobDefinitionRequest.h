@@ -25,6 +25,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for <code>RegisterJobDefinition</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinitionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API RegisterJobDefinitionRequest : public BatchRequest
   {
@@ -409,7 +413,7 @@ namespace Model
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
-     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * definition. Any retry strategy that's specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
      * to a timeout, it isn't retried.</p>
      */
@@ -417,7 +421,7 @@ namespace Model
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
-     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * definition. Any retry strategy that's specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
      * to a timeout, it isn't retried.</p>
      */
@@ -425,7 +429,7 @@ namespace Model
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
-     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * definition. Any retry strategy that's specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
      * to a timeout, it isn't retried.</p>
      */
@@ -433,7 +437,7 @@ namespace Model
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
-     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * definition. Any retry strategy that's specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
      * to a timeout, it isn't retried.</p>
      */
@@ -441,7 +445,7 @@ namespace Model
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
-     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * definition. Any retry strategy that's specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
      * to a timeout, it isn't retried.</p>
      */
@@ -449,7 +453,7 @@ namespace Model
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
-     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * definition. Any retry strategy that's specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
      * to a timeout, it isn't retried.</p>
      */
@@ -501,7 +505,7 @@ namespace Model
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition, after which AWS Batch terminates your jobs if they have not
      * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that is specified
+     * value for the timeout is 60 seconds. Any timeout configuration that's specified
      * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
@@ -513,7 +517,7 @@ namespace Model
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition, after which AWS Batch terminates your jobs if they have not
      * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that is specified
+     * value for the timeout is 60 seconds. Any timeout configuration that's specified
      * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
@@ -525,7 +529,7 @@ namespace Model
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition, after which AWS Batch terminates your jobs if they have not
      * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that is specified
+     * value for the timeout is 60 seconds. Any timeout configuration that's specified
      * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
@@ -537,7 +541,7 @@ namespace Model
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition, after which AWS Batch terminates your jobs if they have not
      * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that is specified
+     * value for the timeout is 60 seconds. Any timeout configuration that's specified
      * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
@@ -549,7 +553,7 @@ namespace Model
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition, after which AWS Batch terminates your jobs if they have not
      * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that is specified
+     * value for the timeout is 60 seconds. Any timeout configuration that's specified
      * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
@@ -561,7 +565,7 @@ namespace Model
      * <p>The timeout configuration for jobs that are submitted with this job
      * definition, after which AWS Batch terminates your jobs if they have not
      * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that is specified
+     * value for the timeout is 60 seconds. Any timeout configuration that's specified
      * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job

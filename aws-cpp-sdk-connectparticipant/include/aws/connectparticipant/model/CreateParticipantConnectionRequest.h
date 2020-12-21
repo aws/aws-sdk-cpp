@@ -78,57 +78,57 @@ namespace Model
 
 
     /**
-     * <p>Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html">StartChatContact</a>
+     * <p>This is a header parameter.</p> <p>The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
      * API response.</p>
      */
     inline const Aws::String& GetParticipantToken() const{ return m_participantToken; }
 
     /**
-     * <p>Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html">StartChatContact</a>
+     * <p>This is a header parameter.</p> <p>The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
      * API response.</p>
      */
     inline bool ParticipantTokenHasBeenSet() const { return m_participantTokenHasBeenSet; }
 
     /**
-     * <p>Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html">StartChatContact</a>
+     * <p>This is a header parameter.</p> <p>The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
      * API response.</p>
      */
     inline void SetParticipantToken(const Aws::String& value) { m_participantTokenHasBeenSet = true; m_participantToken = value; }
 
     /**
-     * <p>Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html">StartChatContact</a>
+     * <p>This is a header parameter.</p> <p>The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
      * API response.</p>
      */
     inline void SetParticipantToken(Aws::String&& value) { m_participantTokenHasBeenSet = true; m_participantToken = std::move(value); }
 
     /**
-     * <p>Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html">StartChatContact</a>
+     * <p>This is a header parameter.</p> <p>The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
      * API response.</p>
      */
     inline void SetParticipantToken(const char* value) { m_participantTokenHasBeenSet = true; m_participantToken.assign(value); }
 
     /**
-     * <p>Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html">StartChatContact</a>
+     * <p>This is a header parameter.</p> <p>The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
      * API response.</p>
      */
     inline CreateParticipantConnectionRequest& WithParticipantToken(const Aws::String& value) { SetParticipantToken(value); return *this;}
 
     /**
-     * <p>Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html">StartChatContact</a>
+     * <p>This is a header parameter.</p> <p>The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
      * API response.</p>
      */
     inline CreateParticipantConnectionRequest& WithParticipantToken(Aws::String&& value) { SetParticipantToken(std::move(value)); return *this;}
 
     /**
-     * <p>Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html">StartChatContact</a>
+     * <p>This is a header parameter.</p> <p>The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
      * API response.</p>
      */
     inline CreateParticipantConnectionRequest& WithParticipantToken(const char* value) { SetParticipantToken(value); return *this;}

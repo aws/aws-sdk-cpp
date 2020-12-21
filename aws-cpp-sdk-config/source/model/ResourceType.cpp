@@ -85,6 +85,9 @@ namespace Aws
         static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AWS::CloudFront::Distribution");
         static const int AWS_CloudFront_StreamingDistribution_HASH = HashingUtils::HashString("AWS::CloudFront::StreamingDistribution");
         static const int AWS_Lambda_Function_HASH = HashingUtils::HashString("AWS::Lambda::Function");
+        static const int AWS_NetworkFirewall_Firewall_HASH = HashingUtils::HashString("AWS::NetworkFirewall::Firewall");
+        static const int AWS_NetworkFirewall_FirewallPolicy_HASH = HashingUtils::HashString("AWS::NetworkFirewall::FirewallPolicy");
+        static const int AWS_NetworkFirewall_RuleGroup_HASH = HashingUtils::HashString("AWS::NetworkFirewall::RuleGroup");
         static const int AWS_ElasticBeanstalk_Application_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Application");
         static const int AWS_ElasticBeanstalk_ApplicationVersion_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::ApplicationVersion");
         static const int AWS_ElasticBeanstalk_Environment_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Environment");
@@ -378,6 +381,18 @@ namespace Aws
           {
             return ResourceType::AWS_Lambda_Function;
           }
+          else if (hashCode == AWS_NetworkFirewall_Firewall_HASH)
+          {
+            return ResourceType::AWS_NetworkFirewall_Firewall;
+          }
+          else if (hashCode == AWS_NetworkFirewall_FirewallPolicy_HASH)
+          {
+            return ResourceType::AWS_NetworkFirewall_FirewallPolicy;
+          }
+          else if (hashCode == AWS_NetworkFirewall_RuleGroup_HASH)
+          {
+            return ResourceType::AWS_NetworkFirewall_RuleGroup;
+          }
           else if (hashCode == AWS_ElasticBeanstalk_Application_HASH)
           {
             return ResourceType::AWS_ElasticBeanstalk_Application;
@@ -634,6 +649,12 @@ namespace Aws
             return "AWS::CloudFront::StreamingDistribution";
           case ResourceType::AWS_Lambda_Function:
             return "AWS::Lambda::Function";
+          case ResourceType::AWS_NetworkFirewall_Firewall:
+            return "AWS::NetworkFirewall::Firewall";
+          case ResourceType::AWS_NetworkFirewall_FirewallPolicy:
+            return "AWS::NetworkFirewall::FirewallPolicy";
+          case ResourceType::AWS_NetworkFirewall_RuleGroup:
+            return "AWS::NetworkFirewall::RuleGroup";
           case ResourceType::AWS_ElasticBeanstalk_Application:
             return "AWS::ElasticBeanstalk::Application";
           case ResourceType::AWS_ElasticBeanstalk_ApplicationVersion:

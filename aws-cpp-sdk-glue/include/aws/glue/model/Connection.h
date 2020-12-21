@@ -254,7 +254,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
@@ -310,7 +315,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
 
@@ -366,7 +376,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
@@ -422,7 +437,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
@@ -478,7 +498,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
@@ -534,7 +559,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
@@ -590,7 +620,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
@@ -646,7 +681,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -702,7 +742,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
@@ -758,7 +803,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -814,7 +864,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -870,7 +925,12 @@ namespace Model
      * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
      * the validation of the CA cert file or not. AWS Glue validates for three
      * algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is
-     * "false".</p> </li> </ul>
+     * "false".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the
+     * secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> -
+     * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 

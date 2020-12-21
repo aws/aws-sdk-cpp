@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>An invitation to an AWS account to create a member and join the
-   * network.</p><p><h3>See Also:</h3>   <a
+   * <p>An invitation to an AWS account to create a member and join the network.</p>
+   * <p>Applies only to Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Invitation">AWS
    * API Reference</a></p>
    */

@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p> The actions to carry out if a proposal is <code>APPROVED</code>.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> The actions to carry out if a proposal is <code>APPROVED</code>. </p>
+   * <p>Applies only to Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ProposalActions">AWS
    * API Reference</a></p>
    */

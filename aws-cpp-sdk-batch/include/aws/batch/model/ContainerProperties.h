@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>Container properties are used in job definitions to describe the container
-   * that is launched as part of a job.</p><p><h3>See Also:</h3>   <a
+   * that's launched as part of a job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerProperties">AWS
    * API Reference</a></p>
    */
@@ -275,7 +275,7 @@ namespace Model
 
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -288,7 +288,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -301,7 +301,7 @@ namespace Model
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -314,7 +314,7 @@ namespace Model
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -327,7 +327,7 @@ namespace Model
     inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -340,7 +340,7 @@ namespace Model
     inline ContainerProperties& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -353,7 +353,7 @@ namespace Model
     inline ContainerProperties& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -366,7 +366,7 @@ namespace Model
     inline ContainerProperties& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -379,7 +379,7 @@ namespace Model
     inline ContainerProperties& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a

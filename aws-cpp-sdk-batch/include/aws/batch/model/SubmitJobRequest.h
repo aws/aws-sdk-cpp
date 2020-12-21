@@ -25,6 +25,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for <code>SubmitJob</code>.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJobRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API SubmitJobRequest : public BatchRequest
   {
@@ -463,7 +467,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -474,7 +478,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -485,7 +489,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -496,7 +500,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -507,7 +511,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -518,7 +522,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to

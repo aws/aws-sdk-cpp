@@ -1608,7 +1608,7 @@ namespace Model
      * <p>This setting applies if the S3 output files during a change data capture
      * (CDC) load are written in .csv format. If set to <code>true</code> for columns
      * not included in the supplemental log, AWS DMS uses the value specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
      * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS
      * DMS uses the null value for these columns.</p>  <p>This setting is
      * supported in AWS DMS versions 3.4.1 and later.</p> 
@@ -1619,7 +1619,7 @@ namespace Model
      * <p>This setting applies if the S3 output files during a change data capture
      * (CDC) load are written in .csv format. If set to <code>true</code> for columns
      * not included in the supplemental log, AWS DMS uses the value specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
      * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS
      * DMS uses the null value for these columns.</p>  <p>This setting is
      * supported in AWS DMS versions 3.4.1 and later.</p> 
@@ -1630,7 +1630,7 @@ namespace Model
      * <p>This setting applies if the S3 output files during a change data capture
      * (CDC) load are written in .csv format. If set to <code>true</code> for columns
      * not included in the supplemental log, AWS DMS uses the value specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
      * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS
      * DMS uses the null value for these columns.</p>  <p>This setting is
      * supported in AWS DMS versions 3.4.1 and later.</p> 
@@ -1641,7 +1641,7 @@ namespace Model
      * <p>This setting applies if the S3 output files during a change data capture
      * (CDC) load are written in .csv format. If set to <code>true</code> for columns
      * not included in the supplemental log, AWS DMS uses the value specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
      * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS
      * DMS uses the null value for these columns.</p>  <p>This setting is
      * supported in AWS DMS versions 3.4.1 and later.</p> 
@@ -1652,7 +1652,7 @@ namespace Model
     /**
      * <p>This setting only applies if your Amazon S3 output files during a change data
      * capture (CDC) load are written in .csv format. If <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
      * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
      * you want AWS DMS to use for all columns not included in the supplemental log. If
      * you do not specify a string value, AWS DMS uses the null value for these columns
@@ -1664,7 +1664,7 @@ namespace Model
     /**
      * <p>This setting only applies if your Amazon S3 output files during a change data
      * capture (CDC) load are written in .csv format. If <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
      * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
      * you want AWS DMS to use for all columns not included in the supplemental log. If
      * you do not specify a string value, AWS DMS uses the null value for these columns
@@ -1676,7 +1676,7 @@ namespace Model
     /**
      * <p>This setting only applies if your Amazon S3 output files during a change data
      * capture (CDC) load are written in .csv format. If <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
      * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
      * you want AWS DMS to use for all columns not included in the supplemental log. If
      * you do not specify a string value, AWS DMS uses the null value for these columns
@@ -1688,7 +1688,7 @@ namespace Model
     /**
      * <p>This setting only applies if your Amazon S3 output files during a change data
      * capture (CDC) load are written in .csv format. If <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
      * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
      * you want AWS DMS to use for all columns not included in the supplemental log. If
      * you do not specify a string value, AWS DMS uses the null value for these columns
@@ -1700,7 +1700,7 @@ namespace Model
     /**
      * <p>This setting only applies if your Amazon S3 output files during a change data
      * capture (CDC) load are written in .csv format. If <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
      * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
      * you want AWS DMS to use for all columns not included in the supplemental log. If
      * you do not specify a string value, AWS DMS uses the null value for these columns
@@ -1712,7 +1712,7 @@ namespace Model
     /**
      * <p>This setting only applies if your Amazon S3 output files during a change data
      * capture (CDC) load are written in .csv format. If <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
      * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
      * you want AWS DMS to use for all columns not included in the supplemental log. If
      * you do not specify a string value, AWS DMS uses the null value for these columns
@@ -1724,7 +1724,7 @@ namespace Model
     /**
      * <p>This setting only applies if your Amazon S3 output files during a change data
      * capture (CDC) load are written in .csv format. If <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
      * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
      * you want AWS DMS to use for all columns not included in the supplemental log. If
      * you do not specify a string value, AWS DMS uses the null value for these columns
@@ -1736,7 +1736,7 @@ namespace Model
     /**
      * <p>This setting only applies if your Amazon S3 output files during a change data
      * capture (CDC) load are written in .csv format. If <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
      * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
      * you want AWS DMS to use for all columns not included in the supplemental log. If
      * you do not specify a string value, AWS DMS uses the null value for these columns
@@ -1749,36 +1749,44 @@ namespace Model
     /**
      * <p>If set to <code>true</code>, AWS DMS saves the transaction order for a change
      * data capture (CDC) load on the Amazon S3 target specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
-     * <code>CdcPath</code> </a>.</p>  <p>This setting is supported in AWS DMS
-     * versions 3.4.2 and later.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline bool GetPreserveTransactions() const{ return m_preserveTransactions; }
 
     /**
      * <p>If set to <code>true</code>, AWS DMS saves the transaction order for a change
      * data capture (CDC) load on the Amazon S3 target specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
-     * <code>CdcPath</code> </a>.</p>  <p>This setting is supported in AWS DMS
-     * versions 3.4.2 and later.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline bool PreserveTransactionsHasBeenSet() const { return m_preserveTransactionsHasBeenSet; }
 
     /**
      * <p>If set to <code>true</code>, AWS DMS saves the transaction order for a change
      * data capture (CDC) load on the Amazon S3 target specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
-     * <code>CdcPath</code> </a>.</p>  <p>This setting is supported in AWS DMS
-     * versions 3.4.2 and later.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline void SetPreserveTransactions(bool value) { m_preserveTransactionsHasBeenSet = true; m_preserveTransactions = value; }
 
     /**
      * <p>If set to <code>true</code>, AWS DMS saves the transaction order for a change
      * data capture (CDC) load on the Amazon S3 target specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
-     * <code>CdcPath</code> </a>.</p>  <p>This setting is supported in AWS DMS
-     * versions 3.4.2 and later.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline S3Settings& WithPreserveTransactions(bool value) { SetPreserveTransactions(value); return *this;}
 
@@ -1787,18 +1795,17 @@ namespace Model
      * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
      * required if a task captures change data; otherwise, it's optional. If
      * <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target, if
-     * <code>CdcPath</code>is set, it is the folder path where data changes are
-     * replicated. If you set <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * replicates the data changes to the target endpoint. For an S3 target if you set
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
      * <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies
      * that you have set this parameter to a folder path on your S3 target where AWS
      * DMS can save the transaction order for the CDC load. AWS DMS creates this CDC
      * folder path in either your S3 target working directory or the S3 target location
      * specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
      * <code>BucketName</code> </a>.</p> <p>For example, if you specify
      * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
      * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
@@ -1807,8 +1814,11 @@ namespace Model
      * <code>CdcPath</code>, and you specify <code>BucketName</code> as
      * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
      * <code>MyTargetData</code>, AWS DMS creates the CDC folder path following:
-     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>  <p>This
-     * setting is supported in AWS DMS versions 3.4.2 and later.</p> 
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline const Aws::String& GetCdcPath() const{ return m_cdcPath; }
 
@@ -1816,18 +1826,17 @@ namespace Model
      * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
      * required if a task captures change data; otherwise, it's optional. If
      * <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target, if
-     * <code>CdcPath</code>is set, it is the folder path where data changes are
-     * replicated. If you set <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * replicates the data changes to the target endpoint. For an S3 target if you set
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
      * <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies
      * that you have set this parameter to a folder path on your S3 target where AWS
      * DMS can save the transaction order for the CDC load. AWS DMS creates this CDC
      * folder path in either your S3 target working directory or the S3 target location
      * specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
      * <code>BucketName</code> </a>.</p> <p>For example, if you specify
      * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
      * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
@@ -1836,8 +1845,11 @@ namespace Model
      * <code>CdcPath</code>, and you specify <code>BucketName</code> as
      * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
      * <code>MyTargetData</code>, AWS DMS creates the CDC folder path following:
-     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>  <p>This
-     * setting is supported in AWS DMS versions 3.4.2 and later.</p> 
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline bool CdcPathHasBeenSet() const { return m_cdcPathHasBeenSet; }
 
@@ -1845,18 +1857,17 @@ namespace Model
      * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
      * required if a task captures change data; otherwise, it's optional. If
      * <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target, if
-     * <code>CdcPath</code>is set, it is the folder path where data changes are
-     * replicated. If you set <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * replicates the data changes to the target endpoint. For an S3 target if you set
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
      * <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies
      * that you have set this parameter to a folder path on your S3 target where AWS
      * DMS can save the transaction order for the CDC load. AWS DMS creates this CDC
      * folder path in either your S3 target working directory or the S3 target location
      * specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
      * <code>BucketName</code> </a>.</p> <p>For example, if you specify
      * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
      * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
@@ -1865,8 +1876,11 @@ namespace Model
      * <code>CdcPath</code>, and you specify <code>BucketName</code> as
      * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
      * <code>MyTargetData</code>, AWS DMS creates the CDC folder path following:
-     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>  <p>This
-     * setting is supported in AWS DMS versions 3.4.2 and later.</p> 
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline void SetCdcPath(const Aws::String& value) { m_cdcPathHasBeenSet = true; m_cdcPath = value; }
 
@@ -1874,18 +1888,17 @@ namespace Model
      * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
      * required if a task captures change data; otherwise, it's optional. If
      * <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target, if
-     * <code>CdcPath</code>is set, it is the folder path where data changes are
-     * replicated. If you set <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * replicates the data changes to the target endpoint. For an S3 target if you set
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
      * <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies
      * that you have set this parameter to a folder path on your S3 target where AWS
      * DMS can save the transaction order for the CDC load. AWS DMS creates this CDC
      * folder path in either your S3 target working directory or the S3 target location
      * specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
      * <code>BucketName</code> </a>.</p> <p>For example, if you specify
      * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
      * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
@@ -1894,8 +1907,11 @@ namespace Model
      * <code>CdcPath</code>, and you specify <code>BucketName</code> as
      * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
      * <code>MyTargetData</code>, AWS DMS creates the CDC folder path following:
-     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>  <p>This
-     * setting is supported in AWS DMS versions 3.4.2 and later.</p> 
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline void SetCdcPath(Aws::String&& value) { m_cdcPathHasBeenSet = true; m_cdcPath = std::move(value); }
 
@@ -1903,18 +1919,17 @@ namespace Model
      * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
      * required if a task captures change data; otherwise, it's optional. If
      * <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target, if
-     * <code>CdcPath</code>is set, it is the folder path where data changes are
-     * replicated. If you set <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * replicates the data changes to the target endpoint. For an S3 target if you set
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
      * <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies
      * that you have set this parameter to a folder path on your S3 target where AWS
      * DMS can save the transaction order for the CDC load. AWS DMS creates this CDC
      * folder path in either your S3 target working directory or the S3 target location
      * specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
      * <code>BucketName</code> </a>.</p> <p>For example, if you specify
      * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
      * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
@@ -1923,8 +1938,11 @@ namespace Model
      * <code>CdcPath</code>, and you specify <code>BucketName</code> as
      * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
      * <code>MyTargetData</code>, AWS DMS creates the CDC folder path following:
-     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>  <p>This
-     * setting is supported in AWS DMS versions 3.4.2 and later.</p> 
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline void SetCdcPath(const char* value) { m_cdcPathHasBeenSet = true; m_cdcPath.assign(value); }
 
@@ -1932,18 +1950,17 @@ namespace Model
      * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
      * required if a task captures change data; otherwise, it's optional. If
      * <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target, if
-     * <code>CdcPath</code>is set, it is the folder path where data changes are
-     * replicated. If you set <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * replicates the data changes to the target endpoint. For an S3 target if you set
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
      * <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies
      * that you have set this parameter to a folder path on your S3 target where AWS
      * DMS can save the transaction order for the CDC load. AWS DMS creates this CDC
      * folder path in either your S3 target working directory or the S3 target location
      * specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
      * <code>BucketName</code> </a>.</p> <p>For example, if you specify
      * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
      * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
@@ -1952,8 +1969,11 @@ namespace Model
      * <code>CdcPath</code>, and you specify <code>BucketName</code> as
      * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
      * <code>MyTargetData</code>, AWS DMS creates the CDC folder path following:
-     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>  <p>This
-     * setting is supported in AWS DMS versions 3.4.2 and later.</p> 
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline S3Settings& WithCdcPath(const Aws::String& value) { SetCdcPath(value); return *this;}
 
@@ -1961,18 +1981,17 @@ namespace Model
      * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
      * required if a task captures change data; otherwise, it's optional. If
      * <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target, if
-     * <code>CdcPath</code>is set, it is the folder path where data changes are
-     * replicated. If you set <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * replicates the data changes to the target endpoint. For an S3 target if you set
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
      * <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies
      * that you have set this parameter to a folder path on your S3 target where AWS
      * DMS can save the transaction order for the CDC load. AWS DMS creates this CDC
      * folder path in either your S3 target working directory or the S3 target location
      * specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
      * <code>BucketName</code> </a>.</p> <p>For example, if you specify
      * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
      * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
@@ -1981,8 +2000,11 @@ namespace Model
      * <code>CdcPath</code>, and you specify <code>BucketName</code> as
      * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
      * <code>MyTargetData</code>, AWS DMS creates the CDC folder path following:
-     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>  <p>This
-     * setting is supported in AWS DMS versions 3.4.2 and later.</p> 
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline S3Settings& WithCdcPath(Aws::String&& value) { SetCdcPath(std::move(value)); return *this;}
 
@@ -1990,18 +2012,17 @@ namespace Model
      * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
      * required if a task captures change data; otherwise, it's optional. If
      * <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target, if
-     * <code>CdcPath</code>is set, it is the folder path where data changes are
-     * replicated. If you set <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * replicates the data changes to the target endpoint. For an S3 target if you set
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
      * <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies
      * that you have set this parameter to a folder path on your S3 target where AWS
      * DMS can save the transaction order for the CDC load. AWS DMS creates this CDC
      * folder path in either your S3 target working directory or the S3 target location
      * specified by <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
-     * href="dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
      * <code>BucketName</code> </a>.</p> <p>For example, if you specify
      * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
      * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
@@ -2010,8 +2031,11 @@ namespace Model
      * <code>CdcPath</code>, and you specify <code>BucketName</code> as
      * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
      * <code>MyTargetData</code>, AWS DMS creates the CDC folder path following:
-     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>  <p>This
-     * setting is supported in AWS DMS versions 3.4.2 and later.</p> 
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in AWS DMS versions 3.4.2 and later.</p> 
      */
     inline S3Settings& WithCdcPath(const char* value) { SetCdcPath(value); return *this;}
 

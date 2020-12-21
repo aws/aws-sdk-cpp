@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the details of a container that is part of a
+   * <p>An object representing the details of a container that's part of a
    * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerDetail">AWS
    * API Reference</a></p>
@@ -206,47 +206,47 @@ namespace Model
 
 
     /**
-     * <p>The command that is passed to the container.</p>
+     * <p>The command that's passed to the container.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
 
     /**
-     * <p>The command that is passed to the container.</p>
+     * <p>The command that's passed to the container.</p>
      */
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
     /**
-     * <p>The command that is passed to the container.</p>
+     * <p>The command that's passed to the container.</p>
      */
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
 
     /**
-     * <p>The command that is passed to the container.</p>
+     * <p>The command that's passed to the container.</p>
      */
     inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
-     * <p>The command that is passed to the container.</p>
+     * <p>The command that's passed to the container.</p>
      */
     inline ContainerDetail& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
 
     /**
-     * <p>The command that is passed to the container.</p>
+     * <p>The command that's passed to the container.</p>
      */
     inline ContainerDetail& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
-     * <p>The command that is passed to the container.</p>
+     * <p>The command that's passed to the container.</p>
      */
     inline ContainerDetail& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
     /**
-     * <p>The command that is passed to the container.</p>
+     * <p>The command that's passed to the container.</p>
      */
     inline ContainerDetail& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The command that is passed to the container.</p>
+     * <p>The command that's passed to the container.</p>
      */
     inline ContainerDetail& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
@@ -892,56 +892,56 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the container job. Each container attempt receives a task ARN when they reach
      * the <code>STARTING</code> status.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the container job. Each container attempt receives a task ARN when they reach
      * the <code>STARTING</code> status.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the container job. Each container attempt receives a task ARN when they reach
      * the <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the container job. Each container attempt receives a task ARN when they reach
      * the <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the container job. Each container attempt receives a task ARN when they reach
      * the <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the container job. Each container attempt receives a task ARN when they reach
      * the <code>STARTING</code> status.</p>
      */
     inline ContainerDetail& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the container job. Each container attempt receives a task ARN when they reach
      * the <code>STARTING</code> status.</p>
      */
     inline ContainerDetail& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with
      * the container job. Each container attempt receives a task ARN when they reach
      * the <code>STARTING</code> status.</p>
      */
@@ -1223,7 +1223,7 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * in the <a>LogConfiguration</a> data type). Additional log drivers might be
      * available in future releases of the Amazon ECS container agent.</p> 
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
@@ -1258,7 +1258,7 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * in the <a>LogConfiguration</a> data type). Additional log drivers might be
      * available in future releases of the Amazon ECS container agent.</p> 
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
@@ -1293,7 +1293,7 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * in the <a>LogConfiguration</a> data type). Additional log drivers might be
      * available in future releases of the Amazon ECS container agent.</p> 
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
@@ -1328,7 +1328,7 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * in the <a>LogConfiguration</a> data type). Additional log drivers might be
      * available in future releases of the Amazon ECS container agent.</p> 
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
@@ -1363,7 +1363,7 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * in the <a>LogConfiguration</a> data type). Additional log drivers might be
      * available in future releases of the Amazon ECS container agent.</p> 
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
@@ -1398,7 +1398,7 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>AWS Batch currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * in the <a>LogConfiguration</a> data type). Additional log drivers might be
      * available in future releases of the Amazon ECS container agent.</p> 
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your

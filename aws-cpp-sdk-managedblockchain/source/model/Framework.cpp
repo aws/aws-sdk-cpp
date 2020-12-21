@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int HYPERLEDGER_FABRIC_HASH = HashingUtils::HashString("HYPERLEDGER_FABRIC");
+        static const int ETHEREUM_HASH = HashingUtils::HashString("ETHEREUM");
 
 
         Framework GetFrameworkForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == HYPERLEDGER_FABRIC_HASH)
           {
             return Framework::HYPERLEDGER_FABRIC;
+          }
+          else if (hashCode == ETHEREUM_HASH)
+          {
+            return Framework::ETHEREUM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case Framework::HYPERLEDGER_FABRIC:
             return "HYPERLEDGER_FABRIC";
+          case Framework::ETHEREUM:
+            return "ETHEREUM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

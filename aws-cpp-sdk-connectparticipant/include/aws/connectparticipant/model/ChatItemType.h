@@ -16,8 +16,15 @@ namespace Model
   enum class ChatItemType
   {
     NOT_SET,
+    TYPING,
+    PARTICIPANT_JOINED,
+    PARTICIPANT_LEFT,
+    CHAT_ENDED,
+    TRANSFER_SUCCEEDED,
+    TRANSFER_FAILED,
     MESSAGE,
     EVENT,
+    ATTACHMENT,
     CONNECTION_ACK
   };
 

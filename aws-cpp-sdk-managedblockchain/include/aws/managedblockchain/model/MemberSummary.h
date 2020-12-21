@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of configuration properties for a member.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>A summary of configuration properties for a member.</p> <p>Applies only to
+   * Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberSummary">AWS
    * API Reference</a></p>
    */

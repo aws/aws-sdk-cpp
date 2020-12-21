@@ -56,7 +56,7 @@ namespace Model
      * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
      * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
      * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
@@ -78,7 +78,7 @@ namespace Model
      * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
      * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
      * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
@@ -100,7 +100,7 @@ namespace Model
      * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
      * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
      * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
@@ -122,7 +122,7 @@ namespace Model
      * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
      * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
      * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
@@ -144,7 +144,7 @@ namespace Model
      * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
      * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
      * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
@@ -166,7 +166,7 @@ namespace Model
      * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
      * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
      * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
@@ -188,7 +188,7 @@ namespace Model
      * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
      * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
      * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>
@@ -210,7 +210,7 @@ namespace Model
      * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
      * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon
+     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
      * Linux is reaching the end-of-life of standard support. For more information, see
      * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
      * </dd> </dl>

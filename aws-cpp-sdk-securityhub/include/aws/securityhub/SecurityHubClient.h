@@ -480,13 +480,17 @@ namespace Model
          * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
          * finding is created, <code>BatchImportFindings</code> cannot be used to update
          * the following finding fields and objects, which Security Hub customers use to
-         * manage their investigation workflow.</p> <ul> <li> <p> <code>Confidence</code>
-         * </p> </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
-         * <code>Note</code> </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li>
-         * <li> <p> <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li>
-         * <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
+         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p> <code>BatchImportFindings</code> can be used to update the
+         * following finding fields and objects only if they have not been updated using
+         * <code>BatchUpdateFindings</code>. After they are updated using
+         * <code>BatchUpdateFindings</code>, these fields cannot be updated using
+         * <code>BatchImportFindings</code>.</p> <ul> <li> <p> <code>Confidence</code> </p>
+         * </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
+         * <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
+         * </li> <li> <p> <code>Types</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          */
@@ -499,13 +503,17 @@ namespace Model
          * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
          * finding is created, <code>BatchImportFindings</code> cannot be used to update
          * the following finding fields and objects, which Security Hub customers use to
-         * manage their investigation workflow.</p> <ul> <li> <p> <code>Confidence</code>
-         * </p> </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
-         * <code>Note</code> </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li>
-         * <li> <p> <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li>
-         * <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
+         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p> <code>BatchImportFindings</code> can be used to update the
+         * following finding fields and objects only if they have not been updated using
+         * <code>BatchUpdateFindings</code>. After they are updated using
+         * <code>BatchUpdateFindings</code>, these fields cannot be updated using
+         * <code>BatchImportFindings</code>.</p> <ul> <li> <p> <code>Confidence</code> </p>
+         * </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
+         * <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
+         * </li> <li> <p> <code>Types</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *
@@ -520,13 +528,17 @@ namespace Model
          * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
          * finding is created, <code>BatchImportFindings</code> cannot be used to update
          * the following finding fields and objects, which Security Hub customers use to
-         * manage their investigation workflow.</p> <ul> <li> <p> <code>Confidence</code>
-         * </p> </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
-         * <code>Note</code> </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li>
-         * <li> <p> <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li>
-         * <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
+         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p> <code>BatchImportFindings</code> can be used to update the
+         * following finding fields and objects only if they have not been updated using
+         * <code>BatchUpdateFindings</code>. After they are updated using
+         * <code>BatchUpdateFindings</code>, these fields cannot be updated using
+         * <code>BatchImportFindings</code>.</p> <ul> <li> <p> <code>Confidence</code> </p>
+         * </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
+         * <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
+         * </li> <li> <p> <code>Types</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *

@@ -35,6 +35,7 @@
 #include <aws/servicecatalog-appregistry/model/ListAssociatedResourcesRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListTagsForResourceRequest.h>
+#include <aws/servicecatalog-appregistry/model/SyncResourceRequest.h>
 #include <aws/servicecatalog-appregistry/model/TagResourceRequest.h>
 #include <aws/servicecatalog-appregistry/model/UntagResourceRequest.h>
 #include <aws/servicecatalog-appregistry/model/UpdateApplicationRequest.h>
@@ -626,6 +627,46 @@ void AppRegistryClient::ListTagsForResourceAsync(const ListTagsForResourceReques
 void AppRegistryClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+SyncResourceOutcome AppRegistryClient::SyncResource(const SyncResourceRequest& request) const
+{
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SyncResource", "Required field: ResourceType, is not set");
+    return SyncResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  if (!request.ResourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SyncResource", "Required field: Resource, is not set");
+    return SyncResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/sync/";
+  ss << ResourceTypeMapper::GetNameForResourceType(request.GetResourceType());
+  ss << "/";
+  ss << request.GetResource();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return SyncResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SyncResourceOutcomeCallable AppRegistryClient::SyncResourceCallable(const SyncResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SyncResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SyncResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRegistryClient::SyncResourceAsync(const SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SyncResourceAsyncHelper( request, handler, context ); } );
+}
+
+void AppRegistryClient::SyncResourceAsyncHelper(const SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SyncResource(request), context);
 }
 
 TagResourceOutcome AppRegistryClient::TagResource(const TagResourceRequest& request) const

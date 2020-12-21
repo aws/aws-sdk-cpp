@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>An object representing the attributes of a compute environment that can be
-   * updated.</p><p><h3>See Also:</h3>   <a
+   * updated. For more information, see <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+   * Environments</a> in the <i>AWS Batch User Guide</i>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeResourceUpdate">AWS
    * API Reference</a></p>
    */
@@ -41,28 +44,28 @@ namespace Model
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>  <p>This parameter isnt applicable to jobs running on
+     * maintain.</p>  <p>This parameter isn't applicable to jobs running on
      * Fargate resources, and shouldn't be specified.</p> 
      */
     inline int GetMinvCpus() const{ return m_minvCpus; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>  <p>This parameter isnt applicable to jobs running on
+     * maintain.</p>  <p>This parameter isn't applicable to jobs running on
      * Fargate resources, and shouldn't be specified.</p> 
      */
     inline bool MinvCpusHasBeenSet() const { return m_minvCpusHasBeenSet; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>  <p>This parameter isnt applicable to jobs running on
+     * maintain.</p>  <p>This parameter isn't applicable to jobs running on
      * Fargate resources, and shouldn't be specified.</p> 
      */
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>  <p>This parameter isnt applicable to jobs running on
+     * maintain.</p>  <p>This parameter isn't applicable to jobs running on
      * Fargate resources, and shouldn't be specified.</p> 
      */
     inline ComputeResourceUpdate& WithMinvCpus(int value) { SetMinvCpus(value); return *this;}
@@ -70,21 +73,45 @@ namespace Model
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
+     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
+     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
+     * instance (e.g., no more than a single instance from among those specified in
+     * your compute environment).</p> 
      */
     inline int GetMaxvCpus() const{ return m_maxvCpus; }
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
+     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
+     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
+     * instance (e.g., no more than a single instance from among those specified in
+     * your compute environment).</p> 
      */
     inline bool MaxvCpusHasBeenSet() const { return m_maxvCpusHasBeenSet; }
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
+     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
+     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
+     * instance (e.g., no more than a single instance from among those specified in
+     * your compute environment).</p> 
      */
     inline void SetMaxvCpus(int value) { m_maxvCpusHasBeenSet = true; m_maxvCpus = value; }
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
+     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
+     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
+     * instance (e.g., no more than a single instance from among those specified in
+     * your compute environment).</p> 
      */
     inline ComputeResourceUpdate& WithMaxvCpus(int value) { SetMaxvCpus(value); return *this;}
 
@@ -223,7 +250,7 @@ namespace Model
      * compute environment. This parameter is required for Fargate compute resources,
      * where it can contain up to 5 security groups. This can't be specified for EC2
      * compute resources. Providing an empty list is handled as if this parameter
-     * wasn't specified and no changeis made.</p>
+     * wasn't specified and no change is made.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
@@ -232,7 +259,7 @@ namespace Model
      * compute environment. This parameter is required for Fargate compute resources,
      * where it can contain up to 5 security groups. This can't be specified for EC2
      * compute resources. Providing an empty list is handled as if this parameter
-     * wasn't specified and no changeis made.</p>
+     * wasn't specified and no change is made.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
@@ -241,7 +268,7 @@ namespace Model
      * compute environment. This parameter is required for Fargate compute resources,
      * where it can contain up to 5 security groups. This can't be specified for EC2
      * compute resources. Providing an empty list is handled as if this parameter
-     * wasn't specified and no changeis made.</p>
+     * wasn't specified and no change is made.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
@@ -250,7 +277,7 @@ namespace Model
      * compute environment. This parameter is required for Fargate compute resources,
      * where it can contain up to 5 security groups. This can't be specified for EC2
      * compute resources. Providing an empty list is handled as if this parameter
-     * wasn't specified and no changeis made.</p>
+     * wasn't specified and no change is made.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
@@ -259,7 +286,7 @@ namespace Model
      * compute environment. This parameter is required for Fargate compute resources,
      * where it can contain up to 5 security groups. This can't be specified for EC2
      * compute resources. Providing an empty list is handled as if this parameter
-     * wasn't specified and no changeis made.</p>
+     * wasn't specified and no change is made.</p>
      */
     inline ComputeResourceUpdate& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
@@ -268,7 +295,7 @@ namespace Model
      * compute environment. This parameter is required for Fargate compute resources,
      * where it can contain up to 5 security groups. This can't be specified for EC2
      * compute resources. Providing an empty list is handled as if this parameter
-     * wasn't specified and no changeis made.</p>
+     * wasn't specified and no change is made.</p>
      */
     inline ComputeResourceUpdate& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
@@ -277,7 +304,7 @@ namespace Model
      * compute environment. This parameter is required for Fargate compute resources,
      * where it can contain up to 5 security groups. This can't be specified for EC2
      * compute resources. Providing an empty list is handled as if this parameter
-     * wasn't specified and no changeis made.</p>
+     * wasn't specified and no change is made.</p>
      */
     inline ComputeResourceUpdate& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -286,7 +313,7 @@ namespace Model
      * compute environment. This parameter is required for Fargate compute resources,
      * where it can contain up to 5 security groups. This can't be specified for EC2
      * compute resources. Providing an empty list is handled as if this parameter
-     * wasn't specified and no changeis made.</p>
+     * wasn't specified and no change is made.</p>
      */
     inline ComputeResourceUpdate& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
@@ -295,7 +322,7 @@ namespace Model
      * compute environment. This parameter is required for Fargate compute resources,
      * where it can contain up to 5 security groups. This can't be specified for EC2
      * compute resources. Providing an empty list is handled as if this parameter
-     * wasn't specified and no changeis made.</p>
+     * wasn't specified and no change is made.</p>
      */
     inline ComputeResourceUpdate& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

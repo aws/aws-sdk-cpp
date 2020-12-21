@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
         static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
         static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == AVAILABLE_HASH)
           {
             return NodeStatus::AVAILABLE;
+          }
+          else if (hashCode == UNHEALTHY_HASH)
+          {
+            return NodeStatus::UNHEALTHY;
           }
           else if (hashCode == CREATE_FAILED_HASH)
           {
@@ -78,6 +83,8 @@ namespace Aws
             return "CREATING";
           case NodeStatus::AVAILABLE:
             return "AVAILABLE";
+          case NodeStatus::UNHEALTHY:
+            return "UNHEALTHY";
           case NodeStatus::CREATE_FAILED:
             return "CREATE_FAILED";
           case NodeStatus::UPDATING:

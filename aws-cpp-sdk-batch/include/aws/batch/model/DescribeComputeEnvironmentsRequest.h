@@ -18,6 +18,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for
+   * <code>DescribeComputeEnvironments</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironmentsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API DescribeComputeEnvironmentsRequest : public BatchRequest
   {
@@ -152,7 +156,7 @@ namespace Model
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
      * more results to return.</p>  <p>This token should be treated as an opaque
-     * identifier that is only used to retrieve the next items in a list and not for
+     * identifier that's only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -164,7 +168,7 @@ namespace Model
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
      * more results to return.</p>  <p>This token should be treated as an opaque
-     * identifier that is only used to retrieve the next items in a list and not for
+     * identifier that's only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -176,7 +180,7 @@ namespace Model
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
      * more results to return.</p>  <p>This token should be treated as an opaque
-     * identifier that is only used to retrieve the next items in a list and not for
+     * identifier that's only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -188,7 +192,7 @@ namespace Model
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
      * more results to return.</p>  <p>This token should be treated as an opaque
-     * identifier that is only used to retrieve the next items in a list and not for
+     * identifier that's only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -200,7 +204,7 @@ namespace Model
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
      * more results to return.</p>  <p>This token should be treated as an opaque
-     * identifier that is only used to retrieve the next items in a list and not for
+     * identifier that's only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -212,7 +216,7 @@ namespace Model
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
      * more results to return.</p>  <p>This token should be treated as an opaque
-     * identifier that is only used to retrieve the next items in a list and not for
+     * identifier that's only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
     inline DescribeComputeEnvironmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -224,7 +228,7 @@ namespace Model
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
      * more results to return.</p>  <p>This token should be treated as an opaque
-     * identifier that is only used to retrieve the next items in a list and not for
+     * identifier that's only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
     inline DescribeComputeEnvironmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -236,7 +240,7 @@ namespace Model
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
      * more results to return.</p>  <p>This token should be treated as an opaque
-     * identifier that is only used to retrieve the next items in a list and not for
+     * identifier that's only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
     inline DescribeComputeEnvironmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

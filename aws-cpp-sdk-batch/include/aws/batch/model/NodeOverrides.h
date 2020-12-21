@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Object representing any node overrides to a job definition that is used in a
+   * <p>Object representing any node overrides to a job definition that's used in a
    * <a>SubmitJob</a> API operation.</p>  <p>This isn't applicable to jobs
    * running on Fargate resources and shouldn't be provided; use
    * <code>containerOverrides</code> instead.</p> <p><h3>See Also:</h3>   <a

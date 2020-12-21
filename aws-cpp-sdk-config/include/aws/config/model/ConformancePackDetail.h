@@ -166,99 +166,99 @@ namespace Model
 
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline const Aws::String& GetDeliveryS3Bucket() const{ return m_deliveryS3Bucket; }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline bool DeliveryS3BucketHasBeenSet() const { return m_deliveryS3BucketHasBeenSet; }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline void SetDeliveryS3Bucket(const Aws::String& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = value; }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline void SetDeliveryS3Bucket(Aws::String&& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = std::move(value); }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline void SetDeliveryS3Bucket(const char* value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket.assign(value); }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline ConformancePackDetail& WithDeliveryS3Bucket(const Aws::String& value) { SetDeliveryS3Bucket(value); return *this;}
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline ConformancePackDetail& WithDeliveryS3Bucket(Aws::String&& value) { SetDeliveryS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline ConformancePackDetail& WithDeliveryS3Bucket(const char* value) { SetDeliveryS3Bucket(value); return *this;}
 
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
-     * optional.</p> 
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetDeliveryS3KeyPrefix() const{ return m_deliveryS3KeyPrefix; }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
-     * optional.</p> 
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline bool DeliveryS3KeyPrefixHasBeenSet() const { return m_deliveryS3KeyPrefixHasBeenSet; }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
-     * optional.</p> 
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline void SetDeliveryS3KeyPrefix(const Aws::String& value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix = value; }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
-     * optional.</p> 
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline void SetDeliveryS3KeyPrefix(Aws::String&& value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix = std::move(value); }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
-     * optional.</p> 
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline void SetDeliveryS3KeyPrefix(const char* value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix.assign(value); }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
-     * optional.</p> 
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline ConformancePackDetail& WithDeliveryS3KeyPrefix(const Aws::String& value) { SetDeliveryS3KeyPrefix(value); return *this;}
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
-     * optional.</p> 
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline ConformancePackDetail& WithDeliveryS3KeyPrefix(Aws::String&& value) { SetDeliveryS3KeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
-     * optional.</p> 
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline ConformancePackDetail& WithDeliveryS3KeyPrefix(const char* value) { SetDeliveryS3KeyPrefix(value); return *this;}
 

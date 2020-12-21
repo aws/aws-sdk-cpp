@@ -28,7 +28,8 @@ Item::Item() :
     m_participantIdHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false)
+    m_participantRoleHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Item::Item(JsonView jsonValue) :
     m_participantIdHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false)
+    m_participantRoleHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +107,16 @@ Item& Item::operator =(JsonView jsonValue)
     m_participantRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Attachments"))
+  {
+    Array<JsonView> attachmentsJsonList = jsonValue.GetArray("Attachments");
+    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+    {
+      m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
+    }
+    m_attachmentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +168,17 @@ JsonValue Item::Jsonize() const
   if(m_participantRoleHasBeenSet)
   {
    payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
+  }
+
+  if(m_attachmentsHasBeenSet)
+  {
+   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+   {
+     attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+   }
+   payload.WithArray("Attachments", std::move(attachmentsJsonList));
+
   }
 
   return payload;

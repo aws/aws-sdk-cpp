@@ -24,6 +24,12 @@ Aws::String UpdateNodeRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_memberIdHasBeenSet)
+  {
+   payload.WithString("MemberId", m_memberId);
+
+  }
+
   if(m_logPublishingConfigurationHasBeenSet)
   {
    payload.WithObject("LogPublishingConfiguration", m_logPublishingConfiguration.Jsonize());

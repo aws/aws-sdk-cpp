@@ -18,6 +18,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for <code>ListJobs</code>.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API ListJobsRequest : public BatchRequest
   {
@@ -280,7 +284,7 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * 
      */
@@ -292,7 +296,7 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * 
      */
@@ -304,7 +308,7 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * 
      */
@@ -316,7 +320,7 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * 
      */
@@ -328,7 +332,7 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * 
      */
@@ -340,7 +344,7 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * 
      */
@@ -352,7 +356,7 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * 
      */
@@ -364,7 +368,7 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * 
      */

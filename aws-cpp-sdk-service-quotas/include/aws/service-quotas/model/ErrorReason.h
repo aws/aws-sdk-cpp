@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns an error that explains why the action did not succeed.</p><p><h3>See
+   * <p>An error that explains why an action did not succeed.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ErrorReason">AWS
    * API Reference</a></p>
@@ -40,121 +40,121 @@ namespace Model
 
 
     /**
-     * <p>Service Quotas returns the following error values. </p> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not
-     * have permission to call the service or service quota. To resolve the error, you
-     * need permission to access the service or service quota.</p> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being
-     * called is throttling Service Quotas.</p> <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called
-     * has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code>
-     * is returned when there was an error in Service Quotas.</p>
+     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
+     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
+     * required permissions to complete the action. To resolve the error, you must have
+     * permission to access the service or quota.</p> </li> <li> <p>
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
+     * Quotas.</p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service
+     * is not available.</p> </li> <li> <p>
+     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
+     * Quotas.</p> </li> </ul>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>Service Quotas returns the following error values. </p> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not
-     * have permission to call the service or service quota. To resolve the error, you
-     * need permission to access the service or service quota.</p> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being
-     * called is throttling Service Quotas.</p> <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called
-     * has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code>
-     * is returned when there was an error in Service Quotas.</p>
+     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
+     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
+     * required permissions to complete the action. To resolve the error, you must have
+     * permission to access the service or quota.</p> </li> <li> <p>
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
+     * Quotas.</p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service
+     * is not available.</p> </li> <li> <p>
+     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
+     * Quotas.</p> </li> </ul>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
-     * <p>Service Quotas returns the following error values. </p> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not
-     * have permission to call the service or service quota. To resolve the error, you
-     * need permission to access the service or service quota.</p> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being
-     * called is throttling Service Quotas.</p> <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called
-     * has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code>
-     * is returned when there was an error in Service Quotas.</p>
+     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
+     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
+     * required permissions to complete the action. To resolve the error, you must have
+     * permission to access the service or quota.</p> </li> <li> <p>
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
+     * Quotas.</p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service
+     * is not available.</p> </li> <li> <p>
+     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
+     * Quotas.</p> </li> </ul>
      */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>Service Quotas returns the following error values. </p> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not
-     * have permission to call the service or service quota. To resolve the error, you
-     * need permission to access the service or service quota.</p> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being
-     * called is throttling Service Quotas.</p> <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called
-     * has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code>
-     * is returned when there was an error in Service Quotas.</p>
+     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
+     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
+     * required permissions to complete the action. To resolve the error, you must have
+     * permission to access the service or quota.</p> </li> <li> <p>
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
+     * Quotas.</p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service
+     * is not available.</p> </li> <li> <p>
+     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
+     * Quotas.</p> </li> </ul>
      */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>Service Quotas returns the following error values. </p> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not
-     * have permission to call the service or service quota. To resolve the error, you
-     * need permission to access the service or service quota.</p> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being
-     * called is throttling Service Quotas.</p> <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called
-     * has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code>
-     * is returned when there was an error in Service Quotas.</p>
+     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
+     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
+     * required permissions to complete the action. To resolve the error, you must have
+     * permission to access the service or quota.</p> </li> <li> <p>
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
+     * Quotas.</p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service
+     * is not available.</p> </li> <li> <p>
+     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
+     * Quotas.</p> </li> </ul>
      */
     inline ErrorReason& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>Service Quotas returns the following error values. </p> <p>
-     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not
-     * have permission to call the service or service quota. To resolve the error, you
-     * need permission to access the service or service quota.</p> <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being
-     * called is throttling Service Quotas.</p> <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called
-     * has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code>
-     * is returned when there was an error in Service Quotas.</p>
+     * <p>Service Quotas returns the following error values:</p> <ul> <li> <p>
+     * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the
+     * required permissions to complete the action. To resolve the error, you must have
+     * permission to access the service or quota.</p> </li> <li> <p>
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
+     * Quotas.</p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service
+     * is not available.</p> </li> <li> <p>
+     * <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
+     * Quotas.</p> </li> </ul>
      */
     inline ErrorReason& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The error message that provides more detail.</p>
+     * <p>The error message.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>The error message that provides more detail.</p>
+     * <p>The error message.</p>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
-     * <p>The error message that provides more detail.</p>
+     * <p>The error message.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p>The error message that provides more detail.</p>
+     * <p>The error message.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
-     * <p>The error message that provides more detail.</p>
+     * <p>The error message.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <p>The error message that provides more detail.</p>
+     * <p>The error message.</p>
      */
     inline ErrorReason& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>The error message that provides more detail.</p>
+     * <p>The error message.</p>
      */
     inline ErrorReason& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The error message that provides more detail.</p>
+     * <p>The error message.</p>
      */
     inline ErrorReason& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

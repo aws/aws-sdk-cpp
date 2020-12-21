@@ -33,42 +33,37 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the template is <code>ASSOCIATED</code> or
-     * <code>DISASSOCIATED</code>. If the template is <code>ASSOCIATED</code>, then it
-     * requests service quota increases for all new accounts created in your
-     * organization. </p>
+     * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
+     * increase requests in the template are automatically applied to new accounts in
+     * your organization.</p>
      */
     inline const ServiceQuotaTemplateAssociationStatus& GetServiceQuotaTemplateAssociationStatus() const{ return m_serviceQuotaTemplateAssociationStatus; }
 
     /**
-     * <p>Specifies whether the template is <code>ASSOCIATED</code> or
-     * <code>DISASSOCIATED</code>. If the template is <code>ASSOCIATED</code>, then it
-     * requests service quota increases for all new accounts created in your
-     * organization. </p>
+     * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
+     * increase requests in the template are automatically applied to new accounts in
+     * your organization.</p>
      */
     inline void SetServiceQuotaTemplateAssociationStatus(const ServiceQuotaTemplateAssociationStatus& value) { m_serviceQuotaTemplateAssociationStatus = value; }
 
     /**
-     * <p>Specifies whether the template is <code>ASSOCIATED</code> or
-     * <code>DISASSOCIATED</code>. If the template is <code>ASSOCIATED</code>, then it
-     * requests service quota increases for all new accounts created in your
-     * organization. </p>
+     * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
+     * increase requests in the template are automatically applied to new accounts in
+     * your organization.</p>
      */
     inline void SetServiceQuotaTemplateAssociationStatus(ServiceQuotaTemplateAssociationStatus&& value) { m_serviceQuotaTemplateAssociationStatus = std::move(value); }
 
     /**
-     * <p>Specifies whether the template is <code>ASSOCIATED</code> or
-     * <code>DISASSOCIATED</code>. If the template is <code>ASSOCIATED</code>, then it
-     * requests service quota increases for all new accounts created in your
-     * organization. </p>
+     * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
+     * increase requests in the template are automatically applied to new accounts in
+     * your organization.</p>
      */
     inline GetAssociationForServiceQuotaTemplateResult& WithServiceQuotaTemplateAssociationStatus(const ServiceQuotaTemplateAssociationStatus& value) { SetServiceQuotaTemplateAssociationStatus(value); return *this;}
 
     /**
-     * <p>Specifies whether the template is <code>ASSOCIATED</code> or
-     * <code>DISASSOCIATED</code>. If the template is <code>ASSOCIATED</code>, then it
-     * requests service quota increases for all new accounts created in your
-     * organization. </p>
+     * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
+     * increase requests in the template are automatically applied to new accounts in
+     * your organization.</p>
      */
     inline GetAssociationForServiceQuotaTemplateResult& WithServiceQuotaTemplateAssociationStatus(ServiceQuotaTemplateAssociationStatus&& value) { SetServiceQuotaTemplateAssociationStatus(std::move(value)); return *this;}
 
