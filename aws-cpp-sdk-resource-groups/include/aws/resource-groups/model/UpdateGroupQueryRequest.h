@@ -76,37 +76,49 @@ namespace Model
 
     /**
      * <p>The resource query to determine which AWS resources are members of this
-     * resource group.</p>
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
 
     /**
      * <p>The resource query to determine which AWS resources are members of this
-     * resource group.</p>
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline bool ResourceQueryHasBeenSet() const { return m_resourceQueryHasBeenSet; }
 
     /**
      * <p>The resource query to determine which AWS resources are members of this
-     * resource group.</p>
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline void SetResourceQuery(const ResourceQuery& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = value; }
 
     /**
      * <p>The resource query to determine which AWS resources are members of this
-     * resource group.</p>
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline void SetResourceQuery(ResourceQuery&& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = std::move(value); }
 
     /**
      * <p>The resource query to determine which AWS resources are members of this
-     * resource group.</p>
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline UpdateGroupQueryRequest& WithResourceQuery(const ResourceQuery& value) { SetResourceQuery(value); return *this;}
 
     /**
      * <p>The resource query to determine which AWS resources are members of this
-     * resource group.</p>
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline UpdateGroupQueryRequest& WithResourceQuery(ResourceQuery&& value) { SetResourceQuery(std::move(value)); return *this;}
 

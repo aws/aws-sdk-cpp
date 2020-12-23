@@ -29,6 +29,7 @@
 #include <aws/resource-groups/model/GroupResourcesRequest.h>
 #include <aws/resource-groups/model/ListGroupResourcesRequest.h>
 #include <aws/resource-groups/model/ListGroupsRequest.h>
+#include <aws/resource-groups/model/PutGroupConfigurationRequest.h>
 #include <aws/resource-groups/model/SearchResourcesRequest.h>
 #include <aws/resource-groups/model/TagRequest.h>
 #include <aws/resource-groups/model/UngroupResourcesRequest.h>
@@ -357,6 +358,33 @@ void ResourceGroupsClient::ListGroupsAsync(const ListGroupsRequest& request, con
 void ResourceGroupsClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListGroups(request), context);
+}
+
+PutGroupConfigurationOutcome ResourceGroupsClient::PutGroupConfiguration(const PutGroupConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/put-group-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutGroupConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutGroupConfigurationOutcomeCallable ResourceGroupsClient::PutGroupConfigurationCallable(const PutGroupConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutGroupConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutGroupConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ResourceGroupsClient::PutGroupConfigurationAsync(const PutGroupConfigurationRequest& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutGroupConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ResourceGroupsClient::PutGroupConfigurationAsyncHelper(const PutGroupConfigurationRequest& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutGroupConfiguration(request), context);
 }
 
 SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourcesRequest& request) const

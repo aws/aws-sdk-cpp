@@ -19,6 +19,7 @@
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusResult.h>
+#include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesResult.h>
 #include <aws/compute-optimizer/model/UpdateEnrollmentStatusResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -68,6 +69,7 @@ namespace Model
         class GetEC2InstanceRecommendationsRequest;
         class GetEC2RecommendationProjectedMetricsRequest;
         class GetEnrollmentStatusRequest;
+        class GetLambdaFunctionRecommendationsRequest;
         class GetRecommendationSummariesRequest;
         class UpdateEnrollmentStatusRequest;
 
@@ -79,6 +81,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetEC2InstanceRecommendationsResult, ComputeOptimizerError> GetEC2InstanceRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetEC2RecommendationProjectedMetricsResult, ComputeOptimizerError> GetEC2RecommendationProjectedMetricsOutcome;
         typedef Aws::Utils::Outcome<GetEnrollmentStatusResult, ComputeOptimizerError> GetEnrollmentStatusOutcome;
+        typedef Aws::Utils::Outcome<GetLambdaFunctionRecommendationsResult, ComputeOptimizerError> GetLambdaFunctionRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetRecommendationSummariesResult, ComputeOptimizerError> GetRecommendationSummariesOutcome;
         typedef Aws::Utils::Outcome<UpdateEnrollmentStatusResult, ComputeOptimizerError> UpdateEnrollmentStatusOutcome;
 
@@ -90,6 +93,7 @@ namespace Model
         typedef std::future<GetEC2InstanceRecommendationsOutcome> GetEC2InstanceRecommendationsOutcomeCallable;
         typedef std::future<GetEC2RecommendationProjectedMetricsOutcome> GetEC2RecommendationProjectedMetricsOutcomeCallable;
         typedef std::future<GetEnrollmentStatusOutcome> GetEnrollmentStatusOutcomeCallable;
+        typedef std::future<GetLambdaFunctionRecommendationsOutcome> GetLambdaFunctionRecommendationsOutcomeCallable;
         typedef std::future<GetRecommendationSummariesOutcome> GetRecommendationSummariesOutcomeCallable;
         typedef std::future<UpdateEnrollmentStatusOutcome> UpdateEnrollmentStatusOutcomeCallable;
 } // namespace Model
@@ -104,23 +108,24 @@ namespace Model
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2InstanceRecommendationsRequest&, const Model::GetEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2InstanceRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2RecommendationProjectedMetricsRequest&, const Model::GetEC2RecommendationProjectedMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2RecommendationProjectedMetricsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusRequest&, const Model::GetEnrollmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::GetLambdaFunctionRecommendationsRequest&, const Model::GetLambdaFunctionRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLambdaFunctionRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetRecommendationSummariesRequest&, const Model::GetRecommendationSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationSummariesResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::UpdateEnrollmentStatusRequest&, const Model::UpdateEnrollmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnrollmentStatusResponseReceivedHandler;
 
   /**
    * <p>AWS Compute Optimizer is a service that analyzes the configuration and
    * utilization metrics of your AWS compute resources, such as EC2 instances, Auto
-   * Scaling groups, and Amazon EBS volumes. It reports whether your resources are
-   * optimal, and generates optimization recommendations to reduce the cost and
-   * improve the performance of your workloads. Compute Optimizer also provides
-   * recent utilization metric data, as well as projected utilization metric data for
-   * the recommendations, which you can use to evaluate which recommendation provides
-   * the best price-performance trade-off. The analysis of your usage patterns can
-   * help you decide when to move or resize your running resources, and still meet
-   * your performance and capacity requirements. For more information about Compute
-   * Optimizer, including the required permissions to use the service, see the <a
-   * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute
-   * Optimizer User Guide</a>.</p>
+   * Scaling groups, AWS Lambda functions, and Amazon EBS volumes. It reports whether
+   * your resources are optimal, and generates optimization recommendations to reduce
+   * the cost and improve the performance of your workloads. Compute Optimizer also
+   * provides recent utilization metric data, as well as projected utilization metric
+   * data for the recommendations, which you can use to evaluate which recommendation
+   * provides the best price-performance trade-off. The analysis of your usage
+   * patterns can help you decide when to move or resize your running resources, and
+   * still meet your performance and capacity requirements. For more information
+   * about Compute Optimizer, including the required permissions to use the service,
+   * see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS
+   * Compute Optimizer User Guide</a>.</p>
    */
   class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJsonClient
   {
@@ -491,6 +496,46 @@ namespace Model
         virtual void GetEnrollmentStatusAsync(const Model::GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns AWS Lambda function recommendations.</p> <p>AWS Compute Optimizer
+         * generates recommendations for functions that meet a specific set of
+         * requirements. For more information, see the <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLambdaFunctionRecommendationsOutcome GetLambdaFunctionRecommendations(const Model::GetLambdaFunctionRecommendationsRequest& request) const;
+
+        /**
+         * <p>Returns AWS Lambda function recommendations.</p> <p>AWS Compute Optimizer
+         * generates recommendations for functions that meet a specific set of
+         * requirements. For more information, see the <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLambdaFunctionRecommendationsOutcomeCallable GetLambdaFunctionRecommendationsCallable(const Model::GetLambdaFunctionRecommendationsRequest& request) const;
+
+        /**
+         * <p>Returns AWS Lambda function recommendations.</p> <p>AWS Compute Optimizer
+         * generates recommendations for functions that meet a specific set of
+         * requirements. For more information, see the <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLambdaFunctionRecommendationsAsync(const Model::GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the optimization findings for an account.</p> <p>For example, it
          * returns the number of Amazon EC2 instances in an account that are
          * under-provisioned, over-provisioned, or optimized. It also returns the number of
@@ -573,6 +618,7 @@ namespace Model
         void GetEC2InstanceRecommendationsAsyncHelper(const Model::GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEC2RecommendationProjectedMetricsAsyncHelper(const Model::GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnrollmentStatusAsyncHelper(const Model::GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLambdaFunctionRecommendationsAsyncHelper(const Model::GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRecommendationSummariesAsyncHelper(const Model::GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnrollmentStatusAsyncHelper(const Model::UpdateEnrollmentStatusRequest& request, const UpdateEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -28,6 +28,7 @@
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusRequest.h>
+#include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesRequest.h>
 #include <aws/compute-optimizer/model/UpdateEnrollmentStatusRequest.h>
 
@@ -318,6 +319,33 @@ void ComputeOptimizerClient::GetEnrollmentStatusAsync(const GetEnrollmentStatusR
 void ComputeOptimizerClient::GetEnrollmentStatusAsyncHelper(const GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetEnrollmentStatus(request), context);
+}
+
+GetLambdaFunctionRecommendationsOutcome ComputeOptimizerClient::GetLambdaFunctionRecommendations(const GetLambdaFunctionRecommendationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetLambdaFunctionRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLambdaFunctionRecommendationsOutcomeCallable ComputeOptimizerClient::GetLambdaFunctionRecommendationsCallable(const GetLambdaFunctionRecommendationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLambdaFunctionRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLambdaFunctionRecommendations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::GetLambdaFunctionRecommendationsAsync(const GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLambdaFunctionRecommendationsAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::GetLambdaFunctionRecommendationsAsyncHelper(const GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLambdaFunctionRecommendations(request), context);
 }
 
 GetRecommendationSummariesOutcome ComputeOptimizerClient::GetRecommendationSummaries(const GetRecommendationSummariesRequest& request) const

@@ -23,6 +23,7 @@ namespace Aws
         static const int Ec2Instance_HASH = HashingUtils::HashString("Ec2Instance");
         static const int AutoScalingGroup_HASH = HashingUtils::HashString("AutoScalingGroup");
         static const int EbsVolume_HASH = HashingUtils::HashString("EbsVolume");
+        static const int LambdaFunction_HASH = HashingUtils::HashString("LambdaFunction");
 
 
         RecommendationSourceType GetRecommendationSourceTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == EbsVolume_HASH)
           {
             return RecommendationSourceType::EbsVolume;
+          }
+          else if (hashCode == LambdaFunction_HASH)
+          {
+            return RecommendationSourceType::LambdaFunction;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "AutoScalingGroup";
           case RecommendationSourceType::EbsVolume:
             return "EbsVolume";
+          case RecommendationSourceType::LambdaFunction:
+            return "LambdaFunction";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

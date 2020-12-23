@@ -1614,6 +1614,232 @@ namespace Model
      */
     inline OracleSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
 
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies AWS DMS as the trusted entity and
+     * grants the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline const Aws::String& GetSecretsManagerOracleAsmAccessRoleArn() const{ return m_secretsManagerOracleAsmAccessRoleArn; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies AWS DMS as the trusted entity and
+     * grants the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline bool SecretsManagerOracleAsmAccessRoleArnHasBeenSet() const { return m_secretsManagerOracleAsmAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies AWS DMS as the trusted entity and
+     * grants the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerOracleAsmAccessRoleArn(const Aws::String& value) { m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true; m_secretsManagerOracleAsmAccessRoleArn = value; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies AWS DMS as the trusted entity and
+     * grants the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerOracleAsmAccessRoleArn(Aws::String&& value) { m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true; m_secretsManagerOracleAsmAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies AWS DMS as the trusted entity and
+     * grants the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline void SetSecretsManagerOracleAsmAccessRoleArn(const char* value) { m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true; m_secretsManagerOracleAsmAccessRoleArn.assign(value); }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies AWS DMS as the trusted entity and
+     * grants the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmAccessRoleArn(const Aws::String& value) { SetSecretsManagerOracleAsmAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies AWS DMS as the trusted entity and
+     * grants the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmAccessRoleArn(Aws::String&& value) { SetSecretsManagerOracleAsmAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN of the IAM role that specifies AWS DMS as the trusted entity and
+     * grants the required permissions to access the
+     * <code>SecretsManagerOracleAsmSecret</code>. This
+     * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
+     * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
+     * two sets of values for these permissions. You can specify the values for this
+     * setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify
+     * clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+     * <code>AsmServerName</code>. You can't specify both. For more information on
+     * creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     * <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+     * <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
+     * Database Migration Service User Guide</i>.</p> 
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmAccessRoleArn(const char* value) { SetSecretsManagerOracleAsmAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline const Aws::String& GetSecretsManagerOracleAsmSecretId() const{ return m_secretsManagerOracleAsmSecretId; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline bool SecretsManagerOracleAsmSecretIdHasBeenSet() const { return m_secretsManagerOracleAsmSecretIdHasBeenSet; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline void SetSecretsManagerOracleAsmSecretId(const Aws::String& value) { m_secretsManagerOracleAsmSecretIdHasBeenSet = true; m_secretsManagerOracleAsmSecretId = value; }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline void SetSecretsManagerOracleAsmSecretId(Aws::String&& value) { m_secretsManagerOracleAsmSecretIdHasBeenSet = true; m_secretsManagerOracleAsmSecretId = std::move(value); }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline void SetSecretsManagerOracleAsmSecretId(const char* value) { m_secretsManagerOracleAsmSecretIdHasBeenSet = true; m_secretsManagerOracleAsmSecretId.assign(value); }
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmSecretId(const Aws::String& value) { SetSecretsManagerOracleAsmSecretId(value); return *this;}
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmSecretId(Aws::String&& value) { SetSecretsManagerOracleAsmSecretId(std::move(value)); return *this;}
+
+    /**
+     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
+     * The full ARN, partial ARN, or friendly name of the
+     * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     * connection details for the Oracle endpoint.</p>
+     */
+    inline OracleSettings& WithSecretsManagerOracleAsmSecretId(const char* value) { SetSecretsManagerOracleAsmSecretId(value); return *this;}
+
   private:
 
     bool m_addSupplementalLogging;
@@ -1711,6 +1937,12 @@ namespace Model
 
     Aws::String m_secretsManagerSecretId;
     bool m_secretsManagerSecretIdHasBeenSet;
+
+    Aws::String m_secretsManagerOracleAsmAccessRoleArn;
+    bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet;
+
+    Aws::String m_secretsManagerOracleAsmSecretId;
+    bool m_secretsManagerOracleAsmSecretIdHasBeenSet;
   };
 
 } // namespace Model

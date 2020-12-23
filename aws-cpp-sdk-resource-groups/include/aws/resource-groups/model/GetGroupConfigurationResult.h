@@ -33,27 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The configuration associated with the specified group.</p>
+     * <p>The service configuration associated with the specified group. For details
+     * about the service configuration syntax, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline const GroupConfiguration& GetGroupConfiguration() const{ return m_groupConfiguration; }
 
     /**
-     * <p>The configuration associated with the specified group.</p>
+     * <p>The service configuration associated with the specified group. For details
+     * about the service configuration syntax, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline void SetGroupConfiguration(const GroupConfiguration& value) { m_groupConfiguration = value; }
 
     /**
-     * <p>The configuration associated with the specified group.</p>
+     * <p>The service configuration associated with the specified group. For details
+     * about the service configuration syntax, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline void SetGroupConfiguration(GroupConfiguration&& value) { m_groupConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration associated with the specified group.</p>
+     * <p>The service configuration associated with the specified group. For details
+     * about the service configuration syntax, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline GetGroupConfigurationResult& WithGroupConfiguration(const GroupConfiguration& value) { SetGroupConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration associated with the specified group.</p>
+     * <p>The service configuration associated with the specified group. For details
+     * about the service configuration syntax, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
      */
     inline GetGroupConfigurationResult& WithGroupConfiguration(GroupConfiguration&& value) { SetGroupConfiguration(std::move(value)); return *this;}
 

@@ -69,7 +69,9 @@ OracleSettings::OracleSettings() :
     m_serverNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
+    m_secretsManagerOracleAsmSecretIdHasBeenSet(false)
 {
 }
 
@@ -124,7 +126,9 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_serverNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
+    m_secretsManagerOracleAsmSecretIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -355,6 +359,20 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_secretsManagerSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerOracleAsmAccessRoleArn"))
+  {
+    m_secretsManagerOracleAsmAccessRoleArn = jsonValue.GetString("SecretsManagerOracleAsmAccessRoleArn");
+
+    m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerOracleAsmSecretId"))
+  {
+    m_secretsManagerOracleAsmSecretId = jsonValue.GetString("SecretsManagerOracleAsmSecretId");
+
+    m_secretsManagerOracleAsmSecretIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -550,6 +568,18 @@ JsonValue OracleSettings::Jsonize() const
   if(m_secretsManagerSecretIdHasBeenSet)
   {
    payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
+
+  }
+
+  if(m_secretsManagerOracleAsmAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("SecretsManagerOracleAsmAccessRoleArn", m_secretsManagerOracleAsmAccessRoleArn);
+
+  }
+
+  if(m_secretsManagerOracleAsmSecretIdHasBeenSet)
+  {
+   payload.WithString("SecretsManagerOracleAsmSecretId", m_secretsManagerOracleAsmSecretId);
 
   }
 
