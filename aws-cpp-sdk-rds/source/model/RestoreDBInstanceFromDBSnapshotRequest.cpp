@@ -47,7 +47,9 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_useDefaultProcessorFeaturesHasBeenSet(false),
     m_dBParameterGroupNameHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_enableCustomerOwnedIp(false),
+    m_enableCustomerOwnedIpHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,11 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_enableCustomerOwnedIpHasBeenSet)
+  {
+    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
   }
 
   ss << "Version=2014-10-31";

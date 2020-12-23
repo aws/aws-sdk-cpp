@@ -99,7 +99,9 @@ DBInstance::DBInstance() :
     m_maxAllocatedStorage(0),
     m_maxAllocatedStorageHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false)
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
+    m_customerOwnedIpEnabled(false),
+    m_customerOwnedIpEnabledHasBeenSet(false)
 {
 }
 
@@ -182,7 +184,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_maxAllocatedStorage(0),
     m_maxAllocatedStorageHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false)
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
+    m_customerOwnedIpEnabled(false),
+    m_customerOwnedIpEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -643,6 +647,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
 
       m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true;
     }
+    XmlNode customerOwnedIpEnabledNode = resultNode.FirstChild("CustomerOwnedIpEnabled");
+    if(!customerOwnedIpEnabledNode.IsNull())
+    {
+      m_customerOwnedIpEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpEnabledNode.GetText()).c_str()).c_str());
+      m_customerOwnedIpEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1040,6 +1050,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_customerOwnedIpEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOwnedIpEnabled=" << std::boolalpha << m_customerOwnedIpEnabled << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1371,6 +1386,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
         dBInstanceAutomatedBackupsReplicationsSs << location <<  ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
         item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
       }
+  }
+  if(m_customerOwnedIpEnabledHasBeenSet)
+  {
+      oStream << location << ".CustomerOwnedIpEnabled=" << std::boolalpha << m_customerOwnedIpEnabled << "&";
   }
 }
 

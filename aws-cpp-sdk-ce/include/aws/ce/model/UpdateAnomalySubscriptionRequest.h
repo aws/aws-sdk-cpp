@@ -137,47 +137,47 @@ namespace Model
 
 
     /**
-     * <p> A list of cost anomaly subscription ARNs. </p>
+     * <p> A list of cost anomaly monitor ARNs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetMonitorArnList() const{ return m_monitorArnList; }
 
     /**
-     * <p> A list of cost anomaly subscription ARNs. </p>
+     * <p> A list of cost anomaly monitor ARNs. </p>
      */
     inline bool MonitorArnListHasBeenSet() const { return m_monitorArnListHasBeenSet; }
 
     /**
-     * <p> A list of cost anomaly subscription ARNs. </p>
+     * <p> A list of cost anomaly monitor ARNs. </p>
      */
     inline void SetMonitorArnList(const Aws::Vector<Aws::String>& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList = value; }
 
     /**
-     * <p> A list of cost anomaly subscription ARNs. </p>
+     * <p> A list of cost anomaly monitor ARNs. </p>
      */
     inline void SetMonitorArnList(Aws::Vector<Aws::String>&& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList = std::move(value); }
 
     /**
-     * <p> A list of cost anomaly subscription ARNs. </p>
+     * <p> A list of cost anomaly monitor ARNs. </p>
      */
     inline UpdateAnomalySubscriptionRequest& WithMonitorArnList(const Aws::Vector<Aws::String>& value) { SetMonitorArnList(value); return *this;}
 
     /**
-     * <p> A list of cost anomaly subscription ARNs. </p>
+     * <p> A list of cost anomaly monitor ARNs. </p>
      */
     inline UpdateAnomalySubscriptionRequest& WithMonitorArnList(Aws::Vector<Aws::String>&& value) { SetMonitorArnList(std::move(value)); return *this;}
 
     /**
-     * <p> A list of cost anomaly subscription ARNs. </p>
+     * <p> A list of cost anomaly monitor ARNs. </p>
      */
     inline UpdateAnomalySubscriptionRequest& AddMonitorArnList(const Aws::String& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList.push_back(value); return *this; }
 
     /**
-     * <p> A list of cost anomaly subscription ARNs. </p>
+     * <p> A list of cost anomaly monitor ARNs. </p>
      */
     inline UpdateAnomalySubscriptionRequest& AddMonitorArnList(Aws::String&& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> A list of cost anomaly subscription ARNs. </p>
+     * <p> A list of cost anomaly monitor ARNs. </p>
      */
     inline UpdateAnomalySubscriptionRequest& AddMonitorArnList(const char* value) { m_monitorArnListHasBeenSet = true; m_monitorArnList.push_back(value); return *this; }
 

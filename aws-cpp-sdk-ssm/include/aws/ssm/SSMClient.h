@@ -2442,14 +2442,24 @@ namespace Model
         virtual void DescribeMaintenanceWindowTargetsAsync(const Model::DescribeMaintenanceWindowTargetsRequest& request, const DescribeMaintenanceWindowTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
+         * tasks without a specified target, you cannot supply values for
+         * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
+         * system inserts a placeholder value of <code>1</code>, which may be reported in
+         * the response to this command. These values do not affect the running of your
+         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowTasksOutcome DescribeMaintenanceWindowTasks(const Model::DescribeMaintenanceWindowTasksRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
+         * tasks without a specified target, you cannot supply values for
+         * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
+         * system inserts a placeholder value of <code>1</code>, which may be reported in
+         * the response to this command. These values do not affect the running of your
+         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
          * API Reference</a></p>
          *
@@ -2458,7 +2468,12 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowTasksOutcomeCallable DescribeMaintenanceWindowTasksCallable(const Model::DescribeMaintenanceWindowTasksRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
+         * tasks without a specified target, you cannot supply values for
+         * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
+         * system inserts a placeholder value of <code>1</code>, which may be reported in
+         * the response to this command. These values do not affect the running of your
+         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
          * API Reference</a></p>
          *
@@ -3224,14 +3239,24 @@ namespace Model
         virtual void GetMaintenanceWindowExecutionTaskInvocationAsync(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request, const GetMaintenanceWindowExecutionTaskInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
+         * tasks without a specified target, you cannot supply values for
+         * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
+         * system inserts a placeholder value of <code>1</code>, which may be reported in
+         * the response to this command. These values do not affect the running of your
+         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowTaskOutcome GetMaintenanceWindowTask(const Model::GetMaintenanceWindowTaskRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
+         * tasks without a specified target, you cannot supply values for
+         * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
+         * system inserts a placeholder value of <code>1</code>, which may be reported in
+         * the response to this command. These values do not affect the running of your
+         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -3240,7 +3265,12 @@ namespace Model
         virtual Model::GetMaintenanceWindowTaskOutcomeCallable GetMaintenanceWindowTaskCallable(const Model::GetMaintenanceWindowTaskRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
+         * tasks without a specified target, you cannot supply values for
+         * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
+         * system inserts a placeholder value of <code>1</code>, which may be reported in
+         * the response to this command. These values do not affect the running of your
+         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -5103,16 +5133,23 @@ namespace Model
          * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
          * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
          * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
-         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If the value
-         * for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the
-         * corresponding field is not modified. If you set <code>Replace</code> to true,
-         * then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action
-         * are required for this request. Optional fields that aren't specified are set to
-         * null.</p>  <p>When you update a maintenance window task that has
-         * options specified in <code>TaskInvocationParameters</code>, you must provide
-         * again all the <code>TaskInvocationParameters</code> values that you want to
-         * retain. The values you do not specify again are removed. For example, suppose
-         * that when you registered a Run Command task, you specified
+         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul>  <p>One or
+         * more targets must be specified for maintenance window Run Command-type tasks.
+         * Depending on the task, targets are optional for other maintenance window task
+         * types (Automation, AWS Lambda, and AWS Step Functions). For more information
+         * about running tasks that do not specify targets, see see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+         * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+         * Guide</i>.</p>  <p>If the value for a parameter in
+         * <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field
+         * is not modified. If you set <code>Replace</code> to true, then all fields
+         * required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for
+         * this request. Optional fields that aren't specified are set to null.</p>
+         *  <p>When you update a maintenance window task that has options
+         * specified in <code>TaskInvocationParameters</code>, you must provide again all
+         * the <code>TaskInvocationParameters</code> values that you want to retain. The
+         * values you do not specify again are removed. For example, suppose that when you
+         * registered a Run Command task, you specified
          * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
          * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
          * update the maintenance window task and specify only a different
@@ -5130,16 +5167,23 @@ namespace Model
          * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
          * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
          * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
-         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If the value
-         * for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the
-         * corresponding field is not modified. If you set <code>Replace</code> to true,
-         * then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action
-         * are required for this request. Optional fields that aren't specified are set to
-         * null.</p>  <p>When you update a maintenance window task that has
-         * options specified in <code>TaskInvocationParameters</code>, you must provide
-         * again all the <code>TaskInvocationParameters</code> values that you want to
-         * retain. The values you do not specify again are removed. For example, suppose
-         * that when you registered a Run Command task, you specified
+         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul>  <p>One or
+         * more targets must be specified for maintenance window Run Command-type tasks.
+         * Depending on the task, targets are optional for other maintenance window task
+         * types (Automation, AWS Lambda, and AWS Step Functions). For more information
+         * about running tasks that do not specify targets, see see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+         * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+         * Guide</i>.</p>  <p>If the value for a parameter in
+         * <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field
+         * is not modified. If you set <code>Replace</code> to true, then all fields
+         * required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for
+         * this request. Optional fields that aren't specified are set to null.</p>
+         *  <p>When you update a maintenance window task that has options
+         * specified in <code>TaskInvocationParameters</code>, you must provide again all
+         * the <code>TaskInvocationParameters</code> values that you want to retain. The
+         * values you do not specify again are removed. For example, suppose that when you
+         * registered a Run Command task, you specified
          * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
          * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
          * update the maintenance window task and specify only a different
@@ -5159,16 +5203,23 @@ namespace Model
          * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
          * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
          * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
-         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If the value
-         * for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the
-         * corresponding field is not modified. If you set <code>Replace</code> to true,
-         * then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action
-         * are required for this request. Optional fields that aren't specified are set to
-         * null.</p>  <p>When you update a maintenance window task that has
-         * options specified in <code>TaskInvocationParameters</code>, you must provide
-         * again all the <code>TaskInvocationParameters</code> values that you want to
-         * retain. The values you do not specify again are removed. For example, suppose
-         * that when you registered a Run Command task, you specified
+         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul>  <p>One or
+         * more targets must be specified for maintenance window Run Command-type tasks.
+         * Depending on the task, targets are optional for other maintenance window task
+         * types (Automation, AWS Lambda, and AWS Step Functions). For more information
+         * about running tasks that do not specify targets, see see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+         * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+         * Guide</i>.</p>  <p>If the value for a parameter in
+         * <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field
+         * is not modified. If you set <code>Replace</code> to true, then all fields
+         * required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for
+         * this request. Optional fields that aren't specified are set to null.</p>
+         *  <p>When you update a maintenance window task that has options
+         * specified in <code>TaskInvocationParameters</code>, you must provide again all
+         * the <code>TaskInvocationParameters</code> values that you want to retain. The
+         * values you do not specify again are removed. For example, suppose that when you
+         * registered a Run Command task, you specified
          * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
          * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
          * update the maintenance window task and specify only a different

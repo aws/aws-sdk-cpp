@@ -33,32 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline const SidewalkAccountInfoWithFingerprint& GetSidewalk() const{ return m_sidewalk; }
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline void SetSidewalk(const SidewalkAccountInfoWithFingerprint& value) { m_sidewalk = value; }
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline void SetSidewalk(SidewalkAccountInfoWithFingerprint&& value) { m_sidewalk = std::move(value); }
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline GetPartnerAccountResult& WithSidewalk(const SidewalkAccountInfoWithFingerprint& value) { SetSidewalk(value); return *this;}
 
     /**
-     * <p>The Sidewalk account credentials.</p> <p>The <code>AppServerPrivateKey</code>
-     * value is empty to protect its security.</p>
+     * <p>The Sidewalk account credentials.</p>
      */
     inline GetPartnerAccountResult& WithSidewalk(SidewalkAccountInfoWithFingerprint&& value) { SetSidewalk(std::move(value)); return *this;}
 

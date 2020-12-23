@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>LoRa object for update functions.</p><p><h3>See Also:</h3>   <a
+   * <p>LoRaWAN object for update functions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANUpdateDevice">AWS
    * API Reference</a></p>
    */

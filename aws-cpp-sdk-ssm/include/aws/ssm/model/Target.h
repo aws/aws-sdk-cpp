@@ -26,8 +26,15 @@ namespace Model
 
   /**
    * <p>An array of search criteria that targets instances using a Key,Value
-   * combination that you specify. </p> <p>Supported formats include the
-   * following.</p> <ul> <li> <p>
+   * combination that you specify. </p>  <p> One or more targets must be
+   * specified for maintenance window Run Command-type tasks. Depending on the task,
+   * targets are optional for other maintenance window task types (Automation, AWS
+   * Lambda, and AWS Step Functions). For more information about running tasks that
+   * do not specify targets, see see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+   * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+   * Guide</i>.</p>  <p>Supported formats include the following.</p> <ul> <li>
+   * <p>
    * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
    * </code> </p> </li> <li> <p>
    * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>

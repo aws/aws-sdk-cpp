@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>LoRa object for create functions.</p><p><h3>See Also:</h3>   <a
+   * <p>LoRaWAN object for create functions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANDevice">AWS
    * API Reference</a></p>
    */
@@ -258,32 +258,32 @@ namespace Model
 
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline const AbpV1_0_x& GetAbpV1_0_x() const{ return m_abpV1_0_x; }
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline bool AbpV1_0_xHasBeenSet() const { return m_abpV1_0_xHasBeenSet; }
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline void SetAbpV1_0_x(const AbpV1_0_x& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = value; }
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline void SetAbpV1_0_x(AbpV1_0_x&& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = std::move(value); }
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline LoRaWANDevice& WithAbpV1_0_x(const AbpV1_0_x& value) { SetAbpV1_0_x(value); return *this;}
 
     /**
-     * <p>LoRa object for create APIs</p>
+     * <p>LoRaWAN object for create APIs</p>
      */
     inline LoRaWANDevice& WithAbpV1_0_x(AbpV1_0_x&& value) { SetAbpV1_0_x(std::move(value)); return *this;}
 

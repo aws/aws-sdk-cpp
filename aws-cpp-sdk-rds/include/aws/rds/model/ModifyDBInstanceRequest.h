@@ -251,8 +251,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -266,8 +266,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -281,8 +281,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -296,8 +296,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -311,8 +311,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -326,8 +326,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -341,8 +341,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -356,8 +356,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -3143,6 +3143,67 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithReplicaMode(ReplicaMode&& value) { SetReplicaMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline ModifyDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3273,6 +3334,9 @@ namespace Model
 
     ReplicaMode m_replicaMode;
     bool m_replicaModeHasBeenSet;
+
+    bool m_enableCustomerOwnedIp;
+    bool m_enableCustomerOwnedIpHasBeenSet;
   };
 
 } // namespace Model

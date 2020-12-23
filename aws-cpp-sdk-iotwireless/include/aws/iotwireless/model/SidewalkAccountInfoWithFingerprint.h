@@ -79,52 +79,52 @@ namespace Model
 
 
     /**
-     * <p>The Sidewalk application server private key.</p>
+     * <p>Fingerprint for Sidewalk application server private key.</p>
      */
-    inline const Aws::String& GetAppServerPrivateKey() const{ return m_appServerPrivateKey; }
+    inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
 
     /**
-     * <p>The Sidewalk application server private key.</p>
+     * <p>Fingerprint for Sidewalk application server private key.</p>
      */
-    inline bool AppServerPrivateKeyHasBeenSet() const { return m_appServerPrivateKeyHasBeenSet; }
+    inline bool FingerprintHasBeenSet() const { return m_fingerprintHasBeenSet; }
 
     /**
-     * <p>The Sidewalk application server private key.</p>
+     * <p>Fingerprint for Sidewalk application server private key.</p>
      */
-    inline void SetAppServerPrivateKey(const Aws::String& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = value; }
+    inline void SetFingerprint(const Aws::String& value) { m_fingerprintHasBeenSet = true; m_fingerprint = value; }
 
     /**
-     * <p>The Sidewalk application server private key.</p>
+     * <p>Fingerprint for Sidewalk application server private key.</p>
      */
-    inline void SetAppServerPrivateKey(Aws::String&& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = std::move(value); }
+    inline void SetFingerprint(Aws::String&& value) { m_fingerprintHasBeenSet = true; m_fingerprint = std::move(value); }
 
     /**
-     * <p>The Sidewalk application server private key.</p>
+     * <p>Fingerprint for Sidewalk application server private key.</p>
      */
-    inline void SetAppServerPrivateKey(const char* value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey.assign(value); }
+    inline void SetFingerprint(const char* value) { m_fingerprintHasBeenSet = true; m_fingerprint.assign(value); }
 
     /**
-     * <p>The Sidewalk application server private key.</p>
+     * <p>Fingerprint for Sidewalk application server private key.</p>
      */
-    inline SidewalkAccountInfoWithFingerprint& WithAppServerPrivateKey(const Aws::String& value) { SetAppServerPrivateKey(value); return *this;}
+    inline SidewalkAccountInfoWithFingerprint& WithFingerprint(const Aws::String& value) { SetFingerprint(value); return *this;}
 
     /**
-     * <p>The Sidewalk application server private key.</p>
+     * <p>Fingerprint for Sidewalk application server private key.</p>
      */
-    inline SidewalkAccountInfoWithFingerprint& WithAppServerPrivateKey(Aws::String&& value) { SetAppServerPrivateKey(std::move(value)); return *this;}
+    inline SidewalkAccountInfoWithFingerprint& WithFingerprint(Aws::String&& value) { SetFingerprint(std::move(value)); return *this;}
 
     /**
-     * <p>The Sidewalk application server private key.</p>
+     * <p>Fingerprint for Sidewalk application server private key.</p>
      */
-    inline SidewalkAccountInfoWithFingerprint& WithAppServerPrivateKey(const char* value) { SetAppServerPrivateKey(value); return *this;}
+    inline SidewalkAccountInfoWithFingerprint& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
 
   private:
 
     Aws::String m_amazonId;
     bool m_amazonIdHasBeenSet;
 
-    Aws::String m_appServerPrivateKey;
-    bool m_appServerPrivateKeyHasBeenSet;
+    Aws::String m_fingerprint;
+    bool m_fingerprintHasBeenSet;
   };
 
 } // namespace Model

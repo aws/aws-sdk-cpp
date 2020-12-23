@@ -73,7 +73,9 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false)
+    m_maxAllocatedStorageHasBeenSet(false),
+    m_enableCustomerOwnedIp(false),
+    m_enableCustomerOwnedIpHasBeenSet(false)
 {
 }
 
@@ -342,6 +344,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_maxAllocatedStorageHasBeenSet)
   {
     ss << "MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
+  }
+
+  if(m_enableCustomerOwnedIpHasBeenSet)
+  {
+    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
   }
 
   ss << "Version=2014-10-31";

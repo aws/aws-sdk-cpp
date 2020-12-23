@@ -22,7 +22,8 @@ RightsizingRecommendationMetadata::RightsizingRecommendationMetadata() :
     m_recommendationIdHasBeenSet(false),
     m_generationTimestampHasBeenSet(false),
     m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false)
+    m_lookbackPeriodInDaysHasBeenSet(false),
+    m_additionalMetadataHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ RightsizingRecommendationMetadata::RightsizingRecommendationMetadata(JsonView js
     m_recommendationIdHasBeenSet(false),
     m_generationTimestampHasBeenSet(false),
     m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false)
+    m_lookbackPeriodInDaysHasBeenSet(false),
+    m_additionalMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ RightsizingRecommendationMetadata& RightsizingRecommendationMetadata::operator =
     m_lookbackPeriodInDaysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalMetadata"))
+  {
+    m_additionalMetadata = jsonValue.GetString("AdditionalMetadata");
+
+    m_additionalMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue RightsizingRecommendationMetadata::Jsonize() const
   if(m_lookbackPeriodInDaysHasBeenSet)
   {
    payload.WithString("LookbackPeriodInDays", LookbackPeriodInDaysMapper::GetNameForLookbackPeriodInDays(m_lookbackPeriodInDays));
+  }
+
+  if(m_additionalMetadataHasBeenSet)
+  {
+   payload.WithString("AdditionalMetadata", m_additionalMetadata);
+
   }
 
   return payload;

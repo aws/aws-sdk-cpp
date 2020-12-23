@@ -241,37 +241,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the thing associated with the wireless device.</p>
+     * <p>The name of the thing associated with the wireless device. The value is empty
+     * if a thing isn't associated with the device.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
 
     /**
-     * <p>The name of the thing associated with the wireless device.</p>
+     * <p>The name of the thing associated with the wireless device. The value is empty
+     * if a thing isn't associated with the device.</p>
      */
     inline void SetThingName(const Aws::String& value) { m_thingName = value; }
 
     /**
-     * <p>The name of the thing associated with the wireless device.</p>
+     * <p>The name of the thing associated with the wireless device. The value is empty
+     * if a thing isn't associated with the device.</p>
      */
     inline void SetThingName(Aws::String&& value) { m_thingName = std::move(value); }
 
     /**
-     * <p>The name of the thing associated with the wireless device.</p>
+     * <p>The name of the thing associated with the wireless device. The value is empty
+     * if a thing isn't associated with the device.</p>
      */
     inline void SetThingName(const char* value) { m_thingName.assign(value); }
 
     /**
-     * <p>The name of the thing associated with the wireless device.</p>
+     * <p>The name of the thing associated with the wireless device. The value is empty
+     * if a thing isn't associated with the device.</p>
      */
     inline GetWirelessDeviceResult& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The name of the thing associated with the wireless device.</p>
+     * <p>The name of the thing associated with the wireless device. The value is empty
+     * if a thing isn't associated with the device.</p>
      */
     inline GetWirelessDeviceResult& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the thing associated with the wireless device.</p>
+     * <p>The name of the thing associated with the wireless device. The value is empty
+     * if a thing isn't associated with the device.</p>
      */
     inline GetWirelessDeviceResult& WithThingName(const char* value) { SetThingName(value); return *this;}
 

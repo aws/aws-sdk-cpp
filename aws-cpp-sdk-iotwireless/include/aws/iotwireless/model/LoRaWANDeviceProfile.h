@@ -186,49 +186,49 @@ namespace Model
 
 
     /**
-     * <p>The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device
+     * <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device
      * profile.</p>
      */
     inline const Aws::String& GetMacVersion() const{ return m_macVersion; }
 
     /**
-     * <p>The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device
+     * <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device
      * profile.</p>
      */
     inline bool MacVersionHasBeenSet() const { return m_macVersionHasBeenSet; }
 
     /**
-     * <p>The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device
+     * <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device
      * profile.</p>
      */
     inline void SetMacVersion(const Aws::String& value) { m_macVersionHasBeenSet = true; m_macVersion = value; }
 
     /**
-     * <p>The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device
+     * <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device
      * profile.</p>
      */
     inline void SetMacVersion(Aws::String&& value) { m_macVersionHasBeenSet = true; m_macVersion = std::move(value); }
 
     /**
-     * <p>The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device
+     * <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device
      * profile.</p>
      */
     inline void SetMacVersion(const char* value) { m_macVersionHasBeenSet = true; m_macVersion.assign(value); }
 
     /**
-     * <p>The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device
+     * <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device
      * profile.</p>
      */
     inline LoRaWANDeviceProfile& WithMacVersion(const Aws::String& value) { SetMacVersion(value); return *this;}
 
     /**
-     * <p>The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device
+     * <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device
      * profile.</p>
      */
     inline LoRaWANDeviceProfile& WithMacVersion(Aws::String&& value) { SetMacVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device
+     * <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device
      * profile.</p>
      */
     inline LoRaWANDeviceProfile& WithMacVersion(const char* value) { SetMacVersion(value); return *this;}

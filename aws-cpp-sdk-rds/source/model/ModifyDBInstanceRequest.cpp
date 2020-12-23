@@ -73,7 +73,9 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_certificateRotationRestart(false),
     m_certificateRotationRestartHasBeenSet(false),
     m_replicaMode(ReplicaMode::NOT_SET),
-    m_replicaModeHasBeenSet(false)
+    m_replicaModeHasBeenSet(false),
+    m_enableCustomerOwnedIp(false),
+    m_enableCustomerOwnedIpHasBeenSet(false)
 {
 }
 
@@ -311,6 +313,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_replicaModeHasBeenSet)
   {
     ss << "ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+  }
+
+  if(m_enableCustomerOwnedIpHasBeenSet)
+  {
+    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
   }
 
   ss << "Version=2014-10-31";

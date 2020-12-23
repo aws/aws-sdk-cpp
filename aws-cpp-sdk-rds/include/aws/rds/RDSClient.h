@@ -1422,7 +1422,7 @@ namespace Aws
          * AZ that is integrated with a VMware vSphere cluster.</p> <p>For more information
          * about RDS on VMware, see the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-         * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+         * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">AWS
          * API Reference</a></p>
          */
@@ -1433,7 +1433,7 @@ namespace Aws
          * AZ that is integrated with a VMware vSphere cluster.</p> <p>For more information
          * about RDS on VMware, see the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-         * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+         * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">AWS
          * API Reference</a></p>
          *
@@ -1446,7 +1446,7 @@ namespace Aws
          * AZ that is integrated with a VMware vSphere cluster.</p> <p>For more information
          * about RDS on VMware, see the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-         * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+         * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">AWS
          * API Reference</a></p>
          *
@@ -2133,7 +2133,7 @@ namespace Aws
          * AZ that is integrated with a VMware vSphere cluster.</p> <p>For more information
          * about RDS on VMware, see the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-         * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+         * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">AWS
          * API Reference</a></p>
          */
@@ -2144,7 +2144,7 @@ namespace Aws
          * AZ that is integrated with a VMware vSphere cluster.</p> <p>For more information
          * about RDS on VMware, see the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-         * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+         * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">AWS
          * API Reference</a></p>
          *
@@ -2157,7 +2157,7 @@ namespace Aws
          * AZ that is integrated with a VMware vSphere cluster.</p> <p>For more information
          * about RDS on VMware, see the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-         * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+         * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">AWS
          * API Reference</a></p>
          *
@@ -2800,7 +2800,7 @@ namespace Aws
          * is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>
          * <p>For more information about RDS on VMware, see the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-         * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+         * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones">AWS
          * API Reference</a></p>
          */
@@ -2811,7 +2811,7 @@ namespace Aws
          * is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>
          * <p>For more information about RDS on VMware, see the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-         * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+         * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones">AWS
          * API Reference</a></p>
          *
@@ -2824,7 +2824,7 @@ namespace Aws
          * is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>
          * <p>For more information about RDS on VMware, see the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-         * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+         * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones">AWS
          * API Reference</a></p>
          *
@@ -3984,8 +3984,8 @@ namespace Aws
 
         /**
          * <p>Returns a list of the source AWS Regions where the current AWS Region can
-         * create a read replica or copy a DB snapshot from. This API action supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * create a read replica, copy a DB snapshot from, or replicate automated backups
+         * from. This API action supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
          * API Reference</a></p>
          */
@@ -3993,8 +3993,8 @@ namespace Aws
 
         /**
          * <p>Returns a list of the source AWS Regions where the current AWS Region can
-         * create a read replica or copy a DB snapshot from. This API action supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * create a read replica, copy a DB snapshot from, or replicate automated backups
+         * from. This API action supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
          * API Reference</a></p>
          *
@@ -4004,8 +4004,8 @@ namespace Aws
 
         /**
          * <p>Returns a list of the source AWS Regions where the current AWS Region can
-         * create a read replica or copy a DB snapshot from. This API action supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * create a read replica, copy a DB snapshot from, or replicate automated backups
+         * from. This API action supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
          * API Reference</a></p>
          *

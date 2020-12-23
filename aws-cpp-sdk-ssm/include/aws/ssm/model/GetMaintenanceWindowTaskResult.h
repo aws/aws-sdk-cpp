@@ -431,79 +431,135 @@ namespace Model
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you cannot
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.</p> 
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you cannot
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.</p> 
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrency = value; }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you cannot
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.</p> 
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrency = std::move(value); }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you cannot
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.</p> 
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrency.assign(value); }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you cannot
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you cannot
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
+     *  <p>For maintenance window tasks without a target specified, you cannot
+     * supply a value for this option. Instead, the system inserts a placeholder value
+     * of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrors = value; }
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrors = std::move(value); }
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline void SetMaxErrors(const char* value) { m_maxErrors.assign(value); }
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline GetMaintenanceWindowTaskResult& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 

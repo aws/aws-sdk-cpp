@@ -16,6 +16,7 @@
 #include <aws/connect/model/CreateContactFlowResult.h>
 #include <aws/connect/model/CreateInstanceResult.h>
 #include <aws/connect/model/CreateIntegrationAssociationResult.h>
+#include <aws/connect/model/CreateQuickConnectResult.h>
 #include <aws/connect/model/CreateRoutingProfileResult.h>
 #include <aws/connect/model/CreateUseCaseResult.h>
 #include <aws/connect/model/CreateUserResult.h>
@@ -24,6 +25,7 @@
 #include <aws/connect/model/DescribeInstanceResult.h>
 #include <aws/connect/model/DescribeInstanceAttributeResult.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigResult.h>
+#include <aws/connect/model/DescribeQuickConnectResult.h>
 #include <aws/connect/model/DescribeRoutingProfileResult.h>
 #include <aws/connect/model/DescribeUserResult.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupResult.h>
@@ -44,6 +46,7 @@
 #include <aws/connect/model/ListPhoneNumbersResult.h>
 #include <aws/connect/model/ListPromptsResult.h>
 #include <aws/connect/model/ListQueuesResult.h>
+#include <aws/connect/model/ListQuickConnectsResult.h>
 #include <aws/connect/model/ListRoutingProfileQueuesResult.h>
 #include <aws/connect/model/ListRoutingProfilesResult.h>
 #include <aws/connect/model/ListSecurityKeysResult.h>
@@ -110,12 +113,14 @@ namespace Model
         class CreateContactFlowRequest;
         class CreateInstanceRequest;
         class CreateIntegrationAssociationRequest;
+        class CreateQuickConnectRequest;
         class CreateRoutingProfileRequest;
         class CreateUseCaseRequest;
         class CreateUserRequest;
         class CreateUserHierarchyGroupRequest;
         class DeleteInstanceRequest;
         class DeleteIntegrationAssociationRequest;
+        class DeleteQuickConnectRequest;
         class DeleteUseCaseRequest;
         class DeleteUserRequest;
         class DeleteUserHierarchyGroupRequest;
@@ -123,6 +128,7 @@ namespace Model
         class DescribeInstanceRequest;
         class DescribeInstanceAttributeRequest;
         class DescribeInstanceStorageConfigRequest;
+        class DescribeQuickConnectRequest;
         class DescribeRoutingProfileRequest;
         class DescribeUserRequest;
         class DescribeUserHierarchyGroupRequest;
@@ -149,6 +155,7 @@ namespace Model
         class ListPhoneNumbersRequest;
         class ListPromptsRequest;
         class ListQueuesRequest;
+        class ListQuickConnectsRequest;
         class ListRoutingProfileQueuesRequest;
         class ListRoutingProfilesRequest;
         class ListSecurityKeysRequest;
@@ -172,6 +179,8 @@ namespace Model
         class UpdateContactFlowNameRequest;
         class UpdateInstanceAttributeRequest;
         class UpdateInstanceStorageConfigRequest;
+        class UpdateQuickConnectConfigRequest;
+        class UpdateQuickConnectNameRequest;
         class UpdateRoutingProfileConcurrencyRequest;
         class UpdateRoutingProfileDefaultOutboundQueueRequest;
         class UpdateRoutingProfileNameRequest;
@@ -193,12 +202,14 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceResult, ConnectError> CreateInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateIntegrationAssociationResult, ConnectError> CreateIntegrationAssociationOutcome;
+        typedef Aws::Utils::Outcome<CreateQuickConnectResult, ConnectError> CreateQuickConnectOutcome;
         typedef Aws::Utils::Outcome<CreateRoutingProfileResult, ConnectError> CreateRoutingProfileOutcome;
         typedef Aws::Utils::Outcome<CreateUseCaseResult, ConnectError> CreateUseCaseOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, ConnectError> CreateUserOutcome;
         typedef Aws::Utils::Outcome<CreateUserHierarchyGroupResult, ConnectError> CreateUserHierarchyGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteInstanceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteIntegrationAssociationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteQuickConnectOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUseCaseOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserHierarchyGroupOutcome;
@@ -206,6 +217,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeInstanceResult, ConnectError> DescribeInstanceOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceAttributeResult, ConnectError> DescribeInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceStorageConfigResult, ConnectError> DescribeInstanceStorageConfigOutcome;
+        typedef Aws::Utils::Outcome<DescribeQuickConnectResult, ConnectError> DescribeQuickConnectOutcome;
         typedef Aws::Utils::Outcome<DescribeRoutingProfileResult, ConnectError> DescribeRoutingProfileOutcome;
         typedef Aws::Utils::Outcome<DescribeUserResult, ConnectError> DescribeUserOutcome;
         typedef Aws::Utils::Outcome<DescribeUserHierarchyGroupResult, ConnectError> DescribeUserHierarchyGroupOutcome;
@@ -232,6 +244,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPhoneNumbersResult, ConnectError> ListPhoneNumbersOutcome;
         typedef Aws::Utils::Outcome<ListPromptsResult, ConnectError> ListPromptsOutcome;
         typedef Aws::Utils::Outcome<ListQueuesResult, ConnectError> ListQueuesOutcome;
+        typedef Aws::Utils::Outcome<ListQuickConnectsResult, ConnectError> ListQuickConnectsOutcome;
         typedef Aws::Utils::Outcome<ListRoutingProfileQueuesResult, ConnectError> ListRoutingProfileQueuesOutcome;
         typedef Aws::Utils::Outcome<ListRoutingProfilesResult, ConnectError> ListRoutingProfilesOutcome;
         typedef Aws::Utils::Outcome<ListSecurityKeysResult, ConnectError> ListSecurityKeysOutcome;
@@ -255,6 +268,8 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowNameOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceStorageConfigOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQuickConnectConfigOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQuickConnectNameOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileConcurrencyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileDefaultOutboundQueueOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileNameOutcome;
@@ -276,12 +291,14 @@ namespace Model
         typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
         typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
         typedef std::future<CreateIntegrationAssociationOutcome> CreateIntegrationAssociationOutcomeCallable;
+        typedef std::future<CreateQuickConnectOutcome> CreateQuickConnectOutcomeCallable;
         typedef std::future<CreateRoutingProfileOutcome> CreateRoutingProfileOutcomeCallable;
         typedef std::future<CreateUseCaseOutcome> CreateUseCaseOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<CreateUserHierarchyGroupOutcome> CreateUserHierarchyGroupOutcomeCallable;
         typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
         typedef std::future<DeleteIntegrationAssociationOutcome> DeleteIntegrationAssociationOutcomeCallable;
+        typedef std::future<DeleteQuickConnectOutcome> DeleteQuickConnectOutcomeCallable;
         typedef std::future<DeleteUseCaseOutcome> DeleteUseCaseOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DeleteUserHierarchyGroupOutcome> DeleteUserHierarchyGroupOutcomeCallable;
@@ -289,6 +306,7 @@ namespace Model
         typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
         typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
         typedef std::future<DescribeInstanceStorageConfigOutcome> DescribeInstanceStorageConfigOutcomeCallable;
+        typedef std::future<DescribeQuickConnectOutcome> DescribeQuickConnectOutcomeCallable;
         typedef std::future<DescribeRoutingProfileOutcome> DescribeRoutingProfileOutcomeCallable;
         typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
         typedef std::future<DescribeUserHierarchyGroupOutcome> DescribeUserHierarchyGroupOutcomeCallable;
@@ -315,6 +333,7 @@ namespace Model
         typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
         typedef std::future<ListPromptsOutcome> ListPromptsOutcomeCallable;
         typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
+        typedef std::future<ListQuickConnectsOutcome> ListQuickConnectsOutcomeCallable;
         typedef std::future<ListRoutingProfileQueuesOutcome> ListRoutingProfileQueuesOutcomeCallable;
         typedef std::future<ListRoutingProfilesOutcome> ListRoutingProfilesOutcomeCallable;
         typedef std::future<ListSecurityKeysOutcome> ListSecurityKeysOutcomeCallable;
@@ -338,6 +357,8 @@ namespace Model
         typedef std::future<UpdateContactFlowNameOutcome> UpdateContactFlowNameOutcomeCallable;
         typedef std::future<UpdateInstanceAttributeOutcome> UpdateInstanceAttributeOutcomeCallable;
         typedef std::future<UpdateInstanceStorageConfigOutcome> UpdateInstanceStorageConfigOutcomeCallable;
+        typedef std::future<UpdateQuickConnectConfigOutcome> UpdateQuickConnectConfigOutcomeCallable;
+        typedef std::future<UpdateQuickConnectNameOutcome> UpdateQuickConnectNameOutcomeCallable;
         typedef std::future<UpdateRoutingProfileConcurrencyOutcome> UpdateRoutingProfileConcurrencyOutcomeCallable;
         typedef std::future<UpdateRoutingProfileDefaultOutboundQueueOutcome> UpdateRoutingProfileDefaultOutboundQueueOutcomeCallable;
         typedef std::future<UpdateRoutingProfileNameOutcome> UpdateRoutingProfileNameOutcomeCallable;
@@ -362,12 +383,14 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowRequest&, const Model::CreateContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateInstanceRequest&, const Model::CreateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateIntegrationAssociationRequest&, const Model::CreateIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntegrationAssociationResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreateQuickConnectRequest&, const Model::CreateQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateRoutingProfileRequest&, const Model::CreateRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoutingProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUseCaseRequest&, const Model::CreateUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserHierarchyGroupRequest&, const Model::CreateUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserHierarchyGroupResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteIntegrationAssociationRequest&, const Model::DeleteIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationAssociationResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteQuickConnectRequest&, const Model::DeleteQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUseCaseRequest&, const Model::DeleteUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserHierarchyGroupRequest&, const Model::DeleteUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserHierarchyGroupResponseReceivedHandler;
@@ -375,6 +398,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceRequest&, const Model::DescribeInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceAttributeRequest&, const Model::DescribeInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceStorageConfigRequest&, const Model::DescribeInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceStorageConfigResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DescribeQuickConnectRequest&, const Model::DescribeQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeRoutingProfileRequest&, const Model::DescribeRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRoutingProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyGroupRequest&, const Model::DescribeUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyGroupResponseReceivedHandler;
@@ -401,6 +425,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListPromptsRequest&, const Model::ListPromptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPromptsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListQuickConnectsRequest&, const Model::ListQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQuickConnectsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfileQueuesRequest&, const Model::ListRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingProfileQueuesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfilesRequest&, const Model::ListRoutingProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListSecurityKeysRequest&, const Model::ListSecurityKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityKeysResponseReceivedHandler;
@@ -424,6 +449,8 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowNameRequest&, const Model::UpdateContactFlowNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowNameResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceAttributeRequest&, const Model::UpdateInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceStorageConfigRequest&, const Model::UpdateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceStorageConfigResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateQuickConnectConfigRequest&, const Model::UpdateQuickConnectConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuickConnectConfigResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateQuickConnectNameRequest&, const Model::UpdateQuickConnectNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuickConnectNameResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileConcurrencyRequest&, const Model::UpdateRoutingProfileConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileConcurrencyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileDefaultOutboundQueueRequest&, const Model::UpdateRoutingProfileDefaultOutboundQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileDefaultOutboundQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileNameRequest&, const Model::UpdateRoutingProfileNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileNameResponseReceivedHandler;
@@ -483,16 +510,18 @@ namespace Model
 
 
         /**
-         * <p>Associates an approved origin to an Amazon Connect instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates an approved origin to an Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateApprovedOriginOutcome AssociateApprovedOrigin(const Model::AssociateApprovedOriginRequest& request) const;
 
         /**
-         * <p>Associates an approved origin to an Amazon Connect instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates an approved origin to an Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">AWS
          * API Reference</a></p>
          *
@@ -501,8 +530,9 @@ namespace Model
         virtual Model::AssociateApprovedOriginOutcomeCallable AssociateApprovedOriginCallable(const Model::AssociateApprovedOriginRequest& request) const;
 
         /**
-         * <p>Associates an approved origin to an Amazon Connect instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates an approved origin to an Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">AWS
          * API Reference</a></p>
          *
@@ -511,26 +541,28 @@ namespace Model
         virtual void AssociateApprovedOriginAsync(const Model::AssociateApprovedOriginRequest& request, const AssociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a storage resource type for the first time. You can only associate
-         * one type of storage configuration in a single call. This means, for example,
-         * that you can't define an instance with multiple S3 buckets for storing chat
-         * transcripts.</p> <p>This API does not create a resource that doesn't exist. It
-         * only associates it to the instance. Ensure that the resource being specified in
-         * the storage configuration, like an Amazon S3 bucket, exists when being used for
-         * association.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a storage resource type for the first time. You can
+         * only associate one type of storage configuration in a single call. This means,
+         * for example, that you can't define an instance with multiple S3 buckets for
+         * storing chat transcripts.</p> <p>This API does not create a resource that
+         * doesn't exist. It only associates it to the instance. Ensure that the resource
+         * being specified in the storage configuration, like an Amazon S3 bucket, exists
+         * when being used for association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateInstanceStorageConfigOutcome AssociateInstanceStorageConfig(const Model::AssociateInstanceStorageConfigRequest& request) const;
 
         /**
-         * <p>Associates a storage resource type for the first time. You can only associate
-         * one type of storage configuration in a single call. This means, for example,
-         * that you can't define an instance with multiple S3 buckets for storing chat
-         * transcripts.</p> <p>This API does not create a resource that doesn't exist. It
-         * only associates it to the instance. Ensure that the resource being specified in
-         * the storage configuration, like an Amazon S3 bucket, exists when being used for
-         * association.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a storage resource type for the first time. You can
+         * only associate one type of storage configuration in a single call. This means,
+         * for example, that you can't define an instance with multiple S3 buckets for
+         * storing chat transcripts.</p> <p>This API does not create a resource that
+         * doesn't exist. It only associates it to the instance. Ensure that the resource
+         * being specified in the storage configuration, like an Amazon S3 bucket, exists
+         * when being used for association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">AWS
          * API Reference</a></p>
          *
@@ -539,13 +571,14 @@ namespace Model
         virtual Model::AssociateInstanceStorageConfigOutcomeCallable AssociateInstanceStorageConfigCallable(const Model::AssociateInstanceStorageConfigRequest& request) const;
 
         /**
-         * <p>Associates a storage resource type for the first time. You can only associate
-         * one type of storage configuration in a single call. This means, for example,
-         * that you can't define an instance with multiple S3 buckets for storing chat
-         * transcripts.</p> <p>This API does not create a resource that doesn't exist. It
-         * only associates it to the instance. Ensure that the resource being specified in
-         * the storage configuration, like an Amazon S3 bucket, exists when being used for
-         * association.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a storage resource type for the first time. You can
+         * only associate one type of storage configuration in a single call. This means,
+         * for example, that you can't define an instance with multiple S3 buckets for
+         * storing chat transcripts.</p> <p>This API does not create a resource that
+         * doesn't exist. It only associates it to the instance. Ensure that the resource
+         * being specified in the storage configuration, like an Amazon S3 bucket, exists
+         * when being used for association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">AWS
          * API Reference</a></p>
          *
@@ -554,16 +587,18 @@ namespace Model
         virtual void AssociateInstanceStorageConfigAsync(const Model::AssociateInstanceStorageConfigRequest& request, const AssociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows the specified Amazon Connect instance to access the specified Lambda
-         * function.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Allows the specified Amazon Connect instance to access the
+         * specified Lambda function.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateLambdaFunctionOutcome AssociateLambdaFunction(const Model::AssociateLambdaFunctionRequest& request) const;
 
         /**
-         * <p>Allows the specified Amazon Connect instance to access the specified Lambda
-         * function.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Allows the specified Amazon Connect instance to access the
+         * specified Lambda function.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">AWS
          * API Reference</a></p>
          *
@@ -572,8 +607,9 @@ namespace Model
         virtual Model::AssociateLambdaFunctionOutcomeCallable AssociateLambdaFunctionCallable(const Model::AssociateLambdaFunctionRequest& request) const;
 
         /**
-         * <p>Allows the specified Amazon Connect instance to access the specified Lambda
-         * function.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Allows the specified Amazon Connect instance to access the
+         * specified Lambda function.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">AWS
          * API Reference</a></p>
          *
@@ -582,16 +618,18 @@ namespace Model
         virtual void AssociateLambdaFunctionAsync(const Model::AssociateLambdaFunctionRequest& request, const AssociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows the specified Amazon Connect instance to access the specified Amazon
-         * Lex bot.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Allows the specified Amazon Connect instance to access the
+         * specified Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateLexBotOutcome AssociateLexBot(const Model::AssociateLexBotRequest& request) const;
 
         /**
-         * <p>Allows the specified Amazon Connect instance to access the specified Amazon
-         * Lex bot.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Allows the specified Amazon Connect instance to access the
+         * specified Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">AWS
          * API Reference</a></p>
          *
@@ -600,8 +638,9 @@ namespace Model
         virtual Model::AssociateLexBotOutcomeCallable AssociateLexBotCallable(const Model::AssociateLexBotRequest& request) const;
 
         /**
-         * <p>Allows the specified Amazon Connect instance to access the specified Amazon
-         * Lex bot.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Allows the specified Amazon Connect instance to access the
+         * specified Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">AWS
          * API Reference</a></p>
          *
@@ -638,14 +677,18 @@ namespace Model
         virtual void AssociateRoutingProfileQueuesAsync(const Model::AssociateRoutingProfileQueuesRequest& request, const AssociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a security key to the instance.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a security key to the instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateSecurityKeyOutcome AssociateSecurityKey(const Model::AssociateSecurityKeyRequest& request) const;
 
         /**
-         * <p>Associates a security key to the instance.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a security key to the instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">AWS
          * API Reference</a></p>
          *
@@ -654,7 +697,9 @@ namespace Model
         virtual Model::AssociateSecurityKeyOutcomeCallable AssociateSecurityKeyCallable(const Model::AssociateSecurityKeyRequest& request) const;
 
         /**
-         * <p>Associates a security key to the instance.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a security key to the instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">AWS
          * API Reference</a></p>
          *
@@ -735,7 +780,7 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Create an AppIntegration association with anAmazon Connect
+         * change.</p> <p>Create an AppIntegration association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -744,7 +789,7 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Create an AppIntegration association with anAmazon Connect
+         * change.</p> <p>Create an AppIntegration association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -755,7 +800,7 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Create an AppIntegration association with anAmazon Connect
+         * change.</p> <p>Create an AppIntegration association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -763,6 +808,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateIntegrationAssociationAsync(const Model::CreateIntegrationAssociationRequest& request, const CreateIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates a quick connect for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateQuickConnectOutcome CreateQuickConnect(const Model::CreateQuickConnectRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates a quick connect for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateQuickConnectOutcomeCallable CreateQuickConnectCallable(const Model::CreateQuickConnectRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates a quick connect for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateQuickConnectAsync(const Model::CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new routing profile.</p><p><h3>See Also:</h3>   <a
@@ -952,6 +1028,34 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteQuickConnectOutcome DeleteQuickConnect(const Model::DeleteQuickConnectRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteQuickConnectOutcomeCallable DeleteQuickConnectCallable(const Model::DeleteQuickConnectRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteQuickConnectAsync(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Deletes a use case from an AppIntegration
          * association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">AWS
@@ -1084,11 +1188,12 @@ namespace Model
         virtual void DescribeContactFlowAsync(const Model::DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the current state of the specified instance identifier. It tracks the
-         * instance while it is being created and returns an error status if applicable.
-         * </p> <p>If an instance is not created successfully, the instance status reason
-         * field returns details relevant to the reason. The instance in a failed state is
-         * returned only for 24 hours after the CreateInstance API was
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns the current state of the specified instance identifier.
+         * It tracks the instance while it is being created and returns an error status if
+         * applicable. </p> <p>If an instance is not created successfully, the instance
+         * status reason field returns details relevant to the reason. The instance in a
+         * failed state is returned only for 24 hours after the CreateInstance API was
          * invoked.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance">AWS
          * API Reference</a></p>
@@ -1096,11 +1201,12 @@ namespace Model
         virtual Model::DescribeInstanceOutcome DescribeInstance(const Model::DescribeInstanceRequest& request) const;
 
         /**
-         * <p>Returns the current state of the specified instance identifier. It tracks the
-         * instance while it is being created and returns an error status if applicable.
-         * </p> <p>If an instance is not created successfully, the instance status reason
-         * field returns details relevant to the reason. The instance in a failed state is
-         * returned only for 24 hours after the CreateInstance API was
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns the current state of the specified instance identifier.
+         * It tracks the instance while it is being created and returns an error status if
+         * applicable. </p> <p>If an instance is not created successfully, the instance
+         * status reason field returns details relevant to the reason. The instance in a
+         * failed state is returned only for 24 hours after the CreateInstance API was
          * invoked.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance">AWS
          * API Reference</a></p>
@@ -1110,11 +1216,12 @@ namespace Model
         virtual Model::DescribeInstanceOutcomeCallable DescribeInstanceCallable(const Model::DescribeInstanceRequest& request) const;
 
         /**
-         * <p>Returns the current state of the specified instance identifier. It tracks the
-         * instance while it is being created and returns an error status if applicable.
-         * </p> <p>If an instance is not created successfully, the instance status reason
-         * field returns details relevant to the reason. The instance in a failed state is
-         * returned only for 24 hours after the CreateInstance API was
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns the current state of the specified instance identifier.
+         * It tracks the instance while it is being created and returns an error status if
+         * applicable. </p> <p>If an instance is not created successfully, the instance
+         * status reason field returns details relevant to the reason. The instance in a
+         * failed state is returned only for 24 hours after the CreateInstance API was
          * invoked.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance">AWS
          * API Reference</a></p>
@@ -1124,14 +1231,18 @@ namespace Model
         virtual void DescribeInstanceAsync(const Model::DescribeInstanceRequest& request, const DescribeInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified instance attribute.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the specified instance attribute.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInstanceAttributeOutcome DescribeInstanceAttribute(const Model::DescribeInstanceAttributeRequest& request) const;
 
         /**
-         * <p>Describes the specified instance attribute.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the specified instance attribute.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">AWS
          * API Reference</a></p>
          *
@@ -1140,7 +1251,9 @@ namespace Model
         virtual Model::DescribeInstanceAttributeOutcomeCallable DescribeInstanceAttributeCallable(const Model::DescribeInstanceAttributeRequest& request) const;
 
         /**
-         * <p>Describes the specified instance attribute.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the specified instance attribute.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">AWS
          * API Reference</a></p>
          *
@@ -1149,16 +1262,18 @@ namespace Model
         virtual void DescribeInstanceAttributeAsync(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the current storage configurations for the specified resource type,
-         * association ID, and instance ID.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Retrieves the current storage configurations for the specified
+         * resource type, association ID, and instance ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInstanceStorageConfigOutcome DescribeInstanceStorageConfig(const Model::DescribeInstanceStorageConfigRequest& request) const;
 
         /**
-         * <p>Retrieves the current storage configurations for the specified resource type,
-         * association ID, and instance ID.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Retrieves the current storage configurations for the specified
+         * resource type, association ID, and instance ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">AWS
          * API Reference</a></p>
          *
@@ -1167,14 +1282,43 @@ namespace Model
         virtual Model::DescribeInstanceStorageConfigOutcomeCallable DescribeInstanceStorageConfigCallable(const Model::DescribeInstanceStorageConfigRequest& request) const;
 
         /**
-         * <p>Retrieves the current storage configurations for the specified resource type,
-         * association ID, and instance ID.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Retrieves the current storage configurations for the specified
+         * resource type, association ID, and instance ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInstanceStorageConfigAsync(const Model::DescribeInstanceStorageConfigRequest& request, const DescribeInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the quick connect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeQuickConnectOutcome DescribeQuickConnect(const Model::DescribeQuickConnectRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the quick connect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeQuickConnectOutcomeCallable DescribeQuickConnectCallable(const Model::DescribeQuickConnectRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the quick connect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeQuickConnectAsync(const Model::DescribeQuickConnectRequest& request, const DescribeQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified routing profile.</p><p><h3>See Also:</h3>   <a
@@ -1289,16 +1433,18 @@ namespace Model
         virtual void DescribeUserHierarchyStructureAsync(const Model::DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Revokes access to integrated applications from Amazon Connect.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Revokes access to integrated applications from Amazon
+         * Connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateApprovedOriginOutcome DisassociateApprovedOrigin(const Model::DisassociateApprovedOriginRequest& request) const;
 
         /**
-         * <p>Revokes access to integrated applications from Amazon Connect.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Revokes access to integrated applications from Amazon
+         * Connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">AWS
          * API Reference</a></p>
          *
@@ -1307,8 +1453,9 @@ namespace Model
         virtual Model::DisassociateApprovedOriginOutcomeCallable DisassociateApprovedOriginCallable(const Model::DisassociateApprovedOriginRequest& request) const;
 
         /**
-         * <p>Revokes access to integrated applications from Amazon Connect.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Revokes access to integrated applications from Amazon
+         * Connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">AWS
          * API Reference</a></p>
          *
@@ -1317,16 +1464,18 @@ namespace Model
         virtual void DisassociateApprovedOriginAsync(const Model::DisassociateApprovedOriginRequest& request, const DisassociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the storage type configurations for the specified resource type and
-         * association ID.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Removes the storage type configurations for the specified
+         * resource type and association ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateInstanceStorageConfigOutcome DisassociateInstanceStorageConfig(const Model::DisassociateInstanceStorageConfigRequest& request) const;
 
         /**
-         * <p>Removes the storage type configurations for the specified resource type and
-         * association ID.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Removes the storage type configurations for the specified
+         * resource type and association ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">AWS
          * API Reference</a></p>
          *
@@ -1335,8 +1484,9 @@ namespace Model
         virtual Model::DisassociateInstanceStorageConfigOutcomeCallable DisassociateInstanceStorageConfigCallable(const Model::DisassociateInstanceStorageConfigRequest& request) const;
 
         /**
-         * <p>Removes the storage type configurations for the specified resource type and
-         * association ID.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Removes the storage type configurations for the specified
+         * resource type and association ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">AWS
          * API Reference</a></p>
          *
@@ -1345,16 +1495,18 @@ namespace Model
         virtual void DisassociateInstanceStorageConfigAsync(const Model::DisassociateInstanceStorageConfigRequest& request, const DisassociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Remove the Lambda function from the drop-down options available in the
-         * relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Remove the Lambda function from the drop-down options available
+         * in the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateLambdaFunctionOutcome DisassociateLambdaFunction(const Model::DisassociateLambdaFunctionRequest& request) const;
 
         /**
-         * <p>Remove the Lambda function from the drop-down options available in the
-         * relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Remove the Lambda function from the drop-down options available
+         * in the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">AWS
          * API Reference</a></p>
          *
@@ -1363,8 +1515,9 @@ namespace Model
         virtual Model::DisassociateLambdaFunctionOutcomeCallable DisassociateLambdaFunctionCallable(const Model::DisassociateLambdaFunctionRequest& request) const;
 
         /**
-         * <p>Remove the Lambda function from the drop-down options available in the
-         * relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Remove the Lambda function from the drop-down options available
+         * in the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">AWS
          * API Reference</a></p>
          *
@@ -1373,16 +1526,18 @@ namespace Model
         virtual void DisassociateLambdaFunctionAsync(const Model::DisassociateLambdaFunctionRequest& request, const DisassociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Revokes authorization from the specified instance to access the specified
-         * Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Revokes authorization from the specified instance to access the
+         * specified Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateLexBotOutcome DisassociateLexBot(const Model::DisassociateLexBotRequest& request) const;
 
         /**
-         * <p>Revokes authorization from the specified instance to access the specified
-         * Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Revokes authorization from the specified instance to access the
+         * specified Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">AWS
          * API Reference</a></p>
          *
@@ -1391,8 +1546,9 @@ namespace Model
         virtual Model::DisassociateLexBotOutcomeCallable DisassociateLexBotCallable(const Model::DisassociateLexBotRequest& request) const;
 
         /**
-         * <p>Revokes authorization from the specified instance to access the specified
-         * Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Revokes authorization from the specified instance to access the
+         * specified Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">AWS
          * API Reference</a></p>
          *
@@ -1429,14 +1585,16 @@ namespace Model
         virtual void DisassociateRoutingProfileQueuesAsync(const Model::DisassociateRoutingProfileQueuesRequest& request, const DisassociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified security key.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes the specified security key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateSecurityKeyOutcome DisassociateSecurityKey(const Model::DisassociateSecurityKeyRequest& request) const;
 
         /**
-         * <p>Deletes the specified security key.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes the specified security key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">AWS
          * API Reference</a></p>
          *
@@ -1445,7 +1603,8 @@ namespace Model
         virtual Model::DisassociateSecurityKeyOutcomeCallable DisassociateSecurityKeyCallable(const Model::DisassociateSecurityKeyRequest& request) const;
 
         /**
-         * <p>Deletes the specified security key.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes the specified security key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">AWS
          * API Reference</a></p>
          *
@@ -1581,16 +1740,18 @@ namespace Model
         virtual void GetMetricDataAsync(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a paginated list of all approved origins associated with the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all approved origins associated with
+         * the instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">AWS
          * API Reference</a></p>
          */
         virtual Model::ListApprovedOriginsOutcome ListApprovedOrigins(const Model::ListApprovedOriginsRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of all approved origins associated with the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all approved origins associated with
+         * the instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">AWS
          * API Reference</a></p>
          *
@@ -1599,8 +1760,9 @@ namespace Model
         virtual Model::ListApprovedOriginsOutcomeCallable ListApprovedOriginsCallable(const Model::ListApprovedOriginsRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of all approved origins associated with the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all approved origins associated with
+         * the instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">AWS
          * API Reference</a></p>
          *
@@ -1825,18 +1987,20 @@ namespace Model
         virtual void ListIntegrationAssociationsAsync(const Model::ListIntegrationAssociationsRequest& request, const ListIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a paginated list of all the Lambda functions that show up in the
-         * drop-down options in the relevant contact flow blocks.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all the Lambda functions that show up
+         * in the drop-down options in the relevant contact flow blocks.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListLambdaFunctionsOutcome ListLambdaFunctions(const Model::ListLambdaFunctionsRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of all the Lambda functions that show up in the
-         * drop-down options in the relevant contact flow blocks.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all the Lambda functions that show up
+         * in the drop-down options in the relevant contact flow blocks.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">AWS
          * API Reference</a></p>
          *
@@ -1845,9 +2009,10 @@ namespace Model
         virtual Model::ListLambdaFunctionsOutcomeCallable ListLambdaFunctionsCallable(const Model::ListLambdaFunctionsRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of all the Lambda functions that show up in the
-         * drop-down options in the relevant contact flow blocks.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all the Lambda functions that show up
+         * in the drop-down options in the relevant contact flow blocks.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">AWS
          * API Reference</a></p>
          *
@@ -1856,16 +2021,18 @@ namespace Model
         virtual void ListLambdaFunctionsAsync(const Model::ListLambdaFunctionsRequest& request, const ListLambdaFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a paginated list of all the Amazon Lex bots currently associated with
-         * the instance.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all the Amazon Lex bots currently
+         * associated with the instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">AWS
          * API Reference</a></p>
          */
         virtual Model::ListLexBotsOutcome ListLexBots(const Model::ListLexBotsRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of all the Amazon Lex bots currently associated with
-         * the instance.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all the Amazon Lex bots currently
+         * associated with the instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">AWS
          * API Reference</a></p>
          *
@@ -1874,8 +2041,9 @@ namespace Model
         virtual Model::ListLexBotsOutcomeCallable ListLexBotsCallable(const Model::ListLexBotsRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of all the Amazon Lex bots currently associated with
-         * the instance.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all the Amazon Lex bots currently
+         * associated with the instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">AWS
          * API Reference</a></p>
          *
@@ -1986,6 +2154,37 @@ namespace Model
         virtual void ListQueuesAsync(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Provides information about the quick connects for the specified
+         * Amazon Connect instance. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListQuickConnectsOutcome ListQuickConnects(const Model::ListQuickConnectsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Provides information about the quick connects for the specified
+         * Amazon Connect instance. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListQuickConnectsOutcomeCallable ListQuickConnectsCallable(const Model::ListQuickConnectsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Provides information about the quick connects for the specified
+         * Amazon Connect instance. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListQuickConnectsAsync(const Model::ListQuickConnectsRequest& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List the queues associated with a routing profile.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileQueues">AWS
@@ -2060,7 +2259,8 @@ namespace Model
         virtual void ListRoutingProfilesAsync(const Model::ListRoutingProfilesRequest& request, const ListRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a paginated list of all security keys associated with the
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all security keys associated with the
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">AWS
          * API Reference</a></p>
@@ -2068,7 +2268,8 @@ namespace Model
         virtual Model::ListSecurityKeysOutcome ListSecurityKeys(const Model::ListSecurityKeysRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of all security keys associated with the
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all security keys associated with the
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">AWS
          * API Reference</a></p>
@@ -2078,7 +2279,8 @@ namespace Model
         virtual Model::ListSecurityKeysOutcomeCallable ListSecurityKeysCallable(const Model::ListSecurityKeysRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of all security keys associated with the
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Returns a paginated list of all security keys associated with the
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">AWS
          * API Reference</a></p>
@@ -2615,8 +2817,8 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource types are users, routing profiles, and contact flows.</p> <p>For sample
-         * policies that use tags, see <a
+         * resource types are users, routing profiles, quick connects, and contact
+         * flows.</p> <p>For sample policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2627,8 +2829,8 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource types are users, routing profiles, and contact flows.</p> <p>For sample
-         * policies that use tags, see <a
+         * resource types are users, routing profiles, quick connects, and contact
+         * flows.</p> <p>For sample policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2641,8 +2843,8 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource types are users, routing profiles, and contact flows.</p> <p>For sample
-         * policies that use tags, see <a
+         * resource types are users, routing profiles, quick connects, and contact
+         * flows.</p> <p>For sample policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2880,6 +3082,71 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateInstanceStorageConfigAsync(const Model::UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the configuration settings for the specified quick
+         * connect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQuickConnectConfigOutcome UpdateQuickConnectConfig(const Model::UpdateQuickConnectConfigRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the configuration settings for the specified quick
+         * connect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateQuickConnectConfigOutcomeCallable UpdateQuickConnectConfigCallable(const Model::UpdateQuickConnectConfigRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the configuration settings for the specified quick
+         * connect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateQuickConnectConfigAsync(const Model::UpdateQuickConnectConfigRequest& request, const UpdateQuickConnectConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the name and description of a quick connect. The request
+         * accepts the following data in JSON format. At least Name or Description must be
+         * provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQuickConnectNameOutcome UpdateQuickConnectName(const Model::UpdateQuickConnectNameRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the name and description of a quick connect. The request
+         * accepts the following data in JSON format. At least Name or Description must be
+         * provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateQuickConnectNameOutcomeCallable UpdateQuickConnectNameCallable(const Model::UpdateQuickConnectNameRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the name and description of a quick connect. The request
+         * accepts the following data in JSON format. At least Name or Description must be
+         * provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateQuickConnectNameAsync(const Model::UpdateQuickConnectNameRequest& request, const UpdateQuickConnectNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the channels that agents can handle in the Contact Control Panel
@@ -3226,12 +3493,14 @@ namespace Model
         void CreateContactFlowAsyncHelper(const Model::CreateContactFlowRequest& request, const CreateContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceAsyncHelper(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIntegrationAssociationAsyncHelper(const Model::CreateIntegrationAssociationRequest& request, const CreateIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateQuickConnectAsyncHelper(const Model::CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoutingProfileAsyncHelper(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUseCaseAsyncHelper(const Model::CreateUseCaseRequest& request, const CreateUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserHierarchyGroupAsyncHelper(const Model::CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIntegrationAssociationAsyncHelper(const Model::DeleteIntegrationAssociationRequest& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteQuickConnectAsyncHelper(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUseCaseAsyncHelper(const Model::DeleteUseCaseRequest& request, const DeleteUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserHierarchyGroupAsyncHelper(const Model::DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3239,6 +3508,7 @@ namespace Model
         void DescribeInstanceAsyncHelper(const Model::DescribeInstanceRequest& request, const DescribeInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceAttributeAsyncHelper(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceStorageConfigAsyncHelper(const Model::DescribeInstanceStorageConfigRequest& request, const DescribeInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeQuickConnectAsyncHelper(const Model::DescribeQuickConnectRequest& request, const DescribeQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRoutingProfileAsyncHelper(const Model::DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserHierarchyGroupAsyncHelper(const Model::DescribeUserHierarchyGroupRequest& request, const DescribeUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3265,6 +3535,7 @@ namespace Model
         void ListPhoneNumbersAsyncHelper(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPromptsAsyncHelper(const Model::ListPromptsRequest& request, const ListPromptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueuesAsyncHelper(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListQuickConnectsAsyncHelper(const Model::ListQuickConnectsRequest& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoutingProfileQueuesAsyncHelper(const Model::ListRoutingProfileQueuesRequest& request, const ListRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoutingProfilesAsyncHelper(const Model::ListRoutingProfilesRequest& request, const ListRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSecurityKeysAsyncHelper(const Model::ListSecurityKeysRequest& request, const ListSecurityKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3288,6 +3559,8 @@ namespace Model
         void UpdateContactFlowNameAsyncHelper(const Model::UpdateContactFlowNameRequest& request, const UpdateContactFlowNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInstanceAttributeAsyncHelper(const Model::UpdateInstanceAttributeRequest& request, const UpdateInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInstanceStorageConfigAsyncHelper(const Model::UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateQuickConnectConfigAsyncHelper(const Model::UpdateQuickConnectConfigRequest& request, const UpdateQuickConnectConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateQuickConnectNameAsyncHelper(const Model::UpdateQuickConnectNameRequest& request, const UpdateQuickConnectNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoutingProfileConcurrencyAsyncHelper(const Model::UpdateRoutingProfileConcurrencyRequest& request, const UpdateRoutingProfileConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoutingProfileDefaultOutboundQueueAsyncHelper(const Model::UpdateRoutingProfileDefaultOutboundQueueRequest& request, const UpdateRoutingProfileDefaultOutboundQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoutingProfileNameAsyncHelper(const Model::UpdateRoutingProfileNameRequest& request, const UpdateRoutingProfileNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

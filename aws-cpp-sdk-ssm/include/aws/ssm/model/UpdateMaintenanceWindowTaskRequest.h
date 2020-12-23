@@ -125,56 +125,112 @@ namespace Model
     /**
      * <p>The targets (either instances or tags) to modify. Instances are specified
      * using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using
-     * Key=tag_name,Values=tag_value. </p>
+     * Key=tag_name,Values=tag_value. </p>  <p>One or more targets must be
+     * specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS
+     * Lambda, and AWS Step Functions). For more information about running tasks that
+     * do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+     * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> 
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
      * <p>The targets (either instances or tags) to modify. Instances are specified
      * using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using
-     * Key=tag_name,Values=tag_value. </p>
+     * Key=tag_name,Values=tag_value. </p>  <p>One or more targets must be
+     * specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS
+     * Lambda, and AWS Step Functions). For more information about running tasks that
+     * do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+     * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> 
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The targets (either instances or tags) to modify. Instances are specified
      * using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using
-     * Key=tag_name,Values=tag_value. </p>
+     * Key=tag_name,Values=tag_value. </p>  <p>One or more targets must be
+     * specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS
+     * Lambda, and AWS Step Functions). For more information about running tasks that
+     * do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+     * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> 
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
      * <p>The targets (either instances or tags) to modify. Instances are specified
      * using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using
-     * Key=tag_name,Values=tag_value. </p>
+     * Key=tag_name,Values=tag_value. </p>  <p>One or more targets must be
+     * specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS
+     * Lambda, and AWS Step Functions). For more information about running tasks that
+     * do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+     * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> 
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
      * <p>The targets (either instances or tags) to modify. Instances are specified
      * using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using
-     * Key=tag_name,Values=tag_value. </p>
+     * Key=tag_name,Values=tag_value. </p>  <p>One or more targets must be
+     * specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS
+     * Lambda, and AWS Step Functions). For more information about running tasks that
+     * do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+     * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
      * <p>The targets (either instances or tags) to modify. Instances are specified
      * using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using
-     * Key=tag_name,Values=tag_value. </p>
+     * Key=tag_name,Values=tag_value. </p>  <p>One or more targets must be
+     * specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS
+     * Lambda, and AWS Step Functions). For more information about running tasks that
+     * do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+     * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>The targets (either instances or tags) to modify. Instances are specified
      * using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using
-     * Key=tag_name,Values=tag_value. </p>
+     * Key=tag_name,Values=tag_value. </p>  <p>One or more targets must be
+     * specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS
+     * Lambda, and AWS Step Functions). For more information about running tasks that
+     * do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+     * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
      * <p>The targets (either instances or tags) to modify. Instances are specified
      * using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using
-     * Key=tag_name,Values=tag_value. </p>
+     * Key=tag_name,Values=tag_value. </p>  <p>One or more targets must be
+     * specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS
+     * Lambda, and AWS Step Functions). For more information about running tasks that
+     * do not specify targets, see see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+     * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
@@ -619,56 +675,88 @@ namespace Model
     /**
      * <p>The new <code>MaxConcurrency</code> value you want to specify.
      * <code>MaxConcurrency</code> is the number of targets that are allowed to run
-     * this task in parallel.</p>
+     * this task in parallel.</p>  <p>For maintenance window tasks without a
+     * target specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
      * <p>The new <code>MaxConcurrency</code> value you want to specify.
      * <code>MaxConcurrency</code> is the number of targets that are allowed to run
-     * this task in parallel.</p>
+     * this task in parallel.</p>  <p>For maintenance window tasks without a
+     * target specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
      * <p>The new <code>MaxConcurrency</code> value you want to specify.
      * <code>MaxConcurrency</code> is the number of targets that are allowed to run
-     * this task in parallel.</p>
+     * this task in parallel.</p>  <p>For maintenance window tasks without a
+     * target specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
      * <p>The new <code>MaxConcurrency</code> value you want to specify.
      * <code>MaxConcurrency</code> is the number of targets that are allowed to run
-     * this task in parallel.</p>
+     * this task in parallel.</p>  <p>For maintenance window tasks without a
+     * target specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
      * <p>The new <code>MaxConcurrency</code> value you want to specify.
      * <code>MaxConcurrency</code> is the number of targets that are allowed to run
-     * this task in parallel.</p>
+     * this task in parallel.</p>  <p>For maintenance window tasks without a
+     * target specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
      * <p>The new <code>MaxConcurrency</code> value you want to specify.
      * <code>MaxConcurrency</code> is the number of targets that are allowed to run
-     * this task in parallel.</p>
+     * this task in parallel.</p>  <p>For maintenance window tasks without a
+     * target specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
      * <p>The new <code>MaxConcurrency</code> value you want to specify.
      * <code>MaxConcurrency</code> is the number of targets that are allowed to run
-     * this task in parallel.</p>
+     * this task in parallel.</p>  <p>For maintenance window tasks without a
+     * target specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
      * <p>The new <code>MaxConcurrency</code> value you want to specify.
      * <code>MaxConcurrency</code> is the number of targets that are allowed to run
-     * this task in parallel.</p>
+     * this task in parallel.</p>  <p>For maintenance window tasks without a
+     * target specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
@@ -676,56 +764,88 @@ namespace Model
     /**
      * <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is
      * the maximum number of errors that are allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
     /**
      * <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is
      * the maximum number of errors that are allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is
      * the maximum number of errors that are allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
     /**
      * <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is
      * the maximum number of errors that are allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
 
     /**
      * <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is
      * the maximum number of errors that are allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
 
     /**
      * <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is
      * the maximum number of errors that are allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
     /**
      * <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is
      * the maximum number of errors that are allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is
      * the maximum number of errors that are allowed before the task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>For maintenance window tasks without a target
+     * specified, you cannot supply a value for this option. Instead, the system
+     * inserts a placeholder value of <code>1</code>, which may be reported in the
+     * response to this command. This value does not affect the running of your task
+     * and can be ignored.</p> 
      */
     inline UpdateMaintenanceWindowTaskRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 

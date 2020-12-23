@@ -203,8 +203,8 @@ namespace Model
      * specify this parameter when you upgrade an Oracle DB snapshot. The same option
      * group considerations apply when upgrading a DB snapshot as when upgrading a DB
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
-     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+     * group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
@@ -213,8 +213,8 @@ namespace Model
      * specify this parameter when you upgrade an Oracle DB snapshot. The same option
      * group considerations apply when upgrading a DB snapshot as when upgrading a DB
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
-     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+     * group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
@@ -223,8 +223,8 @@ namespace Model
      * specify this parameter when you upgrade an Oracle DB snapshot. The same option
      * group considerations apply when upgrading a DB snapshot as when upgrading a DB
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
-     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+     * group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
@@ -233,8 +233,8 @@ namespace Model
      * specify this parameter when you upgrade an Oracle DB snapshot. The same option
      * group considerations apply when upgrading a DB snapshot as when upgrading a DB
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
-     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+     * group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
@@ -243,8 +243,8 @@ namespace Model
      * specify this parameter when you upgrade an Oracle DB snapshot. The same option
      * group considerations apply when upgrading a DB snapshot as when upgrading a DB
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
-     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+     * group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
@@ -253,8 +253,8 @@ namespace Model
      * specify this parameter when you upgrade an Oracle DB snapshot. The same option
      * group considerations apply when upgrading a DB snapshot as when upgrading a DB
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
-     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+     * group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline ModifyDBSnapshotRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
@@ -263,8 +263,8 @@ namespace Model
      * specify this parameter when you upgrade an Oracle DB snapshot. The same option
      * group considerations apply when upgrading a DB snapshot as when upgrading a DB
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
-     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+     * group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline ModifyDBSnapshotRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
@@ -273,8 +273,8 @@ namespace Model
      * specify this parameter when you upgrade an Oracle DB snapshot. The same option
      * group considerations apply when upgrading a DB snapshot as when upgrading a DB
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
-     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+     * group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline ModifyDBSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 

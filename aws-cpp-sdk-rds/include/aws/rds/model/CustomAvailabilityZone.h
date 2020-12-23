@@ -29,7 +29,7 @@ namespace Model
    * a VMware vSphere cluster.</p> <p>For more information about RDS on VMware, see
    * the <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-   * <i>RDS on VMware User Guide.</i> </a> </p><p><h3>See Also:</h3>   <a
+   * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CustomAvailabilityZone">AWS
    * API Reference</a></p>
    */

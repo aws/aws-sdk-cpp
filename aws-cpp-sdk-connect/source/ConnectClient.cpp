@@ -29,12 +29,14 @@
 #include <aws/connect/model/CreateContactFlowRequest.h>
 #include <aws/connect/model/CreateInstanceRequest.h>
 #include <aws/connect/model/CreateIntegrationAssociationRequest.h>
+#include <aws/connect/model/CreateQuickConnectRequest.h>
 #include <aws/connect/model/CreateRoutingProfileRequest.h>
 #include <aws/connect/model/CreateUseCaseRequest.h>
 #include <aws/connect/model/CreateUserRequest.h>
 #include <aws/connect/model/CreateUserHierarchyGroupRequest.h>
 #include <aws/connect/model/DeleteInstanceRequest.h>
 #include <aws/connect/model/DeleteIntegrationAssociationRequest.h>
+#include <aws/connect/model/DeleteQuickConnectRequest.h>
 #include <aws/connect/model/DeleteUseCaseRequest.h>
 #include <aws/connect/model/DeleteUserRequest.h>
 #include <aws/connect/model/DeleteUserHierarchyGroupRequest.h>
@@ -42,6 +44,7 @@
 #include <aws/connect/model/DescribeInstanceRequest.h>
 #include <aws/connect/model/DescribeInstanceAttributeRequest.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigRequest.h>
+#include <aws/connect/model/DescribeQuickConnectRequest.h>
 #include <aws/connect/model/DescribeRoutingProfileRequest.h>
 #include <aws/connect/model/DescribeUserRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupRequest.h>
@@ -68,6 +71,7 @@
 #include <aws/connect/model/ListPhoneNumbersRequest.h>
 #include <aws/connect/model/ListPromptsRequest.h>
 #include <aws/connect/model/ListQueuesRequest.h>
+#include <aws/connect/model/ListQuickConnectsRequest.h>
 #include <aws/connect/model/ListRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/ListRoutingProfilesRequest.h>
 #include <aws/connect/model/ListSecurityKeysRequest.h>
@@ -91,6 +95,8 @@
 #include <aws/connect/model/UpdateContactFlowNameRequest.h>
 #include <aws/connect/model/UpdateInstanceAttributeRequest.h>
 #include <aws/connect/model/UpdateInstanceStorageConfigRequest.h>
+#include <aws/connect/model/UpdateQuickConnectConfigRequest.h>
+#include <aws/connect/model/UpdateQuickConnectNameRequest.h>
 #include <aws/connect/model/UpdateRoutingProfileConcurrencyRequest.h>
 #include <aws/connect/model/UpdateRoutingProfileDefaultOutboundQueueRequest.h>
 #include <aws/connect/model/UpdateRoutingProfileNameRequest.h>
@@ -481,6 +487,39 @@ void ConnectClient::CreateIntegrationAssociationAsyncHelper(const CreateIntegrat
   handler(this, request, CreateIntegrationAssociation(request), context);
 }
 
+CreateQuickConnectOutcome ConnectClient::CreateQuickConnect(const CreateQuickConnectRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateQuickConnect", "Required field: InstanceId, is not set");
+    return CreateQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/quick-connects/";
+  ss << request.GetInstanceId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateQuickConnectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateQuickConnectOutcomeCallable ConnectClient::CreateQuickConnectCallable(const CreateQuickConnectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateQuickConnectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateQuickConnect(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::CreateQuickConnectAsync(const CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateQuickConnectAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::CreateQuickConnectAsyncHelper(const CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateQuickConnect(request), context);
+}
+
 CreateRoutingProfileOutcome ConnectClient::CreateRoutingProfile(const CreateRoutingProfileRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -692,6 +731,46 @@ void ConnectClient::DeleteIntegrationAssociationAsync(const DeleteIntegrationAss
 void ConnectClient::DeleteIntegrationAssociationAsyncHelper(const DeleteIntegrationAssociationRequest& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteIntegrationAssociation(request), context);
+}
+
+DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickConnectRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQuickConnect", "Required field: InstanceId, is not set");
+    return DeleteQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.QuickConnectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQuickConnect", "Required field: QuickConnectId, is not set");
+    return DeleteQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuickConnectId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/quick-connects/";
+  ss << request.GetInstanceId();
+  ss << "/";
+  ss << request.GetQuickConnectId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteQuickConnectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteQuickConnectOutcomeCallable ConnectClient::DeleteQuickConnectCallable(const DeleteQuickConnectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteQuickConnectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteQuickConnect(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DeleteQuickConnectAsync(const DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteQuickConnectAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DeleteQuickConnectAsyncHelper(const DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteQuickConnect(request), context);
 }
 
 DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& request) const
@@ -977,6 +1056,46 @@ void ConnectClient::DescribeInstanceStorageConfigAsync(const DescribeInstanceSto
 void ConnectClient::DescribeInstanceStorageConfigAsyncHelper(const DescribeInstanceStorageConfigRequest& request, const DescribeInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeInstanceStorageConfig(request), context);
+}
+
+DescribeQuickConnectOutcome ConnectClient::DescribeQuickConnect(const DescribeQuickConnectRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeQuickConnect", "Required field: InstanceId, is not set");
+    return DescribeQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.QuickConnectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeQuickConnect", "Required field: QuickConnectId, is not set");
+    return DescribeQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuickConnectId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/quick-connects/";
+  ss << request.GetInstanceId();
+  ss << "/";
+  ss << request.GetQuickConnectId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeQuickConnectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeQuickConnectOutcomeCallable ConnectClient::DescribeQuickConnectCallable(const DescribeQuickConnectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeQuickConnectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeQuickConnect(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DescribeQuickConnectAsync(const DescribeQuickConnectRequest& request, const DescribeQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeQuickConnectAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DescribeQuickConnectAsyncHelper(const DescribeQuickConnectRequest& request, const DescribeQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeQuickConnect(request), context);
 }
 
 DescribeRoutingProfileOutcome ConnectClient::DescribeRoutingProfile(const DescribeRoutingProfileRequest& request) const
@@ -1920,6 +2039,39 @@ void ConnectClient::ListQueuesAsyncHelper(const ListQueuesRequest& request, cons
   handler(this, request, ListQueues(request), context);
 }
 
+ListQuickConnectsOutcome ConnectClient::ListQuickConnects(const ListQuickConnectsRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListQuickConnects", "Required field: InstanceId, is not set");
+    return ListQuickConnectsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/quick-connects/";
+  ss << request.GetInstanceId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListQuickConnectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListQuickConnectsOutcomeCallable ConnectClient::ListQuickConnectsCallable(const ListQuickConnectsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListQuickConnectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListQuickConnects(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ListQuickConnectsAsync(const ListQuickConnectsRequest& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListQuickConnectsAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::ListQuickConnectsAsyncHelper(const ListQuickConnectsRequest& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListQuickConnects(request), context);
+}
+
 ListRoutingProfileQueuesOutcome ConnectClient::ListRoutingProfileQueues(const ListRoutingProfileQueuesRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -2680,6 +2832,88 @@ void ConnectClient::UpdateInstanceStorageConfigAsync(const UpdateInstanceStorage
 void ConnectClient::UpdateInstanceStorageConfigAsyncHelper(const UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInstanceStorageConfig(request), context);
+}
+
+UpdateQuickConnectConfigOutcome ConnectClient::UpdateQuickConnectConfig(const UpdateQuickConnectConfigRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQuickConnectConfig", "Required field: InstanceId, is not set");
+    return UpdateQuickConnectConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.QuickConnectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQuickConnectConfig", "Required field: QuickConnectId, is not set");
+    return UpdateQuickConnectConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuickConnectId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/quick-connects/";
+  ss << request.GetInstanceId();
+  ss << "/";
+  ss << request.GetQuickConnectId();
+  ss << "/config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateQuickConnectConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateQuickConnectConfigOutcomeCallable ConnectClient::UpdateQuickConnectConfigCallable(const UpdateQuickConnectConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateQuickConnectConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateQuickConnectConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdateQuickConnectConfigAsync(const UpdateQuickConnectConfigRequest& request, const UpdateQuickConnectConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateQuickConnectConfigAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::UpdateQuickConnectConfigAsyncHelper(const UpdateQuickConnectConfigRequest& request, const UpdateQuickConnectConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateQuickConnectConfig(request), context);
+}
+
+UpdateQuickConnectNameOutcome ConnectClient::UpdateQuickConnectName(const UpdateQuickConnectNameRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQuickConnectName", "Required field: InstanceId, is not set");
+    return UpdateQuickConnectNameOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.QuickConnectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQuickConnectName", "Required field: QuickConnectId, is not set");
+    return UpdateQuickConnectNameOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuickConnectId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/quick-connects/";
+  ss << request.GetInstanceId();
+  ss << "/";
+  ss << request.GetQuickConnectId();
+  ss << "/name";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateQuickConnectNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateQuickConnectNameOutcomeCallable ConnectClient::UpdateQuickConnectNameCallable(const UpdateQuickConnectNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateQuickConnectNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateQuickConnectName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdateQuickConnectNameAsync(const UpdateQuickConnectNameRequest& request, const UpdateQuickConnectNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateQuickConnectNameAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::UpdateQuickConnectNameAsyncHelper(const UpdateQuickConnectNameRequest& request, const UpdateQuickConnectNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateQuickConnectName(request), context);
 }
 
 UpdateRoutingProfileConcurrencyOutcome ConnectClient::UpdateRoutingProfileConcurrency(const UpdateRoutingProfileConcurrencyRequest& request) const

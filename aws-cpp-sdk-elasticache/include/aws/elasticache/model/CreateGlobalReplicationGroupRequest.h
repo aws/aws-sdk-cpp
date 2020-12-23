@@ -44,7 +44,7 @@ namespace Model
      * suffix, combined with the auto-generated prefix, guarantees uniqueness of the
      * Global Datastore name across multiple regions. </p> <p>For a full list of AWS
      * Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
      * the AWS CLI with Global Datastores </a>.</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupIdSuffix() const{ return m_globalReplicationGroupIdSuffix; }
@@ -57,7 +57,7 @@ namespace Model
      * suffix, combined with the auto-generated prefix, guarantees uniqueness of the
      * Global Datastore name across multiple regions. </p> <p>For a full list of AWS
      * Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
      * the AWS CLI with Global Datastores </a>.</p>
      */
     inline bool GlobalReplicationGroupIdSuffixHasBeenSet() const { return m_globalReplicationGroupIdSuffixHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
      * suffix, combined with the auto-generated prefix, guarantees uniqueness of the
      * Global Datastore name across multiple regions. </p> <p>For a full list of AWS
      * Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
      * the AWS CLI with Global Datastores </a>.</p>
      */
     inline void SetGlobalReplicationGroupIdSuffix(const Aws::String& value) { m_globalReplicationGroupIdSuffixHasBeenSet = true; m_globalReplicationGroupIdSuffix = value; }
@@ -83,7 +83,7 @@ namespace Model
      * suffix, combined with the auto-generated prefix, guarantees uniqueness of the
      * Global Datastore name across multiple regions. </p> <p>For a full list of AWS
      * Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
      * the AWS CLI with Global Datastores </a>.</p>
      */
     inline void SetGlobalReplicationGroupIdSuffix(Aws::String&& value) { m_globalReplicationGroupIdSuffixHasBeenSet = true; m_globalReplicationGroupIdSuffix = std::move(value); }
@@ -96,7 +96,7 @@ namespace Model
      * suffix, combined with the auto-generated prefix, guarantees uniqueness of the
      * Global Datastore name across multiple regions. </p> <p>For a full list of AWS
      * Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
      * the AWS CLI with Global Datastores </a>.</p>
      */
     inline void SetGlobalReplicationGroupIdSuffix(const char* value) { m_globalReplicationGroupIdSuffixHasBeenSet = true; m_globalReplicationGroupIdSuffix.assign(value); }
@@ -109,7 +109,7 @@ namespace Model
      * suffix, combined with the auto-generated prefix, guarantees uniqueness of the
      * Global Datastore name across multiple regions. </p> <p>For a full list of AWS
      * Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
      * the AWS CLI with Global Datastores </a>.</p>
      */
     inline CreateGlobalReplicationGroupRequest& WithGlobalReplicationGroupIdSuffix(const Aws::String& value) { SetGlobalReplicationGroupIdSuffix(value); return *this;}
@@ -122,7 +122,7 @@ namespace Model
      * suffix, combined with the auto-generated prefix, guarantees uniqueness of the
      * Global Datastore name across multiple regions. </p> <p>For a full list of AWS
      * Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
      * the AWS CLI with Global Datastores </a>.</p>
      */
     inline CreateGlobalReplicationGroupRequest& WithGlobalReplicationGroupIdSuffix(Aws::String&& value) { SetGlobalReplicationGroupIdSuffix(std::move(value)); return *this;}
@@ -135,7 +135,7 @@ namespace Model
      * suffix, combined with the auto-generated prefix, guarantees uniqueness of the
      * Global Datastore name across multiple regions. </p> <p>For a full list of AWS
      * Regions and their respective Global Datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters-CLI.html">Using
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
      * the AWS CLI with Global Datastores </a>.</p>
      */
     inline CreateGlobalReplicationGroupRequest& WithGlobalReplicationGroupIdSuffix(const char* value) { SetGlobalReplicationGroupIdSuffix(value); return *this;}
