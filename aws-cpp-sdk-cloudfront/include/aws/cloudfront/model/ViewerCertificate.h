@@ -134,7 +134,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
      * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
+     * values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>. </p>
      */
     inline const Aws::String& GetIAMCertificateId() const{ return m_iAMCertificateId; }
@@ -145,7 +145,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
      * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
+     * values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>. </p>
      */
     inline bool IAMCertificateIdHasBeenSet() const { return m_iAMCertificateIdHasBeenSet; }
@@ -156,7 +156,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
      * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
+     * values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>. </p>
      */
     inline void SetIAMCertificateId(const Aws::String& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = value; }
@@ -167,7 +167,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
      * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
+     * values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>. </p>
      */
     inline void SetIAMCertificateId(Aws::String&& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = std::move(value); }
@@ -178,7 +178,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
      * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
+     * values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>. </p>
      */
     inline void SetIAMCertificateId(const char* value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId.assign(value); }
@@ -189,7 +189,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
      * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
+     * values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>. </p>
      */
     inline ViewerCertificate& WithIAMCertificateId(const Aws::String& value) { SetIAMCertificateId(value); return *this;}
@@ -200,7 +200,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
      * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
+     * values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>. </p>
      */
     inline ViewerCertificate& WithIAMCertificateId(Aws::String&& value) { SetIAMCertificateId(std::move(value)); return *this;}
@@ -211,7 +211,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
      * certificate.</p> <p>If you specify an IAM certificate ID, you must also specify
-     * values for <code>MinimumProtocolVerison</code> and
+     * values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>. </p>
      */
     inline ViewerCertificate& WithIAMCertificateId(const char* value) { SetIAMCertificateId(value); return *this;}
@@ -225,7 +225,7 @@ namespace Model
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline const Aws::String& GetACMCertificateArn() const{ return m_aCMCertificateArn; }
 
@@ -237,7 +237,7 @@ namespace Model
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline bool ACMCertificateArnHasBeenSet() const { return m_aCMCertificateArnHasBeenSet; }
 
@@ -249,7 +249,7 @@ namespace Model
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline void SetACMCertificateArn(const Aws::String& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = value; }
 
@@ -261,7 +261,7 @@ namespace Model
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline void SetACMCertificateArn(Aws::String&& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = std::move(value); }
 
@@ -273,7 +273,7 @@ namespace Model
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline void SetACMCertificateArn(const char* value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn.assign(value); }
 
@@ -285,7 +285,7 @@ namespace Model
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline ViewerCertificate& WithACMCertificateArn(const Aws::String& value) { SetACMCertificateArn(value); return *this;}
 
@@ -297,7 +297,7 @@ namespace Model
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline ViewerCertificate& WithACMCertificateArn(Aws::String&& value) { SetACMCertificateArn(std::move(value)); return *this;}
 
@@ -309,7 +309,7 @@ namespace Model
      * certificate. CloudFront only supports ACM certificates in the US East (N.
      * Virginia) Region (<code>us-east-1</code>).</p> <p>If you specify an ACM
      * certificate ARN, you must also specify values for
-     * <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
     inline ViewerCertificate& WithACMCertificateArn(const char* value) { SetACMCertificateArn(value); return *this;}
 

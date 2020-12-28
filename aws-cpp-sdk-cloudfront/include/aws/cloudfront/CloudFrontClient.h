@@ -1005,62 +1005,22 @@ namespace Model
         virtual void CreateRealtimeLogConfig2020_05_31Async(const Model::CreateRealtimeLogConfig2020_05_31Request& request, const CreateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new RTMP distribution. An RTMP distribution is similar to a web
-         * distribution, but an RTMP distribution streams media files using the Adobe
-         * Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP. </p>
-         * <p>To create a new distribution, submit a <code>POST</code> request to the
-         * <i>CloudFront API version</i>/distribution resource. The request body must
-         * include a document with a <i>StreamingDistributionConfig</i> element. The
-         * response echoes the <code>StreamingDistributionConfig</code> element and returns
-         * other information about the RTMP distribution.</p> <p>To get the status of your
-         * request, use the <i>GET StreamingDistribution</i> API action. When the value of
-         * <code>Enabled</code> is <code>true</code> and the value of <code>Status</code>
-         * is <code>Deployed</code>, your distribution is ready. A distribution usually
-         * deploys in less than 15 minutes.</p> <p>For more information about web
-         * distributions, see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
-         * with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-         *  <p>Beginning with the 2012-05-05 version of the CloudFront API, we
-         * made substantial changes to the format of the XML document that you include in
-         * the request body when you create or update a web distribution or an RTMP
-         * distribution, and when you invalidate objects. With previous versions of the
-         * API, we discovered that it was too easy to accidentally delete one or more
-         * values for an element that accepts multiple values, for example, CNAMEs and
-         * trusted signers. Our changes for the 2012-05-05 release are intended to prevent
-         * these accidental deletions and to notify you when there's a mismatch between the
-         * number of values you say you're specifying in the <code>Quantity</code> element
-         * and the number of values specified.</p> <p><h3>See Also:</h3>   <a
+         * <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging
+         * protocol (RTMP) distributions on December 31, 2020. For more information, <a
+         * href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the
+         * announcement</a> on the Amazon CloudFront discussion forum.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateStreamingDistribution2020_05_31Outcome CreateStreamingDistribution2020_05_31(const Model::CreateStreamingDistribution2020_05_31Request& request) const;
 
         /**
-         * <p>Creates a new RTMP distribution. An RTMP distribution is similar to a web
-         * distribution, but an RTMP distribution streams media files using the Adobe
-         * Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP. </p>
-         * <p>To create a new distribution, submit a <code>POST</code> request to the
-         * <i>CloudFront API version</i>/distribution resource. The request body must
-         * include a document with a <i>StreamingDistributionConfig</i> element. The
-         * response echoes the <code>StreamingDistributionConfig</code> element and returns
-         * other information about the RTMP distribution.</p> <p>To get the status of your
-         * request, use the <i>GET StreamingDistribution</i> API action. When the value of
-         * <code>Enabled</code> is <code>true</code> and the value of <code>Status</code>
-         * is <code>Deployed</code>, your distribution is ready. A distribution usually
-         * deploys in less than 15 minutes.</p> <p>For more information about web
-         * distributions, see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
-         * with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-         *  <p>Beginning with the 2012-05-05 version of the CloudFront API, we
-         * made substantial changes to the format of the XML document that you include in
-         * the request body when you create or update a web distribution or an RTMP
-         * distribution, and when you invalidate objects. With previous versions of the
-         * API, we discovered that it was too easy to accidentally delete one or more
-         * values for an element that accepts multiple values, for example, CNAMEs and
-         * trusted signers. Our changes for the 2012-05-05 release are intended to prevent
-         * these accidental deletions and to notify you when there's a mismatch between the
-         * number of values you say you're specifying in the <code>Quantity</code> element
-         * and the number of values specified.</p> <p><h3>See Also:</h3>   <a
+         * <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging
+         * protocol (RTMP) distributions on December 31, 2020. For more information, <a
+         * href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the
+         * announcement</a> on the Amazon CloudFront discussion forum.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -1069,31 +1029,11 @@ namespace Model
         virtual Model::CreateStreamingDistribution2020_05_31OutcomeCallable CreateStreamingDistribution2020_05_31Callable(const Model::CreateStreamingDistribution2020_05_31Request& request) const;
 
         /**
-         * <p>Creates a new RTMP distribution. An RTMP distribution is similar to a web
-         * distribution, but an RTMP distribution streams media files using the Adobe
-         * Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP. </p>
-         * <p>To create a new distribution, submit a <code>POST</code> request to the
-         * <i>CloudFront API version</i>/distribution resource. The request body must
-         * include a document with a <i>StreamingDistributionConfig</i> element. The
-         * response echoes the <code>StreamingDistributionConfig</code> element and returns
-         * other information about the RTMP distribution.</p> <p>To get the status of your
-         * request, use the <i>GET StreamingDistribution</i> API action. When the value of
-         * <code>Enabled</code> is <code>true</code> and the value of <code>Status</code>
-         * is <code>Deployed</code>, your distribution is ready. A distribution usually
-         * deploys in less than 15 minutes.</p> <p>For more information about web
-         * distributions, see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
-         * with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-         *  <p>Beginning with the 2012-05-05 version of the CloudFront API, we
-         * made substantial changes to the format of the XML document that you include in
-         * the request body when you create or update a web distribution or an RTMP
-         * distribution, and when you invalidate objects. With previous versions of the
-         * API, we discovered that it was too easy to accidentally delete one or more
-         * values for an element that accepts multiple values, for example, CNAMEs and
-         * trusted signers. Our changes for the 2012-05-05 release are intended to prevent
-         * these accidental deletions and to notify you when there's a mismatch between the
-         * number of values you say you're specifying in the <code>Quantity</code> element
-         * and the number of values specified.</p> <p><h3>See Also:</h3>   <a
+         * <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging
+         * protocol (RTMP) distributions on December 31, 2020. For more information, <a
+         * href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the
+         * announcement</a> on the Amazon CloudFront discussion forum.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -1102,14 +1042,22 @@ namespace Model
         virtual void CreateStreamingDistribution2020_05_31Async(const Model::CreateStreamingDistribution2020_05_31Request& request, const CreateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a new streaming distribution with tags.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging
+         * protocol (RTMP) distributions on December 31, 2020. For more information, <a
+         * href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the
+         * announcement</a> on the Amazon CloudFront discussion forum.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateStreamingDistributionWithTags2020_05_31Outcome CreateStreamingDistributionWithTags2020_05_31(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request) const;
 
         /**
-         * <p>Create a new streaming distribution with tags.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging
+         * protocol (RTMP) distributions on December 31, 2020. For more information, <a
+         * href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the
+         * announcement</a> on the Amazon CloudFront discussion forum.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -1118,7 +1066,11 @@ namespace Model
         virtual Model::CreateStreamingDistributionWithTags2020_05_31OutcomeCallable CreateStreamingDistributionWithTags2020_05_31Callable(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request) const;
 
         /**
-         * <p>Create a new streaming distribution with tags.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging
+         * protocol (RTMP) distributions on December 31, 2020. For more information, <a
+         * href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the
+         * announcement</a> on the Amazon CloudFront discussion forum.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -1894,7 +1846,7 @@ namespace Model
 
         /**
          * <p>Gets a key group, including the date and time when the key group was last
-         * modified.</p> <p>To get a key group, you must provide the key group��s
+         * modified.</p> <p>To get a key group, you must provide the key group’s
          * identifier. If the key group is referenced in a distribution’s cache behavior,
          * you can get the key group’s identifier using <code>ListDistributions</code> or
          * <code>GetDistribution</code>. If the key group is not referenced in a cache
@@ -1907,7 +1859,7 @@ namespace Model
 
         /**
          * <p>Gets a key group, including the date and time when the key group was last
-         * modified.</p> <p>To get a key group, you must provide the key group��s
+         * modified.</p> <p>To get a key group, you must provide the key group’s
          * identifier. If the key group is referenced in a distribution’s cache behavior,
          * you can get the key group’s identifier using <code>ListDistributions</code> or
          * <code>GetDistribution</code>. If the key group is not referenced in a cache
@@ -1922,7 +1874,7 @@ namespace Model
 
         /**
          * <p>Gets a key group, including the date and time when the key group was last
-         * modified.</p> <p>To get a key group, you must provide the key group��s
+         * modified.</p> <p>To get a key group, you must provide the key group’s
          * identifier. If the key group is referenced in a distribution’s cache behavior,
          * you can get the key group’s identifier using <code>ListDistributions</code> or
          * <code>GetDistribution</code>. If the key group is not referenced in a cache
