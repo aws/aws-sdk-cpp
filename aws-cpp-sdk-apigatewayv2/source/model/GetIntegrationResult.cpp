@@ -142,6 +142,21 @@ GetIntegrationResult& GetIntegrationResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("responseParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
+    for(auto& responseParametersItem : responseParametersJsonMap)
+    {
+      Aws::Map<Aws::String, JsonView> integrationParametersJsonMap = responseParametersItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> integrationParametersMap;
+      for(auto& integrationParametersItem : integrationParametersJsonMap)
+      {
+        integrationParametersMap[integrationParametersItem.first] = integrationParametersItem.second.AsString();
+      }
+      m_responseParameters[responseParametersItem.first] = std::move(integrationParametersMap);
+    }
+  }
+
   if(jsonValue.ValueExists("templateSelectionExpression"))
   {
     m_templateSelectionExpression = jsonValue.GetString("templateSelectionExpression");

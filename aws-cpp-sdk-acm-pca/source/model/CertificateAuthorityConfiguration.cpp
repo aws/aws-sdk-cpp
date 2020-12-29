@@ -23,7 +23,8 @@ CertificateAuthorityConfiguration::CertificateAuthorityConfiguration() :
     m_keyAlgorithmHasBeenSet(false),
     m_signingAlgorithm(SigningAlgorithm::NOT_SET),
     m_signingAlgorithmHasBeenSet(false),
-    m_subjectHasBeenSet(false)
+    m_subjectHasBeenSet(false),
+    m_csrExtensionsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(JsonView js
     m_keyAlgorithmHasBeenSet(false),
     m_signingAlgorithm(SigningAlgorithm::NOT_SET),
     m_signingAlgorithmHasBeenSet(false),
-    m_subjectHasBeenSet(false)
+    m_subjectHasBeenSet(false),
+    m_csrExtensionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ CertificateAuthorityConfiguration& CertificateAuthorityConfiguration::operator =
     m_subjectHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CsrExtensions"))
+  {
+    m_csrExtensions = jsonValue.GetObject("CsrExtensions");
+
+    m_csrExtensionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue CertificateAuthorityConfiguration::Jsonize() const
   if(m_subjectHasBeenSet)
   {
    payload.WithObject("Subject", m_subject.Jsonize());
+
+  }
+
+  if(m_csrExtensionsHasBeenSet)
+  {
+   payload.WithObject("CsrExtensions", m_csrExtensions.Jsonize());
 
   }
 

@@ -163,13 +163,13 @@ namespace Model
     typedef std::function<void(const ACMPCAClient*, const Model::UpdateCertificateAuthorityRequest&, const Model::UpdateCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCertificateAuthorityResponseReceivedHandler;
 
   /**
-   *  <p/>  <p>This is the <i>ACM Private CA API Reference</i>. It
-   * provides descriptions, syntax, and usage examples for each of the actions and
-   * data types involved in creating and managing private certificate authorities
-   * (CA) for your organization.</p> <p>The documentation for each action shows the
-   * Query API request parameters and the XML response. Alternatively, you can use
-   * one of the AWS SDKs to access an API that's tailored to the programming language
-   * or platform that you're using. For more information, see <a
+   * <p>This is the <i>ACM Private CA API Reference</i>. It provides descriptions,
+   * syntax, and usage examples for each of the actions and data types involved in
+   * creating and managing private certificate authorities (CA) for your
+   * organization.</p> <p>The documentation for each action shows the Query API
+   * request parameters and the XML response. Alternatively, you can use one of the
+   * AWS SDKs to access an API that's tailored to the programming language or
+   * platform that you're using. For more information, see <a
    * href="https://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p>  <p>Each ACM
    * Private CA API action has a quota that determines the number of times the action
    * can be called per second. For more information, see <a
@@ -369,7 +369,8 @@ namespace Model
          * certificates reside in different accounts, then permissions cannot be used to
          * enable automatic renewals. Instead, the ACM certificate owner must set up a
          * resource-based policy to enable cross-account issuance and renewals. For more
-         * information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">AWS
@@ -394,7 +395,8 @@ namespace Model
          * certificates reside in different accounts, then permissions cannot be used to
          * enable automatic renewals. Instead, the ACM certificate owner must set up a
          * resource-based policy to enable cross-account issuance and renewals. For more
-         * information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">AWS
@@ -421,7 +423,8 @@ namespace Model
          * certificates reside in different accounts, then permissions cannot be used to
          * enable automatic renewals. Instead, the ACM certificate owner must set up a
          * resource-based policy to enable cross-account issuance and renewals. For more
-         * information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">AWS
@@ -549,7 +552,8 @@ namespace Model
          * certificates reside in different accounts, then permissions cannot be used to
          * enable automatic renewals. Instead, the ACM certificate owner must set up a
          * resource-based policy to enable cross-account issuance and renewals. For more
-         * information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">AWS
@@ -575,7 +579,8 @@ namespace Model
          * certificates reside in different accounts, then permissions cannot be used to
          * enable automatic renewals. Instead, the ACM certificate owner must set up a
          * resource-based policy to enable cross-account issuance and renewals. For more
-         * information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">AWS
@@ -603,7 +608,8 @@ namespace Model
          * certificates reside in different accounts, then permissions cannot be used to
          * enable automatic renewals. Instead, the ACM certificate owner must set up a
          * resource-based policy to enable cross-account issuance and renewals. For more
-         * information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">AWS
@@ -627,7 +633,8 @@ namespace Model
          * <p class="title"> <b>About Policies</b> </p> <ul> <li> <p>A policy grants access
          * on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
          * Organizations unit. Policies are under the control of a CA administrator. For
-         * more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
          * permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed
          * by a CA in another account.</p> </li> <li> <p>For ACM to manage automatic
@@ -638,8 +645,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in AWS Resource
          * Manager (RAM) are reflected in policies. For more information, see <a
-         * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-         * (RAM) with ACM Private CA</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePolicy">AWS
          * API Reference</a></p>
          */
@@ -659,7 +666,8 @@ namespace Model
          * <p class="title"> <b>About Policies</b> </p> <ul> <li> <p>A policy grants access
          * on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
          * Organizations unit. Policies are under the control of a CA administrator. For
-         * more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
          * permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed
          * by a CA in another account.</p> </li> <li> <p>For ACM to manage automatic
@@ -670,8 +678,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in AWS Resource
          * Manager (RAM) are reflected in policies. For more information, see <a
-         * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-         * (RAM) with ACM Private CA</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -693,7 +701,8 @@ namespace Model
          * <p class="title"> <b>About Policies</b> </p> <ul> <li> <p>A policy grants access
          * on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
          * Organizations unit. Policies are under the control of a CA administrator. For
-         * more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
          * permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed
          * by a CA in another account.</p> </li> <li> <p>For ACM to manage automatic
@@ -704,8 +713,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in AWS Resource
          * Manager (RAM) are reflected in policies. For more information, see <a
-         * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-         * (RAM) with ACM Private CA</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -983,11 +992,12 @@ namespace Model
          * updated with <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>
          * and removed with <a
-         * href="acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
+         * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
          * <p class="title"> <b>About Policies</b> </p> <ul> <li> <p>A policy grants access
          * on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
          * Organizations unit. Policies are under the control of a CA administrator. For
-         * more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
          * permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed
          * by a CA in another account.</p> </li> <li> <p>For ACM to manage automatic
@@ -998,8 +1008,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in AWS Resource
          * Manager (RAM) are reflected in policies. For more information, see <a
-         * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-         * (RAM) with ACM Private CA</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetPolicy">AWS
          * API Reference</a></p>
          */
@@ -1012,11 +1022,12 @@ namespace Model
          * updated with <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>
          * and removed with <a
-         * href="acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
+         * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
          * <p class="title"> <b>About Policies</b> </p> <ul> <li> <p>A policy grants access
          * on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
          * Organizations unit. Policies are under the control of a CA administrator. For
-         * more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
          * permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed
          * by a CA in another account.</p> </li> <li> <p>For ACM to manage automatic
@@ -1027,8 +1038,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in AWS Resource
          * Manager (RAM) are reflected in policies. For more information, see <a
-         * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-         * (RAM) with ACM Private CA</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetPolicy">AWS
          * API Reference</a></p>
          *
@@ -1043,11 +1054,12 @@ namespace Model
          * updated with <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>
          * and removed with <a
-         * href="acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
+         * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
          * <p class="title"> <b>About Policies</b> </p> <ul> <li> <p>A policy grants access
          * on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
          * Organizations unit. Policies are under the control of a CA administrator. For
-         * more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
          * permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed
          * by a CA in another account.</p> </li> <li> <p>For ACM to manage automatic
@@ -1058,8 +1070,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in AWS Resource
          * Manager (RAM) are reflected in policies. For more information, see <a
-         * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-         * (RAM) with ACM Private CA</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetPolicy">AWS
          * API Reference</a></p>
          *
@@ -1080,32 +1092,36 @@ namespace Model
          * the CSR using a root or intermediate CA hosted by either an on-premises PKI
          * hierarchy or by a commercial CA.</p> </li> <li> <p>Create a certificate chain
          * and copy the signed certificate and the certificate chain to your working
-         * directory.</p> </li> </ol> <p>The following requirements apply when you import a
-         * CA certificate.</p> <ul> <li> <p>You cannot import a non-self-signed certificate
-         * for use as a root CA.</p> </li> <li> <p>You cannot import a self-signed
-         * certificate for use as a subordinate CA.</p> </li> <li> <p>Your certificate
-         * chain must not include the private CA certificate that you are importing.</p>
-         * </li> <li> <p>Your ACM Private CA-hosted or on-premises CA certificate must be
-         * the last certificate in your chain. The subordinate certificate, if any, that
-         * your root CA signed must be next to last. The subordinate certificate signed by
-         * the preceding subordinate CA must come next, and so on until your chain is
-         * built. </p> </li> <li> <p>The chain must be PEM-encoded.</p> </li> <li> <p>The
-         * maximum allowed size of a certificate is 32 KB.</p> </li> <li> <p>The maximum
-         * allowed size of a certificate chain is 2 MB.</p> </li> </ul> <p> <i>Enforcement
-         * of Critical Constraints</i> </p> <p>ACM Private CA allows the following
-         * extensions to be marked critical in the imported CA certificate or chain.</p>
-         * <ul> <li> <p>Basic constraints (<i>must</i> be marked critical)</p> </li> <li>
-         * <p>Subject alternative names</p> </li> <li> <p>Key usage</p> </li> <li>
-         * <p>Extended key usage</p> </li> <li> <p>Authority key identifier</p> </li> <li>
-         * <p>Subject key identifier</p> </li> <li> <p>Issuer alternative name</p> </li>
-         * <li> <p>Subject directory attributes</p> </li> <li> <p>Subject information
-         * access</p> </li> <li> <p>Certificate policies</p> </li> <li> <p>Policy
-         * mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul> <p>ACM Private CA
-         * rejects the following extensions when they are marked critical in an imported CA
-         * certificate or chain.</p> <ul> <li> <p>Name constraints</p> </li> <li> <p>Policy
-         * constraints</p> </li> <li> <p>CRL distribution points</p> </li> <li>
-         * <p>Authority information access</p> </li> <li> <p>Freshest CRL</p> </li> <li>
-         * <p>Any other extension</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * directory.</p> </li> </ol> <p>ACM Private CA supports three scenarios for
+         * installing a CA certificate:</p> <ul> <li> <p>Installing a certificate for a
+         * root CA hosted by ACM Private CA.</p> </li> <li> <p>Installing a subordinate CA
+         * certificate whose parent authority is hosted by ACM Private CA.</p> </li> <li>
+         * <p>Installing a subordinate CA certificate whose parent authority is externally
+         * hosted.</p> </li> </ul> <p>The following addtitional requirements apply when you
+         * import a CA certificate.</p> <ul> <li> <p>Only a self-signed certificate can be
+         * imported as a root CA.</p> </li> <li> <p>A self-signed certificate cannot be
+         * imported as a subordinate CA.</p> </li> <li> <p>Your certificate chain must not
+         * include the private CA certificate that you are importing.</p> </li> <li>
+         * <p>Your root CA must be the last certificate in your chain. The subordinate
+         * certificate, if any, that your root CA signed must be next to last. The
+         * subordinate certificate signed by the preceding subordinate CA must come next,
+         * and so on until your chain is built. </p> </li> <li> <p>The chain must be
+         * PEM-encoded.</p> </li> <li> <p>The maximum allowed size of a certificate is 32
+         * KB.</p> </li> <li> <p>The maximum allowed size of a certificate chain is 2
+         * MB.</p> </li> </ul> <p> <i>Enforcement of Critical Constraints</i> </p> <p>ACM
+         * Private CA allows the following extensions to be marked critical in the imported
+         * CA certificate or chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be
+         * marked critical)</p> </li> <li> <p>Subject alternative names</p> </li> <li>
+         * <p>Key usage</p> </li> <li> <p>Extended key usage</p> </li> <li> <p>Authority
+         * key identifier</p> </li> <li> <p>Subject key identifier</p> </li> <li> <p>Issuer
+         * alternative name</p> </li> <li> <p>Subject directory attributes</p> </li> <li>
+         * <p>Subject information access</p> </li> <li> <p>Certificate policies</p> </li>
+         * <li> <p>Policy mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul>
+         * <p>ACM Private CA rejects the following extensions when they are marked critical
+         * in an imported CA certificate or chain.</p> <ul> <li> <p>Name constraints</p>
+         * </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL distribution points</p>
+         * </li> <li> <p>Authority information access</p> </li> <li> <p>Freshest CRL</p>
+         * </li> <li> <p>Any other extension</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ImportCertificateAuthorityCertificate">AWS
          * API Reference</a></p>
          */
@@ -1124,32 +1140,36 @@ namespace Model
          * the CSR using a root or intermediate CA hosted by either an on-premises PKI
          * hierarchy or by a commercial CA.</p> </li> <li> <p>Create a certificate chain
          * and copy the signed certificate and the certificate chain to your working
-         * directory.</p> </li> </ol> <p>The following requirements apply when you import a
-         * CA certificate.</p> <ul> <li> <p>You cannot import a non-self-signed certificate
-         * for use as a root CA.</p> </li> <li> <p>You cannot import a self-signed
-         * certificate for use as a subordinate CA.</p> </li> <li> <p>Your certificate
-         * chain must not include the private CA certificate that you are importing.</p>
-         * </li> <li> <p>Your ACM Private CA-hosted or on-premises CA certificate must be
-         * the last certificate in your chain. The subordinate certificate, if any, that
-         * your root CA signed must be next to last. The subordinate certificate signed by
-         * the preceding subordinate CA must come next, and so on until your chain is
-         * built. </p> </li> <li> <p>The chain must be PEM-encoded.</p> </li> <li> <p>The
-         * maximum allowed size of a certificate is 32 KB.</p> </li> <li> <p>The maximum
-         * allowed size of a certificate chain is 2 MB.</p> </li> </ul> <p> <i>Enforcement
-         * of Critical Constraints</i> </p> <p>ACM Private CA allows the following
-         * extensions to be marked critical in the imported CA certificate or chain.</p>
-         * <ul> <li> <p>Basic constraints (<i>must</i> be marked critical)</p> </li> <li>
-         * <p>Subject alternative names</p> </li> <li> <p>Key usage</p> </li> <li>
-         * <p>Extended key usage</p> </li> <li> <p>Authority key identifier</p> </li> <li>
-         * <p>Subject key identifier</p> </li> <li> <p>Issuer alternative name</p> </li>
-         * <li> <p>Subject directory attributes</p> </li> <li> <p>Subject information
-         * access</p> </li> <li> <p>Certificate policies</p> </li> <li> <p>Policy
-         * mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul> <p>ACM Private CA
-         * rejects the following extensions when they are marked critical in an imported CA
-         * certificate or chain.</p> <ul> <li> <p>Name constraints</p> </li> <li> <p>Policy
-         * constraints</p> </li> <li> <p>CRL distribution points</p> </li> <li>
-         * <p>Authority information access</p> </li> <li> <p>Freshest CRL</p> </li> <li>
-         * <p>Any other extension</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * directory.</p> </li> </ol> <p>ACM Private CA supports three scenarios for
+         * installing a CA certificate:</p> <ul> <li> <p>Installing a certificate for a
+         * root CA hosted by ACM Private CA.</p> </li> <li> <p>Installing a subordinate CA
+         * certificate whose parent authority is hosted by ACM Private CA.</p> </li> <li>
+         * <p>Installing a subordinate CA certificate whose parent authority is externally
+         * hosted.</p> </li> </ul> <p>The following addtitional requirements apply when you
+         * import a CA certificate.</p> <ul> <li> <p>Only a self-signed certificate can be
+         * imported as a root CA.</p> </li> <li> <p>A self-signed certificate cannot be
+         * imported as a subordinate CA.</p> </li> <li> <p>Your certificate chain must not
+         * include the private CA certificate that you are importing.</p> </li> <li>
+         * <p>Your root CA must be the last certificate in your chain. The subordinate
+         * certificate, if any, that your root CA signed must be next to last. The
+         * subordinate certificate signed by the preceding subordinate CA must come next,
+         * and so on until your chain is built. </p> </li> <li> <p>The chain must be
+         * PEM-encoded.</p> </li> <li> <p>The maximum allowed size of a certificate is 32
+         * KB.</p> </li> <li> <p>The maximum allowed size of a certificate chain is 2
+         * MB.</p> </li> </ul> <p> <i>Enforcement of Critical Constraints</i> </p> <p>ACM
+         * Private CA allows the following extensions to be marked critical in the imported
+         * CA certificate or chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be
+         * marked critical)</p> </li> <li> <p>Subject alternative names</p> </li> <li>
+         * <p>Key usage</p> </li> <li> <p>Extended key usage</p> </li> <li> <p>Authority
+         * key identifier</p> </li> <li> <p>Subject key identifier</p> </li> <li> <p>Issuer
+         * alternative name</p> </li> <li> <p>Subject directory attributes</p> </li> <li>
+         * <p>Subject information access</p> </li> <li> <p>Certificate policies</p> </li>
+         * <li> <p>Policy mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul>
+         * <p>ACM Private CA rejects the following extensions when they are marked critical
+         * in an imported CA certificate or chain.</p> <ul> <li> <p>Name constraints</p>
+         * </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL distribution points</p>
+         * </li> <li> <p>Authority information access</p> </li> <li> <p>Freshest CRL</p>
+         * </li> <li> <p>Any other extension</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ImportCertificateAuthorityCertificate">AWS
          * API Reference</a></p>
          *
@@ -1170,32 +1190,36 @@ namespace Model
          * the CSR using a root or intermediate CA hosted by either an on-premises PKI
          * hierarchy or by a commercial CA.</p> </li> <li> <p>Create a certificate chain
          * and copy the signed certificate and the certificate chain to your working
-         * directory.</p> </li> </ol> <p>The following requirements apply when you import a
-         * CA certificate.</p> <ul> <li> <p>You cannot import a non-self-signed certificate
-         * for use as a root CA.</p> </li> <li> <p>You cannot import a self-signed
-         * certificate for use as a subordinate CA.</p> </li> <li> <p>Your certificate
-         * chain must not include the private CA certificate that you are importing.</p>
-         * </li> <li> <p>Your ACM Private CA-hosted or on-premises CA certificate must be
-         * the last certificate in your chain. The subordinate certificate, if any, that
-         * your root CA signed must be next to last. The subordinate certificate signed by
-         * the preceding subordinate CA must come next, and so on until your chain is
-         * built. </p> </li> <li> <p>The chain must be PEM-encoded.</p> </li> <li> <p>The
-         * maximum allowed size of a certificate is 32 KB.</p> </li> <li> <p>The maximum
-         * allowed size of a certificate chain is 2 MB.</p> </li> </ul> <p> <i>Enforcement
-         * of Critical Constraints</i> </p> <p>ACM Private CA allows the following
-         * extensions to be marked critical in the imported CA certificate or chain.</p>
-         * <ul> <li> <p>Basic constraints (<i>must</i> be marked critical)</p> </li> <li>
-         * <p>Subject alternative names</p> </li> <li> <p>Key usage</p> </li> <li>
-         * <p>Extended key usage</p> </li> <li> <p>Authority key identifier</p> </li> <li>
-         * <p>Subject key identifier</p> </li> <li> <p>Issuer alternative name</p> </li>
-         * <li> <p>Subject directory attributes</p> </li> <li> <p>Subject information
-         * access</p> </li> <li> <p>Certificate policies</p> </li> <li> <p>Policy
-         * mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul> <p>ACM Private CA
-         * rejects the following extensions when they are marked critical in an imported CA
-         * certificate or chain.</p> <ul> <li> <p>Name constraints</p> </li> <li> <p>Policy
-         * constraints</p> </li> <li> <p>CRL distribution points</p> </li> <li>
-         * <p>Authority information access</p> </li> <li> <p>Freshest CRL</p> </li> <li>
-         * <p>Any other extension</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * directory.</p> </li> </ol> <p>ACM Private CA supports three scenarios for
+         * installing a CA certificate:</p> <ul> <li> <p>Installing a certificate for a
+         * root CA hosted by ACM Private CA.</p> </li> <li> <p>Installing a subordinate CA
+         * certificate whose parent authority is hosted by ACM Private CA.</p> </li> <li>
+         * <p>Installing a subordinate CA certificate whose parent authority is externally
+         * hosted.</p> </li> </ul> <p>The following addtitional requirements apply when you
+         * import a CA certificate.</p> <ul> <li> <p>Only a self-signed certificate can be
+         * imported as a root CA.</p> </li> <li> <p>A self-signed certificate cannot be
+         * imported as a subordinate CA.</p> </li> <li> <p>Your certificate chain must not
+         * include the private CA certificate that you are importing.</p> </li> <li>
+         * <p>Your root CA must be the last certificate in your chain. The subordinate
+         * certificate, if any, that your root CA signed must be next to last. The
+         * subordinate certificate signed by the preceding subordinate CA must come next,
+         * and so on until your chain is built. </p> </li> <li> <p>The chain must be
+         * PEM-encoded.</p> </li> <li> <p>The maximum allowed size of a certificate is 32
+         * KB.</p> </li> <li> <p>The maximum allowed size of a certificate chain is 2
+         * MB.</p> </li> </ul> <p> <i>Enforcement of Critical Constraints</i> </p> <p>ACM
+         * Private CA allows the following extensions to be marked critical in the imported
+         * CA certificate or chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be
+         * marked critical)</p> </li> <li> <p>Subject alternative names</p> </li> <li>
+         * <p>Key usage</p> </li> <li> <p>Extended key usage</p> </li> <li> <p>Authority
+         * key identifier</p> </li> <li> <p>Subject key identifier</p> </li> <li> <p>Issuer
+         * alternative name</p> </li> <li> <p>Subject directory attributes</p> </li> <li>
+         * <p>Subject information access</p> </li> <li> <p>Certificate policies</p> </li>
+         * <li> <p>Policy mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul>
+         * <p>ACM Private CA rejects the following extensions when they are marked critical
+         * in an imported CA certificate or chain.</p> <ul> <li> <p>Name constraints</p>
+         * </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL distribution points</p>
+         * </li> <li> <p>Authority information access</p> </li> <li> <p>Freshest CRL</p>
+         * </li> <li> <p>Any other extension</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ImportCertificateAuthorityCertificate">AWS
          * API Reference</a></p>
          *
@@ -1300,7 +1324,8 @@ namespace Model
          * certificates reside in different accounts, then permissions cannot be used to
          * enable automatic renewals. Instead, the ACM certificate owner must set up a
          * resource-based policy to enable cross-account issuance and renewals. For more
-         * information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">AWS
@@ -1325,7 +1350,8 @@ namespace Model
          * certificates reside in different accounts, then permissions cannot be used to
          * enable automatic renewals. Instead, the ACM certificate owner must set up a
          * resource-based policy to enable cross-account issuance and renewals. For more
-         * information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">AWS
@@ -1352,7 +1378,8 @@ namespace Model
          * certificates reside in different accounts, then permissions cannot be used to
          * enable automatic renewals. Instead, the ACM certificate owner must set up a
          * resource-based policy to enable cross-account issuance and renewals. For more
-         * information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">AWS
@@ -1407,17 +1434,19 @@ namespace Model
 
         /**
          * <p>Attaches a resource-based policy to a private CA. </p> <p>A policy can also
-         * be applied by <a
-         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">sharing</a>
-         * a private CA through AWS Resource Access Manager (RAM).</p> <p>The policy can be
-         * displayed with <a
+         * be applied by sharing a private CA through AWS Resource Access Manager (RAM).
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> <p>The policy can be displayed with
+         * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
          * and removed with <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
          * <p class="title"> <b>About Policies</b> </p> <ul> <li> <p>A policy grants access
          * on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
          * Organizations unit. Policies are under the control of a CA administrator. For
-         * more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
          * permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed
          * by a CA in another account.</p> </li> <li> <p>For ACM to manage automatic
@@ -1428,8 +1457,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in AWS Resource
          * Manager (RAM) are reflected in policies. For more information, see <a
-         * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-         * (RAM) with ACM Private CA</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/PutPolicy">AWS
          * API Reference</a></p>
          */
@@ -1437,17 +1466,19 @@ namespace Model
 
         /**
          * <p>Attaches a resource-based policy to a private CA. </p> <p>A policy can also
-         * be applied by <a
-         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">sharing</a>
-         * a private CA through AWS Resource Access Manager (RAM).</p> <p>The policy can be
-         * displayed with <a
+         * be applied by sharing a private CA through AWS Resource Access Manager (RAM).
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> <p>The policy can be displayed with
+         * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
          * and removed with <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
          * <p class="title"> <b>About Policies</b> </p> <ul> <li> <p>A policy grants access
          * on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
          * Organizations unit. Policies are under the control of a CA administrator. For
-         * more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
          * permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed
          * by a CA in another account.</p> </li> <li> <p>For ACM to manage automatic
@@ -1458,8 +1489,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in AWS Resource
          * Manager (RAM) are reflected in policies. For more information, see <a
-         * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-         * (RAM) with ACM Private CA</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/PutPolicy">AWS
          * API Reference</a></p>
          *
@@ -1469,17 +1500,19 @@ namespace Model
 
         /**
          * <p>Attaches a resource-based policy to a private CA. </p> <p>A policy can also
-         * be applied by <a
-         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">sharing</a>
-         * a private CA through AWS Resource Access Manager (RAM).</p> <p>The policy can be
-         * displayed with <a
+         * be applied by sharing a private CA through AWS Resource Access Manager (RAM).
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> <p>The policy can be displayed with
+         * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
          * and removed with <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
          * <p class="title"> <b>About Policies</b> </p> <ul> <li> <p>A policy grants access
          * on a private CA to an AWS customer account, to AWS Organizations, or to an AWS
          * Organizations unit. Policies are under the control of a CA administrator. For
-         * more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
          * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
          * permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed
          * by a CA in another account.</p> </li> <li> <p>For ACM to manage automatic
@@ -1490,8 +1523,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in AWS Resource
          * Manager (RAM) are reflected in policies. For more information, see <a
-         * href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-         * (RAM) with ACM Private CA</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+         * a Policy for Cross-Account Access</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/PutPolicy">AWS
          * API Reference</a></p>
          *

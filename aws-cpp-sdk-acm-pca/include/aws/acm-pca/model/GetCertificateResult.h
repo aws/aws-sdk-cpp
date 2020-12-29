@@ -76,44 +76,44 @@ namespace Model
 
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChain = value; }
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChain = std::move(value); }
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline void SetCertificateChain(const char* value) { m_certificateChain.assign(value); }
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline GetCertificateResult& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline GetCertificateResult& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline GetCertificateResult& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 

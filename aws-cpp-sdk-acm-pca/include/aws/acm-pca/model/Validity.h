@@ -87,7 +87,10 @@ namespace Model
      * issuance until the certificate will expire, expressed in days, months, or years.
      * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
      * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * 01/10/2020 12:34:54 UTC</p> </li> </ul> <p>The minimum validity duration for a
+     * certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or
+     * <code>END_DATE</code>) is one second.</p>
      */
     inline const ValidityPeriodType& GetType() const{ return m_type; }
 
@@ -109,7 +112,10 @@ namespace Model
      * issuance until the certificate will expire, expressed in days, months, or years.
      * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
      * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * 01/10/2020 12:34:54 UTC</p> </li> </ul> <p>The minimum validity duration for a
+     * certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or
+     * <code>END_DATE</code>) is one second.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -131,7 +137,10 @@ namespace Model
      * issuance until the certificate will expire, expressed in days, months, or years.
      * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
      * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * 01/10/2020 12:34:54 UTC</p> </li> </ul> <p>The minimum validity duration for a
+     * certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or
+     * <code>END_DATE</code>) is one second.</p>
      */
     inline void SetType(const ValidityPeriodType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -153,7 +162,10 @@ namespace Model
      * issuance until the certificate will expire, expressed in days, months, or years.
      * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
      * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * 01/10/2020 12:34:54 UTC</p> </li> </ul> <p>The minimum validity duration for a
+     * certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or
+     * <code>END_DATE</code>) is one second.</p>
      */
     inline void SetType(ValidityPeriodType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -175,7 +187,10 @@ namespace Model
      * issuance until the certificate will expire, expressed in days, months, or years.
      * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
      * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * 01/10/2020 12:34:54 UTC</p> </li> </ul> <p>The minimum validity duration for a
+     * certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or
+     * <code>END_DATE</code>) is one second.</p>
      */
     inline Validity& WithType(const ValidityPeriodType& value) { SetType(value); return *this;}
 
@@ -197,7 +212,10 @@ namespace Model
      * issuance until the certificate will expire, expressed in days, months, or years.
      * </p> <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
      * <ul> <li> <p>Sample input value: 90</p> </li> <li> <p>Output expiration date:
-     * 01/10/2020 12:34:54 UTC</p> </li> </ul>
+     * 01/10/2020 12:34:54 UTC</p> </li> </ul> <p>The minimum validity duration for a
+     * certificate using relative time (<code>DAYS</code>) is one day. The minimum
+     * validity for a certificate using absolute time (<code>ABSOLUTE</code> or
+     * <code>END_DATE</code>) is one second.</p>
      */
     inline Validity& WithType(ValidityPeriodType&& value) { SetType(std::move(value)); return *this;}
 

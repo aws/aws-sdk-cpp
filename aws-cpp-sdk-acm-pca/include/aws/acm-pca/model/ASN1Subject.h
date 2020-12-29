@@ -275,50 +275,66 @@ namespace Model
 
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline const Aws::String& GetCommonName() const{ return m_commonName; }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline bool CommonNameHasBeenSet() const { return m_commonNameHasBeenSet; }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline void SetCommonName(const Aws::String& value) { m_commonNameHasBeenSet = true; m_commonName = value; }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline void SetCommonName(Aws::String&& value) { m_commonNameHasBeenSet = true; m_commonName = std::move(value); }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline void SetCommonName(const char* value) { m_commonNameHasBeenSet = true; m_commonName.assign(value); }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline ASN1Subject& WithCommonName(const Aws::String& value) { SetCommonName(value); return *this;}
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline ASN1Subject& WithCommonName(Aws::String&& value) { SetCommonName(std::move(value)); return *this;}
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline ASN1Subject& WithCommonName(const char* value) { SetCommonName(value); return *this;}
 

@@ -32,6 +32,7 @@ UpdateIntegrationRequest::UpdateIntegrationRequest() :
     m_payloadFormatVersionHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestTemplatesHasBeenSet(false),
+    m_responseParametersHasBeenSet(false),
     m_templateSelectionExpressionHasBeenSet(false),
     m_timeoutInMillis(0),
     m_timeoutInMillisHasBeenSet(false),
@@ -124,6 +125,22 @@ Aws::String UpdateIntegrationRequest::SerializePayload() const
      requestTemplatesJsonMap.WithString(requestTemplatesItem.first, requestTemplatesItem.second);
    }
    payload.WithObject("requestTemplates", std::move(requestTemplatesJsonMap));
+
+  }
+
+  if(m_responseParametersHasBeenSet)
+  {
+   JsonValue responseParametersJsonMap;
+   for(auto& responseParametersItem : m_responseParameters)
+   {
+     JsonValue integrationParametersJsonMap;
+     for(auto& integrationParametersItem : responseParametersItem.second)
+     {
+       integrationParametersJsonMap.WithString(integrationParametersItem.first, integrationParametersItem.second);
+     }
+     responseParametersJsonMap.WithObject(responseParametersItem.first, std::move(integrationParametersJsonMap));
+   }
+   payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
 
   }
 

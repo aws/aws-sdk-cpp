@@ -124,22 +124,22 @@ namespace Model
 
 
     /**
-     * <p>Number of days until a certificate expires.</p>
+     * <p>Validity period of the CRL in days.</p>
      */
     inline int GetExpirationInDays() const{ return m_expirationInDays; }
 
     /**
-     * <p>Number of days until a certificate expires.</p>
+     * <p>Validity period of the CRL in days.</p>
      */
     inline bool ExpirationInDaysHasBeenSet() const { return m_expirationInDaysHasBeenSet; }
 
     /**
-     * <p>Number of days until a certificate expires.</p>
+     * <p>Validity period of the CRL in days.</p>
      */
     inline void SetExpirationInDays(int value) { m_expirationInDaysHasBeenSet = true; m_expirationInDays = value; }
 
     /**
-     * <p>Number of days until a certificate expires.</p>
+     * <p>Validity period of the CRL in days.</p>
      */
     inline CrlConfiguration& WithExpirationInDays(int value) { SetExpirationInDays(value); return *this;}
 
