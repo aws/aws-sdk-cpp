@@ -42,47 +42,47 @@ namespace Model
 
 
     /**
-     * <p>The list of user group IDs ro remove.</p>
+     * <p>The list of user IDs to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIdsToRemove() const{ return m_userIdsToRemove; }
 
     /**
-     * <p>The list of user group IDs ro remove.</p>
+     * <p>The list of user IDs to remove.</p>
      */
     inline bool UserIdsToRemoveHasBeenSet() const { return m_userIdsToRemoveHasBeenSet; }
 
     /**
-     * <p>The list of user group IDs ro remove.</p>
+     * <p>The list of user IDs to remove.</p>
      */
     inline void SetUserIdsToRemove(const Aws::Vector<Aws::String>& value) { m_userIdsToRemoveHasBeenSet = true; m_userIdsToRemove = value; }
 
     /**
-     * <p>The list of user group IDs ro remove.</p>
+     * <p>The list of user IDs to remove.</p>
      */
     inline void SetUserIdsToRemove(Aws::Vector<Aws::String>&& value) { m_userIdsToRemoveHasBeenSet = true; m_userIdsToRemove = std::move(value); }
 
     /**
-     * <p>The list of user group IDs ro remove.</p>
+     * <p>The list of user IDs to remove.</p>
      */
     inline UserGroupPendingChanges& WithUserIdsToRemove(const Aws::Vector<Aws::String>& value) { SetUserIdsToRemove(value); return *this;}
 
     /**
-     * <p>The list of user group IDs ro remove.</p>
+     * <p>The list of user IDs to remove.</p>
      */
     inline UserGroupPendingChanges& WithUserIdsToRemove(Aws::Vector<Aws::String>&& value) { SetUserIdsToRemove(std::move(value)); return *this;}
 
     /**
-     * <p>The list of user group IDs ro remove.</p>
+     * <p>The list of user IDs to remove.</p>
      */
     inline UserGroupPendingChanges& AddUserIdsToRemove(const Aws::String& value) { m_userIdsToRemoveHasBeenSet = true; m_userIdsToRemove.push_back(value); return *this; }
 
     /**
-     * <p>The list of user group IDs ro remove.</p>
+     * <p>The list of user IDs to remove.</p>
      */
     inline UserGroupPendingChanges& AddUserIdsToRemove(Aws::String&& value) { m_userIdsToRemoveHasBeenSet = true; m_userIdsToRemove.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of user group IDs ro remove.</p>
+     * <p>The list of user IDs to remove.</p>
      */
     inline UserGroupPendingChanges& AddUserIdsToRemove(const char* value) { m_userIdsToRemoveHasBeenSet = true; m_userIdsToRemove.push_back(value); return *this; }
 

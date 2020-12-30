@@ -963,7 +963,7 @@ namespace Model
          * cross-region read replica clusters for ElastiCache for Redis to enable
          * low-latency reads and disaster recovery across regions. For more information,
          * see <a
-         * href="/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores.html">Replication
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
          * Across Regions Using Global Datastore</a>. </p> <ul> <li> <p>The
          * <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.</p>
          * </li> <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the
@@ -980,7 +980,7 @@ namespace Model
          * cross-region read replica clusters for ElastiCache for Redis to enable
          * low-latency reads and disaster recovery across regions. For more information,
          * see <a
-         * href="/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores.html">Replication
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
          * Across Regions Using Global Datastore</a>. </p> <ul> <li> <p>The
          * <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.</p>
          * </li> <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the
@@ -999,7 +999,7 @@ namespace Model
          * cross-region read replica clusters for ElastiCache for Redis to enable
          * low-latency reads and disaster recovery across regions. For more information,
          * see <a
-         * href="/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores.html">Replication
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
          * Across Regions Using Global Datastore</a>. </p> <ul> <li> <p>The
          * <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.</p>
          * </li> <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the

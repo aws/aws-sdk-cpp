@@ -144,73 +144,73 @@ namespace Model
 
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engine = value; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engine = std::move(value); }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline void SetEngine(const char* value) { m_engine.assign(value); }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline CreateUserResult& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline CreateUserResult& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis.</p>
      */
     inline CreateUserResult& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline const Aws::String& GetAccessString() const{ return m_accessString; }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline void SetAccessString(const Aws::String& value) { m_accessString = value; }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline void SetAccessString(Aws::String&& value) { m_accessString = std::move(value); }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline void SetAccessString(const char* value) { m_accessString.assign(value); }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline CreateUserResult& WithAccessString(const Aws::String& value) { SetAccessString(value); return *this;}
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline CreateUserResult& WithAccessString(Aws::String&& value) { SetAccessString(std::move(value)); return *this;}
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline CreateUserResult& WithAccessString(const char* value) { SetAccessString(value); return *this;}
 
@@ -283,37 +283,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline void SetARN(const char* value) { m_aRN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline CreateUserResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline CreateUserResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline CreateUserResult& WithARN(const char* value) { SetARN(value); return *this;}
 

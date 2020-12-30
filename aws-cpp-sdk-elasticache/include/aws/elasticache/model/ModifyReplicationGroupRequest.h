@@ -1163,7 +1163,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline const AuthTokenUpdateStrategyType& GetAuthTokenUpdateStrategy() const{ return m_authTokenUpdateStrategy; }
@@ -1173,7 +1173,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline bool AuthTokenUpdateStrategyHasBeenSet() const { return m_authTokenUpdateStrategyHasBeenSet; }
@@ -1183,7 +1183,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline void SetAuthTokenUpdateStrategy(const AuthTokenUpdateStrategyType& value) { m_authTokenUpdateStrategyHasBeenSet = true; m_authTokenUpdateStrategy = value; }
@@ -1193,7 +1193,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline void SetAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType&& value) { m_authTokenUpdateStrategyHasBeenSet = true; m_authTokenUpdateStrategy = std::move(value); }
@@ -1203,7 +1203,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline ModifyReplicationGroupRequest& WithAuthTokenUpdateStrategy(const AuthTokenUpdateStrategyType& value) { SetAuthTokenUpdateStrategy(value); return *this;}
@@ -1213,7 +1213,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline ModifyReplicationGroupRequest& WithAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType&& value) { SetAuthTokenUpdateStrategy(std::move(value)); return *this;}

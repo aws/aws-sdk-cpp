@@ -128,42 +128,42 @@ namespace Model
 
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline UserGroup& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline UserGroup& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Must be Redis. </p>
+     * <p>The current supported value is Redis. </p>
      */
     inline UserGroup& WithEngine(const char* value) { SetEngine(value); return *this;}
 

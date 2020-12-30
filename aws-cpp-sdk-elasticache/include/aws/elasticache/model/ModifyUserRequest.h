@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline const Aws::String& GetAccessString() const{ return m_accessString; }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline bool AccessStringHasBeenSet() const { return m_accessStringHasBeenSet; }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline void SetAccessString(const Aws::String& value) { m_accessStringHasBeenSet = true; m_accessString = value; }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline void SetAccessString(Aws::String&& value) { m_accessStringHasBeenSet = true; m_accessString = std::move(value); }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline void SetAccessString(const char* value) { m_accessStringHasBeenSet = true; m_accessString.assign(value); }
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline ModifyUserRequest& WithAccessString(const Aws::String& value) { SetAccessString(value); return *this;}
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline ModifyUserRequest& WithAccessString(Aws::String&& value) { SetAccessString(std::move(value)); return *this;}
 
     /**
-     * <p>Access permissions string used for this user account.</p>
+     * <p>Access permissions string used for this user.</p>
      */
     inline ModifyUserRequest& WithAccessString(const char* value) { SetAccessString(value); return *this;}
 
@@ -161,68 +161,68 @@ namespace Model
 
 
     /**
-     * <p>The passwords belonging to the user account. You are allowed up to two.</p>
+     * <p>The passwords belonging to the user. You are allowed up to two.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPasswords() const{ return m_passwords; }
 
     /**
-     * <p>The passwords belonging to the user account. You are allowed up to two.</p>
+     * <p>The passwords belonging to the user. You are allowed up to two.</p>
      */
     inline bool PasswordsHasBeenSet() const { return m_passwordsHasBeenSet; }
 
     /**
-     * <p>The passwords belonging to the user account. You are allowed up to two.</p>
+     * <p>The passwords belonging to the user. You are allowed up to two.</p>
      */
     inline void SetPasswords(const Aws::Vector<Aws::String>& value) { m_passwordsHasBeenSet = true; m_passwords = value; }
 
     /**
-     * <p>The passwords belonging to the user account. You are allowed up to two.</p>
+     * <p>The passwords belonging to the user. You are allowed up to two.</p>
      */
     inline void SetPasswords(Aws::Vector<Aws::String>&& value) { m_passwordsHasBeenSet = true; m_passwords = std::move(value); }
 
     /**
-     * <p>The passwords belonging to the user account. You are allowed up to two.</p>
+     * <p>The passwords belonging to the user. You are allowed up to two.</p>
      */
     inline ModifyUserRequest& WithPasswords(const Aws::Vector<Aws::String>& value) { SetPasswords(value); return *this;}
 
     /**
-     * <p>The passwords belonging to the user account. You are allowed up to two.</p>
+     * <p>The passwords belonging to the user. You are allowed up to two.</p>
      */
     inline ModifyUserRequest& WithPasswords(Aws::Vector<Aws::String>&& value) { SetPasswords(std::move(value)); return *this;}
 
     /**
-     * <p>The passwords belonging to the user account. You are allowed up to two.</p>
+     * <p>The passwords belonging to the user. You are allowed up to two.</p>
      */
     inline ModifyUserRequest& AddPasswords(const Aws::String& value) { m_passwordsHasBeenSet = true; m_passwords.push_back(value); return *this; }
 
     /**
-     * <p>The passwords belonging to the user account. You are allowed up to two.</p>
+     * <p>The passwords belonging to the user. You are allowed up to two.</p>
      */
     inline ModifyUserRequest& AddPasswords(Aws::String&& value) { m_passwordsHasBeenSet = true; m_passwords.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The passwords belonging to the user account. You are allowed up to two.</p>
+     * <p>The passwords belonging to the user. You are allowed up to two.</p>
      */
     inline ModifyUserRequest& AddPasswords(const char* value) { m_passwordsHasBeenSet = true; m_passwords.push_back(value); return *this; }
 
 
     /**
-     * <p>Indicates no password is required for the user account.</p>
+     * <p>Indicates no password is required for the user.</p>
      */
     inline bool GetNoPasswordRequired() const{ return m_noPasswordRequired; }
 
     /**
-     * <p>Indicates no password is required for the user account.</p>
+     * <p>Indicates no password is required for the user.</p>
      */
     inline bool NoPasswordRequiredHasBeenSet() const { return m_noPasswordRequiredHasBeenSet; }
 
     /**
-     * <p>Indicates no password is required for the user account.</p>
+     * <p>Indicates no password is required for the user.</p>
      */
     inline void SetNoPasswordRequired(bool value) { m_noPasswordRequiredHasBeenSet = true; m_noPasswordRequired = value; }
 
     /**
-     * <p>Indicates no password is required for the user account.</p>
+     * <p>Indicates no password is required for the user.</p>
      */
     inline ModifyUserRequest& WithNoPasswordRequired(bool value) { SetNoPasswordRequired(value); return *this;}
 
