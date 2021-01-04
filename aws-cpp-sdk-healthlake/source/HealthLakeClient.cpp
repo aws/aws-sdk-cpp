@@ -23,8 +23,10 @@
 #include <aws/healthlake/model/CreateFHIRDatastoreRequest.h>
 #include <aws/healthlake/model/DeleteFHIRDatastoreRequest.h>
 #include <aws/healthlake/model/DescribeFHIRDatastoreRequest.h>
+#include <aws/healthlake/model/DescribeFHIRExportJobRequest.h>
 #include <aws/healthlake/model/DescribeFHIRImportJobRequest.h>
 #include <aws/healthlake/model/ListFHIRDatastoresRequest.h>
+#include <aws/healthlake/model/StartFHIRExportJobRequest.h>
 #include <aws/healthlake/model/StartFHIRImportJobRequest.h>
 
 using namespace Aws;
@@ -181,6 +183,33 @@ void HealthLakeClient::DescribeFHIRDatastoreAsyncHelper(const DescribeFHIRDatast
   handler(this, request, DescribeFHIRDatastore(request), context);
 }
 
+DescribeFHIRExportJobOutcome HealthLakeClient::DescribeFHIRExportJob(const DescribeFHIRExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeFHIRExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFHIRExportJobOutcomeCallable HealthLakeClient::DescribeFHIRExportJobCallable(const DescribeFHIRExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFHIRExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFHIRExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void HealthLakeClient::DescribeFHIRExportJobAsync(const DescribeFHIRExportJobRequest& request, const DescribeFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFHIRExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void HealthLakeClient::DescribeFHIRExportJobAsyncHelper(const DescribeFHIRExportJobRequest& request, const DescribeFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFHIRExportJob(request), context);
+}
+
 DescribeFHIRImportJobOutcome HealthLakeClient::DescribeFHIRImportJob(const DescribeFHIRImportJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -233,6 +262,33 @@ void HealthLakeClient::ListFHIRDatastoresAsync(const ListFHIRDatastoresRequest& 
 void HealthLakeClient::ListFHIRDatastoresAsyncHelper(const ListFHIRDatastoresRequest& request, const ListFHIRDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFHIRDatastores(request), context);
+}
+
+StartFHIRExportJobOutcome HealthLakeClient::StartFHIRExportJob(const StartFHIRExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartFHIRExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartFHIRExportJobOutcomeCallable HealthLakeClient::StartFHIRExportJobCallable(const StartFHIRExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartFHIRExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartFHIRExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void HealthLakeClient::StartFHIRExportJobAsync(const StartFHIRExportJobRequest& request, const StartFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartFHIRExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void HealthLakeClient::StartFHIRExportJobAsyncHelper(const StartFHIRExportJobRequest& request, const StartFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartFHIRExportJob(request), context);
 }
 
 StartFHIRImportJobOutcome HealthLakeClient::StartFHIRImportJob(const StartFHIRImportJobRequest& request) const

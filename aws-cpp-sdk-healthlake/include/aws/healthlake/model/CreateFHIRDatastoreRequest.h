@@ -38,110 +38,116 @@ namespace Model
 
 
     /**
-     * <p>The user generated name for the datastore.</p>
+     * <p>The user generated name for the Data Store.</p>
      */
     inline const Aws::String& GetDatastoreName() const{ return m_datastoreName; }
 
     /**
-     * <p>The user generated name for the datastore.</p>
+     * <p>The user generated name for the Data Store.</p>
      */
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
 
     /**
-     * <p>The user generated name for the datastore.</p>
+     * <p>The user generated name for the Data Store.</p>
      */
     inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
 
     /**
-     * <p>The user generated name for the datastore.</p>
+     * <p>The user generated name for the Data Store.</p>
      */
     inline void SetDatastoreName(Aws::String&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::move(value); }
 
     /**
-     * <p>The user generated name for the datastore.</p>
+     * <p>The user generated name for the Data Store.</p>
      */
     inline void SetDatastoreName(const char* value) { m_datastoreNameHasBeenSet = true; m_datastoreName.assign(value); }
 
     /**
-     * <p>The user generated name for the datastore.</p>
+     * <p>The user generated name for the Data Store.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreName(const Aws::String& value) { SetDatastoreName(value); return *this;}
 
     /**
-     * <p>The user generated name for the datastore.</p>
+     * <p>The user generated name for the Data Store.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreName(Aws::String&& value) { SetDatastoreName(std::move(value)); return *this;}
 
     /**
-     * <p>The user generated name for the datastore.</p>
+     * <p>The user generated name for the Data Store.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreName(const char* value) { SetDatastoreName(value); return *this;}
 
 
     /**
-     * <p>The FHIR version of the datastore. The only supported version is R4.</p>
+     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
      */
     inline const FHIRVersion& GetDatastoreTypeVersion() const{ return m_datastoreTypeVersion; }
 
     /**
-     * <p>The FHIR version of the datastore. The only supported version is R4.</p>
+     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
      */
     inline bool DatastoreTypeVersionHasBeenSet() const { return m_datastoreTypeVersionHasBeenSet; }
 
     /**
-     * <p>The FHIR version of the datastore. The only supported version is R4.</p>
+     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
      */
     inline void SetDatastoreTypeVersion(const FHIRVersion& value) { m_datastoreTypeVersionHasBeenSet = true; m_datastoreTypeVersion = value; }
 
     /**
-     * <p>The FHIR version of the datastore. The only supported version is R4.</p>
+     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
      */
     inline void SetDatastoreTypeVersion(FHIRVersion&& value) { m_datastoreTypeVersionHasBeenSet = true; m_datastoreTypeVersion = std::move(value); }
 
     /**
-     * <p>The FHIR version of the datastore. The only supported version is R4.</p>
+     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreTypeVersion(const FHIRVersion& value) { SetDatastoreTypeVersion(value); return *this;}
 
     /**
-     * <p>The FHIR version of the datastore. The only supported version is R4.</p>
+     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreTypeVersion(FHIRVersion&& value) { SetDatastoreTypeVersion(std::move(value)); return *this;}
 
 
     /**
-     * <p>Optional parameter to preload data upon creation of the datastore. Currently,
-     * the only supported preloaded data is synthetic data generated from Synthea.</p>
+     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * Currently, the only supported preloaded data is synthetic data generated from
+     * Synthea.</p>
      */
     inline const PreloadDataConfig& GetPreloadDataConfig() const{ return m_preloadDataConfig; }
 
     /**
-     * <p>Optional parameter to preload data upon creation of the datastore. Currently,
-     * the only supported preloaded data is synthetic data generated from Synthea.</p>
+     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * Currently, the only supported preloaded data is synthetic data generated from
+     * Synthea.</p>
      */
     inline bool PreloadDataConfigHasBeenSet() const { return m_preloadDataConfigHasBeenSet; }
 
     /**
-     * <p>Optional parameter to preload data upon creation of the datastore. Currently,
-     * the only supported preloaded data is synthetic data generated from Synthea.</p>
+     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * Currently, the only supported preloaded data is synthetic data generated from
+     * Synthea.</p>
      */
     inline void SetPreloadDataConfig(const PreloadDataConfig& value) { m_preloadDataConfigHasBeenSet = true; m_preloadDataConfig = value; }
 
     /**
-     * <p>Optional parameter to preload data upon creation of the datastore. Currently,
-     * the only supported preloaded data is synthetic data generated from Synthea.</p>
+     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * Currently, the only supported preloaded data is synthetic data generated from
+     * Synthea.</p>
      */
     inline void SetPreloadDataConfig(PreloadDataConfig&& value) { m_preloadDataConfigHasBeenSet = true; m_preloadDataConfig = std::move(value); }
 
     /**
-     * <p>Optional parameter to preload data upon creation of the datastore. Currently,
-     * the only supported preloaded data is synthetic data generated from Synthea.</p>
+     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * Currently, the only supported preloaded data is synthetic data generated from
+     * Synthea.</p>
      */
     inline CreateFHIRDatastoreRequest& WithPreloadDataConfig(const PreloadDataConfig& value) { SetPreloadDataConfig(value); return *this;}
 
     /**
-     * <p>Optional parameter to preload data upon creation of the datastore. Currently,
-     * the only supported preloaded data is synthetic data generated from Synthea.</p>
+     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * Currently, the only supported preloaded data is synthetic data generated from
+     * Synthea.</p>
      */
     inline CreateFHIRDatastoreRequest& WithPreloadDataConfig(PreloadDataConfig&& value) { SetPreloadDataConfig(std::move(value)); return *this;}
 

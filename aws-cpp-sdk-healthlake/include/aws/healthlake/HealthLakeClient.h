@@ -14,8 +14,10 @@
 #include <aws/healthlake/model/CreateFHIRDatastoreResult.h>
 #include <aws/healthlake/model/DeleteFHIRDatastoreResult.h>
 #include <aws/healthlake/model/DescribeFHIRDatastoreResult.h>
+#include <aws/healthlake/model/DescribeFHIRExportJobResult.h>
 #include <aws/healthlake/model/DescribeFHIRImportJobResult.h>
 #include <aws/healthlake/model/ListFHIRDatastoresResult.h>
+#include <aws/healthlake/model/StartFHIRExportJobResult.h>
 #include <aws/healthlake/model/StartFHIRImportJobResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -59,22 +61,28 @@ namespace Model
         class CreateFHIRDatastoreRequest;
         class DeleteFHIRDatastoreRequest;
         class DescribeFHIRDatastoreRequest;
+        class DescribeFHIRExportJobRequest;
         class DescribeFHIRImportJobRequest;
         class ListFHIRDatastoresRequest;
+        class StartFHIRExportJobRequest;
         class StartFHIRImportJobRequest;
 
         typedef Aws::Utils::Outcome<CreateFHIRDatastoreResult, HealthLakeError> CreateFHIRDatastoreOutcome;
         typedef Aws::Utils::Outcome<DeleteFHIRDatastoreResult, HealthLakeError> DeleteFHIRDatastoreOutcome;
         typedef Aws::Utils::Outcome<DescribeFHIRDatastoreResult, HealthLakeError> DescribeFHIRDatastoreOutcome;
+        typedef Aws::Utils::Outcome<DescribeFHIRExportJobResult, HealthLakeError> DescribeFHIRExportJobOutcome;
         typedef Aws::Utils::Outcome<DescribeFHIRImportJobResult, HealthLakeError> DescribeFHIRImportJobOutcome;
         typedef Aws::Utils::Outcome<ListFHIRDatastoresResult, HealthLakeError> ListFHIRDatastoresOutcome;
+        typedef Aws::Utils::Outcome<StartFHIRExportJobResult, HealthLakeError> StartFHIRExportJobOutcome;
         typedef Aws::Utils::Outcome<StartFHIRImportJobResult, HealthLakeError> StartFHIRImportJobOutcome;
 
         typedef std::future<CreateFHIRDatastoreOutcome> CreateFHIRDatastoreOutcomeCallable;
         typedef std::future<DeleteFHIRDatastoreOutcome> DeleteFHIRDatastoreOutcomeCallable;
         typedef std::future<DescribeFHIRDatastoreOutcome> DescribeFHIRDatastoreOutcomeCallable;
+        typedef std::future<DescribeFHIRExportJobOutcome> DescribeFHIRExportJobOutcomeCallable;
         typedef std::future<DescribeFHIRImportJobOutcome> DescribeFHIRImportJobOutcomeCallable;
         typedef std::future<ListFHIRDatastoresOutcome> ListFHIRDatastoresOutcomeCallable;
+        typedef std::future<StartFHIRExportJobOutcome> StartFHIRExportJobOutcomeCallable;
         typedef std::future<StartFHIRImportJobOutcome> StartFHIRImportJobOutcomeCallable;
 } // namespace Model
 
@@ -83,14 +91,16 @@ namespace Model
     typedef std::function<void(const HealthLakeClient*, const Model::CreateFHIRDatastoreRequest&, const Model::CreateFHIRDatastoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFHIRDatastoreResponseReceivedHandler;
     typedef std::function<void(const HealthLakeClient*, const Model::DeleteFHIRDatastoreRequest&, const Model::DeleteFHIRDatastoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFHIRDatastoreResponseReceivedHandler;
     typedef std::function<void(const HealthLakeClient*, const Model::DescribeFHIRDatastoreRequest&, const Model::DescribeFHIRDatastoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFHIRDatastoreResponseReceivedHandler;
+    typedef std::function<void(const HealthLakeClient*, const Model::DescribeFHIRExportJobRequest&, const Model::DescribeFHIRExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFHIRExportJobResponseReceivedHandler;
     typedef std::function<void(const HealthLakeClient*, const Model::DescribeFHIRImportJobRequest&, const Model::DescribeFHIRImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFHIRImportJobResponseReceivedHandler;
     typedef std::function<void(const HealthLakeClient*, const Model::ListFHIRDatastoresRequest&, const Model::ListFHIRDatastoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFHIRDatastoresResponseReceivedHandler;
+    typedef std::function<void(const HealthLakeClient*, const Model::StartFHIRExportJobRequest&, const Model::StartFHIRExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFHIRExportJobResponseReceivedHandler;
     typedef std::function<void(const HealthLakeClient*, const Model::StartFHIRImportJobRequest&, const Model::StartFHIRImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFHIRImportJobResponseReceivedHandler;
 
   /**
    * <p>Amazon HealthLake is a HIPAA eligibile service that allows customers to
-   * store, transform, query, and analyze their data in a consistent fashion in the
-   * cloud.</p>
+   * store, transform, query, and analyze their FHIR-formatted data in a consistent
+   * fashion in the cloud.</p>
    */
   class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient
   {
@@ -120,16 +130,16 @@ namespace Model
 
 
         /**
-         * <p>Creates a datastore that can ingest and export FHIR data.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a Data Store that can ingest and export FHIR formatted
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFHIRDatastoreOutcome CreateFHIRDatastore(const Model::CreateFHIRDatastoreRequest& request) const;
 
         /**
-         * <p>Creates a datastore that can ingest and export FHIR data.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a Data Store that can ingest and export FHIR formatted
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">AWS
          * API Reference</a></p>
          *
@@ -138,8 +148,8 @@ namespace Model
         virtual Model::CreateFHIRDatastoreOutcomeCallable CreateFHIRDatastoreCallable(const Model::CreateFHIRDatastoreRequest& request) const;
 
         /**
-         * <p>Creates a datastore that can ingest and export FHIR data.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a Data Store that can ingest and export FHIR formatted
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">AWS
          * API Reference</a></p>
          *
@@ -148,14 +158,14 @@ namespace Model
         virtual void CreateFHIRDatastoreAsync(const Model::CreateFHIRDatastoreRequest& request, const CreateFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a datastore. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Data Store. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFHIRDatastoreOutcome DeleteFHIRDatastore(const Model::DeleteFHIRDatastoreRequest& request) const;
 
         /**
-         * <p>Deletes a datastore. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Data Store. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">AWS
          * API Reference</a></p>
          *
@@ -164,7 +174,7 @@ namespace Model
         virtual Model::DeleteFHIRDatastoreOutcomeCallable DeleteFHIRDatastoreCallable(const Model::DeleteFHIRDatastoreRequest& request) const;
 
         /**
-         * <p>Deletes a datastore. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Data Store. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">AWS
          * API Reference</a></p>
          *
@@ -173,18 +183,18 @@ namespace Model
         virtual void DeleteFHIRDatastoreAsync(const Model::DeleteFHIRDatastoreRequest& request, const DeleteFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the properties associated with the FHIR datastore, including the
-         * datastore ID, datastore ARN, datastore name, datastore status, created at,
-         * datastore type version, and datastore endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the properties associated with the FHIR Data Store, including the Data
+         * Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data
+         * Store type version, and Data Store endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRDatastore">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeFHIRDatastoreOutcome DescribeFHIRDatastore(const Model::DescribeFHIRDatastoreRequest& request) const;
 
         /**
-         * <p>Gets the properties associated with the FHIR datastore, including the
-         * datastore ID, datastore ARN, datastore name, datastore status, created at,
-         * datastore type version, and datastore endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the properties associated with the FHIR Data Store, including the Data
+         * Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data
+         * Store type version, and Data Store endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRDatastore">AWS
          * API Reference</a></p>
          *
@@ -193,9 +203,9 @@ namespace Model
         virtual Model::DescribeFHIRDatastoreOutcomeCallable DescribeFHIRDatastoreCallable(const Model::DescribeFHIRDatastoreRequest& request) const;
 
         /**
-         * <p>Gets the properties associated with the FHIR datastore, including the
-         * datastore ID, datastore ARN, datastore name, datastore status, created at,
-         * datastore type version, and datastore endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the properties associated with the FHIR Data Store, including the Data
+         * Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data
+         * Store type version, and Data Store endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRDatastore">AWS
          * API Reference</a></p>
          *
@@ -204,8 +214,36 @@ namespace Model
         virtual void DescribeFHIRDatastoreAsync(const Model::DescribeFHIRDatastoreRequest& request, const DescribeFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Displays the properties of a FHIR export job, including the ID, ARN, name,
+         * and the status of the job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFHIRExportJobOutcome DescribeFHIRExportJob(const Model::DescribeFHIRExportJobRequest& request) const;
+
+        /**
+         * <p>Displays the properties of a FHIR export job, including the ID, ARN, name,
+         * and the status of the job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFHIRExportJobOutcomeCallable DescribeFHIRExportJobCallable(const Model::DescribeFHIRExportJobRequest& request) const;
+
+        /**
+         * <p>Displays the properties of a FHIR export job, including the ID, ARN, name,
+         * and the status of the job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFHIRExportJobAsync(const Model::DescribeFHIRExportJobRequest& request, const DescribeFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Displays the properties of a FHIR import job, including the ID, ARN, name,
-         * and the status of the datastore.</p><p><h3>See Also:</h3>   <a
+         * and the status of the job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRImportJob">AWS
          * API Reference</a></p>
          */
@@ -213,7 +251,7 @@ namespace Model
 
         /**
          * <p>Displays the properties of a FHIR import job, including the ID, ARN, name,
-         * and the status of the datastore.</p><p><h3>See Also:</h3>   <a
+         * and the status of the job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRImportJob">AWS
          * API Reference</a></p>
          *
@@ -223,7 +261,7 @@ namespace Model
 
         /**
          * <p>Displays the properties of a FHIR import job, including the ID, ARN, name,
-         * and the status of the datastore.</p><p><h3>See Also:</h3>   <a
+         * and the status of the job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRImportJob">AWS
          * API Reference</a></p>
          *
@@ -232,16 +270,16 @@ namespace Model
         virtual void DescribeFHIRImportJobAsync(const Model::DescribeFHIRImportJobRequest& request, const DescribeFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all FHIR datastores that are in the user’s account, regardless of
-         * datastore status.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all FHIR Data Stores that are in the user’s account, regardless of Data
+         * Store status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRDatastores">AWS
          * API Reference</a></p>
          */
         virtual Model::ListFHIRDatastoresOutcome ListFHIRDatastores(const Model::ListFHIRDatastoresRequest& request) const;
 
         /**
-         * <p>Lists all FHIR datastores that are in the user’s account, regardless of
-         * datastore status.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all FHIR Data Stores that are in the user’s account, regardless of Data
+         * Store status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRDatastores">AWS
          * API Reference</a></p>
          *
@@ -250,14 +288,39 @@ namespace Model
         virtual Model::ListFHIRDatastoresOutcomeCallable ListFHIRDatastoresCallable(const Model::ListFHIRDatastoresRequest& request) const;
 
         /**
-         * <p>Lists all FHIR datastores that are in the user’s account, regardless of
-         * datastore status.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all FHIR Data Stores that are in the user’s account, regardless of Data
+         * Store status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRDatastores">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListFHIRDatastoresAsync(const Model::ListFHIRDatastoresRequest& request, const ListFHIRDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Begins a FHIR export job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartFHIRExportJobOutcome StartFHIRExportJob(const Model::StartFHIRExportJobRequest& request) const;
+
+        /**
+         * <p>Begins a FHIR export job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartFHIRExportJobOutcomeCallable StartFHIRExportJobCallable(const Model::StartFHIRExportJobRequest& request) const;
+
+        /**
+         * <p>Begins a FHIR export job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartFHIRExportJobAsync(const Model::StartFHIRExportJobRequest& request, const StartFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Begins a FHIR Import job.</p><p><h3>See Also:</h3>   <a
@@ -291,8 +354,10 @@ namespace Model
         void CreateFHIRDatastoreAsyncHelper(const Model::CreateFHIRDatastoreRequest& request, const CreateFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFHIRDatastoreAsyncHelper(const Model::DeleteFHIRDatastoreRequest& request, const DeleteFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFHIRDatastoreAsyncHelper(const Model::DescribeFHIRDatastoreRequest& request, const DescribeFHIRDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFHIRExportJobAsyncHelper(const Model::DescribeFHIRExportJobRequest& request, const DescribeFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFHIRImportJobAsyncHelper(const Model::DescribeFHIRImportJobRequest& request, const DescribeFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFHIRDatastoresAsyncHelper(const Model::ListFHIRDatastoresRequest& request, const ListFHIRDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartFHIRExportJobAsyncHelper(const Model::StartFHIRExportJobRequest& request, const StartFHIRExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartFHIRImportJobAsyncHelper(const Model::StartFHIRImportJobRequest& request, const StartFHIRImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>All properties associated with the listed datastores.</p>
+     * <p>All properties associated with the listed Data Stores.</p>
      */
     inline const Aws::Vector<DatastoreProperties>& GetDatastorePropertiesList() const{ return m_datastorePropertiesList; }
 
     /**
-     * <p>All properties associated with the listed datastores.</p>
+     * <p>All properties associated with the listed Data Stores.</p>
      */
     inline void SetDatastorePropertiesList(const Aws::Vector<DatastoreProperties>& value) { m_datastorePropertiesList = value; }
 
     /**
-     * <p>All properties associated with the listed datastores.</p>
+     * <p>All properties associated with the listed Data Stores.</p>
      */
     inline void SetDatastorePropertiesList(Aws::Vector<DatastoreProperties>&& value) { m_datastorePropertiesList = std::move(value); }
 
     /**
-     * <p>All properties associated with the listed datastores.</p>
+     * <p>All properties associated with the listed Data Stores.</p>
      */
     inline ListFHIRDatastoresResult& WithDatastorePropertiesList(const Aws::Vector<DatastoreProperties>& value) { SetDatastorePropertiesList(value); return *this;}
 
     /**
-     * <p>All properties associated with the listed datastores.</p>
+     * <p>All properties associated with the listed Data Stores.</p>
      */
     inline ListFHIRDatastoresResult& WithDatastorePropertiesList(Aws::Vector<DatastoreProperties>&& value) { SetDatastorePropertiesList(std::move(value)); return *this;}
 
     /**
-     * <p>All properties associated with the listed datastores.</p>
+     * <p>All properties associated with the listed Data Stores.</p>
      */
     inline ListFHIRDatastoresResult& AddDatastorePropertiesList(const DatastoreProperties& value) { m_datastorePropertiesList.push_back(value); return *this; }
 
     /**
-     * <p>All properties associated with the listed datastores.</p>
+     * <p>All properties associated with the listed Data Stores.</p>
      */
     inline ListFHIRDatastoresResult& AddDatastorePropertiesList(DatastoreProperties&& value) { m_datastorePropertiesList.push_back(std::move(value)); return *this; }
 

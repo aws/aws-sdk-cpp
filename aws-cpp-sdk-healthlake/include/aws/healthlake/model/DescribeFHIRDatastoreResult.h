@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>All properties associated with a datastore, including the datastore ID,
-     * datastore ARN, datastore name, datastore status, created at, datastore type
-     * version, and datastore endpoint.</p>
+     * <p>All properties associated with a Data Store, including the Data Store ID,
+     * Data Store ARN, Data Store name, Data Store status, created at, Data Store type
+     * version, and Data Store endpoint.</p>
      */
     inline const DatastoreProperties& GetDatastoreProperties() const{ return m_datastoreProperties; }
 
     /**
-     * <p>All properties associated with a datastore, including the datastore ID,
-     * datastore ARN, datastore name, datastore status, created at, datastore type
-     * version, and datastore endpoint.</p>
+     * <p>All properties associated with a Data Store, including the Data Store ID,
+     * Data Store ARN, Data Store name, Data Store status, created at, Data Store type
+     * version, and Data Store endpoint.</p>
      */
     inline void SetDatastoreProperties(const DatastoreProperties& value) { m_datastoreProperties = value; }
 
     /**
-     * <p>All properties associated with a datastore, including the datastore ID,
-     * datastore ARN, datastore name, datastore status, created at, datastore type
-     * version, and datastore endpoint.</p>
+     * <p>All properties associated with a Data Store, including the Data Store ID,
+     * Data Store ARN, Data Store name, Data Store status, created at, Data Store type
+     * version, and Data Store endpoint.</p>
      */
     inline void SetDatastoreProperties(DatastoreProperties&& value) { m_datastoreProperties = std::move(value); }
 
     /**
-     * <p>All properties associated with a datastore, including the datastore ID,
-     * datastore ARN, datastore name, datastore status, created at, datastore type
-     * version, and datastore endpoint.</p>
+     * <p>All properties associated with a Data Store, including the Data Store ID,
+     * Data Store ARN, Data Store name, Data Store status, created at, Data Store type
+     * version, and Data Store endpoint.</p>
      */
     inline DescribeFHIRDatastoreResult& WithDatastoreProperties(const DatastoreProperties& value) { SetDatastoreProperties(value); return *this;}
 
     /**
-     * <p>All properties associated with a datastore, including the datastore ID,
-     * datastore ARN, datastore name, datastore status, created at, datastore type
-     * version, and datastore endpoint.</p>
+     * <p>All properties associated with a Data Store, including the Data Store ID,
+     * Data Store ARN, Data Store name, Data Store status, created at, Data Store type
+     * version, and Data Store endpoint.</p>
      */
     inline DescribeFHIRDatastoreResult& WithDatastoreProperties(DatastoreProperties&& value) { SetDatastoreProperties(std::move(value)); return *this;}
 

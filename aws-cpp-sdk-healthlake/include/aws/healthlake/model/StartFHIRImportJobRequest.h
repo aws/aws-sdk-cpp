@@ -115,42 +115,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline StartFHIRImportJobRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline StartFHIRImportJobRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS-generated datastore ID.</p>
+     * <p>The AWS-generated Data Store ID.</p>
      */
     inline StartFHIRImportJobRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
 

@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>Displays the properties of the import job, including the ID, Arn, Name, and
-   * the status of the datastore.</p><p><h3>See Also:</h3>   <a
+   * the status of the Data Store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ImportJobProperties">AWS
    * API Reference</a></p>
    */
