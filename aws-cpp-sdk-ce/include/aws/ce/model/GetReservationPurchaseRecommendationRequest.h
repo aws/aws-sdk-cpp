@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/CostExplorerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/Expression.h>
 #include <aws/ce/model/AccountScope.h>
 #include <aws/ce/model/LookbackPeriodInDays.h>
 #include <aws/ce/model/TermInYears.h>
@@ -119,6 +120,25 @@ namespace Model
      * <p>The specific service that you want recommendations for.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithService(const char* value) { SetService(value); return *this;}
+
+
+    
+    inline const Expression& GetFilter() const{ return m_filter; }
+
+    
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    
+    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    
+    inline GetReservationPurchaseRecommendationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
+
+    
+    inline GetReservationPurchaseRecommendationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -386,6 +406,9 @@ namespace Model
 
     Aws::String m_service;
     bool m_serviceHasBeenSet;
+
+    Expression m_filter;
+    bool m_filterHasBeenSet;
 
     AccountScope m_accountScope;
     bool m_accountScopeHasBeenSet;

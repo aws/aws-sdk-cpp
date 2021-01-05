@@ -10,6 +10,9 @@
 #include <aws/ce/model/DateInterval.h>
 #include <aws/ce/model/Dimension.h>
 #include <aws/ce/model/Context.h>
+#include <aws/ce/model/Expression.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ce/model/SortDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -555,6 +558,187 @@ namespace Model
     inline GetDimensionValuesRequest& WithContext(Context&& value) { SetContext(std::move(value)); return *this;}
 
 
+    
+    inline const Expression& GetFilter() const{ return m_filter; }
+
+    
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    
+    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    
+    inline GetDimensionValuesRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
+
+    
+    inline GetDimensionValuesRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
+     * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
+     * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+     * are not supported.</p>
+     */
+    inline const Aws::Vector<SortDefinition>& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
+     * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
+     * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+     * are not supported.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
+     * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
+     * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+     * are not supported.</p>
+     */
+    inline void SetSortBy(const Aws::Vector<SortDefinition>& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
+     * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
+     * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+     * are not supported.</p>
+     */
+    inline void SetSortBy(Aws::Vector<SortDefinition>&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
+     * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
+     * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+     * are not supported.</p>
+     */
+    inline GetDimensionValuesRequest& WithSortBy(const Aws::Vector<SortDefinition>& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
+     * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
+     * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+     * are not supported.</p>
+     */
+    inline GetDimensionValuesRequest& WithSortBy(Aws::Vector<SortDefinition>&& value) { SetSortBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
+     * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
+     * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+     * are not supported.</p>
+     */
+    inline GetDimensionValuesRequest& AddSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(value); return *this; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p> <p>When you specify a <code>SortBy</code>
+     * paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using
+     * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+     * are not supported.</p>
+     */
+    inline GetDimensionValuesRequest& AddSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>This field is only used when SortBy is provided in the request. The maximum
+     * number of objects that to be returned for this request. If MaxResults is not
+     * specified with SortBy, the request will return 1000 results as the default value
+     * for this parameter.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>This field is only used when SortBy is provided in the request. The maximum
+     * number of objects that to be returned for this request. If MaxResults is not
+     * specified with SortBy, the request will return 1000 results as the default value
+     * for this parameter.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>This field is only used when SortBy is provided in the request. The maximum
+     * number of objects that to be returned for this request. If MaxResults is not
+     * specified with SortBy, the request will return 1000 results as the default value
+     * for this parameter.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>This field is only used when SortBy is provided in the request. The maximum
+     * number of objects that to be returned for this request. If MaxResults is not
+     * specified with SortBy, the request will return 1000 results as the default value
+     * for this parameter.</p>
+     */
+    inline GetDimensionValuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
     /**
      * <p>The token to retrieve the next set of results. AWS provides the token when
      * the response from a previous call has more results than the maximum page
@@ -624,6 +808,15 @@ namespace Model
 
     Context m_context;
     bool m_contextHasBeenSet;
+
+    Expression m_filter;
+    bool m_filterHasBeenSet;
+
+    Aws::Vector<SortDefinition> m_sortBy;
+    bool m_sortByHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
 
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;

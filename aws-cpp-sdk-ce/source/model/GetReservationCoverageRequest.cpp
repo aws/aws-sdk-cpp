@@ -19,7 +19,10 @@ GetReservationCoverageRequest::GetReservationCoverageRequest() :
     m_granularityHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_metricsHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false)
+    m_nextPageTokenHasBeenSet(false),
+    m_sortByHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,18 @@ Aws::String GetReservationCoverageRequest::SerializePayload() const
   if(m_nextPageTokenHasBeenSet)
   {
    payload.WithString("NextPageToken", m_nextPageToken);
+
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithObject("SortBy", m_sortBy.Jsonize());
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 

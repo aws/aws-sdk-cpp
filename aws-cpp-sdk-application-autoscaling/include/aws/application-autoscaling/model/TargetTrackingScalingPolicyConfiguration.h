@@ -40,26 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
-     * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+     * <p>The target value for the metric. Although this property accepts numbers of
+     * type Double, it won't accept values that are either too small or too large.
+     * Values must be in the range of -2^360 to 2^360. The value must be a valid number
+     * based on the choice of metric. For example, if the metric is CPU utilization,
+     * then the target value is a percent value that represents how much of the CPU can
+     * be used before scaling out. </p>
      */
     inline double GetTargetValue() const{ return m_targetValue; }
 
     /**
-     * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
-     * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+     * <p>The target value for the metric. Although this property accepts numbers of
+     * type Double, it won't accept values that are either too small or too large.
+     * Values must be in the range of -2^360 to 2^360. The value must be a valid number
+     * based on the choice of metric. For example, if the metric is CPU utilization,
+     * then the target value is a percent value that represents how much of the CPU can
+     * be used before scaling out. </p>
      */
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
 
     /**
-     * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
-     * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+     * <p>The target value for the metric. Although this property accepts numbers of
+     * type Double, it won't accept values that are either too small or too large.
+     * Values must be in the range of -2^360 to 2^360. The value must be a valid number
+     * based on the choice of metric. For example, if the metric is CPU utilization,
+     * then the target value is a percent value that represents how much of the CPU can
+     * be used before scaling out. </p>
      */
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
 
     /**
-     * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
-     * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+     * <p>The target value for the metric. Although this property accepts numbers of
+     * type Double, it won't accept values that are either too small or too large.
+     * Values must be in the range of -2^360 to 2^360. The value must be a valid number
+     * based on the choice of metric. For example, if the metric is CPU utilization,
+     * then the target value is a percent value that represents how much of the CPU can
+     * be used before scaling out. </p>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
 

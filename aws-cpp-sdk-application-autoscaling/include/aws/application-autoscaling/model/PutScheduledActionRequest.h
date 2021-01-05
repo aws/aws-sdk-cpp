@@ -91,10 +91,10 @@ namespace Model
      * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
-     * examples of using these expressions, see <a
+     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
+     * expression. The supported cron format consists of six fields separated by white
+     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+     * <p>For more information and examples, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
      * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
@@ -110,10 +110,10 @@ namespace Model
      * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
-     * examples of using these expressions, see <a
+     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
+     * expression. The supported cron format consists of six fields separated by white
+     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+     * <p>For more information and examples, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
      * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
@@ -129,10 +129,10 @@ namespace Model
      * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
-     * examples of using these expressions, see <a
+     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
+     * expression. The supported cron format consists of six fields separated by white
+     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+     * <p>For more information and examples, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
      * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
@@ -148,10 +148,10 @@ namespace Model
      * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
-     * examples of using these expressions, see <a
+     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
+     * expression. The supported cron format consists of six fields separated by white
+     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+     * <p>For more information and examples, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
      * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
@@ -167,10 +167,10 @@ namespace Model
      * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
-     * examples of using these expressions, see <a
+     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
+     * expression. The supported cron format consists of six fields separated by white
+     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+     * <p>For more information and examples, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
      * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
@@ -186,10 +186,10 @@ namespace Model
      * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
-     * examples of using these expressions, see <a
+     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
+     * expression. The supported cron format consists of six fields separated by white
+     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+     * <p>For more information and examples, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
      * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
@@ -205,10 +205,10 @@ namespace Model
      * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
-     * examples of using these expressions, see <a
+     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
+     * expression. The supported cron format consists of six fields separated by white
+     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+     * <p>For more information and examples, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
      * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
@@ -224,10 +224,10 @@ namespace Model
      * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
-     * examples of using these expressions, see <a
+     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
+     * expression. The supported cron format consists of six fields separated by white
+     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+     * <p>For more information and examples, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
      * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */

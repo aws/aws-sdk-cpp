@@ -21,7 +21,8 @@ GetSavingsPlansCoverageRequest::GetSavingsPlansCoverageRequest() :
     m_metricsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_sortByHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,12 @@ Aws::String GetSavingsPlansCoverageRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithObject("SortBy", m_sortBy.Jsonize());
 
   }
 

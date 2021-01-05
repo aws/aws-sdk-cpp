@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 GetReservationPurchaseRecommendationRequest::GetReservationPurchaseRecommendationRequest() : 
     m_accountIdHasBeenSet(false),
     m_serviceHasBeenSet(false),
+    m_filterHasBeenSet(false),
     m_accountScope(AccountScope::NOT_SET),
     m_accountScopeHasBeenSet(false),
     m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
@@ -43,6 +44,12 @@ Aws::String GetReservationPurchaseRecommendationRequest::SerializePayload() cons
   if(m_serviceHasBeenSet)
   {
    payload.WithString("Service", m_service);
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("Filter", m_filter.Jsonize());
 
   }
 

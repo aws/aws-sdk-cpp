@@ -715,6 +715,129 @@ namespace Model
      */
     inline ReservationAggregates& WithTotalAmortizedFee(const char* value) { SetTotalAmortizedFee(value); return *this;}
 
+
+    /**
+     * <p>The cost of unused hours for your reservation.</p>
+     */
+    inline const Aws::String& GetRICostForUnusedHours() const{ return m_rICostForUnusedHours; }
+
+    /**
+     * <p>The cost of unused hours for your reservation.</p>
+     */
+    inline bool RICostForUnusedHoursHasBeenSet() const { return m_rICostForUnusedHoursHasBeenSet; }
+
+    /**
+     * <p>The cost of unused hours for your reservation.</p>
+     */
+    inline void SetRICostForUnusedHours(const Aws::String& value) { m_rICostForUnusedHoursHasBeenSet = true; m_rICostForUnusedHours = value; }
+
+    /**
+     * <p>The cost of unused hours for your reservation.</p>
+     */
+    inline void SetRICostForUnusedHours(Aws::String&& value) { m_rICostForUnusedHoursHasBeenSet = true; m_rICostForUnusedHours = std::move(value); }
+
+    /**
+     * <p>The cost of unused hours for your reservation.</p>
+     */
+    inline void SetRICostForUnusedHours(const char* value) { m_rICostForUnusedHoursHasBeenSet = true; m_rICostForUnusedHours.assign(value); }
+
+    /**
+     * <p>The cost of unused hours for your reservation.</p>
+     */
+    inline ReservationAggregates& WithRICostForUnusedHours(const Aws::String& value) { SetRICostForUnusedHours(value); return *this;}
+
+    /**
+     * <p>The cost of unused hours for your reservation.</p>
+     */
+    inline ReservationAggregates& WithRICostForUnusedHours(Aws::String&& value) { SetRICostForUnusedHours(std::move(value)); return *this;}
+
+    /**
+     * <p>The cost of unused hours for your reservation.</p>
+     */
+    inline ReservationAggregates& WithRICostForUnusedHours(const char* value) { SetRICostForUnusedHours(value); return *this;}
+
+
+    /**
+     * <p>The realized savings due to purchasing and using a reservation.</p>
+     */
+    inline const Aws::String& GetRealizedSavings() const{ return m_realizedSavings; }
+
+    /**
+     * <p>The realized savings due to purchasing and using a reservation.</p>
+     */
+    inline bool RealizedSavingsHasBeenSet() const { return m_realizedSavingsHasBeenSet; }
+
+    /**
+     * <p>The realized savings due to purchasing and using a reservation.</p>
+     */
+    inline void SetRealizedSavings(const Aws::String& value) { m_realizedSavingsHasBeenSet = true; m_realizedSavings = value; }
+
+    /**
+     * <p>The realized savings due to purchasing and using a reservation.</p>
+     */
+    inline void SetRealizedSavings(Aws::String&& value) { m_realizedSavingsHasBeenSet = true; m_realizedSavings = std::move(value); }
+
+    /**
+     * <p>The realized savings due to purchasing and using a reservation.</p>
+     */
+    inline void SetRealizedSavings(const char* value) { m_realizedSavingsHasBeenSet = true; m_realizedSavings.assign(value); }
+
+    /**
+     * <p>The realized savings due to purchasing and using a reservation.</p>
+     */
+    inline ReservationAggregates& WithRealizedSavings(const Aws::String& value) { SetRealizedSavings(value); return *this;}
+
+    /**
+     * <p>The realized savings due to purchasing and using a reservation.</p>
+     */
+    inline ReservationAggregates& WithRealizedSavings(Aws::String&& value) { SetRealizedSavings(std::move(value)); return *this;}
+
+    /**
+     * <p>The realized savings due to purchasing and using a reservation.</p>
+     */
+    inline ReservationAggregates& WithRealizedSavings(const char* value) { SetRealizedSavings(value); return *this;}
+
+
+    /**
+     * <p>The unrealized savings due to purchasing and using a reservation.</p>
+     */
+    inline const Aws::String& GetUnrealizedSavings() const{ return m_unrealizedSavings; }
+
+    /**
+     * <p>The unrealized savings due to purchasing and using a reservation.</p>
+     */
+    inline bool UnrealizedSavingsHasBeenSet() const { return m_unrealizedSavingsHasBeenSet; }
+
+    /**
+     * <p>The unrealized savings due to purchasing and using a reservation.</p>
+     */
+    inline void SetUnrealizedSavings(const Aws::String& value) { m_unrealizedSavingsHasBeenSet = true; m_unrealizedSavings = value; }
+
+    /**
+     * <p>The unrealized savings due to purchasing and using a reservation.</p>
+     */
+    inline void SetUnrealizedSavings(Aws::String&& value) { m_unrealizedSavingsHasBeenSet = true; m_unrealizedSavings = std::move(value); }
+
+    /**
+     * <p>The unrealized savings due to purchasing and using a reservation.</p>
+     */
+    inline void SetUnrealizedSavings(const char* value) { m_unrealizedSavingsHasBeenSet = true; m_unrealizedSavings.assign(value); }
+
+    /**
+     * <p>The unrealized savings due to purchasing and using a reservation.</p>
+     */
+    inline ReservationAggregates& WithUnrealizedSavings(const Aws::String& value) { SetUnrealizedSavings(value); return *this;}
+
+    /**
+     * <p>The unrealized savings due to purchasing and using a reservation.</p>
+     */
+    inline ReservationAggregates& WithUnrealizedSavings(Aws::String&& value) { SetUnrealizedSavings(std::move(value)); return *this;}
+
+    /**
+     * <p>The unrealized savings due to purchasing and using a reservation.</p>
+     */
+    inline ReservationAggregates& WithUnrealizedSavings(const char* value) { SetUnrealizedSavings(value); return *this;}
+
   private:
 
     Aws::String m_utilizationPercentage;
@@ -758,6 +881,15 @@ namespace Model
 
     Aws::String m_totalAmortizedFee;
     bool m_totalAmortizedFeeHasBeenSet;
+
+    Aws::String m_rICostForUnusedHours;
+    bool m_rICostForUnusedHoursHasBeenSet;
+
+    Aws::String m_realizedSavings;
+    bool m_realizedSavingsHasBeenSet;
+
+    Aws::String m_unrealizedSavings;
+    bool m_unrealizedSavingsHasBeenSet;
   };
 
 } // namespace Model

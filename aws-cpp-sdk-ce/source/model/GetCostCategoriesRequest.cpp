@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ce/model/GetDimensionValuesRequest.h>
+#include <aws/ce/model/GetCostCategoriesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -12,13 +12,10 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDimensionValuesRequest::GetDimensionValuesRequest() : 
+GetCostCategoriesRequest::GetCostCategoriesRequest() : 
     m_searchStringHasBeenSet(false),
     m_timePeriodHasBeenSet(false),
-    m_dimension(Dimension::NOT_SET),
-    m_dimensionHasBeenSet(false),
-    m_context(Context::NOT_SET),
-    m_contextHasBeenSet(false),
+    m_costCategoryNameHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_sortByHasBeenSet(false),
     m_maxResults(0),
@@ -27,7 +24,7 @@ GetDimensionValuesRequest::GetDimensionValuesRequest() :
 {
 }
 
-Aws::String GetDimensionValuesRequest::SerializePayload() const
+Aws::String GetCostCategoriesRequest::SerializePayload() const
 {
   JsonValue payload;
 
@@ -43,14 +40,10 @@ Aws::String GetDimensionValuesRequest::SerializePayload() const
 
   }
 
-  if(m_dimensionHasBeenSet)
+  if(m_costCategoryNameHasBeenSet)
   {
-   payload.WithString("Dimension", DimensionMapper::GetNameForDimension(m_dimension));
-  }
+   payload.WithString("CostCategoryName", m_costCategoryName);
 
-  if(m_contextHasBeenSet)
-  {
-   payload.WithString("Context", ContextMapper::GetNameForContext(m_context));
   }
 
   if(m_filterHasBeenSet)
@@ -85,10 +78,10 @@ Aws::String GetDimensionValuesRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetDimensionValuesRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection GetCostCategoriesRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.GetDimensionValues"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.GetCostCategories"));
   return headers;
 
 }

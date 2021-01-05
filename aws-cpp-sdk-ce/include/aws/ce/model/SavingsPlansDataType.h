@@ -13,24 +13,21 @@ namespace CostExplorer
 {
 namespace Model
 {
-  enum class MatchOption
+  enum class SavingsPlansDataType
   {
     NOT_SET,
-    EQUALS,
-    ABSENT,
-    STARTS_WITH,
-    ENDS_WITH,
-    CONTAINS,
-    CASE_SENSITIVE,
-    CASE_INSENSITIVE
+    ATTRIBUTES,
+    UTILIZATION,
+    AMORTIZED_COMMITMENT,
+    SAVINGS
   };
 
-namespace MatchOptionMapper
+namespace SavingsPlansDataTypeMapper
 {
-AWS_COSTEXPLORER_API MatchOption GetMatchOptionForName(const Aws::String& name);
+AWS_COSTEXPLORER_API SavingsPlansDataType GetSavingsPlansDataTypeForName(const Aws::String& name);
 
-AWS_COSTEXPLORER_API Aws::String GetNameForMatchOption(MatchOption value);
-} // namespace MatchOptionMapper
+AWS_COSTEXPLORER_API Aws::String GetNameForSavingsPlansDataType(SavingsPlansDataType value);
+} // namespace SavingsPlansDataTypeMapper
 } // namespace Model
 } // namespace CostExplorer
 } // namespace Aws

@@ -737,8 +737,8 @@ namespace Model
     /**
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
-     * minimum capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target. For certain resources, the
+     * minimum capacity limit in response to changing demand. This property is required
+     * when registering a new scalable target.</p> <p>For certain resources, the
      * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
      * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
      * all other resources, the minimum value allowed is 1.</p>
@@ -748,8 +748,8 @@ namespace Model
     /**
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
-     * minimum capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target. For certain resources, the
+     * minimum capacity limit in response to changing demand. This property is required
+     * when registering a new scalable target.</p> <p>For certain resources, the
      * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
      * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
      * all other resources, the minimum value allowed is 1.</p>
@@ -759,8 +759,8 @@ namespace Model
     /**
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
-     * minimum capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target. For certain resources, the
+     * minimum capacity limit in response to changing demand. This property is required
+     * when registering a new scalable target.</p> <p>For certain resources, the
      * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
      * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
      * all other resources, the minimum value allowed is 1.</p>
@@ -770,8 +770,8 @@ namespace Model
     /**
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
-     * minimum capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target. For certain resources, the
+     * minimum capacity limit in response to changing demand. This property is required
+     * when registering a new scalable target.</p> <p>For certain resources, the
      * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
      * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
      * all other resources, the minimum value allowed is 1.</p>
@@ -782,13 +782,13 @@ namespace Model
     /**
      * <p>The maximum value that you plan to scale out to. When a scaling policy is in
      * effect, Application Auto Scaling can scale out (expand) as needed to the maximum
-     * capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target.</p> <p>Although you can
-     * specify a large maximum capacity, note that service quotas may impose lower
-     * limits. Each service has its own default quotas for the maximum capacity of the
-     * resource. If you want to specify a higher limit, you can request an increase.
-     * For more information, consult the documentation for that service. For
-     * information about the default quotas for each service, see <a
+     * capacity limit in response to changing demand. This property is required when
+     * registering a new scalable target.</p> <p>Although you can specify a large
+     * maximum capacity, note that service quotas may impose lower limits. Each service
+     * has its own default quotas for the maximum capacity of the resource. If you want
+     * to specify a higher limit, you can request an increase. For more information,
+     * consult the documentation for that service. For information about the default
+     * quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
      * Endpoints and Quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -798,13 +798,13 @@ namespace Model
     /**
      * <p>The maximum value that you plan to scale out to. When a scaling policy is in
      * effect, Application Auto Scaling can scale out (expand) as needed to the maximum
-     * capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target.</p> <p>Although you can
-     * specify a large maximum capacity, note that service quotas may impose lower
-     * limits. Each service has its own default quotas for the maximum capacity of the
-     * resource. If you want to specify a higher limit, you can request an increase.
-     * For more information, consult the documentation for that service. For
-     * information about the default quotas for each service, see <a
+     * capacity limit in response to changing demand. This property is required when
+     * registering a new scalable target.</p> <p>Although you can specify a large
+     * maximum capacity, note that service quotas may impose lower limits. Each service
+     * has its own default quotas for the maximum capacity of the resource. If you want
+     * to specify a higher limit, you can request an increase. For more information,
+     * consult the documentation for that service. For information about the default
+     * quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
      * Endpoints and Quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -814,13 +814,13 @@ namespace Model
     /**
      * <p>The maximum value that you plan to scale out to. When a scaling policy is in
      * effect, Application Auto Scaling can scale out (expand) as needed to the maximum
-     * capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target.</p> <p>Although you can
-     * specify a large maximum capacity, note that service quotas may impose lower
-     * limits. Each service has its own default quotas for the maximum capacity of the
-     * resource. If you want to specify a higher limit, you can request an increase.
-     * For more information, consult the documentation for that service. For
-     * information about the default quotas for each service, see <a
+     * capacity limit in response to changing demand. This property is required when
+     * registering a new scalable target.</p> <p>Although you can specify a large
+     * maximum capacity, note that service quotas may impose lower limits. Each service
+     * has its own default quotas for the maximum capacity of the resource. If you want
+     * to specify a higher limit, you can request an increase. For more information,
+     * consult the documentation for that service. For information about the default
+     * quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
      * Endpoints and Quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -830,13 +830,13 @@ namespace Model
     /**
      * <p>The maximum value that you plan to scale out to. When a scaling policy is in
      * effect, Application Auto Scaling can scale out (expand) as needed to the maximum
-     * capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target.</p> <p>Although you can
-     * specify a large maximum capacity, note that service quotas may impose lower
-     * limits. Each service has its own default quotas for the maximum capacity of the
-     * resource. If you want to specify a higher limit, you can request an increase.
-     * For more information, consult the documentation for that service. For
-     * information about the default quotas for each service, see <a
+     * capacity limit in response to changing demand. This property is required when
+     * registering a new scalable target.</p> <p>Although you can specify a large
+     * maximum capacity, note that service quotas may impose lower limits. Each service
+     * has its own default quotas for the maximum capacity of the resource. If you want
+     * to specify a higher limit, you can request an increase. For more information,
+     * consult the documentation for that service. For information about the default
+     * quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
      * Endpoints and Quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
