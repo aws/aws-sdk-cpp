@@ -561,74 +561,106 @@ namespace Model
 
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline CreateLaunchConfigurationRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline CreateLaunchConfigurationRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline CreateLaunchConfigurationRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -742,7 +774,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -752,7 +784,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -762,7 +794,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -772,7 +804,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -782,7 +814,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -792,7 +824,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -802,7 +834,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -812,7 +844,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */

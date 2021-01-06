@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 CreateServerRequest::CreateServerRequest() : 
     m_certificateHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -36,6 +38,11 @@ Aws::String CreateServerRequest::SerializePayload() const
   {
    payload.WithString("Certificate", m_certificate);
 
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("Domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   if(m_endpointDetailsHasBeenSet)

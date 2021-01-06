@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/Domain.h>
 #include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/awstransfer/model/EndpointType.h>
 #include <aws/awstransfer/model/State.h>
@@ -88,6 +89,25 @@ namespace Model
      * listed.</p>
      */
     inline ListedServer& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    
+    inline const Domain& GetDomain() const{ return m_domain; }
+
+    
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    
+    inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    
+    inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    
+    inline ListedServer& WithDomain(const Domain& value) { SetDomain(value); return *this;}
+
+    
+    inline ListedServer& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
 
     /**
@@ -381,6 +401,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    Domain m_domain;
+    bool m_domainHasBeenSet;
 
     IdentityProviderType m_identityProviderType;
     bool m_identityProviderTypeHasBeenSet;

@@ -720,9 +720,11 @@ namespace Model
         virtual void CompleteLifecycleActionAsync(const Model::CompleteLifecycleActionRequest& request, const CompleteLifecycleActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Auto Scaling group with the specified name and attributes. </p>
-         * <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. To
-         * query this limit, call the <a>DescribeAccountLimits</a> API. For information
+         * <p> <b>We strongly recommend using a launch template when calling this operation
+         * to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b>
+         * </p> <p>Creates an Auto Scaling group with the specified name and attributes.
+         * </p> <p>If you exceed your maximum limit of Auto Scaling groups, the call fails.
+         * To query this limit, call the <a>DescribeAccountLimits</a> API. For information
          * about updating this limit, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User
@@ -747,9 +749,11 @@ namespace Model
         virtual Model::CreateAutoScalingGroupOutcome CreateAutoScalingGroup(const Model::CreateAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Creates an Auto Scaling group with the specified name and attributes. </p>
-         * <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. To
-         * query this limit, call the <a>DescribeAccountLimits</a> API. For information
+         * <p> <b>We strongly recommend using a launch template when calling this operation
+         * to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b>
+         * </p> <p>Creates an Auto Scaling group with the specified name and attributes.
+         * </p> <p>If you exceed your maximum limit of Auto Scaling groups, the call fails.
+         * To query this limit, call the <a>DescribeAccountLimits</a> API. For information
          * about updating this limit, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User
@@ -776,9 +780,11 @@ namespace Model
         virtual Model::CreateAutoScalingGroupOutcomeCallable CreateAutoScalingGroupCallable(const Model::CreateAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Creates an Auto Scaling group with the specified name and attributes. </p>
-         * <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. To
-         * query this limit, call the <a>DescribeAccountLimits</a> API. For information
+         * <p> <b>We strongly recommend using a launch template when calling this operation
+         * to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b>
+         * </p> <p>Creates an Auto Scaling group with the specified name and attributes.
+         * </p> <p>If you exceed your maximum limit of Auto Scaling groups, the call fails.
+         * To query this limit, call the <a>DescribeAccountLimits</a> API. For information
          * about updating this limit, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User
@@ -2749,23 +2755,25 @@ namespace Model
         virtual void TerminateInstanceInAutoScalingGroupAsync(const Model::TerminateInstanceInAutoScalingGroupRequest& request, const TerminateInstanceInAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the configuration for the specified Auto Scaling group.</p> <p>To
-         * update an Auto Scaling group, specify the name of the group and the parameter
-         * that you want to change. Any parameters that you don't specify are not changed
-         * by this update request. The new settings take effect on any scaling activities
-         * after this call returns. </p> <p>If you associate a new launch configuration or
-         * template with an Auto Scaling group, all new instances will get the updated
-         * configuration. Existing instances continue to run with the configuration that
-         * they were originally launched with. When you update a group to specify a mixed
-         * instances policy instead of a launch configuration or template, existing
-         * instances may be replaced to match the new purchasing options that you specified
-         * in the policy. For example, if the group currently has 100% On-Demand capacity
-         * and the policy specifies 50% Spot capacity, this means that half of your
-         * instances will be gradually terminated and relaunched as Spot Instances. When
-         * replacing instances, Amazon EC2 Auto Scaling launches new instances before
-         * terminating the old ones, so that updating your group does not compromise the
-         * performance or availability of your application.</p> <p>Note the following about
-         * changing <code>DesiredCapacity</code>, <code>MaxSize</code>, or
+         * <p> <b>We strongly recommend that all Auto Scaling groups use launch templates
+         * to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b>
+         * </p> <p>Updates the configuration for the specified Auto Scaling group.</p>
+         * <p>To update an Auto Scaling group, specify the name of the group and the
+         * parameter that you want to change. Any parameters that you don't specify are not
+         * changed by this update request. The new settings take effect on any scaling
+         * activities after this call returns. </p> <p>If you associate a new launch
+         * configuration or template with an Auto Scaling group, all new instances will get
+         * the updated configuration. Existing instances continue to run with the
+         * configuration that they were originally launched with. When you update a group
+         * to specify a mixed instances policy instead of a launch configuration or
+         * template, existing instances may be replaced to match the new purchasing options
+         * that you specified in the policy. For example, if the group currently has 100%
+         * On-Demand capacity and the policy specifies 50% Spot capacity, this means that
+         * half of your instances will be gradually terminated and relaunched as Spot
+         * Instances. When replacing instances, Amazon EC2 Auto Scaling launches new
+         * instances before terminating the old ones, so that updating your group does not
+         * compromise the performance or availability of your application.</p> <p>Note the
+         * following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>, or
          * <code>MinSize</code>:</p> <ul> <li> <p>If a scale-in activity occurs as a result
          * of a new <code>DesiredCapacity</code> value that is lower than the current size
          * of the group, the Auto Scaling group uses its termination policy to determine
@@ -2789,23 +2797,25 @@ namespace Model
         virtual Model::UpdateAutoScalingGroupOutcome UpdateAutoScalingGroup(const Model::UpdateAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Updates the configuration for the specified Auto Scaling group.</p> <p>To
-         * update an Auto Scaling group, specify the name of the group and the parameter
-         * that you want to change. Any parameters that you don't specify are not changed
-         * by this update request. The new settings take effect on any scaling activities
-         * after this call returns. </p> <p>If you associate a new launch configuration or
-         * template with an Auto Scaling group, all new instances will get the updated
-         * configuration. Existing instances continue to run with the configuration that
-         * they were originally launched with. When you update a group to specify a mixed
-         * instances policy instead of a launch configuration or template, existing
-         * instances may be replaced to match the new purchasing options that you specified
-         * in the policy. For example, if the group currently has 100% On-Demand capacity
-         * and the policy specifies 50% Spot capacity, this means that half of your
-         * instances will be gradually terminated and relaunched as Spot Instances. When
-         * replacing instances, Amazon EC2 Auto Scaling launches new instances before
-         * terminating the old ones, so that updating your group does not compromise the
-         * performance or availability of your application.</p> <p>Note the following about
-         * changing <code>DesiredCapacity</code>, <code>MaxSize</code>, or
+         * <p> <b>We strongly recommend that all Auto Scaling groups use launch templates
+         * to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b>
+         * </p> <p>Updates the configuration for the specified Auto Scaling group.</p>
+         * <p>To update an Auto Scaling group, specify the name of the group and the
+         * parameter that you want to change. Any parameters that you don't specify are not
+         * changed by this update request. The new settings take effect on any scaling
+         * activities after this call returns. </p> <p>If you associate a new launch
+         * configuration or template with an Auto Scaling group, all new instances will get
+         * the updated configuration. Existing instances continue to run with the
+         * configuration that they were originally launched with. When you update a group
+         * to specify a mixed instances policy instead of a launch configuration or
+         * template, existing instances may be replaced to match the new purchasing options
+         * that you specified in the policy. For example, if the group currently has 100%
+         * On-Demand capacity and the policy specifies 50% Spot capacity, this means that
+         * half of your instances will be gradually terminated and relaunched as Spot
+         * Instances. When replacing instances, Amazon EC2 Auto Scaling launches new
+         * instances before terminating the old ones, so that updating your group does not
+         * compromise the performance or availability of your application.</p> <p>Note the
+         * following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>, or
          * <code>MinSize</code>:</p> <ul> <li> <p>If a scale-in activity occurs as a result
          * of a new <code>DesiredCapacity</code> value that is lower than the current size
          * of the group, the Auto Scaling group uses its termination policy to determine
@@ -2831,23 +2841,25 @@ namespace Model
         virtual Model::UpdateAutoScalingGroupOutcomeCallable UpdateAutoScalingGroupCallable(const Model::UpdateAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Updates the configuration for the specified Auto Scaling group.</p> <p>To
-         * update an Auto Scaling group, specify the name of the group and the parameter
-         * that you want to change. Any parameters that you don't specify are not changed
-         * by this update request. The new settings take effect on any scaling activities
-         * after this call returns. </p> <p>If you associate a new launch configuration or
-         * template with an Auto Scaling group, all new instances will get the updated
-         * configuration. Existing instances continue to run with the configuration that
-         * they were originally launched with. When you update a group to specify a mixed
-         * instances policy instead of a launch configuration or template, existing
-         * instances may be replaced to match the new purchasing options that you specified
-         * in the policy. For example, if the group currently has 100% On-Demand capacity
-         * and the policy specifies 50% Spot capacity, this means that half of your
-         * instances will be gradually terminated and relaunched as Spot Instances. When
-         * replacing instances, Amazon EC2 Auto Scaling launches new instances before
-         * terminating the old ones, so that updating your group does not compromise the
-         * performance or availability of your application.</p> <p>Note the following about
-         * changing <code>DesiredCapacity</code>, <code>MaxSize</code>, or
+         * <p> <b>We strongly recommend that all Auto Scaling groups use launch templates
+         * to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b>
+         * </p> <p>Updates the configuration for the specified Auto Scaling group.</p>
+         * <p>To update an Auto Scaling group, specify the name of the group and the
+         * parameter that you want to change. Any parameters that you don't specify are not
+         * changed by this update request. The new settings take effect on any scaling
+         * activities after this call returns. </p> <p>If you associate a new launch
+         * configuration or template with an Auto Scaling group, all new instances will get
+         * the updated configuration. Existing instances continue to run with the
+         * configuration that they were originally launched with. When you update a group
+         * to specify a mixed instances policy instead of a launch configuration or
+         * template, existing instances may be replaced to match the new purchasing options
+         * that you specified in the policy. For example, if the group currently has 100%
+         * On-Demand capacity and the policy specifies 50% Spot capacity, this means that
+         * half of your instances will be gradually terminated and relaunched as Spot
+         * Instances. When replacing instances, Amazon EC2 Auto Scaling launches new
+         * instances before terminating the old ones, so that updating your group does not
+         * compromise the performance or availability of your application.</p> <p>Note the
+         * following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>, or
          * <code>MinSize</code>:</p> <ul> <li> <p>If a scale-in activity occurs as a result
          * of a new <code>DesiredCapacity</code> value that is lower than the current size
          * of the group, the Auto Scaling group uses its termination policy to determine

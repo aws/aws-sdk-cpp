@@ -21,6 +21,8 @@ namespace Model
 DescribedServer::DescribedServer() : 
     m_arnHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -43,6 +45,8 @@ DescribedServer::DescribedServer() :
 DescribedServer::DescribedServer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -77,6 +81,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_certificate = jsonValue.GetString("Certificate");
 
     m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Domain"))
+  {
+    m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("Domain"));
+
+    m_domainHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EndpointDetails"))
@@ -186,6 +197,11 @@ JsonValue DescribedServer::Jsonize() const
   {
    payload.WithString("Certificate", m_certificate);
 
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("Domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   if(m_endpointDetailsHasBeenSet)

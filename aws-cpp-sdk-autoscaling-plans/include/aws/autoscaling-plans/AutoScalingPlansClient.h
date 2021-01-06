@@ -88,17 +88,21 @@ namespace Model
     typedef std::function<void(const AutoScalingPlansClient*, const Model::UpdateScalingPlanRequest&, const Model::UpdateScalingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateScalingPlanResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Auto Scaling</fullname> <p>Use AWS Auto Scaling to quickly
-   * discover all the scalable AWS resources for your application and configure
-   * dynamic scaling and predictive scaling for your resources using scaling plans.
-   * Use this service in conjunction with the Amazon EC2 Auto Scaling, Application
-   * Auto Scaling, Amazon CloudWatch, and AWS CloudFormation services. </p>
-   * <p>Currently, predictive scaling is only available for Amazon EC2 Auto Scaling
-   * groups.</p> <p>For more information about AWS Auto Scaling, including
-   * information about granting IAM users required permissions for AWS Auto Scaling
-   * actions, see the <a
+   * <fullname>AWS Auto Scaling</fullname> <p>Use AWS Auto Scaling to create scaling
+   * plans for your applications to automatically scale your scalable AWS resources.
+   * </p> <p> <b>API Summary</b> </p> <p>You can use the AWS Auto Scaling service API
+   * to accomplish the following tasks:</p> <ul> <li> <p>Create and manage scaling
+   * plans</p> </li> <li> <p>Define target tracking scaling policies to dynamically
+   * scale your resources based on utilization</p> </li> <li> <p>Scale Amazon EC2
+   * Auto Scaling groups using predictive scaling and dynamic scaling to scale your
+   * Amazon EC2 capacity faster</p> </li> <li> <p>Set minimum and maximum capacity
+   * limits</p> </li> <li> <p>Retrieve information on existing scaling plans</p>
+   * </li> <li> <p>Access current forecast data and historical forecast data for up
+   * to 56 days previous</p> </li> </ul> <p>To learn more about AWS Auto Scaling,
+   * including information about granting IAM users required permissions for AWS Auto
+   * Scaling actions, see the <a
    * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
-   * Auto Scaling User Guide</a>.</p>
+   * Auto Scaling User Guide</a>. </p>
    */
   class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJsonClient
   {
@@ -128,14 +132,14 @@ namespace Model
 
 
         /**
-         * <p>Creates a scaling plan.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a scaling plan. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CreateScalingPlan">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateScalingPlanOutcome CreateScalingPlan(const Model::CreateScalingPlanRequest& request) const;
 
         /**
-         * <p>Creates a scaling plan.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a scaling plan. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CreateScalingPlan">AWS
          * API Reference</a></p>
          *
@@ -144,7 +148,7 @@ namespace Model
         virtual Model::CreateScalingPlanOutcomeCallable CreateScalingPlanCallable(const Model::CreateScalingPlanRequest& request) const;
 
         /**
-         * <p>Creates a scaling plan.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a scaling plan. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CreateScalingPlan">AWS
          * API Reference</a></p>
          *

@@ -164,14 +164,13 @@ namespace Model
 
 
     /**
-     * <p>Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances. </p> <p>Conditional: You
-     * must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> 
-     * <p>The launch template that is specified must be configured for use with an Auto
-     * Scaling group. For more information, see <a
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
      * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> 
@@ -179,14 +178,13 @@ namespace Model
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
 
     /**
-     * <p>Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances. </p> <p>Conditional: You
-     * must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> 
-     * <p>The launch template that is specified must be configured for use with an Auto
-     * Scaling group. For more information, see <a
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
      * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> 
@@ -194,14 +192,13 @@ namespace Model
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
     /**
-     * <p>Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances. </p> <p>Conditional: You
-     * must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> 
-     * <p>The launch template that is specified must be configured for use with an Auto
-     * Scaling group. For more information, see <a
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
      * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> 
@@ -209,14 +206,13 @@ namespace Model
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
-     * <p>Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances. </p> <p>Conditional: You
-     * must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> 
-     * <p>The launch template that is specified must be configured for use with an Auto
-     * Scaling group. For more information, see <a
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
      * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> 
@@ -224,14 +220,13 @@ namespace Model
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
     /**
-     * <p>Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances. </p> <p>Conditional: You
-     * must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> 
-     * <p>The launch template that is specified must be configured for use with an Auto
-     * Scaling group. For more information, see <a
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
      * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> 
@@ -239,14 +234,13 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
 
     /**
-     * <p>Parameters used to specify the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-     * template</a> and version to use to launch instances. </p> <p>Conditional: You
-     * must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration
-     * (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> 
-     * <p>The launch template that is specified must be configured for use with an Auto
-     * Scaling group. For more information, see <a
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
      * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> 

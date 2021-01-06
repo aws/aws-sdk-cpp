@@ -31,20 +31,20 @@ namespace Model
 
 
     /**
-     * <p>The version number of the scaling plan. This value is always 1.</p>
-     * <p>Currently, you cannot specify multiple scaling plan versions.</p>
+     * <p>The version number of the scaling plan. This value is always <code>1</code>.
+     * Currently, you cannot have multiple scaling plan versions.</p>
      */
     inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
 
     /**
-     * <p>The version number of the scaling plan. This value is always 1.</p>
-     * <p>Currently, you cannot specify multiple scaling plan versions.</p>
+     * <p>The version number of the scaling plan. This value is always <code>1</code>.
+     * Currently, you cannot have multiple scaling plan versions.</p>
      */
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersion = value; }
 
     /**
-     * <p>The version number of the scaling plan. This value is always 1.</p>
-     * <p>Currently, you cannot specify multiple scaling plan versions.</p>
+     * <p>The version number of the scaling plan. This value is always <code>1</code>.
+     * Currently, you cannot have multiple scaling plan versions.</p>
      */
     inline CreateScalingPlanResult& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
 

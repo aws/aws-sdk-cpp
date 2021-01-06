@@ -166,37 +166,49 @@ namespace Model
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline const LifecycleState& GetLifecycleState() const{ return m_lifecycleState; }
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline bool LifecycleStateHasBeenSet() const { return m_lifecycleStateHasBeenSet; }
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline void SetLifecycleState(const LifecycleState& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline void SetLifecycleState(LifecycleState&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::move(value); }
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline Instance& WithLifecycleState(const LifecycleState& value) { SetLifecycleState(value); return *this;}
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline Instance& WithLifecycleState(LifecycleState&& value) { SetLifecycleState(std::move(value)); return *this;}
 

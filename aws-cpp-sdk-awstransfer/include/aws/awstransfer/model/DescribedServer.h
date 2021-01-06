@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/Domain.h>
 #include <aws/awstransfer/model/EndpointDetails.h>
 #include <aws/awstransfer/model/EndpointType.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
@@ -134,6 +135,25 @@ namespace Model
      * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
      */
     inline DescribedServer& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+
+
+    
+    inline const Domain& GetDomain() const{ return m_domain; }
+
+    
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    
+    inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    
+    inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    
+    inline DescribedServer& WithDomain(const Domain& value) { SetDomain(value); return *this;}
+
+    
+    inline DescribedServer& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
 
     /**
@@ -760,6 +780,9 @@ namespace Model
 
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+
+    Domain m_domain;
+    bool m_domainHasBeenSet;
 
     EndpointDetails m_endpointDetails;
     bool m_endpointDetailsHasBeenSet;

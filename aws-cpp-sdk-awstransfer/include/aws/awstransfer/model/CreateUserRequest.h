@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/awstransfer/model/HomeDirectoryType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/awstransfer/model/PosixProfile.h>
 #include <aws/awstransfer/model/HomeDirectoryMapEntry.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
@@ -486,6 +487,25 @@ namespace Model
     inline CreateUserRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
 
+    
+    inline const PosixProfile& GetPosixProfile() const{ return m_posixProfile; }
+
+    
+    inline bool PosixProfileHasBeenSet() const { return m_posixProfileHasBeenSet; }
+
+    
+    inline void SetPosixProfile(const PosixProfile& value) { m_posixProfileHasBeenSet = true; m_posixProfile = value; }
+
+    
+    inline void SetPosixProfile(PosixProfile&& value) { m_posixProfileHasBeenSet = true; m_posixProfile = std::move(value); }
+
+    
+    inline CreateUserRequest& WithPosixProfile(const PosixProfile& value) { SetPosixProfile(value); return *this;}
+
+    
+    inline CreateUserRequest& WithPosixProfile(PosixProfile&& value) { SetPosixProfile(std::move(value)); return *this;}
+
+
     /**
      * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
      * policies attached to this role will determine the level of access you want to
@@ -799,6 +819,9 @@ namespace Model
 
     Aws::String m_policy;
     bool m_policyHasBeenSet;
+
+    PosixProfile m_posixProfile;
+    bool m_posixProfileHasBeenSet;
 
     Aws::String m_role;
     bool m_roleHasBeenSet;

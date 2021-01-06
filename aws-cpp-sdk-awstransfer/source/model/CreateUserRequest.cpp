@@ -18,6 +18,7 @@ CreateUserRequest::CreateUserRequest() :
     m_homeDirectoryTypeHasBeenSet(false),
     m_homeDirectoryMappingsHasBeenSet(false),
     m_policyHasBeenSet(false),
+    m_posixProfileHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_sshPublicKeyBodyHasBeenSet(false),
@@ -55,6 +56,12 @@ Aws::String CreateUserRequest::SerializePayload() const
   if(m_policyHasBeenSet)
   {
    payload.WithString("Policy", m_policy);
+
+  }
+
+  if(m_posixProfileHasBeenSet)
+  {
+   payload.WithObject("PosixProfile", m_posixProfile.Jsonize());
 
   }
 
