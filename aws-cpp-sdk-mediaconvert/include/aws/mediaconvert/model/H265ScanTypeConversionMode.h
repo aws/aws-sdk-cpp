@@ -13,21 +13,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class AvcIntraClass
+  enum class H265ScanTypeConversionMode
   {
     NOT_SET,
-    CLASS_50,
-    CLASS_100,
-    CLASS_200,
-    CLASS_4K_2K
+    INTERLACED,
+    INTERLACED_OPTIMIZE
   };
 
-namespace AvcIntraClassMapper
+namespace H265ScanTypeConversionModeMapper
 {
-AWS_MEDIACONVERT_API AvcIntraClass GetAvcIntraClassForName(const Aws::String& name);
+AWS_MEDIACONVERT_API H265ScanTypeConversionMode GetH265ScanTypeConversionModeForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForAvcIntraClass(AvcIntraClass value);
-} // namespace AvcIntraClassMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForH265ScanTypeConversionMode(H265ScanTypeConversionMode value);
+} // namespace H265ScanTypeConversionModeMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

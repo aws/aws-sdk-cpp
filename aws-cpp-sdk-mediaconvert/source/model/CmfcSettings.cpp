@@ -21,6 +21,8 @@ namespace Model
 CmfcSettings::CmfcSettings() : 
     m_audioDuration(CmfcAudioDuration::NOT_SET),
     m_audioDurationHasBeenSet(false),
+    m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
+    m_iFrameOnlyManifestHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
@@ -31,6 +33,8 @@ CmfcSettings::CmfcSettings() :
 CmfcSettings::CmfcSettings(JsonView jsonValue) : 
     m_audioDuration(CmfcAudioDuration::NOT_SET),
     m_audioDurationHasBeenSet(false),
+    m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
+    m_iFrameOnlyManifestHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
@@ -46,6 +50,13 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
     m_audioDuration = CmfcAudioDurationMapper::GetCmfcAudioDurationForName(jsonValue.GetString("audioDuration"));
 
     m_audioDurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iFrameOnlyManifest"))
+  {
+    m_iFrameOnlyManifest = CmfcIFrameOnlyManifestMapper::GetCmfcIFrameOnlyManifestForName(jsonValue.GetString("iFrameOnlyManifest"));
+
+    m_iFrameOnlyManifestHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte35Esam"))
@@ -72,6 +83,11 @@ JsonValue CmfcSettings::Jsonize() const
   if(m_audioDurationHasBeenSet)
   {
    payload.WithString("audioDuration", CmfcAudioDurationMapper::GetNameForCmfcAudioDuration(m_audioDuration));
+  }
+
+  if(m_iFrameOnlyManifestHasBeenSet)
+  {
+   payload.WithString("iFrameOnlyManifest", CmfcIFrameOnlyManifestMapper::GetNameForCmfcIFrameOnlyManifest(m_iFrameOnlyManifest));
   }
 
   if(m_scte35EsamHasBeenSet)

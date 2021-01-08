@@ -29,6 +29,8 @@ Vc3Settings::Vc3Settings() :
     m_framerateNumeratorHasBeenSet(false),
     m_interlaceMode(Vc3InterlaceMode::NOT_SET),
     m_interlaceModeHasBeenSet(false),
+    m_scanTypeConversionMode(Vc3ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_slowPal(Vc3SlowPal::NOT_SET),
     m_slowPalHasBeenSet(false),
     m_telecine(Vc3Telecine::NOT_SET),
@@ -49,6 +51,8 @@ Vc3Settings::Vc3Settings(JsonView jsonValue) :
     m_framerateNumeratorHasBeenSet(false),
     m_interlaceMode(Vc3InterlaceMode::NOT_SET),
     m_interlaceModeHasBeenSet(false),
+    m_scanTypeConversionMode(Vc3ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_slowPal(Vc3SlowPal::NOT_SET),
     m_slowPalHasBeenSet(false),
     m_telecine(Vc3Telecine::NOT_SET),
@@ -94,6 +98,13 @@ Vc3Settings& Vc3Settings::operator =(JsonView jsonValue)
     m_interlaceMode = Vc3InterlaceModeMapper::GetVc3InterlaceModeForName(jsonValue.GetString("interlaceMode"));
 
     m_interlaceModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scanTypeConversionMode"))
+  {
+    m_scanTypeConversionMode = Vc3ScanTypeConversionModeMapper::GetVc3ScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
+
+    m_scanTypeConversionModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("slowPal"))
@@ -149,6 +160,11 @@ JsonValue Vc3Settings::Jsonize() const
   if(m_interlaceModeHasBeenSet)
   {
    payload.WithString("interlaceMode", Vc3InterlaceModeMapper::GetNameForVc3InterlaceMode(m_interlaceMode));
+  }
+
+  if(m_scanTypeConversionModeHasBeenSet)
+  {
+   payload.WithString("scanTypeConversionMode", Vc3ScanTypeConversionModeMapper::GetNameForVc3ScanTypeConversionMode(m_scanTypeConversionMode));
   }
 
   if(m_slowPalHasBeenSet)

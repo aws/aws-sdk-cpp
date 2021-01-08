@@ -20,6 +20,7 @@ namespace Aws
       namespace PipelineExecutionStatusMapper
       {
 
+        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
         static const int InProgress_HASH = HashingUtils::HashString("InProgress");
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
         static const int Stopping_HASH = HashingUtils::HashString("Stopping");
@@ -31,7 +32,11 @@ namespace Aws
         PipelineExecutionStatus GetPipelineExecutionStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == InProgress_HASH)
+          if (hashCode == Cancelled_HASH)
+          {
+            return PipelineExecutionStatus::Cancelled;
+          }
+          else if (hashCode == InProgress_HASH)
           {
             return PipelineExecutionStatus::InProgress;
           }
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipelineExecutionStatus::Cancelled:
+            return "Cancelled";
           case PipelineExecutionStatus::InProgress:
             return "InProgress";
           case PipelineExecutionStatus::Stopped:

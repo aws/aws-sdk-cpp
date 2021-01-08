@@ -25,6 +25,7 @@ PipelineExecution::PipelineExecution() :
     m_pipelineExecutionIdHasBeenSet(false),
     m_status(PipelineExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusSummaryHasBeenSet(false),
     m_artifactRevisionsHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ PipelineExecution::PipelineExecution(JsonView jsonValue) :
     m_pipelineExecutionIdHasBeenSet(false),
     m_status(PipelineExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusSummaryHasBeenSet(false),
     m_artifactRevisionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -69,6 +71,13 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     m_status = PipelineExecutionStatusMapper::GetPipelineExecutionStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("statusSummary"))
+  {
+    m_statusSummary = jsonValue.GetString("statusSummary");
+
+    m_statusSummaryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("artifactRevisions"))
@@ -109,6 +118,12 @@ JsonValue PipelineExecution::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", PipelineExecutionStatusMapper::GetNameForPipelineExecutionStatus(m_status));
+  }
+
+  if(m_statusSummaryHasBeenSet)
+  {
+   payload.WithString("statusSummary", m_statusSummary);
+
   }
 
   if(m_artifactRevisionsHasBeenSet)

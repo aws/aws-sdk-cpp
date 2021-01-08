@@ -76,6 +76,8 @@ H265Settings::H265Settings() :
     m_rateControlModeHasBeenSet(false),
     m_sampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode::NOT_SET),
     m_sampleAdaptiveOffsetFilterModeHasBeenSet(false),
+    m_scanTypeConversionMode(H265ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H265SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slices(0),
@@ -157,6 +159,8 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_rateControlModeHasBeenSet(false),
     m_sampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode::NOT_SET),
     m_sampleAdaptiveOffsetFilterModeHasBeenSet(false),
+    m_scanTypeConversionMode(H265ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H265SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slices(0),
@@ -384,6 +388,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_sampleAdaptiveOffsetFilterMode = H265SampleAdaptiveOffsetFilterModeMapper::GetH265SampleAdaptiveOffsetFilterModeForName(jsonValue.GetString("sampleAdaptiveOffsetFilterMode"));
 
     m_sampleAdaptiveOffsetFilterModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scanTypeConversionMode"))
+  {
+    m_scanTypeConversionMode = H265ScanTypeConversionModeMapper::GetH265ScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
+
+    m_scanTypeConversionModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sceneChangeDetect"))
@@ -620,6 +631,11 @@ JsonValue H265Settings::Jsonize() const
   if(m_sampleAdaptiveOffsetFilterModeHasBeenSet)
   {
    payload.WithString("sampleAdaptiveOffsetFilterMode", H265SampleAdaptiveOffsetFilterModeMapper::GetNameForH265SampleAdaptiveOffsetFilterMode(m_sampleAdaptiveOffsetFilterMode));
+  }
+
+  if(m_scanTypeConversionModeHasBeenSet)
+  {
+   payload.WithString("scanTypeConversionMode", H265ScanTypeConversionModeMapper::GetNameForH265ScanTypeConversionMode(m_scanTypeConversionMode));
   }
 
   if(m_sceneChangeDetectHasBeenSet)

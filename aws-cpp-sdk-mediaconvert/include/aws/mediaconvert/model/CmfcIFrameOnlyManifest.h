@@ -13,21 +13,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class AvcIntraClass
+  enum class CmfcIFrameOnlyManifest
   {
     NOT_SET,
-    CLASS_50,
-    CLASS_100,
-    CLASS_200,
-    CLASS_4K_2K
+    INCLUDE,
+    EXCLUDE
   };
 
-namespace AvcIntraClassMapper
+namespace CmfcIFrameOnlyManifestMapper
 {
-AWS_MEDIACONVERT_API AvcIntraClass GetAvcIntraClassForName(const Aws::String& name);
+AWS_MEDIACONVERT_API CmfcIFrameOnlyManifest GetCmfcIFrameOnlyManifestForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForAvcIntraClass(AvcIntraClass value);
-} // namespace AvcIntraClassMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForCmfcIFrameOnlyManifest(CmfcIFrameOnlyManifest value);
+} // namespace CmfcIFrameOnlyManifestMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

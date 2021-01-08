@@ -17,6 +17,7 @@
 #include <aws/mediaconvert/model/Mpeg2ParControl.h>
 #include <aws/mediaconvert/model/Mpeg2QualityTuningLevel.h>
 #include <aws/mediaconvert/model/Mpeg2RateControlMode.h>
+#include <aws/mediaconvert/model/Mpeg2ScanTypeConversionMode.h>
 #include <aws/mediaconvert/model/Mpeg2SceneChangeDetect.h>
 #include <aws/mediaconvert/model/Mpeg2SlowPal.h>
 #include <aws/mediaconvert/model/Mpeg2SpatialAdaptiveQuantization.h>
@@ -1071,40 +1072,143 @@ namespace Model
 
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline const Mpeg2RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline void SetRateControlMode(const Mpeg2RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline void SetRateControlMode(Mpeg2RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline Mpeg2Settings& WithRateControlMode(const Mpeg2RateControlMode& value) { SetRateControlMode(value); return *this;}
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline Mpeg2Settings& WithRateControlMode(Mpeg2RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
+
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline const Mpeg2ScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(const Mpeg2ScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(Mpeg2ScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline Mpeg2Settings& WithScanTypeConversionMode(const Mpeg2ScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline Mpeg2Settings& WithScanTypeConversionMode(Mpeg2ScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
 
 
     /**
@@ -1664,6 +1768,9 @@ namespace Model
 
     Mpeg2RateControlMode m_rateControlMode;
     bool m_rateControlModeHasBeenSet;
+
+    Mpeg2ScanTypeConversionMode m_scanTypeConversionMode;
+    bool m_scanTypeConversionModeHasBeenSet;
 
     Mpeg2SceneChangeDetect m_sceneChangeDetect;
     bool m_sceneChangeDetectHasBeenSet;

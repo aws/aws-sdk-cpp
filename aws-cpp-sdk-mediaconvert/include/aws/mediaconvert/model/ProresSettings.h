@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/ProresFramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/ProresInterlaceMode.h>
 #include <aws/mediaconvert/model/ProresParControl.h>
+#include <aws/mediaconvert/model/ProresScanTypeConversionMode.h>
 #include <aws/mediaconvert/model/ProresSlowPal.h>
 #include <aws/mediaconvert/model/ProresTelecine.h>
 #include <utility>
@@ -45,37 +46,37 @@ namespace Model
 
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline const ProresCodecProfile& GetCodecProfile() const{ return m_codecProfile; }
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline void SetCodecProfile(const ProresCodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline void SetCodecProfile(ProresCodecProfile&& value) { m_codecProfileHasBeenSet = true; m_codecProfile = std::move(value); }
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline ProresSettings& WithCodecProfile(const ProresCodecProfile& value) { SetCodecProfile(value); return *this;}
 
     /**
-     * Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to
+     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
      * use for this output.
      */
     inline ProresSettings& WithCodecProfile(ProresCodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
@@ -586,6 +587,109 @@ namespace Model
 
 
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline const ProresScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(const ProresScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(ProresScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline ProresSettings& WithScanTypeConversionMode(const ProresScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline ProresSettings& WithScanTypeConversionMode(ProresScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+
+
+    /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
      * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
@@ -734,6 +838,9 @@ namespace Model
 
     int m_parNumerator;
     bool m_parNumeratorHasBeenSet;
+
+    ProresScanTypeConversionMode m_scanTypeConversionMode;
+    bool m_scanTypeConversionModeHasBeenSet;
 
     ProresSlowPal m_slowPal;
     bool m_slowPalHasBeenSet;

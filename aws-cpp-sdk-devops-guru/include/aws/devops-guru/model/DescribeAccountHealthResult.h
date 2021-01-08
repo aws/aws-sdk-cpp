@@ -86,6 +86,25 @@ namespace Model
      */
     inline DescribeAccountHealthResult& WithMetricsAnalyzed(int value) { SetMetricsAnalyzed(value); return *this;}
 
+
+    /**
+     * <p>The number of Amazon DevOps Guru resource analysis hours billed to the
+     * current AWS account in the last hour. </p>
+     */
+    inline long long GetResourceHours() const{ return m_resourceHours; }
+
+    /**
+     * <p>The number of Amazon DevOps Guru resource analysis hours billed to the
+     * current AWS account in the last hour. </p>
+     */
+    inline void SetResourceHours(long long value) { m_resourceHours = value; }
+
+    /**
+     * <p>The number of Amazon DevOps Guru resource analysis hours billed to the
+     * current AWS account in the last hour. </p>
+     */
+    inline DescribeAccountHealthResult& WithResourceHours(long long value) { SetResourceHours(value); return *this;}
+
   private:
 
     int m_openReactiveInsights;
@@ -93,6 +112,8 @@ namespace Model
     int m_openProactiveInsights;
 
     int m_metricsAnalyzed;
+
+    long long m_resourceHours;
   };
 
 } // namespace Model

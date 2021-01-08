@@ -21,6 +21,7 @@
 #include <aws/mediaconvert/model/H265QvbrSettings.h>
 #include <aws/mediaconvert/model/H265RateControlMode.h>
 #include <aws/mediaconvert/model/H265SampleAdaptiveOffsetFilterMode.h>
+#include <aws/mediaconvert/model/H265ScanTypeConversionMode.h>
 #include <aws/mediaconvert/model/H265SceneChangeDetect.h>
 #include <aws/mediaconvert/model/H265SlowPal.h>
 #include <aws/mediaconvert/model/H265SpatialAdaptiveQuantization.h>
@@ -1335,6 +1336,109 @@ namespace Model
 
 
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline const H265ScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(const H265ScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(H265ScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline H265Settings& WithScanTypeConversionMode(const H265ScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline H265Settings& WithScanTypeConversionMode(H265ScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+
+
+    /**
      * Enable this setting to insert I-frames at scene changes that the service
      * automatically detects. This improves video quality and is enabled by default. If
      * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
@@ -2077,6 +2181,9 @@ namespace Model
 
     H265SampleAdaptiveOffsetFilterMode m_sampleAdaptiveOffsetFilterMode;
     bool m_sampleAdaptiveOffsetFilterModeHasBeenSet;
+
+    H265ScanTypeConversionMode m_scanTypeConversionMode;
+    bool m_scanTypeConversionModeHasBeenSet;
 
     H265SceneChangeDetect m_sceneChangeDetect;
     bool m_sceneChangeDetectHasBeenSet;

@@ -383,56 +383,56 @@ namespace Model
 
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline const Aws::String& GetPreset() const{ return m_preset; }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline void SetPreset(const Aws::String& value) { m_presetHasBeenSet = true; m_preset = value; }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline void SetPreset(Aws::String&& value) { m_presetHasBeenSet = true; m_preset = std::move(value); }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline void SetPreset(const char* value) { m_presetHasBeenSet = true; m_preset.assign(value); }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline Output& WithPreset(const Aws::String& value) { SetPreset(value); return *this;}
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline Output& WithPreset(Aws::String&& value) { SetPreset(std::move(value)); return *this;}
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */

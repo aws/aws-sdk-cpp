@@ -145,9 +145,11 @@ namespace Model
 
 
     /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
+     * <p>The status of the pipeline execution.</p> <ul> <li> <p>Cancelled: The
+     * pipeline’s definition was updated before the pipeline execution could be
+     * completed.</p> </li> <li> <p>InProgress: The pipeline execution is currently
+     * running.</p> </li> <li> <p>Stopped: The pipeline execution was manually stopped.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
      * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
      * request to be manually stopped. Depending on the selected stop mode, the
@@ -166,9 +168,11 @@ namespace Model
     inline const PipelineExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
+     * <p>The status of the pipeline execution.</p> <ul> <li> <p>Cancelled: The
+     * pipeline’s definition was updated before the pipeline execution could be
+     * completed.</p> </li> <li> <p>InProgress: The pipeline execution is currently
+     * running.</p> </li> <li> <p>Stopped: The pipeline execution was manually stopped.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
      * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
      * request to be manually stopped. Depending on the selected stop mode, the
@@ -187,9 +191,11 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
+     * <p>The status of the pipeline execution.</p> <ul> <li> <p>Cancelled: The
+     * pipeline’s definition was updated before the pipeline execution could be
+     * completed.</p> </li> <li> <p>InProgress: The pipeline execution is currently
+     * running.</p> </li> <li> <p>Stopped: The pipeline execution was manually stopped.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
      * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
      * request to be manually stopped. Depending on the selected stop mode, the
@@ -208,9 +214,11 @@ namespace Model
     inline void SetStatus(const PipelineExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
+     * <p>The status of the pipeline execution.</p> <ul> <li> <p>Cancelled: The
+     * pipeline’s definition was updated before the pipeline execution could be
+     * completed.</p> </li> <li> <p>InProgress: The pipeline execution is currently
+     * running.</p> </li> <li> <p>Stopped: The pipeline execution was manually stopped.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
      * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
      * request to be manually stopped. Depending on the selected stop mode, the
@@ -229,9 +237,11 @@ namespace Model
     inline void SetStatus(PipelineExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
+     * <p>The status of the pipeline execution.</p> <ul> <li> <p>Cancelled: The
+     * pipeline’s definition was updated before the pipeline execution could be
+     * completed.</p> </li> <li> <p>InProgress: The pipeline execution is currently
+     * running.</p> </li> <li> <p>Stopped: The pipeline execution was manually stopped.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
      * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
      * request to be manually stopped. Depending on the selected stop mode, the
@@ -250,9 +260,11 @@ namespace Model
     inline PipelineExecution& WithStatus(const PipelineExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
+     * <p>The status of the pipeline execution.</p> <ul> <li> <p>Cancelled: The
+     * pipeline’s definition was updated before the pipeline execution could be
+     * completed.</p> </li> <li> <p>InProgress: The pipeline execution is currently
+     * running.</p> </li> <li> <p>Stopped: The pipeline execution was manually stopped.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
      * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
      * request to be manually stopped. Depending on the selected stop mode, the
@@ -269,6 +281,47 @@ namespace Model
      * completed successfully.</p> </li> </ul>
      */
     inline PipelineExecution& WithStatus(PipelineExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A summary that contains a description of the pipeline execution status.</p>
+     */
+    inline const Aws::String& GetStatusSummary() const{ return m_statusSummary; }
+
+    /**
+     * <p>A summary that contains a description of the pipeline execution status.</p>
+     */
+    inline bool StatusSummaryHasBeenSet() const { return m_statusSummaryHasBeenSet; }
+
+    /**
+     * <p>A summary that contains a description of the pipeline execution status.</p>
+     */
+    inline void SetStatusSummary(const Aws::String& value) { m_statusSummaryHasBeenSet = true; m_statusSummary = value; }
+
+    /**
+     * <p>A summary that contains a description of the pipeline execution status.</p>
+     */
+    inline void SetStatusSummary(Aws::String&& value) { m_statusSummaryHasBeenSet = true; m_statusSummary = std::move(value); }
+
+    /**
+     * <p>A summary that contains a description of the pipeline execution status.</p>
+     */
+    inline void SetStatusSummary(const char* value) { m_statusSummaryHasBeenSet = true; m_statusSummary.assign(value); }
+
+    /**
+     * <p>A summary that contains a description of the pipeline execution status.</p>
+     */
+    inline PipelineExecution& WithStatusSummary(const Aws::String& value) { SetStatusSummary(value); return *this;}
+
+    /**
+     * <p>A summary that contains a description of the pipeline execution status.</p>
+     */
+    inline PipelineExecution& WithStatusSummary(Aws::String&& value) { SetStatusSummary(std::move(value)); return *this;}
+
+    /**
+     * <p>A summary that contains a description of the pipeline execution status.</p>
+     */
+    inline PipelineExecution& WithStatusSummary(const char* value) { SetStatusSummary(value); return *this;}
 
 
     /**
@@ -332,6 +385,9 @@ namespace Model
 
     PipelineExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_statusSummary;
+    bool m_statusSummaryHasBeenSet;
 
     Aws::Vector<ArtifactRevision> m_artifactRevisions;
     bool m_artifactRevisionsHasBeenSet;

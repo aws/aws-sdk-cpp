@@ -21,6 +21,7 @@ namespace Model
 AvcIntraSettings::AvcIntraSettings() : 
     m_avcIntraClass(AvcIntraClass::NOT_SET),
     m_avcIntraClassHasBeenSet(false),
+    m_avcIntraUhdSettingsHasBeenSet(false),
     m_framerateControl(AvcIntraFramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(AvcIntraFramerateConversionAlgorithm::NOT_SET),
@@ -31,6 +32,8 @@ AvcIntraSettings::AvcIntraSettings() :
     m_framerateNumeratorHasBeenSet(false),
     m_interlaceMode(AvcIntraInterlaceMode::NOT_SET),
     m_interlaceModeHasBeenSet(false),
+    m_scanTypeConversionMode(AvcIntraScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_slowPal(AvcIntraSlowPal::NOT_SET),
     m_slowPalHasBeenSet(false),
     m_telecine(AvcIntraTelecine::NOT_SET),
@@ -41,6 +44,7 @@ AvcIntraSettings::AvcIntraSettings() :
 AvcIntraSettings::AvcIntraSettings(JsonView jsonValue) : 
     m_avcIntraClass(AvcIntraClass::NOT_SET),
     m_avcIntraClassHasBeenSet(false),
+    m_avcIntraUhdSettingsHasBeenSet(false),
     m_framerateControl(AvcIntraFramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(AvcIntraFramerateConversionAlgorithm::NOT_SET),
@@ -51,6 +55,8 @@ AvcIntraSettings::AvcIntraSettings(JsonView jsonValue) :
     m_framerateNumeratorHasBeenSet(false),
     m_interlaceMode(AvcIntraInterlaceMode::NOT_SET),
     m_interlaceModeHasBeenSet(false),
+    m_scanTypeConversionMode(AvcIntraScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_slowPal(AvcIntraSlowPal::NOT_SET),
     m_slowPalHasBeenSet(false),
     m_telecine(AvcIntraTelecine::NOT_SET),
@@ -66,6 +72,13 @@ AvcIntraSettings& AvcIntraSettings::operator =(JsonView jsonValue)
     m_avcIntraClass = AvcIntraClassMapper::GetAvcIntraClassForName(jsonValue.GetString("avcIntraClass"));
 
     m_avcIntraClassHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("avcIntraUhdSettings"))
+  {
+    m_avcIntraUhdSettings = jsonValue.GetObject("avcIntraUhdSettings");
+
+    m_avcIntraUhdSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("framerateControl"))
@@ -103,6 +116,13 @@ AvcIntraSettings& AvcIntraSettings::operator =(JsonView jsonValue)
     m_interlaceModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scanTypeConversionMode"))
+  {
+    m_scanTypeConversionMode = AvcIntraScanTypeConversionModeMapper::GetAvcIntraScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
+
+    m_scanTypeConversionModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("slowPal"))
   {
     m_slowPal = AvcIntraSlowPalMapper::GetAvcIntraSlowPalForName(jsonValue.GetString("slowPal"));
@@ -127,6 +147,12 @@ JsonValue AvcIntraSettings::Jsonize() const
   if(m_avcIntraClassHasBeenSet)
   {
    payload.WithString("avcIntraClass", AvcIntraClassMapper::GetNameForAvcIntraClass(m_avcIntraClass));
+  }
+
+  if(m_avcIntraUhdSettingsHasBeenSet)
+  {
+   payload.WithObject("avcIntraUhdSettings", m_avcIntraUhdSettings.Jsonize());
+
   }
 
   if(m_framerateControlHasBeenSet)
@@ -154,6 +180,11 @@ JsonValue AvcIntraSettings::Jsonize() const
   if(m_interlaceModeHasBeenSet)
   {
    payload.WithString("interlaceMode", AvcIntraInterlaceModeMapper::GetNameForAvcIntraInterlaceMode(m_interlaceMode));
+  }
+
+  if(m_scanTypeConversionModeHasBeenSet)
+  {
+   payload.WithString("scanTypeConversionMode", AvcIntraScanTypeConversionModeMapper::GetNameForAvcIntraScanTypeConversionMode(m_scanTypeConversionMode));
   }
 
   if(m_slowPalHasBeenSet)

@@ -19,14 +19,16 @@ using namespace Aws;
 DescribeAccountHealthResult::DescribeAccountHealthResult() : 
     m_openReactiveInsights(0),
     m_openProactiveInsights(0),
-    m_metricsAnalyzed(0)
+    m_metricsAnalyzed(0),
+    m_resourceHours(0)
 {
 }
 
 DescribeAccountHealthResult::DescribeAccountHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_openReactiveInsights(0),
     m_openProactiveInsights(0),
-    m_metricsAnalyzed(0)
+    m_metricsAnalyzed(0),
+    m_resourceHours(0)
 {
   *this = result;
 }
@@ -49,6 +51,12 @@ DescribeAccountHealthResult& DescribeAccountHealthResult::operator =(const Aws::
   if(jsonValue.ValueExists("MetricsAnalyzed"))
   {
     m_metricsAnalyzed = jsonValue.GetInteger("MetricsAnalyzed");
+
+  }
+
+  if(jsonValue.ValueExists("ResourceHours"))
+  {
+    m_resourceHours = jsonValue.GetInt64("ResourceHours");
 
   }
 

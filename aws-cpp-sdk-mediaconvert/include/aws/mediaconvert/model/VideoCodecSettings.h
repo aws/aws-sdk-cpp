@@ -95,7 +95,8 @@ namespace Model
      * Required when you set your output video codec to AVC-Intra. For more information
      * about the AVC-I settings, see the relevant specification. For detailed
      * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline const AvcIntraSettings& GetAvcIntraSettings() const{ return m_avcIntraSettings; }
 
@@ -103,7 +104,8 @@ namespace Model
      * Required when you set your output video codec to AVC-Intra. For more information
      * about the AVC-I settings, see the relevant specification. For detailed
      * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline bool AvcIntraSettingsHasBeenSet() const { return m_avcIntraSettingsHasBeenSet; }
 
@@ -111,7 +113,8 @@ namespace Model
      * Required when you set your output video codec to AVC-Intra. For more information
      * about the AVC-I settings, see the relevant specification. For detailed
      * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline void SetAvcIntraSettings(const AvcIntraSettings& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = value; }
 
@@ -119,7 +122,8 @@ namespace Model
      * Required when you set your output video codec to AVC-Intra. For more information
      * about the AVC-I settings, see the relevant specification. For detailed
      * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline void SetAvcIntraSettings(AvcIntraSettings&& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = std::move(value); }
 
@@ -127,7 +131,8 @@ namespace Model
      * Required when you set your output video codec to AVC-Intra. For more information
      * about the AVC-I settings, see the relevant specification. For detailed
      * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline VideoCodecSettings& WithAvcIntraSettings(const AvcIntraSettings& value) { SetAvcIntraSettings(value); return *this;}
 
@@ -135,7 +140,8 @@ namespace Model
      * Required when you set your output video codec to AVC-Intra. For more information
      * about the AVC-I settings, see the relevant specification. For detailed
      * information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936.
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     inline VideoCodecSettings& WithAvcIntraSettings(AvcIntraSettings&& value) { SetAvcIntraSettings(std::move(value)); return *this;}
 

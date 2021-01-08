@@ -13,21 +13,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class AvcIntraClass
+  enum class Vc3ScanTypeConversionMode
   {
     NOT_SET,
-    CLASS_50,
-    CLASS_100,
-    CLASS_200,
-    CLASS_4K_2K
+    INTERLACED,
+    INTERLACED_OPTIMIZE
   };
 
-namespace AvcIntraClassMapper
+namespace Vc3ScanTypeConversionModeMapper
 {
-AWS_MEDIACONVERT_API AvcIntraClass GetAvcIntraClassForName(const Aws::String& name);
+AWS_MEDIACONVERT_API Vc3ScanTypeConversionMode GetVc3ScanTypeConversionModeForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForAvcIntraClass(AvcIntraClass value);
-} // namespace AvcIntraClassMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForVc3ScanTypeConversionMode(Vc3ScanTypeConversionMode value);
+} // namespace Vc3ScanTypeConversionModeMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

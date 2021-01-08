@@ -16,6 +16,7 @@ namespace Model
   enum class StageExecutionStatus
   {
     NOT_SET,
+    Cancelled,
     InProgress,
     Failed,
     Stopped,

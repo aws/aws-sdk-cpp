@@ -78,6 +78,8 @@ H264Settings::H264Settings() :
     m_rateControlModeHasBeenSet(false),
     m_repeatPps(H264RepeatPps::NOT_SET),
     m_repeatPpsHasBeenSet(false),
+    m_scanTypeConversionMode(H264ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H264SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slices(0),
@@ -159,6 +161,8 @@ H264Settings::H264Settings(JsonView jsonValue) :
     m_rateControlModeHasBeenSet(false),
     m_repeatPps(H264RepeatPps::NOT_SET),
     m_repeatPpsHasBeenSet(false),
+    m_scanTypeConversionMode(H264ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H264SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slices(0),
@@ -393,6 +397,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_repeatPpsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scanTypeConversionMode"))
+  {
+    m_scanTypeConversionMode = H264ScanTypeConversionModeMapper::GetH264ScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
+
+    m_scanTypeConversionModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sceneChangeDetect"))
   {
     m_sceneChangeDetect = H264SceneChangeDetectMapper::GetH264SceneChangeDetectForName(jsonValue.GetString("sceneChangeDetect"));
@@ -625,6 +636,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_repeatPpsHasBeenSet)
   {
    payload.WithString("repeatPps", H264RepeatPpsMapper::GetNameForH264RepeatPps(m_repeatPps));
+  }
+
+  if(m_scanTypeConversionModeHasBeenSet)
+  {
+   payload.WithString("scanTypeConversionMode", H264ScanTypeConversionModeMapper::GetNameForH264ScanTypeConversionMode(m_scanTypeConversionMode));
   }
 
   if(m_sceneChangeDetectHasBeenSet)
