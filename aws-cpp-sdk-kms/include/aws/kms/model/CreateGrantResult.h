@@ -84,50 +84,50 @@ namespace Model
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline const Aws::String& GetGrantId() const{ return m_grantId; }
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline void SetGrantId(const Aws::String& value) { m_grantId = value; }
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline void SetGrantId(Aws::String&& value) { m_grantId = std::move(value); }
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline void SetGrantId(const char* value) { m_grantId.assign(value); }
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline CreateGrantResult& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline CreateGrantResult& WithGrantId(Aws::String&& value) { SetGrantId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline CreateGrantResult& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 

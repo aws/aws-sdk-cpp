@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p> This data type is used as a response element in the
-   * <code>ModifyDBInstance</code> action and contains changes that will be applied
-   * during the next maintenance window. </p><p><h3>See Also:</h3>   <a
+   * <code>ModifyDBInstance</code> operation and contains changes that will be
+   * applied during the next maintenance window. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingModifiedValues">AWS
    * API Reference</a></p>
    */
@@ -190,26 +190,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates that the Single-AZ DB instance will change to a Multi-AZ
-     * deployment.</p>
+     * <p>A value that indicates that the Single-AZ DB instance will change to a
+     * Multi-AZ deployment.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>Indicates that the Single-AZ DB instance will change to a Multi-AZ
-     * deployment.</p>
+     * <p>A value that indicates that the Single-AZ DB instance will change to a
+     * Multi-AZ deployment.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>Indicates that the Single-AZ DB instance will change to a Multi-AZ
-     * deployment.</p>
+     * <p>A value that indicates that the Single-AZ DB instance will change to a
+     * Multi-AZ deployment.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>Indicates that the Single-AZ DB instance will change to a Multi-AZ
-     * deployment.</p>
+     * <p>A value that indicates that the Single-AZ DB instance will change to a
+     * Multi-AZ deployment.</p>
      */
     inline PendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 

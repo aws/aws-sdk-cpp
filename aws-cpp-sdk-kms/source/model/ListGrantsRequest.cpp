@@ -16,7 +16,9 @@ ListGrantsRequest::ListGrantsRequest() :
     m_limit(0),
     m_limitHasBeenSet(false),
     m_markerHasBeenSet(false),
-    m_keyIdHasBeenSet(false)
+    m_keyIdHasBeenSet(false),
+    m_grantIdHasBeenSet(false),
+    m_granteePrincipalHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,18 @@ Aws::String ListGrantsRequest::SerializePayload() const
   if(m_keyIdHasBeenSet)
   {
    payload.WithString("KeyId", m_keyId);
+
+  }
+
+  if(m_grantIdHasBeenSet)
+  {
+   payload.WithString("GrantId", m_grantId);
+
+  }
+
+  if(m_granteePrincipalHasBeenSet)
+  {
+   payload.WithString("GranteePrincipal", m_granteePrincipal);
 
   }
 

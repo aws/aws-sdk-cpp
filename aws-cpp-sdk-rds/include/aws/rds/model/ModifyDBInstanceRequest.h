@@ -1225,9 +1225,10 @@ namespace Model
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
-     * parameter group can be the default for that DB parameter group family.</p>
-     * <p>For information about valid engine versions, see
-     * <code>CreateDBInstance</code>, or call
+     * parameter group can be the default for that DB parameter group family.</p> <p>If
+     * you specify only a major version, Amazon RDS will update the DB instance to the
+     * default minor version if the current minor version is lower. For information
+     * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
@@ -1239,9 +1240,10 @@ namespace Model
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
-     * parameter group can be the default for that DB parameter group family.</p>
-     * <p>For information about valid engine versions, see
-     * <code>CreateDBInstance</code>, or call
+     * parameter group can be the default for that DB parameter group family.</p> <p>If
+     * you specify only a major version, Amazon RDS will update the DB instance to the
+     * default minor version if the current minor version is lower. For information
+     * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -1253,9 +1255,10 @@ namespace Model
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
-     * parameter group can be the default for that DB parameter group family.</p>
-     * <p>For information about valid engine versions, see
-     * <code>CreateDBInstance</code>, or call
+     * parameter group can be the default for that DB parameter group family.</p> <p>If
+     * you specify only a major version, Amazon RDS will update the DB instance to the
+     * default minor version if the current minor version is lower. For information
+     * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
@@ -1267,9 +1270,10 @@ namespace Model
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
-     * parameter group can be the default for that DB parameter group family.</p>
-     * <p>For information about valid engine versions, see
-     * <code>CreateDBInstance</code>, or call
+     * parameter group can be the default for that DB parameter group family.</p> <p>If
+     * you specify only a major version, Amazon RDS will update the DB instance to the
+     * default minor version if the current minor version is lower. For information
+     * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
@@ -1281,9 +1285,10 @@ namespace Model
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
-     * parameter group can be the default for that DB parameter group family.</p>
-     * <p>For information about valid engine versions, see
-     * <code>CreateDBInstance</code>, or call
+     * parameter group can be the default for that DB parameter group family.</p> <p>If
+     * you specify only a major version, Amazon RDS will update the DB instance to the
+     * default minor version if the current minor version is lower. For information
+     * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
@@ -1295,9 +1300,10 @@ namespace Model
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
-     * parameter group can be the default for that DB parameter group family.</p>
-     * <p>For information about valid engine versions, see
-     * <code>CreateDBInstance</code>, or call
+     * parameter group can be the default for that DB parameter group family.</p> <p>If
+     * you specify only a major version, Amazon RDS will update the DB instance to the
+     * default minor version if the current minor version is lower. For information
+     * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
@@ -1309,9 +1315,10 @@ namespace Model
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
-     * parameter group can be the default for that DB parameter group family.</p>
-     * <p>For information about valid engine versions, see
-     * <code>CreateDBInstance</code>, or call
+     * parameter group can be the default for that DB parameter group family.</p> <p>If
+     * you specify only a major version, Amazon RDS will update the DB instance to the
+     * default minor version if the current minor version is lower. For information
+     * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
@@ -1323,9 +1330,10 @@ namespace Model
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
-     * parameter group can be the default for that DB parameter group family.</p>
-     * <p>For information about valid engine versions, see
-     * <code>CreateDBInstance</code>, or call
+     * parameter group can be the default for that DB parameter group family.</p> <p>If
+     * you specify only a major version, Amazon RDS will update the DB instance to the
+     * default minor version if the current minor version is lower. For information
+     * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
@@ -1572,114 +1580,114 @@ namespace Model
 
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-     * If the parameter change results in an option group that enables OEM, this change
-     * can cause a brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted. </p> <p>Permanent options, such as
-     * the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is
-     * associated with a DB instance</p>
+     * <p> A value that indicates the DB instance should be associated with the
+     * specified option group. Changing this parameter doesn't result in an outage
+     * except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
+     * for this request. If the parameter change results in an option group that
+     * enables OEM, this change can cause a brief (sub-second) period during which new
+     * connections are rejected but existing connections are not interrupted. </p>
+     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
+     * can't be removed from an option group, and that option group can't be removed
+     * from a DB instance once it is associated with a DB instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-     * If the parameter change results in an option group that enables OEM, this change
-     * can cause a brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted. </p> <p>Permanent options, such as
-     * the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is
-     * associated with a DB instance</p>
+     * <p> A value that indicates the DB instance should be associated with the
+     * specified option group. Changing this parameter doesn't result in an outage
+     * except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
+     * for this request. If the parameter change results in an option group that
+     * enables OEM, this change can cause a brief (sub-second) period during which new
+     * connections are rejected but existing connections are not interrupted. </p>
+     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
+     * can't be removed from an option group, and that option group can't be removed
+     * from a DB instance once it is associated with a DB instance</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-     * If the parameter change results in an option group that enables OEM, this change
-     * can cause a brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted. </p> <p>Permanent options, such as
-     * the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is
-     * associated with a DB instance</p>
+     * <p> A value that indicates the DB instance should be associated with the
+     * specified option group. Changing this parameter doesn't result in an outage
+     * except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
+     * for this request. If the parameter change results in an option group that
+     * enables OEM, this change can cause a brief (sub-second) period during which new
+     * connections are rejected but existing connections are not interrupted. </p>
+     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
+     * can't be removed from an option group, and that option group can't be removed
+     * from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-     * If the parameter change results in an option group that enables OEM, this change
-     * can cause a brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted. </p> <p>Permanent options, such as
-     * the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is
-     * associated with a DB instance</p>
+     * <p> A value that indicates the DB instance should be associated with the
+     * specified option group. Changing this parameter doesn't result in an outage
+     * except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
+     * for this request. If the parameter change results in an option group that
+     * enables OEM, this change can cause a brief (sub-second) period during which new
+     * connections are rejected but existing connections are not interrupted. </p>
+     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
+     * can't be removed from an option group, and that option group can't be removed
+     * from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-     * If the parameter change results in an option group that enables OEM, this change
-     * can cause a brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted. </p> <p>Permanent options, such as
-     * the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is
-     * associated with a DB instance</p>
+     * <p> A value that indicates the DB instance should be associated with the
+     * specified option group. Changing this parameter doesn't result in an outage
+     * except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
+     * for this request. If the parameter change results in an option group that
+     * enables OEM, this change can cause a brief (sub-second) period during which new
+     * connections are rejected but existing connections are not interrupted. </p>
+     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
+     * can't be removed from an option group, and that option group can't be removed
+     * from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-     * If the parameter change results in an option group that enables OEM, this change
-     * can cause a brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted. </p> <p>Permanent options, such as
-     * the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is
-     * associated with a DB instance</p>
+     * <p> A value that indicates the DB instance should be associated with the
+     * specified option group. Changing this parameter doesn't result in an outage
+     * except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
+     * for this request. If the parameter change results in an option group that
+     * enables OEM, this change can cause a brief (sub-second) period during which new
+     * connections are rejected but existing connections are not interrupted. </p>
+     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
+     * can't be removed from an option group, and that option group can't be removed
+     * from a DB instance once it is associated with a DB instance</p>
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-     * If the parameter change results in an option group that enables OEM, this change
-     * can cause a brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted. </p> <p>Permanent options, such as
-     * the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is
-     * associated with a DB instance</p>
+     * <p> A value that indicates the DB instance should be associated with the
+     * specified option group. Changing this parameter doesn't result in an outage
+     * except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
+     * for this request. If the parameter change results in an option group that
+     * enables OEM, this change can cause a brief (sub-second) period during which new
+     * connections are rejected but existing connections are not interrupted. </p>
+     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
+     * can't be removed from an option group, and that option group can't be removed
+     * from a DB instance once it is associated with a DB instance</p>
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is enabled for this request.
-     * If the parameter change results in an option group that enables OEM, this change
-     * can cause a brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted. </p> <p>Permanent options, such as
-     * the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is
-     * associated with a DB instance</p>
+     * <p> A value that indicates the DB instance should be associated with the
+     * specified option group. Changing this parameter doesn't result in an outage
+     * except in the following case and the change is applied during the next
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
+     * for this request. If the parameter change results in an option group that
+     * enables OEM, this change can cause a brief (sub-second) period during which new
+     * connections are rejected but existing connections are not interrupted. </p>
+     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
+     * can't be removed from an option group, and that option group can't be removed
+     * from a DB instance once it is associated with a DB instance</p>
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 

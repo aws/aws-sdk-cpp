@@ -2409,44 +2409,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies that changes to the DB cluster are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline const ClusterPendingModifiedValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
 
     /**
-     * <p>Specifies that changes to the DB cluster are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
 
     /**
-     * <p>Specifies that changes to the DB cluster are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline void SetPendingModifiedValues(const ClusterPendingModifiedValues& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
 
     /**
-     * <p>Specifies that changes to the DB cluster are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline void SetPendingModifiedValues(ClusterPendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::move(value); }
 
     /**
-     * <p>Specifies that changes to the DB cluster are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline DBCluster& WithPendingModifiedValues(const ClusterPendingModifiedValues& value) { SetPendingModifiedValues(value); return *this;}
 
     /**
-     * <p>Specifies that changes to the DB cluster are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline DBCluster& WithPendingModifiedValues(ClusterPendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 

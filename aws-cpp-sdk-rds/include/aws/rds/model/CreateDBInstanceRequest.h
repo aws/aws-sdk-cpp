@@ -1861,8 +1861,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
-     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+     * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1886,8 +1887,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
-     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+     * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -1911,8 +1913,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
-     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+     * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1936,8 +1939,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
-     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+     * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -1961,8 +1965,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
-     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+     * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -1986,8 +1991,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
-     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+     * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -2011,8 +2017,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
-     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+     * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -2036,8 +2043,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
-     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+     * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -2182,66 +2190,74 @@ namespace Model
 
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group. Also, that option group
-     * can't be removed from a DB instance once it is associated with a DB instance</p>
+     * <p>A value that indicates that the DB instance should be associated with the
+     * specified option group.</p> <p>Permanent options, such as the TDE option for
+     * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
+     * option group can't be removed from a DB instance once it is associated with a DB
+     * instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group. Also, that option group
-     * can't be removed from a DB instance once it is associated with a DB instance</p>
+     * <p>A value that indicates that the DB instance should be associated with the
+     * specified option group.</p> <p>Permanent options, such as the TDE option for
+     * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
+     * option group can't be removed from a DB instance once it is associated with a DB
+     * instance</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group. Also, that option group
-     * can't be removed from a DB instance once it is associated with a DB instance</p>
+     * <p>A value that indicates that the DB instance should be associated with the
+     * specified option group.</p> <p>Permanent options, such as the TDE option for
+     * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
+     * option group can't be removed from a DB instance once it is associated with a DB
+     * instance</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group. Also, that option group
-     * can't be removed from a DB instance once it is associated with a DB instance</p>
+     * <p>A value that indicates that the DB instance should be associated with the
+     * specified option group.</p> <p>Permanent options, such as the TDE option for
+     * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
+     * option group can't be removed from a DB instance once it is associated with a DB
+     * instance</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group. Also, that option group
-     * can't be removed from a DB instance once it is associated with a DB instance</p>
+     * <p>A value that indicates that the DB instance should be associated with the
+     * specified option group.</p> <p>Permanent options, such as the TDE option for
+     * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
+     * option group can't be removed from a DB instance once it is associated with a DB
+     * instance</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group. Also, that option group
-     * can't be removed from a DB instance once it is associated with a DB instance</p>
+     * <p>A value that indicates that the DB instance should be associated with the
+     * specified option group.</p> <p>Permanent options, such as the TDE option for
+     * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
+     * option group can't be removed from a DB instance once it is associated with a DB
+     * instance</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group. Also, that option group
-     * can't be removed from a DB instance once it is associated with a DB instance</p>
+     * <p>A value that indicates that the DB instance should be associated with the
+     * specified option group.</p> <p>Permanent options, such as the TDE option for
+     * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
+     * option group can't be removed from a DB instance once it is associated with a DB
+     * instance</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group. Also, that option group
-     * can't be removed from a DB instance once it is associated with a DB instance</p>
+     * <p>A value that indicates that the DB instance should be associated with the
+     * specified option group.</p> <p>Permanent options, such as the TDE option for
+     * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
+     * option group can't be removed from a DB instance once it is associated with a DB
+     * instance</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -3441,9 +3457,9 @@ namespace Model
      * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
-     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
-     * <code>postgresql</code> and <code>upgrade</code>. </p>
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
+     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
+     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
@@ -3461,9 +3477,9 @@ namespace Model
      * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
-     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
-     * <code>postgresql</code> and <code>upgrade</code>. </p>
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
+     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
+     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
@@ -3481,9 +3497,9 @@ namespace Model
      * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
-     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
-     * <code>postgresql</code> and <code>upgrade</code>. </p>
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
+     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
+     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
@@ -3501,9 +3517,9 @@ namespace Model
      * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
-     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
-     * <code>postgresql</code> and <code>upgrade</code>. </p>
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
+     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
+     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
@@ -3521,9 +3537,9 @@ namespace Model
      * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
-     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
-     * <code>postgresql</code> and <code>upgrade</code>. </p>
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
+     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
+     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
@@ -3541,9 +3557,9 @@ namespace Model
      * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
-     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
-     * <code>postgresql</code> and <code>upgrade</code>. </p>
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
+     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
+     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
@@ -3561,9 +3577,9 @@ namespace Model
      * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
-     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
-     * <code>postgresql</code> and <code>upgrade</code>. </p>
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
+     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
+     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -3581,9 +3597,9 @@ namespace Model
      * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
-     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
-     * <code>postgresql</code> and <code>upgrade</code>. </p>
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
+     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
+     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
@@ -3601,9 +3617,9 @@ namespace Model
      * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
      * <code>audit</code>, <code>error</code>, <code>general</code>, and
      * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
-     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
-     * <code>postgresql</code> and <code>upgrade</code>. </p>
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
+     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
+     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 

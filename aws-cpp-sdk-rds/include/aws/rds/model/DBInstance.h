@@ -847,44 +847,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies that changes to the DB instance are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB instance are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline const PendingModifiedValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
 
     /**
-     * <p>Specifies that changes to the DB instance are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB instance are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
 
     /**
-     * <p>Specifies that changes to the DB instance are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB instance are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline void SetPendingModifiedValues(const PendingModifiedValues& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
 
     /**
-     * <p>Specifies that changes to the DB instance are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB instance are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline void SetPendingModifiedValues(PendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::move(value); }
 
     /**
-     * <p>Specifies that changes to the DB instance are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB instance are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline DBInstance& WithPendingModifiedValues(const PendingModifiedValues& value) { SetPendingModifiedValues(value); return *this;}
 
     /**
-     * <p>Specifies that changes to the DB instance are pending. This element is only
-     * included when changes are pending. Specific changes are identified by
-     * subelements.</p>
+     * <p>A value that specifies that changes to the DB instance are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
      */
     inline DBInstance& WithPendingModifiedValues(PendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 
@@ -989,22 +989,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates that minor version patches are applied automatically.</p>
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor version patches are applied automatically.</p>
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor version patches are applied automatically.</p>
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor version patches are applied automatically.</p>
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p>
      */
     inline DBInstance& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
