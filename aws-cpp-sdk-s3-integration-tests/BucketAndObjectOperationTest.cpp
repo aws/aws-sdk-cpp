@@ -69,6 +69,7 @@ namespace
     static std::string BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
     static std::string BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
     static std::string BASE_PUT_MULTIPART_BUCKET_NAME = "multiparttest";
+    static std::string BASE_OBJECT_LOCK_BUCKET_NAME = "objectlock";
     static std::string BASE_ERRORS_TESTING_BUCKET = "errorstest";
     static std::string BASE_INTERRUPT_TESTING_BUCKET = "interrupttest";
     static std::string BASE_EVENT_STREAM_TEST_BUCKET_NAME = "eventstream";
@@ -78,6 +79,7 @@ namespace
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
+    static const char* TEST_OBJECT_LOCK_OBJ_KEY = "TestObjectLock";
     static const char* TEST_DNS_UNFRIENDLY_OBJ_KEY = "WhySoHostile";
     static const char* TEST_EVENT_STREAM_OBJ_KEY = "TestEventStream.csv";
     //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
@@ -104,6 +106,7 @@ namespace
         AppendUUID(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME);
         AppendUUID(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME);
         AppendUUID(BASE_PUT_MULTIPART_BUCKET_NAME);
+        AppendUUID(BASE_OBJECT_LOCK_BUCKET_NAME);
         AppendUUID(BASE_ERRORS_TESTING_BUCKET);
         AppendUUID(BASE_INTERRUPT_TESTING_BUCKET);
         AppendUUID(BASE_EVENT_STREAM_TEST_BUCKET_NAME);
@@ -183,6 +186,7 @@ namespace
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_OBJECT_LOCK_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_ERRORS_TESTING_BUCKET.c_str()));
             DeleteBucket(CalculateBucketName(BASE_INTERRUPT_TESTING_BUCKET.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME.c_str()));
@@ -1297,6 +1301,51 @@ namespace
 
         auto copyOutcome = Client->CopyObject(copyRequest);
         ASSERT_TRUE(copyOutcome.IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestObjectLock)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_OBJECT_LOCK_BUCKET_NAME.c_str());
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        createBucketRequest.SetObjectLockEnabledForBucket(true);
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
+        *objectStream << "Object Lock";
+        objectStream->flush();
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetContentLength(static_cast<long>(putObjectRequest.GetBody()->tellp()));
+        putObjectRequest.SetContentType("text/plain");
+        putObjectRequest.WithKey(TEST_OBJECT_LOCK_OBJ_KEY);
+        putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
+        putObjectRequest.SetObjectLockMode(ObjectLockMode::GOVERNANCE);
+        putObjectRequest.SetObjectLockRetainUntilDate(Aws::Utils::DateTime::Now() + std::chrono::hours(1));
+
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        Aws::String versionId = putObjectOutcome.GetResult().GetVersionId();
+
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey(TEST_OBJECT_LOCK_OBJ_KEY);
+        getObjectRequest.SetVersionId(versionId);
+
+        GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+
+        DeleteObjectRequest deleteObjectRequest;
+        deleteObjectRequest.SetBucket(fullBucketName);
+        deleteObjectRequest.SetKey(TEST_OBJECT_LOCK_OBJ_KEY);
+        deleteObjectRequest.SetVersionId(versionId);
+        deleteObjectRequest.SetBypassGovernanceRetention(true);
+        DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
+        ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationWithEventStream)

@@ -27,6 +27,7 @@ public class CppViewHelper {
     private static final Map<String, String> CORAL_TYPE_TO_DEFAULT_VALUES = new HashMap<>();
     private static final Map<String, String> CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING = new HashMap<>();
     private static final Map<String, String> CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING = new HashMap<>();
+    private static final Map<String, String> C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT = new HashMap<>();
 
     static {
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("long", "long long");
@@ -84,6 +85,9 @@ public class CppViewHelper {
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("ec2", "xml");
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("application-json", "json");
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("api-gateway", "json");
+
+        C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("rfc822", "RFC822");
+        C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("iso8601", "ISO_8601");
     }
 
     public static String computeExportValue(String classNamePrefix) {
@@ -197,6 +201,27 @@ public class CppViewHelper {
 
     public static String computeServicePayloadType(String protocol) {
         return CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.get(protocol);
+    }
+
+    public static String computeTimestampFormatInHeader(Shape shape) {
+        if (shape.getTimestampFormat() != null) {
+            return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase());
+        }
+        return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("rfc822");
+    }
+
+    public static String computeTimestampFormatInQueryString(Shape shape) {
+        if (shape.getTimestampFormat() != null) {
+            return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase());
+        }
+        return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("iso8601");
+    }
+
+    public static String computeTimestampFormatInXml(Shape shape) {
+        if (shape.getTimestampFormat() != null) {
+            return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase());
+        }
+        return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("iso8601");
     }
 
     public static Set<String> computeHeaderIncludes(String projectName, Shape shape) {
