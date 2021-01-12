@@ -164,18 +164,18 @@ namespace Model
 
     /**
      * <p>The instance type to use when launching the image builder. The following
-     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
-     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
-     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
-     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
-     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
-     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
-     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
-     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
-     * <p>stream.graphics-design.large</p> </li> <li>
+     * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
+     * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
+     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
+     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
+     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
+     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
+     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
+     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
+     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
@@ -193,18 +193,18 @@ namespace Model
 
     /**
      * <p>The instance type to use when launching the image builder. The following
-     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
-     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
-     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
-     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
-     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
-     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
-     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
-     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
-     * <p>stream.graphics-design.large</p> </li> <li>
+     * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
+     * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
+     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
+     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
+     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
+     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
+     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
+     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
+     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
@@ -222,18 +222,18 @@ namespace Model
 
     /**
      * <p>The instance type to use when launching the image builder. The following
-     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
-     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
-     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
-     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
-     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
-     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
-     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
-     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
-     * <p>stream.graphics-design.large</p> </li> <li>
+     * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
+     * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
+     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
+     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
+     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
+     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
+     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
+     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
+     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
@@ -251,18 +251,18 @@ namespace Model
 
     /**
      * <p>The instance type to use when launching the image builder. The following
-     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
-     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
-     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
-     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
-     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
-     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
-     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
-     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
-     * <p>stream.graphics-design.large</p> </li> <li>
+     * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
+     * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
+     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
+     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
+     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
+     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
+     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
+     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
+     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
@@ -280,18 +280,18 @@ namespace Model
 
     /**
      * <p>The instance type to use when launching the image builder. The following
-     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
-     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
-     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
-     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
-     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
-     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
-     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
-     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
-     * <p>stream.graphics-design.large</p> </li> <li>
+     * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
+     * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
+     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
+     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
+     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
+     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
+     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
+     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
+     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
@@ -309,18 +309,18 @@ namespace Model
 
     /**
      * <p>The instance type to use when launching the image builder. The following
-     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
-     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
-     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
-     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
-     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
-     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
-     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
-     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
-     * <p>stream.graphics-design.large</p> </li> <li>
+     * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
+     * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
+     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
+     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
+     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
+     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
+     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
+     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
+     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
@@ -338,18 +338,18 @@ namespace Model
 
     /**
      * <p>The instance type to use when launching the image builder. The following
-     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
-     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
-     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
-     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
-     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
-     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
-     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
-     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
-     * <p>stream.graphics-design.large</p> </li> <li>
+     * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
+     * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
+     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
+     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
+     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
+     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
+     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
+     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
+     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
@@ -367,18 +367,18 @@ namespace Model
 
     /**
      * <p>The instance type to use when launching the image builder. The following
-     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
-     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
-     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
-     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
-     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
-     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
-     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p> </li>
-     * <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
-     * <p>stream.graphics-design.large</p> </li> <li>
+     * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
+     * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
+     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
+     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
+     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
+     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
+     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
+     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
+     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
      * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>

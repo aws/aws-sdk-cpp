@@ -241,50 +241,42 @@ namespace Model
 
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data mapping sources for the specified control. </p>
      */
     inline const Aws::Vector<CreateControlMappingSource>& GetControlMappingSources() const{ return m_controlMappingSources; }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data mapping sources for the specified control. </p>
      */
     inline bool ControlMappingSourcesHasBeenSet() const { return m_controlMappingSourcesHasBeenSet; }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data mapping sources for the specified control. </p>
      */
     inline void SetControlMappingSources(const Aws::Vector<CreateControlMappingSource>& value) { m_controlMappingSourcesHasBeenSet = true; m_controlMappingSources = value; }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data mapping sources for the specified control. </p>
      */
     inline void SetControlMappingSources(Aws::Vector<CreateControlMappingSource>&& value) { m_controlMappingSourcesHasBeenSet = true; m_controlMappingSources = std::move(value); }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data mapping sources for the specified control. </p>
      */
     inline CreateControlRequest& WithControlMappingSources(const Aws::Vector<CreateControlMappingSource>& value) { SetControlMappingSources(value); return *this;}
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data mapping sources for the specified control. </p>
      */
     inline CreateControlRequest& WithControlMappingSources(Aws::Vector<CreateControlMappingSource>&& value) { SetControlMappingSources(std::move(value)); return *this;}
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data mapping sources for the specified control. </p>
      */
     inline CreateControlRequest& AddControlMappingSources(const CreateControlMappingSource& value) { m_controlMappingSourcesHasBeenSet = true; m_controlMappingSources.push_back(value); return *this; }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data mapping sources for the specified control. </p>
      */
     inline CreateControlRequest& AddControlMappingSources(CreateControlMappingSource&& value) { m_controlMappingSourcesHasBeenSet = true; m_controlMappingSources.push_back(std::move(value)); return *this; }
 

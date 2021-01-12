@@ -38,7 +38,9 @@ LoadBalancer::LoadBalancer() :
     m_instancePortHasBeenSet(false),
     m_instanceHealthSummaryHasBeenSet(false),
     m_tlsCertificateSummariesHasBeenSet(false),
-    m_configurationOptionsHasBeenSet(false)
+    m_configurationOptionsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ LoadBalancer::LoadBalancer(JsonView jsonValue) :
     m_instancePortHasBeenSet(false),
     m_instanceHealthSummaryHasBeenSet(false),
     m_tlsCertificateSummariesHasBeenSet(false),
-    m_configurationOptionsHasBeenSet(false)
+    m_configurationOptionsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -196,6 +200,13 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
     m_configurationOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+
+    m_ipAddressTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -318,6 +329,11 @@ JsonValue LoadBalancer::Jsonize() const
    }
    payload.WithObject("configurationOptions", std::move(configurationOptionsJsonMap));
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   return payload;

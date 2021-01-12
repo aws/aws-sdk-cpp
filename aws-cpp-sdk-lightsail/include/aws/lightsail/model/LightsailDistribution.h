@@ -13,6 +13,7 @@
 #include <aws/lightsail/model/Origin.h>
 #include <aws/lightsail/model/CacheBehavior.h>
 #include <aws/lightsail/model/CacheSettings.h>
+#include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/CacheBehaviorPerPath.h>
 #include <aws/lightsail/model/Tag.h>
 #include <utility>
@@ -763,6 +764,49 @@ namespace Model
 
 
     /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline LightsailDistribution& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline LightsailDistribution& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
@@ -881,6 +925,9 @@ namespace Model
 
     bool m_ableToUpdateBundle;
     bool m_ableToUpdateBundleHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

@@ -146,6 +146,7 @@
 #include <aws/lightsail/model/ReleaseStaticIpRequest.h>
 #include <aws/lightsail/model/ResetDistributionCacheRequest.h>
 #include <aws/lightsail/model/SendContactMethodVerificationRequest.h>
+#include <aws/lightsail/model/SetIpAddressTypeRequest.h>
 #include <aws/lightsail/model/StartInstanceRequest.h>
 #include <aws/lightsail/model/StartRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/StopInstanceRequest.h>
@@ -3635,6 +3636,33 @@ void LightsailClient::SendContactMethodVerificationAsync(const SendContactMethod
 void LightsailClient::SendContactMethodVerificationAsyncHelper(const SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SendContactMethodVerification(request), context);
+}
+
+SetIpAddressTypeOutcome LightsailClient::SetIpAddressType(const SetIpAddressTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return SetIpAddressTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SetIpAddressTypeOutcomeCallable LightsailClient::SetIpAddressTypeCallable(const SetIpAddressTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetIpAddressTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetIpAddressType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::SetIpAddressTypeAsync(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetIpAddressTypeAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::SetIpAddressTypeAsyncHelper(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetIpAddressType(request), context);
 }
 
 StartInstanceOutcome LightsailClient::StartInstance(const StartInstanceRequest& request) const

@@ -20,7 +20,9 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_userDataHasBeenSet(false),
     m_keyPairNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_addOnsHasBeenSet(false)
+    m_addOnsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -89,6 +91,11 @@ Aws::String CreateInstancesRequest::SerializePayload() const
    }
    payload.WithArray("addOns", std::move(addOnsJsonList));
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   return payload.View().WriteReadable();

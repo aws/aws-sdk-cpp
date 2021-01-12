@@ -82,6 +82,7 @@ namespace Aws
         static const int AttachCertificateToDistribution_HASH = HashingUtils::HashString("AttachCertificateToDistribution");
         static const int DetachCertificateFromDistribution_HASH = HashingUtils::HashString("DetachCertificateFromDistribution");
         static const int UpdateDistributionBundle_HASH = HashingUtils::HashString("UpdateDistributionBundle");
+        static const int SetIpAddressType_HASH = HashingUtils::HashString("SetIpAddressType");
         static const int CreateCertificate_HASH = HashingUtils::HashString("CreateCertificate");
         static const int DeleteCertificate_HASH = HashingUtils::HashString("DeleteCertificate");
         static const int CreateContainerService_HASH = HashingUtils::HashString("CreateContainerService");
@@ -344,6 +345,10 @@ namespace Aws
           {
             return OperationType::UpdateDistributionBundle;
           }
+          else if (hashCode == SetIpAddressType_HASH)
+          {
+            return OperationType::SetIpAddressType;
+          }
           else if (hashCode == CreateCertificate_HASH)
           {
             return OperationType::CreateCertificate;
@@ -518,6 +523,8 @@ namespace Aws
             return "DetachCertificateFromDistribution";
           case OperationType::UpdateDistributionBundle:
             return "UpdateDistributionBundle";
+          case OperationType::SetIpAddressType:
+            return "SetIpAddressType";
           case OperationType::CreateCertificate:
             return "CreateCertificate";
           case OperationType::DeleteCertificate:

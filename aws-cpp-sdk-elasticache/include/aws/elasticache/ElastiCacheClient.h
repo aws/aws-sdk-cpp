@@ -1261,10 +1261,12 @@ namespace Model
          * you receive a successful response from this operation, Amazon ElastiCache
          * immediately begins deleting the cluster; you cannot cancel or revert this
          * operation.</p> <p>This operation is not valid for:</p> <ul> <li> <p>Redis
-         * (cluster mode enabled) clusters</p> </li> <li> <p>A cluster that is the last
-         * read replica of a replication group</p> </li> <li> <p>A node group (shard) that
-         * has Multi-AZ mode enabled</p> </li> <li> <p>A cluster from a Redis (cluster mode
-         * enabled) replication group</p> </li> <li> <p>A cluster that is not in the
+         * (cluster mode enabled) clusters</p> </li> <li> <p>Redis (cluster mode disabled)
+         * clusters</p> </li> <li> <p>A cluster that is the last read replica of a
+         * replication group</p> </li> <li> <p>A cluster that is the primary node of a
+         * replication group</p> </li> <li> <p>A node group (shard) that has Multi-AZ mode
+         * enabled</p> </li> <li> <p>A cluster from a Redis (cluster mode enabled)
+         * replication group</p> </li> <li> <p>A cluster that is not in the
          * <code>available</code> state</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
@@ -1277,10 +1279,12 @@ namespace Model
          * you receive a successful response from this operation, Amazon ElastiCache
          * immediately begins deleting the cluster; you cannot cancel or revert this
          * operation.</p> <p>This operation is not valid for:</p> <ul> <li> <p>Redis
-         * (cluster mode enabled) clusters</p> </li> <li> <p>A cluster that is the last
-         * read replica of a replication group</p> </li> <li> <p>A node group (shard) that
-         * has Multi-AZ mode enabled</p> </li> <li> <p>A cluster from a Redis (cluster mode
-         * enabled) replication group</p> </li> <li> <p>A cluster that is not in the
+         * (cluster mode enabled) clusters</p> </li> <li> <p>Redis (cluster mode disabled)
+         * clusters</p> </li> <li> <p>A cluster that is the last read replica of a
+         * replication group</p> </li> <li> <p>A cluster that is the primary node of a
+         * replication group</p> </li> <li> <p>A node group (shard) that has Multi-AZ mode
+         * enabled</p> </li> <li> <p>A cluster from a Redis (cluster mode enabled)
+         * replication group</p> </li> <li> <p>A cluster that is not in the
          * <code>available</code> state</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
@@ -1295,10 +1299,12 @@ namespace Model
          * you receive a successful response from this operation, Amazon ElastiCache
          * immediately begins deleting the cluster; you cannot cancel or revert this
          * operation.</p> <p>This operation is not valid for:</p> <ul> <li> <p>Redis
-         * (cluster mode enabled) clusters</p> </li> <li> <p>A cluster that is the last
-         * read replica of a replication group</p> </li> <li> <p>A node group (shard) that
-         * has Multi-AZ mode enabled</p> </li> <li> <p>A cluster from a Redis (cluster mode
-         * enabled) replication group</p> </li> <li> <p>A cluster that is not in the
+         * (cluster mode enabled) clusters</p> </li> <li> <p>Redis (cluster mode disabled)
+         * clusters</p> </li> <li> <p>A cluster that is the last read replica of a
+         * replication group</p> </li> <li> <p>A cluster that is the primary node of a
+         * replication group</p> </li> <li> <p>A node group (shard) that has Multi-AZ mode
+         * enabled</p> </li> <li> <p>A cluster from a Redis (cluster mode enabled)
+         * replication group</p> </li> <li> <p>A cluster that is not in the
          * <code>available</code> state</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
@@ -1309,8 +1315,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified cache parameter group. You cannot delete a cache
-         * parameter group if it is associated with any cache clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * parameter group if it is associated with any cache clusters. You cannot delete
+         * the default cache parameter groups in your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -1318,8 +1325,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified cache parameter group. You cannot delete a cache
-         * parameter group if it is associated with any cache clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * parameter group if it is associated with any cache clusters. You cannot delete
+         * the default cache parameter groups in your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -1329,8 +1337,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified cache parameter group. You cannot delete a cache
-         * parameter group if it is associated with any cache clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * parameter group if it is associated with any cache clusters. You cannot delete
+         * the default cache parameter groups in your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">AWS
          * API Reference</a></p>
          *

@@ -20,7 +20,9 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_certificateNameHasBeenSet(false),
     m_certificateDomainNameHasBeenSet(false),
     m_certificateAlternativeNamesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,11 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   return payload.View().WriteReadable();

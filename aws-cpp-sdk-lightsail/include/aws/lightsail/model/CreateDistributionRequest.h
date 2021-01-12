@@ -11,6 +11,7 @@
 #include <aws/lightsail/model/CacheBehavior.h>
 #include <aws/lightsail/model/CacheSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/CacheBehaviorPerPath.h>
 #include <aws/lightsail/model/Tag.h>
 #include <utility>
@@ -315,6 +316,49 @@ namespace Model
 
 
     /**
+     * <p>The IP address type for the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateDistributionRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateDistributionRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tag keys and optional values to add to the distribution during
      * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
      * it's created.</p>
@@ -389,6 +433,9 @@ namespace Model
 
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

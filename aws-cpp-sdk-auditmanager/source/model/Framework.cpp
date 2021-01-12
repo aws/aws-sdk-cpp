@@ -32,7 +32,8 @@ Framework::Framework() :
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false)
+    m_lastUpdatedByHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Framework::Framework(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false)
+    m_lastUpdatedByHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +153,16 @@ Framework& Framework::operator =(JsonView jsonValue)
     m_lastUpdatedByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -235,6 +247,17 @@ JsonValue Framework::Jsonize() const
   if(m_lastUpdatedByHasBeenSet)
   {
    payload.WithString("lastUpdatedBy", m_lastUpdatedBy);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

@@ -137,6 +137,7 @@
 #include <aws/lightsail/model/ReleaseStaticIpResult.h>
 #include <aws/lightsail/model/ResetDistributionCacheResult.h>
 #include <aws/lightsail/model/SendContactMethodVerificationResult.h>
+#include <aws/lightsail/model/SetIpAddressTypeResult.h>
 #include <aws/lightsail/model/StartInstanceResult.h>
 #include <aws/lightsail/model/StartRelationalDatabaseResult.h>
 #include <aws/lightsail/model/StopInstanceResult.h>
@@ -317,6 +318,7 @@ namespace Model
         class ReleaseStaticIpRequest;
         class ResetDistributionCacheRequest;
         class SendContactMethodVerificationRequest;
+        class SetIpAddressTypeRequest;
         class StartInstanceRequest;
         class StartRelationalDatabaseRequest;
         class StopInstanceRequest;
@@ -459,6 +461,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ReleaseStaticIpResult, LightsailError> ReleaseStaticIpOutcome;
         typedef Aws::Utils::Outcome<ResetDistributionCacheResult, LightsailError> ResetDistributionCacheOutcome;
         typedef Aws::Utils::Outcome<SendContactMethodVerificationResult, LightsailError> SendContactMethodVerificationOutcome;
+        typedef Aws::Utils::Outcome<SetIpAddressTypeResult, LightsailError> SetIpAddressTypeOutcome;
         typedef Aws::Utils::Outcome<StartInstanceResult, LightsailError> StartInstanceOutcome;
         typedef Aws::Utils::Outcome<StartRelationalDatabaseResult, LightsailError> StartRelationalDatabaseOutcome;
         typedef Aws::Utils::Outcome<StopInstanceResult, LightsailError> StopInstanceOutcome;
@@ -601,6 +604,7 @@ namespace Model
         typedef std::future<ReleaseStaticIpOutcome> ReleaseStaticIpOutcomeCallable;
         typedef std::future<ResetDistributionCacheOutcome> ResetDistributionCacheOutcomeCallable;
         typedef std::future<SendContactMethodVerificationOutcome> SendContactMethodVerificationOutcomeCallable;
+        typedef std::future<SetIpAddressTypeOutcome> SetIpAddressTypeOutcomeCallable;
         typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
         typedef std::future<StartRelationalDatabaseOutcome> StartRelationalDatabaseOutcomeCallable;
         typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
@@ -746,6 +750,7 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::ReleaseStaticIpRequest&, const Model::ReleaseStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseStaticIpResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::ResetDistributionCacheRequest&, const Model::ResetDistributionCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetDistributionCacheResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::SendContactMethodVerificationRequest&, const Model::SendContactMethodVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendContactMethodVerificationResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::SetIpAddressTypeRequest&, const Model::SetIpAddressTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIpAddressTypeResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartInstanceRequest&, const Model::StartInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartRelationalDatabaseRequest&, const Model::StartRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StopInstanceRequest&, const Model::StopInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstanceResponseReceivedHandler;
@@ -1299,7 +1304,7 @@ namespace Model
          * <p>Creates an Amazon Lightsail container service.</p> <p>A Lightsail container
          * service is a compute resource to which you can deploy containers. For more
          * information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container
          * services in Amazon Lightsail</a> in the <i>Lightsail Dev
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService">AWS
@@ -1311,7 +1316,7 @@ namespace Model
          * <p>Creates an Amazon Lightsail container service.</p> <p>A Lightsail container
          * service is a compute resource to which you can deploy containers. For more
          * information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container
          * services in Amazon Lightsail</a> in the <i>Lightsail Dev
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService">AWS
@@ -1325,7 +1330,7 @@ namespace Model
          * <p>Creates an Amazon Lightsail container service.</p> <p>A Lightsail container
          * service is a compute resource to which you can deploy containers. For more
          * information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container
          * services in Amazon Lightsail</a> in the <i>Lightsail Dev
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService">AWS
@@ -5620,6 +5625,40 @@ namespace Model
         virtual void SendContactMethodVerificationAsync(const Model::SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the IP address type for a Amazon Lightsail resource.</p> <p>Use this
+         * action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the
+         * specified resource. Alternately, you can use this action to disable dual-stack,
+         * and enable IPv4 only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetIpAddressType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetIpAddressTypeOutcome SetIpAddressType(const Model::SetIpAddressTypeRequest& request) const;
+
+        /**
+         * <p>Sets the IP address type for a Amazon Lightsail resource.</p> <p>Use this
+         * action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the
+         * specified resource. Alternately, you can use this action to disable dual-stack,
+         * and enable IPv4 only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetIpAddressType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetIpAddressTypeOutcomeCallable SetIpAddressTypeCallable(const Model::SetIpAddressTypeRequest& request) const;
+
+        /**
+         * <p>Sets the IP address type for a Amazon Lightsail resource.</p> <p>Use this
+         * action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the
+         * specified resource. Alternately, you can use this action to disable dual-stack,
+         * and enable IPv4 only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetIpAddressType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetIpAddressTypeAsync(const Model::SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
          * an instance, use the <code>reboot instance</code> operation.</p>  <p>When
          * you start a stopped instance, Lightsail assigns a new public IP address to the
@@ -6418,6 +6457,7 @@ namespace Model
         void ReleaseStaticIpAsyncHelper(const Model::ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetDistributionCacheAsyncHelper(const Model::ResetDistributionCacheRequest& request, const ResetDistributionCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendContactMethodVerificationAsyncHelper(const Model::SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetIpAddressTypeAsyncHelper(const Model::SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartInstanceAsyncHelper(const Model::StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartRelationalDatabaseAsyncHelper(const Model::StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopInstanceAsyncHelper(const Model::StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

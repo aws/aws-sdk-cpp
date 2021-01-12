@@ -13,6 +13,7 @@
 #include <aws/lightsail/model/LoadBalancerState.h>
 #include <aws/lightsail/model/LoadBalancerProtocol.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/InstanceHealthSummary.h>
 #include <aws/lightsail/model/LoadBalancerTlsCertificateSummary.h>
@@ -775,6 +776,49 @@ namespace Model
      */
     inline LoadBalancer& AddConfigurationOptions(const LoadBalancerAttributeName& key, const char* value) { m_configurationOptionsHasBeenSet = true; m_configurationOptions.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The IP address type of the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type of the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type of the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type of the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type of the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline LoadBalancer& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type of the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline LoadBalancer& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -824,6 +868,9 @@ namespace Model
 
     Aws::Map<LoadBalancerAttributeName, Aws::String> m_configurationOptions;
     bool m_configurationOptionsHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

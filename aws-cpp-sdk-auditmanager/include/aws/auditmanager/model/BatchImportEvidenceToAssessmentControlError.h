@@ -128,49 +128,49 @@ namespace Model
 
     /**
      * <p> The error message returned by the
-     * <code>BatchImportEvidenceToAssessmentControlError</code> API. </p>
+     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
      * <p> The error message returned by the
-     * <code>BatchImportEvidenceToAssessmentControlError</code> API. </p>
+     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p> The error message returned by the
-     * <code>BatchImportEvidenceToAssessmentControlError</code> API. </p>
+     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
      * <p> The error message returned by the
-     * <code>BatchImportEvidenceToAssessmentControlError</code> API. </p>
+     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <p> The error message returned by the
-     * <code>BatchImportEvidenceToAssessmentControlError</code> API. </p>
+     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
      * <p> The error message returned by the
-     * <code>BatchImportEvidenceToAssessmentControlError</code> API. </p>
+     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
      */
     inline BatchImportEvidenceToAssessmentControlError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
      * <p> The error message returned by the
-     * <code>BatchImportEvidenceToAssessmentControlError</code> API. </p>
+     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
      */
     inline BatchImportEvidenceToAssessmentControlError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p> The error message returned by the
-     * <code>BatchImportEvidenceToAssessmentControlError</code> API. </p>
+     * <code>BatchImportEvidenceToAssessmentControl</code> API. </p>
      */
     inline BatchImportEvidenceToAssessmentControlError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

@@ -125,11 +125,56 @@ namespace Model
      */
     inline DescribeDocumentPermissionResult& AddAccountSharingInfoList(AccountSharingInfo&& value) { m_accountSharingInfoList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The token for the next set of items to return. Use this token to get the next
+     * set of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. Use this token to get the next
+     * set of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The token for the next set of items to return. Use this token to get the next
+     * set of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token for the next set of items to return. Use this token to get the next
+     * set of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The token for the next set of items to return. Use this token to get the next
+     * set of results.</p>
+     */
+    inline DescribeDocumentPermissionResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token for the next set of items to return. Use this token to get the next
+     * set of results.</p>
+     */
+    inline DescribeDocumentPermissionResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token for the next set of items to return. Use this token to get the next
+     * set of results.</p>
+     */
+    inline DescribeDocumentPermissionResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
 
     Aws::Vector<AccountSharingInfo> m_accountSharingInfoList;
+
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/AddOnRequest.h>
 #include <utility>
@@ -571,6 +572,49 @@ namespace Model
      */
     inline CreateInstancesRequest& AddAddOns(AddOnRequest&& value) { m_addOnsHasBeenSet = true; m_addOns.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateInstancesRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateInstancesRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_instanceNames;
@@ -596,6 +640,9 @@ namespace Model
 
     Aws::Vector<AddOnRequest> m_addOns;
     bool m_addOnsHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

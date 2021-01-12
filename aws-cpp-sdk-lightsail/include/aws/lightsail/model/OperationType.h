@@ -78,6 +78,7 @@ namespace Model
     AttachCertificateToDistribution,
     DetachCertificateFromDistribution,
     UpdateDistributionBundle,
+    SetIpAddressType,
     CreateCertificate,
     DeleteCertificate,
     CreateContainerService,
