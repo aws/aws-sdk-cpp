@@ -613,9 +613,8 @@ namespace Model
         /**
          * <p>Deletes an entity type.</p> <p>You cannot delete an entity type that is
          * included in an event type.</p> <p>When you delete an entity type, Amazon Fraud
-         * Detector permanently deletes that entity type from the evaluation history, and
-         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
-         * <a
+         * Detector permanently deletes that entity type and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">AWS
          * API Reference</a></p>
          */
@@ -624,9 +623,8 @@ namespace Model
         /**
          * <p>Deletes an entity type.</p> <p>You cannot delete an entity type that is
          * included in an event type.</p> <p>When you delete an entity type, Amazon Fraud
-         * Detector permanently deletes that entity type from the evaluation history, and
-         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
-         * <a
+         * Detector permanently deletes that entity type and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">AWS
          * API Reference</a></p>
          *
@@ -637,9 +635,8 @@ namespace Model
         /**
          * <p>Deletes an entity type.</p> <p>You cannot delete an entity type that is
          * included in an event type.</p> <p>When you delete an entity type, Amazon Fraud
-         * Detector permanently deletes that entity type from the evaluation history, and
-         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
-         * <a
+         * Detector permanently deletes that entity type and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">AWS
          * API Reference</a></p>
          *
@@ -649,9 +646,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified event.</p> <p>When you delete an event, Amazon Fraud
-         * Detector permanently deletes that event from the evaluation history, and the
-         * event data is no longer stored in Amazon Fraud Detector.</p><p><h3>See
-         * Also:</h3>   <a
+         * Detector permanently deletes that event and the event data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">AWS
          * API Reference</a></p>
          */
@@ -659,9 +655,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified event.</p> <p>When you delete an event, Amazon Fraud
-         * Detector permanently deletes that event from the evaluation history, and the
-         * event data is no longer stored in Amazon Fraud Detector.</p><p><h3>See
-         * Also:</h3>   <a
+         * Detector permanently deletes that event and the event data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">AWS
          * API Reference</a></p>
          *
@@ -671,9 +666,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified event.</p> <p>When you delete an event, Amazon Fraud
-         * Detector permanently deletes that event from the evaluation history, and the
-         * event data is no longer stored in Amazon Fraud Detector.</p><p><h3>See
-         * Also:</h3>   <a
+         * Detector permanently deletes that event and the event data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">AWS
          * API Reference</a></p>
          *
@@ -684,9 +678,8 @@ namespace Model
         /**
          * <p>Deletes an event type.</p> <p>You cannot delete an event type that is used in
          * a detector or a model.</p> <p>When you delete an entity type, Amazon Fraud
-         * Detector permanently deletes that entity type from the evaluation history, and
-         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
-         * <a
+         * Detector permanently deletes that entity type and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">AWS
          * API Reference</a></p>
          */
@@ -695,9 +688,8 @@ namespace Model
         /**
          * <p>Deletes an event type.</p> <p>You cannot delete an event type that is used in
          * a detector or a model.</p> <p>When you delete an entity type, Amazon Fraud
-         * Detector permanently deletes that entity type from the evaluation history, and
-         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
-         * <a
+         * Detector permanently deletes that entity type and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">AWS
          * API Reference</a></p>
          *
@@ -708,9 +700,8 @@ namespace Model
         /**
          * <p>Deletes an event type.</p> <p>You cannot delete an event type that is used in
          * a detector or a model.</p> <p>When you delete an entity type, Amazon Fraud
-         * Detector permanently deletes that entity type from the evaluation history, and
-         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
-         * <a
+         * Detector permanently deletes that entity type and the data is no longer stored
+         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">AWS
          * API Reference</a></p>
          *
@@ -756,9 +747,8 @@ namespace Model
          * <p>Deletes a label.</p> <p>You cannot delete labels that are included in an
          * event type in Amazon Fraud Detector.</p> <p>You cannot delete a label assigned
          * to an event ID. You must first delete the relevant event ID.</p> <p>When you
-         * delete a label, Amazon Fraud Detector permanently deletes that label from the
-         * evaluation history, and the data is no longer stored in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * delete a label, Amazon Fraud Detector permanently deletes that label and the
+         * data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">AWS
          * API Reference</a></p>
          */
@@ -768,9 +758,8 @@ namespace Model
          * <p>Deletes a label.</p> <p>You cannot delete labels that are included in an
          * event type in Amazon Fraud Detector.</p> <p>You cannot delete a label assigned
          * to an event ID. You must first delete the relevant event ID.</p> <p>When you
-         * delete a label, Amazon Fraud Detector permanently deletes that label from the
-         * evaluation history, and the data is no longer stored in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * delete a label, Amazon Fraud Detector permanently deletes that label and the
+         * data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">AWS
          * API Reference</a></p>
          *
@@ -782,9 +771,8 @@ namespace Model
          * <p>Deletes a label.</p> <p>You cannot delete labels that are included in an
          * event type in Amazon Fraud Detector.</p> <p>You cannot delete a label assigned
          * to an event ID. You must first delete the relevant event ID.</p> <p>When you
-         * delete a label, Amazon Fraud Detector permanently deletes that label from the
-         * evaluation history, and the data is no longer stored in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * delete a label, Amazon Fraud Detector permanently deletes that label and the
+         * data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">AWS
          * API Reference</a></p>
          *
@@ -796,8 +784,8 @@ namespace Model
          * <p>Deletes a model.</p> <p>You can delete models and model versions in Amazon
          * Fraud Detector, provided that they are not associated with a detector
          * version.</p> <p> When you delete a model, Amazon Fraud Detector permanently
-         * deletes that model from the evaluation history, and the data is no longer stored
-         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * deletes that model and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">AWS
          * API Reference</a></p>
          */
@@ -807,8 +795,8 @@ namespace Model
          * <p>Deletes a model.</p> <p>You can delete models and model versions in Amazon
          * Fraud Detector, provided that they are not associated with a detector
          * version.</p> <p> When you delete a model, Amazon Fraud Detector permanently
-         * deletes that model from the evaluation history, and the data is no longer stored
-         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * deletes that model and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">AWS
          * API Reference</a></p>
          *
@@ -820,8 +808,8 @@ namespace Model
          * <p>Deletes a model.</p> <p>You can delete models and model versions in Amazon
          * Fraud Detector, provided that they are not associated with a detector
          * version.</p> <p> When you delete a model, Amazon Fraud Detector permanently
-         * deletes that model from the evaluation history, and the data is no longer stored
-         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * deletes that model and the data is no longer stored in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">AWS
          * API Reference</a></p>
          *
@@ -833,8 +821,8 @@ namespace Model
          * <p>Deletes a model version.</p> <p>You can delete models and model versions in
          * Amazon Fraud Detector, provided that they are not associated with a detector
          * version.</p> <p> When you delete a model version, Amazon Fraud Detector
-         * permanently deletes that model version from the evaluation history, and the data
-         * is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * permanently deletes that model version and the data is no longer stored in
+         * Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">AWS
          * API Reference</a></p>
          */
@@ -844,8 +832,8 @@ namespace Model
          * <p>Deletes a model version.</p> <p>You can delete models and model versions in
          * Amazon Fraud Detector, provided that they are not associated with a detector
          * version.</p> <p> When you delete a model version, Amazon Fraud Detector
-         * permanently deletes that model version from the evaluation history, and the data
-         * is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * permanently deletes that model version and the data is no longer stored in
+         * Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">AWS
          * API Reference</a></p>
          *
@@ -857,8 +845,8 @@ namespace Model
          * <p>Deletes a model version.</p> <p>You can delete models and model versions in
          * Amazon Fraud Detector, provided that they are not associated with a detector
          * version.</p> <p> When you delete a model version, Amazon Fraud Detector
-         * permanently deletes that model version from the evaluation history, and the data
-         * is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * permanently deletes that model version and the data is no longer stored in
+         * Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">AWS
          * API Reference</a></p>
          *
@@ -869,8 +857,8 @@ namespace Model
         /**
          * <p>Deletes an outcome.</p> <p>You cannot delete an outcome that is used in a
          * rule version.</p> <p>When you delete an outcome, Amazon Fraud Detector
-         * permanently deletes that outcome from the evaluation history, and the data is no
-         * longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * permanently deletes that outcome and the data is no longer stored in Amazon
+         * Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">AWS
          * API Reference</a></p>
          */
@@ -879,8 +867,8 @@ namespace Model
         /**
          * <p>Deletes an outcome.</p> <p>You cannot delete an outcome that is used in a
          * rule version.</p> <p>When you delete an outcome, Amazon Fraud Detector
-         * permanently deletes that outcome from the evaluation history, and the data is no
-         * longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * permanently deletes that outcome and the data is no longer stored in Amazon
+         * Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">AWS
          * API Reference</a></p>
          *
@@ -891,8 +879,8 @@ namespace Model
         /**
          * <p>Deletes an outcome.</p> <p>You cannot delete an outcome that is used in a
          * rule version.</p> <p>When you delete an outcome, Amazon Fraud Detector
-         * permanently deletes that outcome from the evaluation history, and the data is no
-         * longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * permanently deletes that outcome and the data is no longer stored in Amazon
+         * Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">AWS
          * API Reference</a></p>
          *
@@ -903,9 +891,8 @@ namespace Model
         /**
          * <p>Deletes the rule. You cannot delete a rule if it is used by an
          * <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p> <p>When you
-         * delete a rule, Amazon Fraud Detector permanently deletes that rule from the
-         * evaluation history, and the data is no longer stored in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * delete a rule, Amazon Fraud Detector permanently deletes that rule and the data
+         * is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">AWS
          * API Reference</a></p>
          */
@@ -914,9 +901,8 @@ namespace Model
         /**
          * <p>Deletes the rule. You cannot delete a rule if it is used by an
          * <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p> <p>When you
-         * delete a rule, Amazon Fraud Detector permanently deletes that rule from the
-         * evaluation history, and the data is no longer stored in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * delete a rule, Amazon Fraud Detector permanently deletes that rule and the data
+         * is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">AWS
          * API Reference</a></p>
          *
@@ -927,9 +913,8 @@ namespace Model
         /**
          * <p>Deletes the rule. You cannot delete a rule if it is used by an
          * <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p> <p>When you
-         * delete a rule, Amazon Fraud Detector permanently deletes that rule from the
-         * evaluation history, and the data is no longer stored in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * delete a rule, Amazon Fraud Detector permanently deletes that rule and the data
+         * is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">AWS
          * API Reference</a></p>
          *
@@ -942,9 +927,9 @@ namespace Model
          * event type in Amazon Fraud Detector.</p> <p>Amazon Fraud Detector automatically
          * deletes model output variables and SageMaker model output variables when you
          * delete the model. You can't delete these variables manually.</p> <p>When you
-         * delete a variable, Amazon Fraud Detector permanently deletes that variable from
-         * the evaluation history, and the data is no longer stored in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * delete a variable, Amazon Fraud Detector permanently deletes that variable and
+         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">AWS
          * API Reference</a></p>
          */
@@ -955,9 +940,9 @@ namespace Model
          * event type in Amazon Fraud Detector.</p> <p>Amazon Fraud Detector automatically
          * deletes model output variables and SageMaker model output variables when you
          * delete the model. You can't delete these variables manually.</p> <p>When you
-         * delete a variable, Amazon Fraud Detector permanently deletes that variable from
-         * the evaluation history, and the data is no longer stored in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * delete a variable, Amazon Fraud Detector permanently deletes that variable and
+         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">AWS
          * API Reference</a></p>
          *
@@ -970,9 +955,9 @@ namespace Model
          * event type in Amazon Fraud Detector.</p> <p>Amazon Fraud Detector automatically
          * deletes model output variables and SageMaker model output variables when you
          * delete the model. You can't delete these variables manually.</p> <p>When you
-         * delete a variable, Amazon Fraud Detector permanently deletes that variable from
-         * the evaluation history, and the data is no longer stored in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * delete a variable, Amazon Fraud Detector permanently deletes that variable and
+         * the data is no longer stored in Amazon Fraud Detector.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">AWS
          * API Reference</a></p>
          *

@@ -340,12 +340,14 @@ namespace Model
          * Transactions per second (TPS) is the throughput and unit of billing for Amazon
          * Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>)
          * specifies the baseline throughput provisioned by Amazon Personalize, and thus,
-         * the minimum billing charge. If your TPS increases beyond
+         * the minimum billing charge. </p> <p> If your TPS increases beyond
          * <code>minProvisionedTPS</code>, Amazon Personalize auto-scales the provisioned
-         * capacity up and down, but never below <code>minProvisionedTPS</code>, to
-         * maintain a 70% utilization. There's a short time delay while the capacity is
-         * increased that might cause loss of transactions. It's recommended to start with
-         * a low <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch
+         * capacity up and down, but never below <code>minProvisionedTPS</code>. There's a
+         * short time delay while the capacity is increased that might cause loss of
+         * transactions.</p> <p>The actual TPS used is calculated as the average
+         * requests/second within a 5-minute window. You pay for maximum of either the
+         * minimum provisioned TPS or the actual TPS. We recommend starting with a low
+         * <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch
          * metrics, and then increase the <code>minProvisionedTPS</code> as necessary.</p>
          * <p> <b>Status</b> </p> <p>A campaign can be in one of the following states:</p>
          * <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
@@ -373,12 +375,14 @@ namespace Model
          * Transactions per second (TPS) is the throughput and unit of billing for Amazon
          * Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>)
          * specifies the baseline throughput provisioned by Amazon Personalize, and thus,
-         * the minimum billing charge. If your TPS increases beyond
+         * the minimum billing charge. </p> <p> If your TPS increases beyond
          * <code>minProvisionedTPS</code>, Amazon Personalize auto-scales the provisioned
-         * capacity up and down, but never below <code>minProvisionedTPS</code>, to
-         * maintain a 70% utilization. There's a short time delay while the capacity is
-         * increased that might cause loss of transactions. It's recommended to start with
-         * a low <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch
+         * capacity up and down, but never below <code>minProvisionedTPS</code>. There's a
+         * short time delay while the capacity is increased that might cause loss of
+         * transactions.</p> <p>The actual TPS used is calculated as the average
+         * requests/second within a 5-minute window. You pay for maximum of either the
+         * minimum provisioned TPS or the actual TPS. We recommend starting with a low
+         * <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch
          * metrics, and then increase the <code>minProvisionedTPS</code> as necessary.</p>
          * <p> <b>Status</b> </p> <p>A campaign can be in one of the following states:</p>
          * <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
@@ -408,12 +412,14 @@ namespace Model
          * Transactions per second (TPS) is the throughput and unit of billing for Amazon
          * Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>)
          * specifies the baseline throughput provisioned by Amazon Personalize, and thus,
-         * the minimum billing charge. If your TPS increases beyond
+         * the minimum billing charge. </p> <p> If your TPS increases beyond
          * <code>minProvisionedTPS</code>, Amazon Personalize auto-scales the provisioned
-         * capacity up and down, but never below <code>minProvisionedTPS</code>, to
-         * maintain a 70% utilization. There's a short time delay while the capacity is
-         * increased that might cause loss of transactions. It's recommended to start with
-         * a low <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch
+         * capacity up and down, but never below <code>minProvisionedTPS</code>. There's a
+         * short time delay while the capacity is increased that might cause loss of
+         * transactions.</p> <p>The actual TPS used is calculated as the average
+         * requests/second within a 5-minute window. You pay for maximum of either the
+         * minimum provisioned TPS or the actual TPS. We recommend starting with a low
+         * <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch
          * metrics, and then increase the <code>minProvisionedTPS</code> as necessary.</p>
          * <p> <b>Status</b> </p> <p>A campaign can be in one of the following states:</p>
          * <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
@@ -592,17 +598,17 @@ namespace Model
          * the training data, you must specify an AWS Identity and Access Management (IAM)
          * role that has permission to read from the data source, as Amazon Personalize
          * makes a copy of your data and processes it in an internal AWS system.</p>
-         *  <p>The dataset import job replaces any previous data in the
-         * dataset.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
-         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
-         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
-         * of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon
-         * Resource Name (ARN) of the dataset import job. The dataset import is complete
-         * when the status shows as ACTIVE. If the status shows as CREATE FAILED, the
-         * response includes a <code>failureReason</code> key, which describes why the job
-         * failed.</p>  <p>Importing takes time. You must wait until the status shows
-         * as ACTIVE before training a model using the dataset.</p>  <p
-         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         *  <p>The dataset import job replaces any existing data in the dataset
+         * that you imported in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset
+         * import job can be in one of the following states:</p> <ul> <li> <p>CREATE
+         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+         * <p>To get the status of the import job, call <a>DescribeDatasetImportJob</a>,
+         * providing the Amazon Resource Name (ARN) of the dataset import job. The dataset
+         * import is complete when the status shows as ACTIVE. If the status shows as
+         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
+         * describes why the job failed.</p>  <p>Importing takes time. You must wait
+         * until the status shows as ACTIVE before training a model using the dataset.</p>
+         *  <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
          * <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
@@ -616,17 +622,17 @@ namespace Model
          * the training data, you must specify an AWS Identity and Access Management (IAM)
          * role that has permission to read from the data source, as Amazon Personalize
          * makes a copy of your data and processes it in an internal AWS system.</p>
-         *  <p>The dataset import job replaces any previous data in the
-         * dataset.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
-         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
-         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
-         * of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon
-         * Resource Name (ARN) of the dataset import job. The dataset import is complete
-         * when the status shows as ACTIVE. If the status shows as CREATE FAILED, the
-         * response includes a <code>failureReason</code> key, which describes why the job
-         * failed.</p>  <p>Importing takes time. You must wait until the status shows
-         * as ACTIVE before training a model using the dataset.</p>  <p
-         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         *  <p>The dataset import job replaces any existing data in the dataset
+         * that you imported in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset
+         * import job can be in one of the following states:</p> <ul> <li> <p>CREATE
+         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+         * <p>To get the status of the import job, call <a>DescribeDatasetImportJob</a>,
+         * providing the Amazon Resource Name (ARN) of the dataset import job. The dataset
+         * import is complete when the status shows as ACTIVE. If the status shows as
+         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
+         * describes why the job failed.</p>  <p>Importing takes time. You must wait
+         * until the status shows as ACTIVE before training a model using the dataset.</p>
+         *  <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
          * <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
@@ -642,17 +648,17 @@ namespace Model
          * the training data, you must specify an AWS Identity and Access Management (IAM)
          * role that has permission to read from the data source, as Amazon Personalize
          * makes a copy of your data and processes it in an internal AWS system.</p>
-         *  <p>The dataset import job replaces any previous data in the
-         * dataset.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
-         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
-         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
-         * of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon
-         * Resource Name (ARN) of the dataset import job. The dataset import is complete
-         * when the status shows as ACTIVE. If the status shows as CREATE FAILED, the
-         * response includes a <code>failureReason</code> key, which describes why the job
-         * failed.</p>  <p>Importing takes time. You must wait until the status shows
-         * as ACTIVE before training a model using the dataset.</p>  <p
-         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         *  <p>The dataset import job replaces any existing data in the dataset
+         * that you imported in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset
+         * import job can be in one of the following states:</p> <ul> <li> <p>CREATE
+         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+         * <p>To get the status of the import job, call <a>DescribeDatasetImportJob</a>,
+         * providing the Amazon Resource Name (ARN) of the dataset import job. The dataset
+         * import is complete when the status shows as ACTIVE. If the status shows as
+         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
+         * describes why the job failed.</p>  <p>Importing takes time. You must wait
+         * until the status shows as ACTIVE before training a model using the dataset.</p>
+         *  <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
          * <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
@@ -663,23 +669,22 @@ namespace Model
         virtual void CreateDatasetImportJobAsync(const Model::CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an event tracker that you use when sending event data to the
-         * specified dataset group using the <a
+         * <p>Creates an event tracker that you use when adding event data to a specified
+         * dataset group using the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
-         * API.</p> <p>When Amazon Personalize creates an event tracker, it also creates an
-         * <i>event-interactions</i> dataset in the dataset group associated with the event
-         * tracker. The event-interactions dataset stores the event data from the
-         * <code>PutEvents</code> call. The contents of this dataset are not available to
-         * the user.</p>  <p>Only one event tracker can be associated with a dataset
+         * API.</p>  <p>Only one event tracker can be associated with a dataset
          * group. You will get an error if you call <code>CreateEventTracker</code> using
          * the same dataset group as an existing event tracker.</p>  <p>When you
-         * send event data you include your tracking ID. The tracking ID identifies the
-         * customer and authorizes the customer to send the data.</p> <p>The event tracker
-         * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
-         * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
-         * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status of the
-         * event tracker, call <a>DescribeEventTracker</a>.</p>  <p>The event tracker
-         * must be in the ACTIVE state before using the tracking ID.</p>  <p
+         * create an event tracker, the response includes a tracking ID, which you pass as
+         * a parameter when you use the <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
+         * operation. Amazon Personalize then appends the event data to the Interactions
+         * dataset of the dataset group you specify in your event tracker. </p> <p>The
+         * event tracker can be in one of the following states:</p> <ul> <li> <p>CREATE
+         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li>
+         * <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status
+         * of the event tracker, call <a>DescribeEventTracker</a>.</p>  <p>The event
+         * tracker must be in the ACTIVE state before using the tracking ID.</p>  <p
          * class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListEventTrackers</a>
          * </p> </li> <li> <p> <a>DescribeEventTracker</a> </p> </li> <li> <p>
          * <a>DeleteEventTracker</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -689,23 +694,22 @@ namespace Model
         virtual Model::CreateEventTrackerOutcome CreateEventTracker(const Model::CreateEventTrackerRequest& request) const;
 
         /**
-         * <p>Creates an event tracker that you use when sending event data to the
-         * specified dataset group using the <a
+         * <p>Creates an event tracker that you use when adding event data to a specified
+         * dataset group using the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
-         * API.</p> <p>When Amazon Personalize creates an event tracker, it also creates an
-         * <i>event-interactions</i> dataset in the dataset group associated with the event
-         * tracker. The event-interactions dataset stores the event data from the
-         * <code>PutEvents</code> call. The contents of this dataset are not available to
-         * the user.</p>  <p>Only one event tracker can be associated with a dataset
+         * API.</p>  <p>Only one event tracker can be associated with a dataset
          * group. You will get an error if you call <code>CreateEventTracker</code> using
          * the same dataset group as an existing event tracker.</p>  <p>When you
-         * send event data you include your tracking ID. The tracking ID identifies the
-         * customer and authorizes the customer to send the data.</p> <p>The event tracker
-         * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
-         * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
-         * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status of the
-         * event tracker, call <a>DescribeEventTracker</a>.</p>  <p>The event tracker
-         * must be in the ACTIVE state before using the tracking ID.</p>  <p
+         * create an event tracker, the response includes a tracking ID, which you pass as
+         * a parameter when you use the <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
+         * operation. Amazon Personalize then appends the event data to the Interactions
+         * dataset of the dataset group you specify in your event tracker. </p> <p>The
+         * event tracker can be in one of the following states:</p> <ul> <li> <p>CREATE
+         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li>
+         * <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status
+         * of the event tracker, call <a>DescribeEventTracker</a>.</p>  <p>The event
+         * tracker must be in the ACTIVE state before using the tracking ID.</p>  <p
          * class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListEventTrackers</a>
          * </p> </li> <li> <p> <a>DescribeEventTracker</a> </p> </li> <li> <p>
          * <a>DeleteEventTracker</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -717,23 +721,22 @@ namespace Model
         virtual Model::CreateEventTrackerOutcomeCallable CreateEventTrackerCallable(const Model::CreateEventTrackerRequest& request) const;
 
         /**
-         * <p>Creates an event tracker that you use when sending event data to the
-         * specified dataset group using the <a
+         * <p>Creates an event tracker that you use when adding event data to a specified
+         * dataset group using the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
-         * API.</p> <p>When Amazon Personalize creates an event tracker, it also creates an
-         * <i>event-interactions</i> dataset in the dataset group associated with the event
-         * tracker. The event-interactions dataset stores the event data from the
-         * <code>PutEvents</code> call. The contents of this dataset are not available to
-         * the user.</p>  <p>Only one event tracker can be associated with a dataset
+         * API.</p>  <p>Only one event tracker can be associated with a dataset
          * group. You will get an error if you call <code>CreateEventTracker</code> using
          * the same dataset group as an existing event tracker.</p>  <p>When you
-         * send event data you include your tracking ID. The tracking ID identifies the
-         * customer and authorizes the customer to send the data.</p> <p>The event tracker
-         * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
-         * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
-         * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status of the
-         * event tracker, call <a>DescribeEventTracker</a>.</p>  <p>The event tracker
-         * must be in the ACTIVE state before using the tracking ID.</p>  <p
+         * create an event tracker, the response includes a tracking ID, which you pass as
+         * a parameter when you use the <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
+         * operation. Amazon Personalize then appends the event data to the Interactions
+         * dataset of the dataset group you specify in your event tracker. </p> <p>The
+         * event tracker can be in one of the following states:</p> <ul> <li> <p>CREATE
+         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li>
+         * <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status
+         * of the event tracker, call <a>DescribeEventTracker</a>.</p>  <p>The event
+         * tracker must be in the ACTIVE state before using the tracking ID.</p>  <p
          * class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListEventTrackers</a>
          * </p> </li> <li> <p> <a>DescribeEventTracker</a> </p> </li> <li> <p>
          * <a>DeleteEventTracker</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -745,18 +748,16 @@ namespace Model
         virtual void CreateEventTrackerAsync(const Model::CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a recommendation filter. For more information, see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-         * Filters with Amazon Personalize</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a recommendation filter. For more information, see
+         * <a>filter</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFilterOutcome CreateFilter(const Model::CreateFilterRequest& request) const;
 
         /**
-         * <p>Creates a recommendation filter. For more information, see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-         * Filters with Amazon Personalize</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a recommendation filter. For more information, see
+         * <a>filter</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">AWS
          * API Reference</a></p>
          *
@@ -765,9 +766,8 @@ namespace Model
         virtual Model::CreateFilterOutcomeCallable CreateFilterCallable(const Model::CreateFilterRequest& request) const;
 
         /**
-         * <p>Creates a recommendation filter. For more information, see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-         * Filters with Amazon Personalize</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a recommendation filter. For more information, see
+         * <a>filter</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">AWS
          * API Reference</a></p>
          *
@@ -834,11 +834,13 @@ namespace Model
          * You can specify one of the predefined recipes provided by Amazon Personalize.
          * Alternatively, you can specify <code>performAutoML</code> and Amazon Personalize
          * will analyze your data and select the optimum USER_PERSONALIZATION recipe for
-         * you.</p> <p> <b>Status</b> </p> <p>A solution can be in one of the following
-         * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
-         * CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
-         * </ul> <p>To get the status of the solution, call <a>DescribeSolution</a>. Wait
-         * until the status shows as ACTIVE before calling
+         * you.</p>  <p>Amazon Personalize doesn't support configuring the
+         * <code>hpoObjective</code> for solution hyperparameter optimization at this
+         * time.</p>  <p> <b>Status</b> </p> <p>A solution can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
+         * IN_PROGRESS</p> </li> </ul> <p>To get the status of the solution, call
+         * <a>DescribeSolution</a>. Wait until the status shows as ACTIVE before calling
          * <code>CreateSolutionVersion</code>.</p> <p class="title"> <b>Related APIs</b>
          * </p> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p>
          * <a>CreateSolutionVersion</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p>
@@ -866,11 +868,13 @@ namespace Model
          * You can specify one of the predefined recipes provided by Amazon Personalize.
          * Alternatively, you can specify <code>performAutoML</code> and Amazon Personalize
          * will analyze your data and select the optimum USER_PERSONALIZATION recipe for
-         * you.</p> <p> <b>Status</b> </p> <p>A solution can be in one of the following
-         * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
-         * CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
-         * </ul> <p>To get the status of the solution, call <a>DescribeSolution</a>. Wait
-         * until the status shows as ACTIVE before calling
+         * you.</p>  <p>Amazon Personalize doesn't support configuring the
+         * <code>hpoObjective</code> for solution hyperparameter optimization at this
+         * time.</p>  <p> <b>Status</b> </p> <p>A solution can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
+         * IN_PROGRESS</p> </li> </ul> <p>To get the status of the solution, call
+         * <a>DescribeSolution</a>. Wait until the status shows as ACTIVE before calling
          * <code>CreateSolutionVersion</code>.</p> <p class="title"> <b>Related APIs</b>
          * </p> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p>
          * <a>CreateSolutionVersion</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p>
@@ -900,11 +904,13 @@ namespace Model
          * You can specify one of the predefined recipes provided by Amazon Personalize.
          * Alternatively, you can specify <code>performAutoML</code> and Amazon Personalize
          * will analyze your data and select the optimum USER_PERSONALIZATION recipe for
-         * you.</p> <p> <b>Status</b> </p> <p>A solution can be in one of the following
-         * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
-         * CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
-         * </ul> <p>To get the status of the solution, call <a>DescribeSolution</a>. Wait
-         * until the status shows as ACTIVE before calling
+         * you.</p>  <p>Amazon Personalize doesn't support configuring the
+         * <code>hpoObjective</code> for solution hyperparameter optimization at this
+         * time.</p>  <p> <b>Status</b> </p> <p>A solution can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
+         * IN_PROGRESS</p> </li> </ul> <p>To get the status of the solution, call
+         * <a>DescribeSolution</a>. Wait until the status shows as ACTIVE before calling
          * <code>CreateSolutionVersion</code>.</p> <p class="title"> <b>Related APIs</b>
          * </p> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p>
          * <a>CreateSolutionVersion</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p>

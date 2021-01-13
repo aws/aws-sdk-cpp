@@ -93,8 +93,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline const TrainingMode& GetTrainingMode() const{ return m_trainingMode; }
 
@@ -107,8 +110,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline bool TrainingModeHasBeenSet() const { return m_trainingModeHasBeenSet; }
 
@@ -121,8 +127,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline void SetTrainingMode(const TrainingMode& value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
 
@@ -135,8 +144,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline void SetTrainingMode(TrainingMode&& value) { m_trainingModeHasBeenSet = true; m_trainingMode = std::move(value); }
 
@@ -149,8 +161,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline CreateSolutionVersionRequest& WithTrainingMode(const TrainingMode& value) { SetTrainingMode(value); return *this;}
 
@@ -163,8 +178,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline CreateSolutionVersionRequest& WithTrainingMode(TrainingMode&& value) { SetTrainingMode(std::move(value)); return *this;}
 
