@@ -30,12 +30,14 @@
 #include <aws/cognito-identity/model/GetIdentityPoolRolesRequest.h>
 #include <aws/cognito-identity/model/GetOpenIdTokenRequest.h>
 #include <aws/cognito-identity/model/GetOpenIdTokenForDeveloperIdentityRequest.h>
+#include <aws/cognito-identity/model/GetPrincipalTagAttributeMapRequest.h>
 #include <aws/cognito-identity/model/ListIdentitiesRequest.h>
 #include <aws/cognito-identity/model/ListIdentityPoolsRequest.h>
 #include <aws/cognito-identity/model/ListTagsForResourceRequest.h>
 #include <aws/cognito-identity/model/LookupDeveloperIdentityRequest.h>
 #include <aws/cognito-identity/model/MergeDeveloperIdentitiesRequest.h>
 #include <aws/cognito-identity/model/SetIdentityPoolRolesRequest.h>
+#include <aws/cognito-identity/model/SetPrincipalTagAttributeMapRequest.h>
 #include <aws/cognito-identity/model/TagResourceRequest.h>
 #include <aws/cognito-identity/model/UnlinkDeveloperIdentityRequest.h>
 #include <aws/cognito-identity/model/UnlinkIdentityRequest.h>
@@ -385,6 +387,33 @@ void CognitoIdentityClient::GetOpenIdTokenForDeveloperIdentityAsyncHelper(const 
   handler(this, request, GetOpenIdTokenForDeveloperIdentity(request), context);
 }
 
+GetPrincipalTagAttributeMapOutcome CognitoIdentityClient::GetPrincipalTagAttributeMap(const GetPrincipalTagAttributeMapRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetPrincipalTagAttributeMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPrincipalTagAttributeMapOutcomeCallable CognitoIdentityClient::GetPrincipalTagAttributeMapCallable(const GetPrincipalTagAttributeMapRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPrincipalTagAttributeMapOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPrincipalTagAttributeMap(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityClient::GetPrincipalTagAttributeMapAsync(const GetPrincipalTagAttributeMapRequest& request, const GetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPrincipalTagAttributeMapAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityClient::GetPrincipalTagAttributeMapAsyncHelper(const GetPrincipalTagAttributeMapRequest& request, const GetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPrincipalTagAttributeMap(request), context);
+}
+
 ListIdentitiesOutcome CognitoIdentityClient::ListIdentities(const ListIdentitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -545,6 +574,33 @@ void CognitoIdentityClient::SetIdentityPoolRolesAsync(const SetIdentityPoolRoles
 void CognitoIdentityClient::SetIdentityPoolRolesAsyncHelper(const SetIdentityPoolRolesRequest& request, const SetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetIdentityPoolRoles(request), context);
+}
+
+SetPrincipalTagAttributeMapOutcome CognitoIdentityClient::SetPrincipalTagAttributeMap(const SetPrincipalTagAttributeMapRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return SetPrincipalTagAttributeMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SetPrincipalTagAttributeMapOutcomeCallable CognitoIdentityClient::SetPrincipalTagAttributeMapCallable(const SetPrincipalTagAttributeMapRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetPrincipalTagAttributeMapOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetPrincipalTagAttributeMap(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityClient::SetPrincipalTagAttributeMapAsync(const SetPrincipalTagAttributeMapRequest& request, const SetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetPrincipalTagAttributeMapAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityClient::SetPrincipalTagAttributeMapAsyncHelper(const SetPrincipalTagAttributeMapRequest& request, const SetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetPrincipalTagAttributeMap(request), context);
 }
 
 TagResourceOutcome CognitoIdentityClient::TagResource(const TagResourceRequest& request) const

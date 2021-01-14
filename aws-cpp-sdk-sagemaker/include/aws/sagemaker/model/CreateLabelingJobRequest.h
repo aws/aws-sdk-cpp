@@ -43,49 +43,73 @@ namespace Model
 
     /**
      * <p>The name of the labeling job. This name is used to identify the job in a list
-     * of labeling jobs.</p>
+     * of labeling jobs. Labeling job names must be unique within an AWS account and
+     * region. <code>LabelingJobName</code> is not case sensitive. For example,
+     * Example-job and example-job are considered the same labeling job name by Ground
+     * Truth.</p>
      */
     inline const Aws::String& GetLabelingJobName() const{ return m_labelingJobName; }
 
     /**
      * <p>The name of the labeling job. This name is used to identify the job in a list
-     * of labeling jobs.</p>
+     * of labeling jobs. Labeling job names must be unique within an AWS account and
+     * region. <code>LabelingJobName</code> is not case sensitive. For example,
+     * Example-job and example-job are considered the same labeling job name by Ground
+     * Truth.</p>
      */
     inline bool LabelingJobNameHasBeenSet() const { return m_labelingJobNameHasBeenSet; }
 
     /**
      * <p>The name of the labeling job. This name is used to identify the job in a list
-     * of labeling jobs.</p>
+     * of labeling jobs. Labeling job names must be unique within an AWS account and
+     * region. <code>LabelingJobName</code> is not case sensitive. For example,
+     * Example-job and example-job are considered the same labeling job name by Ground
+     * Truth.</p>
      */
     inline void SetLabelingJobName(const Aws::String& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = value; }
 
     /**
      * <p>The name of the labeling job. This name is used to identify the job in a list
-     * of labeling jobs.</p>
+     * of labeling jobs. Labeling job names must be unique within an AWS account and
+     * region. <code>LabelingJobName</code> is not case sensitive. For example,
+     * Example-job and example-job are considered the same labeling job name by Ground
+     * Truth.</p>
      */
     inline void SetLabelingJobName(Aws::String&& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = std::move(value); }
 
     /**
      * <p>The name of the labeling job. This name is used to identify the job in a list
-     * of labeling jobs.</p>
+     * of labeling jobs. Labeling job names must be unique within an AWS account and
+     * region. <code>LabelingJobName</code> is not case sensitive. For example,
+     * Example-job and example-job are considered the same labeling job name by Ground
+     * Truth.</p>
      */
     inline void SetLabelingJobName(const char* value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName.assign(value); }
 
     /**
      * <p>The name of the labeling job. This name is used to identify the job in a list
-     * of labeling jobs.</p>
+     * of labeling jobs. Labeling job names must be unique within an AWS account and
+     * region. <code>LabelingJobName</code> is not case sensitive. For example,
+     * Example-job and example-job are considered the same labeling job name by Ground
+     * Truth.</p>
      */
     inline CreateLabelingJobRequest& WithLabelingJobName(const Aws::String& value) { SetLabelingJobName(value); return *this;}
 
     /**
      * <p>The name of the labeling job. This name is used to identify the job in a list
-     * of labeling jobs.</p>
+     * of labeling jobs. Labeling job names must be unique within an AWS account and
+     * region. <code>LabelingJobName</code> is not case sensitive. For example,
+     * Example-job and example-job are considered the same labeling job name by Ground
+     * Truth.</p>
      */
     inline CreateLabelingJobRequest& WithLabelingJobName(Aws::String&& value) { SetLabelingJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the labeling job. This name is used to identify the job in a list
-     * of labeling jobs.</p>
+     * of labeling jobs. Labeling job names must be unique within an AWS account and
+     * region. <code>LabelingJobName</code> is not case sensitive. For example,
+     * Example-job and example-job are considered the same labeling job name by Ground
+     * Truth.</p>
      */
     inline CreateLabelingJobRequest& WithLabelingJobName(const char* value) { SetLabelingJobName(value); return *this;}
 
@@ -317,8 +341,11 @@ namespace Model
 
 
     /**
-     * <p>The S3 URI of the file that defines the categories used to label the data
-     * objects.</p> <p>For 3D point cloud task types, see <a
+     * <p>The S3 URI of the file, referred to as a <i>label category configuration
+     * file</i>, that defines the categories used to label the data objects.</p> <p>For
+     * 3D point cloud and video frame task types, you can add label category attributes
+     * and frame attributes to your label category configuration file. To learn how,
+     * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p> <p>For all other <a
@@ -339,8 +366,11 @@ namespace Model
     inline const Aws::String& GetLabelCategoryConfigS3Uri() const{ return m_labelCategoryConfigS3Uri; }
 
     /**
-     * <p>The S3 URI of the file that defines the categories used to label the data
-     * objects.</p> <p>For 3D point cloud task types, see <a
+     * <p>The S3 URI of the file, referred to as a <i>label category configuration
+     * file</i>, that defines the categories used to label the data objects.</p> <p>For
+     * 3D point cloud and video frame task types, you can add label category attributes
+     * and frame attributes to your label category configuration file. To learn how,
+     * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p> <p>For all other <a
@@ -361,8 +391,11 @@ namespace Model
     inline bool LabelCategoryConfigS3UriHasBeenSet() const { return m_labelCategoryConfigS3UriHasBeenSet; }
 
     /**
-     * <p>The S3 URI of the file that defines the categories used to label the data
-     * objects.</p> <p>For 3D point cloud task types, see <a
+     * <p>The S3 URI of the file, referred to as a <i>label category configuration
+     * file</i>, that defines the categories used to label the data objects.</p> <p>For
+     * 3D point cloud and video frame task types, you can add label category attributes
+     * and frame attributes to your label category configuration file. To learn how,
+     * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p> <p>For all other <a
@@ -383,8 +416,11 @@ namespace Model
     inline void SetLabelCategoryConfigS3Uri(const Aws::String& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = value; }
 
     /**
-     * <p>The S3 URI of the file that defines the categories used to label the data
-     * objects.</p> <p>For 3D point cloud task types, see <a
+     * <p>The S3 URI of the file, referred to as a <i>label category configuration
+     * file</i>, that defines the categories used to label the data objects.</p> <p>For
+     * 3D point cloud and video frame task types, you can add label category attributes
+     * and frame attributes to your label category configuration file. To learn how,
+     * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p> <p>For all other <a
@@ -405,8 +441,11 @@ namespace Model
     inline void SetLabelCategoryConfigS3Uri(Aws::String&& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = std::move(value); }
 
     /**
-     * <p>The S3 URI of the file that defines the categories used to label the data
-     * objects.</p> <p>For 3D point cloud task types, see <a
+     * <p>The S3 URI of the file, referred to as a <i>label category configuration
+     * file</i>, that defines the categories used to label the data objects.</p> <p>For
+     * 3D point cloud and video frame task types, you can add label category attributes
+     * and frame attributes to your label category configuration file. To learn how,
+     * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p> <p>For all other <a
@@ -427,8 +466,11 @@ namespace Model
     inline void SetLabelCategoryConfigS3Uri(const char* value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri.assign(value); }
 
     /**
-     * <p>The S3 URI of the file that defines the categories used to label the data
-     * objects.</p> <p>For 3D point cloud task types, see <a
+     * <p>The S3 URI of the file, referred to as a <i>label category configuration
+     * file</i>, that defines the categories used to label the data objects.</p> <p>For
+     * 3D point cloud and video frame task types, you can add label category attributes
+     * and frame attributes to your label category configuration file. To learn how,
+     * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p> <p>For all other <a
@@ -449,8 +491,11 @@ namespace Model
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(const Aws::String& value) { SetLabelCategoryConfigS3Uri(value); return *this;}
 
     /**
-     * <p>The S3 URI of the file that defines the categories used to label the data
-     * objects.</p> <p>For 3D point cloud task types, see <a
+     * <p>The S3 URI of the file, referred to as a <i>label category configuration
+     * file</i>, that defines the categories used to label the data objects.</p> <p>For
+     * 3D point cloud and video frame task types, you can add label category attributes
+     * and frame attributes to your label category configuration file. To learn how,
+     * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p> <p>For all other <a
@@ -471,8 +516,11 @@ namespace Model
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(Aws::String&& value) { SetLabelCategoryConfigS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 URI of the file that defines the categories used to label the data
-     * objects.</p> <p>For 3D point cloud task types, see <a
+     * <p>The S3 URI of the file, referred to as a <i>label category configuration
+     * file</i>, that defines the categories used to label the data objects.</p> <p>For
+     * 3D point cloud and video frame task types, you can add label category attributes
+     * and frame attributes to your label category configuration file. To learn how,
+     * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
      * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
      * </p> <p>For all other <a

@@ -287,47 +287,47 @@ namespace Model
 
 
     /**
-     * <p>A list of OpendID Connect provider ARNs.</p>
+     * <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOpenIdConnectProviderARNs() const{ return m_openIdConnectProviderARNs; }
 
     /**
-     * <p>A list of OpendID Connect provider ARNs.</p>
+     * <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
      */
     inline bool OpenIdConnectProviderARNsHasBeenSet() const { return m_openIdConnectProviderARNsHasBeenSet; }
 
     /**
-     * <p>A list of OpendID Connect provider ARNs.</p>
+     * <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
      */
     inline void SetOpenIdConnectProviderARNs(const Aws::Vector<Aws::String>& value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs = value; }
 
     /**
-     * <p>A list of OpendID Connect provider ARNs.</p>
+     * <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
      */
     inline void SetOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs = std::move(value); }
 
     /**
-     * <p>A list of OpendID Connect provider ARNs.</p>
+     * <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
      */
     inline CreateIdentityPoolRequest& WithOpenIdConnectProviderARNs(const Aws::Vector<Aws::String>& value) { SetOpenIdConnectProviderARNs(value); return *this;}
 
     /**
-     * <p>A list of OpendID Connect provider ARNs.</p>
+     * <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
      */
     inline CreateIdentityPoolRequest& WithOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { SetOpenIdConnectProviderARNs(std::move(value)); return *this;}
 
     /**
-     * <p>A list of OpendID Connect provider ARNs.</p>
+     * <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
      */
     inline CreateIdentityPoolRequest& AddOpenIdConnectProviderARNs(const Aws::String& value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs.push_back(value); return *this; }
 
     /**
-     * <p>A list of OpendID Connect provider ARNs.</p>
+     * <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
      */
     inline CreateIdentityPoolRequest& AddOpenIdConnectProviderARNs(Aws::String&& value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of OpendID Connect provider ARNs.</p>
+     * <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
      */
     inline CreateIdentityPoolRequest& AddOpenIdConnectProviderARNs(const char* value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs.push_back(value); return *this; }
 

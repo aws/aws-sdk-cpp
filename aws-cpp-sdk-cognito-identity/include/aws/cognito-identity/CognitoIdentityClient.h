@@ -20,11 +20,13 @@
 #include <aws/cognito-identity/model/GetIdentityPoolRolesResult.h>
 #include <aws/cognito-identity/model/GetOpenIdTokenResult.h>
 #include <aws/cognito-identity/model/GetOpenIdTokenForDeveloperIdentityResult.h>
+#include <aws/cognito-identity/model/GetPrincipalTagAttributeMapResult.h>
 #include <aws/cognito-identity/model/ListIdentitiesResult.h>
 #include <aws/cognito-identity/model/ListIdentityPoolsResult.h>
 #include <aws/cognito-identity/model/ListTagsForResourceResult.h>
 #include <aws/cognito-identity/model/LookupDeveloperIdentityResult.h>
 #include <aws/cognito-identity/model/MergeDeveloperIdentitiesResult.h>
+#include <aws/cognito-identity/model/SetPrincipalTagAttributeMapResult.h>
 #include <aws/cognito-identity/model/TagResourceResult.h>
 #include <aws/cognito-identity/model/UntagResourceResult.h>
 #include <aws/cognito-identity/model/UpdateIdentityPoolResult.h>
@@ -78,12 +80,14 @@ namespace Model
         class GetIdentityPoolRolesRequest;
         class GetOpenIdTokenRequest;
         class GetOpenIdTokenForDeveloperIdentityRequest;
+        class GetPrincipalTagAttributeMapRequest;
         class ListIdentitiesRequest;
         class ListIdentityPoolsRequest;
         class ListTagsForResourceRequest;
         class LookupDeveloperIdentityRequest;
         class MergeDeveloperIdentitiesRequest;
         class SetIdentityPoolRolesRequest;
+        class SetPrincipalTagAttributeMapRequest;
         class TagResourceRequest;
         class UnlinkDeveloperIdentityRequest;
         class UnlinkIdentityRequest;
@@ -100,12 +104,14 @@ namespace Model
         typedef Aws::Utils::Outcome<GetIdentityPoolRolesResult, CognitoIdentityError> GetIdentityPoolRolesOutcome;
         typedef Aws::Utils::Outcome<GetOpenIdTokenResult, CognitoIdentityError> GetOpenIdTokenOutcome;
         typedef Aws::Utils::Outcome<GetOpenIdTokenForDeveloperIdentityResult, CognitoIdentityError> GetOpenIdTokenForDeveloperIdentityOutcome;
+        typedef Aws::Utils::Outcome<GetPrincipalTagAttributeMapResult, CognitoIdentityError> GetPrincipalTagAttributeMapOutcome;
         typedef Aws::Utils::Outcome<ListIdentitiesResult, CognitoIdentityError> ListIdentitiesOutcome;
         typedef Aws::Utils::Outcome<ListIdentityPoolsResult, CognitoIdentityError> ListIdentityPoolsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, CognitoIdentityError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<LookupDeveloperIdentityResult, CognitoIdentityError> LookupDeveloperIdentityOutcome;
         typedef Aws::Utils::Outcome<MergeDeveloperIdentitiesResult, CognitoIdentityError> MergeDeveloperIdentitiesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> SetIdentityPoolRolesOutcome;
+        typedef Aws::Utils::Outcome<SetPrincipalTagAttributeMapResult, CognitoIdentityError> SetPrincipalTagAttributeMapOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, CognitoIdentityError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> UnlinkDeveloperIdentityOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> UnlinkIdentityOutcome;
@@ -122,12 +128,14 @@ namespace Model
         typedef std::future<GetIdentityPoolRolesOutcome> GetIdentityPoolRolesOutcomeCallable;
         typedef std::future<GetOpenIdTokenOutcome> GetOpenIdTokenOutcomeCallable;
         typedef std::future<GetOpenIdTokenForDeveloperIdentityOutcome> GetOpenIdTokenForDeveloperIdentityOutcomeCallable;
+        typedef std::future<GetPrincipalTagAttributeMapOutcome> GetPrincipalTagAttributeMapOutcomeCallable;
         typedef std::future<ListIdentitiesOutcome> ListIdentitiesOutcomeCallable;
         typedef std::future<ListIdentityPoolsOutcome> ListIdentityPoolsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<LookupDeveloperIdentityOutcome> LookupDeveloperIdentityOutcomeCallable;
         typedef std::future<MergeDeveloperIdentitiesOutcome> MergeDeveloperIdentitiesOutcomeCallable;
         typedef std::future<SetIdentityPoolRolesOutcome> SetIdentityPoolRolesOutcomeCallable;
+        typedef std::future<SetPrincipalTagAttributeMapOutcome> SetPrincipalTagAttributeMapOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UnlinkDeveloperIdentityOutcome> UnlinkDeveloperIdentityOutcomeCallable;
         typedef std::future<UnlinkIdentityOutcome> UnlinkIdentityOutcomeCallable;
@@ -147,12 +155,14 @@ namespace Model
     typedef std::function<void(const CognitoIdentityClient*, const Model::GetIdentityPoolRolesRequest&, const Model::GetIdentityPoolRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityPoolRolesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::GetOpenIdTokenRequest&, const Model::GetOpenIdTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOpenIdTokenResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::GetOpenIdTokenForDeveloperIdentityRequest&, const Model::GetOpenIdTokenForDeveloperIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOpenIdTokenForDeveloperIdentityResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityClient*, const Model::GetPrincipalTagAttributeMapRequest&, const Model::GetPrincipalTagAttributeMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPrincipalTagAttributeMapResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::ListIdentitiesRequest&, const Model::ListIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentitiesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::ListIdentityPoolsRequest&, const Model::ListIdentityPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityPoolsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::LookupDeveloperIdentityRequest&, const Model::LookupDeveloperIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LookupDeveloperIdentityResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::MergeDeveloperIdentitiesRequest&, const Model::MergeDeveloperIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeDeveloperIdentitiesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::SetIdentityPoolRolesRequest&, const Model::SetIdentityPoolRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityPoolRolesResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityClient*, const Model::SetPrincipalTagAttributeMapRequest&, const Model::SetPrincipalTagAttributeMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetPrincipalTagAttributeMapResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::UnlinkDeveloperIdentityRequest&, const Model::UnlinkDeveloperIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnlinkDeveloperIdentityResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityClient*, const Model::UnlinkIdentityRequest&, const Model::UnlinkIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnlinkIdentityResponseReceivedHandler;
@@ -476,7 +486,7 @@ namespace Model
         /**
          * <p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is
          * returned by <a>GetId</a>. You can optionally add additional logins for the
-         * identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId
+         * identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenID
          * token is valid for 10 minutes.</p> <p>This is a public API. You do not need any
          * credentials to call this API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">AWS
@@ -487,7 +497,7 @@ namespace Model
         /**
          * <p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is
          * returned by <a>GetId</a>. You can optionally add additional logins for the
-         * identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId
+         * identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenID
          * token is valid for 10 minutes.</p> <p>This is a public API. You do not need any
          * credentials to call this API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">AWS
@@ -500,7 +510,7 @@ namespace Model
         /**
          * <p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is
          * returned by <a>GetId</a>. You can optionally add additional logins for the
-         * identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId
+         * identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenID
          * token is valid for 10 minutes.</p> <p>This is a public API. You do not need any
          * credentials to call this API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">AWS
@@ -573,6 +583,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetOpenIdTokenForDeveloperIdentityAsync(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request, const GetOpenIdTokenForDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between
+         * <code>PrincipalTags</code> and user attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetPrincipalTagAttributeMap">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPrincipalTagAttributeMapOutcome GetPrincipalTagAttributeMap(const Model::GetPrincipalTagAttributeMapRequest& request) const;
+
+        /**
+         * <p>Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between
+         * <code>PrincipalTags</code> and user attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetPrincipalTagAttributeMap">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPrincipalTagAttributeMapOutcomeCallable GetPrincipalTagAttributeMapCallable(const Model::GetPrincipalTagAttributeMapRequest& request) const;
+
+        /**
+         * <p>Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between
+         * <code>PrincipalTags</code> and user attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetPrincipalTagAttributeMap">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPrincipalTagAttributeMapAsync(const Model::GetPrincipalTagAttributeMapRequest& request, const GetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the identities in an identity pool.</p> <p>You must use AWS Developer
@@ -839,12 +877,40 @@ namespace Model
         virtual void SetIdentityPoolRolesAsync(const Model::SetIdentityPoolRolesRequest& request, const SetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label
-         * that you can use to categorize and manage identity pools in different ways, such
-         * as by purpose, owner, environment, or other criteria.</p> <p>Each tag consists
-         * of a key and value, both of which you define. A key is a general category for
-         * more specific values. For example, if you have two versions of an identity pool,
-         * one for testing and another for production, you might assign an
+         * <p>You can use this operation to use default (username and clientID) attribute
+         * or custom attribute mappings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetPrincipalTagAttributeMap">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetPrincipalTagAttributeMapOutcome SetPrincipalTagAttributeMap(const Model::SetPrincipalTagAttributeMapRequest& request) const;
+
+        /**
+         * <p>You can use this operation to use default (username and clientID) attribute
+         * or custom attribute mappings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetPrincipalTagAttributeMap">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetPrincipalTagAttributeMapOutcomeCallable SetPrincipalTagAttributeMapCallable(const Model::SetPrincipalTagAttributeMapRequest& request) const;
+
+        /**
+         * <p>You can use this operation to use default (username and clientID) attribute
+         * or custom attribute mappings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetPrincipalTagAttributeMap">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetPrincipalTagAttributeMapAsync(const Model::SetPrincipalTagAttributeMapRequest& request, const SetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is
+         * a label that you can use to categorize and manage identity pools in different
+         * ways, such as by purpose, owner, environment, or other criteria.</p> <p>Each tag
+         * consists of a key and value, both of which you define. A key is a general
+         * category for more specific values. For example, if you have two versions of an
+         * identity pool, one for testing and another for production, you might assign an
          * <code>Environment</code> tag key to both identity pools. The value of this key
          * might be <code>Test</code> for one identity pool and <code>Production</code> for
          * the other.</p> <p>Tags are useful for cost tracking and access control. You can
@@ -860,12 +926,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label
-         * that you can use to categorize and manage identity pools in different ways, such
-         * as by purpose, owner, environment, or other criteria.</p> <p>Each tag consists
-         * of a key and value, both of which you define. A key is a general category for
-         * more specific values. For example, if you have two versions of an identity pool,
-         * one for testing and another for production, you might assign an
+         * <p>Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is
+         * a label that you can use to categorize and manage identity pools in different
+         * ways, such as by purpose, owner, environment, or other criteria.</p> <p>Each tag
+         * consists of a key and value, both of which you define. A key is a general
+         * category for more specific values. For example, if you have two versions of an
+         * identity pool, one for testing and another for production, you might assign an
          * <code>Environment</code> tag key to both identity pools. The value of this key
          * might be <code>Test</code> for one identity pool and <code>Production</code> for
          * the other.</p> <p>Tags are useful for cost tracking and access control. You can
@@ -883,12 +949,12 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label
-         * that you can use to categorize and manage identity pools in different ways, such
-         * as by purpose, owner, environment, or other criteria.</p> <p>Each tag consists
-         * of a key and value, both of which you define. A key is a general category for
-         * more specific values. For example, if you have two versions of an identity pool,
-         * one for testing and another for production, you might assign an
+         * <p>Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is
+         * a label that you can use to categorize and manage identity pools in different
+         * ways, such as by purpose, owner, environment, or other criteria.</p> <p>Each tag
+         * consists of a key and value, both of which you define. A key is a general
+         * category for more specific values. For example, if you have two versions of an
+         * identity pool, one for testing and another for production, you might assign an
          * <code>Environment</code> tag key to both identity pools. The value of this key
          * might be <code>Test</code> for one identity pool and <code>Production</code> for
          * the other.</p> <p>Tags are useful for cost tracking and access control. You can
@@ -980,16 +1046,18 @@ namespace Model
         virtual void UnlinkIdentityAsync(const Model::UnlinkIdentityRequest& request, const UnlinkIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified tags from an Amazon Cognito identity pool. You can use
-         * this action up to 5 times per second, per account</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified Amazon Cognito identity pool.
+         * You can use this action up to 5 times per second, per account</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from an Amazon Cognito identity pool. You can use
-         * this action up to 5 times per second, per account</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified Amazon Cognito identity pool.
+         * You can use this action up to 5 times per second, per account</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -998,8 +1066,9 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from an Amazon Cognito identity pool. You can use
-         * this action up to 5 times per second, per account</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified Amazon Cognito identity pool.
+         * You can use this action up to 5 times per second, per account</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1049,12 +1118,14 @@ namespace Model
         void GetIdentityPoolRolesAsyncHelper(const Model::GetIdentityPoolRolesRequest& request, const GetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOpenIdTokenAsyncHelper(const Model::GetOpenIdTokenRequest& request, const GetOpenIdTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOpenIdTokenForDeveloperIdentityAsyncHelper(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request, const GetOpenIdTokenForDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPrincipalTagAttributeMapAsyncHelper(const Model::GetPrincipalTagAttributeMapRequest& request, const GetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIdentitiesAsyncHelper(const Model::ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIdentityPoolsAsyncHelper(const Model::ListIdentityPoolsRequest& request, const ListIdentityPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void LookupDeveloperIdentityAsyncHelper(const Model::LookupDeveloperIdentityRequest& request, const LookupDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MergeDeveloperIdentitiesAsyncHelper(const Model::MergeDeveloperIdentitiesRequest& request, const MergeDeveloperIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityPoolRolesAsyncHelper(const Model::SetIdentityPoolRolesRequest& request, const SetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetPrincipalTagAttributeMapAsyncHelper(const Model::SetPrincipalTagAttributeMapRequest& request, const SetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnlinkDeveloperIdentityAsyncHelper(const Model::UnlinkDeveloperIdentityRequest& request, const UnlinkDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnlinkIdentityAsyncHelper(const Model::UnlinkIdentityRequest& request, const UnlinkIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

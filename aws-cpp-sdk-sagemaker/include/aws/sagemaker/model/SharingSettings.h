@@ -80,49 +80,49 @@ namespace Model
 
     /**
      * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3
-     * bucket used to save the notebook cell output.</p>
+     * bucket used to store the shared notebook snapshots.</p>
      */
     inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
 
     /**
      * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3
-     * bucket used to save the notebook cell output.</p>
+     * bucket used to store the shared notebook snapshots.</p>
      */
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
 
     /**
      * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3
-     * bucket used to save the notebook cell output.</p>
+     * bucket used to store the shared notebook snapshots.</p>
      */
     inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
 
     /**
      * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3
-     * bucket used to save the notebook cell output.</p>
+     * bucket used to store the shared notebook snapshots.</p>
      */
     inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
 
     /**
      * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3
-     * bucket used to save the notebook cell output.</p>
+     * bucket used to store the shared notebook snapshots.</p>
      */
     inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
 
     /**
      * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3
-     * bucket used to save the notebook cell output.</p>
+     * bucket used to store the shared notebook snapshots.</p>
      */
     inline SharingSettings& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
 
     /**
      * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3
-     * bucket used to save the notebook cell output.</p>
+     * bucket used to store the shared notebook snapshots.</p>
      */
     inline SharingSettings& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
 
     /**
      * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3
-     * bucket used to save the notebook cell output.</p>
+     * bucket used to store the shared notebook snapshots.</p>
      */
     inline SharingSettings& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
 

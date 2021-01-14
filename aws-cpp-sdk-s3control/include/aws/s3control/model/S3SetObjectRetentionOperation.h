@@ -24,8 +24,8 @@ namespace Model
 
   /**
    * <p>Contains the configuration parameters for the Object Lock retention action
-   * for an S3 Batch Operations job. Batch Operations passes each value through to
-   * the underlying <code>PutObjectRetention</code> API. For more information, see <a
+   * for an S3 Batch Operations job. Batch Operations passes every object to the
+   * underlying <code>PutObjectRetention</code> API. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
    * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
    * Storage Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a

@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/ImageConfig.h>
 #include <aws/sagemaker/model/ContainerMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/sagemaker/model/MultiModelConfig.h>
 #include <utility>
 
 namespace Aws
@@ -694,6 +695,37 @@ namespace Model
      */
     inline ContainerDefinition& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
 
+
+    /**
+     * <p>Specifies additional configuration for multi-model endpoints.</p>
+     */
+    inline const MultiModelConfig& GetMultiModelConfig() const{ return m_multiModelConfig; }
+
+    /**
+     * <p>Specifies additional configuration for multi-model endpoints.</p>
+     */
+    inline bool MultiModelConfigHasBeenSet() const { return m_multiModelConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies additional configuration for multi-model endpoints.</p>
+     */
+    inline void SetMultiModelConfig(const MultiModelConfig& value) { m_multiModelConfigHasBeenSet = true; m_multiModelConfig = value; }
+
+    /**
+     * <p>Specifies additional configuration for multi-model endpoints.</p>
+     */
+    inline void SetMultiModelConfig(MultiModelConfig&& value) { m_multiModelConfigHasBeenSet = true; m_multiModelConfig = std::move(value); }
+
+    /**
+     * <p>Specifies additional configuration for multi-model endpoints.</p>
+     */
+    inline ContainerDefinition& WithMultiModelConfig(const MultiModelConfig& value) { SetMultiModelConfig(value); return *this;}
+
+    /**
+     * <p>Specifies additional configuration for multi-model endpoints.</p>
+     */
+    inline ContainerDefinition& WithMultiModelConfig(MultiModelConfig&& value) { SetMultiModelConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_containerHostname;
@@ -716,6 +748,9 @@ namespace Model
 
     Aws::String m_modelPackageName;
     bool m_modelPackageNameHasBeenSet;
+
+    MultiModelConfig m_multiModelConfig;
+    bool m_multiModelConfigHasBeenSet;
   };
 
 } // namespace Model

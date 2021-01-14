@@ -827,9 +827,9 @@ namespace Aws
          * the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples">Examples</a>
          * section.</p> <p>For more information about object expiration, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">
-         * Elements to Describe Lifecycle Actions</a>.</p> <p>Related actions include:</p>
-         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
+         * to Describe Lifecycle Actions</a>.</p> <p>Related actions include:</p> <ul> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
@@ -862,9 +862,9 @@ namespace Aws
          * the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples">Examples</a>
          * section.</p> <p>For more information about object expiration, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">
-         * Elements to Describe Lifecycle Actions</a>.</p> <p>Related actions include:</p>
-         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
+         * to Describe Lifecycle Actions</a>.</p> <p>Related actions include:</p> <ul> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
@@ -899,9 +899,9 @@ namespace Aws
          * the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples">Examples</a>
          * section.</p> <p>For more information about object expiration, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">
-         * Elements to Describe Lifecycle Actions</a>.</p> <p>Related actions include:</p>
-         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
+         * to Describe Lifecycle Actions</a>.</p> <p>Related actions include:</p> <ul> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
@@ -933,8 +933,8 @@ namespace Aws
          * </p>  <p>As a security precaution, the root user of the AWS account
          * that owns a bucket can always use this operation, even if the policy explicitly
          * denies the root user the ability to perform this action.</p>  <p>For
-         * more information about bucket policies, see <a href="
-         * https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+         * more information about bucket policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>. </p> <p>All Amazon S3 on Outposts REST
          * API requests for this action require an additional parameter of
          * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
@@ -974,8 +974,8 @@ namespace Aws
          * </p>  <p>As a security precaution, the root user of the AWS account
          * that owns a bucket can always use this operation, even if the policy explicitly
          * denies the root user the ability to perform this action.</p>  <p>For
-         * more information about bucket policies, see <a href="
-         * https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+         * more information about bucket policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>. </p> <p>All Amazon S3 on Outposts REST
          * API requests for this action require an additional parameter of
          * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
@@ -1017,8 +1017,8 @@ namespace Aws
          * </p>  <p>As a security precaution, the root user of the AWS account
          * that owns a bucket can always use this operation, even if the policy explicitly
          * denies the root user the ability to perform this action.</p>  <p>For
-         * more information about bucket policies, see <a href="
-         * https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+         * more information about bucket policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>. </p> <p>All Amazon S3 on Outposts REST
          * API requests for this action require an additional parameter of
          * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
@@ -1241,12 +1241,12 @@ namespace Aws
         /**
          * <p>Deletes the Amazon S3 Storage Lens configuration. For more information about
          * S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:DeleteStorageLensConfiguration</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfiguration">AWS
@@ -1257,12 +1257,12 @@ namespace Aws
         /**
          * <p>Deletes the Amazon S3 Storage Lens configuration. For more information about
          * S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:DeleteStorageLensConfiguration</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfiguration">AWS
@@ -1275,12 +1275,12 @@ namespace Aws
         /**
          * <p>Deletes the Amazon S3 Storage Lens configuration. For more information about
          * S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:DeleteStorageLensConfiguration</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfiguration">AWS
@@ -1293,12 +1293,12 @@ namespace Aws
         /**
          * <p>Deletes the Amazon S3 Storage Lens configuration tags. For more information
          * about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:DeleteStorageLensConfigurationTagging</code> action. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfigurationTagging">AWS
@@ -1309,12 +1309,12 @@ namespace Aws
         /**
          * <p>Deletes the Amazon S3 Storage Lens configuration tags. For more information
          * about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:DeleteStorageLensConfigurationTagging</code> action. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfigurationTagging">AWS
@@ -1327,12 +1327,12 @@ namespace Aws
         /**
          * <p>Deletes the Amazon S3 Storage Lens configuration tags. For more information
          * about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:DeleteStorageLensConfigurationTagging</code> action. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfigurationTagging">AWS
@@ -2134,12 +2134,12 @@ namespace Aws
 
         /**
          * <p>Gets the Amazon S3 Storage Lens configuration. For more information, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:GetStorageLensConfiguration</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfiguration">AWS
@@ -2149,12 +2149,12 @@ namespace Aws
 
         /**
          * <p>Gets the Amazon S3 Storage Lens configuration. For more information, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:GetStorageLensConfiguration</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfiguration">AWS
@@ -2166,12 +2166,12 @@ namespace Aws
 
         /**
          * <p>Gets the Amazon S3 Storage Lens configuration. For more information, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:GetStorageLensConfiguration</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfiguration">AWS
@@ -2184,12 +2184,12 @@ namespace Aws
         /**
          * <p>Gets the tags of Amazon S3 Storage Lens configuration. For more information
          * about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:GetStorageLensConfigurationTagging</code> action. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfigurationTagging">AWS
@@ -2200,12 +2200,12 @@ namespace Aws
         /**
          * <p>Gets the tags of Amazon S3 Storage Lens configuration. For more information
          * about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:GetStorageLensConfigurationTagging</code> action. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfigurationTagging">AWS
@@ -2218,12 +2218,12 @@ namespace Aws
         /**
          * <p>Gets the tags of Amazon S3 Storage Lens configuration. For more information
          * about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:GetStorageLensConfigurationTagging</code> action. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfigurationTagging">AWS
@@ -2431,12 +2431,12 @@ namespace Aws
         /**
          * <p>Gets a list of Amazon S3 Storage Lens configurations. For more information
          * about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:ListStorageLensConfigurations</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurations">AWS
@@ -2447,12 +2447,12 @@ namespace Aws
         /**
          * <p>Gets a list of Amazon S3 Storage Lens configurations. For more information
          * about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:ListStorageLensConfigurations</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurations">AWS
@@ -2465,12 +2465,12 @@ namespace Aws
         /**
          * <p>Gets a list of Amazon S3 Storage Lens configurations. For more information
          * about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:ListStorageLensConfigurations</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurations">AWS
@@ -2784,8 +2784,8 @@ namespace Aws
          * Allocation and Tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
-         * Cost Allocation in Amazon S3 Bucket Tags</a>.</p>  <p>To use this
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
+         * Using Cost Allocation in Amazon S3 Bucket Tags</a>.</p>  <p>To use this
          * operation, you must have permissions to perform the
          * <code>s3-outposts:PutBucketTagging</code> action. The Outposts bucket owner has
          * this permission by default and can grant this permission to others. For more
@@ -2846,8 +2846,8 @@ namespace Aws
          * Allocation and Tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
-         * Cost Allocation in Amazon S3 Bucket Tags</a>.</p>  <p>To use this
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
+         * Using Cost Allocation in Amazon S3 Bucket Tags</a>.</p>  <p>To use this
          * operation, you must have permissions to perform the
          * <code>s3-outposts:PutBucketTagging</code> action. The Outposts bucket owner has
          * this permission by default and can grant this permission to others. For more
@@ -2910,8 +2910,8 @@ namespace Aws
          * Allocation and Tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
-         * Cost Allocation in Amazon S3 Bucket Tags</a>.</p>  <p>To use this
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
+         * Using Cost Allocation in Amazon S3 Bucket Tags</a>.</p>  <p>To use this
          * operation, you must have permissions to perform the
          * <code>s3-outposts:PutBucketTagging</code> action. The Outposts bucket owner has
          * this permission by default and can grant this permission to others. For more
@@ -3140,12 +3140,12 @@ namespace Aws
         /**
          * <p>Puts an Amazon S3 Storage Lens configuration. For more information about S3
          * Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:PutStorageLensConfiguration</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfiguration">AWS
@@ -3156,12 +3156,12 @@ namespace Aws
         /**
          * <p>Puts an Amazon S3 Storage Lens configuration. For more information about S3
          * Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:PutStorageLensConfiguration</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfiguration">AWS
@@ -3174,12 +3174,12 @@ namespace Aws
         /**
          * <p>Puts an Amazon S3 Storage Lens configuration. For more information about S3
          * Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:PutStorageLensConfiguration</code> action. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfiguration">AWS
@@ -3192,12 +3192,12 @@ namespace Aws
         /**
          * <p>Put or replace tags on an existing Amazon S3 Storage Lens configuration. For
          * more information about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:PutStorageLensConfigurationTagging</code> action. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging">AWS
@@ -3208,12 +3208,12 @@ namespace Aws
         /**
          * <p>Put or replace tags on an existing Amazon S3 Storage Lens configuration. For
          * more information about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:PutStorageLensConfigurationTagging</code> action. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging">AWS
@@ -3226,12 +3226,12 @@ namespace Aws
         /**
          * <p>Put or replace tags on an existing Amazon S3 Storage Lens configuration. For
          * more information about S3 Storage Lens, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
          * with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service
          * Developer Guide</i>.</p>  <p>To use this action, you must have permission
          * to perform the <code>s3:PutStorageLensConfigurationTagging</code> action. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging">AWS

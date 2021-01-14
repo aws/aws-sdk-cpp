@@ -292,6 +292,72 @@ namespace Model
 
 
     /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetPrincipalTags() const{ return m_principalTags; }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline bool PrincipalTagsHasBeenSet() const { return m_principalTagsHasBeenSet; }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline void SetPrincipalTags(const Aws::Map<Aws::String, Aws::String>& value) { m_principalTagsHasBeenSet = true; m_principalTags = value; }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline void SetPrincipalTags(Aws::Map<Aws::String, Aws::String>&& value) { m_principalTagsHasBeenSet = true; m_principalTags = std::move(value); }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline GetOpenIdTokenForDeveloperIdentityRequest& WithPrincipalTags(const Aws::Map<Aws::String, Aws::String>& value) { SetPrincipalTags(value); return *this;}
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline GetOpenIdTokenForDeveloperIdentityRequest& WithPrincipalTags(Aws::Map<Aws::String, Aws::String>&& value) { SetPrincipalTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline GetOpenIdTokenForDeveloperIdentityRequest& AddPrincipalTags(const Aws::String& key, const Aws::String& value) { m_principalTagsHasBeenSet = true; m_principalTags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline GetOpenIdTokenForDeveloperIdentityRequest& AddPrincipalTags(Aws::String&& key, const Aws::String& value) { m_principalTagsHasBeenSet = true; m_principalTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline GetOpenIdTokenForDeveloperIdentityRequest& AddPrincipalTags(const Aws::String& key, Aws::String&& value) { m_principalTagsHasBeenSet = true; m_principalTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline GetOpenIdTokenForDeveloperIdentityRequest& AddPrincipalTags(Aws::String&& key, Aws::String&& value) { m_principalTagsHasBeenSet = true; m_principalTags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline GetOpenIdTokenForDeveloperIdentityRequest& AddPrincipalTags(const char* key, Aws::String&& value) { m_principalTagsHasBeenSet = true; m_principalTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline GetOpenIdTokenForDeveloperIdentityRequest& AddPrincipalTags(Aws::String&& key, const char* value) { m_principalTagsHasBeenSet = true; m_principalTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Use this operation to configure attribute mappings for custom providers. </p>
+     */
+    inline GetOpenIdTokenForDeveloperIdentityRequest& AddPrincipalTags(const char* key, const char* value) { m_principalTagsHasBeenSet = true; m_principalTags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The expiration time of the token, in seconds. You can specify a custom
      * expiration time for the token so that you can cache it. If you don't provide an
      * expiration time, the token is valid for 15 minutes. You can exchange the token
@@ -357,6 +423,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_logins;
     bool m_loginsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_principalTags;
+    bool m_principalTagsHasBeenSet;
 
     long long m_tokenDuration;
     bool m_tokenDurationHasBeenSet;

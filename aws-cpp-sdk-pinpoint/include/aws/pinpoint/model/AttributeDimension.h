@@ -41,44 +41,98 @@ namespace Model
 
 
     /**
-     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
-     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
-     * that match the criteria are excluded from the segment.</p>
+     * <p>The type of segment dimension to use. Valid values are: <ul><li>INCLUSIVE -
+     * endpoints that have attributes matching the values are included in the
+     * segment.</li><li>EXCLUSIVE - endpoints that have attributes matching the values
+     * are excluded in the segment.</li><li>CONTAINS - endpoints that have attributes'
+     * substrings match the values are included in the segment.</li><li>BEFORE -
+     * endpoints with attributes read as ISO_INSTANT datetimes before the value are
+     * included in the segment.</li><li>AFTER - endpoints with attributes read as
+     * ISO_INSTANT datetimes after the value are included in the segment.</li><li>ON -
+     * endpoints with attributes read as ISO_INSTANT dates on the value are included in
+     * the segment. Time is ignored in this comparison.</li><li>BETWEEN - endpoints
+     * with attributes read as ISO_INSTANT datetimes between the values are included in
+     * the segment.</li></p>
      */
     inline const AttributeType& GetAttributeType() const{ return m_attributeType; }
 
     /**
-     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
-     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
-     * that match the criteria are excluded from the segment.</p>
+     * <p>The type of segment dimension to use. Valid values are: <ul><li>INCLUSIVE -
+     * endpoints that have attributes matching the values are included in the
+     * segment.</li><li>EXCLUSIVE - endpoints that have attributes matching the values
+     * are excluded in the segment.</li><li>CONTAINS - endpoints that have attributes'
+     * substrings match the values are included in the segment.</li><li>BEFORE -
+     * endpoints with attributes read as ISO_INSTANT datetimes before the value are
+     * included in the segment.</li><li>AFTER - endpoints with attributes read as
+     * ISO_INSTANT datetimes after the value are included in the segment.</li><li>ON -
+     * endpoints with attributes read as ISO_INSTANT dates on the value are included in
+     * the segment. Time is ignored in this comparison.</li><li>BETWEEN - endpoints
+     * with attributes read as ISO_INSTANT datetimes between the values are included in
+     * the segment.</li></p>
      */
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
-     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
-     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
-     * that match the criteria are excluded from the segment.</p>
+     * <p>The type of segment dimension to use. Valid values are: <ul><li>INCLUSIVE -
+     * endpoints that have attributes matching the values are included in the
+     * segment.</li><li>EXCLUSIVE - endpoints that have attributes matching the values
+     * are excluded in the segment.</li><li>CONTAINS - endpoints that have attributes'
+     * substrings match the values are included in the segment.</li><li>BEFORE -
+     * endpoints with attributes read as ISO_INSTANT datetimes before the value are
+     * included in the segment.</li><li>AFTER - endpoints with attributes read as
+     * ISO_INSTANT datetimes after the value are included in the segment.</li><li>ON -
+     * endpoints with attributes read as ISO_INSTANT dates on the value are included in
+     * the segment. Time is ignored in this comparison.</li><li>BETWEEN - endpoints
+     * with attributes read as ISO_INSTANT datetimes between the values are included in
+     * the segment.</li></p>
      */
     inline void SetAttributeType(const AttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
-     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
-     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
-     * that match the criteria are excluded from the segment.</p>
+     * <p>The type of segment dimension to use. Valid values are: <ul><li>INCLUSIVE -
+     * endpoints that have attributes matching the values are included in the
+     * segment.</li><li>EXCLUSIVE - endpoints that have attributes matching the values
+     * are excluded in the segment.</li><li>CONTAINS - endpoints that have attributes'
+     * substrings match the values are included in the segment.</li><li>BEFORE -
+     * endpoints with attributes read as ISO_INSTANT datetimes before the value are
+     * included in the segment.</li><li>AFTER - endpoints with attributes read as
+     * ISO_INSTANT datetimes after the value are included in the segment.</li><li>ON -
+     * endpoints with attributes read as ISO_INSTANT dates on the value are included in
+     * the segment. Time is ignored in this comparison.</li><li>BETWEEN - endpoints
+     * with attributes read as ISO_INSTANT datetimes between the values are included in
+     * the segment.</li></p>
      */
     inline void SetAttributeType(AttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
 
     /**
-     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
-     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
-     * that match the criteria are excluded from the segment.</p>
+     * <p>The type of segment dimension to use. Valid values are: <ul><li>INCLUSIVE -
+     * endpoints that have attributes matching the values are included in the
+     * segment.</li><li>EXCLUSIVE - endpoints that have attributes matching the values
+     * are excluded in the segment.</li><li>CONTAINS - endpoints that have attributes'
+     * substrings match the values are included in the segment.</li><li>BEFORE -
+     * endpoints with attributes read as ISO_INSTANT datetimes before the value are
+     * included in the segment.</li><li>AFTER - endpoints with attributes read as
+     * ISO_INSTANT datetimes after the value are included in the segment.</li><li>ON -
+     * endpoints with attributes read as ISO_INSTANT dates on the value are included in
+     * the segment. Time is ignored in this comparison.</li><li>BETWEEN - endpoints
+     * with attributes read as ISO_INSTANT datetimes between the values are included in
+     * the segment.</li></p>
      */
     inline AttributeDimension& WithAttributeType(const AttributeType& value) { SetAttributeType(value); return *this;}
 
     /**
-     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
-     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
-     * that match the criteria are excluded from the segment.</p>
+     * <p>The type of segment dimension to use. Valid values are: <ul><li>INCLUSIVE -
+     * endpoints that have attributes matching the values are included in the
+     * segment.</li><li>EXCLUSIVE - endpoints that have attributes matching the values
+     * are excluded in the segment.</li><li>CONTAINS - endpoints that have attributes'
+     * substrings match the values are included in the segment.</li><li>BEFORE -
+     * endpoints with attributes read as ISO_INSTANT datetimes before the value are
+     * included in the segment.</li><li>AFTER - endpoints with attributes read as
+     * ISO_INSTANT datetimes after the value are included in the segment.</li><li>ON -
+     * endpoints with attributes read as ISO_INSTANT dates on the value are included in
+     * the segment. Time is ignored in this comparison.</li><li>BETWEEN - endpoints
+     * with attributes read as ISO_INSTANT datetimes between the values are included in
+     * the segment.</li></p>
      */
     inline AttributeDimension& WithAttributeType(AttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
 
