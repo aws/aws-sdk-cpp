@@ -20,6 +20,10 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
         set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
 
+        if (VCPKG_CHAINLOAD_TOOLCHAIN_FILE)
+            set(EXTRA_ARGS "-DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=${VCPKG_CHAINLOAD_TOOLCHAIN_FILE}")
+        endif()
+
         #zlib
         #based on http://stackoverflow.com/questions/16842218/how-to-use-cmake-externalproject-add-or-alternatives-in-a-cross-platform-way
         #likely, some of the things here are unnecessary
@@ -30,6 +34,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             PATCH_COMMAND ""
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+            ${EXTRA_ARGS}
             -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=${CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
             -DANDROID_ABI=${ANDROID_ABI}
@@ -70,6 +75,10 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set(OPENSSL_INCLUDE_FLAGS "-isystem ${OPENSSL_INCLUDE_DIR} -isystem ${OPENSSL_INCLUDE_DIR}/openssl" CACHE INTERNAL "compiler flags to find openssl includes")
         set(OPENSSL_LINKER_FLAGS "-L${OPENSSL_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find openssl")
 
+        if (VCPKG_CHAINLOAD_TOOLCHAIN_FILE)
+            set(EXTRA_ARGS "-DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=${VCPKG_CHAINLOAD_TOOLCHAIN_FILE}")
+        endif()
+
         ExternalProject_Add(OPENSSL
             SOURCE_DIR ${OPENSSL_SOURCE_DIR}
             GIT_REPOSITORY https://github.com/openssl/openssl.git
@@ -78,6 +87,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             PATCH_COMMAND cd ${CMAKE_BINARY_DIR} && python ${AWS_NATIVE_SDK_ROOT}/android-build/configure_openssl_cmake.py --source ${AWS_NATIVE_SDK_ROOT} --dest ${OPENSSL_SOURCE_DIR}
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+            ${EXTRA_ARGS}
             -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=${CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
             -DANDROID_ABI=${ANDROID_ABI}
@@ -120,6 +130,10 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             set(CURL_USE_ZLIB "OFF")
         endif()
 
+        if (VCPKG_CHAINLOAD_TOOLCHAIN_FILE)
+            set(EXTRA_ARGS "-DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=${VCPKG_CHAINLOAD_TOOLCHAIN_FILE}")
+        endif()
+
         ExternalProject_Add(CURL
                 DEPENDS ${CURL_OPENSSL_DEPENDENCY} ${CURL_ZLIB_DEPENDENCY}
                 SOURCE_DIR ${CURL_SOURCE_DIR}
@@ -130,6 +144,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
                 CMAKE_ARGS
                 -C ${AWS_NATIVE_SDK_ROOT}/android-build/CurlAndroidCrossCompile.cmake
                 -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+                ${EXTRA_ARGS}
                 -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=${CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION}
                 -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
                 -DANDROID_ABI=${ANDROID_ABI}
