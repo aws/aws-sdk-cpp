@@ -11,17 +11,13 @@ using namespace Aws::Version;
 
 TEST(VersionTest, TestMajorMinorPatch)
 {
-    auto major = GetVersionMajor();
-    auto minor = GetVersionMinor();
-    auto patch = GetVersionPatch();
-    Aws::String version;
-    version += Aws::Utils::StringUtils::to_string(major);
-    version += ".";
-    version += Aws::Utils::StringUtils::to_string(minor);
-    version += ".";
-    version += Aws::Utils::StringUtils::to_string(patch);
-    auto versionString = GetVersionString();
-    ASSERT_STREQ(versionString, version.c_str());
+    Aws::String major = Aws::Utils::StringUtils::to_string(GetVersionMajor());
+    Aws::String minor = Aws::Utils::StringUtils::to_string(GetVersionMinor());
+    Aws::String patch = Aws::Utils::StringUtils::to_string(GetVersionPatch());
+    Aws::String versionString = GetVersionString();
+    ASSERT_TRUE(versionString.find(major) != Aws::String::npos);
+    ASSERT_TRUE(versionString.find(minor) != Aws::String::npos);
+    ASSERT_TRUE(versionString.find(patch) != Aws::String::npos);
 }
 
 TEST(VersionTest, TestCompilerVersionString)

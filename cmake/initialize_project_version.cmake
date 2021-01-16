@@ -7,8 +7,8 @@ endif()
 
 if(NOT VERSION_STRING)
     # extract it from the existing generated header file
-    file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/include/aws/core/VersionConfig.h" __SDK_VERSION_LINE LIMIT_COUNT 1 REGEX "AWS_SDK_VERSION_STRING.*[0-9]+\\.[0-9]+\\.[0-9]+" )
-    string( REGEX MATCH "([0-9]+\\.[0-9]+\\.[0-9]+)" VERSION_STRING "${__SDK_VERSION_LINE}" )
+    file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/include/aws/core/VersionConfig.h" __SDK_VERSION_LINE LIMIT_COUNT 1 REGEX "AWS_SDK_VERSION_STRING.*[0-9]+\\.[0-9]+(\\.|-rc)[0-9]+" )
+    string( REGEX MATCH "([0-9]+\\.[0-9]+(\\.|-rc)[0-9]+)" VERSION_STRING "${__SDK_VERSION_LINE}" )
 endif()
 
 set(PROJECT_VERSION "${VERSION_STRING}")
@@ -41,6 +41,6 @@ macro(add_project name description)
 	cmake_policy(SET CMP0056 NEW)
     endif()
 
-    project(${name} VERSION "${PROJECT_VERSION}" LANGUAGES CXX C)
+    project(${name} LANGUAGES CXX C)
 
 endmacro()

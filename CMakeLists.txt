@@ -161,7 +161,7 @@ endif()
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
 
 # build the sdk targets
-project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
+project("aws-cpp-sdk-all" LANGUAGES CXX)
 
 # http client, encryption, zlib
 include(external_dependencies)

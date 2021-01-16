@@ -25,7 +25,7 @@ namespace Version
     return AWS_SDK_VERSION_MINOR;
   }
 
-  unsigned GetVersionPatch()
+  const char* GetVersionPatch()
   {
     return AWS_SDK_VERSION_PATCH;
   }

@@ -7,7 +7,7 @@ add_project(AWSSDK "User friendly cmake creator")
 # create a new version file for AWSSDK, then find_package will return latest PACKAGE_VERSION
 write_basic_package_version_file(
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
-    VERSION ${PROJECT_VERSION}
+    VERSION ${VERSION_STRING}
     COMPATIBILITY AnyNewerVersion
 )
 
