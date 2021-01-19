@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The user ID and user fields to update, used with the <a>BatchUpdateUser</a>
-   * action.</p><p><h3>See Also:</h3>   <a
+   * <p> The user ID and user fields to update, used with the <a>BatchUpdateUser</a>
+   * action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUserRequestItem">AWS
    * API Reference</a></p>
    */

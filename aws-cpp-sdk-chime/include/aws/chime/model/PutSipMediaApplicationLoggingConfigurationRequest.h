@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the specified SIP media application</p>
+     * <p>The SIP media application ID.</p>
      */
     inline const Aws::String& GetSipMediaApplicationId() const{ return m_sipMediaApplicationId; }
 
     /**
-     * <p>The ID of the specified SIP media application</p>
+     * <p>The SIP media application ID.</p>
      */
     inline bool SipMediaApplicationIdHasBeenSet() const { return m_sipMediaApplicationIdHasBeenSet; }
 
     /**
-     * <p>The ID of the specified SIP media application</p>
+     * <p>The SIP media application ID.</p>
      */
     inline void SetSipMediaApplicationId(const Aws::String& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = value; }
 
     /**
-     * <p>The ID of the specified SIP media application</p>
+     * <p>The SIP media application ID.</p>
      */
     inline void SetSipMediaApplicationId(Aws::String&& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = std::move(value); }
 
     /**
-     * <p>The ID of the specified SIP media application</p>
+     * <p>The SIP media application ID.</p>
      */
     inline void SetSipMediaApplicationId(const char* value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId.assign(value); }
 
     /**
-     * <p>The ID of the specified SIP media application</p>
+     * <p>The SIP media application ID.</p>
      */
     inline PutSipMediaApplicationLoggingConfigurationRequest& WithSipMediaApplicationId(const Aws::String& value) { SetSipMediaApplicationId(value); return *this;}
 
     /**
-     * <p>The ID of the specified SIP media application</p>
+     * <p>The SIP media application ID.</p>
      */
     inline PutSipMediaApplicationLoggingConfigurationRequest& WithSipMediaApplicationId(Aws::String&& value) { SetSipMediaApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the specified SIP media application</p>
+     * <p>The SIP media application ID.</p>
      */
     inline PutSipMediaApplicationLoggingConfigurationRequest& WithSipMediaApplicationId(const char* value) { SetSipMediaApplicationId(value); return *this;}
 

@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN and name of the app instance user, the ARN of the app instance, and
-     * the created and last-updated timestamps. All timestamps use epoch
-     * milliseconds.</p>
+     * <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline const AppInstanceAdmin& GetAppInstanceAdmin() const{ return m_appInstanceAdmin; }
 
     /**
-     * <p>The ARN and name of the app instance user, the ARN of the app instance, and
-     * the created and last-updated timestamps. All timestamps use epoch
-     * milliseconds.</p>
+     * <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline void SetAppInstanceAdmin(const AppInstanceAdmin& value) { m_appInstanceAdmin = value; }
 
     /**
-     * <p>The ARN and name of the app instance user, the ARN of the app instance, and
-     * the created and last-updated timestamps. All timestamps use epoch
-     * milliseconds.</p>
+     * <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline void SetAppInstanceAdmin(AppInstanceAdmin&& value) { m_appInstanceAdmin = std::move(value); }
 
     /**
-     * <p>The ARN and name of the app instance user, the ARN of the app instance, and
-     * the created and last-updated timestamps. All timestamps use epoch
-     * milliseconds.</p>
+     * <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline DescribeAppInstanceAdminResult& WithAppInstanceAdmin(const AppInstanceAdmin& value) { SetAppInstanceAdmin(value); return *this;}
 
     /**
-     * <p>The ARN and name of the app instance user, the ARN of the app instance, and
-     * the created and last-updated timestamps. All timestamps use epoch
-     * milliseconds.</p>
+     * <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline DescribeAppInstanceAdminResult& WithAppInstanceAdmin(AppInstanceAdmin&& value) { SetAppInstanceAdmin(std::move(value)); return *this;}
 

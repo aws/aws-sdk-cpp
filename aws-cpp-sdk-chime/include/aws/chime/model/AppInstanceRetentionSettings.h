@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The length of time in days to retain messages.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of the data-retention settings for an
+   * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceRetentionSettings">AWS
    * API Reference</a></p>
    */
@@ -38,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The length of time in days to retain a channel.</p>
+     * <p>The length of time in days to retain the messages in a channel.</p>
      */
     inline const ChannelRetentionSettings& GetChannelRetentionSettings() const{ return m_channelRetentionSettings; }
 
     /**
-     * <p>The length of time in days to retain a channel.</p>
+     * <p>The length of time in days to retain the messages in a channel.</p>
      */
     inline bool ChannelRetentionSettingsHasBeenSet() const { return m_channelRetentionSettingsHasBeenSet; }
 
     /**
-     * <p>The length of time in days to retain a channel.</p>
+     * <p>The length of time in days to retain the messages in a channel.</p>
      */
     inline void SetChannelRetentionSettings(const ChannelRetentionSettings& value) { m_channelRetentionSettingsHasBeenSet = true; m_channelRetentionSettings = value; }
 
     /**
-     * <p>The length of time in days to retain a channel.</p>
+     * <p>The length of time in days to retain the messages in a channel.</p>
      */
     inline void SetChannelRetentionSettings(ChannelRetentionSettings&& value) { m_channelRetentionSettingsHasBeenSet = true; m_channelRetentionSettings = std::move(value); }
 
     /**
-     * <p>The length of time in days to retain a channel.</p>
+     * <p>The length of time in days to retain the messages in a channel.</p>
      */
     inline AppInstanceRetentionSettings& WithChannelRetentionSettings(const ChannelRetentionSettings& value) { SetChannelRetentionSettings(value); return *this;}
 
     /**
-     * <p>The length of time in days to retain a channel.</p>
+     * <p>The length of time in days to retain the messages in a channel.</p>
      */
     inline AppInstanceRetentionSettings& WithChannelRetentionSettings(ChannelRetentionSettings&& value) { SetChannelRetentionSettings(std::move(value)); return *this;}
 

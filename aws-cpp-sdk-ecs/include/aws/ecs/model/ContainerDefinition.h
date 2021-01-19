@@ -1783,8 +1783,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<EnvironmentFile>& GetEnvironmentFiles() const{ return m_environmentFiles; }
 
@@ -1806,8 +1805,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline bool EnvironmentFilesHasBeenSet() const { return m_environmentFilesHasBeenSet; }
 
@@ -1829,8 +1827,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline void SetEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = value; }
 
@@ -1852,8 +1849,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline void SetEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = std::move(value); }
 
@@ -1875,8 +1871,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { SetEnvironmentFiles(value); return *this;}
 
@@ -1898,8 +1893,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { SetEnvironmentFiles(std::move(value)); return *this;}
 
@@ -1921,8 +1915,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& AddEnvironmentFiles(const EnvironmentFile& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(value); return *this; }
 
@@ -1944,8 +1937,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& AddEnvironmentFiles(EnvironmentFile&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(std::move(value)); return *this; }
 

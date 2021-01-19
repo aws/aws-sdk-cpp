@@ -175,82 +175,98 @@ namespace Model
 
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>Alphanumeric string that can be used to distinguish between calls to
-     * <b>CreateCertificateAuthority</b>. For a given token, ACM Private CA creates
-     * exactly one CA. If you issue a subsequent call using the same token, ACM Private
-     * CA returns the ARN of the existing CA and takes no further action. If you change
-     * the idempotency token across multiple calls, ACM Private CA creates a unique CA
-     * for each unique token.</p>
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
+     * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
+     * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

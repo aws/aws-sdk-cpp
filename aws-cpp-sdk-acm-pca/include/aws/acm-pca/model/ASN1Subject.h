@@ -24,15 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the certificate subject. The certificate can be
-   * one issued by your private certificate authority (CA) or it can be your private
-   * CA certificate. The <b>Subject</b> field in the certificate identifies the
-   * entity that owns or controls the public key in the certificate. The entity can
-   * be a user, computer, device, or service. The <b>Subject</b> must contain an
-   * X.500 distinguished name (DN). A DN is a sequence of relative distinguished
-   * names (RDNs). The RDNs are separated by commas in the certificate. The DN must
-   * be unique for each entity, but your private CA can issue more than one
-   * certificate with the same DN to the same entity. </p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the certificate subject. The <code>Subject</code>
+   * field in the certificate identifies the entity that owns or controls the public
+   * key in the certificate. The entity can be a user, computer, device, or service.
+   * The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is
+   * a sequence of relative distinguished names (RDNs). The RDNs are separated by
+   * commas in the certificate.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ASN1Subject">AWS
    * API Reference</a></p>
    */
@@ -571,56 +568,56 @@ namespace Model
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline const Aws::String& GetInitials() const{ return m_initials; }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline bool InitialsHasBeenSet() const { return m_initialsHasBeenSet; }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline void SetInitials(const Aws::String& value) { m_initialsHasBeenSet = true; m_initials = value; }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline void SetInitials(Aws::String&& value) { m_initialsHasBeenSet = true; m_initials = std::move(value); }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline void SetInitials(const char* value) { m_initialsHasBeenSet = true; m_initials.assign(value); }
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline ASN1Subject& WithInitials(const Aws::String& value) { SetInitials(value); return *this;}
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline ASN1Subject& WithInitials(Aws::String&& value) { SetInitials(std::move(value)); return *this;}
 
     /**
      * <p>Concatenation that typically contains the first letter of the
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
-     * first letter of the <b>SurName</b>.</p>
+     * first letter of the <b>Surname</b>.</p>
      */
     inline ASN1Subject& WithInitials(const char* value) { SetInitials(value); return *this;}
 

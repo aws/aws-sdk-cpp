@@ -117,42 +117,42 @@ namespace Model
 
 
     /**
-     * <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+     * <p> The <code>VoiceConnectorItems</code> to associate with the group. </p>
      */
     inline const Aws::Vector<VoiceConnectorItem>& GetVoiceConnectorItems() const{ return m_voiceConnectorItems; }
 
     /**
-     * <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+     * <p> The <code>VoiceConnectorItems</code> to associate with the group. </p>
      */
     inline bool VoiceConnectorItemsHasBeenSet() const { return m_voiceConnectorItemsHasBeenSet; }
 
     /**
-     * <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+     * <p> The <code>VoiceConnectorItems</code> to associate with the group. </p>
      */
     inline void SetVoiceConnectorItems(const Aws::Vector<VoiceConnectorItem>& value) { m_voiceConnectorItemsHasBeenSet = true; m_voiceConnectorItems = value; }
 
     /**
-     * <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+     * <p> The <code>VoiceConnectorItems</code> to associate with the group. </p>
      */
     inline void SetVoiceConnectorItems(Aws::Vector<VoiceConnectorItem>&& value) { m_voiceConnectorItemsHasBeenSet = true; m_voiceConnectorItems = std::move(value); }
 
     /**
-     * <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+     * <p> The <code>VoiceConnectorItems</code> to associate with the group. </p>
      */
     inline UpdateVoiceConnectorGroupRequest& WithVoiceConnectorItems(const Aws::Vector<VoiceConnectorItem>& value) { SetVoiceConnectorItems(value); return *this;}
 
     /**
-     * <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+     * <p> The <code>VoiceConnectorItems</code> to associate with the group. </p>
      */
     inline UpdateVoiceConnectorGroupRequest& WithVoiceConnectorItems(Aws::Vector<VoiceConnectorItem>&& value) { SetVoiceConnectorItems(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+     * <p> The <code>VoiceConnectorItems</code> to associate with the group. </p>
      */
     inline UpdateVoiceConnectorGroupRequest& AddVoiceConnectorItems(const VoiceConnectorItem& value) { m_voiceConnectorItemsHasBeenSet = true; m_voiceConnectorItems.push_back(value); return *this; }
 
     /**
-     * <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+     * <p> The <code>VoiceConnectorItems</code> to associate with the group. </p>
      */
     inline UpdateVoiceConnectorGroupRequest& AddVoiceConnectorItems(VoiceConnectorItem&& value) { m_voiceConnectorItemsHasBeenSet = true; m_voiceConnectorItems.push_back(std::move(value)); return *this; }
 

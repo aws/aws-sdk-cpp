@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>The retention settings for an Amazon Chime Enterprise account that determine
-   * how long to retain items such as chat room messages and chat conversation
+   * how long to retain items such as chat-room messages and chat-conversation
    * messages.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RetentionSettings">AWS
    * API Reference</a></p>

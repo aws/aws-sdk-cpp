@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p>The meeting information, including the meeting ID and
-     * <code>MediaPlacement</code>.</p>
+     * <p> The meeting information, including the meeting ID and
+     * <code>MediaPlacement</code> . </p>
      */
     inline const Meeting& GetMeeting() const{ return m_meeting; }
 
     /**
-     * <p>The meeting information, including the meeting ID and
-     * <code>MediaPlacement</code>.</p>
+     * <p> The meeting information, including the meeting ID and
+     * <code>MediaPlacement</code> . </p>
      */
     inline void SetMeeting(const Meeting& value) { m_meeting = value; }
 
     /**
-     * <p>The meeting information, including the meeting ID and
-     * <code>MediaPlacement</code>.</p>
+     * <p> The meeting information, including the meeting ID and
+     * <code>MediaPlacement</code> . </p>
      */
     inline void SetMeeting(Meeting&& value) { m_meeting = std::move(value); }
 
     /**
-     * <p>The meeting information, including the meeting ID and
-     * <code>MediaPlacement</code>.</p>
+     * <p> The meeting information, including the meeting ID and
+     * <code>MediaPlacement</code> . </p>
      */
     inline CreateMeetingResult& WithMeeting(const Meeting& value) { SetMeeting(value); return *this;}
 
     /**
-     * <p>The meeting information, including the meeting ID and
-     * <code>MediaPlacement</code>.</p>
+     * <p> The meeting information, including the meeting ID and
+     * <code>MediaPlacement</code> . </p>
      */
     inline CreateMeetingResult& WithMeeting(Meeting&& value) { SetMeeting(std::move(value)); return *this;}
 

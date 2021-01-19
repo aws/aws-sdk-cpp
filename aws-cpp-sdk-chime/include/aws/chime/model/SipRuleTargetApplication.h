@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Target SIP media application along with other details like priority and AWS
-   * Region to be specified in the SIP rule. Only one SIP rule per AWS Region can be
+   * <p>Target SIP media application and other details, such as priority and AWS
+   * Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be
    * provided.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SipRuleTargetApplication">AWS
    * API Reference</a></p>
@@ -102,42 +102,42 @@ namespace Model
 
 
     /**
-     * <p>AWS Region of target application.</p>
+     * <p>The AWS Region of the target application.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>AWS Region of target application.</p>
+     * <p>The AWS Region of the target application.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>AWS Region of target application.</p>
+     * <p>The AWS Region of the target application.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>AWS Region of target application.</p>
+     * <p>The AWS Region of the target application.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>AWS Region of target application.</p>
+     * <p>The AWS Region of the target application.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>AWS Region of target application.</p>
+     * <p>The AWS Region of the target application.</p>
      */
     inline SipRuleTargetApplication& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>AWS Region of target application.</p>
+     * <p>The AWS Region of the target application.</p>
      */
     inline SipRuleTargetApplication& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>AWS Region of target application.</p>
+     * <p>The AWS Region of the target application.</p>
      */
     inline SipRuleTargetApplication& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 
