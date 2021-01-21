@@ -168,42 +168,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithEngine(const char* value) { SetEngine(value); return *this;}
 

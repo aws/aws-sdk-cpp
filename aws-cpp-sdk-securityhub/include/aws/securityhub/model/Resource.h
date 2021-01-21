@@ -227,42 +227,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
      */
     inline const Aws::String& GetResourceRole() const{ return m_resourceRole; }
 
     /**
-     * <p/>
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
      */
     inline bool ResourceRoleHasBeenSet() const { return m_resourceRoleHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
      */
     inline void SetResourceRole(const Aws::String& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
 
     /**
-     * <p/>
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
      */
     inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
      */
     inline void SetResourceRole(const char* value) { m_resourceRoleHasBeenSet = true; m_resourceRole.assign(value); }
 
     /**
-     * <p/>
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
      */
     inline Resource& WithResourceRole(const Aws::String& value) { SetResourceRole(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
      */
     inline Resource& WithResourceRole(Aws::String&& value) { SetResourceRole(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
      */
     inline Resource& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
 

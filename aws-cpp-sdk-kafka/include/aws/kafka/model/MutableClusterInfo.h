@@ -356,6 +356,63 @@ namespace Model
     
     inline MutableClusterInfo& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>Information about the Amazon MSK broker type.</p>
+            
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * 
+            <p>Information about the Amazon MSK broker type.</p>
+            
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * 
+            <p>Information about the Amazon MSK broker type.</p>
+            
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * 
+            <p>Information about the Amazon MSK broker type.</p>
+            
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * 
+            <p>Information about the Amazon MSK broker type.</p>
+            
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * 
+            <p>Information about the Amazon MSK broker type.</p>
+            
+     */
+    inline MutableClusterInfo& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * 
+            <p>Information about the Amazon MSK broker type.</p>
+            
+     */
+    inline MutableClusterInfo& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>Information about the Amazon MSK broker type.</p>
+            
+     */
+    inline MutableClusterInfo& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
   private:
 
     Aws::Vector<BrokerEBSVolumeInfo> m_brokerEBSVolumeInfo;
@@ -378,6 +435,9 @@ namespace Model
 
     LoggingInfo m_loggingInfo;
     bool m_loggingInfoHasBeenSet;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
   };
 
 } // namespace Model

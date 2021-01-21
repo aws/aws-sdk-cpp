@@ -37,8 +37,9 @@ namespace Model
 
 
     /**
-     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * For more information, see <a
+     * <p>Specifies the list of ARNs of the resources that you want to apply tags
+     * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -46,8 +47,9 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetResourceARNList() const{ return m_resourceARNList; }
 
     /**
-     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * For more information, see <a
+     * <p>Specifies the list of ARNs of the resources that you want to apply tags
+     * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -55,8 +57,9 @@ namespace Model
     inline bool ResourceARNListHasBeenSet() const { return m_resourceARNListHasBeenSet; }
 
     /**
-     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * For more information, see <a
+     * <p>Specifies the list of ARNs of the resources that you want to apply tags
+     * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -64,8 +67,9 @@ namespace Model
     inline void SetResourceARNList(const Aws::Vector<Aws::String>& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = value; }
 
     /**
-     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * For more information, see <a
+     * <p>Specifies the list of ARNs of the resources that you want to apply tags
+     * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -73,8 +77,9 @@ namespace Model
     inline void SetResourceARNList(Aws::Vector<Aws::String>&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = std::move(value); }
 
     /**
-     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * For more information, see <a
+     * <p>Specifies the list of ARNs of the resources that you want to apply tags
+     * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -82,8 +87,9 @@ namespace Model
     inline TagResourcesRequest& WithResourceARNList(const Aws::Vector<Aws::String>& value) { SetResourceARNList(value); return *this;}
 
     /**
-     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * For more information, see <a
+     * <p>Specifies the list of ARNs of the resources that you want to apply tags
+     * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -91,8 +97,9 @@ namespace Model
     inline TagResourcesRequest& WithResourceARNList(Aws::Vector<Aws::String>&& value) { SetResourceARNList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * For more information, see <a
+     * <p>Specifies the list of ARNs of the resources that you want to apply tags
+     * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -100,8 +107,9 @@ namespace Model
     inline TagResourcesRequest& AddResourceARNList(const Aws::String& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
 
     /**
-     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * For more information, see <a
+     * <p>Specifies the list of ARNs of the resources that you want to apply tags
+     * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -109,8 +117,9 @@ namespace Model
     inline TagResourcesRequest& AddResourceARNList(Aws::String&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * For more information, see <a
+     * <p>Specifies the list of ARNs of the resources that you want to apply tags
+     * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -119,80 +128,80 @@ namespace Model
 
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline TagResourcesRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline TagResourcesRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline TagResourcesRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline TagResourcesRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline TagResourcesRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline TagResourcesRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline TagResourcesRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline TagResourcesRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags that you want to add to the specified resources. A tag consists of a
-     * key and a value that you define.</p>
+     * <p>Specifies a list of tags that you want to add to the specified resources. A
+     * tag consists of a key and a value that you define.</p>
      */
     inline TagResourcesRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

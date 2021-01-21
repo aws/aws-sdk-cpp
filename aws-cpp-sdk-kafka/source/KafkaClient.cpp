@@ -44,6 +44,7 @@
 #include <aws/kafka/model/TagResourceRequest.h>
 #include <aws/kafka/model/UntagResourceRequest.h>
 #include <aws/kafka/model/UpdateBrokerCountRequest.h>
+#include <aws/kafka/model/UpdateBrokerTypeRequest.h>
 #include <aws/kafka/model/UpdateBrokerStorageRequest.h>
 #include <aws/kafka/model/UpdateConfigurationRequest.h>
 #include <aws/kafka/model/UpdateClusterConfigurationRequest.h>
@@ -898,6 +899,40 @@ void KafkaClient::UpdateBrokerCountAsync(const UpdateBrokerCountRequest& request
 void KafkaClient::UpdateBrokerCountAsyncHelper(const UpdateBrokerCountRequest& request, const UpdateBrokerCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateBrokerCount(request), context);
+}
+
+UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequest& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBrokerType", "Required field: ClusterArn, is not set");
+    return UpdateBrokerTypeOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/clusters/";
+  ss << request.GetClusterArn();
+  ss << "/nodes/type";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateBrokerTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateBrokerTypeOutcomeCallable KafkaClient::UpdateBrokerTypeCallable(const UpdateBrokerTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBrokerTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBrokerType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::UpdateBrokerTypeAsync(const UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBrokerTypeAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::UpdateBrokerTypeAsyncHelper(const UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBrokerType(request), context);
 }
 
 UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerStorageRequest& request) const

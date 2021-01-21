@@ -19,6 +19,7 @@
 #include <aws/securityhub/model/RecordState.h>
 #include <aws/securityhub/model/Note.h>
 #include <aws/securityhub/model/PatchSummary.h>
+#include <aws/securityhub/model/Action.h>
 #include <aws/securityhub/model/Malware.h>
 #include <aws/securityhub/model/NetworkPathComponent.h>
 #include <aws/securityhub/model/ThreatIntelIndicator.h>
@@ -1686,6 +1687,37 @@ namespace Model
      */
     inline AwsSecurityFinding& WithPatchSummary(PatchSummary&& value) { SetPatchSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides details about an action that was detected for the finding.</p>
+     */
+    inline const Action& GetAction() const{ return m_action; }
+
+    /**
+     * <p>Provides details about an action that was detected for the finding.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Provides details about an action that was detected for the finding.</p>
+     */
+    inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
+
+    /**
+     * <p>Provides details about an action that was detected for the finding.</p>
+     */
+    inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
+
+    /**
+     * <p>Provides details about an action that was detected for the finding.</p>
+     */
+    inline AwsSecurityFinding& WithAction(const Action& value) { SetAction(value); return *this;}
+
+    /**
+     * <p>Provides details about an action that was detected for the finding.</p>
+     */
+    inline AwsSecurityFinding& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_schemaVersion;
@@ -1789,6 +1821,9 @@ namespace Model
 
     PatchSummary m_patchSummary;
     bool m_patchSummaryHasBeenSet;
+
+    Action m_action;
+    bool m_actionHasBeenSet;
   };
 
 } // namespace Model
