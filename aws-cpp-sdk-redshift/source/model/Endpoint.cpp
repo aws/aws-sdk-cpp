@@ -58,11 +58,11 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
     XmlNode vpcEndpointsNode = resultNode.FirstChild("VpcEndpoints");
     if(!vpcEndpointsNode.IsNull())
     {
-      XmlNode vpcEndpointsMember = vpcEndpointsNode.FirstChild("SpartaProxyVpcEndpoint");
+      XmlNode vpcEndpointsMember = vpcEndpointsNode.FirstChild("VpcEndpoint");
       while(!vpcEndpointsMember.IsNull())
       {
         m_vpcEndpoints.push_back(vpcEndpointsMember);
-        vpcEndpointsMember = vpcEndpointsMember.NextNode("SpartaProxyVpcEndpoint");
+        vpcEndpointsMember = vpcEndpointsMember.NextNode("VpcEndpoint");
       }
 
       m_vpcEndpointsHasBeenSet = true;
@@ -90,7 +90,7 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       for(auto& item : m_vpcEndpoints)
       {
         Aws::StringStream vpcEndpointsSs;
-        vpcEndpointsSs << location << index << locationValue << ".SpartaProxyVpcEndpoint." << vpcEndpointsIdx++;
+        vpcEndpointsSs << location << index << locationValue << ".VpcEndpoint." << vpcEndpointsIdx++;
         item.OutputToStream(oStream, vpcEndpointsSs.str().c_str());
       }
   }
@@ -113,7 +113,7 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_vpcEndpoints)
       {
         Aws::StringStream vpcEndpointsSs;
-        vpcEndpointsSs << location <<  ".SpartaProxyVpcEndpoint." << vpcEndpointsIdx++;
+        vpcEndpointsSs << location <<  ".VpcEndpoint." << vpcEndpointsIdx++;
         item.OutputToStream(oStream, vpcEndpointsSs.str().c_str());
       }
   }

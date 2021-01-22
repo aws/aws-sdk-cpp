@@ -1922,7 +1922,7 @@ namespace Model
 
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
      * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
      * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
@@ -1948,7 +1948,7 @@ namespace Model
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
      * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
      * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
@@ -1974,7 +1974,7 @@ namespace Model
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
      * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
      * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
@@ -2000,7 +2000,7 @@ namespace Model
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
      * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
      * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
@@ -2026,7 +2026,7 @@ namespace Model
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
      * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
      * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
@@ -2052,7 +2052,7 @@ namespace Model
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
      * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
      * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
@@ -2078,7 +2078,7 @@ namespace Model
     inline CreateDBClusterRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
      * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
      * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and
@@ -2104,7 +2104,7 @@ namespace Model
     inline CreateDBClusterRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
      * <code>multimaster</code>.</p> <p>The <code>parallelquery</code> engine mode
      * isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and

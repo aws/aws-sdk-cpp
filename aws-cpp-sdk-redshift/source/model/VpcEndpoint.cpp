@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/SpartaProxyVpcEndpoint.h>
+#include <aws/redshift/model/VpcEndpoint.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,18 +20,18 @@ namespace Redshift
 namespace Model
 {
 
-SpartaProxyVpcEndpoint::SpartaProxyVpcEndpoint() : 
+VpcEndpoint::VpcEndpoint() : 
     m_vpcEndpointIdHasBeenSet(false)
 {
 }
 
-SpartaProxyVpcEndpoint::SpartaProxyVpcEndpoint(const XmlNode& xmlNode) : 
+VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode) : 
     m_vpcEndpointIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
 
-SpartaProxyVpcEndpoint& SpartaProxyVpcEndpoint::operator =(const XmlNode& xmlNode)
+VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
 {
   XmlNode resultNode = xmlNode;
 
@@ -48,7 +48,7 @@ SpartaProxyVpcEndpoint& SpartaProxyVpcEndpoint::operator =(const XmlNode& xmlNod
   return *this;
 }
 
-void SpartaProxyVpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
   if(m_vpcEndpointIdHasBeenSet)
   {
@@ -57,7 +57,7 @@ void SpartaProxyVpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* l
 
 }
 
-void SpartaProxyVpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
+void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_vpcEndpointIdHasBeenSet)
   {

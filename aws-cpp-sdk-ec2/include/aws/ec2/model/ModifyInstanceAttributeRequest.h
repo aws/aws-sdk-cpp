@@ -130,8 +130,8 @@ namespace Model
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline const Aws::Vector<InstanceBlockDeviceMappingSpecification>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
@@ -143,8 +143,8 @@ namespace Model
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
@@ -156,8 +156,8 @@ namespace Model
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMappingSpecification>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
@@ -169,8 +169,8 @@ namespace Model
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
@@ -182,8 +182,8 @@ namespace Model
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMappingSpecification>& value) { SetBlockDeviceMappings(value); return *this;}
 
@@ -195,8 +195,8 @@ namespace Model
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
@@ -208,8 +208,8 @@ namespace Model
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline ModifyInstanceAttributeRequest& AddBlockDeviceMappings(const InstanceBlockDeviceMappingSpecification& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
@@ -221,8 +221,8 @@ namespace Model
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-     * the block device mapping when launching an instance</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * the block device mapping when launching an instance</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
      */
     inline ModifyInstanceAttributeRequest& AddBlockDeviceMappings(InstanceBlockDeviceMappingSpecification&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -547,8 +547,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline const AttributeValue& GetInstanceType() const{ return m_instanceType; }
 
@@ -556,8 +556,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
@@ -565,8 +565,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline void SetInstanceType(const AttributeValue& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
@@ -574,8 +574,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline void SetInstanceType(AttributeValue&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
@@ -583,8 +583,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithInstanceType(const AttributeValue& value) { SetInstanceType(value); return *this;}
 
@@ -592,8 +592,8 @@ namespace Model
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a>. If the instance type is not valid, the error returned is
-     * <code>InvalidInstanceAttributeValue</code>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
+     * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithInstanceType(AttributeValue&& value) { SetInstanceType(std::move(value)); return *this;}
 

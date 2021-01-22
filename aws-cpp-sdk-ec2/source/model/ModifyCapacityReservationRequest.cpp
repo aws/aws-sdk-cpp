@@ -17,6 +17,8 @@ ModifyCapacityReservationRequest::ModifyCapacityReservationRequest() :
     m_endDateHasBeenSet(false),
     m_endDateType(EndDateType::NOT_SET),
     m_endDateTypeHasBeenSet(false),
+    m_accept(false),
+    m_acceptHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -44,6 +46,11 @@ Aws::String ModifyCapacityReservationRequest::SerializePayload() const
   if(m_endDateTypeHasBeenSet)
   {
     ss << "EndDateType=" << EndDateTypeMapper::GetNameForEndDateType(m_endDateType) << "&";
+  }
+
+  if(m_acceptHasBeenSet)
+  {
+    ss << "Accept=" << std::boolalpha << m_accept << "&";
   }
 
   if(m_dryRunHasBeenSet)

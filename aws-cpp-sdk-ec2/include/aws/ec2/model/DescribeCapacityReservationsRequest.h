@@ -183,33 +183,33 @@ namespace Model
      * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
      * The Capacity Reservation expired automatically at the date and time specified in
      * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
-     * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
-     * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
-     * <code>limited</code> - The Capacity Reservation expires automatically at a
-     * specified date and time.</p> </li> </ul> </li> <li> <p>
-     * <code>instance-match-criteria</code> - Indicates the type of instance launches
-     * that the Capacity Reservation accepts. The options include:</p> <ul> <li> <p>
-     * <code>open</code> - The Capacity Reservation accepts all instances that have
-     * matching attributes (instance type, platform, and Availability Zone). Instances
-     * that have matching attributes launch into the Capacity Reservation automatically
-     * without specifying any additional parameters.</p> </li> <li> <p>
-     * <code>targeted</code> - The Capacity Reservation only accepts instances that
-     * have matching attributes (instance type, platform, and Availability Zone), and
-     * explicitly target the Capacity Reservation. This ensures that only permitted
-     * instances can use the reserved capacity.</p> </li> </ul> </li> </ul>
+     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
+     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>end-date</code> - The date and time at which the Capacity Reservation
+     * expires. When a Capacity Reservation expires, the reserved capacity is released
+     * and you can no longer launch instances into it. The Capacity Reservation's state
+     * changes to expired when it reaches its end date and time.</p> </li> <li> <p>
+     * <code>end-date-type</code> - Indicates the way in which the Capacity Reservation
+     * ends. A Capacity Reservation can have one of the following end types:</p> <ul>
+     * <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until
+     * you explicitly cancel it.</p> </li> <li> <p> <code>limited</code> - The Capacity
+     * Reservation expires automatically at a specified date and time.</p> </li> </ul>
+     * </li> <li> <p> <code>instance-match-criteria</code> - Indicates the type of
+     * instance launches that the Capacity Reservation accepts. The options
+     * include:</p> <ul> <li> <p> <code>open</code> - The Capacity Reservation accepts
+     * all instances that have matching attributes (instance type, platform, and
+     * Availability Zone). Instances that have matching attributes launch into the
+     * Capacity Reservation automatically without specifying any additional
+     * parameters.</p> </li> <li> <p> <code>targeted</code> - The Capacity Reservation
+     * only accepts instances that have matching attributes (instance type, platform,
+     * and Availability Zone), and explicitly target the Capacity Reservation. This
+     * ensures that only permitted instances can use the reserved capacity.</p> </li>
+     * </ul> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -234,33 +234,33 @@ namespace Model
      * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
      * The Capacity Reservation expired automatically at the date and time specified in
      * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
-     * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
-     * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
-     * <code>limited</code> - The Capacity Reservation expires automatically at a
-     * specified date and time.</p> </li> </ul> </li> <li> <p>
-     * <code>instance-match-criteria</code> - Indicates the type of instance launches
-     * that the Capacity Reservation accepts. The options include:</p> <ul> <li> <p>
-     * <code>open</code> - The Capacity Reservation accepts all instances that have
-     * matching attributes (instance type, platform, and Availability Zone). Instances
-     * that have matching attributes launch into the Capacity Reservation automatically
-     * without specifying any additional parameters.</p> </li> <li> <p>
-     * <code>targeted</code> - The Capacity Reservation only accepts instances that
-     * have matching attributes (instance type, platform, and Availability Zone), and
-     * explicitly target the Capacity Reservation. This ensures that only permitted
-     * instances can use the reserved capacity.</p> </li> </ul> </li> </ul>
+     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
+     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>end-date</code> - The date and time at which the Capacity Reservation
+     * expires. When a Capacity Reservation expires, the reserved capacity is released
+     * and you can no longer launch instances into it. The Capacity Reservation's state
+     * changes to expired when it reaches its end date and time.</p> </li> <li> <p>
+     * <code>end-date-type</code> - Indicates the way in which the Capacity Reservation
+     * ends. A Capacity Reservation can have one of the following end types:</p> <ul>
+     * <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until
+     * you explicitly cancel it.</p> </li> <li> <p> <code>limited</code> - The Capacity
+     * Reservation expires automatically at a specified date and time.</p> </li> </ul>
+     * </li> <li> <p> <code>instance-match-criteria</code> - Indicates the type of
+     * instance launches that the Capacity Reservation accepts. The options
+     * include:</p> <ul> <li> <p> <code>open</code> - The Capacity Reservation accepts
+     * all instances that have matching attributes (instance type, platform, and
+     * Availability Zone). Instances that have matching attributes launch into the
+     * Capacity Reservation automatically without specifying any additional
+     * parameters.</p> </li> <li> <p> <code>targeted</code> - The Capacity Reservation
+     * only accepts instances that have matching attributes (instance type, platform,
+     * and Availability Zone), and explicitly target the Capacity Reservation. This
+     * ensures that only permitted instances can use the reserved capacity.</p> </li>
+     * </ul> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -285,33 +285,33 @@ namespace Model
      * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
      * The Capacity Reservation expired automatically at the date and time specified in
      * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
-     * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
-     * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
-     * <code>limited</code> - The Capacity Reservation expires automatically at a
-     * specified date and time.</p> </li> </ul> </li> <li> <p>
-     * <code>instance-match-criteria</code> - Indicates the type of instance launches
-     * that the Capacity Reservation accepts. The options include:</p> <ul> <li> <p>
-     * <code>open</code> - The Capacity Reservation accepts all instances that have
-     * matching attributes (instance type, platform, and Availability Zone). Instances
-     * that have matching attributes launch into the Capacity Reservation automatically
-     * without specifying any additional parameters.</p> </li> <li> <p>
-     * <code>targeted</code> - The Capacity Reservation only accepts instances that
-     * have matching attributes (instance type, platform, and Availability Zone), and
-     * explicitly target the Capacity Reservation. This ensures that only permitted
-     * instances can use the reserved capacity.</p> </li> </ul> </li> </ul>
+     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
+     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>end-date</code> - The date and time at which the Capacity Reservation
+     * expires. When a Capacity Reservation expires, the reserved capacity is released
+     * and you can no longer launch instances into it. The Capacity Reservation's state
+     * changes to expired when it reaches its end date and time.</p> </li> <li> <p>
+     * <code>end-date-type</code> - Indicates the way in which the Capacity Reservation
+     * ends. A Capacity Reservation can have one of the following end types:</p> <ul>
+     * <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until
+     * you explicitly cancel it.</p> </li> <li> <p> <code>limited</code> - The Capacity
+     * Reservation expires automatically at a specified date and time.</p> </li> </ul>
+     * </li> <li> <p> <code>instance-match-criteria</code> - Indicates the type of
+     * instance launches that the Capacity Reservation accepts. The options
+     * include:</p> <ul> <li> <p> <code>open</code> - The Capacity Reservation accepts
+     * all instances that have matching attributes (instance type, platform, and
+     * Availability Zone). Instances that have matching attributes launch into the
+     * Capacity Reservation automatically without specifying any additional
+     * parameters.</p> </li> <li> <p> <code>targeted</code> - The Capacity Reservation
+     * only accepts instances that have matching attributes (instance type, platform,
+     * and Availability Zone), and explicitly target the Capacity Reservation. This
+     * ensures that only permitted instances can use the reserved capacity.</p> </li>
+     * </ul> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -336,33 +336,33 @@ namespace Model
      * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
      * The Capacity Reservation expired automatically at the date and time specified in
      * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
-     * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
-     * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
-     * <code>limited</code> - The Capacity Reservation expires automatically at a
-     * specified date and time.</p> </li> </ul> </li> <li> <p>
-     * <code>instance-match-criteria</code> - Indicates the type of instance launches
-     * that the Capacity Reservation accepts. The options include:</p> <ul> <li> <p>
-     * <code>open</code> - The Capacity Reservation accepts all instances that have
-     * matching attributes (instance type, platform, and Availability Zone). Instances
-     * that have matching attributes launch into the Capacity Reservation automatically
-     * without specifying any additional parameters.</p> </li> <li> <p>
-     * <code>targeted</code> - The Capacity Reservation only accepts instances that
-     * have matching attributes (instance type, platform, and Availability Zone), and
-     * explicitly target the Capacity Reservation. This ensures that only permitted
-     * instances can use the reserved capacity.</p> </li> </ul> </li> </ul>
+     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
+     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>end-date</code> - The date and time at which the Capacity Reservation
+     * expires. When a Capacity Reservation expires, the reserved capacity is released
+     * and you can no longer launch instances into it. The Capacity Reservation's state
+     * changes to expired when it reaches its end date and time.</p> </li> <li> <p>
+     * <code>end-date-type</code> - Indicates the way in which the Capacity Reservation
+     * ends. A Capacity Reservation can have one of the following end types:</p> <ul>
+     * <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until
+     * you explicitly cancel it.</p> </li> <li> <p> <code>limited</code> - The Capacity
+     * Reservation expires automatically at a specified date and time.</p> </li> </ul>
+     * </li> <li> <p> <code>instance-match-criteria</code> - Indicates the type of
+     * instance launches that the Capacity Reservation accepts. The options
+     * include:</p> <ul> <li> <p> <code>open</code> - The Capacity Reservation accepts
+     * all instances that have matching attributes (instance type, platform, and
+     * Availability Zone). Instances that have matching attributes launch into the
+     * Capacity Reservation automatically without specifying any additional
+     * parameters.</p> </li> <li> <p> <code>targeted</code> - The Capacity Reservation
+     * only accepts instances that have matching attributes (instance type, platform,
+     * and Availability Zone), and explicitly target the Capacity Reservation. This
+     * ensures that only permitted instances can use the reserved capacity.</p> </li>
+     * </ul> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -387,33 +387,33 @@ namespace Model
      * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
      * The Capacity Reservation expired automatically at the date and time specified in
      * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
-     * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
-     * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
-     * <code>limited</code> - The Capacity Reservation expires automatically at a
-     * specified date and time.</p> </li> </ul> </li> <li> <p>
-     * <code>instance-match-criteria</code> - Indicates the type of instance launches
-     * that the Capacity Reservation accepts. The options include:</p> <ul> <li> <p>
-     * <code>open</code> - The Capacity Reservation accepts all instances that have
-     * matching attributes (instance type, platform, and Availability Zone). Instances
-     * that have matching attributes launch into the Capacity Reservation automatically
-     * without specifying any additional parameters.</p> </li> <li> <p>
-     * <code>targeted</code> - The Capacity Reservation only accepts instances that
-     * have matching attributes (instance type, platform, and Availability Zone), and
-     * explicitly target the Capacity Reservation. This ensures that only permitted
-     * instances can use the reserved capacity.</p> </li> </ul> </li> </ul>
+     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
+     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>end-date</code> - The date and time at which the Capacity Reservation
+     * expires. When a Capacity Reservation expires, the reserved capacity is released
+     * and you can no longer launch instances into it. The Capacity Reservation's state
+     * changes to expired when it reaches its end date and time.</p> </li> <li> <p>
+     * <code>end-date-type</code> - Indicates the way in which the Capacity Reservation
+     * ends. A Capacity Reservation can have one of the following end types:</p> <ul>
+     * <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until
+     * you explicitly cancel it.</p> </li> <li> <p> <code>limited</code> - The Capacity
+     * Reservation expires automatically at a specified date and time.</p> </li> </ul>
+     * </li> <li> <p> <code>instance-match-criteria</code> - Indicates the type of
+     * instance launches that the Capacity Reservation accepts. The options
+     * include:</p> <ul> <li> <p> <code>open</code> - The Capacity Reservation accepts
+     * all instances that have matching attributes (instance type, platform, and
+     * Availability Zone). Instances that have matching attributes launch into the
+     * Capacity Reservation automatically without specifying any additional
+     * parameters.</p> </li> <li> <p> <code>targeted</code> - The Capacity Reservation
+     * only accepts instances that have matching attributes (instance type, platform,
+     * and Availability Zone), and explicitly target the Capacity Reservation. This
+     * ensures that only permitted instances can use the reserved capacity.</p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeCapacityReservationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -438,33 +438,33 @@ namespace Model
      * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
      * The Capacity Reservation expired automatically at the date and time specified in
      * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
-     * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
-     * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
-     * <code>limited</code> - The Capacity Reservation expires automatically at a
-     * specified date and time.</p> </li> </ul> </li> <li> <p>
-     * <code>instance-match-criteria</code> - Indicates the type of instance launches
-     * that the Capacity Reservation accepts. The options include:</p> <ul> <li> <p>
-     * <code>open</code> - The Capacity Reservation accepts all instances that have
-     * matching attributes (instance type, platform, and Availability Zone). Instances
-     * that have matching attributes launch into the Capacity Reservation automatically
-     * without specifying any additional parameters.</p> </li> <li> <p>
-     * <code>targeted</code> - The Capacity Reservation only accepts instances that
-     * have matching attributes (instance type, platform, and Availability Zone), and
-     * explicitly target the Capacity Reservation. This ensures that only permitted
-     * instances can use the reserved capacity.</p> </li> </ul> </li> </ul>
+     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
+     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>end-date</code> - The date and time at which the Capacity Reservation
+     * expires. When a Capacity Reservation expires, the reserved capacity is released
+     * and you can no longer launch instances into it. The Capacity Reservation's state
+     * changes to expired when it reaches its end date and time.</p> </li> <li> <p>
+     * <code>end-date-type</code> - Indicates the way in which the Capacity Reservation
+     * ends. A Capacity Reservation can have one of the following end types:</p> <ul>
+     * <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until
+     * you explicitly cancel it.</p> </li> <li> <p> <code>limited</code> - The Capacity
+     * Reservation expires automatically at a specified date and time.</p> </li> </ul>
+     * </li> <li> <p> <code>instance-match-criteria</code> - Indicates the type of
+     * instance launches that the Capacity Reservation accepts. The options
+     * include:</p> <ul> <li> <p> <code>open</code> - The Capacity Reservation accepts
+     * all instances that have matching attributes (instance type, platform, and
+     * Availability Zone). Instances that have matching attributes launch into the
+     * Capacity Reservation automatically without specifying any additional
+     * parameters.</p> </li> <li> <p> <code>targeted</code> - The Capacity Reservation
+     * only accepts instances that have matching attributes (instance type, platform,
+     * and Availability Zone), and explicitly target the Capacity Reservation. This
+     * ensures that only permitted instances can use the reserved capacity.</p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeCapacityReservationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -489,33 +489,33 @@ namespace Model
      * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
      * The Capacity Reservation expired automatically at the date and time specified in
      * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
-     * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
-     * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
-     * <code>limited</code> - The Capacity Reservation expires automatically at a
-     * specified date and time.</p> </li> </ul> </li> <li> <p>
-     * <code>instance-match-criteria</code> - Indicates the type of instance launches
-     * that the Capacity Reservation accepts. The options include:</p> <ul> <li> <p>
-     * <code>open</code> - The Capacity Reservation accepts all instances that have
-     * matching attributes (instance type, platform, and Availability Zone). Instances
-     * that have matching attributes launch into the Capacity Reservation automatically
-     * without specifying any additional parameters.</p> </li> <li> <p>
-     * <code>targeted</code> - The Capacity Reservation only accepts instances that
-     * have matching attributes (instance type, platform, and Availability Zone), and
-     * explicitly target the Capacity Reservation. This ensures that only permitted
-     * instances can use the reserved capacity.</p> </li> </ul> </li> </ul>
+     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
+     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>end-date</code> - The date and time at which the Capacity Reservation
+     * expires. When a Capacity Reservation expires, the reserved capacity is released
+     * and you can no longer launch instances into it. The Capacity Reservation's state
+     * changes to expired when it reaches its end date and time.</p> </li> <li> <p>
+     * <code>end-date-type</code> - Indicates the way in which the Capacity Reservation
+     * ends. A Capacity Reservation can have one of the following end types:</p> <ul>
+     * <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until
+     * you explicitly cancel it.</p> </li> <li> <p> <code>limited</code> - The Capacity
+     * Reservation expires automatically at a specified date and time.</p> </li> </ul>
+     * </li> <li> <p> <code>instance-match-criteria</code> - Indicates the type of
+     * instance launches that the Capacity Reservation accepts. The options
+     * include:</p> <ul> <li> <p> <code>open</code> - The Capacity Reservation accepts
+     * all instances that have matching attributes (instance type, platform, and
+     * Availability Zone). Instances that have matching attributes launch into the
+     * Capacity Reservation automatically without specifying any additional
+     * parameters.</p> </li> <li> <p> <code>targeted</code> - The Capacity Reservation
+     * only accepts instances that have matching attributes (instance type, platform,
+     * and Availability Zone), and explicitly target the Capacity Reservation. This
+     * ensures that only permitted instances can use the reserved capacity.</p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeCapacityReservationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -540,33 +540,33 @@ namespace Model
      * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
      * The Capacity Reservation expired automatically at the date and time specified in
      * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
-     * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
-     * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
-     * <code>limited</code> - The Capacity Reservation expires automatically at a
-     * specified date and time.</p> </li> </ul> </li> <li> <p>
-     * <code>instance-match-criteria</code> - Indicates the type of instance launches
-     * that the Capacity Reservation accepts. The options include:</p> <ul> <li> <p>
-     * <code>open</code> - The Capacity Reservation accepts all instances that have
-     * matching attributes (instance type, platform, and Availability Zone). Instances
-     * that have matching attributes launch into the Capacity Reservation automatically
-     * without specifying any additional parameters.</p> </li> <li> <p>
-     * <code>targeted</code> - The Capacity Reservation only accepts instances that
-     * have matching attributes (instance type, platform, and Availability Zone), and
-     * explicitly target the Capacity Reservation. This ensures that only permitted
-     * instances can use the reserved capacity.</p> </li> </ul> </li> </ul>
+     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
+     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>end-date</code> - The date and time at which the Capacity Reservation
+     * expires. When a Capacity Reservation expires, the reserved capacity is released
+     * and you can no longer launch instances into it. The Capacity Reservation's state
+     * changes to expired when it reaches its end date and time.</p> </li> <li> <p>
+     * <code>end-date-type</code> - Indicates the way in which the Capacity Reservation
+     * ends. A Capacity Reservation can have one of the following end types:</p> <ul>
+     * <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until
+     * you explicitly cancel it.</p> </li> <li> <p> <code>limited</code> - The Capacity
+     * Reservation expires automatically at a specified date and time.</p> </li> </ul>
+     * </li> <li> <p> <code>instance-match-criteria</code> - Indicates the type of
+     * instance launches that the Capacity Reservation accepts. The options
+     * include:</p> <ul> <li> <p> <code>open</code> - The Capacity Reservation accepts
+     * all instances that have matching attributes (instance type, platform, and
+     * Availability Zone). Instances that have matching attributes launch into the
+     * Capacity Reservation automatically without specifying any additional
+     * parameters.</p> </li> <li> <p> <code>targeted</code> - The Capacity Reservation
+     * only accepts instances that have matching attributes (instance type, platform,
+     * and Availability Zone), and explicitly target the Capacity Reservation. This
+     * ensures that only permitted instances can use the reserved capacity.</p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeCapacityReservationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

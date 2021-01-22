@@ -26,15 +26,15 @@ namespace Model
   /**
    * <p>The connection endpoint for connecting an Amazon Redshift cluster through the
    * proxy.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SpartaProxyVpcEndpoint">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/VpcEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API SpartaProxyVpcEndpoint
+  class AWS_REDSHIFT_API VpcEndpoint
   {
   public:
-    SpartaProxyVpcEndpoint();
-    SpartaProxyVpcEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SpartaProxyVpcEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    VpcEndpoint();
+    VpcEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    VpcEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
@@ -74,19 +74,19 @@ namespace Model
      * <p>The connection endpoint ID for connecting an Amazon Redshift cluster through
      * the proxy.</p>
      */
-    inline SpartaProxyVpcEndpoint& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
+    inline VpcEndpoint& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
 
     /**
      * <p>The connection endpoint ID for connecting an Amazon Redshift cluster through
      * the proxy.</p>
      */
-    inline SpartaProxyVpcEndpoint& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
+    inline VpcEndpoint& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
     /**
      * <p>The connection endpoint ID for connecting an Amazon Redshift cluster through
      * the proxy.</p>
      */
-    inline SpartaProxyVpcEndpoint& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+    inline VpcEndpoint& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 
   private:
 

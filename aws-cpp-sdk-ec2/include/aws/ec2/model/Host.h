@@ -155,64 +155,64 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline Host& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline Host& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
      */
     inline Host& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -560,55 +560,49 @@ namespace Model
 
     /**
      * <p>Indicates whether the Dedicated Host supports multiple instance types of the
-     * same instance family, or a specific instance type only. <code>one</code>
-     * indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a
-     * single instance type only.</p>
+     * same instance family. If the value is <code>on</code>, the Dedicated Host
+     * supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.</p>
      */
     inline const AllowsMultipleInstanceTypes& GetAllowsMultipleInstanceTypes() const{ return m_allowsMultipleInstanceTypes; }
 
     /**
      * <p>Indicates whether the Dedicated Host supports multiple instance types of the
-     * same instance family, or a specific instance type only. <code>one</code>
-     * indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a
-     * single instance type only.</p>
+     * same instance family. If the value is <code>on</code>, the Dedicated Host
+     * supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.</p>
      */
     inline bool AllowsMultipleInstanceTypesHasBeenSet() const { return m_allowsMultipleInstanceTypesHasBeenSet; }
 
     /**
      * <p>Indicates whether the Dedicated Host supports multiple instance types of the
-     * same instance family, or a specific instance type only. <code>one</code>
-     * indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a
-     * single instance type only.</p>
+     * same instance family. If the value is <code>on</code>, the Dedicated Host
+     * supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.</p>
      */
     inline void SetAllowsMultipleInstanceTypes(const AllowsMultipleInstanceTypes& value) { m_allowsMultipleInstanceTypesHasBeenSet = true; m_allowsMultipleInstanceTypes = value; }
 
     /**
      * <p>Indicates whether the Dedicated Host supports multiple instance types of the
-     * same instance family, or a specific instance type only. <code>one</code>
-     * indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a
-     * single instance type only.</p>
+     * same instance family. If the value is <code>on</code>, the Dedicated Host
+     * supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.</p>
      */
     inline void SetAllowsMultipleInstanceTypes(AllowsMultipleInstanceTypes&& value) { m_allowsMultipleInstanceTypesHasBeenSet = true; m_allowsMultipleInstanceTypes = std::move(value); }
 
     /**
      * <p>Indicates whether the Dedicated Host supports multiple instance types of the
-     * same instance family, or a specific instance type only. <code>one</code>
-     * indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a
-     * single instance type only.</p>
+     * same instance family. If the value is <code>on</code>, the Dedicated Host
+     * supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.</p>
      */
     inline Host& WithAllowsMultipleInstanceTypes(const AllowsMultipleInstanceTypes& value) { SetAllowsMultipleInstanceTypes(value); return *this;}
 
     /**
      * <p>Indicates whether the Dedicated Host supports multiple instance types of the
-     * same instance family, or a specific instance type only. <code>one</code>
-     * indicates that the Dedicated Host supports multiple instance types in the
-     * instance family. <code>off</code> indicates that the Dedicated Host supports a
-     * single instance type only.</p>
+     * same instance family. If the value is <code>on</code>, the Dedicated Host
+     * supports multiple instance types in the instance family. If the value is
+     * <code>off</code>, the Dedicated Host supports a single instance type only.</p>
      */
     inline Host& WithAllowsMultipleInstanceTypes(AllowsMultipleInstanceTypes&& value) { SetAllowsMultipleInstanceTypes(std::move(value)); return *this;}
 
