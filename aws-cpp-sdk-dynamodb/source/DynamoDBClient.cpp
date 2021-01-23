@@ -16,6 +16,7 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/platform/Environment.h>
 
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBEndpoint.h>
@@ -121,6 +122,7 @@ DynamoDBClient::~DynamoDBClient()
 void DynamoDBClient::init(const ClientConfiguration& config)
 {
   SetServiceClientName("DynamoDB");
+  LoadDynamoDBSpecificConfig(config);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -130,13 +132,42 @@ void DynamoDBClient::init(const ClientConfiguration& config)
   {
       OverrideEndpoint(config.endpointOverride);
   }
-  if (!config.endpointOverride.empty())
+}
+
+void DynamoDBClient::LoadDynamoDBSpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
+{
+  if (!clientConfiguration.endpointOverride.empty())
   {
     m_enableEndpointDiscovery = false;
   }
+  else if (clientConfiguration.enableEndpointDiscovery)
+  {
+    m_enableEndpointDiscovery = clientConfiguration.enableEndpointDiscovery.value();
+  }
   else
   {
-    m_enableEndpointDiscovery = config.enableEndpointDiscovery;
+    m_enableEndpointDiscovery = false;
+
+    Aws::String enableEndpointDiscovery = Aws::Environment::GetEnv("AWS_ENABLE_ENDPOINT_DISCOVERY");
+    if (enableEndpointDiscovery.empty())
+    {
+      enableEndpointDiscovery = Aws::Config::GetCachedConfigValue(clientConfiguration.profileName, "endpoint_discovery_enabled");
+    }
+
+    if (enableEndpointDiscovery == "true")
+    {
+      m_enableEndpointDiscovery = true;
+    }
+    else if (enableEndpointDiscovery == "false")
+    {
+      m_enableEndpointDiscovery = false;
+    }
+    else if (!enableEndpointDiscovery.empty())
+    {
+      AWS_LOGSTREAM_WARN("DynamoDBClient", "Using the SDK default configuration for Endpoint Discovery. "
+        << "Make sure your environment variable \"AWS_ENABLE_ENDPOINT_DISCOVERY\" or "
+        << "your config file's variable \"endpoint_discovery_enabled\" are explicitly set to \"true\" or \"false\" (case-sensitive) or not set at all.");
+    }
   }
 }
 

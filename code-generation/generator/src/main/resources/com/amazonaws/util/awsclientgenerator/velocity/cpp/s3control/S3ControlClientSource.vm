@@ -2,7 +2,6 @@
 #set($vpcEndpointSupported = true)
 #set($AdditionalServiceSpecificConfigLoadString = "LoadS3ControlSpecificConfig(config.profileName);")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
-\#include<aws/core/platform/Environment.h>
 
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";

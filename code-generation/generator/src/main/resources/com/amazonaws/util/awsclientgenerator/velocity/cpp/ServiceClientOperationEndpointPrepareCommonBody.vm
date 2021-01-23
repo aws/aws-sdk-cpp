@@ -98,6 +98,16 @@
       }
     }
   }
+#if($operation.requireEndpointDiscovery)
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "${operation.name}" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
+#end
 #end
 #if($operation.hasEndpointTrait)
 #if($operation.arnEndpointAllowed)

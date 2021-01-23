@@ -16,6 +16,7 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/platform/Environment.h>
 
 #include <aws/timestream-query/TimestreamQueryClient.h>
 #include <aws/timestream-query/TimestreamQueryEndpoint.h>
@@ -74,6 +75,7 @@ TimestreamQueryClient::~TimestreamQueryClient()
 void TimestreamQueryClient::init(const ClientConfiguration& config)
 {
   SetServiceClientName("Timestream Query");
+  LoadTimestreamQuerySpecificConfig(config);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -83,13 +85,42 @@ void TimestreamQueryClient::init(const ClientConfiguration& config)
   {
       OverrideEndpoint(config.endpointOverride);
   }
-  if (!config.endpointOverride.empty())
+}
+
+void TimestreamQueryClient::LoadTimestreamQuerySpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
+{
+  if (!clientConfiguration.endpointOverride.empty())
   {
     m_enableEndpointDiscovery = false;
   }
+  else if (clientConfiguration.enableEndpointDiscovery)
+  {
+    m_enableEndpointDiscovery = clientConfiguration.enableEndpointDiscovery.value();
+  }
   else
   {
-    m_enableEndpointDiscovery = config.enableEndpointDiscovery;
+    m_enableEndpointDiscovery = true;
+
+    Aws::String enableEndpointDiscovery = Aws::Environment::GetEnv("AWS_ENABLE_ENDPOINT_DISCOVERY");
+    if (enableEndpointDiscovery.empty())
+    {
+      enableEndpointDiscovery = Aws::Config::GetCachedConfigValue(clientConfiguration.profileName, "endpoint_discovery_enabled");
+    }
+
+    if (enableEndpointDiscovery == "true")
+    {
+      m_enableEndpointDiscovery = true;
+    }
+    else if (enableEndpointDiscovery == "false")
+    {
+      m_enableEndpointDiscovery = false;
+    }
+    else if (!enableEndpointDiscovery.empty())
+    {
+      AWS_LOGSTREAM_WARN("TimestreamQueryClient", "Using the SDK default configuration for Endpoint Discovery. "
+        << "Make sure your environment variable \"AWS_ENABLE_ENDPOINT_DISCOVERY\" or "
+        << "your config file's variable \"endpoint_discovery_enabled\" are explicitly set to \"true\" or \"false\" (case-sensitive) or not set at all.");
+    }
   }
 }
 
@@ -136,6 +167,15 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
         return CancelQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
       }
     }
+  }
+  else
+  {
+    Aws::StringStream ss;
+    ss << "Unable to perform \"CancelQuery\" without endpoint discovery. "
+      << "Make sure your environment variable \"AWS_ENABLE_ENDPOINT_DISCOVERY\", "
+      << "your config file's variable \"endpoint_discovery_enabled\" and "
+      << "ClientConfiguration's \"enableEndpointDiscovery\" are explicitly set to true or not set at all.";
+    return CancelQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", ss.str(), false));
   }
   Aws::StringStream ss;
   ss << "/";
@@ -218,6 +258,15 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
         return QueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
       }
     }
+  }
+  else
+  {
+    Aws::StringStream ss;
+    ss << "Unable to perform \"Query\" without endpoint discovery. "
+      << "Make sure your environment variable \"AWS_ENABLE_ENDPOINT_DISCOVERY\", "
+      << "your config file's variable \"endpoint_discovery_enabled\" and "
+      << "ClientConfiguration's \"enableEndpointDiscovery\" are explicitly set to true or not set at all.";
+    return QueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", ss.str(), false));
   }
   Aws::StringStream ss;
   ss << "/";

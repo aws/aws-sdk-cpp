@@ -29,6 +29,15 @@
 #if(!$ForRegionExtraArgsString)
 #set($ForRegionExtraArgsString = "")
 #end
+#if($metadata.hasEndpointDiscoveryTrait)
+#set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
+#end
+#set($hasEventStreamInputOperation = false)
+#foreach($operation in $serviceModel.operations)
+#if($operation.request.shape.hasEventStreamMembers())
+    #set($hasEventStreamInputOperation = true)
+#end
+#end
 
 #if($hasEventStreamInputOperation)
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
@@ -151,17 +160,50 @@ void ${className}::init(const ClientConfiguration& config)
 #if($metadata.hasEndpointTrait)
   m_enableHostPrefixInjection = config.enableHostPrefixInjection;
 #end
+}
 #if($metadata.hasEndpointDiscoveryTrait)
-  if (!config.endpointOverride.empty())
+
+void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
+{
+  if (!clientConfiguration.endpointOverride.empty())
   {
     m_enableEndpointDiscovery = false;
   }
+  else if (clientConfiguration.enableEndpointDiscovery)
+  {
+    m_enableEndpointDiscovery = clientConfiguration.enableEndpointDiscovery.value();
+  }
   else
   {
-    m_enableEndpointDiscovery = config.enableEndpointDiscovery;
-  }
+#if($metadata.requireEndpointDiscovery)
+    m_enableEndpointDiscovery = true;
+#else
+    m_enableEndpointDiscovery = false;
 #end
+
+    Aws::String enableEndpointDiscovery = Aws::Environment::GetEnv("AWS_ENABLE_ENDPOINT_DISCOVERY");
+    if (enableEndpointDiscovery.empty())
+    {
+      enableEndpointDiscovery = Aws::Config::GetCachedConfigValue(clientConfiguration.profileName, "endpoint_discovery_enabled");
+    }
+
+    if (enableEndpointDiscovery == "true")
+    {
+      m_enableEndpointDiscovery = true;
+    }
+    else if (enableEndpointDiscovery == "false")
+    {
+      m_enableEndpointDiscovery = false;
+    }
+    else if (!enableEndpointDiscovery.empty())
+    {
+      AWS_LOGSTREAM_WARN("${className}", R"(Using the SDK default configuration for Endpoint Discovery. )"
+        R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY" or )"
+        R"(your config file's variable "endpoint_discovery_enabled" are explicitly set to "true" or "false" (case-sensitive) or not set at all.)");
+    }
+  }
 }
+#end
 
 void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 {

@@ -16,8 +16,9 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
-
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/platform/Environment.h>
+
 #include <aws/s3/S3Client.h>
 #include <aws/s3/S3Endpoint.h>
 #include <aws/s3/S3ErrorMarshaller.h>
@@ -3889,7 +3890,6 @@ void S3Client::WriteGetObjectResponseAsyncHelper(const WriteGetObjectResponseReq
 
 
 
-#include<aws/core/platform/Environment.h>
 
 static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
 static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
