@@ -102,7 +102,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
         return XmlOutcome(std::move(httpOutcome));
     }
 
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
+    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
     {
         XmlDocument xmlDoc = XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody());
 
@@ -132,7 +132,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
         return XmlOutcome(std::move(httpOutcome));
     }
 
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
+    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
     {
         return XmlOutcome(AmazonWebServiceResult<XmlDocument>(
             XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody()),
@@ -150,7 +150,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
         bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
         error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
     }
-    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
+    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().peek() == std::char_traits<char>::eof())
     {
         auto responseCode = httpResponse->GetResponseCode();
         auto errorCode = AWSClient::GuessBodylessErrorType(responseCode);
