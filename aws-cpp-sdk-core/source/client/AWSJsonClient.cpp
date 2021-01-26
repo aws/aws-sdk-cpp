@@ -106,7 +106,7 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
         return JsonOutcome(std::move(httpOutcome));
     }
 
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
+    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
         //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
         return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(httpOutcome.GetResult()->GetResponseBody()),
         httpOutcome.GetResult()->GetHeaders(),
@@ -129,7 +129,7 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
         return JsonOutcome(std::move(httpOutcome));
     }
 
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
+    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
     {
         JsonValue jsonValue(httpOutcome.GetResult()->GetResponseBody());
         if (!jsonValue.WasParseSuccessful())
@@ -162,7 +162,7 @@ JsonOutcome AWSJsonClient::MakeEventStreamRequest(std::shared_ptr<Aws::Http::Htt
 
     HttpResponseOutcome httpOutcome(std::move(httpResponse));
 
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
+    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
     {
         JsonValue jsonValue(httpOutcome.GetResult()->GetResponseBody());
         if (!jsonValue.WasParseSuccessful())
@@ -188,7 +188,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
         bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
         error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
     }
-    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
+    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().peek() == std::char_traits<char>::eof())
     {
         auto responseCode = httpResponse->GetResponseCode();
         auto errorCode = AWSClient::GuessBodylessErrorType(responseCode);
